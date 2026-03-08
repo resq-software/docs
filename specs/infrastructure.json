@@ -1,0 +1,1756 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "resq-api",
+    "description": "",
+    "license": {
+      "name": "Apache-2.0",
+      "identifier": "Apache-2.0"
+    },
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/analyze-incident": {
+      "post": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "POST /analyze-incident",
+        "description": "Triggers an AI analysis of the provided incident data.\nUses the Gemini service if available, otherwise falls back to basic heuristics.",
+        "operationId": "analyze_incident",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzeIncidentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Incident analyzed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalysisResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/blockchain/events": {
+      "get": {
+        "tags": [
+          "blockchain"
+        ],
+        "summary": "Queries blockchain events with optional filters.",
+        "operationId": "query_events",
+        "parameters": [
+          {
+            "name": "event_type",
+            "in": "query",
+            "description": "Filter by blockchain event type.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "start_time",
+            "in": "query",
+            "description": "Unix timestamp lower bound for event time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "description": "Unix timestamp upper bound for event time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "incident_id",
+            "in": "query",
+            "description": "Filter events by associated incident ID.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "drone_id",
+            "in": "query",
+            "description": "Filter events by drone ID.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of blockchain events",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/BlockchainEventResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "blockchain"
+        ],
+        "summary": "Records a new event on the blockchain.",
+        "operationId": "record_event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Event recorded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blockchain/transactions/{tx_hash}": {
+      "get": {
+        "tags": [
+          "blockchain"
+        ],
+        "summary": "Retrieves the status of a blockchain transaction.",
+        "operationId": "get_transaction",
+        "parameters": [
+          {
+            "name": "tx_hash",
+            "in": "path",
+            "description": "Transaction hash",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Transaction status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/blockchain/verify-location": {
+      "post": {
+        "tags": [
+          "blockchain"
+        ],
+        "summary": "Verifies a location attestation for a drone.",
+        "operationId": "verify_location",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyLocationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Location verification result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyLocationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence": {
+      "get": {
+        "tags": [
+          "evidence"
+        ],
+        "summary": "Lists evidence with optional filters.",
+        "operationId": "list_evidence",
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "query",
+            "description": "Filter evidence by associated incident ID.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "drone_id",
+            "in": "query",
+            "description": "Filter evidence by capturing drone ID.",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "evidence_type",
+            "in": "query",
+            "description": "Filter by evidence type (e.g. \"image\", \"video\").",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "start_time",
+            "in": "query",
+            "description": "Unix timestamp lower bound for filtering by capture time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "description": "Unix timestamp upper bound for filtering by capture time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of evidence",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidenceResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/by-incident/{incident_id}": {
+      "get": {
+        "tags": [
+          "evidence"
+        ],
+        "summary": "Lists all evidence for a specific incident.",
+        "operationId": "list_by_incident",
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "description": "Incident ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of evidence for incident",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EvidenceResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/evidence/{cid}": {
+      "get": {
+        "tags": [
+          "evidence"
+        ],
+        "summary": "Retrieves evidence metadata by CID.",
+        "operationId": "get_evidence",
+        "parameters": [
+          {
+            "name": "cid",
+            "in": "path",
+            "description": "IPFS Content Identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Evidence metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvidenceResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Evidence not found"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "GET /health",
+        "description": "Returns the current health status of the service and its integrations.",
+        "operationId": "health_check",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/incidents": {
+      "get": {
+        "tags": [
+          "incidents"
+        ],
+        "summary": "Lists incidents with optional filters.",
+        "operationId": "list_incidents",
+        "parameters": [
+          {
+            "name": "start_time",
+            "in": "query",
+            "description": "Unix timestamp lower bound (inclusive) for filtering by creation time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "description": "Unix timestamp upper bound (inclusive) for filtering by creation time.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int64"
+            }
+          },
+          {
+            "name": "severity",
+            "in": "query",
+            "description": "Filter by severity level (e.g. \"low\", \"high\").",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "description": "Filter by lifecycle status (e.g. \"open\", \"resolved\").",
+            "required": false,
+            "schema": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return.",
+            "required": false,
+            "schema": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "format": "int32",
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of incidents",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/IncidentResponse"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "incidents"
+        ],
+        "summary": "Creates a new incident.",
+        "operationId": "create_incident",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateIncidentRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Incident created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncidentResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/incidents/{id}": {
+      "get": {
+        "tags": [
+          "incidents"
+        ],
+        "summary": "Retrieves a specific incident by ID.",
+        "operationId": "get_incident",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Incident ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Incident details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/IncidentResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Incident not found"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Login handler for basic authentication.",
+        "description": "In production, this would validate against a user database.\nFor now, it accepts a hardcoded admin user for testing.",
+        "operationId": "login_handler",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/network-requirements": {
+      "post": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "POST /network-requirements",
+        "description": "Calculates drone network requirements and resource allocation based on the provided parameters.",
+        "operationId": "network_requirements",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkRequirementsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Network requirements calculated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkRequirementsResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/query-gemini": {
+      "post": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "POST /query-gemini",
+        "description": "Sends a general-purpose prompt to the Gemini AI service.",
+        "operationId": "query_gemini",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/QueryGeminiRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Gemini query successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeminiResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/solana/airspace": {
+      "post": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "Create and initialise a new `AirspaceAccount` on Solana.",
+        "operationId": "initialize_airspace",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Airspace initialised",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/solana/airspace/{id}": {
+      "get": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "Fetch the `AirspaceAccount` metadata for a given property ID.",
+        "operationId": "get_airspace",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "External property identifier",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Airspace info",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/solana/delivery": {
+      "post": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "Record a proof-of-delivery on the Solana blockchain.",
+        "operationId": "record_delivery",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Delivery recorded",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/solana/delivery/{pda}": {
+      "get": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "Fetch an existing `DeliveryRecord` account by its PDA address.",
+        "operationId": "get_delivery",
+        "parameters": [
+          {
+            "name": "pda",
+            "in": "path",
+            "description": "Base58 DeliveryRecord PDA",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delivery record",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "404": {
+            "description": "Not found"
+          }
+        }
+      }
+    },
+    "/solana/permit": {
+      "post": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "Issue an airspace access permit to a drone PDA.",
+        "operationId": "grant_permit",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Permit granted",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/solana/permits/{drone_pda}": {
+      "get": {
+        "tags": [
+          "solana"
+        ],
+        "summary": "List airspace permits held by a drone PDA.",
+        "operationId": "list_permits",
+        "parameters": [
+          {
+            "name": "drone_pda",
+            "in": "path",
+            "description": "Base58 drone PDA",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "active_only",
+            "in": "query",
+            "description": "Filter to active permits only",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of permits",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/uploadImage": {
+      "post": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "POST /uploadImage",
+        "description": "Handles multipart/form-data uploads for image files.\nUploaded files are intended to be pinned to IPFS.",
+        "operationId": "upload_image",
+        "requestBody": {
+          "description": "Image file to upload",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/FileUpload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Image uploaded successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/uploadJSON": {
+      "post": {
+        "tags": [
+          "resq-backend"
+        ],
+        "summary": "POST /uploadJSON",
+        "description": "Handles application/json uploads for generic structured data.",
+        "operationId": "upload_json",
+        "requestBody": {
+          "description": "JSON data to upload",
+          "content": {
+            "application/json": {
+              "schema": {}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "JSON uploaded successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalysisDetails": {
+        "type": "object",
+        "description": "Detailed results of an incident analysis.",
+        "required": [
+          "severity",
+          "should_report",
+          "confidence",
+          "reasoning",
+          "recommended_actions"
+        ],
+        "properties": {
+          "confidence": {
+            "type": "number",
+            "format": "double",
+            "description": "Confidence score of the analysis (0.0 to 1.0)."
+          },
+          "reasoning": {
+            "type": "string",
+            "description": "Reasoning behind the analysis results."
+          },
+          "recommended_actions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of recommended actions to mitigate the incident."
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity level of the incident (e.g., \"Critical\", \"High\", \"Medium\", \"Low\")."
+          },
+          "should_report": {
+            "type": "boolean",
+            "description": "Whether the incident should be reported to authorities."
+          }
+        }
+      },
+      "AnalysisResponse": {
+        "type": "object",
+        "description": "Response payload containing incident analysis results.",
+        "required": [
+          "status",
+          "incident",
+          "analysis",
+          "agents_used",
+          "fallback_active",
+          "timestamp"
+        ],
+        "properties": {
+          "agents_used": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of AI agents used during analysis."
+          },
+          "analysis": {
+            "$ref": "#/components/schemas/AnalysisDetails",
+            "description": "Detailed analysis results."
+          },
+          "fallback_active": {
+            "type": "boolean",
+            "description": "Whether fallback logic was active during analysis."
+          },
+          "incident": {
+            "description": "The original incident data."
+          },
+          "status": {
+            "type": "string",
+            "description": "status of the analysis."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of the response."
+          }
+        }
+      },
+      "AnalyzeIncidentRequest": {
+        "type": "object",
+        "description": "Request payload for analyzing an incident.",
+        "properties": {
+          "incident": {
+            "description": "The incident data to analyze."
+          },
+          "networkState": {
+            "description": "The current state of the network."
+          }
+        }
+      },
+      "AuthError": {
+        "type": "object",
+        "description": "Authentication error response.",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Error description"
+          }
+        }
+      },
+      "BlockchainEventResponse": {
+        "type": "object",
+        "description": "Response for a blockchain event.",
+        "required": [
+          "event_id",
+          "event_type",
+          "timestamp",
+          "tx_hash",
+          "metadata"
+        ],
+        "properties": {
+          "block_height": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Block height at which the transaction was confirmed.",
+            "minimum": 0
+          },
+          "drone_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Drone identifier associated with this event."
+          },
+          "event_id": {
+            "type": "string",
+            "description": "Unique event identifier."
+          },
+          "event_type": {
+            "type": "string",
+            "description": "Event classification."
+          },
+          "evidence_cid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "IPFS CID of evidence linked to this event."
+          },
+          "location": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Location",
+                "description": "Geographic location associated with the event."
+              }
+            ]
+          },
+          "metadata": {
+            "description": "Arbitrary event metadata."
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unix timestamp when the event was recorded."
+          },
+          "tx_hash": {
+            "type": "string",
+            "description": "On-chain transaction hash."
+          }
+        }
+      },
+      "CreateIncidentRequest": {
+        "type": "object",
+        "description": "Request to create a new incident.",
+        "required": [
+          "incident_type",
+          "severity"
+        ],
+        "properties": {
+          "description": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Optional human-readable description."
+          },
+          "incident_type": {
+            "type": "string",
+            "description": "Type classification of the incident."
+          },
+          "location": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Location",
+                "description": "Geographic location where the incident occurred."
+              }
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity level of the incident."
+          }
+        }
+      },
+      "EvidenceResponse": {
+        "type": "object",
+        "description": "Response for evidence metadata.",
+        "required": [
+          "cid",
+          "evidence_type",
+          "gateway_url"
+        ],
+        "properties": {
+          "blockchain_tx": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Blockchain transaction hash anchoring this evidence."
+          },
+          "captured_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "RFC 3339 timestamp when the evidence was captured."
+          },
+          "cid": {
+            "type": "string",
+            "description": "IPFS content identifier (primary key)."
+          },
+          "drone_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Identifier of the drone that captured the evidence."
+          },
+          "evidence_type": {
+            "type": "string",
+            "description": "Evidence classification (e.g. \"image\", \"video\", \"sensor\")."
+          },
+          "gateway_url": {
+            "type": "string",
+            "description": "IPFS gateway URL for accessing the evidence file."
+          },
+          "incident_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Incident this evidence is linked to, if any."
+          }
+        }
+      },
+      "FileUpload": {
+        "type": "object",
+        "description": "Multipart file upload schema for `OpenAPI`.",
+        "required": [
+          "file"
+        ],
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "description": "The file to be uploaded."
+          }
+        }
+      },
+      "GeminiResponse": {
+        "type": "object",
+        "description": "Response payload from Gemini AI.",
+        "required": [
+          "status",
+          "query",
+          "answer",
+          "model",
+          "timestamp"
+        ],
+        "properties": {
+          "answer": {
+            "type": "string",
+            "description": "The AI-generated answer."
+          },
+          "model": {
+            "type": "string",
+            "description": "The model name used for the query."
+          },
+          "query": {
+            "type": "string",
+            "description": "The original query."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the query."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of the response."
+          }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "description": "API health check response.",
+        "required": [
+          "status",
+          "pinata",
+          "gemini",
+          "spoon_os"
+        ],
+        "properties": {
+          "gemini": {
+            "type": "boolean",
+            "description": "connectivity status with Gemini."
+          },
+          "pinata": {
+            "type": "boolean",
+            "description": "connectivity status with Pinata."
+          },
+          "spoon_os": {
+            "type": "string",
+            "description": "Version of Spoon OS."
+          },
+          "status": {
+            "type": "string",
+            "description": "Overall API status."
+          }
+        }
+      },
+      "IncidentResponse": {
+        "type": "object",
+        "description": "Response for a single incident.",
+        "required": [
+          "id",
+          "incident_type",
+          "severity",
+          "status",
+          "created_at",
+          "evidence_count",
+          "blockchain_records"
+        ],
+        "properties": {
+          "blockchain_records": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Blockchain transaction hashes anchoring this incident."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "RFC 3339 creation timestamp."
+          },
+          "evidence_count": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of evidence items associated with this incident.",
+            "minimum": 0
+          },
+          "id": {
+            "type": "string",
+            "description": "Unique incident identifier."
+          },
+          "incident_type": {
+            "type": "string",
+            "description": "Type classification (e.g. \"fire\", \"flood\")."
+          },
+          "location": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/Location",
+                "description": "Geographic location where the incident occurred."
+              }
+            ]
+          },
+          "severity": {
+            "type": "string",
+            "description": "Severity level (e.g. \"low\", \"high\", \"critical\")."
+          },
+          "status": {
+            "type": "string",
+            "description": "Lifecycle status (e.g. \"open\", \"resolved\")."
+          }
+        }
+      },
+      "ListEvidenceRequest": {
+        "type": "object",
+        "description": "Request to list evidence.",
+        "properties": {
+          "drone_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter evidence by capturing drone ID."
+          },
+          "end_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp upper bound for filtering by capture time."
+          },
+          "evidence_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter by evidence type (e.g. \"image\", \"video\")."
+          },
+          "incident_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter evidence by associated incident ID."
+          },
+          "start_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp lower bound for filtering by capture time."
+          }
+        }
+      },
+      "ListIncidentsRequest": {
+        "type": "object",
+        "description": "Request to list incidents.",
+        "properties": {
+          "end_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp upper bound (inclusive) for filtering by creation time."
+          },
+          "limit": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int32",
+            "description": "Maximum number of results to return.",
+            "minimum": 0
+          },
+          "severity": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter by severity level (e.g. \"low\", \"high\")."
+          },
+          "start_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp lower bound (inclusive) for filtering by creation time."
+          },
+          "status": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter by lifecycle status (e.g. \"open\", \"resolved\")."
+          }
+        }
+      },
+      "Location": {
+        "type": "object",
+        "description": "Geographic location data.",
+        "required": [
+          "latitude",
+          "longitude"
+        ],
+        "properties": {
+          "altitude": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "double",
+            "description": "Altitude in metres above sea level."
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double",
+            "description": "Decimal latitude in degrees."
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double",
+            "description": "Decimal longitude in degrees."
+          }
+        }
+      },
+      "LoginRequest": {
+        "type": "object",
+        "description": "Login request payload.",
+        "required": [
+          "username",
+          "password"
+        ],
+        "properties": {
+          "password": {
+            "type": "string",
+            "description": "Password for authentication"
+          },
+          "username": {
+            "type": "string",
+            "description": "Username for authentication"
+          }
+        }
+      },
+      "LoginResponse": {
+        "type": "object",
+        "description": "Login response with JWT token.",
+        "required": [
+          "token",
+          "expires_at"
+        ],
+        "properties": {
+          "expires_at": {
+            "type": "integer",
+            "description": "Token expiration time (Unix timestamp)",
+            "minimum": 0
+          },
+          "token": {
+            "type": "string",
+            "description": "JWT token for authenticated requests"
+          }
+        }
+      },
+      "NetworkRequirementsRequest": {
+        "type": "object",
+        "description": "Request payload for network requirements analysis.",
+        "properties": {
+          "networkState": {
+            "description": "The current state of the network."
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Specific query about network requirements."
+          }
+        }
+      },
+      "NetworkRequirementsResponse": {
+        "type": "object",
+        "description": "Response payload for network requirements analysis.",
+        "required": [
+          "status",
+          "network_health",
+          "recommendations",
+          "resource_allocation",
+          "timestamp"
+        ],
+        "properties": {
+          "network_health": {
+            "type": "string",
+            "description": "Overall health of the network."
+          },
+          "recommendations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of recommendations for the network."
+          },
+          "resource_allocation": {
+            "$ref": "#/components/schemas/ResourceAllocation",
+            "description": "Recommended resource allocation."
+          },
+          "status": {
+            "type": "string",
+            "description": "Status of the analysis."
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "ISO 8601 timestamp of the response."
+          }
+        }
+      },
+      "QueryEventsRequest": {
+        "type": "object",
+        "description": "Request to query blockchain events.",
+        "properties": {
+          "drone_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter events by drone ID."
+          },
+          "end_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp upper bound for event time."
+          },
+          "event_type": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter by blockchain event type."
+          },
+          "incident_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Filter events by associated incident ID."
+          },
+          "start_time": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Unix timestamp lower bound for event time."
+          }
+        }
+      },
+      "QueryGeminiRequest": {
+        "type": "object",
+        "description": "Request payload for querying Gemini AI.",
+        "properties": {
+          "context": {
+            "description": "Additional context for the query."
+          },
+          "query": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The natural language query."
+          }
+        }
+      },
+      "ResourceAllocation": {
+        "type": "object",
+        "description": "Resource allocation recommendations.",
+        "required": [
+          "drones",
+          "sectors",
+          "battery_threshold",
+          "response_time_target"
+        ],
+        "properties": {
+          "battery_threshold": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Minimum battery threshold for drones.",
+            "minimum": 0
+          },
+          "drones": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of drones to allocate.",
+            "minimum": 0
+          },
+          "response_time_target": {
+            "type": "string",
+            "description": "Target response time for incidents."
+          },
+          "sectors": {
+            "type": "integer",
+            "format": "int32",
+            "description": "Number of sectors to cover.",
+            "minimum": 0
+          }
+        }
+      },
+      "TransactionResponse": {
+        "type": "object",
+        "description": "Response for transaction status.",
+        "required": [
+          "tx_hash",
+          "status",
+          "gas_consumed"
+        ],
+        "properties": {
+          "block_height": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "format": "int64",
+            "description": "Block height at which the transaction was included.",
+            "minimum": 0
+          },
+          "error_message": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Error message if the transaction failed."
+          },
+          "gas_consumed": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Gas consumed by the transaction.",
+            "minimum": 0
+          },
+          "status": {
+            "type": "string",
+            "description": "Transaction status (e.g. \"confirmed\", \"pending\", \"failed\")."
+          },
+          "tx_hash": {
+            "type": "string",
+            "description": "On-chain transaction hash."
+          }
+        }
+      },
+      "UploadResponse": {
+        "type": "object",
+        "description": "Response payload for file uploads.",
+        "required": [
+          "cid"
+        ],
+        "properties": {
+          "cid": {
+            "type": "string",
+            "description": "Content Identifier (CID) of the uploaded file on IPFS."
+          }
+        }
+      },
+      "VerifyLocationRequest": {
+        "type": "object",
+        "description": "Request to verify location attestation.",
+        "required": [
+          "drone_id",
+          "location",
+          "timestamp"
+        ],
+        "properties": {
+          "drone_id": {
+            "type": "string",
+            "description": "Identifier of the drone making the attestation."
+          },
+          "location": {
+            "$ref": "#/components/schemas/Location",
+            "description": "Claimed geographic location."
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unix timestamp of the attestation."
+          }
+        }
+      },
+      "VerifyLocationResponse": {
+        "type": "object",
+        "description": "Response for location verification.",
+        "required": [
+          "is_valid"
+        ],
+        "properties": {
+          "attestation_tx": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Blockchain transaction recording the attestation."
+          },
+          "confidence": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "format": "float",
+            "description": "Confidence score (0.0–1.0) of the verification."
+          },
+          "is_valid": {
+            "type": "boolean",
+            "description": "Whether the location attestation is valid."
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "resq-backend",
+      "description": "ResQ Infrastructure API"
+    },
+    {
+      "name": "auth",
+      "description": "Authentication endpoints"
+    },
+    {
+      "name": "incidents",
+      "description": "Incident management endpoints"
+    },
+    {
+      "name": "evidence",
+      "description": "Evidence management endpoints"
+    },
+    {
+      "name": "blockchain",
+      "description": "Blockchain query endpoints"
+    },
+    {
+      "name": "solana",
+      "description": "Solana program endpoints (PoD + airspace)"
+    }
+  ]
+}

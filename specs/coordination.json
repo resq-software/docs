@@ -1,0 +1,1264 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "ResQ Coordination HCE Documentation",
+    "description": "Development documentation",
+    "version": "2.0.0"
+  },
+  "tags": [
+    {
+      "name": "Storage",
+      "description": "Storage and IPFS endpoints"
+    },
+    {
+      "name": "Intelligence",
+      "description": "Disaster intelligence and reporting"
+    },
+    {
+      "name": "Simulation",
+      "description": "Fault injection and simulation"
+    },
+    {
+      "name": "Fleet",
+      "description": "Fleet management and telemetry"
+    }
+  ],
+  "paths": {
+    "/admin/status": {
+      "get": {
+        "operationId": "getAdminStatus",
+        "summary": "Service health and memory status",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/heap-snapshot": {
+      "get": {
+        "operationId": "getAdminHeap-snapshot",
+        "summary": "Generate and download heap snapshot",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/gc": {
+      "post": {
+        "parameters": [],
+        "operationId": "postAdminGc",
+        "summary": "Trigger garbage collection",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sync": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sync": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "sync": {
+                    "type": "boolean"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/cpu-profile": {
+      "post": {
+        "parameters": [],
+        "operationId": "postAdminCpu-profile",
+        "summary": "Generate CPU profile",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "durationMs": {
+                    "type": "number"
+                  },
+                  "intervalUs": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "durationMs": {
+                    "type": "number"
+                  },
+                  "intervalUs": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "durationMs": {
+                    "type": "number"
+                  },
+                  "intervalUs": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/reset-fleet": {
+      "post": {
+        "operationId": "postAdminReset-fleet",
+        "summary": "Reset in-memory fleet state",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/missions/pending": {
+      "get": {
+        "operationId": "getAdminMissionsPending",
+        "summary": "List missions awaiting human approval (HITL)",
+        "tags": [
+          "Admin"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/missions/approve": {
+      "post": {
+        "parameters": [],
+        "operationId": "postAdminMissionsApprove",
+        "summary": "Approve critical mission (EU AI Act Art. 14 HITL)",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/admin/missions/reject": {
+      "post": {
+        "parameters": [],
+        "operationId": "postAdminMissionsReject",
+        "summary": "Reject critical mission (EU AI Act Art. 14 HITL)",
+        "tags": [
+          "Admin"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "missionId"
+                ],
+                "properties": {
+                  "missionId": {
+                    "type": "string"
+                  },
+                  "reason": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/upload": {
+      "post": {
+        "parameters": [],
+        "operationId": "postV1Upload",
+        "summary": "Upload image to IPFS",
+        "tags": [
+          "Storage"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "default": "File",
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "default": "File",
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "file"
+                ],
+                "properties": {
+                  "file": {
+                    "default": "File",
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/incident": {
+      "post": {
+        "parameters": [],
+        "operationId": "postV1Incident",
+        "summary": "Report detected incident (PDIE-authenticated in prod)",
+        "tags": [
+          "Intelligence"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "confidence",
+                  "location"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "confidence": {
+                    "type": "number"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "confidence",
+                  "location"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "confidence": {
+                    "type": "number"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "confidence",
+                  "location"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "confidence": {
+                    "type": "number"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/fault-injection": {
+      "post": {
+        "parameters": [],
+        "operationId": "postV1Fault-injection",
+        "summary": "Inject simulation fault",
+        "tags": [
+          "Simulation"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "type",
+                  "intensity"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "intensity": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "type",
+                  "intensity"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "intensity": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "drone_id",
+                  "type",
+                  "intensity"
+                ],
+                "properties": {
+                  "drone_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "intensity": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/pre-alert": {
+      "post": {
+        "parameters": [],
+        "operationId": "postV1Pre-alert",
+        "summary": "Process predictive alert (PDIE-authenticated)",
+        "tags": [
+          "Intelligence"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "predicted_location"
+                ],
+                "properties": {
+                  "alert_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "prediction": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "type",
+                      "risk_score",
+                      "confidence",
+                      "horizon_hours",
+                      "model_version"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "risk_score": {
+                        "type": "number"
+                      },
+                      "confidence": {
+                        "type": "number"
+                      },
+                      "rationale": {
+                        "type": "string"
+                      },
+                      "horizon_hours": {
+                        "type": "number"
+                      },
+                      "model_version": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "vulnerabilities": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "sector_id",
+                        "vulnerability_type",
+                        "population_at_risk",
+                        "infrastructure",
+                        "priority",
+                        "is_critical"
+                      ],
+                      "properties": {
+                        "sector_id": {
+                          "type": "string"
+                        },
+                        "vulnerability_type": {
+                          "type": "string"
+                        },
+                        "population_at_risk": {
+                          "type": "number"
+                        },
+                        "infrastructure": {
+                          "type": "string"
+                        },
+                        "priority": {
+                          "type": "number"
+                        },
+                        "is_critical": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "summary": {
+                    "type": "object",
+                    "required": [
+                      "total_population_at_risk",
+                      "critical_infrastructure_count",
+                      "affected_sectors"
+                    ],
+                    "properties": {
+                      "total_population_at_risk": {
+                        "type": "number"
+                      },
+                      "critical_infrastructure_count": {
+                        "type": "number"
+                      },
+                      "affected_sectors": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "predicted_location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "impacted_radius_meters": {
+                    "type": "number"
+                  },
+                  "estimated_time_hours": {
+                    "type": "number"
+                  },
+                  "source": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "predicted_location"
+                ],
+                "properties": {
+                  "alert_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "prediction": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "type",
+                      "risk_score",
+                      "confidence",
+                      "horizon_hours",
+                      "model_version"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "risk_score": {
+                        "type": "number"
+                      },
+                      "confidence": {
+                        "type": "number"
+                      },
+                      "rationale": {
+                        "type": "string"
+                      },
+                      "horizon_hours": {
+                        "type": "number"
+                      },
+                      "model_version": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "vulnerabilities": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "sector_id",
+                        "vulnerability_type",
+                        "population_at_risk",
+                        "infrastructure",
+                        "priority",
+                        "is_critical"
+                      ],
+                      "properties": {
+                        "sector_id": {
+                          "type": "string"
+                        },
+                        "vulnerability_type": {
+                          "type": "string"
+                        },
+                        "population_at_risk": {
+                          "type": "number"
+                        },
+                        "infrastructure": {
+                          "type": "string"
+                        },
+                        "priority": {
+                          "type": "number"
+                        },
+                        "is_critical": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "summary": {
+                    "type": "object",
+                    "required": [
+                      "total_population_at_risk",
+                      "critical_infrastructure_count",
+                      "affected_sectors"
+                    ],
+                    "properties": {
+                      "total_population_at_risk": {
+                        "type": "number"
+                      },
+                      "critical_infrastructure_count": {
+                        "type": "number"
+                      },
+                      "affected_sectors": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "predicted_location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "impacted_radius_meters": {
+                    "type": "number"
+                  },
+                  "estimated_time_hours": {
+                    "type": "number"
+                  },
+                  "source": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "predicted_location"
+                ],
+                "properties": {
+                  "alert_id": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string"
+                  },
+                  "timestamp": {
+                    "type": "string"
+                  },
+                  "severity": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  },
+                  "prediction": {
+                    "type": "object",
+                    "required": [
+                      "id",
+                      "type",
+                      "risk_score",
+                      "confidence",
+                      "horizon_hours",
+                      "model_version"
+                    ],
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "risk_score": {
+                        "type": "number"
+                      },
+                      "confidence": {
+                        "type": "number"
+                      },
+                      "rationale": {
+                        "type": "string"
+                      },
+                      "horizon_hours": {
+                        "type": "number"
+                      },
+                      "model_version": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "vulnerabilities": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "sector_id",
+                        "vulnerability_type",
+                        "population_at_risk",
+                        "infrastructure",
+                        "priority",
+                        "is_critical"
+                      ],
+                      "properties": {
+                        "sector_id": {
+                          "type": "string"
+                        },
+                        "vulnerability_type": {
+                          "type": "string"
+                        },
+                        "population_at_risk": {
+                          "type": "number"
+                        },
+                        "infrastructure": {
+                          "type": "string"
+                        },
+                        "priority": {
+                          "type": "number"
+                        },
+                        "is_critical": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  },
+                  "summary": {
+                    "type": "object",
+                    "required": [
+                      "total_population_at_risk",
+                      "critical_infrastructure_count",
+                      "affected_sectors"
+                    ],
+                    "properties": {
+                      "total_population_at_risk": {
+                        "type": "number"
+                      },
+                      "critical_infrastructure_count": {
+                        "type": "number"
+                      },
+                      "affected_sectors": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "predicted_location": {
+                    "type": "object",
+                    "required": [
+                      "latitude",
+                      "longitude",
+                      "altitude"
+                    ],
+                    "properties": {
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "altitude": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "impacted_radius_meters": {
+                    "type": "number"
+                  },
+                  "estimated_time_hours": {
+                    "type": "number"
+                  },
+                  "source": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/v1/telemetry/batch": {
+      "post": {
+        "parameters": [],
+        "operationId": "postV1TelemetryBatch",
+        "summary": "Process telemetry batch",
+        "tags": [
+          "Fleet"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "packets"
+                ],
+                "properties": {
+                  "packets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "droneId",
+                        "timestamp",
+                        "latitude",
+                        "longitude",
+                        "altitude",
+                        "battery"
+                      ],
+                      "properties": {
+                        "droneId": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "number"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "altitude": {
+                          "type": "number"
+                        },
+                        "battery": {
+                          "type": "number"
+                        },
+                        "speed": {
+                          "type": "number"
+                        },
+                        "heading": {
+                          "type": "number"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "metadata": {
+                          "type": "object",
+                          "patternProperties": {
+                            "^(.*)$": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "windowMs": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "packets"
+                ],
+                "properties": {
+                  "packets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "droneId",
+                        "timestamp",
+                        "latitude",
+                        "longitude",
+                        "altitude",
+                        "battery"
+                      ],
+                      "properties": {
+                        "droneId": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "number"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "altitude": {
+                          "type": "number"
+                        },
+                        "battery": {
+                          "type": "number"
+                        },
+                        "speed": {
+                          "type": "number"
+                        },
+                        "heading": {
+                          "type": "number"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "metadata": {
+                          "type": "object",
+                          "patternProperties": {
+                            "^(.*)$": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "windowMs": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            "text/plain": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "packets"
+                ],
+                "properties": {
+                  "packets": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "droneId",
+                        "timestamp",
+                        "latitude",
+                        "longitude",
+                        "altitude",
+                        "battery"
+                      ],
+                      "properties": {
+                        "droneId": {
+                          "type": "string"
+                        },
+                        "timestamp": {
+                          "type": "number"
+                        },
+                        "latitude": {
+                          "type": "number"
+                        },
+                        "longitude": {
+                          "type": "number"
+                        },
+                        "altitude": {
+                          "type": "number"
+                        },
+                        "battery": {
+                          "type": "number"
+                        },
+                        "speed": {
+                          "type": "number"
+                        },
+                        "heading": {
+                          "type": "number"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "metadata": {
+                          "type": "object",
+                          "patternProperties": {
+                            "^(.*)$": {}
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "windowMs": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "operationId": "getMetrics",
+        "summary": "Prometheus metrics",
+        "tags": [
+          "Observability"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "operationId": "getEvents",
+        "summary": "Real-time SSE event stream",
+        "tags": [
+          "Observability"
+        ],
+        "responses": {
+          "200": {}
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

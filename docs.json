@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "ResQ Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#3B82F6",
+    "light": "#60A5FA",
+    "dark": "#1E40AF"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -51,18 +51,16 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "ResQ API Reference",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/infrastructure",
+              "api-reference/coordination"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "API documentation",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/introduction"
             ]
           }
         ]
