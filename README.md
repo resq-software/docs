@@ -1,68 +1,73 @@
 # ResQ Documentation Starter Kit
 
 ![Build Status](https://img.shields.io/badge/status-active-success)
-![Documentation](https://img.shields.io/badge/framework-Mintlify-blue)
+![Framework](https://img.shields.io/badge/framework-Mintlify-blue)
 
-The ResQ Documentation project provides a standardized framework for managing, versioning, and deploying technical documentation. Built on the Mintlify ecosystem, this repository supports MDX-based content, automated API documentation, and seamless AI-assisted integration.
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Architecture](#architecture)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [API Reference](#api-reference)
-- [Development](#development)
-- [Contributing](#contributing)
-- [Roadmap](#roadmap)
-- [License](#license)
+A standardized, AI-ready framework for managing and deploying technical documentation using Mintlify.
 
 ## Overview
 
-ResQ Documentation is designed to minimize the friction between writing code and documenting it. By leveraging MDX, we allow for dynamic, interactive documentation that supports custom components, code highlighting, and live previews.
+ResQ Documentation is a headless, MDX-based framework designed to minimize the friction between writing code and maintaining documentation. It integrates directly with AI coding agents and provides automated pipelines for OpenAPI-based API references.
 
 ## Features
 
-- **MDX Support**: Combine Markdown with React components for rich, interactive docs.
-- **AI-Ready**: Pre-configured for integration with Cursor, Claude Code, and Windsurf.
-- **Automated API Docs**: Generate interactive API references from OpenAPI specifications.
+- **MDX Support**: Combine Markdown with React components for rich, interactive documentation.
+- **AI-Ready**: Native configuration for integration with Cursor, Claude Code, and Windsurf via specialized skill sets.
+- **Automated API Docs**: Generate interactive API references directly from your OpenAPI specifications.
 - **Localized Preview**: Real-time rendering via the Mintlify CLI.
-- **Automated Validation**: Integrated link checking and deployment validation.
+- **Validation**: Automated broken-link checking and deployment validation.
 
 ## Architecture
 
-The system follows a headless documentation pattern, where content is authored in MDX and compiled via the Mintlify engine.
+The ResQ documentation ecosystem utilizes a headless approach where MDX source files and OpenAPI specifications serve as the "single source of truth." The Mintlify engine compiles these sources into a high-performance documentation site.
 
 ```mermaid
-graph TD
-    A[Content: MDX/JSON] --> B(Mintlify Engine)
-    B --> C{Deployment Target}
-    C --> D[Local Preview]
-    C --> E[Production CDN]
-    F[OpenAPI Spec] --> B
-    G[GitHub Webhooks] --> E
+flowchart TD
+    subgraph Source["Content Repository"]
+        A[MDX Content]
+        B[OpenAPI Specs]
+    end
+
+    subgraph Processing["Mintlify Engine"]
+        C(Parsing & Validation)
+        D(Component Injection)
+    end
+
+    subgraph Output["Deployment Flow"]
+        E{Target}
+        F[Local Preview]
+        G[Production CDN]
+    end
+
+    A --> C
+    B --> C
+    C --> D
+    D --> E
+    E -->|Dev Mode| F
+    E -->|GitHub Push| G
 ```
 
-## Quick Start
+## Installation
 
-Get your environment running in minutes:
-
-1. **Install CLI**:
+1. **Prerequisites**: Ensure you have Node.js (v19+) installed.
+2. **Install CLI**:
    ```bash
    npm i -g mint
    ```
-2. **Launch Preview**:
+
+## Quick Start
+
+1. **Launch Local Preview**:
    ```bash
    mint dev
    ```
-3. **Access**: Navigate to `http://localhost:3000` to view your documentation.
+2. **Access**: Navigate to `http://localhost:3000` in your browser.
+3. **Validate**: Run `mint broken-links` to ensure documentation integrity before committing changes.
 
 ## Usage
 
 ### Writing Content
-Pages are stored in the root directory and sub-folders as `.mdx` files. Use standard Markdown for text and include YAML frontmatter for metadata:
+Pages are maintained as `.mdx` files in the root or sub-directories. Use YAML frontmatter to define page metadata:
 
 ```md
 ---
@@ -75,7 +80,7 @@ Content goes here.
 ```
 
 ### AI Assistance
-To optimize your writing workflow, add the documentation skill to your AI coding tools:
+To integrate the documentation context into your AI coding tool:
 
 ```bash
 npx skills add https://mintlify.com/docs
@@ -83,58 +88,44 @@ npx skills add https://mintlify.com/docs
 
 ## Configuration
 
-The documentation behavior, styling, and navigation are controlled via `docs.json`.
+Control the documentation's behavior, branding, and navigation structure via the `docs.json` file in the root directory.
 
 ```json
 {
   "name": "ResQ Docs",
   "theme": "mint",
   "colors": {
-    "primary": "#3B82F6",
-    "light": "#60A5FA",
-    "dark": "#1E40AF"
+    "primary": "#3B82F6"
   }
 }
 ```
 
-- **Theme**: Configures the primary color palette and branding.
-- **Navigation**: Define the hierarchy of your documentation tabs and sidebar groups.
-- **Favicon**: Path to your organization's logo or icon.
-
 ## API Reference
 
-The documentation includes built-in support for OpenAPI specifications. 
-
-- **Structure**: API documentation is located in `api-reference/`.
-- **Automatic Generation**: Place your `openapi.json` in the spec directory; Mintlify will automatically generate endpoints, request schemas, and response samples.
-- **Endpoints**: Use the `api-reference/endpoint/` folder to manually define custom logic or edge-case documentation.
+API documentation is generated from OpenAPI specifications.
+- **Structure**: Place your `openapi.json` files in the `specs/` directory.
+- **Endpoints**: Reference these specs in your `api-reference/` files to generate auto-styled interactive endpoints.
 
 ## Development
 
-### Best Practices
-- **Linking**: Always use relative paths for internal links.
-- **Validation**: Before committing, run `mint broken-links` to ensure documentation integrity.
-- **Formatting**: Use the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting.
+- **Formatting**: We recommend the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx).
+- **Naming**: Use absolute paths for all links to optimize performance.
+- **Troubleshooting**: If the preview fails, delete the local `~/.mintlify` cache folder and restart the CLI.
 
-### Troubleshooting
-- **Port Conflicts**: If port 3000 is occupied, use `mint dev --port 3333`.
-- **Cache Issues**: If you experience rendering errors, delete the `~/.mintlify` folder and restart the CLI.
+## Deployment Strategies
+
+The system supports automated deployments through the Mintlify GitHub App:
+1. **Push**: Commit changes to your `main` branch.
+2. **Webhook**: The GitHub app triggers a build on the Mintlify CDN.
+3. **Validation**: The build pipeline automatically runs syntax and link-integrity checks.
+4. **Live**: Changes propagate to the production URL within seconds.
 
 ## Contributing
 
-We welcome contributions to improve our documentation. 
-
-1. **Fork the Repository**: Create your own version of the repo.
-2. **Branching**: Create a feature branch for your updates.
-3. **Drafting**: Use the [Development Guide](/development.mdx) to preview your changes.
-4. **Pull Request**: Submit your changes, ensuring you have followed the style guidelines (Active voice, concise sentences).
-
-## Roadmap
-
-- [ ] Add search indexing for enterprise users.
-- [ ] Implement dark mode toggle customization.
-- [ ] Expand API reference to support SDK generation.
-- [ ] Integrate automated accessibility (A11y) testing.
+1. **Fork**: Create a fork of the `resq-software/docs` repository.
+2. **Branch**: Create a feature branch for your changes.
+3. **Preview**: Verify your updates locally using `mint dev`.
+4. **Pull Request**: Submit a PR, ensuring all content follows the project's style guide (Active voice, concise sentences).
 
 ## License
 
