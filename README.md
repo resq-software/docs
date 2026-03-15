@@ -3,7 +3,7 @@
 ![Build Status](https://img.shields.io/badge/status-active-success)
 ![Framework](https://img.shields.io/badge/framework-Mintlify-blue)
 
-A standardized, AI-ready framework for managing and deploying technical documentation using Mintlify.
+A standardized, AI-ready framework for managing and deploying MDX-based technical documentation using Mintlify.
 
 ## Overview
 
@@ -19,24 +19,24 @@ ResQ Documentation is a headless, MDX-based framework designed to minimize the f
 
 ## Architecture
 
-The ResQ documentation ecosystem utilizes a headless approach where MDX source files and OpenAPI specifications serve as the "single source of truth." The Mintlify engine compiles these sources into a high-performance documentation site.
+The ResQ documentation ecosystem utilizes a headless approach where MDX source files and OpenAPI specifications serve as the single source of truth.
 
 ```mermaid
 flowchart TD
     subgraph Source["Content Repository"]
-        A[MDX Content]
-        B[OpenAPI Specs]
+        A["MDX Content"]
+        B["OpenAPI Specs"]
     end
 
     subgraph Processing["Mintlify Engine"]
-        C(Parsing & Validation)
-        D(Component Injection)
+        C["Parsing & Validation"]
+        D["Component Injection"]
     end
 
     subgraph Output["Deployment Flow"]
-        E{Target}
-        F[Local Preview]
-        G[Production CDN]
+        E{"Target"}
+        F["Local Preview"]
+        G["Production CDN"]
     end
 
     A --> C
@@ -50,24 +50,27 @@ flowchart TD
 ## Installation
 
 1. **Prerequisites**: Ensure you have Node.js (v19+) installed.
-2. **Install CLI**:
+2. **Install CLI**: Install the Mintlify tool globally via npm:
    ```bash
    npm i -g mint
    ```
 
 ## Quick Start
 
-1. **Launch Local Preview**:
+1. **Launch Local Preview**: Navigate to your project root and run:
    ```bash
    mint dev
    ```
-2. **Access**: Navigate to `http://localhost:3000` in your browser.
-3. **Validate**: Run `mint broken-links` to ensure documentation integrity before committing changes.
+2. **Access**: Open `http://localhost:3000` in your browser.
+3. **Validate**: Run the link-checker before pushing changes:
+   ```bash
+   mint broken-links
+   ```
 
 ## Usage
 
 ### Writing Content
-Pages are maintained as `.mdx` files in the root or sub-directories. Use YAML frontmatter to define page metadata:
+Pages are maintained as `.mdx` files. Use YAML frontmatter to define page metadata:
 
 ```md
 ---
@@ -108,17 +111,17 @@ API documentation is generated from OpenAPI specifications.
 
 ## Development
 
-- **Formatting**: We recommend the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx).
-- **Naming**: Use absolute paths for all links to optimize performance.
-- **Troubleshooting**: If the preview fails, delete the local `~/.mintlify` cache folder and restart the CLI.
+- **Formatting**: We recommend the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax support.
+- **Troubleshooting**: 
+    - If the preview fails, delete the local `~/.mintlify` cache folder and restart the CLI.
+    - For "sharp" module errors, ensure your Node version is v19+ and reinstall the CLI.
 
-## Deployment Strategies
+## Deployment
 
 The system supports automated deployments through the Mintlify GitHub App:
 1. **Push**: Commit changes to your `main` branch.
 2. **Webhook**: The GitHub app triggers a build on the Mintlify CDN.
-3. **Validation**: The build pipeline automatically runs syntax and link-integrity checks.
-4. **Live**: Changes propagate to the production URL within seconds.
+3. **Live**: Changes propagate to the production URL automatically upon successful validation.
 
 ## Contributing
 
@@ -126,6 +129,9 @@ The system supports automated deployments through the Mintlify GitHub App:
 2. **Branch**: Create a feature branch for your changes.
 3. **Preview**: Verify your updates locally using `mint dev`.
 4. **Pull Request**: Submit a PR, ensuring all content follows the project's style guide (Active voice, concise sentences).
+
+### Code of Conduct
+All contributors are expected to maintain a professional, respectful environment. Please report any issues to the project maintainers.
 
 ## License
 
