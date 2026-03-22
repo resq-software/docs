@@ -1,138 +1,100 @@
-# ResQ Documentation Starter Kit
+# ResQ Docs
 
-![Build Status](https://img.shields.io/badge/status-active-success)
-![Framework](https://img.shields.io/badge/framework-Mintlify-blue)
+[![Mintlify](https://img.shields.io/badge/powered%20by-Mintlify-0073E6?style=flat-square)](https://mintlify.com)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg?style=flat-square)](LICENSE)
 
-A standardized, AI-ready framework for managing and deploying MDX-based technical documentation using Mintlify.
+Official documentation for the ResQ autonomous disaster-response platform — built with Mintlify, MDX, and auto-generated API references from OpenAPI specs.
 
-## Overview
+## Contents
 
-ResQ Documentation is a headless, MDX-based framework designed to minimize the friction between writing code and maintaining documentation. It integrates directly with AI coding agents and provides automated pipelines for OpenAPI-based API references.
+| Section | Description |
+| :--- | :--- |
+| **Getting Started** | Introduction, quickstart, and local dev setup |
+| **AI Tools** | Integration guides for Cursor, Claude Code, and Windsurf |
+| **API Reference — Infrastructure** | Incidents, evidence, blockchain events, Solana delivery/airspace endpoints |
+| **API Reference — Coordination HCE** | Fleet management, mission dispatch, telemetry, WebSocket, and admin endpoints |
 
-## Features
+API references are auto-generated from OpenAPI specs in `specs/infrastructure.json` and `specs/coordination.json`.
 
-- **MDX Support**: Combine Markdown with React components for rich, interactive documentation.
-- **AI-Ready**: Native configuration for integration with Cursor, Claude Code, and Windsurf via specialized skill sets.
-- **Automated API Docs**: Generate interactive API references directly from your OpenAPI specifications.
-- **Localized Preview**: Real-time rendering via the Mintlify CLI.
-- **Validation**: Automated broken-link checking and deployment validation.
+## Local Development
 
-## Architecture
-
-The ResQ documentation ecosystem utilizes a headless approach where MDX source files and OpenAPI specifications serve as the single source of truth.
-
-```mermaid
-flowchart TD
-    subgraph Source["Content Repository"]
-        A["MDX Content"]
-        B["OpenAPI Specs"]
-    end
-
-    subgraph Processing["Mintlify Engine"]
-        C["Parsing & Validation"]
-        D["Component Injection"]
-    end
-
-    subgraph Output["Deployment Flow"]
-        E{"Target"}
-        F["Local Preview"]
-        G["Production CDN"]
-    end
-
-    A --> C
-    B --> C
-    C --> D
-    D --> E
-    E -->|Dev Mode| F
-    E -->|GitHub Push| G
-```
-
-## Installation
-
-1. **Prerequisites**: Ensure you have Node.js (v19+) installed.
-2. **Install CLI**: Install the Mintlify tool globally via npm:
-   ```bash
-   npm i -g mint
-   ```
-
-## Quick Start
-
-1. **Launch Local Preview**: Navigate to your project root and run:
-   ```bash
-   mint dev
-   ```
-2. **Access**: Open `http://localhost:3000` in your browser.
-3. **Validate**: Run the link-checker before pushing changes:
-   ```bash
-   mint broken-links
-   ```
-
-## Usage
-
-### Writing Content
-Pages are maintained as `.mdx` files. Use YAML frontmatter to define page metadata:
-
-```md
----
-title: 'Page Title'
-description: 'Brief description of page content'
----
-
-# Heading
-Content goes here.
-```
-
-### AI Assistance
-To integrate the documentation context into your AI coding tool:
+**Prerequisites:** Node.js v19+
 
 ```bash
-npx skills add https://mintlify.com/docs
+# Install the Mintlify CLI
+npm i -g mint
+
+# Clone the repo
+git clone https://github.com/resq-software/docs.git
+cd docs
+
+# Start the local preview server
+mint dev
 ```
 
-## Configuration
+Open [http://localhost:3000](http://localhost:3000). Changes to `.mdx` files hot-reload instantly.
 
-Control the documentation's behavior, branding, and navigation structure via the `docs.json` file in the root directory.
+## Writing Documentation
+
+Pages are `.mdx` files with YAML frontmatter:
+
+```mdx
+---
+title: 'Your Page Title'
+description: 'One-line description shown in search and cards'
+---
+
+Content goes here. Full MDX syntax supported — import React components, use Mintlify's built-in `<Card>`, `<Tabs>`, `<CodeGroup>`, etc.
+```
+
+**Navigation** is controlled by `docs.json`. Add a new page by creating the `.mdx` file and adding its path to the appropriate group in `navigation.tabs`:
 
 ```json
 {
-  "name": "ResQ Docs",
-  "theme": "mint",
-  "colors": {
-    "primary": "#3B82F6"
-  }
+  "group": "Getting started",
+  "pages": ["index", "quickstart", "development", "your-new-page"]
 }
 ```
 
-## API Reference
+**API reference** pages point to an OpenAPI spec:
 
-API documentation is generated from OpenAPI specifications.
-- **Structure**: Place your `openapi.json` files in the `specs/` directory.
-- **Endpoints**: Reference these specs in your `api-reference/` files to generate auto-styled interactive endpoints.
+```mdx
+---
+title: My Service API
+openapi: ../specs/my-service.json
+---
+```
 
-## Development
+Drop new OpenAPI specs in `specs/` and reference them the same way.
 
-- **Formatting**: We recommend the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax support.
-- **Troubleshooting**: 
-    - If the preview fails, delete the local `~/.mintlify` cache folder and restart the CLI.
-    - For "sharp" module errors, ensure your Node version is v19+ and reinstall the CLI.
+## Validation
+
+```bash
+# Check for broken links before pushing
+mint broken-links
+```
 
 ## Deployment
 
-The system supports automated deployments through the Mintlify GitHub App:
-1. **Push**: Commit changes to your `main` branch.
-2. **Webhook**: The GitHub app triggers a build on the Mintlify CDN.
-3. **Live**: Changes propagate to the production URL automatically upon successful validation.
+Push to `main` — the Mintlify GitHub App triggers a build and deploys to the production CDN automatically. No manual steps required.
+
+## Troubleshooting
+
+| Problem | Fix |
+| :--- | :--- |
+| Preview won't start | Delete `~/.mintlify` cache and re-run `mint dev` |
+| `sharp` module errors | Ensure Node v19+ and reinstall the CLI |
+| Broken links in CI | Run `mint broken-links` locally first |
 
 ## Contributing
 
-1. **Fork**: Create a fork of the `resq-software/docs` repository.
-2. **Branch**: Create a feature branch for your changes.
-3. **Preview**: Verify your updates locally using `mint dev`.
-4. **Pull Request**: Submit a PR, ensuring all content follows the project's style guide (Active voice, concise sentences).
+1. Fork and create a branch: `docs/your-topic`
+2. Preview changes locally: `mint dev`
+3. Check for broken links: `mint broken-links`
+4. Open a PR — describe what changed and why
 
-### Code of Conduct
-All contributors are expected to maintain a professional, respectful environment. Please report any issues to the project maintainers.
+Write in active voice. Keep sentences short. If documenting an API, verify the endpoint behavior against the actual service before publishing.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+Copyright 2026 ResQ. Licensed under the [Apache License, Version 2.0](LICENSE).
