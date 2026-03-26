@@ -8,6 +8,10 @@
     "dark": "#1E40AF"
   },
   "favicon": "/favicon.svg",
+  "openapi": [
+    "specs/infrastructure.json",
+    "specs/coordination.json"
+  ],
   "navigation": {
     "tabs": [
       {
@@ -51,16 +55,25 @@
         "tab": "API reference",
         "groups": [
           {
-            "group": "ResQ API Reference",
+            "group": "Overview",
             "pages": [
-              "api-reference/infrastructure",
-              "api-reference/coordination"
+              "api-reference/introduction"
             ]
           },
           {
-            "group": "API documentation",
+            "group": "Infrastructure API",
             "pages": [
-              "api-reference/introduction"
+              {
+                "openapi": "specs/infrastructure.json"
+              }
+            ]
+          },
+          {
+            "group": "Coordination API",
+            "pages": [
+              {
+                "openapi": "specs/coordination.json"
+              }
             ]
           }
         ]

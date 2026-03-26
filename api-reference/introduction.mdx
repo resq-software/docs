@@ -1,33 +1,50 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'ResQ API reference documentation'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+## ResQ APIs
 
-## Welcome
+ResQ exposes two core APIs for disaster response coordination:
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+<CardGroup cols={2}>
+  <Card
+    title="Infrastructure API"
+    icon="server"
+    href="/api-reference/endpoint/health_check"
+  >
+    Incident management, evidence collection, blockchain verification, AI analysis, and Solana on-chain operations.
+  </Card>
+  <Card
+    title="Coordination API"
+    icon="satellite-dish"
+    href="/api-reference/endpoint/getAdminStatus"
+  >
+    Real-time drone fleet coordination, telemetry ingestion, IPFS storage, fault injection, and mission approval (HITL).
+  </Card>
+</CardGroup>
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/resq-software/docs/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Infrastructure API
 
-## Authentication
+Built with Rust/Axum. Handles persistent data, blockchain interactions, and AI-powered analysis.
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+| Tag | Description |
+|-----|-------------|
+| **incidents** | Create, list, and retrieve disaster incidents |
+| **evidence** | Manage evidence collected by drones (IPFS-backed) |
+| **blockchain** | Record and query on-chain events, verify locations |
+| **solana** | Airspace management, delivery records, and permits |
+| **auth** | JWT-based authentication |
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+## Coordination API
+
+Built with TypeScript/Elysia. Handles real-time fleet operations and mission coordination.
+
+| Tag | Description |
+|-----|-------------|
+| **Fleet** | Telemetry batch processing |
+| **Intelligence** | Incident reporting and predictive alerts |
+| **Storage** | IPFS file uploads |
+| **Simulation** | Fault injection for testing |
+| **Admin** | Service health, profiling, mission approval (EU AI Act Art. 14 HITL) |
+| **Observability** | Prometheus metrics and SSE event streams |
