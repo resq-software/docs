@@ -8,10 +8,6 @@
     "dark": "#1E40AF"
   },
   "favicon": "/favicon.svg",
-  "openapi": [
-    "specs/infrastructure.json",
-    "specs/coordination.json"
-  ],
   "navigation": {
     "tabs": [
       {
@@ -62,19 +58,11 @@
           },
           {
             "group": "Infrastructure API",
-            "pages": [
-              {
-                "openapi": "specs/infrastructure.json"
-              }
-            ]
+            "openapi": "specs/infrastructure.json"
           },
           {
             "group": "Coordination API",
-            "pages": [
-              {
-                "openapi": "specs/coordination.json"
-              }
-            ]
+            "openapi": "specs/coordination.json"
           }
         ]
       }
