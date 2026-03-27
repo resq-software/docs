@@ -141,7 +141,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/RecordBlockchainEventRequest"
+              }
             }
           },
           "required": true
@@ -679,7 +681,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/SolanaAirspaceParams"
+              }
             }
           },
           "required": true
@@ -689,7 +693,9 @@
             "description": "Airspace initialised",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaTransactionResponse"
+                }
               }
             }
           }
@@ -719,7 +725,9 @@
             "description": "Airspace info",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaAirspaceInfo"
+                }
               }
             }
           },
@@ -739,7 +747,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/RecordDeliveryRequest"
+              }
             }
           },
           "required": true
@@ -749,7 +759,9 @@
             "description": "Delivery recorded",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaTransactionResponse"
+                }
               }
             }
           }
@@ -779,7 +791,9 @@
             "description": "Delivery record",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaDeliveryRecord"
+                }
               }
             }
           },
@@ -799,7 +813,9 @@
         "requestBody": {
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "$ref": "#/components/schemas/SolanaPermitParams"
+              }
             }
           },
           "required": true
@@ -809,7 +825,9 @@
             "description": "Permit granted",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaPermitRecord"
+                }
               }
             }
           }
@@ -848,7 +866,12 @@
             "description": "List of permits",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/SolanaPermitRecord"
+                  }
+                }
               }
             }
           }
@@ -906,7 +929,11 @@
           "description": "JSON data to upload",
           "content": {
             "application/json": {
-              "schema": {}
+              "schema": {
+                "type": "object",
+                "description": "Arbitrary JSON data to upload to IPFS",
+                "additionalProperties": true
+              }
             }
           },
           "required": true
@@ -1717,11 +1744,348 @@
               "null"
             ],
             "format": "float",
-            "description": "Confidence score (0.0–1.0) of the verification."
+            "description": "Confidence score (0.0\u20131.0) of the verification."
           },
           "is_valid": {
             "type": "boolean",
             "description": "Whether the location attestation is valid."
+          }
+        }
+      },
+      "SolanaAirspaceParams": {
+        "type": "object",
+        "required": [
+          "property_id",
+          "min_alt_m",
+          "max_alt_m",
+          "poly_lat",
+          "poly_lon",
+          "policy",
+          "fee_lamports",
+          "treasury"
+        ],
+        "properties": {
+          "property_id": {
+            "type": "string",
+            "description": "External property identifier (max 32 bytes UTF-8)"
+          },
+          "min_alt_m": {
+            "type": "integer",
+            "format": "uint32",
+            "description": "Lower altitude bound in metres AGL"
+          },
+          "max_alt_m": {
+            "type": "integer",
+            "format": "uint32",
+            "description": "Upper altitude bound in metres AGL"
+          },
+          "poly_lat": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": "Polygon latitude values"
+          },
+          "poly_lon": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            },
+            "description": "Polygon longitude values"
+          },
+          "policy": {
+            "type": "string",
+            "enum": [
+              "open",
+              "permit",
+              "deny",
+              "auction"
+            ],
+            "description": "Access policy"
+          },
+          "fee_lamports": {
+            "type": "integer",
+            "format": "uint64",
+            "description": "Per-crossing fee in lamports (0 = free)"
+          },
+          "treasury": {
+            "type": "string",
+            "description": "Base58 treasury account for crossing fees"
+          }
+        }
+      },
+      "SolanaTransactionResponse": {
+        "type": "object",
+        "required": [
+          "signature",
+          "slot",
+          "confirmation",
+          "fee_lamports"
+        ],
+        "properties": {
+          "signature": {
+            "type": "string",
+            "description": "Base58-encoded transaction signature"
+          },
+          "slot": {
+            "type": "integer",
+            "format": "uint64",
+            "description": "Slot number"
+          },
+          "confirmation": {
+            "type": "string",
+            "description": "Confirmation status"
+          },
+          "fee_lamports": {
+            "type": "integer",
+            "format": "uint64",
+            "description": "Transaction fee in lamports"
+          }
+        }
+      },
+      "SolanaAirspaceInfo": {
+        "type": "object",
+        "required": [
+          "airspace_pda",
+          "owner",
+          "property_id",
+          "min_alt_m",
+          "max_alt_m",
+          "policy",
+          "fee_lamports",
+          "treasury"
+        ],
+        "properties": {
+          "airspace_pda": {
+            "type": "string",
+            "description": "Base58 PDA of the AirspaceAccount"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Base58 owner pubkey"
+          },
+          "property_id": {
+            "type": "string",
+            "description": "External property identifier"
+          },
+          "min_alt_m": {
+            "type": "integer",
+            "format": "uint32"
+          },
+          "max_alt_m": {
+            "type": "integer",
+            "format": "uint32"
+          },
+          "policy": {
+            "type": "string"
+          },
+          "fee_lamports": {
+            "type": "integer",
+            "format": "uint64"
+          },
+          "treasury": {
+            "type": "string",
+            "description": "Base58 treasury pubkey"
+          }
+        }
+      },
+      "RecordDeliveryRequest": {
+        "type": "object",
+        "required": [
+          "drone_pda",
+          "airspace_pda",
+          "ipfs_cid",
+          "latitude",
+          "longitude",
+          "altitude_m",
+          "delivered_at"
+        ],
+        "properties": {
+          "drone_pda": {
+            "type": "string",
+            "description": "Base58 drone PDA"
+          },
+          "airspace_pda": {
+            "type": "string",
+            "description": "Base58 airspace PDA"
+          },
+          "ipfs_cid": {
+            "type": "string",
+            "description": "IPFS CID of delivery evidence"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "double"
+          },
+          "altitude_m": {
+            "type": "integer",
+            "format": "uint32"
+          },
+          "delivered_at": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unix timestamp"
+          }
+        }
+      },
+      "SolanaDeliveryRecord": {
+        "type": "object",
+        "required": [
+          "pda",
+          "data",
+          "tx"
+        ],
+        "properties": {
+          "pda": {
+            "type": "string",
+            "description": "Base58 PDA of this record"
+          },
+          "data": {
+            "type": "object",
+            "required": [
+              "drone_pda",
+              "airspace_pda",
+              "ipfs_cid",
+              "latitude",
+              "longitude",
+              "altitude_m",
+              "delivered_at"
+            ],
+            "properties": {
+              "drone_pda": {
+                "type": "string"
+              },
+              "airspace_pda": {
+                "type": "string"
+              },
+              "ipfs_cid": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number",
+                "format": "double"
+              },
+              "longitude": {
+                "type": "number",
+                "format": "double"
+              },
+              "altitude_m": {
+                "type": "integer",
+                "format": "uint32"
+              },
+              "delivered_at": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          "tx": {
+            "$ref": "#/components/schemas/SolanaTransactionResponse"
+          }
+        }
+      },
+      "SolanaPermitParams": {
+        "type": "object",
+        "required": [
+          "airspace_pda",
+          "drone_pda",
+          "expires_at"
+        ],
+        "properties": {
+          "airspace_pda": {
+            "type": "string",
+            "description": "Base58 AirspaceAccount PDA"
+          },
+          "drone_pda": {
+            "type": "string",
+            "description": "Base58 drone PDA"
+          },
+          "expires_at": {
+            "type": "integer",
+            "format": "int64",
+            "description": "Unix timestamp of expiry (0 = no expiry)"
+          }
+        }
+      },
+      "SolanaPermitRecord": {
+        "type": "object",
+        "required": [
+          "permit_pda",
+          "airspace_pda",
+          "drone_pda",
+          "granted_at",
+          "expires_at",
+          "tx"
+        ],
+        "properties": {
+          "permit_pda": {
+            "type": "string"
+          },
+          "airspace_pda": {
+            "type": "string"
+          },
+          "drone_pda": {
+            "type": "string"
+          },
+          "granted_at": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "expires_at": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tx": {
+            "$ref": "#/components/schemas/SolanaTransactionResponse"
+          }
+        }
+      },
+      "RecordBlockchainEventRequest": {
+        "type": "object",
+        "required": [
+          "event_type",
+          "timestamp"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "event_type": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "altitude": {
+                "type": "number"
+              }
+            }
+          },
+          "evidence_cid": {
+            "type": "string"
+          },
+          "drone_id": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true
           }
         }
       }
