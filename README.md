@@ -1,9 +1,10 @@
 # ResQ Docs
 
 [![Mintlify](https://img.shields.io/badge/powered%20by-Mintlify-0073E6?style=flat-square)](https://mintlify.com)
-[![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg?style=flat-square)](LICENSE)
+[![Live](https://img.shields.io/badge/docs-docs.resq.software-0ea5e9?style=flat-square)](https://docs.resq.software)
+[![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 
-Official documentation for the ResQ autonomous disaster-response platform — built with Mintlify, MDX, and auto-generated API references from OpenAPI specs.
+> Official documentation for the ResQ autonomous disaster-response platform — built with Mintlify, MDX, and auto-generated API references from OpenAPI specs.
 
 ## Contents
 
