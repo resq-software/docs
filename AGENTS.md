@@ -14,8 +14,8 @@
 
 ## Terminology
 
-<!-- Add product-specific terms and preferred usage -->
-<!-- Example: Use "workspace" not "project", "member" not "user" -->
+{/* Add product-specific terms and preferred usage */}
+{/* Example: Use "workspace" not "project", "member" not "user" */}
 
 ## Style preferences
 
