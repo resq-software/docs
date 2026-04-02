@@ -1,0 +1,102 @@
+/*
+ * Copyright 2026 ResQ Software
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* ============================================================
+   ResQ Brand Tokens — custom.css
+   Source of truth: ResQ-Brand-and-Style-Guide.pdf
+   Color space: oklch (with hex fallbacks for legacy renderers)
+   ============================================================ */
+
+/* --- Google Fonts: DM Mono (labels, buttons, badges, code) --- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+/* -------------------------------------------------------
+   Dark theme (default)
+   ------------------------------------------------------- */
+:root {
+  /* Surface hierarchy */
+  --resq-background:       oklch(16.04% 0.0152 272.20);
+  --resq-surface:          oklch(19.72% 0.0231 268.80);
+  --resq-card:             oklch(22.90% 0.0302 269.75);
+  --resq-border:           oklch(26.45% 0.0386 270.81);
+  --resq-border-hover:     oklch(33.52% 0.0487 272.42);
+
+  /* Text hierarchy */
+  --resq-foreground:       oklch(96.19% 0.0109 274.89);
+  --resq-hint:             oklch(61.50% 0.0478 269.20);
+  --resq-muted-foreground: oklch(64% 0.0535 266.82);
+  --resq-mono:             oklch(68.62% 0.0471 261.10);
+
+  /* Semantic accents */
+  --resq-primary:          oklch(58.50% 0.1877 24.72);
+  --resq-info:             oklch(64.20% 0.1560 252.61);
+  --resq-success:          oklch(73.39% 0.1538 161.68);
+  --resq-warning:          oklch(78.37% 0.1587 72.99);
+}
+
+/* -------------------------------------------------------
+   Typography: DM Mono for labels, badges, code, buttons
+   ------------------------------------------------------- */
+
+/* Code blocks and inline code */
+code,
+pre,
+kbd,
+samp,
+.code-block,
+[class*="codeblock"] {
+  font-family: 'DM Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}
+
+/* Badges and status indicators */
+[class*="badge"],
+[class*="Badge"],
+[class*="tag"],
+[class*="chip"] {
+  font-family: 'DM Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 3px;
+}
+
+/* -------------------------------------------------------
+   Spacing and radius overrides
+   ------------------------------------------------------- */
+
+/* Cards: 6px radius */
+[class*="card"],
+[class*="Card"] {
+  border-radius: 6px;
+}
+
+/* Accordions, expandables */
+[class*="accordion"],
+[class*="Accordion"] {
+  border-radius: 6px;
+}
+
+/* -------------------------------------------------------
+   Transition discipline
+   Animate only compositor-friendly properties.
+   Never use transition-all.
+   ------------------------------------------------------- */
+a,
+button,
+[role="button"] {
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
