@@ -63,8 +63,15 @@
 Canonical hooks from [`resq-software/dev`](https://github.com/resq-software/dev).
 Install:
 
-```sh
-curl -fsSL https://raw.githubusercontent.com/resq-software/dev/main/scripts/install-hooks.sh | sh
+```bash
+curl -fsSL https://raw.githubusercontent.com/resq-software/dev/main/scripts/install-hooks.sh | bash
 ```
 
-Contract: [dev/AGENTS.md#git-hooks](https://github.com/resq-software/dev/blob/main/AGENTS.md#git-hooks). Repo-specific logic goes in `.git-hooks/local-<hook>` (none needed for this repo).
+To pin to a specific revision instead of rolling `main`:
+
+```bash
+RESQ_DEV_REF=<commit-sha-or-tag> curl -fsSL \
+  https://raw.githubusercontent.com/resq-software/dev/<commit-sha-or-tag>/scripts/install-hooks.sh | bash
+```
+
+See [Git hooks contract in `resq-software/dev`](https://github.com/resq-software/dev/blob/main/AGENTS.md#git-hooks). Repo-specific logic goes in `.git-hooks/local-<hook-name>` (none needed for this repo).
