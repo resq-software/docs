@@ -57,3 +57,14 @@
 - Do not document internal admin features unless explicitly scoped
 - Do not rewrite locked brand copy from the brand guide PDF
 - Do not add or restyle logo assets without explicit scope
+
+## Git hooks
+
+Canonical hooks from [`resq-software/dev`](https://github.com/resq-software/dev).
+Install:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/resq-software/dev/main/scripts/install-hooks.sh | sh
+```
+
+Contract: [dev/AGENTS.md#git-hooks](https://github.com/resq-software/dev/blob/main/AGENTS.md#git-hooks). Repo-specific logic goes in `.git-hooks/local-<hook>` (none needed for this repo).
