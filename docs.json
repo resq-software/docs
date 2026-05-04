@@ -152,8 +152,7 @@
   "feedback": {
     "thumbsRating": true,
     "suggestEdits": {
-      "isShown": true,
-      "url": "https://github.com/resq-software/docs/edit/main/{filename}"
+      "isShown": true
     },
     "raiseIssue": {
       "isShown": true,

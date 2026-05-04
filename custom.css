@@ -338,7 +338,7 @@ html.light .resq-hero::after {
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1.125rem;
-  border-radius: 0.5rem;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 0.95rem;
   letter-spacing: 0.01em;

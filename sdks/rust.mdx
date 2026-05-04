@@ -50,7 +50,8 @@ After install, run `resq --help` to discover subcommands.
 ```toml
 # Cargo.toml
 [dependencies]
-resq-dsa = { version = "*", default-features = false }
+# Replace 0.1 with the current published version from crates.io.
+resq-dsa = { version = "0.1", default-features = false }
 ```
 
 `resq-dsa` is `no_std` by default and works in embedded contexts.
@@ -62,6 +63,7 @@ For ad-hoc Rust clients, use `reqwest` and `serde_json`:
 ```toml
 # Cargo.toml
 [dependencies]
+anyhow = "1"
 reqwest = { version = "0.12", features = ["json"] }
 serde   = { version = "1", features = ["derive"] }
 serde_json = "1"

@@ -79,9 +79,15 @@ for rotation guidance.
 ## First call
 
 ```ts
-const evidence = await fetch("https://api.resq.software/evidence", {
+const res = await fetch("https://api.resq.software/evidence", {
   headers: { Authorization: `Bearer ${token}` },
-}).then((r) => r.json());
+});
+
+if (!res.ok) {
+  throw new Error(`evidence list failed: ${res.status}`);
+}
+
+const evidence = await res.json();
 ```
 
 ## Errors
