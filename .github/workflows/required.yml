@@ -25,11 +25,6 @@ jobs:
   mintlify:
     name: mintlify (broken links)
     runs-on: ubuntu-latest
-    # Advisory until docs/onboarding-pages (#6) and chore/repo-cleanup (#7) merge.
-    # The starter `essentials/*` pages contain links into Mintlify-template paths
-    # that don't exist in this repo, and `api-reference/introduction.mdx` is
-    # rewritten in #6. Flip to blocking once those land.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -95,17 +90,16 @@ jobs:
     steps:
       - name: Verify all gates passed
         run: |
-          # mintlify and spectral are advisory (continue-on-error). They report
-          # `success` here regardless of internal failures — the workflow-run
-          # summary still surfaces their real status for reviewers.
+          # spectral remains advisory (continue-on-error) until the action ref
+          # is verified post-Dependabot SHA-pin.
           mintlify="${{ needs.mintlify.result }}"
           spectral="${{ needs.spectral.result }}"
           pwa="${{ needs.pwa-manifest.result }}"
-          echo "mintlify (advisory): $mintlify"
+          echo "mintlify:            $mintlify"
           echo "spectral (advisory): $spectral"
           echo "pwa-manifest:        $pwa"
-          if [[ "$pwa" != "success" ]]; then
-            echo "::error::pwa-manifest gate failed"
+          if [[ "$mintlify" != "success" || "$pwa" != "success" ]]; then
+            echo "::error::One or more required gates failed"
             exit 1
           fi
           echo "All required gates passed"
