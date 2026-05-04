@@ -20,7 +20,7 @@
    Color space: oklch
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap';
 
 /* -------------------------------------------------------
    Tokens — dark theme (default)
@@ -98,7 +98,7 @@ samp {
 [class*="Card"] h2,
 [class*="Card"] h3,
 [class*="Card"] h4 {
-  font-family: 'Syne', system-ui, sans-serif;
+  font-family: Syne, system-ui, sans-serif;
   font-weight: 600;
   letter-spacing: -0.005em;
 }
@@ -219,8 +219,8 @@ tr:last-child td {
   width: 6px;
   height: 6px;
   border-radius: 1px;
-  background: currentColor;
-  box-shadow: 0 0 0 3px color-mix(in oklch, currentColor 18%, transparent);
+  background: currentcolor;
+  box-shadow: 0 0 0 3px color-mix(in oklch, currentcolor 18%, transparent);
 }
 
 /* Status pill — ONLINE / OK / ALPHA chips from the brand banner. */
@@ -292,7 +292,7 @@ tr:last-child td {
 
 .resq-hero h1,
 .resq-hero h2 {
-  font-family: 'Syne', system-ui, sans-serif;
+  font-family: Syne, system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0.25rem 0 0.5rem 0;
