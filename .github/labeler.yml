@@ -1,0 +1,67 @@
+# Copyright 2026 ResQ Software
+# SPDX-License-Identifier: Apache-2.0
+#
+# Path-based PR auto-labeling rules consumed by .github/workflows/labeler.yml
+# (actions/labeler@v5 schema). Keys are label names; values are file globs.
+
+'area:api':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'api-reference/**'
+          - 'specs/**'
+
+'area:i18n':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'ar/**'
+          - 'es/**'
+          - 'hi/**'
+          - 'zh/**'
+
+'area:ci':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+'area:design':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'custom.css'
+          - 'assets/**'
+          - 'logo/**'
+          - 'favicon.svg'
+
+'area:pwa':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'manifest.webmanifest'
+          - 'pwa/**'
+
+'area:content':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.mdx'
+          - '**/*.md'
+      # Scope out paths owned by other labels so a single PR doesn't
+      # collect three labels for the same change.
+      - all-globs-to-all-files:
+          - '!api-reference/**'
+          - '!specs/**'
+          - '!ar/**'
+          - '!es/**'
+          - '!hi/**'
+          - '!zh/**'
+          - '!.github/**'
+          - '!AGENTS.md'
+          - '!CONTRIBUTING.md'
+          - '!README.md'
+          - '!LICENSE'
+
+'area:meta':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs.json'
+          - 'AGENTS.md'
+          - 'CONTRIBUTING.md'
+          - 'README.md'
+          - 'LICENSE'

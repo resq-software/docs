@@ -1,11 +1,11 @@
 # Copyright 2026 ResQ Software
 # SPDX-License-Identifier: Apache-2.0
 #
-# Minimal `required` status-check emitter — placeholder to satisfy the
-# org ruleset `default-branch-baseline` (id 15191038) while
-# language-specific reusable CI for this repo is still pending. Harden
-# this job (add `needs:` on real CI jobs) before the ruleset flips from
-# evaluate to active.
+# `required` status check — single aggregate gate referenced by the org
+# ruleset (default-branch-baseline). Real CI jobs run in parallel, and
+# the `required` job fails unless every dependency succeeds. Add new
+# blocking docs jobs to `needs:` rather than a new workflow, so the
+# protection contract stays one check.
 
 name: required
 
@@ -22,8 +22,84 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  required:
-    name: required
+  mintlify:
+    name: mintlify (broken links)
     runs-on: ubuntu-latest
     steps:
-      - run: echo "ok — placeholder until language CI lands"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install Mintlify CLI
+        run: npm install -g mint
+      - name: Check broken internal links
+        run: mint broken-links
+
+  spectral:
+    name: spectral (OpenAPI lint)
+    runs-on: ubuntu-latest
+    # Advisory: action ref hardening will be handled by Dependabot SHA-pin PRs.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Lint OpenAPI specs
+        uses: stoplightio/spectral-action@v0.8.13 # TODO: dependabot will SHA-pin
+        with:
+          file_glob: 'specs/*.json'
+
+  pwa-manifest:
+    name: pwa manifest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifest.webmanifest
+        run: |
+          set -euo pipefail
+          f=manifest.webmanifest
+          if [[ ! -f "$f" ]]; then
+            echo "::notice::$f not on this branch — skipping validation (manifest lives in feat/brand-assets PR)"
+            exit 0
+          fi
+          jq -e . "$f" > /dev/null || { echo "::error::$f is not valid JSON"; exit 1; }
+          for field in name short_name start_url display icons; do
+            if ! jq -e "has(\"$field\")" "$f" > /dev/null; then
+              echo "::error::manifest missing required field: $field"
+              exit 1
+            fi
+          done
+          mapfile -t srcs < <(jq -r '.icons[].src' "$f")
+          missing=0
+          for src in "${srcs[@]}"; do
+            path="${src#/}"
+            if [[ ! -f "$path" ]]; then
+              echo "::error::icon path not found on disk: $src"
+              missing=$((missing+1))
+            fi
+          done
+          if (( missing > 0 )); then
+            echo "::error::$missing icon(s) missing"
+            exit 1
+          fi
+          echo "manifest valid: ${#srcs[@]} icons resolved"
+
+  required:
+    name: required
+    needs: [mintlify, spectral, pwa-manifest]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify all gates passed
+        run: |
+          # spectral remains advisory (continue-on-error) until the action ref
+          # is verified post-Dependabot SHA-pin.
+          mintlify="${{ needs.mintlify.result }}"
+          spectral="${{ needs.spectral.result }}"
+          pwa="${{ needs.pwa-manifest.result }}"
+          echo "mintlify:            $mintlify"
+          echo "spectral (advisory): $spectral"
+          echo "pwa-manifest:        $pwa"
+          if [[ "$mintlify" != "success" || "$pwa" != "success" ]]; then
+            echo "::error::One or more required gates failed"
+            exit 1
+          fi
+          echo "All required gates passed"
