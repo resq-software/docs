@@ -13,7 +13,7 @@ The site is intentionally narrow:
 
 - `index.mdx` — branded landing: hero, platform APIs, SDK registry cards, ecosystem links.
 - `api-reference/introduction.mdx` — overview of the two API services.
-- `api-reference/` openapi groups — auto-generated per-operation pages from `specs/infrastructure.json` and `specs/coordination.json`.
+- `api-reference/` (OpenAPI groups) — auto-generated per-operation pages from `specs/infrastructure.json` and `specs/coordination.json`.
 
 Maintainer / contributor onboarding lives in `README.md` and `CONTRIBUTING.md` — **not** as public docs pages. Do not add Mintlify reference pages, AI-tooling guides, or "how to author docs" content here.
 

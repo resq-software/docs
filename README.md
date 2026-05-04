@@ -10,7 +10,7 @@
 
 | Section | Description |
 | :--- | :--- |
-| **Overview** | Landing page with platform summary and entry points |
+| **Start here** | Landing page, conceptual overview, quickstart, authentication, and errors |
 | **API Reference — Infrastructure** | Incidents, evidence, blockchain events, Solana delivery/airspace endpoints |
 | **API Reference — Coordination HCE** | Fleet management, mission dispatch, telemetry, WebSocket, and admin endpoints |
 
