@@ -1,0 +1,24 @@
+# Copyright 2026 ResQ Software
+# SPDX-License-Identifier: Apache-2.0
+#
+# Spectral ruleset for OpenAPI specs in specs/. Consumed by the
+# `spectral` job in .github/workflows/required.yml and by local
+# `npx @stoplight/spectral-cli lint specs/*.json` runs.
+#
+# Starts from the canonical spectral:oas ruleset and downgrades a few
+# overly noisy rules to warnings — these are about doc completeness,
+# not correctness, and shouldn't block merges while specs are evolving.
+
+extends:
+  - 'spectral:oas'
+
+rules:
+  # Doc-completeness rules — useful as warnings, but failing the build
+  # on missing summaries blocks legitimate iteration.
+  operation-description: warn
+  operation-tag-defined: warn
+  operation-tags: warn
+  info-contact: warn
+  info-license: warn
+  oas3-server-trailing-slash: warn
+  oas3-unused-component: warn

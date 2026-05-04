@@ -4,14 +4,13 @@
 [![Live](https://img.shields.io/badge/docs-docs.resq.software-0ea5e9?style=flat-square)](https://docs.resq.software)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue?style=flat-square)](LICENSE)
 
-> Official documentation for the ResQ autonomous disaster-response platform — built with Mintlify, MDX, and auto-generated API references from OpenAPI specs.
+> Official documentation for **ResQ Tactical OS** — the decentralized kinetic operating system for autonomous disaster response. Mesh-networked coordination when infrastructure fails. Built with Mintlify, MDX, and auto-generated API references from OpenAPI specs.
 
 ## Contents
 
 | Section | Description |
 | :--- | :--- |
-| **Getting Started** | Introduction, quickstart, and local dev setup |
-| **AI Tools** | Integration guides for Cursor, Claude Code, and Windsurf |
+| **Start here** | Landing page, conceptual overview, quickstart, authentication, and errors |
 | **API Reference — Infrastructure** | Incidents, evidence, blockchain events, Solana delivery/airspace endpoints |
 | **API Reference — Coordination HCE** | Fleet management, mission dispatch, telemetry, WebSocket, and admin endpoints |
 
@@ -52,8 +51,8 @@ Content goes here. Full MDX syntax supported — import React components, use Mi
 
 ```json
 {
-  "group": "Getting started",
-  "pages": ["index", "quickstart", "development", "your-new-page"]
+  "group": "Start here",
+  "pages": ["index", "your-new-page"]
 }
 ```
 
