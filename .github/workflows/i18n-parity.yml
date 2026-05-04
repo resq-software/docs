@@ -1,0 +1,80 @@
+# Copyright 2026 ResQ Software
+# SPDX-License-Identifier: Apache-2.0
+#
+# i18n parity check — informational only. Reports MDX/MD files in the
+# default-language tree that are missing from each locale (ar, es, hi,
+# zh). Does not block merges; translations lag deliberately.
+
+name: i18n parity
+
+on:
+  pull_request:
+    paths:
+      - '**/*.mdx'
+      - '**/*.md'
+      - 'ar/**'
+      - 'es/**'
+      - 'hi/**'
+      - 'zh/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  parity:
+    name: locale parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare locale trees
+        run: |
+          set -euo pipefail
+          locales=(ar es hi zh)
+          mapfile -t base < <(
+            find . -type f \( -name '*.mdx' -o -name '*.md' \) \
+              -not -path './ar/*' \
+              -not -path './es/*' \
+              -not -path './hi/*' \
+              -not -path './zh/*' \
+              -not -path './.github/*' \
+              -not -path './node_modules/*' \
+              -not -name 'README.md' \
+              -not -name 'AGENTS.md' \
+              -not -name 'CONTRIBUTING.md' \
+              | sed 's|^\./||' | sort
+          )
+          echo "base files: ${#base[@]}"
+          {
+            echo "## i18n parity report"
+            echo
+            echo "Base tree: ${#base[@]} translatable file(s)"
+            echo
+            for locale in "${locales[@]}"; do
+              if [[ ! -d "$locale" ]]; then
+                echo "- \`$locale/\` — locale directory missing"
+                continue
+              fi
+              missing=0
+              missing_list=""
+              for rel in "${base[@]}"; do
+                if [[ ! -f "$locale/$rel" ]]; then
+                  missing=$((missing+1))
+                  missing_list+="  - \`$locale/$rel\`"$'\n'
+                fi
+              done
+              total=${#base[@]}
+              translated=$((total - missing))
+              echo "- \`$locale/\` — $translated / $total translated ($missing missing)"
+              if (( missing > 0 )); then
+                echo
+                printf '%s' "$missing_list"
+              fi
+            done
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "report written to step summary"
