@@ -15,16 +15,15 @@
  */
 
 /* ============================================================
-   ResQ Brand Tokens — custom.css
+   ResQ Brand — custom.css
    Source of truth: ResQ-Brand-and-Style-Guide.pdf
-   Color space: oklch (with hex fallbacks for legacy renderers)
+   Color space: oklch
    ============================================================ */
 
-/* --- Google Fonts: DM Mono (labels, buttons, badges, code) --- */
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap';
 
 /* -------------------------------------------------------
-   Dark theme (default)
+   Tokens — dark theme (default)
    ------------------------------------------------------- */
 :root {
   /* Surface hierarchy */
@@ -45,53 +44,77 @@
   --resq-info:             oklch(64.20% 0.1560 252.61);
   --resq-success:          oklch(73.39% 0.1538 161.68);
   --resq-warning:          oklch(78.37% 0.1587 72.99);
+
+  --resq-grid-line:        rgba(255, 255, 255, 0.04);
 }
 
 /* -------------------------------------------------------
-   Typography: DM Mono for labels, badges, code, buttons
+   Tokens — light theme (opt-in via .light)
+   Per brand guide: darker info/success/warning for 3:1 contrast
+   on bright surfaces. Primary unchanged.
    ------------------------------------------------------- */
+:root.light,
+html.light {
+  --resq-background:       oklch(98.20% 0.0042 270.00);
+  --resq-surface:          oklch(96.40% 0.0061 268.00);
+  --resq-card:             oklch(94.10% 0.0078 269.00);
+  --resq-border:           oklch(89.80% 0.0102 270.50);
+  --resq-border-hover:     oklch(82.40% 0.0142 271.00);
 
-/* Code blocks and inline code */
+  --resq-foreground:       oklch(20.50% 0.0142 270.50);
+  --resq-hint:             oklch(48.20% 0.0298 269.00);
+  --resq-muted-foreground: oklch(43.10% 0.0374 268.50);
+  --resq-mono:             oklch(38.60% 0.0421 264.50);
+
+  --resq-info:             oklch(64% 0.1560 252.61);
+  --resq-success:          oklch(61.50% 0.1538 161.68);
+  --resq-warning:          oklch(64.50% 0.1587 72.99);
+
+  --resq-grid-line:        rgba(11, 13, 20, 0.05);
+}
+
+/* -------------------------------------------------------
+   Typography — DM Mono for code, badges, labels
+   ------------------------------------------------------- */
 code,
 pre,
 kbd,
-samp,
-.code-block,
-[class*="codeblock"] {
+samp {
   font-family: 'DM Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
 }
 
-/* Badges and status indicators */
 [class*="badge"],
-[class*="Badge"],
-[class*="tag"],
-[class*="chip"] {
+[class*="Badge"] {
   font-family: 'DM Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border-radius: 3px;
 }
 
-/* -------------------------------------------------------
-   Spacing and radius overrides
-   ------------------------------------------------------- */
-
-/* Cards: 6px radius */
-[class*="card"],
-[class*="Card"] {
-  border-radius: 6px;
+/* Card titles use Syne — deliberate, not generic body weight. */
+[class*="card"] h2,
+[class*="card"] h3,
+[class*="card"] h4,
+[class*="Card"] h2,
+[class*="Card"] h3,
+[class*="Card"] h4 {
+  font-family: Syne, system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.005em;
 }
 
-/* Accordions, expandables */
+/* -------------------------------------------------------
+   Radius — 6px cards/accordions (per brand guide)
+   ------------------------------------------------------- */
+[class*="card"],
+[class*="Card"],
 [class*="accordion"],
 [class*="Accordion"] {
   border-radius: 6px;
 }
 
 /* -------------------------------------------------------
-   Transition discipline
-   Animate only compositor-friendly properties.
-   Never use transition-all.
+   Transition discipline — specific properties only
    ------------------------------------------------------- */
 a,
 button,
@@ -99,4 +122,250 @@ button,
   transition-property: color, background-color, border-color, box-shadow, opacity;
   transition-duration: 150ms;
   transition-timing-function: ease;
+}
+
+/* -------------------------------------------------------
+   Inputs — surface hierarchy, not transparent default
+   ------------------------------------------------------- */
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  background-color: var(--resq-surface);
+  border: 1px solid var(--resq-border);
+  color: var(--resq-foreground);
+  border-radius: 6px;
+}
+
+input:not([type="checkbox"]):not([type="radio"])::placeholder,
+textarea::placeholder {
+  color: var(--resq-hint);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):hover,
+select:hover,
+textarea:hover {
+  border-color: var(--resq-border-hover);
+}
+
+/* -------------------------------------------------------
+   Focus — Signal Blue ring from tokens
+   ------------------------------------------------------- */
+:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--resq-background),
+    0 0 0 4px var(--resq-info);
+  border-radius: 4px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  border-color: var(--resq-info);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--resq-info) 25%, transparent);
+}
+
+/* -------------------------------------------------------
+   Tables — headers read as data labels
+   ------------------------------------------------------- */
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--resq-hint);
+  text-align: left;
+  border-bottom: 1px solid var(--resq-border);
+  padding: 0.6rem 0.75rem;
+}
+
+td {
+  border-bottom: 1px solid var(--resq-border);
+  padding: 0.65rem 0.75rem;
+  color: var(--resq-foreground);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* -------------------------------------------------------
+   Brand utilities — opt-in, used on the landing hero only.
+   ------------------------------------------------------- */
+
+/* Eyebrow label: short uppercase tag above a heading. */
+.resq-eyebrow {
+  font-family: 'DM Mono', ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--resq-info);
+  margin: 0 0 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resq-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: currentcolor;
+  box-shadow: 0 0 0 3px color-mix(in oklch, currentcolor 18%, transparent);
+}
+
+/* Status pill — ONLINE / OK / ALPHA chips from the brand banner. */
+.resq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.55rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: 3px;
+  border: 1px solid var(--resq-border);
+  background: color-mix(in oklch, var(--resq-surface) 70%, transparent);
+  color: var(--resq-mono);
+  line-height: 1;
+}
+
+.resq-pill--ok      { color: var(--resq-success); border-color: color-mix(in oklch, var(--resq-success) 30%, var(--resq-border)); }
+.resq-pill--info    { color: var(--resq-info);    border-color: color-mix(in oklch, var(--resq-info) 30%, var(--resq-border)); }
+.resq-pill--warn    { color: var(--resq-warning); border-color: color-mix(in oklch, var(--resq-warning) 30%, var(--resq-border)); }
+.resq-pill--primary { color: var(--resq-primary); border-color: color-mix(in oklch, var(--resq-primary) 30%, var(--resq-border)); }
+
+/* Hero frame: operational surface with og-backdrop + grid overlay.
+   Flat scrim (solid color, single opacity) — not a decorative gradient. */
+.resq-hero {
+  position: relative;
+  border: 1px solid var(--resq-border);
+  border-radius: 6px;
+  padding: clamp(1.5rem, 1rem + 3vw, 3rem) clamp(1.25rem, 0.75rem + 2.5vw, 2.5rem);
+  margin: 1rem 0 2rem 0;
+  overflow: hidden;
+  background-color: var(--resq-background);
+  background-image: url('/og-backdrop.png');
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  isolation: isolate;
+}
+
+.resq-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--resq-background);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.resq-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, var(--resq-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--resq-grid-line) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.resq-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.resq-hero h1,
+.resq-hero h2 {
+  font-family: Syne, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+.resq-hero p {
+  color: var(--resq-muted-foreground);
+  max-width: 56ch;
+}
+
+.resq-hero-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+:root.light .resq-hero::after,
+html.light .resq-hero::after {
+  opacity: 0.78;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .resq-hero,
+  .resq-hero::before {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* -------------------------------------------------------
+   Hero CTAs
+   ------------------------------------------------------- */
+.resq-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.resq-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  border: 1px solid var(--resq-border);
+  color: var(--resq-foreground);
+  transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+}
+
+.resq-cta:hover {
+  border-color: var(--resq-border-hover);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.resq-cta--primary {
+  background: var(--resq-primary);
+  color: var(--resq-background);
+  border-color: var(--resq-primary);
+}
+
+.resq-cta--primary:hover {
+  filter: brightness(1.05);
+  border-color: var(--resq-primary);
+  color: var(--resq-background);
+}
+
+.resq-cta--secondary {
+  background: transparent;
 }

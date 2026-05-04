@@ -1,0 +1,123 @@
+---
+title: "Conceptos"
+description: "Cómo encajan las piezas de ResQ Tactical OS: la malla, la cadena de evidencia, el flujo de misión y los scopes de operador."
+---
+
+Esta página es el mapa conceptual. Léela una vez antes de la referencia
+de API y el resto de la documentación encajará rápidamente.
+
+## La malla
+
+ResQ funciona como una **malla descentralizada**, no como una nube
+centralizada en hub-and-spoke. Drones, unidades terrestres y estaciones
+de operador forman una red de pares que sigue operando cuando la
+infraestructura upstream está caída o inalcanzable.
+
+- Los nodos comunican mediante transportes locales (radio mesh, LTE, Wi-Fi)
+  y reconcilian con la nube de forma oportunista.
+- La API de coordinación está diseñada para seguir aceptando telemetría
+  y sirviendo estado en vivo cuando sus dependencias upstream están
+  degradadas.
+- No hay un único punto de fallo. Si un coordinador cae, los nodos pares
+  continúan compartiendo telemetría y encolando trabajo.
+
+Verás esto en la API como `503 Service Unavailable` para algunas rutas
+durante caídas parciales — consulta [Errores](/es/errors) para la
+orientación de reintento.
+
+## Evidencia y la cadena
+
+Cada acción consecuencial en una misión produce **evidencia**:
+
+1. Los drones capturan tramas de sensor, vídeo y telemetría estructurada.
+2. Los archivos de evidencia se anclan en **IPFS** y se referencian por
+   su CID (identificador direccionado por contenido).
+3. Los CIDs se anclan en **Solana**, produciendo una cadena resistente
+   a manipulación.
+4. La API de infraestructura expone ambas mitades: `/evidence` para la
+   carga de IPFS, `/blockchain/*` para los anclajes en cadena.
+
+Esto hace posible la revisión post-acción y la cadena de custodia sin
+confiar en una sola parte — cualquiera con el CID y la referencia en
+cadena puede verificar los bytes.
+
+## Misiones con humano en el bucle
+
+Los flujos autónomos de ResQ están **gated por HITL**. La plataforma
+implementa la supervisión humana del
+[Artículo 14 de la Ley de IA de la UE](https://artificialintelligenceact.eu/article/14/):
+un operador autorizado debe aprobar acciones de alto riesgo antes de que
+el sistema las ejecute.
+
+La aprobación de misión se expone vía la API de coordinación:
+
+- `GET /admin/missions/pending` — acciones pendientes de aprobación
+- `POST /admin/missions/approve` — autoriza una misión pendiente
+- `POST /admin/missions/reject` — bloquea y registra el motivo
+
+La aprobación requiere el scope de operador `missions.approve`. Las
+llamadas sin él devuelven `403` — consulta [Errores](/es/errors).
+
+## Espacio aéreo y permisos
+
+Para entregas y vuelo autónomo, ResQ usa un **registro de espacio aéreo**
+en cadena sobre Solana. Los endpoints `/solana` de la API de
+infraestructura registran permisos, eventos de entrega y consultas de
+registro. El despachador rechaza planes de vuelo fuera del espacio aéreo
+permitido; este gate está delante de la aprobación de misión, no detrás.
+
+## Telemetría y eventos en vivo
+
+Dos flujos transportan datos en tiempo real:
+
+- **Ingestión**: las flotas de drones envían lotes de telemetría a
+  `POST /fleet/telemetry` en la API de coordinación. Los lotes se
+  almacenan en el borde y reintentan — la telemetría nunca cae
+  silenciosamente.
+- **Suscripción**: los clientes consumen estado en vivo vía Server-Sent
+  Events en `/events` y scrapeos de Prometheus en `/metrics` (API de
+  coordinación).
+
+## Identidad de operador y scopes
+
+Los operadores se autentican con usuario y contraseña en `POST /login`
+y reciben un JWT de corta duración (consulta
+[Autenticación](/es/authentication)). El token lleva los **scopes** del
+operador — permisos de grano fino como `missions.approve`,
+`evidence.write` o `airspace.admin`.
+
+Una solicitud que pasa la autenticación pero no tiene el scope requerido
+devuelve `403`. Muéstrasela al operador y no reintentes; requiere acción
+de un administrador.
+
+## Inyección de fallos y simulación
+
+La API de coordinación expone endpoints de `Simulation` para inyección
+de fallos, y los SDKs incluyen harnesses de simulación. La intención es
+ejercitar el comportamiento de modo degradado de la malla en pruebas
+antes de depender de él en producción. Úsalo en pruebas de integración,
+no en operaciones en vivo.
+
+## Dónde está cada cosa
+
+| Quieres… | Mira |
+|----------|------|
+| Persistir incidentes, evidencia, anclajes | API de infraestructura |
+| Enviar o leer estado de flota en vivo | API de coordinación |
+| Ver quién puede hacer qué | [Autenticación](/es/authentication) |
+| Entender fallos y reintentos | [Errores](/es/errors) |
+| Construir un cliente sin escribirlo | [SDKs](/sdks) |
+
+## Siguiente
+
+<CardGroup cols={3}>
+  <Card title="Inicio rápido" icon="rocket" href="/es/quickstart">
+    Primera llamada autenticada.
+  </Card>
+  <Card title="Autenticación" icon="key" href="/es/authentication">
+    Ciclo de vida del JWT y scopes.
+  </Card>
+  <Card title="Referencia de API" icon="code" href="/es/api-reference/introduction">
+    Todos los endpoints.
+  </Card>
+</CardGroup>

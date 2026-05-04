@@ -1,0 +1,147 @@
+---
+title: "Documentación de ResQ"
+description: "Manual de operaciones para ResQ Tactical OS — el sistema operativo cinético descentralizado para respuesta autónoma a desastres."
+mode: "wide"
+---
+
+<div className="resq-hero">
+  <p className="resq-eyebrow">// SECTOR A-7 · GRID 042.118</p>
+  <h1>Coordinación en malla cuando la infraestructura falla.</h1>
+  <p>
+    ResQ Tactical OS es el sistema operativo cinético descentralizado para
+    respuesta autónoma a desastres. Flotas de drones, telemetría en vivo,
+    evidencia anclada en cadena y un humano en el bucle. Esta documentación
+    es el manual de operaciones — cómo integrar, desplegar y operar la
+    plataforma.
+  </p>
+
+  <div className="resq-hero-status">
+    <span className="resq-pill resq-pill--ok">4 ONLINE</span>
+    <span className="resq-pill resq-pill--info">MESH OK</span>
+    <span className="resq-pill resq-pill--warn">ZONE ALPHA</span>
+    <span className="resq-pill">DRN-05 ACTIVE</span>
+  </div>
+
+  <div className="resq-cta-row">
+    <a className="resq-cta resq-cta--primary" href="/es/quickstart">
+      Empieza en 5 minutos
+    </a>
+    <a className="resq-cta resq-cta--secondary" href="/es/concepts">
+      Cómo funciona
+    </a>
+    <a className="resq-cta resq-cta--secondary" href="/es/api-reference/introduction">
+      Lee la referencia de API
+    </a>
+  </div>
+</div>
+
+## APIs de la plataforma
+
+Dos servicios, una misión. Elige la superficie que coincida con la carga.
+
+<CardGroup cols={2}>
+  <Card
+    title="API de infraestructura"
+    icon="server"
+    href="/es/api-reference/introduction"
+  >
+    Incidentes, evidencia, anclaje en blockchain, análisis con IA y
+    operaciones de Solana para reparto y espacio aéreo. Rust + Axum.
+  </Card>
+  <Card
+    title="API de coordinación"
+    icon="satellite-dish"
+    href="/es/api-reference/introduction"
+  >
+    Telemetría de flotas, despacho de misiones, almacenamiento IPFS,
+    inyección de fallos y aprobación HITL. TypeScript + Elysia.
+  </Card>
+</CardGroup>
+
+## SDKs e integraciones
+
+Construye sobre ResQ en siete ecosistemas. Cada repositorio es un workspace
+de registro que publica varios paquetes — instala solo lo que necesites.
+Todo de código abierto bajo Apache-2.0.
+
+<CardGroup cols={2}>
+  <Card title=".NET · dotnet-sdk" icon="hashtag" href="https://github.com/resq-software/dotnet-sdk">
+    Bibliotecas cliente para .NET 9 — clientes tipados, anclaje en
+    blockchain, contratos Protobuf y entornos de simulación.
+  </Card>
+  <Card title="Python · pypi" icon="python" href="https://github.com/resq-software/pypi">
+    Workspace de PyPI. `resq-mcp` (servidor FastMCP para Claude Desktop
+    y Cursor) y `resq-dsa` (estructuras de datos sin dependencias).
+  </Card>
+  <Card title="Rust · crates" icon="rust" href="https://github.com/resq-software/crates">
+    Workspace de 10 crates. CLI unificada `resq` más siete herramientas
+    TUI (`health`, `deploy`, `logs`, `perf`, `flame`, `bin`, `clean`),
+    una librería TUI compartida y `resq-dsa` (`no_std`).
+  </Card>
+  <Card title="TypeScript · npm" icon="js" href="https://github.com/resq-software/npm">
+    Scope `@resq-sw/*`. Librería de componentes UI más 7 utilidades
+    independientes — `dsa`, `http`, `logger`, `security`, `rate-limiting`,
+    `decorators`, `helpers`.
+  </Card>
+  <Card title="Solana · programs" icon="cube" href="https://github.com/resq-software/programs">
+    Programas Anchor para registro descentralizado de espacio aéreo y
+    coordinación autónoma de entregas. Sin permisos, en cadena, verificable.
+  </Card>
+  <Card title="C++ · vcpkg" icon="code" href="https://github.com/resq-software/vcpkg">
+    Registro de ports vcpkg para la plataforma de drones — DSA compartida,
+    utilidades geo, tipos de resultado.
+  </Card>
+  <Card title="Visualización 3D · viz" icon="cubes" href="https://github.com/resq-software/viz">
+    Visores web (Three.js + Cesium) y Unity para monitorización en tiempo
+    real, replay de misiones y visualizaciones embebibles.
+  </Card>
+</CardGroup>
+
+<Card title="Explora todas las herramientas" icon="rocket" href="https://get.resq.software" horizontal>
+  Bootstrap en cualquier lenguaje con `curl -sf https://get.resq.software | sh`
+  — o salta directamente a un registro arriba.
+</Card>
+
+## Qué hace ResQ
+
+<CardGroup cols={2}>
+  <Card title="Coordinar flotas" icon="drone">
+    Coordinación de flotas de drones en tiempo real sobre una malla
+    descentralizada. Sin dependencia de la nube, sin punto único de fallo.
+  </Card>
+  <Card title="Anclar evidencia" icon="link">
+    Cadena criptográfica de evidencia sobre IPFS y Solana — cada acción
+    auditable, cada transferencia demostrable.
+  </Card>
+  <Card title="Cumplir la ley" icon="user-shield">
+    Aprobación de misiones con humano en el bucle (HITL, Art. 14 de la Ley
+    de IA de la UE) y control de espacio aéreo permitido integrados en el flujo.
+  </Card>
+  <Card title="Operar degradado" icon="signal-bars">
+    Inyección de fallos, alertas predictivas y telemetría resiliente
+    en malla mantienen las operaciones cuando la infraestructura falla parcialmente.
+  </Card>
+</CardGroup>
+
+## El ecosistema ResQ
+
+<CardGroup cols={3}>
+  <Card title="Plataforma" icon="globe" href="https://resq.software">
+    Visión del producto, casos de uso y el protocolo.
+  </Card>
+  <Card title="Investigación" icon="flask" href="https://research.resq.software">
+    Documentos técnicos, notas y reportes de campo.
+  </Card>
+  <Card title="Changelog" icon="list" href="https://resq.software/changelog">
+    Lanzamientos de plataforma y actualizaciones del protocolo.
+  </Card>
+  <Card title="Blog" icon="newspaper" href="https://resq.software/blog">
+    Historias de ingeniería y operadores.
+  </Card>
+  <Card title="Estado" icon="signal-bars" href="https://status.resq.software">
+    Salud del servicio en vivo.
+  </Card>
+  <Card title="Contacto" icon="envelope" href="mailto:contact@resq.software">
+    Habla con el equipo.
+  </Card>
+</CardGroup>

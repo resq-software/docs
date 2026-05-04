@@ -1,0 +1,97 @@
+---
+title: ".NET SDK"
+description: "Use the ResQ .NET 9 client libraries — typed clients, Protobuf protocol contracts, and simulation harnesses."
+---
+
+The ResQ .NET workspace lives at
+[`resq-software/dotnet-sdk`](https://github.com/resq-software/dotnet-sdk).
+It targets .NET 9 and ships:
+
+- Typed HTTP clients for both APIs
+- Protobuf protocol contracts for telemetry and mission state
+- Blockchain-anchoring helpers
+- Simulation harnesses for integration tests
+
+<Note>
+  Package names and exact symbol surfaces are documented in the
+  [README](https://github.com/resq-software/dotnet-sdk#readme). The example
+  below uses the framework `HttpClient` so it works regardless of which
+  package you pin.
+</Note>
+
+## Requirements
+
+- .NET 9 SDK
+- A ResQ operator credential (see [Authentication](/authentication))
+
+## Install
+
+Once you've identified the package(s) you need from the
+[README](https://github.com/resq-software/dotnet-sdk#readme):
+
+```bash
+dotnet add package <package-name>
+```
+
+(Substitute the actual package name from the README — workspace publishing
+is in flux.)
+
+## Calling the API directly
+
+```csharp
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+record LoginRequest(string Username, string Password);
+record LoginResponse(
+    [property: JsonPropertyName("token")] string Token,
+    [property: JsonPropertyName("expires_at")] long ExpiresAt
+);
+
+var http = new HttpClient { BaseAddress = new Uri("https://api.resq.software") };
+
+var login = await http.PostAsJsonAsync("/login", new LoginRequest(
+    Environment.GetEnvironmentVariable("RESQ_USERNAME")!,
+    Environment.GetEnvironmentVariable("RESQ_PASSWORD")!
+));
+login.EnsureSuccessStatusCode();
+
+var session = await login.Content.ReadFromJsonAsync<LoginResponse>()
+    ?? throw new InvalidOperationException("empty login response");
+
+http.DefaultRequestHeaders.Authorization =
+    new AuthenticationHeaderValue("Bearer", session.Token);
+
+var evidence = await http.GetFromJsonAsync<JsonElement>("/evidence?limit=50");
+Console.WriteLine(evidence);
+```
+
+`ExpiresAt` is a Unix timestamp in seconds. Refresh proactively when fewer
+than 60 seconds remain. See [Authentication](/authentication).
+
+## Errors
+
+`EnsureSuccessStatusCode()` throws `HttpRequestException` on non-2xx.
+Status codes follow the table at [Errors](/errors). Wrap calls in a retry
+policy (Polly is a common choice) honoring `Retry-After` on `429` and
+exponential backoff on `5xx`.
+
+## Protocol contracts
+
+The `dotnet-sdk` workspace ships Protobuf-generated record types for
+telemetry, mission state, and HITL approval messages. Consume them when
+producing telemetry frames or interpreting fleet events — they're the
+authoritative wire format.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Full endpoint catalog.
+  </Card>
+  <Card title="Other SDKs" icon="rocket" href="/sdks">
+    TypeScript, Python, Rust, and more.
+  </Card>
+</CardGroup>
