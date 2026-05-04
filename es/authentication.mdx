@@ -18,7 +18,7 @@ cada solicitud protegida.
 
 <Steps>
   <Step title="Solicita un token">
-    `POST /login` con JSON `{ "username", "password" }`.
+    `POST /login` con un cuerpo JSON como `{"username": "...", "password": "..."}`.
 
     ```bash
     curl -X POST https://api.resq.software/login \
