@@ -1,0 +1,144 @@
+<!--
+  Copyright 2026 ResQ Systems, Inc.
+  SPDX-License-Identifier: Apache-2.0
+
+  OG backdrop — designed specifically for layering *behind* dynamic
+  text in /api/og. The left ~55% of the canvas is intentionally open
+  chrome (subtle grid + scanlines) so the dynamic title / description
+  column reads cleanly. All brand-identifying visual weight lives on
+  the right half: radar rings, hero mesh mark, drone nodes, status
+  badges. No "ResQ" wordmark here — the dynamic title owns that space.
+
+  Counterpart: og-banner.svg is the standalone, fully-branded banner
+  used as the root OG fallback and anywhere else the full lockup is
+  wanted.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Base -->
+  <rect width="1200" height="630" fill="#0d0f14"/>
+
+  <!-- Subtle grid — low opacity across whole canvas, slightly more on right -->
+  <g stroke="#222842" fill="none">
+    <g opacity="0.25">
+      <line x1="0" y1="70"  x2="1200" y2="70"/>
+      <line x1="0" y1="140" x2="1200" y2="140"/>
+      <line x1="0" y1="210" x2="1200" y2="210"/>
+      <line x1="0" y1="280" x2="1200" y2="280"/>
+      <line x1="0" y1="350" x2="1200" y2="350"/>
+      <line x1="0" y1="420" x2="1200" y2="420"/>
+      <line x1="0" y1="490" x2="1200" y2="490"/>
+      <line x1="0" y1="560" x2="1200" y2="560"/>
+    </g>
+    <g opacity="0.18">
+      <line x1="100"  y1="0" x2="100"  y2="630"/>
+      <line x1="200"  y1="0" x2="200"  y2="630"/>
+      <line x1="300"  y1="0" x2="300"  y2="630"/>
+      <line x1="400"  y1="0" x2="400"  y2="630"/>
+      <line x1="500"  y1="0" x2="500"  y2="630"/>
+    </g>
+    <g opacity="0.35">
+      <line x1="600"  y1="0" x2="600"  y2="630"/>
+      <line x1="700"  y1="0" x2="700"  y2="630"/>
+      <line x1="800"  y1="0" x2="800"  y2="630"/>
+      <line x1="900"  y1="0" x2="900"  y2="630"/>
+      <line x1="1000" y1="0" x2="1000" y2="630"/>
+      <line x1="1100" y1="0" x2="1100" y2="630"/>
+    </g>
+  </g>
+
+  <!-- Vertical seam — subtle divider where the text column ends -->
+  <line x1="670" y1="80" x2="670" y2="550" stroke="#2a3152" stroke-width="0.6" opacity="0.35" stroke-dasharray="2 6"/>
+
+  <!-- Scene-scale radar rings — centered on the right half -->
+  <g transform="translate(950, 315)" fill="none" stroke="#D5E5F7">
+    <circle r="340" stroke-width="1"   opacity="0.07"/>
+    <circle r="270" stroke-width="1.2" opacity="0.12"/>
+    <circle r="200" stroke-width="1.5" opacity="0.18"/>
+    <circle r="130" stroke-width="1"   opacity="0.08"/>
+  </g>
+
+  <!-- Mesh lines — radiate from hero mark out to drone scatter (right half only) -->
+  <g stroke="#3B8FE8" stroke-width="1" opacity="0.22" stroke-dasharray="8 10" fill="none">
+    <line x1="866"  y1="231" x2="750"  y2="90"/>
+    <line x1="1034" y1="231" x2="1140" y2="80"/>
+    <line x1="866"  y1="399" x2="740"  y2="560"/>
+    <line x1="1034" y1="399" x2="1150" y2="540"/>
+    <line x1="950"  y1="170" x2="950"  y2="40"/>
+    <line x1="950"  y1="460" x2="950"  y2="600"/>
+  </g>
+
+  <!-- Hero mesh mark — centered at (950, 315), scaled 0.52 -->
+  <g transform="translate(950, 315) scale(0.52) translate(-256, -256)">
+    <!-- Icon rings -->
+    <circle cx="256" cy="256" r="111.432" fill="none" stroke="#D5E5F7" stroke-width="6.075" stroke-opacity="0.35"/>
+    <circle cx="256" cy="256" r="164.216" fill="none" stroke="#D5E5F7" stroke-width="6.075" stroke-opacity="0.22"/>
+    <circle cx="256" cy="256" r="217"     fill="none" stroke="#D5E5F7" stroke-width="6.075" stroke-opacity="0.12"/>
+    <!-- Arms -->
+    <path d="M379.583 102.558L301.618 180.523C293.373 188.768 293.373 202.137 301.618 210.382C309.864 218.627 323.232 218.627 331.477 210.382L409.442 132.417C417.688 124.172 417.688 110.803 409.442 102.558C401.197 94.3125 387.829 94.3126 379.583 102.558Z" fill="#E24B4A"/>
+    <path d="M409.442 379.583L331.477 301.618C323.232 293.373 309.863 293.373 301.618 301.618C293.373 309.864 293.373 323.232 301.618 331.477L379.583 409.442C387.828 417.688 401.197 417.688 409.442 409.442C417.687 401.197 417.687 387.829 409.442 379.583Z" fill="#E24B4A"/>
+    <path d="M132.417 409.442L210.382 331.477C218.627 323.232 218.627 309.863 210.382 301.618C202.137 293.373 188.768 293.373 180.523 301.618L102.558 379.583C94.3123 387.828 94.3123 401.197 102.558 409.442C110.803 417.687 124.171 417.687 132.417 409.442Z" fill="#E24B4A"/>
+    <path d="M102.558 132.417L180.523 210.382C188.769 218.627 202.137 218.627 210.382 210.382C218.628 202.137 218.628 188.768 210.382 180.523L132.417 102.558C124.172 94.3123 110.803 94.3123 102.558 102.558C94.3126 110.803 94.3126 124.171 102.558 132.417Z" fill="#E24B4A"/>
+    <!-- Prop shadows -->
+    <path opacity="0.45" d="M393.683 98.411L376.265 115.829C370.768 121.326 370.768 130.238 376.265 135.735C381.762 141.232 390.674 141.232 396.171 135.735L413.589 118.317C419.086 112.82 419.086 103.908 413.589 98.411C408.092 92.9141 399.18 92.9141 393.683 98.411Z" fill="#1B3994"/>
+    <path opacity="0.45" d="M413.589 393.683L396.171 376.265C390.674 370.768 381.762 370.768 376.265 376.265C370.768 381.762 370.768 390.674 376.265 396.171L393.683 413.589C399.18 419.086 408.092 419.086 413.589 413.589C419.086 408.092 419.086 399.18 413.589 393.683Z" fill="#1B3994"/>
+    <path opacity="0.45" d="M118.317 413.589L135.735 396.171C141.231 390.674 141.231 381.762 135.735 376.265C130.238 370.768 121.325 370.768 115.829 376.265L98.4108 393.683C92.9139 399.18 92.9139 408.092 98.4108 413.589C103.908 419.086 112.82 419.086 118.317 413.589Z" fill="#1B3994"/>
+    <path opacity="0.45" d="M98.4108 118.316L115.829 135.734C121.325 141.231 130.238 141.231 135.735 135.734C141.231 130.237 141.231 121.325 135.735 115.828L118.317 98.4105C112.82 92.9136 103.908 92.9136 98.4108 98.4105C92.9139 103.907 92.9139 112.82 98.4108 118.316Z" fill="#1B3994"/>
+    <!-- Nodes -->
+    <circle cx="409.425" cy="102.575" r="48.092" fill="#408AF7"/>
+    <circle cx="409.425" cy="409.425" r="48.092" fill="#408AF7"/>
+    <circle cx="102.575" cy="409.425" r="48.092" fill="#408AF7"/>
+    <circle cx="102.575" cy="102.575" r="48.092" fill="#408AF7"/>
+    <!-- Center -->
+    <circle cx="256" cy="256" r="89.146" fill="#3B83F5"/>
+  </g>
+
+  <!-- Scatter fleet — all on right half, labels positioned so they never
+       cross the x=670 text-column boundary -->
+  <g font-family="'DM Mono', monospace" font-size="11" opacity="0.78">
+    <!-- DRN-06 top right -->
+    <circle cx="1140" cy="80" r="6"  fill="#3B8FE8" opacity="0.55"/>
+    <circle cx="1140" cy="80" r="16" fill="none" stroke="#3B8FE8" stroke-width="0.8" opacity="0.25"/>
+    <text x="1124" y="56" fill="#7a839e" text-anchor="end">DRN-06</text>
+
+    <!-- DRN-05 upper right of center -->
+    <circle cx="750" cy="90" r="6"  fill="#3B8FE8" opacity="0.55"/>
+    <circle cx="750" cy="90" r="16" fill="none" stroke="#3B8FE8" stroke-width="0.8" opacity="0.25"/>
+    <text x="770" y="88" fill="#7a839e">DRN-05 ACTIVE</text>
+
+    <!-- DRN-07 relay, lower right -->
+    <circle cx="1150" cy="540" r="5"  fill="#25C68A" opacity="0.6"/>
+    <circle cx="1150" cy="540" r="14" fill="none" stroke="#25C68A" stroke-width="0.7" opacity="0.3"/>
+    <text x="1134" y="516" fill="#7a839e" text-anchor="end">DRN-07 RELAY</text>
+
+    <!-- DRN-08, lower edge of the right column -->
+    <circle cx="740" cy="560" r="4"  fill="#F5A623" opacity="0.55"/>
+    <circle cx="740" cy="560" r="12" fill="none" stroke="#F5A623" stroke-width="0.5" opacity="0.25"/>
+
+    <!-- Beacon, top center of right half -->
+    <circle cx="950" cy="40" r="4" fill="#3B8FE8" opacity="0.4"/>
+  </g>
+
+  <!-- Status badges — bottom-right column -->
+  <g transform="translate(818, 568)" font-family="'DM Mono', monospace" font-size="11">
+    <rect x="0"   y="0" width="100" height="26" rx="4" fill="#25C68A" opacity="0.15"/>
+    <text x="50"  y="18" fill="#25C68A" text-anchor="middle" opacity="0.95">4 ONLINE</text>
+    <rect x="112" y="0" width="100" height="26" rx="4" fill="#3B8FE8" opacity="0.15"/>
+    <text x="162" y="18" fill="#3B8FE8" text-anchor="middle" opacity="0.95">MESH OK</text>
+    <rect x="224" y="0" width="110" height="26" rx="4" fill="#F5A623" opacity="0.15"/>
+    <text x="279" y="18" fill="#F5A623" text-anchor="middle" opacity="0.95">ZONE ALPHA</text>
+  </g>
+
+  <!-- Tactical micro-labels on the right edge — support the "sit-rep" feel
+       without competing with dynamic content -->
+  <g font-family="'DM Mono', monospace" font-size="10" fill="#525a78" opacity="0.55">
+    <text x="1184" y="320" text-anchor="end">SECTOR // A-7</text>
+    <text x="1184" y="340" text-anchor="end">GRID 042.118</text>
+  </g>
+
+  <!-- URL sigil — lives below the overlay's date caption position so it
+       peeks out under the gradient without colliding with dynamic text -->
+  <g opacity="0.35">
+    <rect x="54" y="594" width="3" height="12" fill="#E24B4A"/>
+    <text x="64" y="604" fill="#828ba8" font-family="'DM Mono', monospace" font-size="10" letter-spacing="2">RESQ.SOFTWARE</text>
+  </g>
+</svg>
