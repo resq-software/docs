@@ -1,0 +1,135 @@
+---
+title: "وثائق ResQ"
+description: "دليل العمليات لـ ResQ Tactical OS — نظام التشغيل الحركي اللامركزي للاستجابة المستقلة للكوارث."
+mode: "wide"
+---
+
+<div className="resq-hero">
+  <p className="resq-eyebrow">// SECTOR A-7 · GRID 042.118</p>
+  <h1>تنسيق شبكي عند فشل البنية التحتية.</h1>
+  <p>
+    ResQ Tactical OS هو نظام التشغيل الحركي اللامركزي للاستجابة المستقلة
+    للكوارث. أساطيل طائرات بدون طيار، قياس عن بُعد مباشر، أدلة موثقة على
+    البلوكشين، وإنسان في الحلقة. هذه الوثائق هي دليل العمليات — كيفية
+    التكامل مع المنصة ونشرها وتشغيلها.
+  </p>
+
+  <div className="resq-hero-status">
+    <span className="resq-pill resq-pill--ok">4 ONLINE</span>
+    <span className="resq-pill resq-pill--info">MESH OK</span>
+    <span className="resq-pill resq-pill--warn">ZONE ALPHA</span>
+    <span className="resq-pill">DRN-05 ACTIVE</span>
+  </div>
+</div>
+
+## واجهات برمجة المنصة
+
+خدمتان، مهمة واحدة. اختر الواجهة المناسبة لعبء عملك.
+
+<CardGroup cols={2}>
+  <Card
+    title="Infrastructure API"
+    icon="server"
+    href="/ar/api-reference/introduction"
+  >
+    الحوادث والأدلة وتوثيق البلوكشين وتحليل الذكاء الاصطناعي
+    وعمليات Solana للتسليم والمجال الجوي. Rust + Axum.
+  </Card>
+  <Card
+    title="Coordination API"
+    icon="satellite-dish"
+    href="/ar/api-reference/introduction"
+  >
+    قياس الأسطول عن بُعد، إرسال المهام، تخزين IPFS، حقن الأخطاء،
+    وموافقات HITL. TypeScript + Elysia.
+  </Card>
+</CardGroup>
+
+## SDKs والتكاملات
+
+ابنِ على ResQ عبر سبع منظومات لغوية. كل مستودع هو ورشة تسجيل تنشر
+عدة حزم — ثبّت ما تحتاج إليه فقط. كل شيء مفتوح المصدر تحت ترخيص
+Apache-2.0.
+
+<CardGroup cols={2}>
+  <Card title=".NET · dotnet-sdk" icon="hashtag" href="https://github.com/resq-software/dotnet-sdk">
+    مكتبات عميل لـ .NET 9 — عملاء بأنواع محددة، توثيق على البلوكشين،
+    عقود Protobuf، وبيئات محاكاة.
+  </Card>
+  <Card title="Python · pypi" icon="python" href="https://github.com/resq-software/pypi">
+    ورشة عمل PyPI. `resq-mcp` (خادم FastMCP لـ Claude Desktop وCursor)
+    و `resq-dsa` (هياكل بيانات بدون تبعيات).
+  </Card>
+  <Card title="Rust · crates" icon="rust" href="https://github.com/resq-software/crates">
+    ورشة عمل من 10 crates. واجهة `resq` CLI الموحدة، بالإضافة إلى
+    سبع أدوات TUI (`health`، `deploy`، `logs`، `perf`، `flame`،
+    `bin`، `clean`)، ومكتبة TUI مشتركة و `resq-dsa` (`no_std`).
+  </Card>
+  <Card title="TypeScript · npm" icon="js" href="https://github.com/resq-software/npm">
+    نطاق `@resq-sw/*`. مكتبة مكونات واجهة المستخدم بالإضافة إلى 7
+    أدوات مستقلة — `dsa`، `http`، `logger`، `security`،
+    `rate-limiting`، `decorators`، `helpers`.
+  </Card>
+  <Card title="Solana · programs" icon="cube" href="https://github.com/resq-software/programs">
+    برامج Anchor لتسجيل المجال الجوي اللامركزي وتنسيق التسليم
+    المستقل. بدون أذونات، على السلسلة، قابلة للتحقق.
+  </Card>
+  <Card title="C++ · vcpkg" icon="code" href="https://github.com/resq-software/vcpkg">
+    سجل منافذ vcpkg لمنصة الطائرات بدون طيار — DSA مشتركة،
+    أدوات جغرافية، أنواع نتائج.
+  </Card>
+  <Card title="3D viz · viz" icon="cubes" href="https://github.com/resq-software/viz">
+    عارضات الويب (Three.js + Cesium) و Unity للمراقبة الحية للأسراب،
+    إعادة تشغيل المهام، والتصورات القابلة للتضمين.
+  </Card>
+</CardGroup>
+
+<Card title="استكشف جميع أدوات المطورين" icon="rocket" href="https://get.resq.software" horizontal>
+  ابدأ بأي لغة عبر `curl -sf https://get.resq.software | sh` —
+  أو انتقل مباشرة إلى أحد السجلات أعلاه.
+</Card>
+
+## ماذا يفعل ResQ
+
+<CardGroup cols={2}>
+  <Card title="تنسيق الأساطيل" icon="drone">
+    تنسيق أساطيل الطائرات بدون طيار في الوقت الفعلي عبر شبكة
+    لامركزية. لا اعتماد على السحابة، ولا نقطة فشل واحدة.
+  </Card>
+  <Card title="توثيق الأدلة" icon="link">
+    سلسلة أدلة مشفرة على IPFS و Solana — كل إجراء قابل للتدقيق،
+    وكل تسليم قابل للإثبات.
+  </Card>
+  <Card title="الالتزام القانوني" icon="user-shield">
+    موافقة المهام بإنسان في الحلقة (HITL، المادة 14 من قانون
+    الذكاء الاصطناعي للاتحاد الأوروبي) وضوابط المجال الجوي
+    المسموح به مدمجة في تدفق الإرسال.
+  </Card>
+  <Card title="تشغيل في وضع متدهور" icon="signal-bars">
+    حقن الأخطاء، التنبيهات التنبؤية، وقياس عن بُعد مرن شبكيًا
+    تبقي العمليات مستمرة عند فشل جزئي للبنية التحتية.
+  </Card>
+</CardGroup>
+
+## منظومة ResQ
+
+<CardGroup cols={3}>
+  <Card title="المنصة" icon="globe" href="https://resq.software">
+    نظرة عامة على المنتج، حالات الاستخدام، والبروتوكول.
+  </Card>
+  <Card title="الأبحاث" icon="flask" href="https://research.resq.software">
+    أوراق عمل، ملاحظات تقنية، وتقارير ميدانية.
+  </Card>
+  <Card title="Changelog" icon="list" href="https://resq.software/changelog">
+    إصدارات المنصة وتحديثات البروتوكول.
+  </Card>
+  <Card title="المدونة" icon="newspaper" href="https://resq.software/blog">
+    قصص الهندسة والمشغّلين.
+  </Card>
+  <Card title="الحالة" icon="signal-bars" href="https://status.resq.software">
+    صحة الخدمة المباشرة.
+  </Card>
+  <Card title="تواصل" icon="envelope" href="mailto:contact@resq.software">
+    تواصل مع الفريق.
+  </Card>
+</CardGroup>

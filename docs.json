@@ -125,6 +125,111 @@
             ]
           }
         ]
+      },
+      {
+        "language": "ar",
+        "tabs": [
+          {
+            "tab": "نظرة عامة",
+            "groups": [
+              {
+                "group": "ابدأ من هنا",
+                "pages": [
+                  "ar/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "مرجع API",
+            "groups": [
+              {
+                "group": "نظرة عامة",
+                "pages": [
+                  "ar/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "واجهة برمجة البنية التحتية",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "واجهة برمجة التنسيق",
+                "openapi": "specs/coordination.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "hi",
+        "tabs": [
+          {
+            "tab": "अवलोकन",
+            "groups": [
+              {
+                "group": "यहाँ शुरू करें",
+                "pages": [
+                  "hi/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API संदर्भ",
+            "groups": [
+              {
+                "group": "अवलोकन",
+                "pages": [
+                  "hi/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "इन्फ्रास्ट्रक्चर API",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "कोऑर्डिनेशन API",
+                "openapi": "specs/coordination.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "zh",
+        "tabs": [
+          {
+            "tab": "概述",
+            "groups": [
+              {
+                "group": "从这里开始",
+                "pages": [
+                  "zh/index"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API 参考",
+            "groups": [
+              {
+                "group": "概述",
+                "pages": [
+                  "zh/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "基础设施 API",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "协调 API",
+                "openapi": "specs/coordination.json"
+              }
+            ]
+          }
+        ]
       }
     ],
     "global": {

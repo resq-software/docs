@@ -1,0 +1,134 @@
+---
+title: "ResQ दस्तावेज़"
+description: "ResQ Tactical OS के लिए संचालन मैनुअल — स्वायत्त आपदा प्रतिक्रिया के लिए विकेंद्रीकृत गतिज ऑपरेटिंग सिस्टम।"
+mode: "wide"
+---
+
+<div className="resq-hero">
+  <p className="resq-eyebrow">// SECTOR A-7 · GRID 042.118</p>
+  <h1>जब बुनियादी ढांचा विफल हो, तब मेश-नेटवर्क समन्वय।</h1>
+  <p>
+    ResQ Tactical OS स्वायत्त आपदा प्रतिक्रिया के लिए विकेंद्रीकृत गतिज
+    ऑपरेटिंग सिस्टम है। ड्रोन बेड़े, लाइव टेलीमेट्री, ऑन-चेन साक्ष्य, और
+    लूप में मानव। यह दस्तावेज़ संचालन मैनुअल है — प्लेटफ़ॉर्म को कैसे
+    एकीकृत, तैनात और संचालित करें।
+  </p>
+
+  <div className="resq-hero-status">
+    <span className="resq-pill resq-pill--ok">4 ONLINE</span>
+    <span className="resq-pill resq-pill--info">MESH OK</span>
+    <span className="resq-pill resq-pill--warn">ZONE ALPHA</span>
+    <span className="resq-pill">DRN-05 ACTIVE</span>
+  </div>
+</div>
+
+## प्लेटफ़ॉर्म APIs
+
+दो सेवाएं, एक मिशन। अपने काम के अनुसार सतह चुनें।
+
+<CardGroup cols={2}>
+  <Card
+    title="Infrastructure API"
+    icon="server"
+    href="/hi/api-reference/introduction"
+  >
+    घटनाएँ, साक्ष्य, ब्लॉकचेन एंकरिंग, AI विश्लेषण, और Solana डिलीवरी
+    व एयरस्पेस संचालन। Rust + Axum।
+  </Card>
+  <Card
+    title="Coordination API"
+    icon="satellite-dish"
+    href="/hi/api-reference/introduction"
+  >
+    फ्लीट टेलीमेट्री, मिशन डिस्पैच, IPFS स्टोरेज, फ़ॉल्ट इंजेक्शन,
+    और HITL अनुमोदन प्रवाह। TypeScript + Elysia।
+  </Card>
+</CardGroup>
+
+## SDKs और एकीकरण
+
+सात भाषा-इकोसिस्टम में ResQ पर निर्माण करें। प्रत्येक रिपॉज़िटरी एक
+रजिस्ट्री वर्कस्पेस है जो कई पैकेज प्रकाशित करता है — केवल जो आपको
+चाहिए वह इंस्टॉल करें। सब कुछ Apache-2.0 के तहत ओपन सोर्स है।
+
+<CardGroup cols={2}>
+  <Card title=".NET · dotnet-sdk" icon="hashtag" href="https://github.com/resq-software/dotnet-sdk">
+    .NET 9 क्लाइंट लाइब्रेरीज़ — टाइप्ड क्लाइंट, ब्लॉकचेन एंकरिंग,
+    Protobuf कॉन्ट्रैक्ट, और सिमुलेशन हार्नेस।
+  </Card>
+  <Card title="Python · pypi" icon="python" href="https://github.com/resq-software/pypi">
+    PyPI वर्कस्पेस। `resq-mcp` (Claude Desktop व Cursor के लिए FastMCP
+    सर्वर) और `resq-dsa` (शून्य-निर्भरता डेटा संरचनाएँ)।
+  </Card>
+  <Card title="Rust · crates" icon="rust" href="https://github.com/resq-software/crates">
+    10-क्रेट वर्कस्पेस। एकीकृत `resq` CLI और सात TUI टूल्स (`health`,
+    `deploy`, `logs`, `perf`, `flame`, `bin`, `clean`), साझा TUI लाइब्रेरी
+    और `resq-dsa` (`no_std`)।
+  </Card>
+  <Card title="TypeScript · npm" icon="js" href="https://github.com/resq-software/npm">
+    `@resq-sw/*` स्कोप। UI कंपोनेंट लाइब्रेरी और 7 स्टैंडअलोन यूटिलिटीज़ —
+    `dsa`, `http`, `logger`, `security`, `rate-limiting`, `decorators`,
+    `helpers`।
+  </Card>
+  <Card title="Solana · programs" icon="cube" href="https://github.com/resq-software/programs">
+    विकेंद्रीकृत एयरस्पेस रजिस्ट्री और स्वायत्त डिलीवरी समन्वय के लिए
+    Anchor प्रोग्राम। बिना अनुमति, ऑन-चेन, सत्यापनीय।
+  </Card>
+  <Card title="C++ · vcpkg" icon="code" href="https://github.com/resq-software/vcpkg">
+    ड्रोन प्लेटफ़ॉर्म के लिए vcpkg पोर्ट रजिस्ट्री — साझा DSA, जियो
+    यूटिलिटीज़, रिज़ल्ट टाइप्स।
+  </Card>
+  <Card title="3D Visualization · viz" icon="cubes" href="https://github.com/resq-software/viz">
+    रियल-टाइम स्वार्म मॉनिटरिंग, मिशन रीप्ले और एम्बेड-योग्य
+    विज़ुअलाइज़ेशन के लिए वेब (Three.js + Cesium) और Unity व्यूअर्स।
+  </Card>
+</CardGroup>
+
+<Card title="सभी डेवलपर टूल्स देखें" icon="rocket" href="https://get.resq.software" horizontal>
+  किसी भी भाषा में बूटस्ट्रैप करें — `curl -sf https://get.resq.software | sh` —
+  या ऊपर सीधे एक रजिस्ट्री पर जाएं।
+</Card>
+
+## ResQ क्या करता है
+
+<CardGroup cols={2}>
+  <Card title="फ्लीट का समन्वय" icon="drone">
+    एक विकेंद्रीकृत मेश पर रियल-टाइम ड्रोन फ्लीट समन्वय। कोई क्लाउड
+    निर्भरता नहीं, कोई एकल विफलता बिंदु नहीं।
+  </Card>
+  <Card title="साक्ष्य एंकरिंग" icon="link">
+    IPFS और Solana पर क्रिप्टोग्राफ़िक साक्ष्य श्रृंखला — हर क्रिया
+    ऑडिट योग्य, हर हैंड-ऑफ़ प्रमाणित।
+  </Card>
+  <Card title="विधिक अनुपालन" icon="user-shield">
+    मानव-इन-द-लूप मिशन अनुमोदन (EU AI Act Art. 14 HITL) और अनुमत
+    एयरस्पेस गेटिंग डिस्पैच फ़्लो में निर्मित।
+  </Card>
+  <Card title="क्षति-सहित संचालन" icon="signal-bars">
+    फ़ॉल्ट इंजेक्शन, भविष्यसूचक अलर्ट्स और मेश-लचीली टेलीमेट्री
+    तब भी संचालन जारी रखते हैं जब बुनियादी ढांचा आंशिक रूप से डाउन हो।
+  </Card>
+</CardGroup>
+
+## ResQ इकोसिस्टम
+
+<CardGroup cols={3}>
+  <Card title="प्लेटफ़ॉर्म" icon="globe" href="https://resq.software">
+    उत्पाद अवलोकन, उपयोग के मामले और प्रोटोकॉल।
+  </Card>
+  <Card title="अनुसंधान" icon="flask" href="https://research.resq.software">
+    वर्किंग पेपर्स, तकनीकी नोट्स और फ़ील्ड रिपोर्ट्स।
+  </Card>
+  <Card title="Changelog" icon="list" href="https://resq.software/changelog">
+    प्लेटफ़ॉर्म रिलीज़ और प्रोटोकॉल अपडेट्स।
+  </Card>
+  <Card title="ब्लॉग" icon="newspaper" href="https://resq.software/blog">
+    इंजीनियरिंग और ऑपरेटर कहानियाँ।
+  </Card>
+  <Card title="स्थिति" icon="signal-bars" href="https://status.resq.software">
+    लाइव सेवा स्वास्थ्य।
+  </Card>
+  <Card title="संपर्क" icon="envelope" href="mailto:contact@resq.software">
+    टीम से बात करें।
+  </Card>
+</CardGroup>
