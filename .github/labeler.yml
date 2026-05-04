@@ -42,6 +42,20 @@
       - any-glob-to-any-file:
           - '**/*.mdx'
           - '**/*.md'
+      # Scope out paths owned by other labels so a single PR doesn't
+      # collect three labels for the same change.
+      - all-globs-to-all-files:
+          - '!api-reference/**'
+          - '!specs/**'
+          - '!ar/**'
+          - '!es/**'
+          - '!hi/**'
+          - '!zh/**'
+          - '!.github/**'
+          - '!AGENTS.md'
+          - '!CONTRIBUTING.md'
+          - '!README.md'
+          - '!LICENSE'
 
 'area:meta':
   - changed-files:
