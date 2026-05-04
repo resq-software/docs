@@ -1,44 +1,120 @@
 ---
 title: 'Introduction'
-description: 'ResQ API reference documentation'
+description: 'ResQ exposes two HTTPS APIs: Infrastructure (Rust + Axum) and Coordination (TypeScript + Elysia). This page covers what each one is for, base URLs, authentication, and the conventions both share.'
 ---
-
-## ResQ APIs
-
-ResQ exposes two core APIs for disaster response coordination:
 
 <CardGroup cols={2}>
   <Card
     title="Infrastructure API"
     icon="server"
-    href="/api-reference/endpoint/health_check"
+    href="#infrastructure-api"
   >
-    Incident management, evidence collection, blockchain verification, AI analysis, and Solana on-chain operations.
+    Persistent state. Incidents, evidence (IPFS), blockchain anchoring,
+    AI analysis, and Solana airspace and delivery operations.
   </Card>
   <Card
     title="Coordination API"
     icon="satellite-dish"
-    href="/api-reference/endpoint/getAdminStatus"
+    href="#coordination-api"
   >
-    Real-time drone fleet coordination, telemetry ingestion, IPFS storage, fault injection, and mission approval (HITL).
+    Real-time fleet ops. Telemetry batches, predictive alerts, IPFS uploads,
+    fault injection, HITL mission approval, and SSE event streams.
   </Card>
 </CardGroup>
 
+## Base URLs
+
+| API | Base URL |
+|-----|----------|
+| Infrastructure | `https://api.resq.software` |
+| Coordination | `https://coordination.resq.software` |
+
+Self-hosted deployments substitute their own hostnames; request and response
+shapes are identical.
+
+## Authentication
+
+Both APIs use bearer JWTs.
+
+```bash
+# 1. Exchange credentials for a token
+curl -X POST https://api.resq.software/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"OPERATOR","password":"REDACTED"}'
+
+# 2. Send the token on every protected request
+curl https://api.resq.software/evidence \
+  -H "Authorization: Bearer $RESQ_TOKEN"
+```
+
+See [Authentication](/authentication) for the token lifecycle, scope handling,
+and rotation guidance.
+
+## Conventions
+
+### Content type
+
+All requests and responses use `application/json` unless an endpoint explicitly
+documents a different media type (for example, multipart uploads on
+`POST /storage`).
+
+### Time
+
+Timestamps are ISO-8601 UTC strings (`2026-05-04T06:01:27Z`) on resource
+payloads. Token expiry on `/login` is the exception — it is a Unix timestamp
+in seconds for ease of arithmetic.
+
+### IDs
+
+Resource IDs are opaque strings. Do not parse them; treat them as identifiers
+only. IPFS evidence is referenced by its CID (content identifier), which is
+content-addressed and stable.
+
+### Pagination
+
+List endpoints accept `limit` (default 50, max 200) and `cursor` query
+parameters. The response carries a `next_cursor` field when more pages are
+available.
+
+```http
+GET /evidence?limit=50&cursor=eyJpZCI6Ii4uLiJ9
+```
+
+### Idempotency
+
+Mutating endpoints accept an `Idempotency-Key` header. ResQ caches the
+response for 24 hours so retries return the original result rather than
+duplicating the side effect.
+
+### Request IDs
+
+Every response carries an `X-Request-Id` header. Include it in any support or
+incident report so we can correlate logs.
+
+### Errors
+
+Failures use standard HTTP status codes with a small JSON envelope. See
+[Errors](/errors) for the full status-code table, retry guidance, and a
+backoff sketch.
+
 ## Infrastructure API
 
-Built with Rust/Axum. Handles persistent data, blockchain interactions, and AI-powered analysis.
+Built with Rust and Axum. Persistent state, blockchain interactions, and
+AI-assisted analysis. Base URL: `https://api.resq.software`.
 
 | Tag | Description |
 |-----|-------------|
 | **incidents** | Create, list, and retrieve disaster incidents |
-| **evidence** | Manage evidence collected by drones (IPFS-backed) |
-| **blockchain** | Record and query on-chain events, verify locations |
-| **solana** | Airspace management, delivery records, and permits |
+| **evidence** | Manage drone-collected evidence backed by IPFS |
+| **blockchain** | Record on-chain events; verify locations |
+| **solana** | Airspace registry, delivery records, and permits |
 | **auth** | JWT-based authentication |
 
 ## Coordination API
 
-Built with TypeScript/Elysia. Handles real-time fleet operations and mission coordination.
+Built with TypeScript and Elysia. Real-time fleet ops; designed to keep
+operating when upstream infrastructure is degraded. Base URL:
+`https://coordination.resq.software`.
 
 | Tag | Description |
 |-----|-------------|
@@ -48,3 +124,22 @@ Built with TypeScript/Elysia. Handles real-time fleet operations and mission coo
 | **Simulation** | Fault injection for testing |
 | **Admin** | Service health, profiling, mission approval (EU AI Act Art. 14 HITL) |
 | **Observability** | Prometheus metrics and SSE event streams |
+
+## SDKs
+
+Skip writing a client — install one of the official SDKs.
+
+<CardGroup cols={2}>
+  <Card title="TypeScript" icon="js" href="https://github.com/resq-software/npm">
+    `@resq-sw/http`, `@resq-sw/security`, UI components.
+  </Card>
+  <Card title="Python" icon="python" href="https://github.com/resq-software/pypi">
+    `resq-mcp` (FastMCP server) and `resq-dsa`.
+  </Card>
+  <Card title="Rust" icon="rust" href="https://github.com/resq-software/crates">
+    Unified `resq` CLI plus seven TUI tools.
+  </Card>
+  <Card title=".NET" icon="hashtag" href="https://github.com/resq-software/dotnet-sdk">
+    Typed clients, Protobuf contracts, sim harnesses.
+  </Card>
+</CardGroup>

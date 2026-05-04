@@ -1,0 +1,126 @@
+---
+title: "Errors"
+description: "Error envelope, status codes, and retry guidance for the ResQ APIs."
+---
+
+Both ResQ APIs use standard HTTP status codes and return a small JSON envelope
+on failure. Treat the status code as authoritative; treat the body as
+diagnostic detail meant for logs and operator surfaces — not for control flow.
+
+## Envelope
+
+The Infrastructure API returns:
+
+```json
+{ "error": "Invalid credentials" }
+```
+
+The Coordination API returns either the same shape or a richer envelope on
+endpoints that report multiple failures:
+
+```json
+{
+  "error": "validation_failed",
+  "message": "field 'mission_id' is required",
+  "details": [
+    { "path": "mission_id", "rule": "required" }
+  ]
+}
+```
+
+<Note>
+  Always branch on the HTTP status code. Field names inside the body may
+  evolve; status codes are stable.
+</Note>
+
+## Status codes
+
+| Status | Name | Meaning |
+|--------|------|---------|
+| `200` | OK | Success. |
+| `201` | Created | A new resource was created (e.g. evidence upload). |
+| `202` | Accepted | Request queued — usually telemetry or async work. |
+| `204` | No Content | Success with no body. |
+| `400` | Bad Request | Malformed JSON or invalid parameters. |
+| `401` | Unauthorized | Missing, expired, or invalid token. |
+| `403` | Forbidden | Token lacks the scope required for this resource. |
+| `404` | Not Found | Resource does not exist or is not visible to your operator. |
+| `409` | Conflict | Resource state prevents the operation (e.g. mission already approved). |
+| `422` | Unprocessable Entity | Validation failed on a well-formed request. |
+| `429` | Too Many Requests | Rate limit exceeded. Honor `Retry-After`. |
+| `500` | Internal Server Error | Unexpected server fault. Safe to retry. |
+| `503` | Service Unavailable | Upstream dependency degraded. Safe to retry with backoff. |
+
+## What to retry
+
+| Class | Retry? | Strategy |
+|-------|--------|----------|
+| `4xx` (except `408`, `409`, `429`) | No | Fix the request. |
+| `408 Request Timeout` | Yes | Single retry. |
+| `409 Conflict` | Sometimes | Re-read state, then decide. |
+| `429 Too Many Requests` | Yes | Honor `Retry-After`, then exponential backoff with jitter. |
+| `5xx` | Yes | Exponential backoff with jitter, capped at ~30 s. |
+
+## Backoff sketch
+
+```ts
+async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
+  let attempt = 0;
+  while (true) {
+    try {
+      return await fn();
+    } catch (err: any) {
+      const status = err?.status ?? 0;
+      const retryable = status === 429 || status >= 500;
+      if (!retryable || attempt >= max) throw err;
+      const base = 250 * 2 ** attempt;
+      const jitter = Math.random() * base;
+      await new Promise((r) => setTimeout(r, base + jitter));
+      attempt++;
+    }
+  }
+}
+```
+
+## Common errors
+
+### `401 Unauthorized`
+
+```json
+{ "error": "Token expired" }
+```
+
+Re-run the login flow described in [Authentication](/authentication) and
+retry the request once.
+
+### `403 Forbidden`
+
+```json
+{ "error": "Insufficient scope: missions.approve" }
+```
+
+The operator is authenticated but does not have the required scope. Surface
+this to the user; do not retry. Mission-approval flows in particular require
+HITL-authorized operators (EU AI Act Art. 14).
+
+### `429 Too Many Requests`
+
+The response includes a `Retry-After` header with seconds to wait. Pause for
+at least that long before retrying.
+
+### `503 Service Unavailable`
+
+The mesh or an upstream dependency is degraded. The Coordination API is
+designed to keep operating in this state — telemetry ingestion will buffer
+locally on the edge and retry. Idempotent client requests should retry with
+backoff.
+
+## Reporting an error
+
+If you hit a reproducible failure that does not match this reference, open an
+issue at [github.com/resq-software](https://github.com/resq-software) with:
+
+- HTTP method, path, and status code
+- Request ID (`X-Request-Id` response header) if present
+- A redacted copy of the request body
+- The full response body

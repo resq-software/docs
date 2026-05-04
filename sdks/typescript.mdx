@@ -1,0 +1,113 @@
+---
+title: "TypeScript SDK"
+description: "Install @resq-sw packages and call the ResQ APIs from Node.js, the browser, or Bun."
+---
+
+The ResQ TypeScript SDK lives in the
+[`resq-software/npm`](https://github.com/resq-software/npm) workspace. It
+publishes a UI component library plus seven standalone utility packages
+under the `@resq-sw/*` scope. The packages are Effect-based, with zero or
+peer dependencies where it matters.
+
+| Package | Purpose |
+|---------|---------|
+| `@resq-sw/http` | HTTP client utilities |
+| `@resq-sw/security` | Auth and crypto helpers |
+| `@resq-sw/dsa` | Zero-dependency data structures |
+| `@resq-sw/logger` | Structured logging |
+| `@resq-sw/rate-limiting` | Rate-limiting primitives |
+| `@resq-sw/decorators` | Method decorators |
+| `@resq-sw/helpers` | Cross-cutting utilities |
+
+<Note>
+  Install only what you need — every package is independently versioned and
+  tree-shakable. See the
+  [README](https://github.com/resq-software/npm#readme) for the canonical
+  per-package API.
+</Note>
+
+## Install
+
+<CodeGroup>
+  ```bash npm
+  npm install @resq-sw/http @resq-sw/security
+  ```
+
+  ```bash pnpm
+  pnpm add @resq-sw/http @resq-sw/security
+  ```
+
+  ```bash yarn
+  yarn add @resq-sw/http @resq-sw/security
+  ```
+
+  ```bash bun
+  bun add @resq-sw/http @resq-sw/security
+  ```
+</CodeGroup>
+
+## Authenticate
+
+You can call `POST /login` directly with `fetch` while you're getting set
+up. The packages provide higher-level wrappers — see the package READMEs
+for their current API.
+
+```ts
+const res = await fetch("https://api.resq.software/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    username: process.env.RESQ_USERNAME,
+    password: process.env.RESQ_PASSWORD,
+  }),
+});
+
+if (!res.ok) {
+  throw new Error(`login failed: ${res.status}`);
+}
+
+const { token, expires_at } = (await res.json()) as {
+  token: string;
+  expires_at: number;
+};
+```
+
+Treat `expires_at` (Unix seconds) as authoritative — refresh proactively
+when fewer than 60 seconds remain. See [Authentication](/authentication)
+for rotation guidance.
+
+## First call
+
+```ts
+const evidence = await fetch("https://api.resq.software/evidence", {
+  headers: { Authorization: `Bearer ${token}` },
+}).then((r) => r.json());
+```
+
+## Errors
+
+The API rejects with HTTP status codes; bodies follow the envelope at
+[Errors](/errors). For retry/backoff, the `@resq-sw/rate-limiting` and
+`@resq-sw/http` packages provide ready-made primitives — refer to the
+[`resq-software/npm`](https://github.com/resq-software/npm) README for
+their current shape.
+
+## Browser
+
+The packages ship native ESM and tree-shake cleanly. In the browser:
+
+- Never embed long-lived credentials in client JavaScript.
+- Issue short-lived operator tokens server-side and hand them to the page.
+- Use a same-site, HTTP-only cookie or `sessionStorage` (memory only) to
+  hold the token; clear on logout.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Full endpoint catalog for both APIs.
+  </Card>
+  <Card title="Other SDKs" icon="rocket" href="/sdks">
+    Python, Rust, .NET, and more.
+  </Card>
+</CardGroup>

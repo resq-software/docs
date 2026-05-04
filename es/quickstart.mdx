@@ -1,0 +1,147 @@
+---
+title: "Inicio rápido"
+description: "Realiza tu primera llamada autenticada a las APIs de ResQ Tactical OS en cinco minutos."
+---
+
+ResQ expone dos APIs HTTPS:
+
+| API | URL base | Stack |
+|-----|----------|-------|
+| API de infraestructura | `https://api.resq.software` | Rust + Axum |
+| API de coordinación | `https://coordination.resq.software` | TypeScript + Elysia |
+
+<Note>
+  Si tienes un despliegue autogestionado, sustituye las URLs base por las
+  tuyas. Las formas de las solicitudes son idénticas.
+</Note>
+
+## Pasos
+
+<Steps>
+  <Step title="Confirma que el servicio está activo">
+    Llama a `/health` en la API de infraestructura. No requiere autenticación.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/health
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/health");
+      console.log(await res.json());
+      ```
+
+      ```python Python
+      import httpx
+      print(httpx.get("https://api.resq.software/health").json())
+      ```
+    </CodeGroup>
+
+    Una respuesta saludable:
+
+    ```json
+    {
+      "status": "ok",
+      "pinata": true,
+      "gemini": true,
+      "spoon_os": "0.1.0"
+    }
+    ```
+  </Step>
+
+  <Step title="Obtén un JWT">
+    La API de infraestructura usa JWT bearer. Intercambia credenciales por
+    un token en `POST /login`.
+
+    <CodeGroup>
+      ```bash curl
+      curl -X POST https://api.resq.software/login \
+        -H "Content-Type: application/json" \
+        -d '{"username":"TU_USUARIO","password":"TU_CONTRASEÑA"}'
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const { token, expires_at } = await res.json();
+      ```
+    </CodeGroup>
+
+    La respuesta contiene un token y una expiración en tiempo Unix:
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    Guarda el token de forma segura. Consulta [Autenticación](/es/authentication)
+    para la rotación y el refresco.
+  </Step>
+
+  <Step title="Llama a un endpoint autenticado">
+    Envía el token como cabecera `Bearer`.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Recibe telemetría desde la API de coordinación">
+    La API de coordinación expone métricas Prometheus y eventos en
+    streaming (Server-Sent Events) para el estado de la flota en tiempo real.
+
+    ```bash
+    curl -N https://coordination.resq.software/events
+    ```
+
+    Cada línea es un evento JSON: tramas de telemetría, cambios de estado
+    de misión y aprobaciones HITL.
+  </Step>
+
+  <Step title="Elige un SDK">
+    Evita escribir un cliente — instala uno de los SDKs oficiales.
+
+    <CardGroup cols={2}>
+      <Card title="TypeScript" icon="js" href="/sdks/typescript">
+        `@resq-sw/http`, `@resq-sw/security`, componentes UI.
+      </Card>
+      <Card title="Python" icon="python" href="/sdks/python">
+        `resq-mcp` (servidor FastMCP) y `resq-dsa`.
+      </Card>
+      <Card title="Rust" icon="rust" href="/sdks/rust">
+        CLI unificada `resq` más siete herramientas TUI.
+      </Card>
+      <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+        Clientes tipados, contratos Protobuf, harnesses de simulación.
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
+
+## Siguiente
+
+<CardGroup cols={3}>
+  <Card title="Autenticación" icon="key" href="/es/authentication">
+    Ciclo de vida del JWT y rotación.
+  </Card>
+  <Card title="Errores" icon="triangle-exclamation" href="/es/errors">
+    Envolvente de error y códigos de estado.
+  </Card>
+  <Card title="Referencia de API" icon="code" href="/es/api-reference/introduction">
+    Todos los endpoints, solicitudes y respuestas.
+  </Card>
+</CardGroup>

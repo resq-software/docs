@@ -1,0 +1,128 @@
+---
+title: "Authentication"
+description: "How to obtain, send, and rotate JWT credentials for the ResQ Infrastructure and Coordination APIs."
+---
+
+The ResQ Infrastructure API authenticates requests with a **bearer JWT**.
+You exchange a username and password for a token at `POST /login`, then send
+the token as an `Authorization: Bearer <token>` header on every protected
+request.
+
+<Note>
+  Operator credentials are issued out-of-band by your ResQ administrator. There
+  is no public sign-up flow — every operator is tied to an organization and a
+  set of mission scopes.
+</Note>
+
+## The flow
+
+<Steps>
+  <Step title="Request a token">
+    `POST /login` with JSON `{ "username", "password" }`.
+
+    ```bash
+    curl -X POST https://api.resq.software/login \
+      -H "Content-Type: application/json" \
+      -d '{"username":"OPERATOR","password":"REDACTED"}'
+    ```
+  </Step>
+
+  <Step title="Read the response">
+    On success the API returns a JWT and a Unix-second expiry timestamp.
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    On failure you get a `401` with an `AuthError` body.
+
+    ```json
+    { "error": "Invalid credentials" }
+    ```
+  </Step>
+
+  <Step title="Send the token">
+    Attach the token to every request that targets a protected endpoint.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+
+      ```python Python
+      import httpx
+      httpx.get(
+          "https://api.resq.software/evidence",
+          headers={"Authorization": f"Bearer {token}"},
+      )
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## Token lifetime
+
+`expires_at` is a Unix timestamp in seconds. Treat it as authoritative — do
+not parse the JWT body to derive expiry.
+
+A robust client should:
+
+1. Cache the token in memory only (never on disk in plaintext).
+2. Refresh proactively when fewer than 60 seconds remain.
+3. Re-authenticate from credentials on `401 Unauthorized`.
+
+```ts
+function isExpired(expiresAt: number, skewSeconds = 60) {
+  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
+}
+```
+
+## Storing credentials safely
+
+<Warning>
+  Never commit credentials to source control or pass them on the command line.
+  Use environment variables or your platform's secret manager.
+</Warning>
+
+```bash
+export RESQ_USERNAME="..."
+export RESQ_PASSWORD="..."
+export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
+  -H 'Content-Type: application/json' \
+  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
+  | jq -r .token)"
+```
+
+## Rotation
+
+Rotate operator credentials at least quarterly, and immediately if a token may
+have been exposed. Revocation is handled server-side; clients only need to
+re-run the login flow.
+
+## Coordination API
+
+The Coordination API accepts the same JWT for protected admin and
+mission-approval routes (for example, `POST /admin/missions/approve`). Public
+ingestion endpoints — telemetry batches, IPFS uploads — may use a separate
+service token issued through your administrator. Confirm the exact scheme for
+your deployment.
+
+## Errors you should handle
+
+| Status | Meaning | What to do |
+|--------|---------|------------|
+| `401` | Token missing, expired, or invalid | Re-authenticate, then retry once |
+| `403` | Token valid but lacks the required scope | Surface to the operator; do not retry |
+| `429` | Too many requests | Back off and retry with jitter |
+
+See [Errors](/errors) for the full envelope and status-code reference.

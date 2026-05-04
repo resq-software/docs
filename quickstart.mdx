@@ -1,80 +1,147 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Make your first authenticated call to the ResQ Tactical OS APIs in five minutes."
 ---
 
-## Get started in three steps
+ResQ exposes two HTTPS APIs:
 
-Get your documentation site running locally and make your first customization.
-
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-    
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-    
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
-
-<CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
-</CardGroup>
+| API | Base URL | Stack |
+|-----|----------|-------|
+| Infrastructure API | `https://api.resq.software` | Rust + Axum |
+| Coordination API | `https://coordination.resq.software` | TypeScript + Elysia |
 
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
+  If you are running a self-hosted deployment, swap the base URLs above for your
+  own. The request shapes are identical.
 </Note>
+
+## Steps
+
+<Steps>
+  <Step title="Confirm the service is up">
+    Hit `/health` on the Infrastructure API. No auth required.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/health
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/health");
+      console.log(await res.json());
+      ```
+
+      ```python Python
+      import httpx
+      print(httpx.get("https://api.resq.software/health").json())
+      ```
+    </CodeGroup>
+
+    A healthy response looks like:
+
+    ```json
+    {
+      "status": "ok",
+      "pinata": true,
+      "gemini": true,
+      "spoon_os": "0.1.0"
+    }
+    ```
+  </Step>
+
+  <Step title="Get a JWT">
+    The Infrastructure API uses bearer JWTs. Trade credentials for a token at
+    `POST /login`.
+
+    <CodeGroup>
+      ```bash curl
+      curl -X POST https://api.resq.software/login \
+        -H "Content-Type: application/json" \
+        -d '{"username":"YOUR_USERNAME","password":"YOUR_PASSWORD"}'
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const { token, expires_at } = await res.json();
+      ```
+    </CodeGroup>
+
+    The response carries a token and a Unix expiry:
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    Store the token securely. See [Authentication](/authentication) for refresh
+    and rotation guidance.
+  </Step>
+
+  <Step title="Call an authenticated endpoint">
+    Send the token as a `Bearer` header.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Stream telemetry from the Coordination API">
+    The Coordination API exposes Prometheus metrics and Server-Sent Events for
+    real-time fleet state.
+
+    ```bash
+    curl -N https://coordination.resq.software/events
+    ```
+
+    Each line is a JSON event: telemetry frames, mission state changes, and
+    HITL approvals.
+  </Step>
+
+  <Step title="Pick an SDK">
+    Skip writing a client — install one of the official SDKs instead.
+
+    <CardGroup cols={2}>
+      <Card title="TypeScript" icon="js" href="/sdks/typescript">
+        `@resq-sw/http`, `@resq-sw/security`, UI components.
+      </Card>
+      <Card title="Python" icon="python" href="/sdks/python">
+        `resq-mcp` (FastMCP server) and `resq-dsa`.
+      </Card>
+      <Card title="Rust" icon="rust" href="/sdks/rust">
+        Unified `resq` CLI plus seven TUI tools.
+      </Card>
+      <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+        Typed clients, Protobuf contracts, sim harnesses.
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
+
+## Next
+
+<CardGroup cols={3}>
+  <Card title="Authentication" icon="key" href="/authentication">
+    JWT lifecycle, scopes, and rotation.
+  </Card>
+  <Card title="Errors" icon="triangle-exclamation" href="/errors">
+    Error envelope and status codes.
+  </Card>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Every endpoint, request, and response.
+  </Card>
+</CardGroup>

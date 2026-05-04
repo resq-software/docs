@@ -1,0 +1,128 @@
+---
+title: "Errores"
+description: "Envolvente de error, códigos de estado y orientación de reintento para las APIs de ResQ."
+---
+
+Ambas APIs de ResQ usan códigos de estado HTTP estándar y devuelven una
+pequeña envolvente JSON al fallar. Trata el código de estado como
+autoritativo; el cuerpo es información de diagnóstico para logs y
+superficies de operador, no para flujo de control.
+
+## Envolvente
+
+La API de infraestructura devuelve:
+
+```json
+{ "error": "Invalid credentials" }
+```
+
+La API de coordinación devuelve la misma forma o una envolvente más rica
+en endpoints que reportan múltiples fallos:
+
+```json
+{
+  "error": "validation_failed",
+  "message": "field 'mission_id' is required",
+  "details": [
+    { "path": "mission_id", "rule": "required" }
+  ]
+}
+```
+
+<Note>
+  Ramifica siempre por el código de estado HTTP. Los nombres de campo del
+  cuerpo pueden evolucionar; los códigos de estado son estables.
+</Note>
+
+## Códigos de estado
+
+| Código | Nombre | Significado |
+|--------|--------|-------------|
+| `200` | OK | Éxito. |
+| `201` | Created | Se creó un recurso (p. ej. subida de evidencia). |
+| `202` | Accepted | Solicitud encolada — telemetría o trabajo asíncrono. |
+| `204` | No Content | Éxito sin cuerpo. |
+| `400` | Bad Request | JSON malformado o parámetros inválidos. |
+| `401` | Unauthorized | Token ausente, expirado o inválido. |
+| `403` | Forbidden | El token no tiene el scope requerido. |
+| `404` | Not Found | El recurso no existe o no es visible para tu operador. |
+| `409` | Conflict | El estado del recurso impide la operación (p. ej. misión ya aprobada). |
+| `422` | Unprocessable Entity | La validación falló sobre una solicitud bien formada. |
+| `429` | Too Many Requests | Límite de tasa superado. Respeta `Retry-After`. |
+| `500` | Internal Server Error | Fallo inesperado. Reintentable. |
+| `503` | Service Unavailable | Dependencia degradada. Reintentable con backoff. |
+
+## Qué reintentar
+
+| Clase | ¿Reintentar? | Estrategia |
+|-------|--------------|-----------|
+| `4xx` (excepto `408`, `409`, `429`) | No | Corrige la solicitud. |
+| `408 Request Timeout` | Sí | Un único reintento. |
+| `409 Conflict` | A veces | Re-lee el estado y decide. |
+| `429 Too Many Requests` | Sí | Respeta `Retry-After`, después backoff exponencial con jitter. |
+| `5xx` | Sí | Backoff exponencial con jitter, tope ~30 s. |
+
+## Esbozo de backoff
+
+```ts
+async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
+  let attempt = 0;
+  while (true) {
+    try {
+      return await fn();
+    } catch (err: any) {
+      const status = err?.status ?? 0;
+      const retryable = status === 429 || status >= 500;
+      if (!retryable || attempt >= max) throw err;
+      const base = 250 * 2 ** attempt;
+      const jitter = Math.random() * base;
+      await new Promise((r) => setTimeout(r, base + jitter));
+      attempt++;
+    }
+  }
+}
+```
+
+## Errores comunes
+
+### `401 Unauthorized`
+
+```json
+{ "error": "Token expired" }
+```
+
+Repite el flujo de login descrito en [Autenticación](/es/authentication)
+y reintenta la solicitud una vez.
+
+### `403 Forbidden`
+
+```json
+{ "error": "Insufficient scope: missions.approve" }
+```
+
+El operador está autenticado pero no tiene el scope requerido. Muéstralo
+al usuario; no reintentes. Los flujos de aprobación de misión requieren
+operadores autorizados HITL (Art. 14 de la Ley de IA de la UE).
+
+### `429 Too Many Requests`
+
+La respuesta incluye una cabecera `Retry-After` con los segundos que
+debes esperar. Pausa al menos ese tiempo antes de reintentar.
+
+### `503 Service Unavailable`
+
+La malla o una dependencia upstream está degradada. La API de
+coordinación está diseñada para seguir operando en este estado — la
+ingestión de telemetría se almacena en el borde y reintenta. Las
+solicitudes idempotentes deben reintentar con backoff.
+
+## Reportar un error
+
+Si encuentras un fallo reproducible que no encaja en esta referencia,
+abre una issue en
+[github.com/resq-software](https://github.com/resq-software) con:
+
+- Método HTTP, ruta y código de estado
+- Request ID (cabecera de respuesta `X-Request-Id`) si está presente
+- Una copia redactada del cuerpo de la solicitud
+- El cuerpo de respuesta completo

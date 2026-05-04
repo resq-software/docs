@@ -24,42 +24,40 @@
       "family": "DM Sans"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/assets/icons/resq-mark-color.svg",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Start here",
             "pages": [
               "index",
+              "concepts",
               "quickstart",
-              "development"
+              "authentication",
+              "errors"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDKs",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "sdks/index"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Languages",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "sdks/typescript",
+              "sdks/python",
+              "sdks/rust",
+              "sdks/dotnet"
             ]
           }
         ]
@@ -87,21 +85,84 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "Platform",
+          "href": "https://resq.software",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Get Started",
+          "href": "https://get.resq.software",
+          "icon": "rocket"
+        },
+        {
+          "anchor": "Research",
+          "href": "https://research.resq.software",
+          "icon": "flask"
+        },
+        {
+          "anchor": "Status",
+          "href": "https://status.resq.software",
+          "icon": "signal-bars"
+        },
+        {
+          "anchor": "GitHub",
+          "href": "https://github.com/resq-software",
+          "icon": "github"
         }
       ]
     }
   },
+  "seo": {
+    "indexing": "all",
+    "metatags": {
+      "og:title": "ResQ Docs — Tactical OS for Autonomous Disaster Response",
+      "og:description": "Official documentation for ResQ Tactical OS — the decentralized kinetic operating system for autonomous disaster response. Mesh-networked coordination when infrastructure fails.",
+      "og:site_name": "ResQ Docs",
+      "og:type": "website",
+      "og:url": "https://docs.resq.software",
+      "og:image": "/og-banner.png?v=2026-05-04",
+      "og:image:width": "1200",
+      "og:image:height": "630",
+      "og:image:alt": "ResQ Tactical OS — Autonomous Disaster Response",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@ResQSoftware",
+      "twitter:creator": "@ResQSoftware",
+      "twitter:title": "ResQ Docs — Tactical OS",
+      "twitter:description": "Documentation for ResQ Tactical OS. Mesh-networked coordination when infrastructure fails.",
+      "twitter:image": "/og-banner.png?v=2026-05-04",
+      "keywords": "ResQ, ResQ Tactical OS, disaster response, autonomous drone, decentralized mesh network, search and rescue, emergency coordination, drone swarm, infrastructure resilience, first responder technology, API documentation",
+      "author": "ResQ Systems, Inc.",
+      "theme-color": "#0B0D14",
+      "apple-touch-icon": "/pwa/ios/180.png",
+      "apple-mobile-web-app-title": "ResQ Docs",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+      "msapplication-TileColor": "#0A0E1A",
+      "msapplication-TileImage": "/pwa/windows11/LargeTile.scale-200.png",
+      "manifest": "/manifest.webmanifest"
+    }
+  },
+  "redirects": [
+    { "source": "/development", "destination": "/quickstart" },
+    { "source": "/essentials/:slug*", "destination": "/quickstart" },
+    { "source": "/ai-tools/:slug*", "destination": "/quickstart" }
+  ],
+  "search": {
+    "prompt": "Search ResQ docs…"
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdits": {
+      "isShown": true,
+      "url": "https://github.com/resq-software/docs/edit/main/{filename}"
+    },
+    "raiseIssue": {
+      "isShown": true,
+      "url": "https://github.com/resq-software/docs/issues/new?title=Docs:%20"
+    }
+  },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/assets/logos/lockup-horizontal-light.svg",
+    "dark": "/assets/logos/lockup-horizontal-dark.svg"
   },
   "navbar": {
     "links": [
@@ -117,15 +178,13 @@
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "mcp",
+      "cursor"
+    ]
   },
   "footer": {
     "socials": {
