@@ -1,0 +1,148 @@
+---
+title: 'Introducción'
+description: 'ResQ expone dos APIs HTTPS: Infraestructura (Rust + Axum) y Coordinación (TypeScript + Elysia). Esta página cubre para qué sirve cada una, las URLs base, la autenticación y las convenciones que ambas comparten.'
+---
+
+<CardGroup cols={2}>
+  <Card
+    title="API de infraestructura"
+    icon="server"
+    href="#api-de-infraestructura"
+  >
+    Estado persistente. Incidentes, evidencia (IPFS), anclaje en blockchain,
+    análisis con IA y operaciones de Solana para espacio aéreo y entregas.
+  </Card>
+  <Card
+    title="API de coordinación"
+    icon="satellite-dish"
+    href="#api-de-coordinacion"
+  >
+    Operaciones de flota en tiempo real. Lotes de telemetría, alertas
+    predictivas, subidas a IPFS, inyección de fallos, aprobación HITL y
+    streams SSE.
+  </Card>
+</CardGroup>
+
+## URLs base
+
+| API | URL base |
+|-----|----------|
+| Infraestructura | `https://api.resq.software` |
+| Coordinación | `https://coordination.resq.software` |
+
+Los despliegues autogestionados sustituyen los hostnames por los suyos;
+las formas de solicitud y respuesta son idénticas.
+
+## Autenticación
+
+Ambas APIs usan JWT bearer.
+
+```bash
+# 1. Intercambia credenciales por un token
+curl -X POST https://api.resq.software/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"OPERADOR","password":"REDACTED"}'
+
+# 2. Envía el token en cada solicitud protegida
+curl https://api.resq.software/evidence \
+  -H "Authorization: Bearer $RESQ_TOKEN"
+```
+
+Consulta [Autenticación](/es/authentication) para el ciclo de vida del
+token, los scopes y la rotación.
+
+## Convenciones
+
+### Tipo de contenido
+
+Todas las solicitudes y respuestas usan `application/json` salvo que un
+endpoint documente explícitamente otro tipo (por ejemplo, subidas
+multipart en `POST /storage`).
+
+### Tiempo
+
+Las marcas de tiempo en cargas de recursos son cadenas ISO-8601 UTC
+(`2026-05-04T06:01:27Z`). La excepción es la expiración del token en
+`/login`, que es un timestamp Unix en segundos para facilitar la
+aritmética.
+
+### Identificadores
+
+Los IDs de recurso son cadenas opacas. No los parsees; trátalos como
+identificadores. La evidencia en IPFS se referencia por su CID
+(identificador direccionado por contenido), que es estable por contenido.
+
+### Paginación
+
+Los endpoints de listado aceptan los parámetros de query `limit` (50 por
+defecto, 200 máximo) y `cursor`. La respuesta incluye `next_cursor`
+cuando hay más páginas disponibles.
+
+```http
+GET /evidence?limit=50&cursor=eyJpZCI6Ii4uLiJ9
+```
+
+### Idempotencia
+
+Los endpoints mutantes aceptan una cabecera `Idempotency-Key`. ResQ
+cachea la respuesta durante 24 horas, por lo que los reintentos
+devuelven el resultado original en lugar de duplicar el efecto.
+
+### Request IDs
+
+Cada respuesta lleva una cabecera `X-Request-Id`. Inclúyela en cualquier
+reporte de soporte o incidente para correlacionar logs.
+
+### Errores
+
+Los fallos usan códigos de estado HTTP estándar con una pequeña
+envolvente JSON. Consulta [Errores](/es/errors) para la tabla completa
+de códigos, la guía de reintento y un esbozo de backoff.
+
+## API de infraestructura
+
+Construida con Rust y Axum. Estado persistente, interacciones con
+blockchain y análisis asistido por IA. URL base:
+`https://api.resq.software`.
+
+| Tag | Descripción |
+|-----|-------------|
+| **incidents** | Crear, listar y recuperar incidentes |
+| **evidence** | Gestionar evidencia capturada por drones (anclada en IPFS) |
+| **blockchain** | Registrar eventos en cadena; verificar localizaciones |
+| **solana** | Registro de espacio aéreo, eventos de entrega y permisos |
+| **auth** | Autenticación basada en JWT |
+
+## API de coordinación
+
+Construida con TypeScript y Elysia. Operaciones de flota en tiempo real;
+diseñada para seguir operando cuando la infraestructura upstream está
+degradada. URL base: `https://coordination.resq.software`.
+
+| Tag | Descripción |
+|-----|-------------|
+| **Fleet** | Procesamiento de lotes de telemetría |
+| **Intelligence** | Reporte de incidentes y alertas predictivas |
+| **Storage** | Subidas de archivos a IPFS |
+| **Simulation** | Inyección de fallos para pruebas |
+| **Admin** | Salud del servicio, profiling, aprobación de misiones (HITL, Art. 14 de la Ley de IA de la UE) |
+| **Observability** | Métricas Prometheus y streams SSE |
+
+## SDKs
+
+Evita escribir un cliente — instala uno de los SDKs oficiales.
+
+<CardGroup cols={2}>
+  <Card title="TypeScript" icon="js" href="/sdks/typescript">
+    `@resq-sw/http`, `@resq-sw/security`, componentes UI.
+  </Card>
+  <Card title="Python" icon="python" href="/sdks/python">
+    `resq-mcp` (servidor FastMCP) y `resq-dsa`.
+  </Card>
+  <Card title="Rust" icon="rust" href="/sdks/rust">
+    CLI unificada `resq` más siete herramientas TUI.
+  </Card>
+  <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+    Clientes tipados, contratos Protobuf, harnesses de simulación.
+  </Card>
+</CardGroup>

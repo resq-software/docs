@@ -1,0 +1,129 @@
+---
+title: "Rust SDK"
+description: "Install the unified resq CLI, its seven TUI tools, or call the API directly with reqwest."
+---
+
+The ResQ Rust workspace at
+[`resq-software/crates`](https://github.com/resq-software/crates) is a
+ten-crate workspace containing the unified `resq` CLI, seven TUI tools,
+a shared TUI library, and `resq-dsa` (`no_std`).
+
+| Crate | Role |
+|-------|------|
+| `resq` | Unified CLI entrypoint |
+| `resq-health` | TUI: service health |
+| `resq-deploy` | TUI: deployment workflow |
+| `resq-logs` | TUI: log inspection |
+| `resq-perf` | TUI: performance metrics |
+| `resq-flame` | TUI: flamegraph viewer |
+| `resq-bin` | TUI: binary inspector |
+| `resq-clean` | TUI: cleanup helper |
+| `resq-tui` | Shared TUI library |
+| `resq-dsa` | `no_std` data structures |
+
+<Note>
+  See the
+  [README](https://github.com/resq-software/crates#readme) for the
+  authoritative crate list and CLI reference.
+</Note>
+
+## Install the CLI
+
+<CodeGroup>
+  ```bash cargo
+  cargo install resq
+  ```
+
+  ```bash brew
+  brew install resq-software/tap/resq
+  ```
+
+  ```bash bootstrap
+  curl -sf https://get.resq.software | sh
+  ```
+</CodeGroup>
+
+After install, run `resq --help` to discover subcommands.
+
+## Use the no_std utilities
+
+```toml
+# Cargo.toml
+[dependencies]
+# Replace 0.1 with the current published version from crates.io.
+resq-dsa = { version = "0.1", default-features = false }
+```
+
+`resq-dsa` is `no_std` by default and works in embedded contexts.
+
+## Call the API directly
+
+For ad-hoc Rust clients, use `reqwest` and `serde_json`:
+
+```toml
+# Cargo.toml
+[dependencies]
+anyhow = "1"
+reqwest = { version = "0.12", features = ["json"] }
+serde   = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+```
+
+```rust
+use serde::Deserialize;
+
+#[derive(Deserialize)]
+struct LoginResponse {
+    token: String,
+    expires_at: i64,
+}
+
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let username = std::env::var("RESQ_USERNAME")?;
+    let password = std::env::var("RESQ_PASSWORD")?;
+
+    let client = reqwest::Client::new();
+
+    let LoginResponse { token, expires_at } = client
+        .post("https://api.resq.software/login")
+        .json(&serde_json::json!({
+            "username": username,
+            "password": password,
+        }))
+        .send()
+        .await?
+        .error_for_status()?
+        .json()
+        .await?;
+
+    let evidence: serde_json::Value = client
+        .get("https://api.resq.software/evidence")
+        .bearer_auth(&token)
+        .query(&[("limit", "50")])
+        .send()
+        .await?
+        .error_for_status()?
+        .json()
+        .await?;
+
+    println!("token expires at {expires_at}");
+    println!("{}", serde_json::to_string_pretty(&evidence)?);
+    Ok(())
+}
+```
+
+`expires_at` is Unix seconds. See [Authentication](/authentication) and
+[Errors](/errors) for handling guidance.
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Full endpoint catalog.
+  </Card>
+  <Card title="Other SDKs" icon="rocket" href="/sdks">
+    TypeScript, Python, .NET, and more.
+  </Card>
+</CardGroup>

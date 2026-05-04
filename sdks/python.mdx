@@ -1,0 +1,113 @@
+---
+title: "Python SDK"
+description: "Install resq-mcp or resq-dsa from PyPI and call the ResQ APIs."
+---
+
+The ResQ Python workspace lives at
+[`resq-software/pypi`](https://github.com/resq-software/pypi) and publishes
+two packages on PyPI.
+
+| Package | Purpose |
+|---------|---------|
+| `resq-mcp` | FastMCP server exposing ResQ tools to Claude Desktop and Cursor |
+| `resq-dsa` | Zero-dependency data structures |
+
+<Note>
+  These two packages have very different audiences. `resq-mcp` is for
+  operators wiring AI assistants into ResQ; `resq-dsa` is a general-purpose
+  utility library. See the
+  [README](https://github.com/resq-software/pypi#readme) for current APIs.
+</Note>
+
+## Install
+
+<CodeGroup>
+  ```bash pip
+  pip install resq-mcp resq-dsa
+  ```
+
+  ```bash uv
+  uv add resq-mcp resq-dsa
+  ```
+
+  ```bash poetry
+  poetry add resq-mcp resq-dsa
+  ```
+</CodeGroup>
+
+## Calling the API directly
+
+Either package can be paired with any HTTP client. Using `httpx`:
+
+```python
+import os
+import httpx
+
+LOGIN_URL = "https://api.resq.software/login"
+EVIDENCE_URL = "https://api.resq.software/evidence"
+
+def login() -> tuple[str, int]:
+    res = httpx.post(
+        LOGIN_URL,
+        json={
+            "username": os.environ["RESQ_USERNAME"],
+            "password": os.environ["RESQ_PASSWORD"],
+        },
+    )
+    res.raise_for_status()
+    body = res.json()
+    return body["token"], body["expires_at"]
+
+def list_evidence(token: str) -> dict:
+    res = httpx.get(
+        EVIDENCE_URL,
+        headers={"Authorization": f"Bearer {token}"},
+        params={"limit": 50},
+    )
+    res.raise_for_status()
+    return res.json()
+
+if __name__ == "__main__":
+    token, expires_at = login()
+    print(list_evidence(token))
+```
+
+`expires_at` is a Unix timestamp in seconds — refresh when fewer than 60
+seconds remain. See [Authentication](/authentication).
+
+## Using `resq-mcp`
+
+`resq-mcp` is a [FastMCP](https://github.com/jlowin/fastmcp) server. Once
+installed, register it with Claude Desktop, Cursor, or any
+MCP-compatible client to expose ResQ tools to your AI assistant. See the
+[`resq-software/pypi`](https://github.com/resq-software/pypi) README for
+the up-to-date tool list and configuration.
+
+## Errors
+
+`httpx` raises on non-2xx responses when you call `raise_for_status()`.
+The response body follows the envelope documented at [Errors](/errors).
+Catch `httpx.HTTPStatusError` and branch on `err.response.status_code`.
+
+```python
+import httpx
+
+try:
+    list_evidence(token)
+except httpx.HTTPStatusError as err:
+    if err.response.status_code == 401:
+        # Token expired — re-authenticate and retry once.
+        ...
+    raise
+```
+
+## Next
+
+<CardGroup cols={2}>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Full endpoint catalog.
+  </Card>
+  <Card title="Other SDKs" icon="rocket" href="/sdks">
+    TypeScript, Rust, .NET, and more.
+  </Card>
+</CardGroup>

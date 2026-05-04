@@ -1,0 +1,114 @@
+---
+title: "Concepts"
+description: "How the ResQ Tactical OS pieces fit together: the mesh, evidence chain, mission flow, and operator scopes."
+---
+
+This page is the conceptual map. Read it once before the API reference and
+the rest of the docs will fit together quickly.
+
+## The mesh
+
+ResQ runs as a **decentralized mesh**, not a hub-and-spoke cloud. Drones,
+ground units, and operator stations form a peer network that keeps
+operating when upstream infrastructure is down or unreachable.
+
+- Nodes communicate over local-first transports (mesh radio, LTE, Wi-Fi)
+  and reconcile with the cloud opportunistically.
+- The Coordination API is designed to keep accepting telemetry and
+  serving live state when its upstream dependencies are degraded.
+- There is no single point of failure. If a coordinator drops, peer
+  nodes continue to share telemetry and queue work.
+
+You'll see this surface in the API as `503 Service Unavailable` for some
+routes during partial outages — see [Errors](/errors) for retry guidance.
+
+## Evidence and the chain
+
+Every consequential action in a mission produces **evidence**:
+
+1. Drones capture sensor frames, video, and structured telemetry.
+2. Evidence files are pinned to **IPFS** and referenced by their CID
+   (content-addressed identifier).
+3. CIDs are anchored on **Solana**, producing a tamper-evident chain.
+4. The Infrastructure API exposes both halves: `/evidence` for the IPFS
+   payload, `/blockchain/*` for the on-chain anchors.
+
+This makes after-action review and chain-of-custody review possible
+without trusting any single party — anyone with the CID and chain
+reference can verify the bytes.
+
+## Human-in-the-loop missions
+
+ResQ's autonomous flows are **HITL-gated**. The platform implements
+[EU AI Act Article 14](https://artificialintelligenceact.eu/article/14/)
+human oversight: an authorized operator must approve high-risk actions
+before the system commits.
+
+Mission approval is exposed via the Coordination API:
+
+- `GET /admin/missions/pending` — actions awaiting approval
+- `POST /admin/missions/approve` — green-light a pending mission
+- `POST /admin/missions/reject` — block and record the reason
+
+Approval requires the `missions.approve` operator scope. Calls without it
+return `403` — see [Errors](/errors).
+
+## Airspace and permits
+
+For deliveries and autonomous flight, ResQ uses an on-chain **airspace
+registry** on Solana. The Infrastructure API's `/solana` endpoints record
+permits, delivery events, and registry queries. The dispatcher refuses
+flight plans that fall outside permitted airspace; this gate sits in
+front of mission approval, not after it.
+
+## Telemetry and live events
+
+Two flows carry real-time data:
+
+- **Ingestion**: drone fleets push telemetry batches to
+  `POST /fleet/telemetry` on the Coordination API. Batches are buffered
+  on the edge and retried — telemetry never silently drops.
+- **Subscription**: clients consume live state via Server-Sent Events at
+  `/events` and Prometheus scrapes at `/metrics` (Coordination API).
+
+## Operator identity and scopes
+
+Operators authenticate with username + password at `POST /login` and
+receive a short-lived JWT (see [Authentication](/authentication)). The
+token carries the operator's **scopes** — fine-grained permissions like
+`missions.approve`, `evidence.write`, or `airspace.admin`.
+
+A request that succeeds in authentication but lacks the required scope
+returns `403`. Surface this to the operator and do not retry; it requires
+an administrator action.
+
+## Fault injection and simulation
+
+The Coordination API exposes `Simulation` endpoints for fault injection,
+and the SDKs ship simulation harnesses. The intent is to exercise the
+mesh's degraded-mode behavior in test before depending on it in
+production. Use it during integration tests, not in live operations.
+
+## What's where
+
+| You want to… | Look at |
+|--------------|---------|
+| Persist incidents, evidence, anchors | Infrastructure API |
+| Push or read live fleet state | Coordination API |
+| Check who can do what | [Authentication](/authentication) |
+| Understand failures and retries | [Errors](/errors) |
+| Build a client without writing one | [SDKs](/sdks) |
+
+## Next
+
+<CardGroup cols={3}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    First authenticated call.
+  </Card>
+  <Card title="Authentication" icon="key" href="/authentication">
+    JWT lifecycle and scopes.
+  </Card>
+  <Card title="API reference" icon="code" href="/api-reference/introduction">
+    Every endpoint.
+  </Card>
+</CardGroup>
