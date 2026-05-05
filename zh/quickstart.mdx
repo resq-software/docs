@@ -1,0 +1,144 @@
+---
+title: "快速开始"
+description: "在五分钟内对 ResQ Tactical OS API 完成第一次认证调用。"
+---
+
+ResQ 暴露两个 HTTPS API:
+
+| API | 基础 URL | 技术栈 |
+|-----|---------|--------|
+| Infrastructure API | `https://api.resq.software` | Rust + Axum |
+| Coordination API | `https://coordination.resq.software` | TypeScript + Elysia |
+
+<Note>
+  如果你运行的是自托管部署,请用你自己的基础 URL 替换上面的。请求形态是
+  相同的。
+</Note>
+
+## 步骤
+
+<Steps>
+  <Step title="确认服务可用">
+    访问 Infrastructure API 的 `/health`。无需认证。
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/health
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/health");
+      console.log(await res.json());
+      ```
+
+      ```python Python
+      import httpx
+      print(httpx.get("https://api.resq.software/health").json())
+      ```
+    </CodeGroup>
+
+    健康响应类似:
+
+    ```json
+    {
+      "status": "ok",
+      "pinata": true,
+      "gemini": true,
+      "spoon_os": "0.1.0"
+    }
+    ```
+  </Step>
+
+  <Step title="获取 JWT">
+    Infrastructure API 使用 bearer JWT。在 `POST /login` 用凭据交换 token。
+
+    <CodeGroup>
+      ```bash curl
+      curl -X POST https://api.resq.software/login \
+        -H "Content-Type: application/json" \
+        -d '{"username":"你的用户名","password":"你的密码"}'
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const { token, expires_at } = await res.json();
+      ```
+    </CodeGroup>
+
+    响应包含 token 和 Unix 过期时间戳:
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    安全保存 token。刷新与轮换指南见[认证](/zh/authentication)。
+  </Step>
+
+  <Step title="调用受保护的端点">
+    将 token 作为 `Bearer` 请求头发送。
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="从 Coordination API 接收遥测">
+    Coordination API 暴露 Prometheus 指标和 Server-Sent Events,用于实时
+    机队状态。
+
+    ```bash
+    curl -N https://coordination.resq.software/events
+    ```
+
+    每行是一个 JSON 事件:遥测帧、任务状态变化和 HITL 审批。
+  </Step>
+
+  <Step title="选择 SDK">
+    不用自己写客户端 —— 直接安装一个官方 SDK。
+
+    <CardGroup cols={2}>
+      <Card title="TypeScript" icon="js" href="/sdks/typescript">
+        `@resq-sw/http`、`@resq-sw/security`、UI 组件。
+      </Card>
+      <Card title="Python" icon="python" href="/sdks/python">
+        `resq-mcp`(FastMCP 服务器)和 `resq-dsa`。
+      </Card>
+      <Card title="Rust" icon="rust" href="/sdks/rust">
+        统一的 `resq` CLI 加七个 TUI 工具。
+      </Card>
+      <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+        类型化客户端、Protobuf 契约、仿真框架。
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
+
+## 下一步
+
+<CardGroup cols={3}>
+  <Card title="认证" icon="key" href="/zh/authentication">
+    JWT 生命周期与轮换。
+  </Card>
+  <Card title="错误" icon="triangle-exclamation" href="/zh/errors">
+    错误信封与状态码。
+  </Card>
+  <Card title="API 参考" icon="code" href="/zh/api-reference/introduction">
+    所有端点、请求和响应。
+  </Card>
+</CardGroup>

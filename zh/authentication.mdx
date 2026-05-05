@@ -1,0 +1,122 @@
+---
+title: "认证"
+description: "如何获取、发送和轮换 ResQ Infrastructure 与 Coordination API 的 JWT 凭据。"
+---
+
+ResQ Infrastructure API 使用 **bearer JWT** 进行请求认证。在 `POST /login`
+用用户名和密码交换 token,然后在每个受保护请求的
+`Authorization: Bearer <token>` 请求头中发送。
+
+<Note>
+  操作员凭据由你的 ResQ 管理员通过带外方式发放。没有公开注册流程 ——
+  每个操作员都绑定到一个组织和一组任务权限范围。
+</Note>
+
+## 流程
+
+<Steps>
+  <Step title="请求 token">
+    `POST /login`,JSON 请求体类似 `{"username": "...", "password": "..."}`。
+
+    ```bash
+    curl -X POST https://api.resq.software/login \
+      -H "Content-Type: application/json" \
+      -d '{"username":"操作员","password":"REDACTED"}'
+    ```
+  </Step>
+
+  <Step title="读取响应">
+    成功时,API 返回 JWT 和 Unix 秒过期时间戳。
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    失败时,你会收到 `401` 和 `AuthError` 响应体。
+
+    ```json
+    { "error": "Invalid credentials" }
+    ```
+  </Step>
+
+  <Step title="发送 token">
+    将 token 附加到每个针对受保护端点的请求。
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+
+      ```python Python
+      import httpx
+      httpx.get(
+          "https://api.resq.software/evidence",
+          headers={"Authorization": f"Bearer {token}"},
+      )
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## Token 生命周期
+
+`expires_at` 是 Unix 秒时间戳。视为权威 —— 不要解析 JWT 内容来推断过期。
+
+健壮的客户端应该:
+
+1. 仅在内存中缓存 token(永远不要明文存盘)。
+2. 当剩余时间不足 60 秒时主动刷新。
+3. 任何 `401 Unauthorized` 时使用凭据重新认证。
+
+```ts
+function isExpired(expiresAt: number, skewSeconds = 60) {
+  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
+}
+```
+
+## 安全存储凭据
+
+<Warning>
+  永远不要将凭据提交到版本控制或在命令行中传递。使用环境变量或你平台的
+  密钥管理器。
+</Warning>
+
+```bash
+export RESQ_USERNAME="..."
+export RESQ_PASSWORD="..."
+export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
+  -H 'Content-Type: application/json' \
+  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
+  | jq -r .token)"
+```
+
+## 轮换
+
+至少每季度轮换一次操作员凭据,如有可能暴露则立即轮换。撤销在服务端处理;
+客户端只需重跑登录流程。
+
+## Coordination API
+
+Coordination API 接受相同的 JWT 用于受保护的管理和任务审批路由(例如
+`POST /admin/missions/approve`)。公开摄取端点 —— 遥测批次、IPFS 上传 ——
+可能使用由你的管理员发放的独立服务 token。请确认你部署的具体方案。
+
+## 你应该处理的错误
+
+| 状态码 | 含义 | 该做什么 |
+|--------|------|----------|
+| `401` | token 缺失、过期或无效 | 重新认证,然后重试一次 |
+| `403` | token 有效但缺少所需权限范围 | 显示给操作员;不要重试 |
+| `429` | 请求过多 | 带抖动的退避后重试 |
+
+完整信封和状态码参考见[错误](/zh/errors)。

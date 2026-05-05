@@ -1,0 +1,130 @@
+---
+title: "प्रमाणीकरण"
+description: "ResQ Infrastructure और Coordination APIs के लिए JWT क्रेडेंशियल कैसे प्राप्त करें, भेजें, और रोटेट करें।"
+---
+
+ResQ Infrastructure API अनुरोधों को **bearer JWT** से प्रमाणित करता है।
+आप `POST /login` पर उपयोगकर्ता नाम और पासवर्ड को टोकन से बदलते हैं, फिर
+हर सुरक्षित अनुरोध पर टोकन को `Authorization: Bearer <token>` हेडर के रूप
+में भेजते हैं।
+
+<Note>
+  ऑपरेटर क्रेडेंशियल आपके ResQ प्रशासक द्वारा बैंड के बाहर जारी किए जाते
+  हैं। कोई सार्वजनिक साइन-अप प्रवाह नहीं है — हर ऑपरेटर एक संगठन और मिशन
+  स्कोप के एक सेट से जुड़ा होता है।
+</Note>
+
+## प्रवाह
+
+<Steps>
+  <Step title="टोकन का अनुरोध करें">
+    `POST /login` पर JSON बॉडी `{"username": "...", "password": "..."}`
+    जैसी।
+
+    ```bash
+    curl -X POST https://api.resq.software/login \
+      -H "Content-Type: application/json" \
+      -d '{"username":"ऑपरेटर","password":"REDACTED"}'
+    ```
+  </Step>
+
+  <Step title="प्रतिक्रिया पढ़ें">
+    सफल होने पर, API एक JWT और Unix-सेकंड एक्सपायरी टाइमस्टैम्प लौटाता है।
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    विफल होने पर आपको `401` और `AuthError` बॉडी मिलती है।
+
+    ```json
+    { "error": "Invalid credentials" }
+    ```
+  </Step>
+
+  <Step title="टोकन भेजें">
+    सुरक्षित एंडपॉइंट को लक्षित करने वाले हर अनुरोध में टोकन जोड़ें।
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+
+      ```python Python
+      import httpx
+      httpx.get(
+          "https://api.resq.software/evidence",
+          headers={"Authorization": f"Bearer {token}"},
+      )
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## टोकन जीवनकाल
+
+`expires_at` एक Unix-सेकंड टाइमस्टैम्प है। इसे प्रामाणिक मानें — JWT बॉडी
+को एक्सपायरी निकालने के लिए पार्स न करें।
+
+एक मज़बूत क्लाइंट को चाहिए:
+
+1. टोकन केवल मेमोरी में कैश करें (कभी डिस्क पर प्लेनटेक्स्ट में नहीं)।
+2. 60 सेकंड से कम बचने पर सक्रिय रूप से रिफ़्रेश करें।
+3. `401 Unauthorized` मिलने पर क्रेडेंशियल से पुनः प्रमाणित करें।
+
+```ts
+function isExpired(expiresAt: number, skewSeconds = 60) {
+  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
+}
+```
+
+## क्रेडेंशियल सुरक्षित रूप से संग्रहीत करना
+
+<Warning>
+  क्रेडेंशियल को कभी भी सोर्स कंट्रोल में कमिट न करें या कमांड लाइन पर
+  पास न करें। पर्यावरण चर या अपने प्लेटफ़ॉर्म के सीक्रेट मैनेजर का उपयोग
+  करें।
+</Warning>
+
+```bash
+export RESQ_USERNAME="..."
+export RESQ_PASSWORD="..."
+export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
+  -H 'Content-Type: application/json' \
+  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
+  | jq -r .token)"
+```
+
+## रोटेशन
+
+ऑपरेटर क्रेडेंशियल को कम से कम तिमाही रोटेट करें, और यदि टोकन उजागर हो
+सकता है तो तुरंत। रिवोकेशन सर्वर-साइड संभाला जाता है; क्लाइंट को केवल
+लॉगिन प्रवाह फिर से चलाने की आवश्यकता है।
+
+## Coordination API
+
+Coordination API सुरक्षित प्रशासकीय और मिशन-अनुमोदन रूट के लिए वही JWT
+स्वीकार करता है (उदाहरण के लिए, `POST /admin/missions/approve`)। सार्वजनिक
+इंजेशन एंडपॉइंट — टेलीमेट्री बैच, IPFS अपलोड — आपके प्रशासक द्वारा जारी
+एक अलग सर्विस टोकन उपयोग कर सकते हैं। अपने डिप्लॉयमेंट के लिए सटीक स्कीम
+की पुष्टि करें।
+
+## जिन त्रुटियों को आपको संभालना चाहिए
+
+| स्टेटस | अर्थ | क्या करें |
+|--------|------|-----------|
+| `401` | टोकन गायब, समाप्त, या अमान्य | पुनः प्रमाणित करें, फिर एक बार रिट्राई करें |
+| `403` | टोकन वैध है पर आवश्यक स्कोप नहीं है | ऑपरेटर को दिखाएँ; रिट्राई न करें |
+| `429` | बहुत अधिक अनुरोध | जिटर के साथ बैकऑफ करें |
+
+पूरी एनवेलप और स्टेटस कोड संदर्भ के लिए [त्रुटियाँ](/hi/errors) देखें।

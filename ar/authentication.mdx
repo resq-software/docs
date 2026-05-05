@@ -1,0 +1,128 @@
+---
+title: "المصادقة"
+description: "كيفية الحصول على وإرسال وتدوير اعتمادات JWT لواجهات Infrastructure و Coordination في ResQ."
+---
+
+تصادق Infrastructure API في ResQ الطلبات باستخدام **JWT من نوع bearer**.
+تستبدل اسم المستخدم وكلمة المرور بتوكن على `POST /login`، ثم ترسل التوكن
+كرأس `Authorization: Bearer <token>` على كل طلب محمي.
+
+<Note>
+  تُصدَر اعتمادات المشغّل خارج النطاق من قبل مسؤول ResQ الخاص بك. لا
+  يوجد تدفق تسجيل عام — كل مشغّل مرتبط بمنظمة ومجموعة من نطاقات صلاحيات
+  المهام.
+</Note>
+
+## التدفق
+
+<Steps>
+  <Step title="اطلب توكنًا">
+    `POST /login` مع جسم JSON بالشكل
+    `{"username": "...", "password": "..."}`.
+
+    ```bash
+    curl -X POST https://api.resq.software/login \
+      -H "Content-Type: application/json" \
+      -d '{"username":"مشغّل","password":"REDACTED"}'
+    ```
+  </Step>
+
+  <Step title="اقرأ الاستجابة">
+    عند النجاح، تُرجِع API توكن JWT وطابع وقت Unix بالثواني لانتهاء
+    الصلاحية.
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    عند الفشل، تتلقى `401` مع جسم `AuthError`.
+
+    ```json
+    { "error": "Invalid credentials" }
+    ```
+  </Step>
+
+  <Step title="أرسل التوكن">
+    أرفق التوكن بكل طلب يستهدف نقطة نهاية محمية.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+
+      ```python Python
+      import httpx
+      httpx.get(
+          "https://api.resq.software/evidence",
+          headers={"Authorization": f"Bearer {token}"},
+      )
+      ```
+    </CodeGroup>
+  </Step>
+</Steps>
+
+## مدى صلاحية التوكن
+
+`expires_at` هو طابع وقت Unix بالثواني. تعامل معه على أنه المرجع — لا
+تُحلِّل جسم JWT لاستنتاج انتهاء الصلاحية.
+
+ينبغي للعميل المتين:
+
+1. تخزين التوكن في الذاكرة فقط (لا تخزّنه أبدًا في قرص بنص واضح).
+2. التحديث استباقيًا عندما يتبقى أقل من 60 ثانية.
+3. إعادة المصادقة من الاعتمادات عند `401 Unauthorized`.
+
+```ts
+function isExpired(expiresAt: number, skewSeconds = 60) {
+  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
+}
+```
+
+## تخزين الاعتمادات بأمان
+
+<Warning>
+  لا تُودِع الاعتمادات أبدًا في التحكم بالإصدار ولا تمررها على سطر الأوامر.
+  استخدم متغيرات البيئة أو مدير الأسرار في منصّتك.
+</Warning>
+
+```bash
+export RESQ_USERNAME="..."
+export RESQ_PASSWORD="..."
+export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
+  -H 'Content-Type: application/json' \
+  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
+  | jq -r .token)"
+```
+
+## التدوير
+
+دوّر اعتمادات المشغّل ربعيًا على الأقل، وفورًا إذا كان من الممكن أن
+يكون التوكن قد انكشف. يُعالَج الإلغاء على الخادم؛ لا يحتاج العميل سوى
+إعادة تشغيل تدفق تسجيل الدخول.
+
+## Coordination API
+
+يقبل Coordination API نفس التوكن للمسارات الإدارية ومسارات الموافقة على
+المهام (مثلاً، `POST /admin/missions/approve`). قد تستخدم نقاط نهاية
+الاستيعاب العامة — دفعات القياس عن بُعد، عمليات الرفع إلى IPFS — توكن
+خدمة مستقل يصدره مسؤولك. تأكَّد من المخطط الدقيق لنشرك.
+
+## الأخطاء التي ينبغي معالجتها
+
+| الرمز | المعنى | ما الذي ينبغي فعله |
+|-------|-------|--------------------|
+| `401` | التوكن مفقود أو منتهي أو غير صالح | أعد المصادقة، ثم أعد المحاولة مرة واحدة |
+| `403` | التوكن صالح لكن يفتقر إلى نطاق الصلاحية المطلوب | اعرضه للمشغّل؛ لا تُعد المحاولة |
+| `429` | طلبات كثيرة جدًا | تراجع مع jitter ثم أعد المحاولة |
+
+راجع [الأخطاء](/ar/errors) للحصول على الغلاف الكامل ومرجع رموز الحالة.

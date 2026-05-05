@@ -1,0 +1,148 @@
+---
+title: "بدء سريع"
+description: "أجرِ أول استدعاء مُصادَق على واجهات برمجة ResQ Tactical OS في خمس دقائق."
+---
+
+يكشف ResQ واجهتي API عبر HTTPS:
+
+| API | عنوان URL الأساسي | البِنية التقنية |
+|-----|-------------------|----------------|
+| Infrastructure API | `https://api.resq.software` | Rust + Axum |
+| Coordination API | `https://coordination.resq.software` | TypeScript + Elysia |
+
+<Note>
+  إذا كنت تشغّل نشرًا ذاتي الاستضافة، استبدل عناوين URL الأساسية أعلاه
+  بعناوينك. أشكال الطلبات متطابقة.
+</Note>
+
+## الخطوات
+
+<Steps>
+  <Step title="تأكَّد من أن الخدمة قيد التشغيل">
+    استدعِ `/health` على Infrastructure API. لا يتطلب مصادقة.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/health
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/health");
+      console.log(await res.json());
+      ```
+
+      ```python Python
+      import httpx
+      print(httpx.get("https://api.resq.software/health").json())
+      ```
+    </CodeGroup>
+
+    تبدو الاستجابة السليمة هكذا:
+
+    ```json
+    {
+      "status": "ok",
+      "pinata": true,
+      "gemini": true,
+      "spoon_os": "0.1.0"
+    }
+    ```
+  </Step>
+
+  <Step title="احصل على JWT">
+    يستخدم Infrastructure API توكنات JWT من نوع bearer. استبدل بيانات
+    الاعتماد بتوكن على `POST /login`.
+
+    <CodeGroup>
+      ```bash curl
+      curl -X POST https://api.resq.software/login \
+        -H "Content-Type: application/json" \
+        -d '{"username":"اسم-المستخدم-الخاص-بك","password":"كلمة-المرور-الخاصة-بك"}'
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const { token, expires_at } = await res.json();
+      ```
+    </CodeGroup>
+
+    تحمل الاستجابة توكنًا وطابع وقت Unix لانتهاء الصلاحية:
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    احفظ التوكن بأمان. للحصول على إرشادات التحديث والتدوير راجع
+    [المصادقة](/ar/authentication).
+  </Step>
+
+  <Step title="استدعِ نقطة نهاية مُصادَقة">
+    أرسل التوكن كرأس `Bearer`.
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="استقبل القياس عن بُعد من Coordination API">
+    يكشف Coordination API مقاييس Prometheus وأحداث Server-Sent Events
+    لحالة الأسطول في الوقت الفعلي.
+
+    ```bash
+    curl -N https://coordination.resq.software/events
+    ```
+
+    كل سطر هو حدث JSON: إطارات قياس عن بُعد، تغيّرات حالة المهمة، وموافقات
+    HITL.
+
+  </Step>
+
+  <Step title="اختر SDK">
+    تجنّب كتابة عميل — ثبّت أحد SDKs الرسمية بدلاً من ذلك.
+
+    <CardGroup cols={2}>
+      <Card title="TypeScript" icon="js" href="/sdks/typescript">
+        `@resq-sw/http`، `@resq-sw/security`، مكوّنات UI.
+      </Card>
+      <Card title="Python" icon="python" href="/sdks/python">
+        `resq-mcp` (خادم FastMCP) و `resq-dsa`.
+      </Card>
+      <Card title="Rust" icon="rust" href="/sdks/rust">
+        `resq` CLI الموحَّد بالإضافة إلى سبع أدوات TUI.
+      </Card>
+      <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+        عملاء بأنواع، عقود Protobuf، أُطُر محاكاة.
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
+
+## التالي
+
+<CardGroup cols={3}>
+  <Card title="المصادقة" icon="key" href="/ar/authentication">
+    دورة حياة JWT والتدوير.
+  </Card>
+  <Card title="الأخطاء" icon="triangle-exclamation" href="/ar/errors">
+    غلاف الأخطاء ورموز الحالة.
+  </Card>
+  <Card title="مرجع API" icon="code" href="/ar/api-reference/introduction">
+    كل نقاط النهاية والطلبات والاستجابات.
+  </Card>
+</CardGroup>

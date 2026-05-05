@@ -1,0 +1,119 @@
+---
+title: "错误"
+description: "ResQ API 的错误信封、状态码和重试指南。"
+---
+
+两个 ResQ API 都使用标准 HTTP 状态码,失败时返回简短的 JSON 信封。将状态
+码视为权威;响应体是给日志和操作员界面的诊断信息,不要用于流程控制。
+
+## 信封
+
+Infrastructure API 返回:
+
+```json
+{ "error": "Invalid credentials" }
+```
+
+Coordination API 返回相同形式,或在报告多个失败的端点上返回更丰富的信封:
+
+```json
+{
+  "error": "validation_failed",
+  "message": "field 'mission_id' is required",
+  "details": [
+    { "path": "mission_id", "rule": "required" }
+  ]
+}
+```
+
+<Note>
+  始终按 HTTP 状态码分支判断。响应体中的字段名可能演变;状态码是稳定的。
+</Note>
+
+## 状态码
+
+| 状态码 | 名称 | 含义 |
+|--------|------|------|
+| `200` | OK | 成功。 |
+| `201` | Created | 创建了新资源(例如证据上传)。 |
+| `202` | Accepted | 请求已排队 —— 通常是遥测或异步工作。 |
+| `204` | No Content | 成功,无响应体。 |
+| `400` | Bad Request | JSON 格式错误或参数无效。 |
+| `401` | Unauthorized | token 缺失、过期或无效。 |
+| `403` | Forbidden | token 缺少所需权限范围。 |
+| `404` | Not Found | 资源不存在或对你的操作员不可见。 |
+| `409` | Conflict | 资源状态阻止该操作(例如任务已审批)。 |
+| `422` | Unprocessable Entity | 格式正确的请求未通过校验。 |
+| `429` | Too Many Requests | 速率限制超出。遵循 `Retry-After`。 |
+| `500` | Internal Server Error | 意外的服务端故障。可重试。 |
+| `503` | Service Unavailable | 上游依赖降级。可带退避重试。 |
+
+## 哪些可以重试
+
+| 类别 | 是否重试? | 策略 |
+|------|------------|------|
+| `4xx`(除 `408`、`409`、`429` 外) | 否 | 修正请求。 |
+| `408 Request Timeout` | 是 | 重试一次。 |
+| `409 Conflict` | 视情况 | 重读状态,然后决定。 |
+| `429 Too Many Requests` | 是 | 遵循 `Retry-After`,然后带抖动的指数退避。 |
+| `5xx` | 是 | 带抖动的指数退避,上限约 30 秒。 |
+
+## 退避草稿
+
+```ts
+async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
+  let attempt = 0;
+  while (true) {
+    try {
+      return await fn();
+    } catch (err: any) {
+      const status = err?.status ?? 0;
+      const retryable = status === 429 || status >= 500;
+      if (!retryable || attempt >= max) throw err;
+      const base = 250 * 2 ** attempt;
+      const jitter = Math.random() * base;
+      await new Promise((r) => setTimeout(r, base + jitter));
+      attempt++;
+    }
+  }
+}
+```
+
+## 常见错误
+
+### `401 Unauthorized`
+
+```json
+{ "error": "Token expired" }
+```
+
+重跑[认证](/zh/authentication)中描述的登录流程,然后重试请求一次。
+
+### `403 Forbidden`
+
+```json
+{ "error": "Insufficient scope: missions.approve" }
+```
+
+操作员已认证但缺少所需权限范围。显示给用户;不要重试。任务审批流程要求
+HITL 授权操作员(欧盟 AI 法案第 14 条)。
+
+### `429 Too Many Requests`
+
+响应包含 `Retry-After` 请求头,指示需等待的秒数。至少暂停那么久再重试。
+
+### `503 Service Unavailable`
+
+网状网络或某个上游依赖降级。Coordination API 设计为在此状态下继续运行 ——
+遥测摄取在边缘缓存并重试。幂等的客户端请求应带退避重试。
+
+## 上报错误
+
+如果你遇到此参考无法解释的可重现失败,请在
+[文档仓库](https://github.com/resq-software/docs/issues/new?title=Docs%20issue:%20)
+开 issue,附:
+
+- HTTP 方法、路径和状态码
+- 如果存在,Request ID(响应头 `X-Request-Id`)
+- 经过编辑的请求体副本
+- 完整的响应体

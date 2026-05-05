@@ -1,0 +1,148 @@
+---
+title: "त्वरित प्रारंभ"
+description: "ResQ Tactical OS API पर अपना पहला प्रमाणित कॉल पाँच मिनट में करें।"
+---
+
+ResQ दो HTTPS APIs उजागर करता है:
+
+| API | बेस URL | स्टैक |
+|-----|---------|-------|
+| Infrastructure API | `https://api.resq.software` | Rust + Axum |
+| Coordination API | `https://coordination.resq.software` | TypeScript + Elysia |
+
+<Note>
+  यदि आप स्व-होस्टेड डिप्लॉयमेंट चला रहे हैं, ऊपर के बेस URLs को अपने
+  URLs से बदलें। अनुरोध आकार समान हैं।
+</Note>
+
+## चरण
+
+<Steps>
+  <Step title="पुष्टि करें कि सेवा चल रही है">
+    Infrastructure API के `/health` पर कॉल करें। प्रमाणीकरण की आवश्यकता
+    नहीं।
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/health
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/health");
+      console.log(await res.json());
+      ```
+
+      ```python Python
+      import httpx
+      print(httpx.get("https://api.resq.software/health").json())
+      ```
+    </CodeGroup>
+
+    एक स्वस्थ प्रतिक्रिया इस तरह दिखती है:
+
+    ```json
+    {
+      "status": "ok",
+      "pinata": true,
+      "gemini": true,
+      "spoon_os": "0.1.0"
+    }
+    ```
+  </Step>
+
+  <Step title="JWT प्राप्त करें">
+    Infrastructure API bearer JWT उपयोग करता है। `POST /login` पर
+    क्रेडेंशियल को टोकन से बदलें।
+
+    <CodeGroup>
+      ```bash curl
+      curl -X POST https://api.resq.software/login \
+        -H "Content-Type: application/json" \
+        -d '{"username":"आपका-यूज़रनेम","password":"आपका-पासवर्ड"}'
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const { token, expires_at } = await res.json();
+      ```
+    </CodeGroup>
+
+    प्रतिक्रिया में टोकन और Unix एक्सपायरी होती है:
+
+    ```json
+    {
+      "token": "eyJhbGciOi...",
+      "expires_at": 1746345600
+    }
+    ```
+
+    टोकन सुरक्षित रूप से संग्रहीत करें। रिफ़्रेश और रोटेशन के लिए
+    [प्रमाणीकरण](/hi/authentication) देखें।
+  </Step>
+
+  <Step title="प्रमाणित एंडपॉइंट कॉल करें">
+    टोकन को `Bearer` हेडर के रूप में भेजें।
+
+    <CodeGroup>
+      ```bash curl
+      curl https://api.resq.software/evidence \
+        -H "Authorization: Bearer $RESQ_TOKEN"
+      ```
+
+      ```ts TypeScript
+      const res = await fetch("https://api.resq.software/evidence", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      ```
+    </CodeGroup>
+  </Step>
+
+  <Step title="Coordination API से टेलीमेट्री स्ट्रीम करें">
+    Coordination API रीयल-टाइम फ़्लीट स्टेट के लिए Prometheus मेट्रिक्स और
+    Server-Sent Events उजागर करता है।
+
+    ```bash
+    curl -N https://coordination.resq.software/events
+    ```
+
+    प्रत्येक पंक्ति एक JSON इवेंट है: टेलीमेट्री फ़्रेम, मिशन स्टेट
+    परिवर्तन, और HITL अनुमोदन।
+  </Step>
+
+  <Step title="एक SDK चुनें">
+    क्लाइंट लिखने से बचें — एक आधिकारिक SDK स्थापित करें।
+
+    <CardGroup cols={2}>
+      <Card title="TypeScript" icon="js" href="/sdks/typescript">
+        `@resq-sw/http`, `@resq-sw/security`, UI कंपोनेंट।
+      </Card>
+      <Card title="Python" icon="python" href="/sdks/python">
+        `resq-mcp` (FastMCP सर्वर) और `resq-dsa`।
+      </Card>
+      <Card title="Rust" icon="rust" href="/sdks/rust">
+        एकीकृत `resq` CLI और सात TUI टूल।
+      </Card>
+      <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+        टाइप किए गए क्लाइंट, Protobuf कॉन्ट्रैक्ट, सिम हार्नेस।
+      </Card>
+    </CardGroup>
+  </Step>
+</Steps>
+
+## अगला
+
+<CardGroup cols={3}>
+  <Card title="प्रमाणीकरण" icon="key" href="/hi/authentication">
+    JWT जीवनचक्र और रोटेशन।
+  </Card>
+  <Card title="त्रुटियाँ" icon="triangle-exclamation" href="/hi/errors">
+    एरर एनवेलप और स्टेटस कोड।
+  </Card>
+  <Card title="API संदर्भ" icon="code" href="/hi/api-reference/introduction">
+    सभी एंडपॉइंट, अनुरोध, और प्रतिक्रियाएं।
+  </Card>
+</CardGroup>
