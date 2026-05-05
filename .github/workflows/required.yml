@@ -38,12 +38,10 @@ jobs:
   spectral:
     name: spectral (OpenAPI lint)
     runs-on: ubuntu-latest
-    # Advisory: action ref hardening will be handled by Dependabot SHA-pin PRs.
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
       - name: Lint OpenAPI specs
-        uses: stoplightio/spectral-action@v0.8.13 # TODO: dependabot will SHA-pin
+        uses: stoplightio/spectral-action@6416fd018ae38e60136775066eb3e98172143141 # v0.8.13
         with:
           file_glob: 'specs/*.json'
 
@@ -90,15 +88,13 @@ jobs:
     steps:
       - name: Verify all gates passed
         run: |
-          # spectral remains advisory (continue-on-error) until the action ref
-          # is verified post-Dependabot SHA-pin.
           mintlify="${{ needs.mintlify.result }}"
           spectral="${{ needs.spectral.result }}"
           pwa="${{ needs.pwa-manifest.result }}"
-          echo "mintlify:            $mintlify"
-          echo "spectral (advisory): $spectral"
-          echo "pwa-manifest:        $pwa"
-          if [[ "$mintlify" != "success" || "$pwa" != "success" ]]; then
+          echo "mintlify:     $mintlify"
+          echo "spectral:     $spectral"
+          echo "pwa-manifest: $pwa"
+          if [[ "$mintlify" != "success" || "$spectral" != "success" || "$pwa" != "success" ]]; then
             echo "::error::One or more required gates failed"
             exit 1
           fi
