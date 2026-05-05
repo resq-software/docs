@@ -1,0 +1,104 @@
+---
+title: "概念"
+description: "ResQ Tactical OS 各部分如何协同工作:网状网络、证据链、任务流程,以及操作员权限范围。"
+---
+
+这是概念地图。在阅读 API 参考之前先看一遍,文档其余部分就能很快串起来。
+
+## 网状网络
+
+ResQ 以**去中心化网状网络**运行,而非中心-辐射式云架构。无人机、地面单元
+和操作员工作站组成对等网络;即使上游基础设施宕机或不可达,系统仍能继续
+运行。
+
+- 节点通过本地优先传输(网状电台、LTE、Wi-Fi)通信,在条件允许时机会性
+  地与云端协调。
+- Coordination API 设计为即使其上游依赖降级也能继续接受遥测并提供实时
+  状态。
+- 没有单点故障。如果一个协调器掉线,对等节点继续共享遥测并排队工作。
+
+在 API 中,部分路由在局部停机期间会以 `503 Service Unavailable` 出现 ——
+重试指南见[错误](/zh/errors)。
+
+## 证据与链
+
+任务中每个有后果的动作都会产生**证据**:
+
+1. 无人机捕获传感器帧、视频和结构化遥测。
+2. 证据文件被锚定到 **IPFS**,通过其 CID(内容寻址标识符)引用。
+3. CID 锚定到 **Solana**,生成抗篡改的链。
+4. Infrastructure API 暴露两端:`/evidence` 用于 IPFS 负载,
+   `/blockchain/*` 用于链上锚点。
+
+这使事后审查和监管链审计无需信任任何单一方 —— 任何持有 CID 和链引用的人
+都能验证字节内容。
+
+## 人在回路任务
+
+ResQ 的自主流程都受 **HITL 控制**。平台实现
+[欧盟 AI 法案第 14 条](https://artificialintelligenceact.eu/article/14/)
+的人工监督:授权操作员必须先批准高风险动作,系统才会执行。
+
+任务审批通过 Coordination API 暴露:
+
+- `GET /admin/missions/pending` — 待审批的动作
+- `POST /admin/missions/approve` — 批准一个待审任务
+- `POST /admin/missions/reject` — 拒绝并记录原因
+
+审批需要操作员的 `missions.approve` 权限范围。缺少此权限的调用返回
+`403` —— 详见[错误](/zh/errors)。
+
+## 空域与许可
+
+对于配送和自主飞行,ResQ 在 Solana 上使用链上的**空域注册表**。
+Infrastructure API 的 `/solana` 端点记录许可、配送事件和注册表查询。
+调度器拒绝超出允许空域的飞行计划;此关卡位于任务审批之前,而非之后。
+
+## 遥测与实时事件
+
+两条流承载实时数据:
+
+- **摄取**:无人机机队向 Coordination API 的 `POST /fleet/telemetry`
+  推送遥测批次。批次在边缘缓存并重试 —— 遥测永远不会无声丢弃。
+- **订阅**:客户端通过 `/events` 上的 Server-Sent Events 和 `/metrics`
+  上的 Prometheus 抓取消费实时状态(Coordination API)。
+
+## 操作员身份与权限范围
+
+操作员在 `POST /login` 用用户名和密码进行身份验证,获得短时效 JWT
+(参见[认证](/zh/authentication))。Token 携带操作员的**权限范围** ——
+细粒度的权限,例如 `missions.approve`、`evidence.write` 或
+`airspace.admin`。
+
+通过身份验证但缺少所需权限范围的请求返回 `403`。向操作员展示该错误,不要
+重试;需要管理员介入。
+
+## 故障注入与仿真
+
+Coordination API 暴露 `Simulation` 端点用于故障注入,SDK 也提供仿真
+框架。意图是在生产中依赖网状降级行为之前,先在测试中演练。在集成测试中
+使用,而不是在实际操作中。
+
+## 如何对应
+
+| 你想… | 看哪里 |
+|----|------|
+| 持久化事件、证据、锚点 | Infrastructure API |
+| 推送或读取实时机队状态 | Coordination API |
+| 看谁能做什么 | [认证](/zh/authentication) |
+| 理解失败与重试 | [错误](/zh/errors) |
+| 不写客户端就构建 | [SDKs](/sdks) |
+
+## 下一步
+
+<CardGroup cols={3}>
+  <Card title="快速开始" icon="rocket" href="/zh/quickstart">
+    第一次认证调用。
+  </Card>
+  <Card title="认证" icon="key" href="/zh/authentication">
+    JWT 生命周期与权限范围。
+  </Card>
+  <Card title="API 参考" icon="code" href="/zh/api-reference/introduction">
+    所有端点。
+  </Card>
+</CardGroup>

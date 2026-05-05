@@ -26,58 +26,220 @@
   },
   "favicon": "/assets/icons/resq-mark-color.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Overview",
-        "groups": [
+        "language": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Start here",
-            "pages": [
-              "index",
-              "concepts",
-              "quickstart",
-              "authentication",
-              "errors"
+            "tab": "Overview",
+            "groups": [
+              {
+                "group": "Start here",
+                "pages": [
+                  "index",
+                  "concepts",
+                  "quickstart",
+                  "authentication",
+                  "errors"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "SDKs",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "sdks/index"
+                ]
+              },
+              {
+                "group": "Languages",
+                "pages": [
+                  "sdks/typescript",
+                  "sdks/python",
+                  "sdks/rust",
+                  "sdks/dotnet"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Infrastructure API",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "Coordination API",
+                "openapi": "specs/coordination.json"
+              }
             ]
           }
         ]
       },
       {
-        "tab": "SDKs",
-        "groups": [
+        "language": "es",
+        "tabs": [
           {
-            "group": "Overview",
-            "pages": [
-              "sdks/index"
+            "tab": "Visión general",
+            "groups": [
+              {
+                "group": "Empieza aquí",
+                "pages": [
+                  "es/index",
+                  "es/concepts",
+                  "es/quickstart",
+                  "es/authentication",
+                  "es/errors"
+                ]
+              }
             ]
           },
           {
-            "group": "Languages",
-            "pages": [
-              "sdks/typescript",
-              "sdks/python",
-              "sdks/rust",
-              "sdks/dotnet"
+            "tab": "Referencia de API",
+            "groups": [
+              {
+                "group": "Visión general",
+                "pages": [
+                  "es/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "API de infraestructura",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "API de coordinación",
+                "openapi": "specs/coordination.json"
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "language": "ar",
+        "tabs": [
           {
-            "group": "Overview",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "نظرة عامة",
+            "groups": [
+              {
+                "group": "ابدأ من هنا",
+                "pages": [
+                  "ar/index",
+                  "ar/concepts",
+                  "ar/quickstart",
+                  "ar/authentication",
+                  "ar/errors"
+                ]
+              }
             ]
           },
           {
-            "group": "Infrastructure API",
-            "openapi": "specs/infrastructure.json"
+            "tab": "مرجع API",
+            "groups": [
+              {
+                "group": "نظرة عامة",
+                "pages": [
+                  "ar/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "واجهة برمجة البنية التحتية",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "واجهة برمجة التنسيق",
+                "openapi": "specs/coordination.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "hi",
+        "tabs": [
+          {
+            "tab": "अवलोकन",
+            "groups": [
+              {
+                "group": "यहाँ शुरू करें",
+                "pages": [
+                  "hi/index",
+                  "hi/concepts",
+                  "hi/quickstart",
+                  "hi/authentication",
+                  "hi/errors"
+                ]
+              }
+            ]
           },
           {
-            "group": "Coordination API",
-            "openapi": "specs/coordination.json"
+            "tab": "API संदर्भ",
+            "groups": [
+              {
+                "group": "अवलोकन",
+                "pages": [
+                  "hi/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "इन्फ्रास्ट्रक्चर API",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "कोऑर्डिनेशन API",
+                "openapi": "specs/coordination.json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "language": "zh",
+        "tabs": [
+          {
+            "tab": "概述",
+            "groups": [
+              {
+                "group": "从这里开始",
+                "pages": [
+                  "zh/index",
+                  "zh/concepts",
+                  "zh/quickstart",
+                  "zh/authentication",
+                  "zh/errors"
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "API 参考",
+            "groups": [
+              {
+                "group": "概述",
+                "pages": [
+                  "zh/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "基础设施 API",
+                "openapi": "specs/infrastructure.json"
+              },
+              {
+                "group": "协调 API",
+                "openapi": "specs/coordination.json"
+              }
+            ]
           }
         ]
       }

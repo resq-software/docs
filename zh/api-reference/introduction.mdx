@@ -1,0 +1,51 @@
+---
+title: '简介'
+description: 'ResQ API 参考文档'
+---
+
+## ResQ APIs
+
+ResQ 为灾害响应协调提供两套核心 API:
+
+<CardGroup cols={2}>
+  <Card
+    title="Infrastructure API"
+    icon="server"
+    href="#infrastructure-api"
+  >
+    事件管理、证据收集、区块链验证、AI 分析,以及 Solana 链上操作。
+  </Card>
+  <Card
+    title="Coordination API"
+    icon="satellite-dish"
+    href="#coordination-api"
+  >
+    实时无人机机队协调、遥测摄取、IPFS 存储、故障注入,
+    以及任务审批(HITL)。
+  </Card>
+</CardGroup>
+
+## Infrastructure API
+
+由 Rust/Axum 构建。处理持久化数据、区块链交互和 AI 驱动的分析。
+
+| Tag | 描述 |
+|-----|------|
+| **incidents** | 创建、列出和检索灾害事件 |
+| **evidence** | 管理无人机收集的证据(IPFS 支持) |
+| **blockchain** | 记录与查询链上事件,验证位置 |
+| **solana** | 空域管理、配送记录与许可证 |
+| **auth** | 基于 JWT 的认证 |
+
+## Coordination API
+
+由 TypeScript/Elysia 构建。处理实时机队操作和任务协调。
+
+| Tag | 描述 |
+|-----|------|
+| **Fleet** | 遥测批量处理 |
+| **Intelligence** | 事件报告与预测告警 |
+| **Storage** | IPFS 文件上传 |
+| **Simulation** | 用于测试的故障注入 |
+| **Admin** | 服务健康、性能分析、任务审批(欧盟人工智能法案第 14 条 HITL) |
+| **Observability** | Prometheus 指标与 SSE 事件流 |
