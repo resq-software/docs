@@ -78,6 +78,12 @@
                     "pages": [
                       "sdks/dotnet/api/README"
                     ]
+                  },
+                  {
+                    "group": "Python",
+                    "pages": [
+                      "sdks/python/api/README"
+                    ]
                   }
                 ]
               }
