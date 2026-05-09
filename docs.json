@@ -65,10 +65,20 @@
                 ]
               },
               {
-                "group": "Generated API reference",
+                "group": "Generated API Reference",
                 "pages": [
-                  "sdks/typescript/api/README",
-                  "sdks/dotnet/api/README"
+                  {
+                    "group": "TypeScript",
+                    "pages": [
+                      "sdks/typescript/api/README"
+                    ]
+                  },
+                  {
+                    "group": ".NET",
+                    "pages": [
+                      "sdks/dotnet/api/README"
+                    ]
+                  }
                 ]
               }
             ]
