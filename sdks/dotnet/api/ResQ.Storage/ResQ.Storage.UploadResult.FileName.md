@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'FileName'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')
 
 ## UploadResult\.FileName Property

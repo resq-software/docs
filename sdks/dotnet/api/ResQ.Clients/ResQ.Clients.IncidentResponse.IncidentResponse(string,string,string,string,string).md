@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IncidentResponse(string, string, string, string, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[IncidentResponse](./ResQ.Clients.IncidentResponse.md 'ResQ\.Clients\.IncidentResponse')
 
 ## IncidentResponse\(string, string, string, string, string\) Constructor

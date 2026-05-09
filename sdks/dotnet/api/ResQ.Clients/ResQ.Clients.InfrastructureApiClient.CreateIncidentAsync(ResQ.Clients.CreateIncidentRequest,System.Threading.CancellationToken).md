@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'CreateIncidentAsync(CreateIncidentRequest, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](./ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 ## InfrastructureApiClient\.CreateIncidentAsync\(CreateIncidentRequest, CancellationToken\) Method

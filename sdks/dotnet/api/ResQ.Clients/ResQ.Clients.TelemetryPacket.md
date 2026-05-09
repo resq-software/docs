@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TelemetryPacket'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## TelemetryPacket Class

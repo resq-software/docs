@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'AuthResponse'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## AuthResponse Class

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TransactionResult'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## TransactionResult Class

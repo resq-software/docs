@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Detection'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## Detection Class

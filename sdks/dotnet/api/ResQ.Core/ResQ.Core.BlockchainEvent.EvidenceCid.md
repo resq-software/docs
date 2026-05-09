@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'EvidenceCid'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[BlockchainEvent](./ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
 
 ## BlockchainEvent\.EvidenceCid Property

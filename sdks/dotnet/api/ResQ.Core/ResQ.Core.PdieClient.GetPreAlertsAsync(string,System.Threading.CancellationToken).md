@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetPreAlertsAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
 
 ## PdieClient\.GetPreAlertsAsync\(string, CancellationToken\) Method

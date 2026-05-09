@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'CoordinationHceClient'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## CoordinationHceClient Class

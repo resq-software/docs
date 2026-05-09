@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'AuthenticateAsync(string, string, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](./ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 ## CoordinationHceClient\.AuthenticateAsync\(string, string, CancellationToken\) Method

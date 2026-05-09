@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'AlertSeverity'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## AlertSeverity Enum

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadResponse'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## UploadResponse Class

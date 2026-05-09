@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BuildResiliencePipeline()'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.BuildResiliencePipeline\(\) Method

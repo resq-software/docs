@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IsCritical(Detection)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[ResQExtensions](./ResQ.Core.ResQExtensions.md 'ResQ\.Core\.ResQExtensions')
 
 ## ResQExtensions\.IsCritical\(this Detection\) Method

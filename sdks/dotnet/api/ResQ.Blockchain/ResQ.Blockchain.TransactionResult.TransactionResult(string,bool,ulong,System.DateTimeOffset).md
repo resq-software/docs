@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TransactionResult(string, bool, ulong, DateTimeOffset)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')
 
 ## TransactionResult\(string, bool, ulong, DateTimeOffset\) Constructor

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PdieClient(string)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
 
 ## PdieClient\(string\) Constructor

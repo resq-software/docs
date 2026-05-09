@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RequestStrategyAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
 
 ## DtsopClient\.RequestStrategyAsync\(string, CancellationToken\) Method

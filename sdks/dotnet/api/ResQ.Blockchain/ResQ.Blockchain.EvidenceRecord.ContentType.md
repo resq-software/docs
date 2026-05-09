@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ContentType'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[EvidenceRecord](./ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
 
 ## EvidenceRecord\.ContentType Property

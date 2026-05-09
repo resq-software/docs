@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'FlightMode'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[TelemetryPacket](./ResQ.Clients.TelemetryPacket.md 'ResQ\.Clients\.TelemetryPacket')
 
 ## TelemetryPacket\.FlightMode Property

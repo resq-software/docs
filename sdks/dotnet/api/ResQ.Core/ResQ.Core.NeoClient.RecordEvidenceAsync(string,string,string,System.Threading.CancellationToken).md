@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RecordEvidenceAsync(string, string, string, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.RecordEvidenceAsync\(string, string, string, CancellationToken\) Method

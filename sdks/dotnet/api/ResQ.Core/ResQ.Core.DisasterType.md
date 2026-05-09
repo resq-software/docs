@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DisasterType'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## DisasterType Enum

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Latitude'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 ## Location\.Latitude Property

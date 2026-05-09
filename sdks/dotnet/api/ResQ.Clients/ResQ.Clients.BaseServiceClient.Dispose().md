@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Dispose()'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[BaseServiceClient](./ResQ.Clients.BaseServiceClient.md 'ResQ\.Clients\.BaseServiceClient')
 
 ## BaseServiceClient\.Dispose\(\) Method

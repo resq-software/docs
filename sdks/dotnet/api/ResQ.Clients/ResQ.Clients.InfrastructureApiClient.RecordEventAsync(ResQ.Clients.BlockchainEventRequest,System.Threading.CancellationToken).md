@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RecordEventAsync(BlockchainEventRequest, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](./ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 ## InfrastructureApiClient\.RecordEventAsync\(BlockchainEventRequest, CancellationToken\) Method

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ListPinsAsync(string, int, CancellationToken)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](./ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
 
 ## IStorageClient\.ListPinsAsync\(string, int, CancellationToken\) Method

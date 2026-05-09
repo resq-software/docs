@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'CreateIncidentRequest'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## CreateIncidentRequest Class

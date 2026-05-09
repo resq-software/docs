@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DtsopClient'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## DtsopClient Class

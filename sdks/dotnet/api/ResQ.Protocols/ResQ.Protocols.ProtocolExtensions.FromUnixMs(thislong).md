@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'FromUnixMs(thislong)'
+---
+
 ### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols').[ProtocolExtensions](./ResQ.Protocols.ProtocolExtensions.md 'ResQ\.Protocols\.ProtocolExtensions')
 
 ## ProtocolExtensions\.FromUnixMs\(this long\) Method

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetHealthAsync(CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](./ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 ## CoordinationHceClient\.GetHealthAsync\(CancellationToken\) Method

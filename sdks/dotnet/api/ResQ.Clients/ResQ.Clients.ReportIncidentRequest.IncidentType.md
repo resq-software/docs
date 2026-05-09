@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IncidentType'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](./ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
 
 ## ReportIncidentRequest\.IncidentType Property

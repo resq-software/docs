@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'NeoClientOptions'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## NeoClientOptions Class

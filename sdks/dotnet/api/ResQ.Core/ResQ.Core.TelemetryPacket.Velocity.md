@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Velocity'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[TelemetryPacket](./ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
 
 ## TelemetryPacket\.Velocity Property

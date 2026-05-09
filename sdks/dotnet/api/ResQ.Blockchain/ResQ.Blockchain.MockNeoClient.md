@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'MockNeoClient'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## MockNeoClient Class

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ProtocolExtensions'
+---
+
 ### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols')
 
 ## ProtocolExtensions Class

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'HceClient'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## HceClient Class

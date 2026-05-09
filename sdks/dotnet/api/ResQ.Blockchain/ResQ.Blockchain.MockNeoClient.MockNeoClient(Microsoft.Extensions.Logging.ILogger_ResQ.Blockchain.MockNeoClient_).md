@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'MockNeoClient(MockNeoClient_)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\(ILogger\<MockNeoClient\>\) Constructor

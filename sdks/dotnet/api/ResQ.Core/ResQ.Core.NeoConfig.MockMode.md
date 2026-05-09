@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'MockMode'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoConfig](./ResQ.Core.NeoConfig.md 'ResQ\.Core\.NeoConfig')
 
 ## NeoConfig\.MockMode Property

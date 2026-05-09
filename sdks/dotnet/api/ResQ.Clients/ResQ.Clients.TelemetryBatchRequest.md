@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TelemetryBatchRequest'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## TelemetryBatchRequest Class

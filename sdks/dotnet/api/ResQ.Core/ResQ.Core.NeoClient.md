@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'NeoClient'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## NeoClient Class

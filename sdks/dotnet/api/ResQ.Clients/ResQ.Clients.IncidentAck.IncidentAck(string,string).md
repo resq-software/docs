@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IncidentAck(string, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[IncidentAck](./ResQ.Clients.IncidentAck.md 'ResQ\.Clients\.IncidentAck')
 
 ## IncidentAck\(string, string\) Constructor

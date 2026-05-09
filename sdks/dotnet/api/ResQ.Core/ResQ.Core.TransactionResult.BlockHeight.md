@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockHeight'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[TransactionResult](./ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')
 
 ## TransactionResult\.BlockHeight Property

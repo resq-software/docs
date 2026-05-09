@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Core'
+---
+
 ## ResQ\.Core Namespace
 
 | Classes | |

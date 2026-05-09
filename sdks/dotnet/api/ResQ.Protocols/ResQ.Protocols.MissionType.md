@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'MissionType'
+---
+
 ### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols')
 
 ## MissionType Enum

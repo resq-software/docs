@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadResult(string, string, long, string, bool, DateTimeOffset)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')
 
 ## UploadResult\(string, string, long, string, bool, DateTimeOffset\) Constructor

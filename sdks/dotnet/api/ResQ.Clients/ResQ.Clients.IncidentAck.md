@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IncidentAck'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## IncidentAck Class

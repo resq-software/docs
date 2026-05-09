@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'INeoClient'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## INeoClient Interface

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadImageAsync(byte[], string, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](./ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 ## InfrastructureApiClient\.UploadImageAsync\(byte\[\], string, CancellationToken\) Method

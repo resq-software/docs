@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'LocationAttestation'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## LocationAttestation Class

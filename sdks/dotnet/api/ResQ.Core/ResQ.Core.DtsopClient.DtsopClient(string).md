@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DtsopClient(string)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
 
 ## DtsopClient\(string\) Constructor

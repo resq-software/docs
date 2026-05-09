@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](./ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
 
 ## IStorageClient\.GetAsync\(string, CancellationToken\) Method

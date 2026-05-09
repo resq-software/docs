@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TransactionResult'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## TransactionResult Class

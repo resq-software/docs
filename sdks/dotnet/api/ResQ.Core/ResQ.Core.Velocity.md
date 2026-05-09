@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Velocity'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## Velocity Class

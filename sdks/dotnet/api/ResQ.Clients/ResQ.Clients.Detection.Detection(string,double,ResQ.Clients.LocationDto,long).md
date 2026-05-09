@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Detection(string, double, LocationDto, long)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[Detection](./ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
 
 ## Detection\(string, double, LocationDto, long\) Constructor

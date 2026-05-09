@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'InfraAuthResponse'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## InfraAuthResponse Class

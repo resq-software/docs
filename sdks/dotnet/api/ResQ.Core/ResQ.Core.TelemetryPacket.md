@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TelemetryPacket'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## TelemetryPacket Class

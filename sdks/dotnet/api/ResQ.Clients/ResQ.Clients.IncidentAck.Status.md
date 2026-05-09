@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Status'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[IncidentAck](./ResQ.Clients.IncidentAck.md 'ResQ\.Clients\.IncidentAck')
 
 ## IncidentAck\.Status Property

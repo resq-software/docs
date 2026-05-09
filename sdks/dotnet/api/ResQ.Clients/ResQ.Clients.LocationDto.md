@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'LocationDto'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## LocationDto Class

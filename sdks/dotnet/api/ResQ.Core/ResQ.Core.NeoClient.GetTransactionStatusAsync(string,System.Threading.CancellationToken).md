@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetTransactionStatusAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.GetTransactionStatusAsync\(string, CancellationToken\) Method

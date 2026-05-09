@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TransactionStatus'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## TransactionStatus Enum
