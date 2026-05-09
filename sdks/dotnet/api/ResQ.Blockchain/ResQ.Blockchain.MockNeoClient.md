@@ -39,6 +39,8 @@ with each transaction. No actual blockchain transactions are performed.
 
 | Methods | |
 | :--- | :--- |
+| [ExtractIncidentId\(string\)](./ResQ.Blockchain.MockNeoClient.ExtractIncidentId(string).md 'ResQ\.Blockchain\.MockNeoClient\.ExtractIncidentId\(string\)') | Extracts an incident ID from a JSON payload string\. |
+| [GenerateTxHash\(\)](./ResQ.Blockchain.MockNeoClient.GenerateTxHash().md 'ResQ\.Blockchain\.MockNeoClient\.GenerateTxHash\(\)') | Generates a random transaction hash for mock purposes\. |
 | [GetBlockHeightAsync\(CancellationToken\)](./ResQ.Blockchain.MockNeoClient.GetBlockHeightAsync(System.Threading.CancellationToken).md 'ResQ\.Blockchain\.MockNeoClient\.GetBlockHeightAsync\(System\.Threading\.CancellationToken\)') | Gets the current mock block height\. |
 | [GetEventsByIncidentAsync\(string, CancellationToken\)](./ResQ.Blockchain.MockNeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.MockNeoClient\.GetEventsByIncidentAsync\(string, System\.Threading\.CancellationToken\)') | Retrieves mock events by incident ID from the in\-memory store\. |
 | [RecordEventAsync\(BlockchainEvent, CancellationToken\)](./ResQ.Blockchain.MockNeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.MockNeoClient\.RecordEventAsync\(ResQ\.Blockchain\.BlockchainEvent, System\.Threading\.CancellationToken\)') | Records a mock blockchain event in memory\. |
