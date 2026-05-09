@@ -2,7 +2,7 @@
 
 > **getContrastingColor**(`col`): `"#000000"` \| `"#ffffff"` \| `undefined`
 
-Defined in: [packages/ui/src/lib/get-contrasting-color.ts:51](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/get-contrasting-color.ts#L51)
+Defined in: [packages/ui/src/lib/get-contrasting-color.ts:51](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/get-contrasting-color.ts#L51)
 
 Returns a highly contrasting color (#000000 or #ffffff) for a given input color string,
 useful for ensuring text or UI elements remain visible against varying backgrounds.

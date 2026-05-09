@@ -1,6 +1,6 @@
 # Interface: ContrastPair
 
-Defined in: [packages/ui/src/lib/contrast-audit.ts:21](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/contrast-audit.ts#L21)
+Defined in: [packages/ui/src/lib/contrast-audit.ts:21](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/contrast-audit.ts#L21)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [packages/ui/src/lib/contrast-audit.ts:21](https://github.com/resq-s
 
 > **bg**: `string`
 
-Defined in: [packages/ui/src/lib/contrast-audit.ts:23](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/contrast-audit.ts#L23)
+Defined in: [packages/ui/src/lib/contrast-audit.ts:23](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/contrast-audit.ts#L23)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [packages/ui/src/lib/contrast-audit.ts:23](https://github.com/resq-s
 
 > **fg**: `string`
 
-Defined in: [packages/ui/src/lib/contrast-audit.ts:22](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/contrast-audit.ts#L22)
+Defined in: [packages/ui/src/lib/contrast-audit.ts:22](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/contrast-audit.ts#L22)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/ui/src/lib/contrast-audit.ts:22](https://github.com/resq-s
 
 > **label**: `string`
 
-Defined in: [packages/ui/src/lib/contrast-audit.ts:25](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/contrast-audit.ts#L25)
+Defined in: [packages/ui/src/lib/contrast-audit.ts:25](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/contrast-audit.ts#L25)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [packages/ui/src/lib/contrast-audit.ts:25](https://github.com/resq-s
 
 > **minRatio**: `number`
 
-Defined in: [packages/ui/src/lib/contrast-audit.ts:24](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/contrast-audit.ts#L24)
+Defined in: [packages/ui/src/lib/contrast-audit.ts:24](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/lib/contrast-audit.ts#L24)
