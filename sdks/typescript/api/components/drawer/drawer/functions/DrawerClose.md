@@ -1,0 +1,15 @@
+# Function: DrawerClose()
+
+> **DrawerClose**(`__namedParameters`): `Element`
+
+Defined in: [packages/ui/src/components/drawer/drawer.tsx:28](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/components/drawer/drawer.tsx#L28)
+
+## Parameters
+
+### \_\_namedParameters
+
+`Readonly`\<`React.ComponentProps`\<*typeof* `DrawerPrimitive.Close`\>\>
+
+## Returns
+
+`Element`
