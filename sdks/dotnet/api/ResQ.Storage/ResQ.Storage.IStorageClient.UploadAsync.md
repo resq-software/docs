@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](./ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
 
 ## IStorageClient\.UploadAsync Method
 
@@ -49,8 +49,8 @@ Optional dictionary of custom metadata key\-value pairs\.
 Cancellation token for the operation\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-An [UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+An [UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
 
 #### Exceptions
 
@@ -119,8 +119,8 @@ Optional dictionary of custom metadata key\-value pairs to attach to the pin\.
 Cancellation token for the operation\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-An [UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+An [UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
 
 #### Exceptions
 

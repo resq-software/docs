@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\.GetEventsByIncidentAsync\(string, CancellationToken\) Method
 
@@ -21,10 +21,10 @@ The incident ID to query\.
 
 Cancellation token for the operation\.
 
-Implements [GetEventsByIncidentAsync\(string, CancellationToken\)](./ResQ.Blockchain.INeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.GetEventsByIncidentAsync\(string, System\.Threading\.CancellationToken\)')
+Implements [GetEventsByIncidentAsync\(string, CancellationToken\)](ResQ.Blockchain.INeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.GetEventsByIncidentAsync\(string, System\.Threading\.CancellationToken\)')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.IReadOnlyList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[BlockchainEvent](./ResQ.Blockchain.BlockchainEvent.md 'ResQ\.Blockchain\.BlockchainEvent')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.IReadOnlyList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[BlockchainEvent](ResQ.Blockchain.BlockchainEvent.md 'ResQ\.Blockchain\.BlockchainEvent')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 A read\-only list of events associated with the incident, or an empty list if none exist\.
 
 ### Example
@@ -40,6 +40,6 @@ Console.WriteLine($"Found {events.Count} events");
 ```
 
 ### Remarks
-Events are stored when recorded via [RecordEventAsync\(BlockchainEvent, CancellationToken\)](./ResQ.Blockchain.MockNeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.MockNeoClient\.RecordEventAsync\(ResQ\.Blockchain\.BlockchainEvent, System\.Threading\.CancellationToken\)') if the payload
+Events are stored when recorded via [RecordEventAsync\(BlockchainEvent, CancellationToken\)](ResQ.Blockchain.MockNeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.MockNeoClient\.RecordEventAsync\(ResQ\.Blockchain\.BlockchainEvent, System\.Threading\.CancellationToken\)') if the payload
 contains an "incident" field\. This method retrieves all events that were indexed
 under the specified incident ID\.

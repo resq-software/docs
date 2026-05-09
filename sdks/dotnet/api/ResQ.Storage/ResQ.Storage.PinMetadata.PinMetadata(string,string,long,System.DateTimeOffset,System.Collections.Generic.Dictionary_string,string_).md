@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinMetadata](./ResQ.Storage.PinMetadata.md 'ResQ\.Storage\.PinMetadata')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinMetadata](ResQ.Storage.PinMetadata.md 'ResQ\.Storage\.PinMetadata')
 
 ## PinMetadata\(string, string, long, DateTimeOffset, Dictionary\<string,string\>\) Constructor
 

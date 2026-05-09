@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[LocationDto](./ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[LocationDto](ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
 
 ## LocationDto\(double, double, double\) Constructor
 

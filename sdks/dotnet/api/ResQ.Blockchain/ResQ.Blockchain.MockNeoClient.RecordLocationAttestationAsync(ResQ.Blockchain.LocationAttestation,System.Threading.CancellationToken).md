@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\.RecordLocationAttestationAsync\(LocationAttestation, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ public System.Threading.Tasks.Task<ResQ.Blockchain.TransactionResult> RecordLoca
 
 <a name='ResQ.Blockchain.MockNeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken).attestation'></a>
 
-`attestation` [LocationAttestation](./ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')
+`attestation` [LocationAttestation](ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')
 
 The location attestation to record\.
 
@@ -21,11 +21,11 @@ The location attestation to record\.
 
 Cancellation token for the operation\.
 
-Implements [RecordLocationAttestationAsync\(LocationAttestation, CancellationToken\)](./ResQ.Blockchain.INeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.RecordLocationAttestationAsync\(ResQ\.Blockchain\.LocationAttestation, System\.Threading\.CancellationToken\)')
+Implements [RecordLocationAttestationAsync\(LocationAttestation, CancellationToken\)](ResQ.Blockchain.INeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.RecordLocationAttestationAsync\(ResQ\.Blockchain\.LocationAttestation, System\.Threading\.CancellationToken\)')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-A [TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult') with a generated transaction hash and confirmed status\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+A [TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult') with a generated transaction hash and confirmed status\.
 
 ### Example
 

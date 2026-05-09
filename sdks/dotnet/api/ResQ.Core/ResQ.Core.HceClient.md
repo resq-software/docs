@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## HceClient Class
 
@@ -30,9 +30,9 @@ HCE coordination service\.
 
 | Constructors | |
 | :--- | :--- |
-| [HceClient\(string\)](./ResQ.Core.HceClient.HceClient(string).md 'ResQ\.Core\.HceClient\.HceClient\(string\)') | Initializes a new instance of the [HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient') class\. |
+| [HceClient\(string\)](ResQ.Core.HceClient.HceClient(string).md 'ResQ\.Core\.HceClient\.HceClient\(string\)') | Initializes a new instance of the [HceClient](ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient') class\. |
 
 | Methods | |
 | :--- | :--- |
-| [ReportDetectionAsync\(Detection, string, CancellationToken\)](./ResQ.Core.HceClient.ReportDetectionAsync(ResQ.Core.Detection,string,System.Threading.CancellationToken).md 'ResQ\.Core\.HceClient\.ReportDetectionAsync\(ResQ\.Core\.Detection, string, System\.Threading\.CancellationToken\)') | Reports a critical detection to the HCE service\. |
-| [SendTelemetryAsync\(TelemetryPacket, CancellationToken\)](./ResQ.Core.HceClient.SendTelemetryAsync(ResQ.Core.TelemetryPacket,System.Threading.CancellationToken).md 'ResQ\.Core\.HceClient\.SendTelemetryAsync\(ResQ\.Core\.TelemetryPacket, System\.Threading\.CancellationToken\)') | Sends telemetry data from a drone to the HCE service\. |
+| [ReportDetectionAsync\(Detection, string, CancellationToken\)](ResQ.Core.HceClient.ReportDetectionAsync(ResQ.Core.Detection,string,System.Threading.CancellationToken).md 'ResQ\.Core\.HceClient\.ReportDetectionAsync\(ResQ\.Core\.Detection, string, System\.Threading\.CancellationToken\)') | Reports a critical detection to the HCE service\. |
+| [SendTelemetryAsync\(TelemetryPacket, CancellationToken\)](ResQ.Core.HceClient.SendTelemetryAsync(ResQ.Core.TelemetryPacket,System.Threading.CancellationToken).md 'ResQ\.Core\.HceClient\.SendTelemetryAsync\(ResQ\.Core\.TelemetryPacket, System\.Threading\.CancellationToken\)') | Sends telemetry data from a drone to the HCE service\. |

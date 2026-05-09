@@ -1,8 +1,8 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[DtsopClient](ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
 
 ## DtsopClient\(string\) Constructor
 
-Initializes a new instance of the [DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient') class\.
+Initializes a new instance of the [DtsopClient](ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient') class\.
 
 ```csharp
 public DtsopClient(string baseUrl="http://localhost:9000");

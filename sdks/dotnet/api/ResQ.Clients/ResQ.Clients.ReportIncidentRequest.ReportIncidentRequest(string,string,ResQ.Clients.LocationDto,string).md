@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](./ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
 
 ## ReportIncidentRequest\(string, string, LocationDto, string\) Constructor
 
@@ -23,7 +23,7 @@ Severity level \(e\.g\., "LOW", "MEDIUM", "HIGH", "CRITICAL"\)\.
 
 <a name='ResQ.Clients.ReportIncidentRequest.ReportIncidentRequest(string,string,ResQ.Clients.LocationDto,string).Location'></a>
 
-`Location` [LocationDto](./ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
+`Location` [LocationDto](ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
 
 Geographic location of the incident\.
 

@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[BlockchainEvent](./ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[BlockchainEvent](ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
 
 ## BlockchainEvent\.Location Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.Location? Location { get; init; }
 ```
 
 #### Property Value
-[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+[Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')

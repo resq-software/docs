@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## NeoClientOptions Class
 
@@ -46,16 +46,16 @@ including RPC endpoint, network identification, contract addresses, and operatio
 parameters such as timeouts and retry logic\.
 
 
-For development and testing, set [MockMode](./ResQ.Blockchain.NeoClientOptions.MockMode.md 'ResQ\.Blockchain\.NeoClientOptions\.MockMode') to true to use the mock
-client implementation. For production, configure the [RpcUrl](./ResQ.Blockchain.NeoClientOptions.RpcUrl.md 'ResQ\.Blockchain\.NeoClientOptions\.RpcUrl') to point
+For development and testing, set [MockMode](ResQ.Blockchain.NeoClientOptions.MockMode.md 'ResQ\.Blockchain\.NeoClientOptions\.MockMode') to true to use the mock
+client implementation. For production, configure the [RpcUrl](ResQ.Blockchain.NeoClientOptions.RpcUrl.md 'ResQ\.Blockchain\.NeoClientOptions\.RpcUrl') to point
 to a reliable Neo N3 RPC endpoint and provide the wallet path for transaction signing.
 
 | Properties | |
 | :--- | :--- |
-| [ConfirmationTimeoutSeconds](./ResQ.Blockchain.NeoClientOptions.ConfirmationTimeoutSeconds.md 'ResQ\.Blockchain\.NeoClientOptions\.ConfirmationTimeoutSeconds') | Gets or sets the timeout for waiting for transaction confirmation\. |
-| [ContractHash](./ResQ.Blockchain.NeoClientOptions.ContractHash.md 'ResQ\.Blockchain\.NeoClientOptions\.ContractHash') | Gets or sets the smart contract script hash for ResQ event recording\. |
-| [MaxRetryAttempts](./ResQ.Blockchain.NeoClientOptions.MaxRetryAttempts.md 'ResQ\.Blockchain\.NeoClientOptions\.MaxRetryAttempts') | Gets or sets the maximum number of retry attempts for failed transactions\. |
-| [MockMode](./ResQ.Blockchain.NeoClientOptions.MockMode.md 'ResQ\.Blockchain\.NeoClientOptions\.MockMode') | Gets or sets a value indicating whether to use mock mode for testing\. |
-| [NetworkMagic](./ResQ.Blockchain.NeoClientOptions.NetworkMagic.md 'ResQ\.Blockchain\.NeoClientOptions\.NetworkMagic') | Gets or sets the network magic number for identifying the Neo network\. |
-| [RpcUrl](./ResQ.Blockchain.NeoClientOptions.RpcUrl.md 'ResQ\.Blockchain\.NeoClientOptions\.RpcUrl') | Gets or sets the Neo N3 RPC endpoint URL\. |
-| [WalletPath](./ResQ.Blockchain.NeoClientOptions.WalletPath.md 'ResQ\.Blockchain\.NeoClientOptions\.WalletPath') | Gets or sets the file path to the wallet for transaction signing\. |
+| [ConfirmationTimeoutSeconds](ResQ.Blockchain.NeoClientOptions.ConfirmationTimeoutSeconds.md 'ResQ\.Blockchain\.NeoClientOptions\.ConfirmationTimeoutSeconds') | Gets or sets the timeout for waiting for transaction confirmation\. |
+| [ContractHash](ResQ.Blockchain.NeoClientOptions.ContractHash.md 'ResQ\.Blockchain\.NeoClientOptions\.ContractHash') | Gets or sets the smart contract script hash for ResQ event recording\. |
+| [MaxRetryAttempts](ResQ.Blockchain.NeoClientOptions.MaxRetryAttempts.md 'ResQ\.Blockchain\.NeoClientOptions\.MaxRetryAttempts') | Gets or sets the maximum number of retry attempts for failed transactions\. |
+| [MockMode](ResQ.Blockchain.NeoClientOptions.MockMode.md 'ResQ\.Blockchain\.NeoClientOptions\.MockMode') | Gets or sets a value indicating whether to use mock mode for testing\. |
+| [NetworkMagic](ResQ.Blockchain.NeoClientOptions.NetworkMagic.md 'ResQ\.Blockchain\.NeoClientOptions\.NetworkMagic') | Gets or sets the network magic number for identifying the Neo network\. |
+| [RpcUrl](ResQ.Blockchain.NeoClientOptions.RpcUrl.md 'ResQ\.Blockchain\.NeoClientOptions\.RpcUrl') | Gets or sets the Neo N3 RPC endpoint URL\. |
+| [WalletPath](ResQ.Blockchain.NeoClientOptions.WalletPath.md 'ResQ\.Blockchain\.NeoClientOptions\.WalletPath') | Gets or sets the file path to the wallet for transaction signing\. |

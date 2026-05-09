@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[TelemetryBatchRequest](./ResQ.Clients.TelemetryBatchRequest.md 'ResQ\.Clients\.TelemetryBatchRequest')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[TelemetryBatchRequest](ResQ.Clients.TelemetryBatchRequest.md 'ResQ\.Clients\.TelemetryBatchRequest')
 
 ## TelemetryBatchRequest\.DroneId Property
 

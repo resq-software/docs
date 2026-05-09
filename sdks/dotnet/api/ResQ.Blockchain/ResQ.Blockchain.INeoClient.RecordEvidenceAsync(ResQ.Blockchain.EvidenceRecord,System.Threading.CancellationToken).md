@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[INeoClient](./ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[INeoClient](ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
 
 ## INeoClient\.RecordEvidenceAsync\(EvidenceRecord, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ System.Threading.Tasks.Task<ResQ.Blockchain.TransactionResult> RecordEvidenceAsy
 
 <a name='ResQ.Blockchain.INeoClient.RecordEvidenceAsync(ResQ.Blockchain.EvidenceRecord,System.Threading.CancellationToken).evidence'></a>
 
-`evidence` [EvidenceRecord](./ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
+`evidence` [EvidenceRecord](ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
 
 The evidence record containing IPFS CID and metadata\.
 
@@ -22,8 +22,8 @@ The evidence record containing IPFS CID and metadata\.
 Cancellation token for the operation\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-A [TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult') containing the transaction hash and confirmation status\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+A [TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult') containing the transaction hash and confirmation status\.
 
 #### Exceptions
 

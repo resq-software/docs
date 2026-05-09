@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](./ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 ## CoordinationHceClient\.SendTelemetryBatchAsync\(TelemetryBatchRequest, CancellationToken\) Method
 
@@ -12,7 +12,7 @@ public System.Threading.Tasks.Task SendTelemetryBatchAsync(ResQ.Clients.Telemetr
 
 <a name='ResQ.Clients.CoordinationHceClient.SendTelemetryBatchAsync(ResQ.Clients.TelemetryBatchRequest,System.Threading.CancellationToken).batch'></a>
 
-`batch` [TelemetryBatchRequest](./ResQ.Clients.TelemetryBatchRequest.md 'ResQ\.Clients\.TelemetryBatchRequest')
+`batch` [TelemetryBatchRequest](ResQ.Clients.TelemetryBatchRequest.md 'ResQ\.Clients\.TelemetryBatchRequest')
 
 <a name='ResQ.Clients.CoordinationHceClient.SendTelemetryBatchAsync(ResQ.Clients.TelemetryBatchRequest,System.Threading.CancellationToken).ct'></a>
 

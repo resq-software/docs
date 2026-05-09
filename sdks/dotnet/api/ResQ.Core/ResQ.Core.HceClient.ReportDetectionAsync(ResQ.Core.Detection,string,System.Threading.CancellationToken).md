@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[HceClient](ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
 
 ## HceClient\.ReportDetectionAsync\(Detection, string, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ public System.Threading.Tasks.Task<bool> ReportDetectionAsync(ResQ.Core.Detectio
 
 <a name='ResQ.Core.HceClient.ReportDetectionAsync(ResQ.Core.Detection,string,System.Threading.CancellationToken).detection'></a>
 
-`detection` [Detection](./ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
+`detection` [Detection](ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
 
 The detection to report\.
 

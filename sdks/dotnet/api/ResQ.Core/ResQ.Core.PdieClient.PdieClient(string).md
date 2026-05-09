@@ -1,8 +1,8 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[PdieClient](ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
 
 ## PdieClient\(string\) Constructor
 
-Initializes a new instance of the [PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient') class\.
+Initializes a new instance of the [PdieClient](ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient') class\.
 
 ```csharp
 public PdieClient(string baseUrl="http://localhost:8000");

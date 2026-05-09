@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients')
 
 ## InfraAuthResponse Class
 
@@ -10,8 +10,8 @@ public record InfraAuthResponse : System.IEquatable<ResQ.Clients.InfraAuthRespon
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; InfraAuthResponse
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[InfraAuthResponse](./ResQ.Clients.InfraAuthResponse.md 'ResQ\.Clients\.InfraAuthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[InfraAuthResponse](ResQ.Clients.InfraAuthResponse.md 'ResQ\.Clients\.InfraAuthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 | Constructors | |
 | :--- | :--- |
-| [InfraAuthResponse\(string\)](./ResQ.Clients.InfraAuthResponse.InfraAuthResponse(string).md 'ResQ\.Clients\.InfraAuthResponse\.InfraAuthResponse\(string\)') | JWT response from infrastructure\-api /login endpoint\. |
+| [InfraAuthResponse\(string\)](ResQ.Clients.InfraAuthResponse.InfraAuthResponse(string).md 'ResQ\.Clients\.InfraAuthResponse\.InfraAuthResponse\(string\)') | JWT response from infrastructure\-api /login endpoint\. |

@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## PreAlert Class
 
@@ -10,7 +10,7 @@ public record PreAlert : System.IEquatable<ResQ.Core.PreAlert>
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; PreAlert
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[PreAlert](ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 ### Example
 
@@ -33,10 +33,10 @@ severity estimates\.
 
 | Properties | |
 | :--- | :--- |
-| [AlertId](./ResQ.Core.PreAlert.AlertId.md 'ResQ\.Core\.PreAlert\.AlertId') | Unique identifier for this pre\-alert\. |
-| [CreatedAt](./ResQ.Core.PreAlert.CreatedAt.md 'ResQ\.Core\.PreAlert\.CreatedAt') | UTC timestamp when the pre\-alert was created\. |
-| [ForecastHorizonHours](./ResQ.Core.PreAlert.ForecastHorizonHours.md 'ResQ\.Core\.PreAlert\.ForecastHorizonHours') | Forecast time horizon in hours\. |
-| [PredictedDisasterType](./ResQ.Core.PreAlert.PredictedDisasterType.md 'ResQ\.Core\.PreAlert\.PredictedDisasterType') | Predicted type of disaster\. |
-| [Probability](./ResQ.Core.PreAlert.Probability.md 'ResQ\.Core\.PreAlert\.Probability') | Probability of the disaster occurring \(0\.0 to 1\.0\)\. |
-| [SectorId](./ResQ.Core.PreAlert.SectorId.md 'ResQ\.Core\.PreAlert\.SectorId') | Geographic sector this alert applies to\. |
-| [Severity](./ResQ.Core.PreAlert.Severity.md 'ResQ\.Core\.PreAlert\.Severity') | Severity level of the predicted disaster\. |
+| [AlertId](ResQ.Core.PreAlert.AlertId.md 'ResQ\.Core\.PreAlert\.AlertId') | Unique identifier for this pre\-alert\. |
+| [CreatedAt](ResQ.Core.PreAlert.CreatedAt.md 'ResQ\.Core\.PreAlert\.CreatedAt') | UTC timestamp when the pre\-alert was created\. |
+| [ForecastHorizonHours](ResQ.Core.PreAlert.ForecastHorizonHours.md 'ResQ\.Core\.PreAlert\.ForecastHorizonHours') | Forecast time horizon in hours\. |
+| [PredictedDisasterType](ResQ.Core.PreAlert.PredictedDisasterType.md 'ResQ\.Core\.PreAlert\.PredictedDisasterType') | Predicted type of disaster\. |
+| [Probability](ResQ.Core.PreAlert.Probability.md 'ResQ\.Core\.PreAlert\.Probability') | Probability of the disaster occurring \(0\.0 to 1\.0\)\. |
+| [SectorId](ResQ.Core.PreAlert.SectorId.md 'ResQ\.Core\.PreAlert\.SectorId') | Geographic sector this alert applies to\. |
+| [Severity](ResQ.Core.PreAlert.Severity.md 'ResQ\.Core\.PreAlert\.Severity') | Severity level of the predicted disaster\. |

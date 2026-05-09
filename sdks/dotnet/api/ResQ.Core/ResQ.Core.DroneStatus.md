@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## DroneStatus Enum
 

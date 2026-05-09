@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[HceClient](ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
 
 ## HceClient\.SendTelemetryAsync\(TelemetryPacket, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ public System.Threading.Tasks.Task<bool> SendTelemetryAsync(ResQ.Core.TelemetryP
 
 <a name='ResQ.Core.HceClient.SendTelemetryAsync(ResQ.Core.TelemetryPacket,System.Threading.CancellationToken).packet'></a>
 
-`packet` [TelemetryPacket](./ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
+`packet` [TelemetryPacket](ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
 
 The telemetry packet to send\.
 

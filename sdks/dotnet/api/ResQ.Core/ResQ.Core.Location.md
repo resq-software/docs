@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## Location Class
 
@@ -10,7 +10,7 @@ public record Location : System.IEquatable<ResQ.Core.Location>
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; Location
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 ### Example
 
@@ -31,14 +31,14 @@ using the Haversine formula for great\-circle distance\.
 
 | Constructors | |
 | :--- | :--- |
-| [Location\(double, double, Nullable&lt;double&gt;\)](./ResQ.Core.Location.Location(double,double,System.Nullable_double_).md 'ResQ\.Core\.Location\.Location\(double, double, System\.Nullable\<double\>\)') | Represents a geographic location with latitude, longitude, and optional altitude\. |
+| [Location\(double, double, Nullable&lt;double&gt;\)](ResQ.Core.Location.Location(double,double,System.Nullable_double_).md 'ResQ\.Core\.Location\.Location\(double, double, System\.Nullable\<double\>\)') | Represents a geographic location with latitude, longitude, and optional altitude\. |
 
 | Properties | |
 | :--- | :--- |
-| [Altitude](./ResQ.Core.Location.Altitude.md 'ResQ\.Core\.Location\.Altitude') | Altitude in meters above sea level \(optional\)\. |
-| [Latitude](./ResQ.Core.Location.Latitude.md 'ResQ\.Core\.Location\.Latitude') | Latitude in decimal degrees \(\-90 to 90\)\. |
-| [Longitude](./ResQ.Core.Location.Longitude.md 'ResQ\.Core\.Location\.Longitude') | Longitude in decimal degrees \(\-180 to 180\)\. |
+| [Altitude](ResQ.Core.Location.Altitude.md 'ResQ\.Core\.Location\.Altitude') | Altitude in meters above sea level \(optional\)\. |
+| [Latitude](ResQ.Core.Location.Latitude.md 'ResQ\.Core\.Location\.Latitude') | Latitude in decimal degrees \(\-90 to 90\)\. |
+| [Longitude](ResQ.Core.Location.Longitude.md 'ResQ\.Core\.Location\.Longitude') | Longitude in decimal degrees \(\-180 to 180\)\. |
 
 | Methods | |
 | :--- | :--- |
-| [DistanceTo\(Location\)](./ResQ.Core.Location.DistanceTo(ResQ.Core.Location).md 'ResQ\.Core\.Location\.DistanceTo\(ResQ\.Core\.Location\)') | Calculates the great\-circle distance to another location using the Haversine formula\. |
+| [DistanceTo\(Location\)](ResQ.Core.Location.DistanceTo(ResQ.Core.Location).md 'ResQ\.Core\.Location\.DistanceTo\(ResQ\.Core\.Location\)') | Calculates the great\-circle distance to another location using the Haversine formula\. |

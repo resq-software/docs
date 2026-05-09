@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[HealthResponse](./ResQ.Clients.HealthResponse.md 'ResQ\.Clients\.HealthResponse')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[HealthResponse](ResQ.Clients.HealthResponse.md 'ResQ\.Clients\.HealthResponse')
 
 ## HealthResponse\(string, bool, bool, bool\) Constructor
 

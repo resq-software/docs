@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[NeoClient](ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.RecordEventAsync\(BlockchainEvent, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ public System.Threading.Tasks.Task<ResQ.Core.TransactionResult> RecordEventAsync
 
 <a name='ResQ.Core.NeoClient.RecordEventAsync(ResQ.Core.BlockchainEvent,System.Threading.CancellationToken).evt'></a>
 
-`evt` [BlockchainEvent](./ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
+`evt` [BlockchainEvent](ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
 
 The event to record\.
 
@@ -22,5 +22,5 @@ The event to record\.
 Cancellation token\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](./ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[TransactionResult](ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 Transaction result including hash and status\.

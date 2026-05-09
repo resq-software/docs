@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[HceHealthResponse](./ResQ.Clients.HceHealthResponse.md 'ResQ\.Clients\.HceHealthResponse')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[HceHealthResponse](ResQ.Clients.HceHealthResponse.md 'ResQ\.Clients\.HceHealthResponse')
 
 ## HceHealthResponse\(string\) Constructor
 

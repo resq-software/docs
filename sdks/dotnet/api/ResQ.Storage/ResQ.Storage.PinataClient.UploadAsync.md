@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataClient](ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.UploadAsync Method
 
@@ -51,8 +51,8 @@ Cancellation token for the operation\.
 Implements [UploadAsync\(byte\[\], string, string, Dictionary&lt;string,string&gt;, CancellationToken\)](./ResQ.Storage.IStorageClient.UploadAsync.md#ResQ.Storage.IStorageClient.UploadAsync(byte[],string,string,System.Collections.Generic.Dictionary_string,string_,System.Threading.CancellationToken) 'ResQ\.Storage\.IStorageClient\.UploadAsync\(byte\[\], string, string, System\.Collections\.Generic\.Dictionary\<string,string\>, System\.Threading\.CancellationToken\)')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-An [UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+An [UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
 
 #### Exceptions
 
@@ -123,8 +123,8 @@ Cancellation token for the operation\.
 Implements [UploadAsync\(Stream, string, string, Dictionary&lt;string,string&gt;, CancellationToken\)](./ResQ.Storage.IStorageClient.UploadAsync.md#ResQ.Storage.IStorageClient.UploadAsync(System.IO.Stream,string,string,System.Collections.Generic.Dictionary_string,string_,System.Threading.CancellationToken) 'ResQ\.Storage\.IStorageClient\.UploadAsync\(System\.IO\.Stream, string, string, System\.Collections\.Generic\.Dictionary\<string,string\>, System\.Threading\.CancellationToken\)')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
-An [UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+An [UploadResult](ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult') containing the CID and upload metadata\.
 
 #### Exceptions
 

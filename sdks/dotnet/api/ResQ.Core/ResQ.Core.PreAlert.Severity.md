@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[PreAlert](ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')
 
 ## PreAlert\.Severity Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.AlertSeverity Severity { get; init; }
 ```
 
 #### Property Value
-[AlertSeverity](./ResQ.Core.AlertSeverity.md 'ResQ\.Core\.AlertSeverity')
+[AlertSeverity](ResQ.Core.AlertSeverity.md 'ResQ\.Core\.AlertSeverity')

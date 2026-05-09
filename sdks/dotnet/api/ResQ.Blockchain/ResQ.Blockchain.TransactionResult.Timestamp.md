@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')
 
 ## TransactionResult\.Timestamp Property
 

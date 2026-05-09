@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](./ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[IStorageClient](ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
 
 ## IStorageClient\.GetGatewayUrl\(string\) Method
 
@@ -34,4 +34,4 @@ Console.WriteLine($"Access at: {gatewayUrl}");
 
 ### Remarks
 The returned URL can be used in web browsers or HTTP clients to retrieve the content\.
-The gateway URL is constructed from the configured [GatewayUrl](./ResQ.Storage.PinataOptions.GatewayUrl.md 'ResQ\.Storage\.PinataOptions\.GatewayUrl')\.
+The gateway URL is constructed from the configured [GatewayUrl](ResQ.Storage.PinataOptions.GatewayUrl.md 'ResQ\.Storage\.PinataOptions\.GatewayUrl')\.

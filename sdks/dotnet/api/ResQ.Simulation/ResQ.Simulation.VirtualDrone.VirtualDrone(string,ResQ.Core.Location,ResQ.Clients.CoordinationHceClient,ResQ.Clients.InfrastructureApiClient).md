@@ -1,8 +1,8 @@
-### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[VirtualDrone](./ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone')
+### [ResQ\.Simulation](ResQ.Simulation.md 'ResQ\.Simulation').[VirtualDrone](ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone')
 
 ## VirtualDrone\(string, Location, CoordinationHceClient, InfrastructureApiClient\) Constructor
 
-Initializes a new instance of the [VirtualDrone](./ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone') class\.
+Initializes a new instance of the [VirtualDrone](ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone') class\.
 
 ```csharp
 public VirtualDrone(string droneId, ResQ.Core.Location startLocation, ResQ.Clients.CoordinationHceClient hce, ResQ.Clients.InfrastructureApiClient infra);

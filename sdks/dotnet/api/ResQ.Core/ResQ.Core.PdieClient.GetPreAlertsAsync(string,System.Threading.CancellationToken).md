@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[PdieClient](ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient')
 
 ## PdieClient\.GetPreAlertsAsync\(string, CancellationToken\) Method
 
@@ -22,5 +22,5 @@ Optional sector filter\.
 Cancellation token\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[PreAlert](ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 List of active pre\-alerts\.

@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataOptions](./ResQ.Storage.PinataOptions.md 'ResQ\.Storage\.PinataOptions')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataOptions](ResQ.Storage.PinataOptions.md 'ResQ\.Storage\.PinataOptions')
 
 ## PinataOptions\.MaxFileSizeBytes Property
 

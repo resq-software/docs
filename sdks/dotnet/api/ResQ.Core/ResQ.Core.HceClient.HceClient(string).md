@@ -1,8 +1,8 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[HceClient](ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
 
 ## HceClient\(string\) Constructor
 
-Initializes a new instance of the [HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient') class\.
+Initializes a new instance of the [HceClient](ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient') class\.
 
 ```csharp
 public HceClient(string baseUrl="http://localhost:3000");

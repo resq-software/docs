@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataClient](ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.GetGatewayUrl\(string\) Method
 
@@ -15,7 +15,7 @@ public string GetGatewayUrl(string cid);
 
 The IPFS Content Identifier\.
 
-Implements [GetGatewayUrl\(string\)](./ResQ.Storage.IStorageClient.GetGatewayUrl(string).md 'ResQ\.Storage\.IStorageClient\.GetGatewayUrl\(string\)')
+Implements [GetGatewayUrl\(string\)](ResQ.Storage.IStorageClient.GetGatewayUrl(string).md 'ResQ\.Storage\.IStorageClient\.GetGatewayUrl\(string\)')
 
 #### Returns
 [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
@@ -36,4 +36,4 @@ Console.WriteLine($"Access at: {gatewayUrl}");
 
 ### Remarks
 The returned URL can be used in web browsers or HTTP clients to retrieve the content\.
-The gateway URL is constructed from the configured [GatewayUrl](./ResQ.Storage.PinataOptions.GatewayUrl.md 'ResQ\.Storage\.PinataOptions\.GatewayUrl')\.
+The gateway URL is constructed from the configured [GatewayUrl](ResQ.Storage.PinataOptions.GatewayUrl.md 'ResQ\.Storage\.PinataOptions\.GatewayUrl')\.

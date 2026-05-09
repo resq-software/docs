@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## LocationAttestation Class
 
@@ -10,7 +10,7 @@ public record LocationAttestation : System.IEquatable<ResQ.Blockchain.LocationAt
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; LocationAttestation
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[LocationAttestation](./ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[LocationAttestation](ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 ### Example
 
@@ -34,13 +34,13 @@ the legitimate drone and has not been tampered with\.
 
 | Constructors | |
 | :--- | :--- |
-| [LocationAttestation\(string, double, double, double, DateTimeOffset, string\)](./ResQ.Blockchain.LocationAttestation.LocationAttestation(string,double,double,double,System.DateTimeOffset,string).md 'ResQ\.Blockchain\.LocationAttestation\.LocationAttestation\(string, double, double, double, System\.DateTimeOffset, string\)') | Represents a cryptographically signed location attestation for a drone\. |
+| [LocationAttestation\(string, double, double, double, DateTimeOffset, string\)](ResQ.Blockchain.LocationAttestation.LocationAttestation(string,double,double,double,System.DateTimeOffset,string).md 'ResQ\.Blockchain\.LocationAttestation\.LocationAttestation\(string, double, double, double, System\.DateTimeOffset, string\)') | Represents a cryptographically signed location attestation for a drone\. |
 
 | Properties | |
 | :--- | :--- |
-| [Altitude](./ResQ.Blockchain.LocationAttestation.Altitude.md 'ResQ\.Blockchain\.LocationAttestation\.Altitude') | Altitude in meters above sea level\. |
-| [DroneId](./ResQ.Blockchain.LocationAttestation.DroneId.md 'ResQ\.Blockchain\.LocationAttestation\.DroneId') | Unique identifier of the drone\. |
-| [Latitude](./ResQ.Blockchain.LocationAttestation.Latitude.md 'ResQ\.Blockchain\.LocationAttestation\.Latitude') | Latitude in decimal degrees \(\-90 to 90\)\. |
-| [Longitude](./ResQ.Blockchain.LocationAttestation.Longitude.md 'ResQ\.Blockchain\.LocationAttestation\.Longitude') | Longitude in decimal degrees \(\-180 to 180\)\. |
-| [Signature](./ResQ.Blockchain.LocationAttestation.Signature.md 'ResQ\.Blockchain\.LocationAttestation\.Signature') | Cryptographic signature verifying the attestation\. |
-| [Timestamp](./ResQ.Blockchain.LocationAttestation.Timestamp.md 'ResQ\.Blockchain\.LocationAttestation\.Timestamp') | UTC timestamp of the attestation\. |
+| [Altitude](ResQ.Blockchain.LocationAttestation.Altitude.md 'ResQ\.Blockchain\.LocationAttestation\.Altitude') | Altitude in meters above sea level\. |
+| [DroneId](ResQ.Blockchain.LocationAttestation.DroneId.md 'ResQ\.Blockchain\.LocationAttestation\.DroneId') | Unique identifier of the drone\. |
+| [Latitude](ResQ.Blockchain.LocationAttestation.Latitude.md 'ResQ\.Blockchain\.LocationAttestation\.Latitude') | Latitude in decimal degrees \(\-90 to 90\)\. |
+| [Longitude](ResQ.Blockchain.LocationAttestation.Longitude.md 'ResQ\.Blockchain\.LocationAttestation\.Longitude') | Longitude in decimal degrees \(\-180 to 180\)\. |
+| [Signature](ResQ.Blockchain.LocationAttestation.Signature.md 'ResQ\.Blockchain\.LocationAttestation\.Signature') | Cryptographic signature verifying the attestation\. |
+| [Timestamp](ResQ.Blockchain.LocationAttestation.Timestamp.md 'ResQ\.Blockchain\.LocationAttestation\.Timestamp') | UTC timestamp of the attestation\. |

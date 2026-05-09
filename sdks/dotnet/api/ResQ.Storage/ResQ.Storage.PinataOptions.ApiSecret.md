@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataOptions](./ResQ.Storage.PinataOptions.md 'ResQ\.Storage\.PinataOptions')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataOptions](ResQ.Storage.PinataOptions.md 'ResQ\.Storage\.PinataOptions')
 
 ## PinataOptions\.ApiSecret Property
 
@@ -20,7 +20,7 @@ options.ApiSecret = Environment.GetEnvironmentVariable("PINATA_API_SECRET");
 ```
 
 ### Remarks
-The API secret must be paired with [ApiKey](./ResQ.Storage.PinataOptions.ApiKey.md 'ResQ\.Storage\.PinataOptions\.ApiKey') for authentication\.
+The API secret must be paired with [ApiKey](ResQ.Storage.PinataOptions.ApiKey.md 'ResQ\.Storage\.PinataOptions\.ApiKey') for authentication\.
 This is used as an alternative to JWT tokens\. JWT authentication is preferred\.
 
 

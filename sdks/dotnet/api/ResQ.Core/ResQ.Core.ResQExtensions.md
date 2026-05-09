@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## ResQExtensions Class
 
@@ -30,5 +30,5 @@ including severity conversion and critical detection checks\.
 
 | Methods | |
 | :--- | :--- |
-| [IsCritical\(this Detection\)](./ResQ.Core.ResQExtensions.IsCritical(thisResQ.Core.Detection).md 'ResQ\.Core\.ResQExtensions\.IsCritical\(this ResQ\.Core\.Detection\)') | Determines if a detection is critical and requires immediate action\. |
-| [ToSeverity\(this double\)](./ResQ.Core.ResQExtensions.ToSeverity(thisdouble).md 'ResQ\.Core\.ResQExtensions\.ToSeverity\(this double\)') | Converts a risk score to an alert severity level\. |
+| [IsCritical\(this Detection\)](ResQ.Core.ResQExtensions.IsCritical(thisResQ.Core.Detection).md 'ResQ\.Core\.ResQExtensions\.IsCritical\(this ResQ\.Core\.Detection\)') | Determines if a detection is critical and requires immediate action\. |
+| [ToSeverity\(this double\)](ResQ.Core.ResQExtensions.ToSeverity(thisdouble).md 'ResQ\.Core\.ResQExtensions\.ToSeverity\(this double\)') | Converts a risk score to an alert severity level\. |

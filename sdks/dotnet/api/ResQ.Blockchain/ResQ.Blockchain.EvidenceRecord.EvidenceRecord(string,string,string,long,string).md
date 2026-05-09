@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[EvidenceRecord](./ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[EvidenceRecord](ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
 
 ## EvidenceRecord\(string, string, string, long, string\) Constructor
 

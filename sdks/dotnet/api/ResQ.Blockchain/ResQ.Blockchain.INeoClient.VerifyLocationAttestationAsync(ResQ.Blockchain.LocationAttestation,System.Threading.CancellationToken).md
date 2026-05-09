@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[INeoClient](./ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[INeoClient](ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
 
 ## INeoClient\.VerifyLocationAttestationAsync\(LocationAttestation, CancellationToken\) Method
 
@@ -11,7 +11,7 @@ System.Threading.Tasks.Task<bool> VerifyLocationAttestationAsync(ResQ.Blockchain
 
 <a name='ResQ.Blockchain.INeoClient.VerifyLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken).attestation'></a>
 
-`attestation` [LocationAttestation](./ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')
+`attestation` [LocationAttestation](ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')
 
 The location attestation to verify\.
 

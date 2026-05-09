@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[ResQExtensions](./ResQ.Core.ResQExtensions.md 'ResQ\.Core\.ResQExtensions')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[ResQExtensions](ResQ.Core.ResQExtensions.md 'ResQ\.Core\.ResQExtensions')
 
 ## ResQExtensions\.IsCritical\(this Detection\) Method
 
@@ -11,7 +11,7 @@ public static bool IsCritical(this ResQ.Core.Detection detection);
 
 <a name='ResQ.Core.ResQExtensions.IsCritical(thisResQ.Core.Detection).detection'></a>
 
-`detection` [Detection](./ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
+`detection` [Detection](ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
 
 The detection to evaluate\.
 

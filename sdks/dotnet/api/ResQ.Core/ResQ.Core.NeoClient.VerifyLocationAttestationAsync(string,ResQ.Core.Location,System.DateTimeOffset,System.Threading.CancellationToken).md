@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[NeoClient](ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.VerifyLocationAttestationAsync\(string, Location, DateTimeOffset, CancellationToken\) Method
 
@@ -17,7 +17,7 @@ The drone identifier\.
 
 <a name='ResQ.Core.NeoClient.VerifyLocationAttestationAsync(string,ResQ.Core.Location,System.DateTimeOffset,System.Threading.CancellationToken).location'></a>
 
-`location` [Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+`location` [Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 The location to verify\.
 

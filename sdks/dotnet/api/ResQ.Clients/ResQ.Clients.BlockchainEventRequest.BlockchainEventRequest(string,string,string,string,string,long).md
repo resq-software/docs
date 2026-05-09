@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[BlockchainEventRequest](./ResQ.Clients.BlockchainEventRequest.md 'ResQ\.Clients\.BlockchainEventRequest')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[BlockchainEventRequest](ResQ.Clients.BlockchainEventRequest.md 'ResQ\.Clients\.BlockchainEventRequest')
 
 ## BlockchainEventRequest\(string, string, string, string, string, long\) Constructor
 

@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## TransactionResult Class
 
@@ -10,7 +10,7 @@ public record TransactionResult : System.IEquatable<ResQ.Blockchain.TransactionR
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; TransactionResult
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[TransactionResult](./ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[TransactionResult](ResQ.Blockchain.TransactionResult.md 'ResQ\.Blockchain\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 ### Example
 
@@ -35,11 +35,11 @@ the block height at which it was included\.
 
 | Constructors | |
 | :--- | :--- |
-| [TransactionResult\(string, bool, ulong, DateTimeOffset\)](./ResQ.Blockchain.TransactionResult.TransactionResult(string,bool,ulong,System.DateTimeOffset).md 'ResQ\.Blockchain\.TransactionResult\.TransactionResult\(string, bool, ulong, System\.DateTimeOffset\)') | Represents the result of a blockchain transaction submission\. |
+| [TransactionResult\(string, bool, ulong, DateTimeOffset\)](ResQ.Blockchain.TransactionResult.TransactionResult(string,bool,ulong,System.DateTimeOffset).md 'ResQ\.Blockchain\.TransactionResult\.TransactionResult\(string, bool, ulong, System\.DateTimeOffset\)') | Represents the result of a blockchain transaction submission\. |
 
 | Properties | |
 | :--- | :--- |
-| [BlockHeight](./ResQ.Blockchain.TransactionResult.BlockHeight.md 'ResQ\.Blockchain\.TransactionResult\.BlockHeight') | The block number where the transaction was included\. |
-| [IsConfirmed](./ResQ.Blockchain.TransactionResult.IsConfirmed.md 'ResQ\.Blockchain\.TransactionResult\.IsConfirmed') | True if the transaction has been confirmed on\-chain\. |
-| [Timestamp](./ResQ.Blockchain.TransactionResult.Timestamp.md 'ResQ\.Blockchain\.TransactionResult\.Timestamp') | The UTC timestamp when the result was created\. |
-| [TransactionHash](./ResQ.Blockchain.TransactionResult.TransactionHash.md 'ResQ\.Blockchain\.TransactionResult\.TransactionHash') | The hexadecimal hash of the transaction\. |
+| [BlockHeight](ResQ.Blockchain.TransactionResult.BlockHeight.md 'ResQ\.Blockchain\.TransactionResult\.BlockHeight') | The block number where the transaction was included\. |
+| [IsConfirmed](ResQ.Blockchain.TransactionResult.IsConfirmed.md 'ResQ\.Blockchain\.TransactionResult\.IsConfirmed') | True if the transaction has been confirmed on\-chain\. |
+| [Timestamp](ResQ.Blockchain.TransactionResult.Timestamp.md 'ResQ\.Blockchain\.TransactionResult\.Timestamp') | The UTC timestamp when the result was created\. |
+| [TransactionHash](ResQ.Blockchain.TransactionResult.TransactionHash.md 'ResQ\.Blockchain\.TransactionResult\.TransactionHash') | The hexadecimal hash of the transaction\. |

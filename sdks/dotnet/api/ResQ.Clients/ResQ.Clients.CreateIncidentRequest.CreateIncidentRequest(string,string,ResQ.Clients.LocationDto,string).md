@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CreateIncidentRequest](./ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[CreateIncidentRequest](ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')
 
 ## CreateIncidentRequest\(string, string, LocationDto, string\) Constructor
 
@@ -19,7 +19,7 @@ public CreateIncidentRequest(string IncidentType, string Severity, ResQ.Clients.
 
 <a name='ResQ.Clients.CreateIncidentRequest.CreateIncidentRequest(string,string,ResQ.Clients.LocationDto,string).Location'></a>
 
-`Location` [LocationDto](./ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
+`Location` [LocationDto](ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
 
 <a name='ResQ.Clients.CreateIncidentRequest.CreateIncidentRequest(string,string,ResQ.Clients.LocationDto,string).Description'></a>
 

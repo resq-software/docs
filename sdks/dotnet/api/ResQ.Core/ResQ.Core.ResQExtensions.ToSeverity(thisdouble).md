@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[ResQExtensions](./ResQ.Core.ResQExtensions.md 'ResQ\.Core\.ResQExtensions')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[ResQExtensions](ResQ.Core.ResQExtensions.md 'ResQ\.Core\.ResQExtensions')
 
 ## ResQExtensions\.ToSeverity\(this double\) Method
 
@@ -16,7 +16,7 @@ public static ResQ.Core.AlertSeverity ToSeverity(this double riskScore);
 The risk score \(0\.0 to 1\.0\)\.
 
 #### Returns
-[AlertSeverity](./ResQ.Core.AlertSeverity.md 'ResQ\.Core\.AlertSeverity')  
+[AlertSeverity](ResQ.Core.AlertSeverity.md 'ResQ\.Core\.AlertSeverity')  
 The corresponding alert severity\.
 
 ### Remarks

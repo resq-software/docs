@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Detection](./ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[Detection](ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
 
 ## Detection\.Type Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.DetectionType Type { get; init; }
 ```
 
 #### Property Value
-[DetectionType](./ResQ.Core.DetectionType.md 'ResQ\.Core\.DetectionType')
+[DetectionType](ResQ.Core.DetectionType.md 'ResQ\.Core\.DetectionType')

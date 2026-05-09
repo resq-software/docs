@@ -1,4 +1,4 @@
-### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
+### [ResQ\.Simulation](ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
 
 ## ScenarioRunner\.RunSingleDroneSurveyAsync\(\) Method
 

@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataClient](ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.GetAsync\(string, CancellationToken\) Method
 
@@ -21,7 +21,7 @@ The IPFS Content Identifier of the file to retrieve\.
 
 Cancellation token for the operation\.
 
-Implements [GetAsync\(string, CancellationToken\)](./ResQ.Storage.IStorageClient.GetAsync(string,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.GetAsync\(string, System\.Threading\.CancellationToken\)')
+Implements [GetAsync\(string, CancellationToken\)](ResQ.Storage.IStorageClient.GetAsync(string,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.GetAsync\(string, System\.Threading\.CancellationToken\)')
 
 #### Returns
 [System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.IO\.Stream](https://learn.microsoft.com/en-us/dotnet/api/system.io.stream 'System\.IO\.Stream')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  

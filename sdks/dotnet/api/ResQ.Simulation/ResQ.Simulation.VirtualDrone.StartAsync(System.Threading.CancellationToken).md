@@ -1,4 +1,4 @@
-### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[VirtualDrone](./ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone')
+### [ResQ\.Simulation](ResQ.Simulation.md 'ResQ\.Simulation').[VirtualDrone](ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone')
 
 ## VirtualDrone\.StartAsync\(CancellationToken\) Method
 

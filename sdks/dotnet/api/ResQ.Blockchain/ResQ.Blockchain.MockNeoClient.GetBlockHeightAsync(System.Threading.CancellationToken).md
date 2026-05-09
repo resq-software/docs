@@ -1,4 +1,4 @@
-### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
+### [ResQ\.Blockchain](ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\.GetBlockHeightAsync\(CancellationToken\) Method
 
@@ -15,7 +15,7 @@ public System.Threading.Tasks.Task<ulong> GetBlockHeightAsync(System.Threading.C
 
 Cancellation token for the operation\.
 
-Implements [GetBlockHeightAsync\(CancellationToken\)](./ResQ.Blockchain.INeoClient.GetBlockHeightAsync(System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.GetBlockHeightAsync\(System\.Threading\.CancellationToken\)')
+Implements [GetBlockHeightAsync\(CancellationToken\)](ResQ.Blockchain.INeoClient.GetBlockHeightAsync(System.Threading.CancellationToken).md 'ResQ\.Blockchain\.INeoClient\.GetBlockHeightAsync\(System\.Threading\.CancellationToken\)')
 
 #### Returns
 [System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.UInt64](https://learn.microsoft.com/en-us/dotnet/api/system.uint64 'System\.UInt64')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  

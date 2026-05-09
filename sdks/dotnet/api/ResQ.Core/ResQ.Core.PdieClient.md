@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## PdieClient Class
 
@@ -30,8 +30,8 @@ intelligence layer\.
 
 | Constructors | |
 | :--- | :--- |
-| [PdieClient\(string\)](./ResQ.Core.PdieClient.PdieClient(string).md 'ResQ\.Core\.PdieClient\.PdieClient\(string\)') | Initializes a new instance of the [PdieClient](./ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient') class\. |
+| [PdieClient\(string\)](ResQ.Core.PdieClient.PdieClient(string).md 'ResQ\.Core\.PdieClient\.PdieClient\(string\)') | Initializes a new instance of the [PdieClient](ResQ.Core.PdieClient.md 'ResQ\.Core\.PdieClient') class\. |
 
 | Methods | |
 | :--- | :--- |
-| [GetPreAlertsAsync\(string, CancellationToken\)](./ResQ.Core.PdieClient.GetPreAlertsAsync(string,System.Threading.CancellationToken).md 'ResQ\.Core\.PdieClient\.GetPreAlertsAsync\(string, System\.Threading\.CancellationToken\)') | Gets current pre\-alerts, optionally filtered by sector\. |
+| [GetPreAlertsAsync\(string, CancellationToken\)](ResQ.Core.PdieClient.GetPreAlertsAsync(string,System.Threading.CancellationToken).md 'ResQ\.Core\.PdieClient\.GetPreAlertsAsync\(string, System\.Threading\.CancellationToken\)') | Gets current pre\-alerts, optionally filtered by sector\. |

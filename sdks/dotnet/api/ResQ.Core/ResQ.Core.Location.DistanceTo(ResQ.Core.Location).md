@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 ## Location\.DistanceTo\(Location\) Method
 
@@ -11,7 +11,7 @@ public double DistanceTo(ResQ.Core.Location other);
 
 <a name='ResQ.Core.Location.DistanceTo(ResQ.Core.Location).other'></a>
 
-`other` [Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+`other` [Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 The target location to calculate distance to\.
 

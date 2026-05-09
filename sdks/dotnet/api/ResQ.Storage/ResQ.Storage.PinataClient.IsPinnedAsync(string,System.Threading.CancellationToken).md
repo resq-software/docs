@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataClient](ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.IsPinnedAsync\(string, CancellationToken\) Method
 
@@ -21,7 +21,7 @@ The IPFS Content Identifier to check\.
 
 Cancellation token for the operation\.
 
-Implements [IsPinnedAsync\(string, CancellationToken\)](./ResQ.Storage.IStorageClient.IsPinnedAsync(string,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.IsPinnedAsync\(string, System\.Threading\.CancellationToken\)')
+Implements [IsPinnedAsync\(string, CancellationToken\)](ResQ.Storage.IStorageClient.IsPinnedAsync(string,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.IsPinnedAsync\(string, System\.Threading\.CancellationToken\)')
 
 #### Returns
 [System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Boolean](https://learn.microsoft.com/en-us/dotnet/api/system.boolean 'System\.Boolean')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  

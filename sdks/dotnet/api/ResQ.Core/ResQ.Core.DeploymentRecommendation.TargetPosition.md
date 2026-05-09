@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DeploymentRecommendation](./ResQ.Core.DeploymentRecommendation.md 'ResQ\.Core\.DeploymentRecommendation')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[DeploymentRecommendation](ResQ.Core.DeploymentRecommendation.md 'ResQ\.Core\.DeploymentRecommendation')
 
 ## DeploymentRecommendation\.TargetPosition Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.Location TargetPosition { get; init; }
 ```
 
 #### Property Value
-[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+[Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')

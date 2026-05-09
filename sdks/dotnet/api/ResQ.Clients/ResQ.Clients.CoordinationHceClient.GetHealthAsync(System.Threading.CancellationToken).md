@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](./ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 ## CoordinationHceClient\.GetHealthAsync\(CancellationToken\) Method
 
@@ -15,4 +15,4 @@ public System.Threading.Tasks.Task<ResQ.Clients.HceHealthResponse> GetHealthAsyn
 `ct` [System\.Threading\.CancellationToken](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken 'System\.Threading\.CancellationToken')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[HceHealthResponse](./ResQ.Clients.HceHealthResponse.md 'ResQ\.Clients\.HceHealthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[HceHealthResponse](ResQ.Clients.HceHealthResponse.md 'ResQ\.Clients\.HceHealthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')

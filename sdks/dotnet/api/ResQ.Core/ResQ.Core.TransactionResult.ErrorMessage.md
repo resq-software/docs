@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[TransactionResult](./ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[TransactionResult](ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')
 
 ## TransactionResult\.ErrorMessage Property
 

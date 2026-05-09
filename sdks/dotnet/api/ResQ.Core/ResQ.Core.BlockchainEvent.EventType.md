@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[BlockchainEvent](./ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[BlockchainEvent](ResQ.Core.BlockchainEvent.md 'ResQ\.Core\.BlockchainEvent')
 
 ## BlockchainEvent\.EventType Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.BlockchainEventType EventType { get; init; }
 ```
 
 #### Property Value
-[BlockchainEventType](./ResQ.Core.BlockchainEventType.md 'ResQ\.Core\.BlockchainEventType')
+[BlockchainEventType](ResQ.Core.BlockchainEventType.md 'ResQ\.Core\.BlockchainEventType')

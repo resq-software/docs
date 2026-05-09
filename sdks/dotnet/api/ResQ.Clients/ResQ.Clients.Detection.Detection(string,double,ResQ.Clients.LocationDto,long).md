@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[Detection](./ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[Detection](ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
 
 ## Detection\(string, double, LocationDto, long\) Constructor
 
@@ -23,7 +23,7 @@ AI confidence score \(0\.0 to 1\.0\)\.
 
 <a name='ResQ.Clients.Detection.Detection(string,double,ResQ.Clients.LocationDto,long).Location'></a>
 
-`Location` [LocationDto](./ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
+`Location` [LocationDto](ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
 
 Geographic location of the detection\.
 

@@ -1,4 +1,4 @@
-### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+### [ResQ\.Storage](ResQ.Storage.md 'ResQ\.Storage').[PinataClient](ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.ListPinsAsync\(string, int, CancellationToken\) Method
 
@@ -27,10 +27,10 @@ Maximum number of results to return \(default 100\)\.
 
 Cancellation token for the operation\.
 
-Implements [ListPinsAsync\(string, int, CancellationToken\)](./ResQ.Storage.IStorageClient.ListPinsAsync(string,int,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.ListPinsAsync\(string, int, System\.Threading\.CancellationToken\)')
+Implements [ListPinsAsync\(string, int, CancellationToken\)](ResQ.Storage.IStorageClient.ListPinsAsync(string,int,System.Threading.CancellationToken).md 'ResQ\.Storage\.IStorageClient\.ListPinsAsync\(string, int, System\.Threading\.CancellationToken\)')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.IReadOnlyList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[PinMetadata](./ResQ.Storage.PinMetadata.md 'ResQ\.Storage\.PinMetadata')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[System\.Collections\.Generic\.IReadOnlyList&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[PinMetadata](ResQ.Storage.PinMetadata.md 'ResQ\.Storage\.PinMetadata')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.ireadonlylist-1 'System\.Collections\.Generic\.IReadOnlyList\`1')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 A read\-only list of pin metadata matching the filter criteria\.
 
 #### Exceptions

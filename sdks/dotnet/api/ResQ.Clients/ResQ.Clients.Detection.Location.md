@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[Detection](./ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[Detection](ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
 
 ## Detection\.Location Property
 
@@ -9,4 +9,4 @@ public ResQ.Clients.LocationDto Location { get; init; }
 ```
 
 #### Property Value
-[LocationDto](./ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')
+[LocationDto](ResQ.Clients.LocationDto.md 'ResQ\.Clients\.LocationDto')

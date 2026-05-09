@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](./ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
 
 ## ReportIncidentRequest\.Description Property
 

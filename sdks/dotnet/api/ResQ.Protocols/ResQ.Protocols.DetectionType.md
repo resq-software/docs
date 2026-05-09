@@ -1,4 +1,4 @@
-### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols')
+### [ResQ\.Protocols](ResQ.Protocols.md 'ResQ\.Protocols')
 
 ## DetectionType Enum
 

@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[DtsopClient](ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient')
 
 ## DtsopClient\.RequestStrategyAsync\(string, CancellationToken\) Method
 
@@ -22,5 +22,5 @@ ID of the scenario to optimize\.
 Cancellation token\.
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[OptimizationStrategy](./ResQ.Core.OptimizationStrategy.md 'ResQ\.Core\.OptimizationStrategy')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[OptimizationStrategy](ResQ.Core.OptimizationStrategy.md 'ResQ\.Core\.OptimizationStrategy')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')  
 The optimization strategy\.

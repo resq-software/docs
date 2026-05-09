@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients')
 
 ## BlockchainEventResponse Class
 
@@ -10,8 +10,8 @@ public record BlockchainEventResponse : System.IEquatable<ResQ.Clients.Blockchai
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; BlockchainEventResponse
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[BlockchainEventResponse](./ResQ.Clients.BlockchainEventResponse.md 'ResQ\.Clients\.BlockchainEventResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[BlockchainEventResponse](ResQ.Clients.BlockchainEventResponse.md 'ResQ\.Clients\.BlockchainEventResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 | Constructors | |
 | :--- | :--- |
-| [BlockchainEventResponse\(string, string, long, string\)](./ResQ.Clients.BlockchainEventResponse.BlockchainEventResponse(string,string,long,string).md 'ResQ\.Clients\.BlockchainEventResponse\.BlockchainEventResponse\(string, string, long, string\)') | Response from recording a blockchain event\. |
+| [BlockchainEventResponse\(string, string, long, string\)](ResQ.Clients.BlockchainEventResponse.BlockchainEventResponse(string,string,long,string).md 'ResQ\.Clients\.BlockchainEventResponse\.BlockchainEventResponse\(string, string, long, string\)') | Response from recording a blockchain event\. |

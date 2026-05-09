@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](./ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 ## InfrastructureApiClient\.CreateIncidentAsync\(CreateIncidentRequest, CancellationToken\) Method
 
@@ -12,11 +12,11 @@ public System.Threading.Tasks.Task<ResQ.Clients.IncidentResponse> CreateIncident
 
 <a name='ResQ.Clients.InfrastructureApiClient.CreateIncidentAsync(ResQ.Clients.CreateIncidentRequest,System.Threading.CancellationToken).request'></a>
 
-`request` [CreateIncidentRequest](./ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')
+`request` [CreateIncidentRequest](ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')
 
 <a name='ResQ.Clients.InfrastructureApiClient.CreateIncidentAsync(ResQ.Clients.CreateIncidentRequest,System.Threading.CancellationToken).ct'></a>
 
 `ct` [System\.Threading\.CancellationToken](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtoken 'System\.Threading\.CancellationToken')
 
 #### Returns
-[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[IncidentResponse](./ResQ.Clients.IncidentResponse.md 'ResQ\.Clients\.IncidentResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')
+[System\.Threading\.Tasks\.Task&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')[IncidentResponse](ResQ.Clients.IncidentResponse.md 'ResQ\.Clients\.IncidentResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1 'System\.Threading\.Tasks\.Task\`1')

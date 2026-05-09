@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[TelemetryPacket](./ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[TelemetryPacket](ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
 
 ## TelemetryPacket\.Detections Property
 
@@ -9,4 +9,4 @@ public System.Collections.Generic.List<ResQ.Core.Detection> Detections { get; in
 ```
 
 #### Property Value
-[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[Detection](./ResQ.Core.Detection.md 'ResQ\.Core\.Detection')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')
+[System\.Collections\.Generic\.List&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')[Detection](ResQ.Core.Detection.md 'ResQ\.Core\.Detection')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1 'System\.Collections\.Generic\.List\`1')

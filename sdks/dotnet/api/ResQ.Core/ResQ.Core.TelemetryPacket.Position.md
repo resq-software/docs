@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[TelemetryPacket](./ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[TelemetryPacket](ResQ.Core.TelemetryPacket.md 'ResQ\.Core\.TelemetryPacket')
 
 ## TelemetryPacket\.Position Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.Location Position { get; init; }
 ```
 
 #### Property Value
-[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
+[Location](ResQ.Core.Location.md 'ResQ\.Core\.Location')

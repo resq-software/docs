@@ -1,4 +1,4 @@
-### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfraAuthResponse](./ResQ.Clients.InfraAuthResponse.md 'ResQ\.Clients\.InfraAuthResponse')
+### [ResQ\.Clients](ResQ.Clients.md 'ResQ\.Clients').[InfraAuthResponse](ResQ.Clients.InfraAuthResponse.md 'ResQ\.Clients\.InfraAuthResponse')
 
 ## InfraAuthResponse\(string\) Constructor
 

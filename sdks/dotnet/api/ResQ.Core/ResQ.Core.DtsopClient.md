@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## DtsopClient Class
 
@@ -27,8 +27,8 @@ from the simulation layer\.
 
 | Constructors | |
 | :--- | :--- |
-| [DtsopClient\(string\)](./ResQ.Core.DtsopClient.DtsopClient(string).md 'ResQ\.Core\.DtsopClient\.DtsopClient\(string\)') | Initializes a new instance of the [DtsopClient](./ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient') class\. |
+| [DtsopClient\(string\)](ResQ.Core.DtsopClient.DtsopClient(string).md 'ResQ\.Core\.DtsopClient\.DtsopClient\(string\)') | Initializes a new instance of the [DtsopClient](ResQ.Core.DtsopClient.md 'ResQ\.Core\.DtsopClient') class\. |
 
 | Methods | |
 | :--- | :--- |
-| [RequestStrategyAsync\(string, CancellationToken\)](./ResQ.Core.DtsopClient.RequestStrategyAsync(string,System.Threading.CancellationToken).md 'ResQ\.Core\.DtsopClient\.RequestStrategyAsync\(string, System\.Threading\.CancellationToken\)') | Requests an optimization strategy for a scenario\. |
+| [RequestStrategyAsync\(string, CancellationToken\)](ResQ.Core.DtsopClient.RequestStrategyAsync(string,System.Threading.CancellationToken).md 'ResQ\.Core\.DtsopClient\.RequestStrategyAsync\(string, System\.Threading\.CancellationToken\)') | Requests an optimization strategy for a scenario\. |

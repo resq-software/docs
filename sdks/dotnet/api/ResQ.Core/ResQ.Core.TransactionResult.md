@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core')
 
 ## TransactionResult Class
 
@@ -10,7 +10,7 @@ public record TransactionResult : System.IEquatable<ResQ.Core.TransactionResult>
 
 Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; TransactionResult
 
-Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[TransactionResult](./ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
+Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[TransactionResult](ResQ.Core.TransactionResult.md 'ResQ\.Core\.TransactionResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
 ### Example
 
@@ -29,8 +29,8 @@ Contains the transaction hash, block information, gas consumption, and status\.
 
 | Properties | |
 | :--- | :--- |
-| [BlockHeight](./ResQ.Core.TransactionResult.BlockHeight.md 'ResQ\.Core\.TransactionResult\.BlockHeight') | Block height where transaction was included\. |
-| [ErrorMessage](./ResQ.Core.TransactionResult.ErrorMessage.md 'ResQ\.Core\.TransactionResult\.ErrorMessage') | Error message if transaction failed\. |
-| [GasConsumed](./ResQ.Core.TransactionResult.GasConsumed.md 'ResQ\.Core\.TransactionResult\.GasConsumed') | Gas consumed by the transaction\. |
-| [Status](./ResQ.Core.TransactionResult.Status.md 'ResQ\.Core\.TransactionResult\.Status') | Current transaction status\. |
-| [TxHash](./ResQ.Core.TransactionResult.TxHash.md 'ResQ\.Core\.TransactionResult\.TxHash') | Hexadecimal transaction hash\. |
+| [BlockHeight](ResQ.Core.TransactionResult.BlockHeight.md 'ResQ\.Core\.TransactionResult\.BlockHeight') | Block height where transaction was included\. |
+| [ErrorMessage](ResQ.Core.TransactionResult.ErrorMessage.md 'ResQ\.Core\.TransactionResult\.ErrorMessage') | Error message if transaction failed\. |
+| [GasConsumed](ResQ.Core.TransactionResult.GasConsumed.md 'ResQ\.Core\.TransactionResult\.GasConsumed') | Gas consumed by the transaction\. |
+| [Status](ResQ.Core.TransactionResult.Status.md 'ResQ\.Core\.TransactionResult\.Status') | Current transaction status\. |
+| [TxHash](ResQ.Core.TransactionResult.TxHash.md 'ResQ\.Core\.TransactionResult\.TxHash') | Hexadecimal transaction hash\. |

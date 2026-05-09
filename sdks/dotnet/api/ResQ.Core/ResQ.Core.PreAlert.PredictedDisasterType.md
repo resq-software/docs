@@ -1,4 +1,4 @@
-### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')
+### [ResQ\.Core](ResQ.Core.md 'ResQ\.Core').[PreAlert](ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')
 
 ## PreAlert\.PredictedDisasterType Property
 
@@ -9,4 +9,4 @@ public ResQ.Core.DisasterType PredictedDisasterType { get; init; }
 ```
 
 #### Property Value
-[DisasterType](./ResQ.Core.DisasterType.md 'ResQ\.Core\.DisasterType')
+[DisasterType](ResQ.Core.DisasterType.md 'ResQ\.Core\.DisasterType')

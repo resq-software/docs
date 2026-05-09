@@ -1,17 +1,17 @@
-### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
+### [ResQ\.Simulation](ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
 
 ## ScenarioRunner Constructors
 
 | Overloads | |
 | :--- | :--- |
-| [ScenarioRunner\(CoordinationHceClient, InfrastructureApiClient\)](./ResQ.Simulation.ScenarioRunner.ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient) 'ResQ\.Simulation\.ScenarioRunner\.ScenarioRunner\(ResQ\.Clients\.CoordinationHceClient, ResQ\.Clients\.InfrastructureApiClient\)') | Initializes a new instance of the [ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class\. |
-| [ScenarioRunner\(string, string\)](./ResQ.Simulation.ScenarioRunner.ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(string,string) 'ResQ\.Simulation\.ScenarioRunner\.ScenarioRunner\(string, string\)') | Initializes a new instance of the [ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class using service URLs\. |
+| [ScenarioRunner\(CoordinationHceClient, InfrastructureApiClient\)](./ResQ.Simulation.ScenarioRunner.#ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient) 'ResQ\.Simulation\.ScenarioRunner\.ScenarioRunner\(ResQ\.Clients\.CoordinationHceClient, ResQ\.Clients\.InfrastructureApiClient\)') | Initializes a new instance of the [ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class\. |
+| [ScenarioRunner\(string, string\)](./ResQ.Simulation.ScenarioRunner.#ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(string,string) 'ResQ\.Simulation\.ScenarioRunner\.ScenarioRunner\(string, string\)') | Initializes a new instance of the [ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class using service URLs\. |
 
-<a name='ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient)'></a>
+<a name='ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient)'></a>
 
 ## ScenarioRunner\(CoordinationHceClient, InfrastructureApiClient\) Constructor
 
-Initializes a new instance of the [ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class\.
+Initializes a new instance of the [ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class\.
 
 ```csharp
 public ScenarioRunner(ResQ.Clients.CoordinationHceClient hce, ResQ.Clients.InfrastructureApiClient infra);
@@ -30,11 +30,11 @@ Client for the coordination\-hce service\.
 
 Client for the infrastructure\-api service\.
 
-<a name='ResQ.Simulation.ScenarioRunner.ScenarioRunner(string,string)'></a>
+<a name='ctor.md#ResQ.Simulation.ScenarioRunner.ScenarioRunner(string,string)'></a>
 
 ## ScenarioRunner\(string, string\) Constructor
 
-Initializes a new instance of the [ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class using service URLs\.
+Initializes a new instance of the [ScenarioRunner](ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner') class using service URLs\.
 
 ```csharp
 public ScenarioRunner(string hceUrl="http://localhost:3000", string infraUrl="http://localhost:5000");
