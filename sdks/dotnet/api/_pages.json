@@ -1,5 +1,4 @@
 [
-  "README",
   "ResQ.Blockchain/ResQ.Blockchain",
   "ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent",
   "ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.BlockchainEvent(string,string,string,string,System.DateTimeOffset)",
