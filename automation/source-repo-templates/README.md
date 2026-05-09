@@ -65,7 +65,7 @@ it ships its own rustdoc pipeline today.
 | -------------------------- | ------ | ------------------------ | ---------------------------- |
 | `resq-software/npm`        | TS     | TypeDoc + markdown plug. | `api-docs.typescript.yml`    |
 | `resq-software/dotnet-sdk` | C#     | DefaultDocumentation     | `api-docs.dotnet.yml`        |
-| `resq-software/pypi`       | Python | mkdocstrings             | _TODO_                       |
+| `resq-software/pypi`       | Python | lazydocs                 | `api-docs.python.yml`        |
 | `resq-software/programs`   | Rust   | rustdoc + cargo-readme   | _TODO_                       |
 | `resq-software/vcpkg`      | C++    | Doxygen + moxygen        | _TODO_                       |
 | `resq-software/viz`        | C#/web | DefaultDocumentation     | _TODO_                       |
