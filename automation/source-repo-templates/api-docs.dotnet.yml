@@ -100,14 +100,32 @@ jobs:
             -p:GenerateDocumentationFile=true \
             -p:NoWarn=CS1591
 
+      - name: Publish public projects (flatten dep closure)
+        # xmldocmd uses MetadataLoadContext, which resolves
+        # dependencies from the directory next to the target DLL.
+        # `dotnet build` for a class library does NOT copy
+        # transitive package and contract assemblies (e.g.
+        # System.Runtime); `dotnet publish` does. Without this
+        # step xmldocmd hits FileNotFoundException on every load.
+        run: |
+          set -euo pipefail
+          for proj in $PUBLIC_PROJECTS; do
+            dotnet publish "$proj/$proj.csproj" \
+              --configuration Release \
+              --no-build \
+              -p:GenerateDocumentationFile=true \
+              -p:NoWarn=CS1591
+          done
+
       - name: Install xmldocmd
         run: dotnet tool install -g xmldocmd
 
       - name: Generate per-project Markdown
         # xmldocmd reads <Project>.dll alongside <Project>.xml and
-        # emits a Markdown tree under the output dir. We emit each
-        # package into its own subdirectory so the docs site can
-        # surface them as siblings under sdks/dotnet/api/.
+        # emits a Markdown tree under the output dir. We point at
+        # the publish folder so the entire dependency closure is
+        # resolvable. Each package goes in its own subdirectory so
+        # the docs site can surface them as siblings.
         run: |
           set -euo pipefail
           export PATH="$PATH:$HOME/.dotnet/tools"
@@ -116,7 +134,7 @@ jobs:
           missing=0
           generated=0
           for proj in $PUBLIC_PROJECTS; do
-            dll="${proj}/bin/Release/net9.0/${proj}.dll"
+            dll="${proj}/bin/Release/net9.0/publish/${proj}.dll"
             if [ ! -f "$dll" ]; then
               echo "::error ::missing assembly for $proj ($dll)"
               missing=1
