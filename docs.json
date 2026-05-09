@@ -63,6 +63,23 @@
                   "sdks/rust",
                   "sdks/dotnet"
                 ]
+              },
+              {
+                "group": "Generated API Reference",
+                "pages": [
+                  {
+                    "group": "TypeScript",
+                    "pages": [
+                      "sdks/typescript/api/README"
+                    ]
+                  },
+                  {
+                    "group": ".NET",
+                    "pages": [
+                      "sdks/dotnet/api/README"
+                    ]
+                  }
+                ]
               }
             ]
           },
