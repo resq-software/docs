@@ -2,7 +2,7 @@
 
 > **Overwrite**\<`T`, `U`\> = `Omit`\<`T`, keyof `U`\> & `U`
 
-Defined in: [packages/ui/src/components/picture/types.ts:17](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/components/picture/types.ts#L17)
+Defined in: [packages/ui/src/components/picture/types.ts:17](https://github.com/resq-software/npm/blob/fcf34e40a93a0b7cf8fbc4bf8f456a5c4ab9c4da/packages/ui/src/components/picture/types.ts#L17)
 
 Copyright 2025 GDG on Campus Farmingdale State College
 
