@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadResult'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage')
 
 ## UploadResult Class

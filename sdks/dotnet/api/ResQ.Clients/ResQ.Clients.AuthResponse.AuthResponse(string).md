@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'AuthResponse(string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[AuthResponse](./ResQ.Clients.AuthResponse.md 'ResQ\.Clients\.AuthResponse')
 
 ## AuthResponse\(string\) Constructor

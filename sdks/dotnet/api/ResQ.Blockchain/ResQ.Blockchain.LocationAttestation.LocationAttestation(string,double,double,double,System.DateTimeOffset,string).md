@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'LocationAttestation(string, double, double, double, DateTimeOffset, string)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[LocationAttestation](./ResQ.Blockchain.LocationAttestation.md 'ResQ\.Blockchain\.LocationAttestation')
 
 ## LocationAttestation\(string, double, double, double, DateTimeOffset, string\) Constructor

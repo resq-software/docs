@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'NeoClient(NeoConfig)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\(NeoConfig\) Constructor

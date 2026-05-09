@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'SendAsync(HttpMethod, string, HttpContent, CancellationToken, bool)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[BaseServiceClient](./ResQ.Clients.BaseServiceClient.md 'ResQ\.Clients\.BaseServiceClient')
 
 ## BaseServiceClient\.SendAsync\(HttpMethod, string, HttpContent, CancellationToken, bool\) Method

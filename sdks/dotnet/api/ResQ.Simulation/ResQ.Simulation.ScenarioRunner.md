@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ScenarioRunner'
+---
+
 ### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation')
 
 ## ScenarioRunner Class

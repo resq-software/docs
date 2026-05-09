@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadAsync'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.UploadAsync Method

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ConfirmationTimeoutSeconds'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[NeoClientOptions](./ResQ.Blockchain.NeoClientOptions.md 'ResQ\.Blockchain\.NeoClientOptions')
 
 ## NeoClientOptions\.ConfirmationTimeoutSeconds Property

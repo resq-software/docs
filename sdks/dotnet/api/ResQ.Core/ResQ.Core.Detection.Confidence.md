@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Confidence'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Detection](./ResQ.Core.Detection.md 'ResQ\.Core\.Detection')
 
 ## Detection\.Confidence Property

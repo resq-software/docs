@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ContentType'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')
 
 ## UploadResult\.ContentType Property

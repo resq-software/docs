@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockchainEventType'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## BlockchainEventType Enum

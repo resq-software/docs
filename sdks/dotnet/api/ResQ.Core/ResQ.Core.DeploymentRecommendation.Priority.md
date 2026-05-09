@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Priority'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[DeploymentRecommendation](./ResQ.Core.DeploymentRecommendation.md 'ResQ\.Core\.DeploymentRecommendation')
 
 ## DeploymentRecommendation\.Priority Property

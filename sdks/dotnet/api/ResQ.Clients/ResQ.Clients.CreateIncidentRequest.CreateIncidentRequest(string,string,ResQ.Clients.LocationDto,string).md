@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'CreateIncidentRequest(string, string, LocationDto, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CreateIncidentRequest](./ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')
 
 ## CreateIncidentRequest\(string, string, LocationDto, string\) Constructor

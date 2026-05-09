@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'VirtualDrone(string, Location, CoordinationHceClient, InfrastructureApiClient)'
+---
+
 ### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[VirtualDrone](./ResQ.Simulation.VirtualDrone.md 'ResQ\.Simulation\.VirtualDrone')
 
 ## VirtualDrone\(string, Location, CoordinationHceClient, InfrastructureApiClient\) Constructor

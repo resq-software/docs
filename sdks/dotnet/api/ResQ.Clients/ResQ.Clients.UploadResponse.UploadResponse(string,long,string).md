@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UploadResponse(string, long, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[UploadResponse](./ResQ.Clients.UploadResponse.md 'ResQ\.Clients\.UploadResponse')
 
 ## UploadResponse\(string, long, string\) Constructor

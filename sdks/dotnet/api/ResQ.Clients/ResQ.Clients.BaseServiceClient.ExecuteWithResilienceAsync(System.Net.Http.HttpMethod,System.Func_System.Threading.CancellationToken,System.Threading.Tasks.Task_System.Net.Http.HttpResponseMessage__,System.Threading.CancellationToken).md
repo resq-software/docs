@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ExecuteWithResilienceAsync(HttpMethod, CancellationToken, HttpResponseMessage__, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[BaseServiceClient](./ResQ.Clients.BaseServiceClient.md 'ResQ\.Clients\.BaseServiceClient')
 
 ## BaseServiceClient\.ExecuteWithResilienceAsync\(HttpMethod, Func\<CancellationToken,Task\<HttpResponseMessage\>\>, CancellationToken\) Method

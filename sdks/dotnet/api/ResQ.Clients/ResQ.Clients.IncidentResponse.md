@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IncidentResponse'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## IncidentResponse Class

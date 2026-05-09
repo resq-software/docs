@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RunStressTestAsync(int, CancellationToken)'
+---
+
 ### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
 
 ## ScenarioRunner\.RunStressTestAsync\(int, CancellationToken\) Method

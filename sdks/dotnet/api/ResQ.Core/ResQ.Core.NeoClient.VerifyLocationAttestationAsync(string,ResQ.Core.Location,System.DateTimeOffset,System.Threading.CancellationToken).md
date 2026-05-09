@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'VerifyLocationAttestationAsync(string, Location, DateTimeOffset, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.VerifyLocationAttestationAsync\(string, Location, DateTimeOffset, CancellationToken\) Method

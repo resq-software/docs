@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RecordEventAsync(BlockchainEvent, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[NeoClient](./ResQ.Core.NeoClient.md 'ResQ\.Core\.NeoClient')
 
 ## NeoClient\.RecordEventAsync\(BlockchainEvent, CancellationToken\) Method

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'SendTelemetryBatchAsync(TelemetryBatchRequest, CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[CoordinationHceClient](./ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 ## CoordinationHceClient\.SendTelemetryBatchAsync\(TelemetryBatchRequest, CancellationToken\) Method

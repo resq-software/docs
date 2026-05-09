@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'MockUploadAsync(Stream, string, string, Dictionary_string, string_)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.MockUploadAsync\(Stream, string, string, Dictionary\<string,string\>\) Method

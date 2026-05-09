@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PinMetadata'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage')
 
 ## PinMetadata Class

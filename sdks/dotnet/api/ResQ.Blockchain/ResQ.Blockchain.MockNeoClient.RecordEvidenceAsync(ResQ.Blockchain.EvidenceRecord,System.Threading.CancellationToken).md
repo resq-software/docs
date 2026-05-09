@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'RecordEvidenceAsync(EvidenceRecord, CancellationToken)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\.RecordEvidenceAsync\(EvidenceRecord, CancellationToken\) Method

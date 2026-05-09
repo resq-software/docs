@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Hash'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[EvidenceRecord](./ResQ.Blockchain.EvidenceRecord.md 'ResQ\.Blockchain\.EvidenceRecord')
 
 ## EvidenceRecord\.Hash Property

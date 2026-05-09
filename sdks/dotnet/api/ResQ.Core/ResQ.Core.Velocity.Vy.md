@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Vy'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Velocity](./ResQ.Core.Velocity.md 'ResQ\.Core\.Velocity')
 
 ## Velocity\.Vy Property

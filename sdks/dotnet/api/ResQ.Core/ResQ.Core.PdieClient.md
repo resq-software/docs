@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PdieClient'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## PdieClient Class

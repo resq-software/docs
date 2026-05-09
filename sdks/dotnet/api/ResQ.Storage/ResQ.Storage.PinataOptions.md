@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PinataOptions'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage')
 
 ## PinataOptions Class

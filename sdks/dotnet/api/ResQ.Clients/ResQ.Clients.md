@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Clients'
+---
+
 ## ResQ\.Clients Namespace
 
 | Classes | |

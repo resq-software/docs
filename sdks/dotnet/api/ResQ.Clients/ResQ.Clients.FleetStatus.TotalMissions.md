@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'TotalMissions'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[FleetStatus](./ResQ.Clients.FleetStatus.md 'ResQ\.Clients\.FleetStatus')
 
 ## FleetStatus\.TotalMissions Property

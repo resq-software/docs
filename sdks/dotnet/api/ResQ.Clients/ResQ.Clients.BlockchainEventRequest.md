@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockchainEventRequest'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## BlockchainEventRequest Class

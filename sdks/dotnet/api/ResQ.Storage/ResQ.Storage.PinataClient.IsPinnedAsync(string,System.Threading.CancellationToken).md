@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IsPinnedAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.IsPinnedAsync\(string, CancellationToken\) Method

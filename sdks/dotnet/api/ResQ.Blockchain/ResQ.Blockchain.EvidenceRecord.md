@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'EvidenceRecord'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## EvidenceRecord Class

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PreAlert'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## PreAlert Class

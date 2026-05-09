@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockchainEvent'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain')
 
 ## BlockchainEvent Class

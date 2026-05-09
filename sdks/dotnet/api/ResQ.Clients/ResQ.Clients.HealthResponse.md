@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'HealthResponse'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## HealthResponse Class

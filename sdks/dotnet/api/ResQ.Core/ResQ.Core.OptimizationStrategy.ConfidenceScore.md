@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ConfidenceScore'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[OptimizationStrategy](./ResQ.Core.OptimizationStrategy.md 'ResQ\.Core\.OptimizationStrategy')
 
 ## OptimizationStrategy\.ConfidenceScore Property

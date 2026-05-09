@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'IpfsCid'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[BlockchainEvent](./ResQ.Blockchain.BlockchainEvent.md 'ResQ\.Blockchain\.BlockchainEvent')
 
 ## BlockchainEvent\.IpfsCid Property

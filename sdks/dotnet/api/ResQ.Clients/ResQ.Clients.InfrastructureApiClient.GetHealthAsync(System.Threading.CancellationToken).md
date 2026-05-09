@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetHealthAsync(CancellationToken)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[InfrastructureApiClient](./ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 ## InfrastructureApiClient\.GetHealthAsync\(CancellationToken\) Method

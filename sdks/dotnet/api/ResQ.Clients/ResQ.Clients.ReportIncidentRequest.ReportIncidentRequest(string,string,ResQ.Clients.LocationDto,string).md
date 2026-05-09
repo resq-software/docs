@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ReportIncidentRequest(string, string, LocationDto, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[ReportIncidentRequest](./ResQ.Clients.ReportIncidentRequest.md 'ResQ\.Clients\.ReportIncidentRequest')
 
 ## ReportIncidentRequest\(string, string, LocationDto, string\) Constructor

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Simulation'
+---
+
 ## ResQ\.Simulation Namespace
 
 | Classes | |

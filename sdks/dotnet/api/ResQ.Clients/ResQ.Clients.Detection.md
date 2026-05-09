@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Detection'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## Detection Class

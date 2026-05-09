@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PinataClient'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage')
 
 ## PinataClient Class

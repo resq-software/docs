@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'AlertSeverity'
+---
+
 ### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols')
 
 ## AlertSeverity Enum

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Protocols'
+---
+
 ## ResQ\.Protocols Namespace
 
 | Classes | |

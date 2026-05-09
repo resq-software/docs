@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetEventsByIncidentAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ## MockNeoClient\.GetEventsByIncidentAsync\(string, CancellationToken\) Method

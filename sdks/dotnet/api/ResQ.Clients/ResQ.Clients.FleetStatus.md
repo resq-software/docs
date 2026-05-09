@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'FleetStatus'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## FleetStatus Class

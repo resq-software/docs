@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PinnedAt'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinMetadata](./ResQ.Storage.PinMetadata.md 'ResQ\.Storage\.PinMetadata')
 
 ## PinMetadata\.PinnedAt Property

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DeploymentRecommendation'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## DeploymentRecommendation Class

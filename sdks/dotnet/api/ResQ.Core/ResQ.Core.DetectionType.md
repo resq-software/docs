@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DetectionType'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## DetectionType Enum

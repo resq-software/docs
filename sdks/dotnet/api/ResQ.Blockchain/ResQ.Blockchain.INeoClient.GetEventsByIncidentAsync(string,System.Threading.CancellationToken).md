@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'GetEventsByIncidentAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[INeoClient](./ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
 
 ## INeoClient\.GetEventsByIncidentAsync\(string, CancellationToken\) Method

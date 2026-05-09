@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'SendTelemetryAsync(TelemetryPacket, CancellationToken)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[HceClient](./ResQ.Core.HceClient.md 'ResQ\.Core\.HceClient')
 
 ## HceClient\.SendTelemetryAsync\(TelemetryPacket, CancellationToken\) Method

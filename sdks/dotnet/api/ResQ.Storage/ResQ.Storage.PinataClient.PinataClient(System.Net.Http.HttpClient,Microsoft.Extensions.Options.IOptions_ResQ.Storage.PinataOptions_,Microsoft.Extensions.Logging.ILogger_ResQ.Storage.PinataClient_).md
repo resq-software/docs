@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'PinataClient(HttpClient, PinataOptions_, PinataClient_)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\(HttpClient, IOptions\<PinataOptions\>, ILogger\<PinataClient\>\) Constructor

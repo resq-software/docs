@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'OptimizationStrategy'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core')
 
 ## OptimizationStrategy Class

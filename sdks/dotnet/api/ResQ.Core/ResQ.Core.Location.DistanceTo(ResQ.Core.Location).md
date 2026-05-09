@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DistanceTo(Location)'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[Location](./ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 ## Location\.DistanceTo\(Location\) Method

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BaseServiceClient'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## BaseServiceClient Class

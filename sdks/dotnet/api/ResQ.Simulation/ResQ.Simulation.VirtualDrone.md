@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'VirtualDrone'
+---
+
 ### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation')
 
 ## VirtualDrone Class

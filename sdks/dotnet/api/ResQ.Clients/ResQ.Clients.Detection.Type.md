@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Type'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[Detection](./ResQ.Clients.Detection.md 'ResQ\.Clients\.Detection')
 
 ## Detection\.Type Property

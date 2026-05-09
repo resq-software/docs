@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockchainEvent(string, string, string, string, DateTimeOffset)'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[BlockchainEvent](./ResQ.Blockchain.BlockchainEvent.md 'ResQ\.Blockchain\.BlockchainEvent')
 
 ## BlockchainEvent\(string, string, string, string, DateTimeOffset\) Constructor

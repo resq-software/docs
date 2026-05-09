@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'DetectionType'
+---
+
 ### [ResQ\.Protocols](./ResQ.Protocols.md 'ResQ\.Protocols')
 
 ## DetectionType Enum

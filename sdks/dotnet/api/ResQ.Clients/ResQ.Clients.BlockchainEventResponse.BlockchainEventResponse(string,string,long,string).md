@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'BlockchainEventResponse(string, string, long, string)'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients').[BlockchainEventResponse](./ResQ.Clients.BlockchainEventResponse.md 'ResQ\.Clients\.BlockchainEventResponse')
 
 ## BlockchainEventResponse\(string, string, long, string\) Constructor

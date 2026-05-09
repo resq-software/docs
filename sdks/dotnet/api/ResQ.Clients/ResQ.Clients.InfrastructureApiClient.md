@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'InfrastructureApiClient'
+---
+
 ### [ResQ\.Clients](./ResQ.Clients.md 'ResQ\.Clients')
 
 ## InfrastructureApiClient Class

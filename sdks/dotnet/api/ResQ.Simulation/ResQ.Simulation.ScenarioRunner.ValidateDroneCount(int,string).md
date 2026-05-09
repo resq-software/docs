@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ValidateDroneCount(int, string)'
+---
+
 ### [ResQ\.Simulation](./ResQ.Simulation.md 'ResQ\.Simulation').[ScenarioRunner](./ResQ.Simulation.ScenarioRunner.md 'ResQ\.Simulation\.ScenarioRunner')
 
 ## ScenarioRunner\.ValidateDroneCount\(int, string\) Method

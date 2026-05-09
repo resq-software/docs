@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Timestamp'
+---
+
 ### [ResQ\.Blockchain](./ResQ.Blockchain.md 'ResQ\.Blockchain').[BlockchainEvent](./ResQ.Blockchain.BlockchainEvent.md 'ResQ\.Blockchain\.BlockchainEvent')
 
 ## BlockchainEvent\.Timestamp Property

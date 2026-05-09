@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Blockchain'
+---
+
 ## ResQ\.Blockchain Namespace
 
 | Classes | |

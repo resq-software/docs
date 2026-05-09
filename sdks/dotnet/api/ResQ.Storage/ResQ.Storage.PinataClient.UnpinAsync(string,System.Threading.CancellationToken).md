@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'UnpinAsync(string, CancellationToken)'
+---
+
 ### [ResQ\.Storage](./ResQ.Storage.md 'ResQ\.Storage').[PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ## PinataClient\.UnpinAsync\(string, CancellationToken\) Method

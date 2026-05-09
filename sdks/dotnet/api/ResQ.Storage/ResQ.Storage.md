@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Storage'
+---
+
 ## ResQ\.Storage Namespace
 
 | Classes | |

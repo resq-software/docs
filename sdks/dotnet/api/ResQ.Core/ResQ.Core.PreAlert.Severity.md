@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'Severity'
+---
+
 ### [ResQ\.Core](./ResQ.Core.md 'ResQ\.Core').[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')
 
 ## PreAlert\.Severity Property
