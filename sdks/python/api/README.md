@@ -5,5 +5,5 @@ You can use this auto-generated reference for the public packages in
 
 ## Packages
 
-- [`resq-mcp`](resq-mcp/overview)
 - [`resq-dsa`](resq-dsa/overview)
+- [`resq-mcp`](resq-mcp/overview)
