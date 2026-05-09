@@ -71,6 +71,22 @@ it ships its own rustdoc pipeline today.
 | `resq-software/viz`        | C#/web | DefaultDocumentation     | _TODO_                       |
 | `resq-software/crates`     | Rust   | already has docs         | n/a                          |
 
+## Syncing changes
+
+Templates here are the canonical version. After editing, push the
+update to each source repo with the helper script:
+
+```sh
+automation/sync-templates.sh             # all 3
+automation/sync-templates.sh --dry-run   # preview diffs
+automation/sync-templates.sh python      # one language only
+automation/sync-templates.sh --auto-merge  # open PRs with --auto
+```
+
+The script clones each target repo shallowly, copies the matching
+`api-docs.<lang>.yml`, opens a sync PR on `sync/api-docs-template`,
+and reports up-to-date when the workflow already matches.
+
 ## Adding a new template
 
 1. Drop the workflow YAML in this folder named `api-docs.<lang>.yml`.
