@@ -1,0 +1,235 @@
+# Copyright 2026 ResQ Software
+# SPDX-License-Identifier: Apache-2.0
+#
+# Source-of-truth template lives in resq-software/docs:
+#   automation/source-repo-templates/api-docs.typescript.yml
+#
+# Copy this file to resq-software/npm at:
+#   .github/workflows/api-docs.yml
+#
+# Renders TypeDoc API reference for @resq-sw/ui and opens a PR in
+# resq-software/docs with generated MDX under sdks/typescript/api/.
+#
+# The npm repo is a bun monorepo. Today this workflow only documents
+# the @resq-sw/ui package because that is the surface mapped by
+# sdks/typescript in the docs site. Add a matrix when other packages
+# get their own SDK pages.
+
+name: api-docs
+
+on:
+  push:
+    # Tag convention in resq-software/npm is "@resq-sw/<pkg>@v*"
+    # (driven by changesets). Only ui releases trigger a docs sync.
+    tags:
+      - '@resq-sw/ui@v*'
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Source ref to document (defaults to current ref)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: api-docs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    env:
+      PKG_DIR: packages/ui
+      DOCS_TARGET: sdks/typescript/api
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+          persist-credentials: false
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+        with:
+          bun-version: latest
+
+      - name: Install workspace deps
+        run: bun install --frozen-lockfile
+
+      - name: Install TypeDoc + Markdown plugin (scoped to ui pkg)
+        # Install the plugin first so its peerDependency on typedoc
+        # pulls in a compatible major; then top-up to latest typedoc
+        # within that range. Pinning to a specific minor here is
+        # fragile because the plugin's typedoc dependency moves with
+        # plugin releases.
+        working-directory: ${{ env.PKG_DIR }}
+        run: |
+          bun add --dev typedoc-plugin-markdown@latest
+          bun add --dev typedoc@latest
+
+      - name: Write docs-site TypeDoc config
+        # The package's checked-in typedoc.json uses
+        # typedoc-github-wiki-theme, which produces sidebar files that
+        # do not render cleanly in Mintlify. Write a sibling config
+        # tailored for the docs site so we never load the wiki theme.
+        # Only options accepted by typedoc core are listed here;
+        # plugin-specific options (e.g. fileExtension) shifted between
+        # plugin majors and broke the build last time.
+        working-directory: ${{ env.PKG_DIR }}
+        run: |
+          cat > typedoc.docs-site.json <<'JSON'
+          {
+            "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+            "plugin": ["typedoc-plugin-markdown"],
+            "tsconfig": "tsconfig.json",
+            "entryPointStrategy": "Expand",
+            "entryPoints": ["src"],
+            "exclude": [
+              "**/*.cy.ts",
+              "**/*.test.ts",
+              "**/*.test.tsx",
+              "**/*.stories.ts",
+              "**/*.stories.tsx",
+              "**/*.spec.ts",
+              "**/*.spec.tsx"
+            ],
+            "out": "generated-docs",
+            "readme": "none",
+            "cleanOutputDir": true
+          }
+          JSON
+
+      - name: Generate API reference
+        working-directory: ${{ env.PKG_DIR }}
+        run: |
+          rm -rf generated-docs
+          bunx typedoc --options typedoc.docs-site.json
+
+      - name: Prefix bare-filename intra-page links with ./
+        # TypeDoc emits same-directory cross-references as bare
+        # filenames, e.g. `[PaginationLink](PaginationLink.md)`.
+        # Mintlify accepts `(../foo/bar.md)` but rejects bare
+        # filenames as broken. Prefix any bare-filename `.md` link
+        # with `./` so the resolver keeps it as a relative path.
+        # External URLs (https://...) and already-relative paths
+        # (./, ../) are left alone because the [A-Za-z] anchor and
+        # the `[^)/]*` body exclude both.
+        working-directory: ${{ env.PKG_DIR }}/generated-docs
+        run: |
+          find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
+            sed -E -i \
+              's|\]\(([A-Za-z][^)/]*\.md(#[^)]*)?)\)|](./\1)|g' \
+              "$f"
+          done
+
+      - name: Strip TypeDoc breadcrumb header
+        # Every typedoc-plugin-markdown page begins with a breadcrumb
+        # block that links to ../../README.md and similar paths.
+        # Mintlify's broken-links check rejects these because the
+        # README files are not registered in docs.json navigation.
+        # Drop everything before the first "# " heading on each file
+        # (typedoc emits exactly one top-level heading per page).
+        # Files without a heading are left untouched.
+        working-directory: ${{ env.PKG_DIR }}/generated-docs
+        run: |
+          find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
+            if grep -q '^# ' "$f"; then
+              awk '/^# / { found=1 } found { print }' "$f" > "$f.tmp" \
+                && mv "$f.tmp" "$f"
+            fi
+          done
+
+      - name: Escape curly braces outside code fences (MDX safety)
+        # Mintlify parses .md as MDX. Literal `{ ... }` in JSDoc
+        # prose looks like a JSX expression to acorn and fails the
+        # broken-links check. Walk every generated .md, toggle a
+        # "in code fence" flag on lines starting with ```, and
+        # rewrite curly braces to HTML entities only on lines that
+        # are NOT in a fence. Backticked inline code is preserved
+        # because TypeDoc emits inline `code` rather than literal
+        # `{` in code spans.
+        working-directory: ${{ env.PKG_DIR }}/generated-docs
+        run: |
+          find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
+            awk '
+              BEGIN { in_fence = 0 }
+              /^```/ { in_fence = !in_fence; print; next }
+              {
+                if (!in_fence) {
+                  # gsub replacement: \& == literal & (escapes the
+                  # awk match-reference). Result is &#123; / &#125;.
+                  gsub(/\{/, "\\&#123;")
+                  gsub(/\}/, "\\&#125;")
+                }
+                print
+              }
+            ' "$f" > "$f.tmp" && mv "$f.tmp" "$f"
+          done
+
+      - name: Build pages index
+        # Flat JSON array of generated Markdown paths (without
+        # extension) so the docs repo can later splice them into
+        # docs.json automatically. Mintlify resolves both .md and
+        # .mdx, and typedoc-plugin-markdown emits .md by default,
+        # so we keep the .md output and skip a rename step.
+        working-directory: ${{ env.PKG_DIR }}/generated-docs
+        run: |
+          find . -name '*.md' -type f \
+            | sed 's|^\./||; s|\.md$||' \
+            | sort > _pages.txt
+          jq -R -s 'split("\n") | map(select(length > 0))' _pages.txt > _pages.json
+          rm _pages.txt
+
+      - name: Checkout docs repo
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          repository: resq-software/docs
+          path: docs-checkout
+          token: ${{ secrets.DOCS_REPO_PR_TOKEN }}
+          # peter-evans/create-pull-request also sets an Authorization
+          # extraheader; persisting credentials here too produces a
+          # "Duplicate header: Authorization" 400 from GitHub. Let the
+          # PR action manage its own auth.
+          persist-credentials: false
+
+      - name: Sync generated MDX into docs checkout
+        run: |
+          target="docs-checkout/${DOCS_TARGET}"
+          mkdir -p "$target"
+          rm -rf "${target:?}"/*
+          cp -R "${PKG_DIR}/generated-docs/." "$target/"
+
+      - name: Open PR in docs repo
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        with:
+          path: docs-checkout
+          token: ${{ secrets.DOCS_REPO_PR_TOKEN }}
+          # Attribute commits to the org's bot account. Requires
+          # engineer@resq.software to be a verified email on
+          # https://github.com/resq-sw, otherwise GitHub will mark
+          # the commit as unverified-author.
+          author: 'resq-sw <engineer@resq.software>'
+          committer: 'resq-sw <engineer@resq.software>'
+          commit-message: |
+            docs(ui): sync API reference for ${{ github.ref_name }}
+          title: 'docs(ui): API reference ${{ github.ref_name }}'
+          body: |
+            Auto-generated by `${{ github.workflow }}` in
+            `${{ github.repository }}` for ref `${{ github.ref_name }}`
+            (run: ${{ github.run_id }}).
+
+            Regenerated files under `sdks/typescript/api/`. Review the
+            diff for unintended exports and merge to publish.
+          branch: auto/typescript-api-${{ github.ref_name }}
+          base: main
+          delete-branch: true
+          add-paths: sdks/typescript/api/**
+          labels: |
+            automated
+            docs:api-ref
+            language:typescript
