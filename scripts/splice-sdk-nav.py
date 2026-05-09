@@ -48,10 +48,15 @@ def build_lang_group(language: str, prefix: str, pages_path: pathlib.Path,
     for p in raw:
         if p == "README":
             continue
-        # p is something like "components/accordion/README" or "Foo/Bar"
-        parts = normalize_path(p)
-        full_id = f"{prefix}/{p}" if not p.endswith("/README") else f"{prefix}/{p}"
-        full_id = f"{prefix}/{p}"
+        # Mintlify auto-redirects `/path/README` to `/path`, so register
+        # the directory form (page id without trailing /README). Files
+        # that don't end in /README keep their path verbatim.
+        if p.endswith("/README"):
+            full_id = f"{prefix}/{p[: -len('/README')]}"
+            parts = full_id[len(prefix) + 1:].split("/")
+        else:
+            full_id = f"{prefix}/{p}"
+            parts = p.split("/")
         insert(tree, parts, full_id)
     pages = [readme_id] + to_mintlify(tree, None)
     return {"group": language, "pages": pages}

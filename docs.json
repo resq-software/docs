@@ -71,71 +71,71 @@
                     "group": "TypeScript",
                     "pages": [
                       "sdks/typescript/api/README",
-                      "sdks/typescript/api/index/README",
+                      "sdks/typescript/api/index",
                       {
                         "group": "components",
                         "pages": [
-                          "sdks/typescript/api/components/accordion/README",
-                          "sdks/typescript/api/components/alert/README",
-                          "sdks/typescript/api/components/alert-dialog/README",
-                          "sdks/typescript/api/components/aspect-ratio/README",
-                          "sdks/typescript/api/components/avatar/README",
-                          "sdks/typescript/api/components/badge/README",
-                          "sdks/typescript/api/components/breadcrumb/README",
-                          "sdks/typescript/api/components/button/README",
-                          "sdks/typescript/api/components/button-group/README",
-                          "sdks/typescript/api/components/calendar/README",
-                          "sdks/typescript/api/components/card/README",
-                          "sdks/typescript/api/components/carousel/README",
-                          "sdks/typescript/api/components/chart/README",
-                          "sdks/typescript/api/components/checkbox/README",
-                          "sdks/typescript/api/components/collapsible/README",
-                          "sdks/typescript/api/components/combobox/README",
-                          "sdks/typescript/api/components/command/README",
-                          "sdks/typescript/api/components/context-menu/README",
-                          "sdks/typescript/api/components/dialog/README",
-                          "sdks/typescript/api/components/direction/README",
-                          "sdks/typescript/api/components/drawer/README",
-                          "sdks/typescript/api/components/dropdown-menu/README",
-                          "sdks/typescript/api/components/empty/README",
-                          "sdks/typescript/api/components/field/README",
-                          "sdks/typescript/api/components/hover-card/README",
-                          "sdks/typescript/api/components/icons/README",
-                          "sdks/typescript/api/components/input/README",
-                          "sdks/typescript/api/components/input-group/README",
-                          "sdks/typescript/api/components/input-otp/README",
-                          "sdks/typescript/api/components/item/README",
-                          "sdks/typescript/api/components/kbd/README",
-                          "sdks/typescript/api/components/label/README",
-                          "sdks/typescript/api/components/menubar/README",
-                          "sdks/typescript/api/components/native-select/README",
-                          "sdks/typescript/api/components/navigation-menu/README",
-                          "sdks/typescript/api/components/pagination/README",
-                          "sdks/typescript/api/components/picture/README",
-                          "sdks/typescript/api/components/popover/README",
-                          "sdks/typescript/api/components/progress/README",
-                          "sdks/typescript/api/components/radio-group/README",
-                          "sdks/typescript/api/components/resizable/README",
-                          "sdks/typescript/api/components/scroll-area/README",
-                          "sdks/typescript/api/components/select/README",
-                          "sdks/typescript/api/components/separator/README",
-                          "sdks/typescript/api/components/sheet/README",
-                          "sdks/typescript/api/components/sidebar/README",
-                          "sdks/typescript/api/components/skeleton/README",
-                          "sdks/typescript/api/components/slider/README",
-                          "sdks/typescript/api/components/sonner/README",
-                          "sdks/typescript/api/components/spinner/README",
-                          "sdks/typescript/api/components/switch/README",
-                          "sdks/typescript/api/components/table/README",
-                          "sdks/typescript/api/components/tabs/README",
-                          "sdks/typescript/api/components/textarea/README",
-                          "sdks/typescript/api/components/toggle/README",
-                          "sdks/typescript/api/components/toggle-group/README",
-                          "sdks/typescript/api/components/tooltip/README",
+                          "sdks/typescript/api/components/accordion",
+                          "sdks/typescript/api/components/alert",
+                          "sdks/typescript/api/components/alert-dialog",
+                          "sdks/typescript/api/components/aspect-ratio",
+                          "sdks/typescript/api/components/avatar",
+                          "sdks/typescript/api/components/badge",
+                          "sdks/typescript/api/components/breadcrumb",
+                          "sdks/typescript/api/components/button",
+                          "sdks/typescript/api/components/button-group",
+                          "sdks/typescript/api/components/calendar",
+                          "sdks/typescript/api/components/card",
+                          "sdks/typescript/api/components/carousel",
+                          "sdks/typescript/api/components/chart",
+                          "sdks/typescript/api/components/checkbox",
+                          "sdks/typescript/api/components/collapsible",
+                          "sdks/typescript/api/components/combobox",
+                          "sdks/typescript/api/components/command",
+                          "sdks/typescript/api/components/context-menu",
+                          "sdks/typescript/api/components/dialog",
+                          "sdks/typescript/api/components/direction",
+                          "sdks/typescript/api/components/drawer",
+                          "sdks/typescript/api/components/dropdown-menu",
+                          "sdks/typescript/api/components/empty",
+                          "sdks/typescript/api/components/field",
+                          "sdks/typescript/api/components/hover-card",
+                          "sdks/typescript/api/components/icons",
+                          "sdks/typescript/api/components/input",
+                          "sdks/typescript/api/components/input-group",
+                          "sdks/typescript/api/components/input-otp",
+                          "sdks/typescript/api/components/item",
+                          "sdks/typescript/api/components/kbd",
+                          "sdks/typescript/api/components/label",
+                          "sdks/typescript/api/components/menubar",
+                          "sdks/typescript/api/components/native-select",
+                          "sdks/typescript/api/components/navigation-menu",
+                          "sdks/typescript/api/components/pagination",
+                          "sdks/typescript/api/components/picture",
+                          "sdks/typescript/api/components/popover",
+                          "sdks/typescript/api/components/progress",
+                          "sdks/typescript/api/components/radio-group",
+                          "sdks/typescript/api/components/resizable",
+                          "sdks/typescript/api/components/scroll-area",
+                          "sdks/typescript/api/components/select",
+                          "sdks/typescript/api/components/separator",
+                          "sdks/typescript/api/components/sheet",
+                          "sdks/typescript/api/components/sidebar",
+                          "sdks/typescript/api/components/skeleton",
+                          "sdks/typescript/api/components/slider",
+                          "sdks/typescript/api/components/sonner",
+                          "sdks/typescript/api/components/spinner",
+                          "sdks/typescript/api/components/switch",
+                          "sdks/typescript/api/components/table",
+                          "sdks/typescript/api/components/tabs",
+                          "sdks/typescript/api/components/textarea",
+                          "sdks/typescript/api/components/toggle",
+                          "sdks/typescript/api/components/toggle-group",
+                          "sdks/typescript/api/components/tooltip",
                           {
                             "group": "accordion",
                             "pages": [
-                              "sdks/typescript/api/components/accordion/accordion/README",
+                              "sdks/typescript/api/components/accordion/accordion",
                               {
                                 "group": "accordion",
                                 "pages": [
@@ -155,7 +155,7 @@
                           {
                             "group": "alert",
                             "pages": [
-                              "sdks/typescript/api/components/alert/alert/README",
+                              "sdks/typescript/api/components/alert/alert",
                               {
                                 "group": "alert",
                                 "pages": [
@@ -175,7 +175,7 @@
                           {
                             "group": "alert-dialog",
                             "pages": [
-                              "sdks/typescript/api/components/alert-dialog/alert-dialog/README",
+                              "sdks/typescript/api/components/alert-dialog/alert-dialog",
                               {
                                 "group": "alert-dialog",
                                 "pages": [
@@ -203,7 +203,7 @@
                           {
                             "group": "aspect-ratio",
                             "pages": [
-                              "sdks/typescript/api/components/aspect-ratio/aspect-ratio/README",
+                              "sdks/typescript/api/components/aspect-ratio/aspect-ratio",
                               {
                                 "group": "aspect-ratio",
                                 "pages": [
@@ -220,7 +220,7 @@
                           {
                             "group": "avatar",
                             "pages": [
-                              "sdks/typescript/api/components/avatar/avatar/README",
+                              "sdks/typescript/api/components/avatar/avatar",
                               {
                                 "group": "avatar",
                                 "pages": [
@@ -242,7 +242,7 @@
                           {
                             "group": "badge",
                             "pages": [
-                              "sdks/typescript/api/components/badge/badge/README",
+                              "sdks/typescript/api/components/badge/badge",
                               {
                                 "group": "badge",
                                 "pages": [
@@ -265,7 +265,7 @@
                           {
                             "group": "breadcrumb",
                             "pages": [
-                              "sdks/typescript/api/components/breadcrumb/breadcrumb/README",
+                              "sdks/typescript/api/components/breadcrumb/breadcrumb",
                               {
                                 "group": "breadcrumb",
                                 "pages": [
@@ -288,7 +288,7 @@
                           {
                             "group": "button",
                             "pages": [
-                              "sdks/typescript/api/components/button/button/README",
+                              "sdks/typescript/api/components/button/button",
                               {
                                 "group": "button",
                                 "pages": [
@@ -311,7 +311,7 @@
                           {
                             "group": "button-group",
                             "pages": [
-                              "sdks/typescript/api/components/button-group/button-group/README",
+                              "sdks/typescript/api/components/button-group/button-group",
                               {
                                 "group": "button-group",
                                 "pages": [
@@ -336,7 +336,7 @@
                           {
                             "group": "calendar",
                             "pages": [
-                              "sdks/typescript/api/components/calendar/calendar/README",
+                              "sdks/typescript/api/components/calendar/calendar",
                               {
                                 "group": "calendar",
                                 "pages": [
@@ -354,7 +354,7 @@
                           {
                             "group": "card",
                             "pages": [
-                              "sdks/typescript/api/components/card/card/README",
+                              "sdks/typescript/api/components/card/card",
                               {
                                 "group": "card",
                                 "pages": [
@@ -377,7 +377,7 @@
                           {
                             "group": "carousel",
                             "pages": [
-                              "sdks/typescript/api/components/carousel/carousel/README",
+                              "sdks/typescript/api/components/carousel/carousel",
                               {
                                 "group": "carousel",
                                 "pages": [
@@ -405,7 +405,7 @@
                           {
                             "group": "chart",
                             "pages": [
-                              "sdks/typescript/api/components/chart/chart/README",
+                              "sdks/typescript/api/components/chart/chart",
                               {
                                 "group": "chart",
                                 "pages": [
@@ -438,7 +438,7 @@
                           {
                             "group": "checkbox",
                             "pages": [
-                              "sdks/typescript/api/components/checkbox/checkbox/README",
+                              "sdks/typescript/api/components/checkbox/checkbox",
                               {
                                 "group": "checkbox",
                                 "pages": [
@@ -455,7 +455,7 @@
                           {
                             "group": "collapsible",
                             "pages": [
-                              "sdks/typescript/api/components/collapsible/collapsible/README",
+                              "sdks/typescript/api/components/collapsible/collapsible",
                               {
                                 "group": "collapsible",
                                 "pages": [
@@ -474,7 +474,7 @@
                           {
                             "group": "combobox",
                             "pages": [
-                              "sdks/typescript/api/components/combobox/combobox/README",
+                              "sdks/typescript/api/components/combobox/combobox",
                               {
                                 "group": "combobox",
                                 "pages": [
@@ -511,7 +511,7 @@
                           {
                             "group": "command",
                             "pages": [
-                              "sdks/typescript/api/components/command/command/README",
+                              "sdks/typescript/api/components/command/command",
                               {
                                 "group": "command",
                                 "pages": [
@@ -536,7 +536,7 @@
                           {
                             "group": "context-menu",
                             "pages": [
-                              "sdks/typescript/api/components/context-menu/context-menu/README",
+                              "sdks/typescript/api/components/context-menu/context-menu",
                               {
                                 "group": "context-menu",
                                 "pages": [
@@ -567,7 +567,7 @@
                           {
                             "group": "dialog",
                             "pages": [
-                              "sdks/typescript/api/components/dialog/dialog/README",
+                              "sdks/typescript/api/components/dialog/dialog",
                               {
                                 "group": "dialog",
                                 "pages": [
@@ -593,7 +593,7 @@
                           {
                             "group": "direction",
                             "pages": [
-                              "sdks/typescript/api/components/direction/direction/README",
+                              "sdks/typescript/api/components/direction/direction",
                               {
                                 "group": "direction",
                                 "pages": [
@@ -616,7 +616,7 @@
                           {
                             "group": "drawer",
                             "pages": [
-                              "sdks/typescript/api/components/drawer/drawer/README",
+                              "sdks/typescript/api/components/drawer/drawer",
                               {
                                 "group": "drawer",
                                 "pages": [
@@ -642,7 +642,7 @@
                           {
                             "group": "dropdown-menu",
                             "pages": [
-                              "sdks/typescript/api/components/dropdown-menu/dropdown-menu/README",
+                              "sdks/typescript/api/components/dropdown-menu/dropdown-menu",
                               {
                                 "group": "dropdown-menu",
                                 "pages": [
@@ -673,7 +673,7 @@
                           {
                             "group": "empty",
                             "pages": [
-                              "sdks/typescript/api/components/empty/empty/README",
+                              "sdks/typescript/api/components/empty/empty",
                               {
                                 "group": "empty",
                                 "pages": [
@@ -695,7 +695,7 @@
                           {
                             "group": "field",
                             "pages": [
-                              "sdks/typescript/api/components/field/field/README",
+                              "sdks/typescript/api/components/field/field",
                               {
                                 "group": "field",
                                 "pages": [
@@ -721,7 +721,7 @@
                           {
                             "group": "hover-card",
                             "pages": [
-                              "sdks/typescript/api/components/hover-card/hover-card/README",
+                              "sdks/typescript/api/components/hover-card/hover-card",
                               {
                                 "group": "hover-card",
                                 "pages": [
@@ -740,7 +740,7 @@
                           {
                             "group": "icons",
                             "pages": [
-                              "sdks/typescript/api/components/icons/ssr/README",
+                              "sdks/typescript/api/components/icons/ssr",
                               {
                                 "group": "interfaces",
                                 "pages": [
@@ -3798,7 +3798,7 @@
                           {
                             "group": "input",
                             "pages": [
-                              "sdks/typescript/api/components/input/input/README",
+                              "sdks/typescript/api/components/input/input",
                               {
                                 "group": "input",
                                 "pages": [
@@ -3815,7 +3815,7 @@
                           {
                             "group": "input-group",
                             "pages": [
-                              "sdks/typescript/api/components/input-group/input-group/README",
+                              "sdks/typescript/api/components/input-group/input-group",
                               {
                                 "group": "input-group",
                                 "pages": [
@@ -3837,7 +3837,7 @@
                           {
                             "group": "input-otp",
                             "pages": [
-                              "sdks/typescript/api/components/input-otp/input-otp/README",
+                              "sdks/typescript/api/components/input-otp/input-otp",
                               {
                                 "group": "input-otp",
                                 "pages": [
@@ -3857,7 +3857,7 @@
                           {
                             "group": "item",
                             "pages": [
-                              "sdks/typescript/api/components/item/item/README",
+                              "sdks/typescript/api/components/item/item",
                               {
                                 "group": "item",
                                 "pages": [
@@ -3883,7 +3883,7 @@
                           {
                             "group": "kbd",
                             "pages": [
-                              "sdks/typescript/api/components/kbd/kbd/README",
+                              "sdks/typescript/api/components/kbd/kbd",
                               {
                                 "group": "kbd",
                                 "pages": [
@@ -3901,7 +3901,7 @@
                           {
                             "group": "label",
                             "pages": [
-                              "sdks/typescript/api/components/label/label/README",
+                              "sdks/typescript/api/components/label/label",
                               {
                                 "group": "label",
                                 "pages": [
@@ -3918,7 +3918,7 @@
                           {
                             "group": "menubar",
                             "pages": [
-                              "sdks/typescript/api/components/menubar/menubar/README",
+                              "sdks/typescript/api/components/menubar/menubar",
                               {
                                 "group": "menubar",
                                 "pages": [
@@ -3950,7 +3950,7 @@
                           {
                             "group": "native-select",
                             "pages": [
-                              "sdks/typescript/api/components/native-select/native-select/README",
+                              "sdks/typescript/api/components/native-select/native-select",
                               {
                                 "group": "native-select",
                                 "pages": [
@@ -3969,7 +3969,7 @@
                           {
                             "group": "navigation-menu",
                             "pages": [
-                              "sdks/typescript/api/components/navigation-menu/navigation-menu/README",
+                              "sdks/typescript/api/components/navigation-menu/navigation-menu",
                               {
                                 "group": "navigation-menu",
                                 "pages": [
@@ -3999,7 +3999,7 @@
                           {
                             "group": "pagination",
                             "pages": [
-                              "sdks/typescript/api/components/pagination/pagination/README",
+                              "sdks/typescript/api/components/pagination/pagination",
                               {
                                 "group": "pagination",
                                 "pages": [
@@ -4022,8 +4022,8 @@
                           {
                             "group": "picture",
                             "pages": [
-                              "sdks/typescript/api/components/picture/picture/README",
-                              "sdks/typescript/api/components/picture/types/README",
+                              "sdks/typescript/api/components/picture/picture",
+                              "sdks/typescript/api/components/picture/types",
                               {
                                 "group": "picture",
                                 "pages": [
@@ -4065,7 +4065,7 @@
                           {
                             "group": "popover",
                             "pages": [
-                              "sdks/typescript/api/components/popover/popover/README",
+                              "sdks/typescript/api/components/popover/popover",
                               {
                                 "group": "popover",
                                 "pages": [
@@ -4088,7 +4088,7 @@
                           {
                             "group": "progress",
                             "pages": [
-                              "sdks/typescript/api/components/progress/progress/README",
+                              "sdks/typescript/api/components/progress/progress",
                               {
                                 "group": "progress",
                                 "pages": [
@@ -4105,7 +4105,7 @@
                           {
                             "group": "radio-group",
                             "pages": [
-                              "sdks/typescript/api/components/radio-group/radio-group/README",
+                              "sdks/typescript/api/components/radio-group/radio-group",
                               {
                                 "group": "radio-group",
                                 "pages": [
@@ -4123,7 +4123,7 @@
                           {
                             "group": "resizable",
                             "pages": [
-                              "sdks/typescript/api/components/resizable/resizable/README",
+                              "sdks/typescript/api/components/resizable/resizable",
                               {
                                 "group": "resizable",
                                 "pages": [
@@ -4142,7 +4142,7 @@
                           {
                             "group": "scroll-area",
                             "pages": [
-                              "sdks/typescript/api/components/scroll-area/scroll-area/README",
+                              "sdks/typescript/api/components/scroll-area/scroll-area",
                               {
                                 "group": "scroll-area",
                                 "pages": [
@@ -4160,7 +4160,7 @@
                           {
                             "group": "select",
                             "pages": [
-                              "sdks/typescript/api/components/select/select/README",
+                              "sdks/typescript/api/components/select/select",
                               {
                                 "group": "select",
                                 "pages": [
@@ -4186,7 +4186,7 @@
                           {
                             "group": "separator",
                             "pages": [
-                              "sdks/typescript/api/components/separator/separator/README",
+                              "sdks/typescript/api/components/separator/separator",
                               {
                                 "group": "separator",
                                 "pages": [
@@ -4203,7 +4203,7 @@
                           {
                             "group": "sheet",
                             "pages": [
-                              "sdks/typescript/api/components/sheet/sheet/README",
+                              "sdks/typescript/api/components/sheet/sheet",
                               {
                                 "group": "sheet",
                                 "pages": [
@@ -4227,7 +4227,7 @@
                           {
                             "group": "sidebar",
                             "pages": [
-                              "sdks/typescript/api/components/sidebar/sidebar/README",
+                              "sdks/typescript/api/components/sidebar/sidebar",
                               {
                                 "group": "sidebar",
                                 "pages": [
@@ -4267,7 +4267,7 @@
                           {
                             "group": "skeleton",
                             "pages": [
-                              "sdks/typescript/api/components/skeleton/skeleton/README",
+                              "sdks/typescript/api/components/skeleton/skeleton",
                               {
                                 "group": "skeleton",
                                 "pages": [
@@ -4284,7 +4284,7 @@
                           {
                             "group": "slider",
                             "pages": [
-                              "sdks/typescript/api/components/slider/slider/README",
+                              "sdks/typescript/api/components/slider/slider",
                               {
                                 "group": "slider",
                                 "pages": [
@@ -4301,7 +4301,7 @@
                           {
                             "group": "sonner",
                             "pages": [
-                              "sdks/typescript/api/components/sonner/sonner/README",
+                              "sdks/typescript/api/components/sonner/sonner",
                               {
                                 "group": "sonner",
                                 "pages": [
@@ -4318,7 +4318,7 @@
                           {
                             "group": "spinner",
                             "pages": [
-                              "sdks/typescript/api/components/spinner/spinner/README",
+                              "sdks/typescript/api/components/spinner/spinner",
                               {
                                 "group": "spinner",
                                 "pages": [
@@ -4335,7 +4335,7 @@
                           {
                             "group": "switch",
                             "pages": [
-                              "sdks/typescript/api/components/switch/switch/README",
+                              "sdks/typescript/api/components/switch/switch",
                               {
                                 "group": "switch",
                                 "pages": [
@@ -4352,7 +4352,7 @@
                           {
                             "group": "table",
                             "pages": [
-                              "sdks/typescript/api/components/table/table/README",
+                              "sdks/typescript/api/components/table/table",
                               {
                                 "group": "table",
                                 "pages": [
@@ -4376,7 +4376,7 @@
                           {
                             "group": "tabs",
                             "pages": [
-                              "sdks/typescript/api/components/tabs/tabs/README",
+                              "sdks/typescript/api/components/tabs/tabs",
                               {
                                 "group": "tabs",
                                 "pages": [
@@ -4402,7 +4402,7 @@
                           {
                             "group": "textarea",
                             "pages": [
-                              "sdks/typescript/api/components/textarea/textarea/README",
+                              "sdks/typescript/api/components/textarea/textarea",
                               {
                                 "group": "textarea",
                                 "pages": [
@@ -4419,7 +4419,7 @@
                           {
                             "group": "toggle",
                             "pages": [
-                              "sdks/typescript/api/components/toggle/toggle/README",
+                              "sdks/typescript/api/components/toggle/toggle",
                               {
                                 "group": "toggle",
                                 "pages": [
@@ -4442,7 +4442,7 @@
                           {
                             "group": "toggle-group",
                             "pages": [
-                              "sdks/typescript/api/components/toggle-group/toggle-group/README",
+                              "sdks/typescript/api/components/toggle-group/toggle-group",
                               {
                                 "group": "toggle-group",
                                 "pages": [
@@ -4460,7 +4460,7 @@
                           {
                             "group": "tooltip",
                             "pages": [
-                              "sdks/typescript/api/components/tooltip/tooltip/README",
+                              "sdks/typescript/api/components/tooltip/tooltip",
                               {
                                 "group": "tooltip",
                                 "pages": [
@@ -4482,7 +4482,7 @@
                       {
                         "group": "hooks",
                         "pages": [
-                          "sdks/typescript/api/hooks/use-mobile/README",
+                          "sdks/typescript/api/hooks/use-mobile",
                           {
                             "group": "use-mobile",
                             "pages": [
@@ -4499,11 +4499,11 @@
                       {
                         "group": "lib",
                         "pages": [
-                          "sdks/typescript/api/lib/contrast-audit/README",
-                          "sdks/typescript/api/lib/get-contrasting-color/README",
-                          "sdks/typescript/api/lib/get-contrasting-color.types/README",
-                          "sdks/typescript/api/lib/perf-test-utils/README",
-                          "sdks/typescript/api/lib/utils/README",
+                          "sdks/typescript/api/lib/contrast-audit",
+                          "sdks/typescript/api/lib/get-contrasting-color",
+                          "sdks/typescript/api/lib/get-contrasting-color.types",
+                          "sdks/typescript/api/lib/perf-test-utils",
+                          "sdks/typescript/api/lib/utils",
                           {
                             "group": "contrast-audit",
                             "pages": [

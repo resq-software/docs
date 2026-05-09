@@ -295,8 +295,16 @@ jobs:
           for p in raw:
               if p == "README":
                   continue
-              full_id = f"{PREFIX}/{p}"
-              parts = p[: -len("/README")].split("/") if p.endswith("/README") else p.split("/")
+              # Mintlify auto-redirects `/path/README` to `/path`, so
+              # register the directory form (page id without trailing
+              # /README). Files that don't end in /README keep their
+              # path verbatim.
+              if p.endswith("/README"):
+                  full_id = f"{PREFIX}/{p[: -len('/README')]}"
+                  parts = full_id[len(PREFIX) + 1:].split("/")
+              else:
+                  full_id = f"{PREFIX}/{p}"
+                  parts = p.split("/")
               insert(tree, parts, full_id)
 
           def to_mintlify(node, group_name):
