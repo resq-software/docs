@@ -1,6 +1,6 @@
 # Interface: PerfViolation
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:43](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L43)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:43](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L43)
 
 A single performance violation with category mapping.
 
@@ -10,7 +10,7 @@ A single performance violation with category mapping.
 
 > **category**: `"frame-timing"` \| `"layout-stability"` \| `"react-performance"` \| `"dom-nodes"` \| `"style-writes"` \| `"input-responsiveness"` \| `"element-timing"`
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:45](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L45)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:45](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L45)
 
 Which perf panel category this maps to.
 
@@ -20,7 +20,7 @@ Which perf panel category this maps to.
 
 > `optional` **match?**: `string`
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:55](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L55)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:55](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L55)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [packages/ui/src/lib/perf-test-utils.ts:55](https://github.com/resq-
 
 > **message**: `string`
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:54](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L54)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:54](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L54)
 
 ***
 
@@ -36,7 +36,7 @@ Defined in: [packages/ui/src/lib/perf-test-utils.ts:54](https://github.com/resq-
 
 > **rule**: `string`
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:53](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L53)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:53](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L53)
 
 ***
 
@@ -44,6 +44,6 @@ Defined in: [packages/ui/src/lib/perf-test-utils.ts:53](https://github.com/resq-
 
 > **severity**: `"error"` \| `"warning"`
 
-Defined in: [packages/ui/src/lib/perf-test-utils.ts:57](https://github.com/resq-software/npm/blob/7cb46b2b7e7b1c6ebdc09af26b2a9132a360d5e3/packages/ui/src/lib/perf-test-utils.ts#L57)
+Defined in: [packages/ui/src/lib/perf-test-utils.ts:57](https://github.com/resq-software/npm/blob/7b98eb21b0f3a7ae8e470a55763432a4f9283f77/packages/ui/src/lib/perf-test-utils.ts#L57)
 
 Severity: 'error' blocks CI, 'warning' shows up in reports.
