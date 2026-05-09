@@ -1,4 +1,4 @@
-"""Splice each SDK's _pages.json into docs.json's `Generated API Reference`
+"""Splice each SDK's _pages.json into docs.json's `Generated Package References`
 sub-group for that language.
 
 Builds a hierarchical groups structure from page IDs of the form
@@ -161,12 +161,12 @@ def main() -> int:
         readme_id = f"{prefix}/README"
         new_subgroups.append(build_lang_group(label, prefix, pages_path, readme_id))
 
-    # Find Generated API Reference under en > SDKs > groups
+    # Find Generated Package References under en > SDKs > groups
     en = next(l for l in docs["navigation"]["languages"] if l["language"] == "en")
     sdks_tab = next(t for t in en["tabs"] if t["tab"] == "SDKs")
     gen_group = next(
         g for g in sdks_tab["groups"]
-        if g["group"] == "Generated API Reference"
+        if g["group"] == "Generated Package References"
     )
     gen_group["pages"] = new_subgroups
 
