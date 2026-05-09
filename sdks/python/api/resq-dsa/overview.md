@@ -27,26 +27,11 @@ rabin_karp: Rabin-Karp string pattern matching algorithm.
   >>> bloom.has("emergency")
   True
 
-<a id="resq_dsa.BloomFilter"></a>
+## API
 
-## BloomFilter
-
-<a id="resq_dsa.CountMinSketch"></a>
-
-## CountMinSketch
-
-<a id="resq_dsa.Graph"></a>
-
-## Graph
-
-<a id="resq_dsa.BoundedHeap"></a>
-
-## BoundedHeap
-
-<a id="resq_dsa.Trie"></a>
-
-## Trie
-
-<a id="resq_dsa.rabin_karp"></a>
-
-## rabin\_karp
+- [`BloomFilter`](./bloom#bloomfilter-objects)
+- [`CountMinSketch`](./count_min#countminsketch-objects)
+- [`Graph`](./graph#graph-objects)
+- [`BoundedHeap`](./heap#boundedheap-objects)
+- [`Trie`](./trie#trie-objects)
+- [`rabin_karp`](./trie#rabin_karp)
