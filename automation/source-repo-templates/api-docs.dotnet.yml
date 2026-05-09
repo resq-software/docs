@@ -140,7 +140,11 @@ jobs:
             fi
             out="$OUTPUT_DIR/$proj"
             mkdir -p "$out"
-            DefaultDocumentation \
+            # Binary is lowercase on Linux (case-sensitive filesystem);
+            # the dotnet tool installer prints
+            #   "You can invoke the tool using the following command:
+            #    defaultdocumentation"
+            defaultdocumentation \
               --AssemblyFilePath "$dll" \
               --DocumentationFilePath "$xml" \
               --OutputDirectoryPath "$out"
