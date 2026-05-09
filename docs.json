@@ -5214,13 +5214,70 @@
                       {
                         "group": "resq-dsa",
                         "pages": [
-                          "sdks/python/api/resq-dsa/overview"
+                          "sdks/python/api/resq-dsa/bloom",
+                          "sdks/python/api/resq-dsa/count_min",
+                          "sdks/python/api/resq-dsa/graph",
+                          "sdks/python/api/resq-dsa/heap",
+                          "sdks/python/api/resq-dsa/overview",
+                          "sdks/python/api/resq-dsa/trie"
                         ]
                       },
                       {
                         "group": "resq-mcp",
                         "pages": [
-                          "sdks/python/api/resq-mcp/overview"
+                          "sdks/python/api/resq-mcp/core",
+                          "sdks/python/api/resq-mcp/drone",
+                          "sdks/python/api/resq-mcp/dtsop",
+                          "sdks/python/api/resq-mcp/hce",
+                          "sdks/python/api/resq-mcp/models",
+                          "sdks/python/api/resq-mcp/overview",
+                          "sdks/python/api/resq-mcp/pdie",
+                          "sdks/python/api/resq-mcp/prompts",
+                          "sdks/python/api/resq-mcp/resources",
+                          "sdks/python/api/resq-mcp/server",
+                          "sdks/python/api/resq-mcp/telemetry",
+                          "sdks/python/api/resq-mcp/tools",
+                          {
+                            "group": "core",
+                            "pages": [
+                              "sdks/python/api/resq-mcp/core/config",
+                              "sdks/python/api/resq-mcp/core/errors",
+                              "sdks/python/api/resq-mcp/core/models",
+                              "sdks/python/api/resq-mcp/core/security",
+                              "sdks/python/api/resq-mcp/core/telemetry",
+                              "sdks/python/api/resq-mcp/core/timeout"
+                            ]
+                          },
+                          {
+                            "group": "drone",
+                            "pages": [
+                              "sdks/python/api/resq-mcp/drone/models",
+                              "sdks/python/api/resq-mcp/drone/service"
+                            ]
+                          },
+                          {
+                            "group": "dtsop",
+                            "pages": [
+                              "sdks/python/api/resq-mcp/dtsop/models",
+                              "sdks/python/api/resq-mcp/dtsop/service",
+                              "sdks/python/api/resq-mcp/dtsop/tools"
+                            ]
+                          },
+                          {
+                            "group": "hce",
+                            "pages": [
+                              "sdks/python/api/resq-mcp/hce/models",
+                              "sdks/python/api/resq-mcp/hce/service",
+                              "sdks/python/api/resq-mcp/hce/tools"
+                            ]
+                          },
+                          {
+                            "group": "pdie",
+                            "pages": [
+                              "sdks/python/api/resq-mcp/pdie/models",
+                              "sdks/python/api/resq-mcp/pdie/service"
+                            ]
+                          }
                         ]
                       }
                     ]
