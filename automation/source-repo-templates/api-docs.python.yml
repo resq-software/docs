@@ -195,11 +195,17 @@ jobs:
 
       - name: Write top-level index
         # pydoc-markdown emits an overview.md per package. Stitch a
-        # small README.md at the top of the api/ folder linking to
+        # small README.mdx at the top of the api/ folder linking to
         # each so a single nav entry can drive into all packages.
         # Package list is sorted alphabetically by directory name so
         # it stays in sync with `_pages.json` (which `find ... | sort`
         # produces below) regardless of PUBLIC_PACKAGES env order.
+        # Emit .mdx (not .md) because Mintlify's docs.json nav
+        # resolver only matches .mdx for page ids; without this,
+        # mint dev warns "is referenced in the docs.json navigation
+        # but the file does not exist". Submodule pages stay .md
+        # since they are linked from content (where both extensions
+        # resolve) rather than from nav.
         run: |
           {
             echo "# ResQ Python SDK"
@@ -216,7 +222,7 @@ jobs:
                 echo "- [\`$pkg_dir\`]($pkg_dir/overview)"
               fi
             done
-          } > "$OUTPUT_DIR/README.md"
+          } > "$OUTPUT_DIR/README.mdx"
 
       - name: Prefix bare-filename intra-page links with ./
         # Mintlify rejects bare-filename .md links as broken;
