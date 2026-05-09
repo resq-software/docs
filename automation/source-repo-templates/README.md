@@ -64,11 +64,11 @@ it ships its own rustdoc pipeline today.
 | Source repo                | Lang   | Tool                     | Template file                |
 | -------------------------- | ------ | ------------------------ | ---------------------------- |
 | `resq-software/npm`        | TS     | TypeDoc + markdown plug. | `api-docs.typescript.yml`    |
-| `resq-software/dotnet-sdk` | C#     | DocFX                    | _TODO_                       |
+| `resq-software/dotnet-sdk` | C#     | DefaultDocumentation     | `api-docs.dotnet.yml`        |
 | `resq-software/pypi`       | Python | mkdocstrings             | _TODO_                       |
 | `resq-software/programs`   | Rust   | rustdoc + cargo-readme   | _TODO_                       |
 | `resq-software/vcpkg`      | C++    | Doxygen + moxygen        | _TODO_                       |
-| `resq-software/viz`        | C#/web | DocFX (shared with SDK)  | _TODO_                       |
+| `resq-software/viz`        | C#/web | DefaultDocumentation     | _TODO_                       |
 | `resq-software/crates`     | Rust   | already has docs         | n/a                          |
 
 ## Adding a new template
