@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [useIsMobile](functions/useIsMobile.md)
+- [useIsMobile](./functions/useIsMobile.md)

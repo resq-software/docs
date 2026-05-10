@@ -2,5 +2,5 @@
 
 ## Functions
 
-- [Calendar](functions/Calendar.md)
-- [CalendarDayButton](functions/CalendarDayButton.md)
+- [Calendar](./functions/Calendar.md)
+- [CalendarDayButton](./functions/CalendarDayButton.md)

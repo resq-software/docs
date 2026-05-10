@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [getContrastingColor](functions/getContrastingColor.md)
+- [getContrastingColor](./functions/getContrastingColor.md)

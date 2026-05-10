@@ -4,22 +4,22 @@
 
 ### Accordion
 
-Re-exports [Accordion](accordion/functions/Accordion.md)
+Re-exports [Accordion](./accordion/functions/Accordion.md)
 
 ***
 
 ### AccordionContent
 
-Re-exports [AccordionContent](accordion/functions/AccordionContent.md)
+Re-exports [AccordionContent](./accordion/functions/AccordionContent.md)
 
 ***
 
 ### AccordionItem
 
-Re-exports [AccordionItem](accordion/functions/AccordionItem.md)
+Re-exports [AccordionItem](./accordion/functions/AccordionItem.md)
 
 ***
 
 ### AccordionTrigger
 
-Re-exports [AccordionTrigger](accordion/functions/AccordionTrigger.md)
+Re-exports [AccordionTrigger](./accordion/functions/AccordionTrigger.md)

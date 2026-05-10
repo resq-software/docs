@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Checkbox](functions/Checkbox.md)
+- [Checkbox](./functions/Checkbox.md)

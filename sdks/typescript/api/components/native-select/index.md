@@ -4,16 +4,16 @@
 
 ### NativeSelect
 
-Re-exports [NativeSelect](native-select/functions/NativeSelect.md)
+Re-exports [NativeSelect](./native-select/functions/NativeSelect.md)
 
 ***
 
 ### NativeSelectOptGroup
 
-Re-exports [NativeSelectOptGroup](native-select/functions/NativeSelectOptGroup.md)
+Re-exports [NativeSelectOptGroup](./native-select/functions/NativeSelectOptGroup.md)
 
 ***
 
 ### NativeSelectOption
 
-Re-exports [NativeSelectOption](native-select/functions/NativeSelectOption.md)
+Re-exports [NativeSelectOption](./native-select/functions/NativeSelectOption.md)

@@ -4,4 +4,4 @@
 
 ### Progress
 
-Re-exports [Progress](progress/functions/Progress.md)
+Re-exports [Progress](./progress/functions/Progress.md)

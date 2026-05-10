@@ -4,22 +4,22 @@
 
 ### InputOTP
 
-Re-exports [InputOTP](input-otp/functions/InputOTP.md)
+Re-exports [InputOTP](./input-otp/functions/InputOTP.md)
 
 ***
 
 ### InputOTPGroup
 
-Re-exports [InputOTPGroup](input-otp/functions/InputOTPGroup.md)
+Re-exports [InputOTPGroup](./input-otp/functions/InputOTPGroup.md)
 
 ***
 
 ### InputOTPSeparator
 
-Re-exports [InputOTPSeparator](input-otp/functions/InputOTPSeparator.md)
+Re-exports [InputOTPSeparator](./input-otp/functions/InputOTPSeparator.md)
 
 ***
 
 ### InputOTPSlot
 
-Re-exports [InputOTPSlot](input-otp/functions/InputOTPSlot.md)
+Re-exports [InputOTPSlot](./input-otp/functions/InputOTPSlot.md)

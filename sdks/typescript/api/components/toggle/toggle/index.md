@@ -2,8 +2,8 @@
 
 ## Variables
 
-- [toggleVariants](variables/toggleVariants.md)
+- [toggleVariants](./variables/toggleVariants.md)
 
 ## Functions
 
-- [Toggle](functions/Toggle.md)
+- [Toggle](./functions/Toggle.md)

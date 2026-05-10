@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Input](functions/Input.md)
+- [Input](./functions/Input.md)

@@ -4,4 +4,4 @@
 
 ### Switch
 
-Re-exports [Switch](switch/functions/Switch.md)
+Re-exports [Switch](./switch/functions/Switch.md)

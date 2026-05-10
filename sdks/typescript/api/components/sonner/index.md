@@ -4,4 +4,4 @@
 
 ### Toaster
 
-Re-exports [Toaster](sonner/functions/Toaster.md)
+Re-exports [Toaster](./sonner/functions/Toaster.md)

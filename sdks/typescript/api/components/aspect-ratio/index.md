@@ -4,4 +4,4 @@
 
 ### AspectRatio
 
-Re-exports [AspectRatio](aspect-ratio/functions/AspectRatio.md)
+Re-exports [AspectRatio](./aspect-ratio/functions/AspectRatio.md)

@@ -2,5 +2,5 @@
 
 ## Functions
 
-- [RadioGroup](functions/RadioGroup.md)
-- [RadioGroupItem](functions/RadioGroupItem.md)
+- [RadioGroup](./functions/RadioGroup.md)
+- [RadioGroupItem](./functions/RadioGroupItem.md)

@@ -4,4 +4,4 @@
 
 ### Input
 
-Re-exports [Input](input/functions/Input.md)
+Re-exports [Input](./input/functions/Input.md)

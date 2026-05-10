@@ -4,4 +4,4 @@
 
 ### Textarea
 
-Re-exports [Textarea](textarea/functions/Textarea.md)
+Re-exports [Textarea](./textarea/functions/Textarea.md)

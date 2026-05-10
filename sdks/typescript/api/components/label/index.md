@@ -4,4 +4,4 @@
 
 ### Label
 
-Re-exports [Label](label/functions/Label.md)
+Re-exports [Label](./label/functions/Label.md)

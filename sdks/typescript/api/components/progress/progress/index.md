@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Progress](functions/Progress.md)
+- [Progress](./functions/Progress.md)

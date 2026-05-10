@@ -4,10 +4,10 @@
 
 ### Toggle
 
-Re-exports [Toggle](toggle/functions/Toggle.md)
+Re-exports [Toggle](./toggle/functions/Toggle.md)
 
 ***
 
 ### toggleVariants
 
-Re-exports [toggleVariants](toggle/variables/toggleVariants.md)
+Re-exports [toggleVariants](./toggle/variables/toggleVariants.md)

@@ -4,4 +4,4 @@
 
 ### Skeleton
 
-Re-exports [Skeleton](skeleton/functions/Skeleton.md)
+Re-exports [Skeleton](./skeleton/functions/Skeleton.md)

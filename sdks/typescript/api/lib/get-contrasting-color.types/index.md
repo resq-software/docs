@@ -2,4 +2,4 @@
 
 ## Type Aliases
 
-- [RGB](type-aliases/RGB.md)
+- [RGB](./type-aliases/RGB.md)

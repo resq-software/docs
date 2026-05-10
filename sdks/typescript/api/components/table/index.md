@@ -4,46 +4,46 @@
 
 ### Table
 
-Re-exports [Table](table/functions/Table.md)
+Re-exports [Table](./table/functions/Table.md)
 
 ***
 
 ### TableBody
 
-Re-exports [TableBody](table/functions/TableBody.md)
+Re-exports [TableBody](./table/functions/TableBody.md)
 
 ***
 
 ### TableCaption
 
-Re-exports [TableCaption](table/functions/TableCaption.md)
+Re-exports [TableCaption](./table/functions/TableCaption.md)
 
 ***
 
 ### TableCell
 
-Re-exports [TableCell](table/functions/TableCell.md)
+Re-exports [TableCell](./table/functions/TableCell.md)
 
 ***
 
 ### TableFooter
 
-Re-exports [TableFooter](table/functions/TableFooter.md)
+Re-exports [TableFooter](./table/functions/TableFooter.md)
 
 ***
 
 ### TableHead
 
-Re-exports [TableHead](table/functions/TableHead.md)
+Re-exports [TableHead](./table/functions/TableHead.md)
 
 ***
 
 ### TableHeader
 
-Re-exports [TableHeader](table/functions/TableHeader.md)
+Re-exports [TableHeader](./table/functions/TableHeader.md)
 
 ***
 
 ### TableRow
 
-Re-exports [TableRow](table/functions/TableRow.md)
+Re-exports [TableRow](./table/functions/TableRow.md)

@@ -4,10 +4,10 @@
 
 ### Calendar
 
-Re-exports [Calendar](calendar/functions/Calendar.md)
+Re-exports [Calendar](./calendar/functions/Calendar.md)
 
 ***
 
 ### CalendarDayButton
 
-Re-exports [CalendarDayButton](calendar/functions/CalendarDayButton.md)
+Re-exports [CalendarDayButton](./calendar/functions/CalendarDayButton.md)

@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Slider](functions/Slider.md)
+- [Slider](./functions/Slider.md)

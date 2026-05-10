@@ -213,24 +213,52 @@ jobs:
               "$f"
           done
 
-      - name: Prefix bare-filename intra-page links with ./
-        # TypeDoc emits same-directory cross-references as bare
-        # filenames, e.g. `[PaginationLink](PaginationLink.md)`.
-        # Mintlify accepts `(../foo/bar.md)` but rejects bare
-        # filenames as broken. Prefix any bare-filename `.md` link
-        # with `./` so the resolver keeps it as a relative path.
-        # External URLs (https://...) and already-relative paths
-        # (./, ../) are left alone because the leading-char class
-        # `[A-Za-z0-9]` excludes both. Including digits handles
-        # files that start with a digit (e.g. 01-introduction.md)
-        # if any future tooling generates them.
+      - name: Prefix bare relative .md links with ./
+        # TypeDoc emits cross-references as bare relative paths,
+        # both single-segment (`PaginationLink.md`) and multi-segment
+        # (`functions/Accordion.md`, `accordion/index.md`). Mintlify
+        # only resolves explicitly-relative paths (./, ../) and
+        # absolute paths (/...) — bare paths are flagged as broken.
+        #
+        # Skip targets that are already qualified: external URLs,
+        # already-relative paths, fragment-only links, and special
+        # schemes (mailto:, data:, etc.). A target is "qualified"
+        # iff it starts with `./`, `../`, `/`, `#`, or contains `:`
+        # before the first `/`.
         working-directory: ${{ env.PKG_DIR }}/generated-docs
         run: |
-          find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
-            sed -E -i \
-              's|\]\(([A-Za-z0-9][^)/]*\.md(#[^)]*)?)\)|](./\1)|g' \
-              "$f"
-          done
+          python3 - <<'PY'
+          import pathlib
+          import re
+
+          # Match `[label](target)` where target is bare relative.
+          # Captured target stops at `)` to support targets without
+          # spaces; markdown spec allows them as long as parens
+          # don't appear inside.
+          link_re = re.compile(r'(?<!\!)\[([^\]]*)\]\(([^)]+)\)')
+
+          def is_qualified(target: str) -> bool:
+              t = target.strip().split(None, 1)[0]
+              if t.startswith(("./", "../", "/", "#")):
+                  return True
+              # URL schemes / mailto: / data: — colon before /.
+              if ":" in t.split("/", 1)[0]:
+                  return True
+              return False
+
+          for f in pathlib.Path(".").rglob("*.md"):
+              text = f.read_text(encoding="utf-8")
+              def fix(m: re.Match) -> str:
+                  label, target = m.group(1), m.group(2)
+                  if is_qualified(target):
+                      return m.group(0)
+                  if not target.endswith(".md") and ".md#" not in target:
+                      return m.group(0)
+                  return f"[{label}](./{target})"
+              new = link_re.sub(fix, text)
+              if new != text:
+                  f.write_text(new, encoding="utf-8")
+          PY
 
       - name: Strip TypeDoc breadcrumb header
         # Every typedoc-plugin-markdown page begins with a breadcrumb

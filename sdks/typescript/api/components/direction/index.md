@@ -4,10 +4,10 @@
 
 ### DirectionProvider
 
-Re-exports [DirectionProvider](direction/functions/DirectionProvider.md)
+Re-exports [DirectionProvider](./direction/functions/DirectionProvider.md)
 
 ***
 
 ### useDirection
 
-Re-exports [useDirection](direction/variables/useDirection.md)
+Re-exports [useDirection](./direction/variables/useDirection.md)

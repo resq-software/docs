@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Textarea](functions/Textarea.md)
+- [Textarea](./functions/Textarea.md)

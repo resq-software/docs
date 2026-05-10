@@ -4,4 +4,4 @@
 
 ### Slider
 
-Re-exports [Slider](slider/functions/Slider.md)
+Re-exports [Slider](./slider/functions/Slider.md)

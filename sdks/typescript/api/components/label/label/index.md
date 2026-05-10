@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Label](functions/Label.md)
+- [Label](./functions/Label.md)

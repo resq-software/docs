@@ -2,6 +2,6 @@
 
 ## Functions
 
-- [Collapsible](functions/Collapsible.md)
-- [CollapsibleContent](functions/CollapsibleContent.md)
-- [CollapsibleTrigger](functions/CollapsibleTrigger.md)
+- [Collapsible](./functions/Collapsible.md)
+- [CollapsibleContent](./functions/CollapsibleContent.md)
+- [CollapsibleTrigger](./functions/CollapsibleTrigger.md)

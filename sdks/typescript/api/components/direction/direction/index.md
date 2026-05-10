@@ -2,8 +2,8 @@
 
 ## Variables
 
-- [useDirection](variables/useDirection.md)
+- [useDirection](./variables/useDirection.md)
 
 ## Functions
 
-- [DirectionProvider](functions/DirectionProvider.md)
+- [DirectionProvider](./functions/DirectionProvider.md)

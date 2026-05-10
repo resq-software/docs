@@ -4,4 +4,4 @@
 
 ### Spinner
 
-Re-exports [Spinner](spinner/functions/Spinner.md)
+Re-exports [Spinner](./spinner/functions/Spinner.md)

@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Spinner](functions/Spinner.md)
+- [Spinner](./functions/Spinner.md)

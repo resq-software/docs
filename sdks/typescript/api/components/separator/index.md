@@ -4,4 +4,4 @@
 
 ### Separator
 
-Re-exports [Separator](separator/functions/Separator.md)
+Re-exports [Separator](./separator/functions/Separator.md)

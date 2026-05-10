@@ -2,7 +2,7 @@
 
 ## Functions
 
-- [InputOTP](functions/InputOTP.md)
-- [InputOTPGroup](functions/InputOTPGroup.md)
-- [InputOTPSeparator](functions/InputOTPSeparator.md)
-- [InputOTPSlot](functions/InputOTPSlot.md)
+- [InputOTP](./functions/InputOTP.md)
+- [InputOTPGroup](./functions/InputOTPGroup.md)
+- [InputOTPSeparator](./functions/InputOTPSeparator.md)
+- [InputOTPSlot](./functions/InputOTPSlot.md)

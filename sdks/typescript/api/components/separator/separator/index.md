@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Separator](functions/Separator.md)
+- [Separator](./functions/Separator.md)

@@ -4,10 +4,10 @@
 
 ### ScrollArea
 
-Re-exports [ScrollArea](scroll-area/functions/ScrollArea.md)
+Re-exports [ScrollArea](./scroll-area/functions/ScrollArea.md)
 
 ***
 
 ### ScrollBar
 
-Re-exports [ScrollBar](scroll-area/functions/ScrollBar.md)
+Re-exports [ScrollBar](./scroll-area/functions/ScrollBar.md)

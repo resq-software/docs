@@ -2,8 +2,8 @@
 
 ## Variables
 
-- [badgeVariants](variables/badgeVariants.md)
+- [badgeVariants](./variables/badgeVariants.md)
 
 ## Functions
 
-- [Badge](functions/Badge.md)
+- [Badge](./functions/Badge.md)

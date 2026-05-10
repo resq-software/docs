@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [cn](functions/cn.md)
+- [cn](./functions/cn.md)

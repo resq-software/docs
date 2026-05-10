@@ -4,16 +4,16 @@
 
 ### HoverCard
 
-Re-exports [HoverCard](hover-card/functions/HoverCard.md)
+Re-exports [HoverCard](./hover-card/functions/HoverCard.md)
 
 ***
 
 ### HoverCardContent
 
-Re-exports [HoverCardContent](hover-card/functions/HoverCardContent.md)
+Re-exports [HoverCardContent](./hover-card/functions/HoverCardContent.md)
 
 ***
 
 ### HoverCardTrigger
 
-Re-exports [HoverCardTrigger](hover-card/functions/HoverCardTrigger.md)
+Re-exports [HoverCardTrigger](./hover-card/functions/HoverCardTrigger.md)

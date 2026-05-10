@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Switch](functions/Switch.md)
+- [Switch](./functions/Switch.md)

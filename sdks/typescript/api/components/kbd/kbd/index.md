@@ -2,5 +2,5 @@
 
 ## Functions
 
-- [Kbd](functions/Kbd.md)
-- [KbdGroup](functions/KbdGroup.md)
+- [Kbd](./functions/Kbd.md)
+- [KbdGroup](./functions/KbdGroup.md)

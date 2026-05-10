@@ -2,8 +2,8 @@
 
 ## Variables
 
-- [buttonVariants](variables/buttonVariants.md)
+- [buttonVariants](./variables/buttonVariants.md)
 
 ## Functions
 
-- [Button](functions/Button.md)
+- [Button](./functions/Button.md)

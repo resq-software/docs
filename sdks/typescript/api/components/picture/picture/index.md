@@ -2,8 +2,8 @@
 
 ## Variables
 
-- [Picture](variables/Picture.md)
+- [Picture](./variables/Picture.md)
 
 ## Functions
 
-- [PictureInternal](functions/PictureInternal.md)
+- [PictureInternal](./functions/PictureInternal.md)

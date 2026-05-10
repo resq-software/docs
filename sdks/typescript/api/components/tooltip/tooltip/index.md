@@ -2,7 +2,7 @@
 
 ## Functions
 
-- [Tooltip](functions/Tooltip.md)
-- [TooltipContent](functions/TooltipContent.md)
-- [TooltipProvider](functions/TooltipProvider.md)
-- [TooltipTrigger](functions/TooltipTrigger.md)
+- [Tooltip](./functions/Tooltip.md)
+- [TooltipContent](./functions/TooltipContent.md)
+- [TooltipProvider](./functions/TooltipProvider.md)
+- [TooltipTrigger](./functions/TooltipTrigger.md)

@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Toaster](functions/Toaster.md)
+- [Toaster](./functions/Toaster.md)

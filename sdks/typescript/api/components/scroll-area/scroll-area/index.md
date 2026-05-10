@@ -2,5 +2,5 @@
 
 ## Functions
 
-- [ScrollArea](functions/ScrollArea.md)
-- [ScrollBar](functions/ScrollBar.md)
+- [ScrollArea](./functions/ScrollArea.md)
+- [ScrollBar](./functions/ScrollBar.md)

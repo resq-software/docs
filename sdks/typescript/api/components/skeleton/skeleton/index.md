@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [Skeleton](functions/Skeleton.md)
+- [Skeleton](./functions/Skeleton.md)

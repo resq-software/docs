@@ -4,40 +4,40 @@
 
 ### Carousel
 
-Re-exports [Carousel](carousel/functions/Carousel.md)
+Re-exports [Carousel](./carousel/functions/Carousel.md)
 
 ***
 
 ### CarouselApi
 
-Re-exports [CarouselApi](carousel/type-aliases/CarouselApi.md)
+Re-exports [CarouselApi](./carousel/type-aliases/CarouselApi.md)
 
 ***
 
 ### CarouselContent
 
-Re-exports [CarouselContent](carousel/functions/CarouselContent.md)
+Re-exports [CarouselContent](./carousel/functions/CarouselContent.md)
 
 ***
 
 ### CarouselItem
 
-Re-exports [CarouselItem](carousel/functions/CarouselItem.md)
+Re-exports [CarouselItem](./carousel/functions/CarouselItem.md)
 
 ***
 
 ### CarouselNext
 
-Re-exports [CarouselNext](carousel/functions/CarouselNext.md)
+Re-exports [CarouselNext](./carousel/functions/CarouselNext.md)
 
 ***
 
 ### CarouselPrevious
 
-Re-exports [CarouselPrevious](carousel/functions/CarouselPrevious.md)
+Re-exports [CarouselPrevious](./carousel/functions/CarouselPrevious.md)
 
 ***
 
 ### useCarousel
 
-Re-exports [useCarousel](carousel/functions/useCarousel.md)
+Re-exports [useCarousel](./carousel/functions/useCarousel.md)
