@@ -103,14 +103,17 @@ def build_lang_group(language: str, prefix: str, pages_path: pathlib.Path,
     raw = json.loads(pages_path.read_text())
     tree: dict = {}
     for p in raw:
-        if p == "README":
+        if p in ("README", "index"):
             continue
-        # Mintlify auto-redirects `/path/README` to `/path`, so register
-        # the directory form (page id without trailing /README). Files
-        # that don't end in /README keep their path verbatim.
-        if p.endswith("/README"):
-            full_id = f"{prefix}/{p[: -len('/README')]}"
-            parts = full_id[len(prefix) + 1:].split("/")
+        # `<dir>/index.md` is Mintlify's native directory landing page;
+        # registering the bare `<dir>` form lets the resolver pick it
+        # up natively. `/README` is handled the same way for legacy
+        # entries that haven't been renamed yet. Files that don't end
+        # in either suffix keep their path verbatim.
+        if p.endswith("/index") or p.endswith("/README"):
+            bare = p.rsplit("/", 1)[0]
+            full_id = f"{prefix}/{bare}"
+            parts = bare.split("/")
         else:
             full_id = f"{prefix}/{p}"
             parts = p.split("/")
