@@ -29,6 +29,8 @@ TARGETS=(
   "typescript|api-docs.typescript.yml|resq-software/npm|master"
   "python|api-docs.python.yml|resq-software/pypi|main"
   "dotnet|api-docs.dotnet.yml|resq-software/dotnet-sdk|main"
+  "rust|api-docs.rust.yml|resq-software/crates|master"
+  "cpp|api-docs.cpp.yml|resq-software/vcpkg|main"
 )
 
 DRY_RUN=0
@@ -79,16 +81,28 @@ sync_one() {
   fi
 
   local target_workflow="${clone_dir}/.github/workflows/api-docs.yml"
+  local pre_existed=1
+  if [ ! -f "$target_workflow" ]; then
+    pre_existed=0
+  fi
   mkdir -p "$(dirname "$target_workflow")"
   cp "$template_path" "$target_workflow"
 
-  if git -C "$clone_dir" diff --quiet -- .github/workflows/api-docs.yml; then
+  # `git diff` only reports modifications to tracked files; a brand
+  # new workflow looks unchanged to it. Detect new-file case
+  # explicitly by checking whether the path was tracked before copy.
+  if [ "$pre_existed" -eq 1 ] && \
+      git -C "$clone_dir" diff --quiet -- .github/workflows/api-docs.yml; then
     echo "[$lang] up-to-date"
     return 0
   fi
 
-  echo "[$lang] diff:"
-  git -C "$clone_dir" --no-pager diff --stat -- .github/workflows/api-docs.yml
+  if [ "$pre_existed" -eq 0 ]; then
+    echo "[$lang] new workflow (none existed in target repo)"
+  else
+    echo "[$lang] diff:"
+    git -C "$clone_dir" --no-pager diff --stat -- .github/workflows/api-docs.yml
+  fi
 
   if [ "$DRY_RUN" -eq 1 ]; then
     echo "[$lang] dry-run, skipping PR"
