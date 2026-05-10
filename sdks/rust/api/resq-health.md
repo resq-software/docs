@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ResQ Health'
+---
+
 # resq-health
 
 > **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-health) · **API docs:** [docs.rs](https://docs.rs/resq-health/0.1.16)

@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ResQ Logs'
+---
+
 # resq-logs
 
 > **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-logs) · **API docs:** [docs.rs](https://docs.rs/resq-logs/0.1.16)
