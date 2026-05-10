@@ -1,0 +1,17 @@
+# Function: getThreatErrorMessage()
+
+> **getThreatErrorMessage**(`result`): `string`
+
+Defined in: [validators.ts:503](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L503)
+
+Get human-readable error for a threat detection result
+
+## Parameters
+
+### result
+
+[`ThreatDetectionResult`](../interfaces/ThreatDetectionResult.md)
+
+## Returns
+
+`string`
