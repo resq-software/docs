@@ -24,13 +24,13 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to wrap
 
 ### config
 
-[`AfterConfig`](../../after.types/interfaces/AfterConfig.md)\<`any`, `D`\>
+[`AfterConfig`](../../after.types/interfaces/AfterConfig)\<`any`, `D`\>
 
 Configuration for the after hook
 

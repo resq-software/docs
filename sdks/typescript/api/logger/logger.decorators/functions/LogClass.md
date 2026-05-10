@@ -11,7 +11,7 @@ Can be configured to exclude specific methods.
 
 ### options?
 
-[`LogClassOptions`](../../logger.types/interfaces/LogClassOptions.md) = `{}`
+[`LogClassOptions`](../../logger.types/interfaces/LogClassOptions) = `{}`
 
 Configuration options
 

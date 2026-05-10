@@ -2,22 +2,22 @@
 
 ## Classes
 
-- [PriorityQueue](./classes/PriorityQueue.md)
+- [PriorityQueue](./classes/PriorityQueue)
 
 ## Interfaces
 
-- [PriorityQueueOptions](./interfaces/PriorityQueueOptions.md)
-- [PriorityQueueStats](./interfaces/PriorityQueueStats.md)
-- [PriorityRequestItem](./interfaces/PriorityRequestItem.md)
+- [PriorityQueueOptions](./interfaces/PriorityQueueOptions)
+- [PriorityQueueStats](./interfaces/PriorityQueueStats)
+- [PriorityRequestItem](./interfaces/PriorityRequestItem)
 
 ## Type Aliases
 
-- [CompareFn](./type-aliases/CompareFn.md)
+- [CompareFn](./type-aliases/CompareFn)
 
 ## Functions
 
-- [createDeadlineQueue](./functions/createDeadlineQueue.md)
-- [createMaxHeap](./functions/createMaxHeap.md)
-- [createMinHeap](./functions/createMinHeap.md)
-- [createPriorityLevelQueue](./functions/createPriorityLevelQueue.md)
-- [validatePriorityItem](./functions/validatePriorityItem.md)
+- [createDeadlineQueue](./functions/createDeadlineQueue)
+- [createMaxHeap](./functions/createMaxHeap)
+- [createMinHeap](./functions/createMinHeap)
+- [createPriorityLevelQueue](./functions/createPriorityLevelQueue)
+- [validatePriorityItem](./functions/validatePriorityItem)

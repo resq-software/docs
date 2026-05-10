@@ -1,6 +1,6 @@
 # Function: execTimeFn()
 
-> **execTimeFn**\<`D`, `A`\>(`originalMethod`, `arg?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`void`, `A`\>
+> **execTimeFn**\<`D`, `A`\>(`originalMethod`, `arg?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`void`, `A`\>
 
 Defined in: [exec-time/exec-time.fn.ts:73](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/exec-time/exec-time.fn.ts#L73)
 
@@ -25,19 +25,19 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\> \| [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\> \| [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The method to wrap
 
 ### arg?
 
-`string` \| [`ReportFunction`](../../exec-time.types/type-aliases/ReportFunction.md)
+`string` \| [`ReportFunction`](../../exec-time.types/type-aliases/ReportFunction)
 
 Optional reporter function or label
 
 ## Returns
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`void`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`void`, `A`\>
 
 The wrapped method
 

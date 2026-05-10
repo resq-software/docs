@@ -2,17 +2,17 @@
 
 ## Classes
 
-- [Graph](./classes/Graph.md)
+- [Graph](./classes/Graph)
 
 ## Interfaces
 
-- [Edge](./interfaces/Edge.md)
-- [GraphOptions](./interfaces/GraphOptions.md)
-- [PathResult](./interfaces/PathResult.md)
-- [TraversalResult](./interfaces/TraversalResult.md)
-- [Vertex](./interfaces/Vertex.md)
+- [Edge](./interfaces/Edge)
+- [GraphOptions](./interfaces/GraphOptions)
+- [PathResult](./interfaces/PathResult)
+- [TraversalResult](./interfaces/TraversalResult)
+- [Vertex](./interfaces/Vertex)
 
 ## Functions
 
-- [addValidatedEdge](./functions/addValidatedEdge.md)
-- [isValidVertexId](./functions/isValidVertexId.md)
+- [addValidatedEdge](./functions/addValidatedEdge)
+- [isValidVertexId](./functions/isValidVertexId)

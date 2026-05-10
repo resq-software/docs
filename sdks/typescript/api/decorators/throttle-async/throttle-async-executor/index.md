@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [ThrottleAsyncExecutor](./classes/ThrottleAsyncExecutor.md)
+- [ThrottleAsyncExecutor](./classes/ThrottleAsyncExecutor)

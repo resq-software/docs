@@ -6,7 +6,7 @@ Defined in: [distance.ts:81](https://github.com/resq-software/npm/blob/f2ab5fc82
 
 ## Extended by
 
-- [`Coordinates3D`](./Coordinates3D.md)
+- [`Coordinates3D`](./Coordinates3D)
 
 ## Properties
 

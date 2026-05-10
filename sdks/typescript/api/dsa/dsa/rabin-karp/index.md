@@ -11,14 +11,14 @@ Efficient pattern matching using rolling hash for document search.
 
 ## Classes
 
-- [RabinKarp](./classes/RabinKarp.md)
+- [RabinKarp](./classes/RabinKarp)
 
 ## Interfaces
 
-- [PatternMatch](./interfaces/PatternMatch.md)
-- [RabinKarpOptions](./interfaces/RabinKarpOptions.md)
-- [SearchStats](./interfaces/SearchStats.md)
+- [PatternMatch](./interfaces/PatternMatch)
+- [RabinKarpOptions](./interfaces/RabinKarpOptions)
+- [SearchStats](./interfaces/SearchStats)
 
 ## Functions
 
-- [quickSearch](./functions/quickSearch.md)
+- [quickSearch](./functions/quickSearch)

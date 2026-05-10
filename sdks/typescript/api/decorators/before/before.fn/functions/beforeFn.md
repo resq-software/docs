@@ -1,6 +1,6 @@
 # Function: beforeFn()
 
-> **beforeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method.md)\<`Promise`\<`D`\>, `A`\>
+> **beforeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`Promise`\<`D`\>, `A`\>
 
 Defined in: [before/before.fn.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.fn.ts#L51)
 
@@ -24,19 +24,19 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to wrap
 
 ### config
 
-[`BeforeConfig`](../../before.types/interfaces/BeforeConfig.md)\<`any`\>
+[`BeforeConfig`](../../before.types/interfaces/BeforeConfig)\<`any`\>
 
 Configuration for the before hook
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`Promise`\<`D`\>, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`Promise`\<`D`\>, `A`\>
 
 The wrapped method
 

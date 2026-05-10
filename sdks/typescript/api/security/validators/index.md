@@ -2,31 +2,31 @@
 
 ## Interfaces
 
-- [ThreatDetectionConfig](./interfaces/ThreatDetectionConfig.md)
-- [ThreatDetectionResult](./interfaces/ThreatDetectionResult.md)
-- [ThreatFinding](./interfaces/ThreatFinding.md)
+- [ThreatDetectionConfig](./interfaces/ThreatDetectionConfig)
+- [ThreatDetectionResult](./interfaces/ThreatDetectionResult)
+- [ThreatFinding](./interfaces/ThreatFinding)
 
 ## Type Aliases
 
-- [ThreatType](./type-aliases/ThreatType.md)
+- [ThreatType](./type-aliases/ThreatType)
 
 ## Variables
 
-- [THREAT\_DETECTED\_MESSAGE](./variables/THREAT_DETECTED_MESSAGE.md)
+- [THREAT\_DETECTED\_MESSAGE](./variables/THREAT_DETECTED_MESSAGE)
 
 ## Functions
 
-- [containsCommandInjection](./functions/containsCommandInjection.md)
-- [containsHomoglyphs](./functions/containsHomoglyphs.md)
-- [containsNoSQLInjection](./functions/containsNoSQLInjection.md)
-- [containsPathTraversal](./functions/containsPathTraversal.md)
-- [containsSQLInjection](./functions/containsSQLInjection.md)
-- [containsXSSPatterns](./functions/containsXSSPatterns.md)
-- [detectThreatPatterns](./functions/detectThreatPatterns.md)
-- [getThreatErrorMessage](./functions/getThreatErrorMessage.md)
-- [isSafeInput](./functions/isSafeInput.md)
-- [normalizeUnicode](./functions/normalizeUnicode.md)
-- [sanitizeForDisplay](./functions/sanitizeForDisplay.md)
-- [validateSafeEmail](./functions/validateSafeEmail.md)
-- [validateSafeName](./functions/validateSafeName.md)
-- [validateSafeText](./functions/validateSafeText.md)
+- [containsCommandInjection](./functions/containsCommandInjection)
+- [containsHomoglyphs](./functions/containsHomoglyphs)
+- [containsNoSQLInjection](./functions/containsNoSQLInjection)
+- [containsPathTraversal](./functions/containsPathTraversal)
+- [containsSQLInjection](./functions/containsSQLInjection)
+- [containsXSSPatterns](./functions/containsXSSPatterns)
+- [detectThreatPatterns](./functions/detectThreatPatterns)
+- [getThreatErrorMessage](./functions/getThreatErrorMessage)
+- [isSafeInput](./functions/isSafeInput)
+- [normalizeUnicode](./functions/normalizeUnicode)
+- [sanitizeForDisplay](./functions/sanitizeForDisplay)
+- [validateSafeEmail](./functions/validateSafeEmail)
+- [validateSafeName](./functions/validateSafeName)
+- [validateSafeText](./functions/validateSafeText)

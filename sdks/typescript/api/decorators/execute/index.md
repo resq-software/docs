@@ -4,4 +4,4 @@
 
 ### selfExecute
 
-Re-exports [selfExecute](./execute/functions/selfExecute.md)
+Re-exports [selfExecute](./execute/functions/selfExecute)

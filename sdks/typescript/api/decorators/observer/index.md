@@ -4,10 +4,10 @@
 
 ### observe
 
-Re-exports [observe](./observer/functions/observe.md)
+Re-exports [observe](./observer/functions/observe)
 
 ***
 
 ### ObserverCallback
 
-Re-exports [ObserverCallback](./observer.types/type-aliases/ObserverCallback.md)
+Re-exports [ObserverCallback](./observer.types/type-aliases/ObserverCallback)

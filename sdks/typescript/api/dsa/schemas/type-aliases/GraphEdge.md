@@ -1,5 +1,5 @@
 # Type Alias: GraphEdge
 
-> **GraphEdge** = `S.Schema.Type`\<*typeof* [`GraphEdgeSchema`](../variables/GraphEdgeSchema.md)\>
+> **GraphEdge** = `S.Schema.Type`\<*typeof* [`GraphEdgeSchema`](../variables/GraphEdgeSchema)\>
 
 Defined in: [schemas.ts:103](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/schemas.ts#L103)

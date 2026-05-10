@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [memoize](./functions/memoize.md)
+- [memoize](./functions/memoize)

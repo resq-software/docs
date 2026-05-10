@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [delegate](./functions/delegate.md)
+- [delegate](./functions/delegate)

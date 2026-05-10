@@ -18,13 +18,13 @@ Defined in: [index.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 #### Get Signature
 
-> **get** **config**(): `Readonly`\<[`AnalyticsConfig`](../interfaces/AnalyticsConfig.md)\> \| `null`
+> **get** **config**(): `Readonly`\<[`AnalyticsConfig`](../interfaces/AnalyticsConfig)\> \| `null`
 
 Defined in: [index.ts:116](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L116)
 
 ##### Returns
 
-`Readonly`\<[`AnalyticsConfig`](../interfaces/AnalyticsConfig.md)\> \| `null`
+`Readonly`\<[`AnalyticsConfig`](../interfaces/AnalyticsConfig)\> \| `null`
 
 ***
 
@@ -74,7 +74,7 @@ Defined in: [index.ts:124](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 ##### config
 
-[`AnalyticsConfig`](../interfaces/AnalyticsConfig.md)
+[`AnalyticsConfig`](../interfaces/AnalyticsConfig)
 
 #### Returns
 
@@ -138,7 +138,7 @@ Defined in: [index.ts:166](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 ##### properties?
 
-`E` *extends* `string` \| `number` ? [`AnalyticsEvents`](../interfaces/AnalyticsEvents.md)\[`E`\] : `Record`\<`string`, `unknown`\>
+`E` *extends* `string` \| `number` ? [`AnalyticsEvents`](../interfaces/AnalyticsEvents)\[`E`\] : `Record`\<`string`, `unknown`\>
 
 #### Returns
 

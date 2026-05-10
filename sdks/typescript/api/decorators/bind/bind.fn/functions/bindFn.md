@@ -1,6 +1,6 @@
 # Function: bindFn()
 
-> **bindFn**\<`D`, `A`\>(`originalMethod`, `context`): [`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+> **bindFn**\<`D`, `A`\>(`originalMethod`, `context`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 Defined in: [bind/bind.fn.ts:43](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/bind/bind.fn.ts#L43)
 
@@ -24,7 +24,7 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to bind
 
@@ -36,7 +36,7 @@ The context (`this`) to bind to
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The bound method
 

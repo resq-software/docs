@@ -18,7 +18,7 @@ Logger context/category
 
 ### data?
 
-> `optional` **data?**: [`LogData`](./LogData.md)
+> `optional` **data?**: [`LogData`](./LogData)
 
 Defined in: [logger.types.ts:90](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L90)
 
@@ -38,7 +38,7 @@ Environment (client/server)
 
 ### level
 
-> **level**: [`LogLevelString`](../type-aliases/LogLevelString.md)
+> **level**: [`LogLevelString`](../type-aliases/LogLevelString)
 
 Defined in: [logger.types.ts:84](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L84)
 

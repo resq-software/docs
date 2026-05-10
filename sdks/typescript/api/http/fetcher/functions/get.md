@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **get**\<`T`\>(`url`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **get**\<`T`\>(`url`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:514](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L514)
 
@@ -20,17 +20,17 @@ Defined in: [packages/http/src/fetcher.ts:514](https://github.com/resq-software/
 
 #### options?
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`T`\>
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`T`\>
 
 #### params?
 
 ### Returns
 
-`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 ## Call Signature
 
-> **get**\<`A`\>(`url`, `options`, `params?`): `Effect`\<`A`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **get**\<`A`\>(`url`, `options`, `params?`): `Effect`\<`A`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:520](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L520)
 
@@ -48,10 +48,10 @@ Defined in: [packages/http/src/fetcher.ts:520](https://github.com/resq-software/
 
 #### options
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`A`\> & `object`
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`A`\> & `object`
 
 #### params?
 
 ### Returns
 
-`Effect`\<`A`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`A`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>

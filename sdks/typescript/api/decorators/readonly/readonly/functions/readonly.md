@@ -1,6 +1,6 @@
 # Function: readonly()
 
-> **readonly**\<`T`\>(): [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable.md)\<`T`\>
+> **readonly**\<`T`\>(): [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
 
 Defined in: [readonly/readonly.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/readonly/readonly.ts#L52)
 
@@ -17,7 +17,7 @@ The type of the class containing the decorated method
 
 ## Returns
 
-[`Readonlyable`](../../readonly.types/type-aliases/Readonlyable.md)\<`T`\>
+[`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
 
 The decorator function
 

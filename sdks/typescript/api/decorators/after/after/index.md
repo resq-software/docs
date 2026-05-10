@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [after](./functions/after.md)
+- [after](./functions/after)

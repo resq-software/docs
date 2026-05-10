@@ -11,7 +11,7 @@ Can optionally suppress the error or rethrow it.
 
 ### options?
 
-[`LogErrorOptions`](../../logger.types/interfaces/LogErrorOptions.md) = `{}`
+[`LogErrorOptions`](../../logger.types/interfaces/LogErrorOptions) = `{}`
 
 Configuration options
 

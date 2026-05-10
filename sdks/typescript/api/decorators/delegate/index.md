@@ -4,10 +4,10 @@
 
 ### Delegatable
 
-Re-exports [Delegatable](./delegate.types/type-aliases/Delegatable.md)
+Re-exports [Delegatable](./delegate.types/type-aliases/Delegatable)
 
 ***
 
 ### delegate
 
-Re-exports [delegate](./delegate/functions/delegate.md)
+Re-exports [delegate](./delegate/functions/delegate)

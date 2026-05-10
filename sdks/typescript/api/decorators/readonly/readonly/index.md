@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [readonly](./functions/readonly.md)
+- [readonly](./functions/readonly)

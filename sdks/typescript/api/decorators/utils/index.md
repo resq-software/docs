@@ -2,16 +2,16 @@
 
 ## Classes
 
-- [Queue](./classes/Queue.md)
-- [TaskExec](./classes/TaskExec.md)
+- [Queue](./classes/Queue)
+- [TaskExec](./classes/TaskExec)
 
 ## Variables
 
-- [logger](./variables/logger.md)
+- [logger](./variables/logger)
 
 ## Functions
 
-- [isFunction](./functions/isFunction.md)
-- [isNumber](./functions/isNumber.md)
-- [isPromise](./functions/isPromise.md)
-- [isString](./functions/isString.md)
+- [isFunction](./functions/isFunction)
+- [isNumber](./functions/isNumber)
+- [isPromise](./functions/isPromise)
+- [isString](./functions/isString)

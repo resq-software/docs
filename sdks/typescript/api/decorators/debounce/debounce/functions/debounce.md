@@ -1,6 +1,6 @@
 # Function: debounce()
 
-> **debounce**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **debounce**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [debounce/debounce.ts:47](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/debounce/debounce.ts#L47)
 
@@ -25,7 +25,7 @@ The debounce delay in milliseconds
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

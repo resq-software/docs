@@ -2,27 +2,27 @@
 
 ## Classes
 
-- [KeyedDebounce](./classes/KeyedDebounce.md)
-- [KeyedThrottle](./classes/KeyedThrottle.md)
-- [LeakyBucketLimiter](./classes/LeakyBucketLimiter.md)
-- [SlidingWindowCounter](./classes/SlidingWindowCounter.md)
-- [TokenBucketLimiter](./classes/TokenBucketLimiter.md)
+- [KeyedDebounce](./classes/KeyedDebounce)
+- [KeyedThrottle](./classes/KeyedThrottle)
+- [LeakyBucketLimiter](./classes/LeakyBucketLimiter)
+- [SlidingWindowCounter](./classes/SlidingWindowCounter)
+- [TokenBucketLimiter](./classes/TokenBucketLimiter)
 
 ## Type Aliases
 
-- [DebounceOptions](./type-aliases/DebounceOptions.md)
-- [KeyedStats](./type-aliases/KeyedStats.md)
-- [RateLimiterStats](./type-aliases/RateLimiterStats.md)
-- [ThrottleOptions](./type-aliases/ThrottleOptions.md)
+- [DebounceOptions](./type-aliases/DebounceOptions)
+- [KeyedStats](./type-aliases/KeyedStats)
+- [RateLimiterStats](./type-aliases/RateLimiterStats)
+- [ThrottleOptions](./type-aliases/ThrottleOptions)
 
 ## Variables
 
-- [DebounceOptionsSchema](./variables/DebounceOptionsSchema.md)
-- [KeyedStatsSchema](./variables/KeyedStatsSchema.md)
-- [RateLimiterStatsSchema](./variables/RateLimiterStatsSchema.md)
-- [ThrottleOptionsSchema](./variables/ThrottleOptionsSchema.md)
+- [DebounceOptionsSchema](./variables/DebounceOptionsSchema)
+- [KeyedStatsSchema](./variables/KeyedStatsSchema)
+- [RateLimiterStatsSchema](./variables/RateLimiterStatsSchema)
+- [ThrottleOptionsSchema](./variables/ThrottleOptionsSchema)
 
 ## Functions
 
-- [debounce](./functions/debounce.md)
-- [throttle](./functions/throttle.md)
+- [debounce](./functions/debounce)
+- [throttle](./functions/throttle)

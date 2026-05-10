@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [beforeFn](./functions/beforeFn.md)
+- [beforeFn](./functions/beforeFn)

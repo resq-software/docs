@@ -2,7 +2,7 @@
 
 ## Functions
 
-- [Log](./functions/Log.md)
-- [LogClass](./functions/LogClass.md)
-- [LogError](./functions/LogError.md)
-- [LogTiming](./functions/LogTiming.md)
+- [Log](./functions/Log)
+- [LogClass](./functions/LogClass)
+- [LogError](./functions/LogError)
+- [LogTiming](./functions/LogTiming)

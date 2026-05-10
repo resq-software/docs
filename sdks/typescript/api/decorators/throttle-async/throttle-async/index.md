@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [throttleAsync](./functions/throttleAsync.md)
+- [throttleAsync](./functions/throttleAsync)

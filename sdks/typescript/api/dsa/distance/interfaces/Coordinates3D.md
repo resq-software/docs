@@ -6,7 +6,7 @@ Defined in: [distance.ts:92](https://github.com/resq-software/npm/blob/f2ab5fc82
 
 ## Extends
 
-- [`Coordinates2D`](./Coordinates2D.md)
+- [`Coordinates2D`](./Coordinates2D)
 
 ## Properties
 
@@ -30,7 +30,7 @@ Latitude in degrees (-90 to 90)
 
 #### Inherited from
 
-[`Coordinates2D`](./Coordinates2D.md).[`lat`](./Coordinates2D.md#lat)
+[`Coordinates2D`](./Coordinates2D).[`lat`](./Coordinates2D#lat)
 
 ***
 
@@ -44,4 +44,4 @@ Longitude in degrees (-180 to 180)
 
 #### Inherited from
 
-[`Coordinates2D`](./Coordinates2D.md).[`lng`](./Coordinates2D.md#lng)
+[`Coordinates2D`](./Coordinates2D).[`lng`](./Coordinates2D#lng)

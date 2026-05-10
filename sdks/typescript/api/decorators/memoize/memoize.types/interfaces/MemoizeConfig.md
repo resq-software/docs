@@ -38,7 +38,7 @@ The return type of the decorated method
 
 ### cache?
 
-> `optional` **cache?**: [`Cache`](./Cache.md)\<`D`\>
+> `optional` **cache?**: [`Cache`](./Cache)\<`D`\>
 
 Defined in: [memoize/memoize.types.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L111)
 
@@ -58,7 +58,7 @@ Time in milliseconds after which cached values expire
 
 ### keyResolver?
 
-> `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver.md) \| keyof `T`
+> `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver) \| keyof `T`
 
 Defined in: [memoize/memoize.types.ts:113](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L113)
 

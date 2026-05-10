@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [bindFn](./functions/bindFn.md)
+- [bindFn](./functions/bindFn)

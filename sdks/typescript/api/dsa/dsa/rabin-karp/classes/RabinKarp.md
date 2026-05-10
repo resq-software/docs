@@ -43,7 +43,7 @@ Creates a new Rabin-Karp matcher
 
 ##### options?
 
-[`RabinKarpOptions`](../interfaces/RabinKarpOptions.md) = `{}`
+[`RabinKarpOptions`](../interfaces/RabinKarpOptions) = `{}`
 
 Configuration options
 
@@ -96,7 +96,7 @@ Map of patterns to their occurrence count
 
 ### search()
 
-> **search**(`text`, `pattern`): [`PatternMatch`](../interfaces/PatternMatch.md)[]
+> **search**(`text`, `pattern`): [`PatternMatch`](../interfaces/PatternMatch)[]
 
 Defined in: [rabin-karp.ts:152](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L152)
 
@@ -118,7 +118,7 @@ The pattern to search for
 
 #### Returns
 
-[`PatternMatch`](../interfaces/PatternMatch.md)[]
+[`PatternMatch`](../interfaces/PatternMatch)[]
 
 Array of matches found
 
@@ -126,7 +126,7 @@ Array of matches found
 
 ### searchMultiple()
 
-> **searchMultiple**(`text`, `patterns`): `Map`\<`string`, [`PatternMatch`](../interfaces/PatternMatch.md)[]\>
+> **searchMultiple**(`text`, `patterns`): `Map`\<`string`, [`PatternMatch`](../interfaces/PatternMatch)[]\>
 
 Defined in: [rabin-karp.ts:225](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L225)
 
@@ -148,7 +148,7 @@ Array of patterns to search for
 
 #### Returns
 
-`Map`\<`string`, [`PatternMatch`](../interfaces/PatternMatch.md)[]\>
+`Map`\<`string`, [`PatternMatch`](../interfaces/PatternMatch)[]\>
 
 Map of pattern to matches
 
@@ -184,8 +184,8 @@ Object containing matches and statistics
 
 ##### matches
 
-> **matches**: [`PatternMatch`](../interfaces/PatternMatch.md)[]
+> **matches**: [`PatternMatch`](../interfaces/PatternMatch)[]
 
 ##### stats
 
-> **stats**: [`SearchStats`](../interfaces/SearchStats.md)
+> **stats**: [`SearchStats`](../interfaces/SearchStats)

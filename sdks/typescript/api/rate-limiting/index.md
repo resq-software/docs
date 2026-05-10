@@ -2,6 +2,6 @@
 
 ## Modules
 
-- [index](./index/index.md)
-- [rate-limit](./rate-limit/index.md)
-- [throttle](./throttle/index.md)
+- [index](./index)
+- [rate-limit](./rate-limit)
+- [throttle](./throttle)

@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [execTime](./functions/execTime.md)
+- [execTime](./functions/execTime)

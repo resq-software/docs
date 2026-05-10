@@ -6,7 +6,7 @@ Defined in: [heap.ts:21](https://github.com/resq-software/npm/blob/f2ab5fc82f4f5
 
 ### T
 
-`T` *extends* [`Distanced`](../interfaces/Distanced.md)
+`T` *extends* [`Distanced`](../interfaces/Distanced)
 
 ## Constructors
 

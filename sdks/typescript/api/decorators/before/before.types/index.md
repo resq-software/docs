@@ -2,4 +2,4 @@
 
 ## Interfaces
 
-- [BeforeConfig](./interfaces/BeforeConfig.md)
+- [BeforeConfig](./interfaces/BeforeConfig)

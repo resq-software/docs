@@ -50,7 +50,7 @@ Creates a new Graph
 
 ##### options?
 
-[`GraphOptions`](../interfaces/GraphOptions.md) = `{}`
+[`GraphOptions`](../interfaces/GraphOptions) = `{}`
 
 Configuration options
 
@@ -216,7 +216,7 @@ Path and cost, or null if no path exists
 
 ### bfs()
 
-> **bfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult.md)\<`T`\>
+> **bfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
 Defined in: [graph.ts:288](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L288)
 
@@ -232,7 +232,7 @@ Starting vertex
 
 #### Returns
 
-[`TraversalResult`](../interfaces/TraversalResult.md)\<`T`\>
+[`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
 Traversal result with vertices, parents, and distances
 
@@ -254,7 +254,7 @@ Clears all vertices and edges
 
 ### dfs()
 
-> **dfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult.md)\<`T`\>
+> **dfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
 Defined in: [graph.ts:329](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L329)
 
@@ -270,7 +270,7 @@ Starting vertex
 
 #### Returns
 
-[`TraversalResult`](../interfaces/TraversalResult.md)\<`T`\>
+[`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
 Traversal result with vertices and parents
 
@@ -314,7 +314,7 @@ Array of all paths found
 
 ### findShortestPath()
 
-> **findShortestPath**(`start`, `end`): [`PathResult`](../interfaces/PathResult.md)\<`T`\>
+> **findShortestPath**(`start`, `end`): [`PathResult`](../interfaces/PathResult)\<`T`\>
 
 Defined in: [graph.ts:365](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L365)
 
@@ -336,7 +336,7 @@ Ending vertex
 
 #### Returns
 
-[`PathResult`](../interfaces/PathResult.md)\<`T`\>
+[`PathResult`](../interfaces/PathResult)\<`T`\>
 
 Path result with vertices and total distance
 
@@ -360,7 +360,7 @@ Array of connected components (each component is an array of vertices)
 
 ### getNeighbors()
 
-> **getNeighbors**(`vertex`): [`Edge`](../interfaces/Edge.md)\<`T`\>[]
+> **getNeighbors**(`vertex`): [`Edge`](../interfaces/Edge)\<`T`\>[]
 
 Defined in: [graph.ts:264](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L264)
 
@@ -374,7 +374,7 @@ Gets all neighbors of a vertex
 
 #### Returns
 
-[`Edge`](../interfaces/Edge.md)\<`T`\>[]
+[`Edge`](../interfaces/Edge)\<`T`\>[]
 
 ***
 

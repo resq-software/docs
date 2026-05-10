@@ -220,7 +220,7 @@ The associated data or null if not found
 
 ### searchByPrefix()
 
-> **searchByPrefix**(`prefix`, `limit?`): [`TrieSearchResult`](../interfaces/TrieSearchResult.md)\<`T`\>[]
+> **searchByPrefix**(`prefix`, `limit?`): [`TrieSearchResult`](../interfaces/TrieSearchResult)\<`T`\>[]
 
 Defined in: [trie.ts:194](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L194)
 
@@ -242,7 +242,7 @@ Maximum number of results (defaults to maxResults option)
 
 #### Returns
 
-[`TrieSearchResult`](../interfaces/TrieSearchResult.md)\<`T`\>[]
+[`TrieSearchResult`](../interfaces/TrieSearchResult)\<`T`\>[]
 
 Array of search results sorted by relevance
 

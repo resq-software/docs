@@ -74,7 +74,7 @@ The type of the property value
 
 #### cb
 
-[`ObserverCallback`](../../observer.types/type-aliases/ObserverCallback.md)\<`T`\>
+[`ObserverCallback`](../../observer.types/type-aliases/ObserverCallback)\<`T`\>
 
 Callback to execute on assignment of observed variable
 

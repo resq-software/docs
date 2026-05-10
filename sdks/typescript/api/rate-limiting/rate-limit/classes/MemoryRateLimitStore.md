@@ -6,7 +6,7 @@ In-memory rate limit store for local development or simple services
 
 ## Implements
 
-- [`IRateLimitStore`](../interfaces/IRateLimitStore.md)
+- [`IRateLimitStore`](../interfaces/IRateLimitStore)
 
 ## Constructors
 
@@ -46,7 +46,7 @@ Defined in: [rate-limit.ts:105](https://github.com/resq-software/npm/blob/f2ab5f
 
 #### Implementation of
 
-[`IRateLimitStore`](../interfaces/IRateLimitStore.md).[`check`](../interfaces/IRateLimitStore.md#check)
+[`IRateLimitStore`](../interfaces/IRateLimitStore).[`check`](../interfaces/IRateLimitStore#check)
 
 ***
 
@@ -68,4 +68,4 @@ Defined in: [rate-limit.ts:130](https://github.com/resq-software/npm/blob/f2ab5f
 
 #### Implementation of
 
-[`IRateLimitStore`](../interfaces/IRateLimitStore.md).[`reset`](../interfaces/IRateLimitStore.md#reset)
+[`IRateLimitStore`](../interfaces/IRateLimitStore).[`reset`](../interfaces/IRateLimitStore#reset)

@@ -11,7 +11,7 @@ Can optionally log arguments and return values.
 
 ### options?
 
-[`LogMethodOptions`](../../logger.types/interfaces/LogMethodOptions.md) = `{}`
+[`LogMethodOptions`](../../logger.types/interfaces/LogMethodOptions) = `{}`
 
 Configuration options
 

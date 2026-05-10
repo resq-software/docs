@@ -2,16 +2,16 @@
 
 ## Interfaces
 
-- [LogClassOptions](./interfaces/LogClassOptions.md)
-- [LogData](./interfaces/LogData.md)
-- [LogEntry](./interfaces/LogEntry.md)
-- [LogErrorOptions](./interfaces/LogErrorOptions.md)
-- [LoggerOptions](./interfaces/LoggerOptions.md)
-- [LogMethodOptions](./interfaces/LogMethodOptions.md)
-- [LogTimingOptions](./interfaces/LogTimingOptions.md)
-- [LogTransport](./interfaces/LogTransport.md)
+- [LogClassOptions](./interfaces/LogClassOptions)
+- [LogData](./interfaces/LogData)
+- [LogEntry](./interfaces/LogEntry)
+- [LogErrorOptions](./interfaces/LogErrorOptions)
+- [LoggerOptions](./interfaces/LoggerOptions)
+- [LogMethodOptions](./interfaces/LogMethodOptions)
+- [LogTimingOptions](./interfaces/LogTimingOptions)
+- [LogTransport](./interfaces/LogTransport)
 
 ## Type Aliases
 
-- [ColorKey](./type-aliases/ColorKey.md)
-- [LogLevelString](./type-aliases/LogLevelString.md)
+- [ColorKey](./type-aliases/ColorKey)
+- [LogLevelString](./type-aliases/LogLevelString)

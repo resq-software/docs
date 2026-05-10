@@ -1,6 +1,6 @@
 # Function: throttleFn()
 
-> **throttleFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+> **throttleFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 Defined in: [throttle/throttle.fn.ts:54](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle/throttle.fn.ts#L54)
 
@@ -24,7 +24,7 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to throttle
 
@@ -36,7 +36,7 @@ The throttle interval in milliseconds
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 The throttled method
 

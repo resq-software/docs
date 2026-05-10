@@ -2,5 +2,5 @@
 
 ## Functions
 
-- [getRequestId](./functions/getRequestId.md)
-- [shouldRedirectToHttps](./functions/shouldRedirectToHttps.md)
+- [getRequestId](./functions/getRequestId)
+- [shouldRedirectToHttps](./functions/shouldRedirectToHttps)

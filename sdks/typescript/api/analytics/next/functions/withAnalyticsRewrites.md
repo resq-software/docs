@@ -18,7 +18,7 @@ Defined in: [next/index.ts:41](https://github.com/resq-software/npm/blob/f2ab5fc
 
 ### options?
 
-[`AnalyticsRewriteOptions`](../interfaces/AnalyticsRewriteOptions.md) = `{}`
+[`AnalyticsRewriteOptions`](../interfaces/AnalyticsRewriteOptions) = `{}`
 
 ## Returns
 

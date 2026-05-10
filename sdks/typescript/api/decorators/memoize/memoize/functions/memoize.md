@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **memoize**\<`T`, `D`\>(): [`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+> **memoize**\<`T`, `D`\>(): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 Defined in: [memoize/memoize.ts:121](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L121)
 
@@ -25,7 +25,7 @@ The return type of the decorated method
 
 ### Returns
 
-[`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+[`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 The decorator function
 
@@ -71,7 +71,7 @@ const user2 = service.getUser('123'); // Instant, no database query
 
 ## Call Signature
 
-> **memoize**\<`T`, `D`\>(`config`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+> **memoize**\<`T`, `D`\>(`config`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 Defined in: [memoize/memoize.ts:122](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L122)
 
@@ -96,13 +96,13 @@ The return type of the decorated method
 
 #### config
 
-[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig.md)\<`T`, `D`\>
+[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig)\<`T`, `D`\>
 
 Configuration for memoization
 
 ### Returns
 
-[`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+[`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 The decorator function
 
@@ -148,7 +148,7 @@ const user2 = service.getUser('123'); // Instant, no database query
 
 ## Call Signature
 
-> **memoize**\<`T`, `D`\>(`expirationTimeMs`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+> **memoize**\<`T`, `D`\>(`expirationTimeMs`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 Defined in: [memoize/memoize.ts:123](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L123)
 
@@ -179,7 +179,7 @@ Cache expiration time in milliseconds
 
 ### Returns
 
-[`Memoizable`](../../memoize.types/type-aliases/Memoizable.md)\<`T`, `D`\>
+[`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
 The decorator function
 

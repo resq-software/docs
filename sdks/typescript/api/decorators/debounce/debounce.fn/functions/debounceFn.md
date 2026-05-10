@@ -1,6 +1,6 @@
 # Function: debounceFn()
 
-> **debounceFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+> **debounceFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 Defined in: [debounce/debounce.fn.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/debounce/debounce.fn.ts#L52)
 
@@ -26,7 +26,7 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to debounce
 
@@ -38,7 +38,7 @@ The debounce delay in milliseconds
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 The debounced method
 

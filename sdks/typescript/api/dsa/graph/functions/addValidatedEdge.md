@@ -10,7 +10,7 @@ Validates and adds an edge using Effect Schema (for string graphs)
 
 ### graph
 
-[`Graph`](../classes/Graph.md)\<`string`\>
+[`Graph`](../classes/Graph)\<`string`\>
 
 ### source
 

@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+> **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 Defined in: [memoize/memoize.fn.ts:80](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L80)
 
@@ -26,13 +26,13 @@ The argument types of the original method
 
 #### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to memoize
 
 ### Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The memoized method
 
@@ -75,7 +75,7 @@ const withConfig = memoizeFn(
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 Defined in: [memoize/memoize.fn.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L83)
 
@@ -99,19 +99,19 @@ The argument types of the original method
 
 #### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to memoize
 
 #### config
 
-[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig.md)\<`any`, `D`\>
+[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig)\<`any`, `D`\>
 
 Configuration for memoization
 
 ### Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The memoized method
 
@@ -154,7 +154,7 @@ const withConfig = memoizeFn(
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 Defined in: [memoize/memoize.fn.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L87)
 
@@ -178,7 +178,7 @@ The argument types of the original method
 
 #### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to memoize
 
@@ -190,7 +190,7 @@ Cache expiration time in milliseconds
 
 ### Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The memoized method
 

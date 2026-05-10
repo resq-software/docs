@@ -4,4 +4,4 @@
 
 ### throttleAsync
 
-Re-exports [throttleAsync](./throttle-async/functions/throttleAsync.md)
+Re-exports [throttleAsync](./throttle-async/functions/throttleAsync)

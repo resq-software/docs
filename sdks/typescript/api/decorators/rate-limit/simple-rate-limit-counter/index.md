@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [SimpleRateLimitCounter](./classes/SimpleRateLimitCounter.md)
+- [SimpleRateLimitCounter](./classes/SimpleRateLimitCounter)

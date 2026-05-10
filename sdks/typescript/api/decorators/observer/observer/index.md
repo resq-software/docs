@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [observe](./functions/observe.md)
+- [observe](./functions/observe)

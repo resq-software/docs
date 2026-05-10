@@ -2,8 +2,8 @@
 
 ## Classes
 
-- [BoundedHeap](./classes/BoundedHeap.md)
+- [BoundedHeap](./classes/BoundedHeap)
 
 ## Interfaces
 
-- [Distanced](./interfaces/Distanced.md)
+- [Distanced](./interfaces/Distanced)

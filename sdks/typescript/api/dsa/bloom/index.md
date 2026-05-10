@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [BloomFilter](./classes/BloomFilter.md)
+- [BloomFilter](./classes/BloomFilter)

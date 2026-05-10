@@ -63,7 +63,7 @@ Function to generate rate limit keys (for per-user/entity limiting)
 
 ### rateLimitAsyncCounter?
 
-> `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter.md)
+> `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter)
 
 Defined in: [rate-limit/rate-limit.types.ts:76](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L76)
 
@@ -73,7 +73,7 @@ Async counter implementation
 
 ### rateLimitCounter?
 
-> `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter.md)
+> `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter)
 
 Defined in: [rate-limit/rate-limit.types.ts:74](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L74)
 

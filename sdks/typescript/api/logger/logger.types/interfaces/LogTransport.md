@@ -28,7 +28,7 @@ Method to write a log entry
 
 ##### entry
 
-[`LogEntry`](./LogEntry.md)
+[`LogEntry`](./LogEntry)
 
 #### Returns
 

@@ -1,6 +1,6 @@
 # Function: containsCommandInjection()
 
-> **containsCommandInjection**(`input`): [`ThreatFinding`](../interfaces/ThreatFinding.md)[]
+> **containsCommandInjection**(`input`): [`ThreatFinding`](../interfaces/ThreatFinding)[]
 
 Defined in: [validators.ts:249](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L249)
 
@@ -15,4 +15,4 @@ Note: This is strict - may trigger false positives on legitimate characters
 
 ## Returns
 
-[`ThreatFinding`](../interfaces/ThreatFinding.md)[]
+[`ThreatFinding`](../interfaces/ThreatFinding)[]

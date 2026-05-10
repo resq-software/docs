@@ -1,6 +1,6 @@
 # Function: after()
 
-> **after**\<`T`, `D`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **after**\<`T`, `D`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [after/after.ts:74](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/after/after.ts#L74)
 
@@ -25,13 +25,13 @@ The return type of the decorated method
 
 ### config
 
-[`AfterConfig`](../../after.types/interfaces/AfterConfig.md)\<`T`, `D`\>
+[`AfterConfig`](../../after.types/interfaces/AfterConfig)\<`T`, `D`\>
 
 Configuration for the after hook
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

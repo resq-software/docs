@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [rateLimit](./functions/rateLimit.md)
+- [rateLimit](./functions/rateLimit)

@@ -38,7 +38,7 @@ The resolved type of the async method
 
 ### cache?
 
-> `optional` **cache?**: [`Cache`](../../../memoize/memoize.types/interfaces/Cache.md)\<`D`\> \| [`AsyncCache`](./AsyncCache.md)\<`D`\>
+> `optional` **cache?**: [`Cache`](../../../memoize/memoize.types/interfaces/Cache)\<`D`\> \| [`AsyncCache`](./AsyncCache)\<`D`\>
 
 Defined in: [memoize-async/memoize-async.types.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L83)
 
@@ -58,7 +58,7 @@ Time in milliseconds after which cached values expire
 
 ### keyResolver?
 
-> `optional` **keyResolver?**: [`KeyResolver`](../../../memoize/memoize.types/type-aliases/KeyResolver.md) \| keyof `T`
+> `optional` **keyResolver?**: [`KeyResolver`](../../../memoize/memoize.types/type-aliases/KeyResolver) \| keyof `T`
 
 Defined in: [memoize-async/memoize-async.types.ts:85](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L85)
 
