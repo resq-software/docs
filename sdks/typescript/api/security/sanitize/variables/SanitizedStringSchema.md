@@ -1,0 +1,11 @@
+# Variable: SanitizedStringSchema
+
+> `const` **SanitizedStringSchema**: `String` = `S.String`
+
+Defined in: [sanitize.ts:96](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/sanitize.ts#L96)
+
+Schema for sanitized HTML-safe string (validates as string; escaping done at runtime)
+
+## Compliance
+
+NIST 800-53 SI-10 (Information Input Validation)

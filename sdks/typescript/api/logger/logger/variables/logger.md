@@ -1,0 +1,5 @@
+# Variable: logger
+
+> `const` **logger**: [`Logger`](../classes/Logger.md)
+
+Defined in: [logger.ts:369](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L369)
