@@ -29,9 +29,24 @@ def insert(tree: dict, parts: list[str], full_id: str) -> None:
     insert(sub, rest, full_id)
 
 
+def insert_landing(tree: dict, parts: list[str], full_id: str) -> None:
+    """Mark `full_id` as the landing page for the dir at `parts`.
+    Stored on the dir node itself rather than as a sibling _files
+    leaf, so the directory and its landing aren't both rendered in
+    the parent group (which produced a duplicate-entries bug on
+    multi-package nav: each package showed up once as a standalone
+    page and once as a collapsible group)."""
+    cur = tree
+    for part in parts:
+        cur = cur.setdefault("_dirs", {}).setdefault(part, {})
+    cur["_landing"] = full_id
+
+
 def to_mintlify(tree: dict, group_name: str | None) -> dict | list:
     """Convert internal tree to Mintlify groups/pages structure."""
     pages: list = []
+    if "_landing" in tree:
+        pages.append(tree["_landing"])
     for fname, full_id in sorted(tree.get("_files", [])):
         pages.append(full_id)
     for dname, subtree in sorted(tree.get("_dirs", {}).items()):
@@ -114,10 +129,11 @@ def build_lang_group(language: str, prefix: str, pages_path: pathlib.Path,
             bare = p.rsplit("/", 1)[0]
             full_id = f"{prefix}/{bare}"
             parts = bare.split("/")
+            insert_landing(tree, parts, full_id)
         else:
             full_id = f"{prefix}/{p}"
             parts = p.split("/")
-        insert(tree, parts, full_id)
+            insert(tree, parts, full_id)
     pages = [readme_id] + to_mintlify(tree, None)
 
     # Post-process: collapse .NET namespace dirs into class-grouped form
