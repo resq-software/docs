@@ -11,12 +11,12 @@ Specialization for void (operation succeeded with no return value)
 | Return | Name | Description |
 |--------|------|-------------|
 |  | [`Result`](#result-6)  | Deleted constructor. |
-| `bool` | [`is_ok`](#is_ok-1) `const` `inline` |  |
-| `bool` | [`is_err`](#is_err-1) `const` `inline` |  |
-| `const std::string &` | [`error`](#error-1) `const` `inline` |  |
-| `uint32_t` | [`code`](#code-1) `const` `inline` |  |
-| `void` | [`unwrap`](#unwrap-2) `const` `inline` |  |
-|  | [`operator bool`](#operatorbool-1) `const` `inline` `explicit` |  |
+| `bool` | [`is_ok`](#is_ok-1) `const` |  |
+| `bool` | [`is_err`](#is_err-1) `const` |  |
+| `const std::string &` | [`error`](#error-1) `const` |  |
+| `uint32_t` | [`code`](#code-1) `const` |  |
+| `void` | [`unwrap`](#unwrap-2) `const` |  |
+|  | [`operator bool`](#operatorbool-1) `const` `explicit` |  |
 
 ---
 
@@ -32,7 +32,7 @@ Deleted constructor.
 
 #### is_ok
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool is_ok() const noexcept
@@ -42,7 +42,7 @@ inline bool is_ok() const noexcept
 
 #### is_err
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool is_err() const noexcept
@@ -52,7 +52,7 @@ inline bool is_err() const noexcept
 
 #### error
 
-`const` `inline`
+`const`
 
 ```cpp
 inline const std::string & error() const noexcept
@@ -62,7 +62,7 @@ inline const std::string & error() const noexcept
 
 #### code
 
-`const` `inline`
+`const`
 
 ```cpp
 inline uint32_t code() const noexcept
@@ -72,7 +72,7 @@ inline uint32_t code() const noexcept
 
 #### unwrap
 
-`const` `inline`
+`const`
 
 ```cpp
 inline void unwrap() const
@@ -82,7 +82,7 @@ inline void unwrap() const
 
 #### operator bool
 
-`const` `inline` `explicit`
+`const` `explicit`
 
 ```cpp
 inline explicit operator bool() const noexcept
@@ -92,14 +92,14 @@ inline explicit operator bool() const noexcept
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `Result` | [`Ok`](#ok-2) `static` `inline` |  |
-| `Result` | [`Err`](#err-1) `static` `inline` |  |
+| `Result` | [`Ok`](#ok-2) `static` |  |
+| `Result` | [`Err`](#err-1) `static` |  |
 
 ---
 
 #### Ok
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline Result Ok()
@@ -109,7 +109,7 @@ static inline Result Ok()
 
 #### Err
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline Result Err(uint32_t code, std::string_view msg)
@@ -151,7 +151,7 @@ uint32_t error_code_
 
 | Return | Name | Description |
 |--------|------|-------------|
-|  | [`Result`](#result-7) `inline` |  |
+|  | [`Result`](#result-7) |  |
 
 ---
 

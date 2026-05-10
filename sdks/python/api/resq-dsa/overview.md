@@ -29,9 +29,9 @@ rabin_karp: Rabin-Karp string pattern matching algorithm.
 
 ## API
 
-- [`BloomFilter`](./bloom#bloomfilter-objects)
-- [`CountMinSketch`](./count_min#countminsketch-objects)
-- [`Graph`](./graph#graph-objects)
-- [`BoundedHeap`](./heap#boundedheap-objects)
-- [`Trie`](./trie#trie-objects)
-- [`rabin_karp`](./trie#rabin_karp)
+- [BloomFilter](./bloom#bloomfilter-objects)
+- [CountMinSketch](./count_min#countminsketch-objects)
+- [Graph](./graph#graph-objects)
+- [BoundedHeap](./heap#boundedheap-objects)
+- [Trie](./trie#trie-objects)
+- [rabin_karp](./trie#rabin_karp)

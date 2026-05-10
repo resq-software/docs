@@ -33,18 +33,18 @@ if (result.is_ok()) {
 | Return | Name | Description |
 |--------|------|-------------|
 |  | [`Result`](#result-1)  | Deleted constructor. |
-|  | [`Result`](#result-2) `inline` |  |
-|  | [`Result`](#result-3) `inline` |  |
-| `bool` | [`is_ok`](#is_ok) `const` `inline` | Check if result is successful. |
-| `bool` | [`is_err`](#is_err) `const` `inline` | Check if result is an error. |
-| `const T &` | [`unwrap`](#unwrap) `const` `inline` | Get the value (throws if error) Use [is_ok()](#is_ok) to check first, or use [unwrap_or()](#unwrap_or) |
-| `T &` | [`unwrap`](#unwrap-1) `inline` |  |
-| `T` | [`unwrap_or`](#unwrap_or) `const` `inline` | Get the value or a default. |
-| `T` | [`unwrap_or_else`](#unwrap_or_else) `const` `inline` | Get the value or compute from error. |
-| `const std::string &` | [`error`](#error) `const` `inline` | Get error message. |
-| `uint32_t` | [`code`](#code) `const` `inline` | Get error code. |
-| `auto` | [`map`](#map) `const` `inline` | Map the value if Ok, preserve error if Err. |
-|  | [`operator bool`](#operatorbool) `const` `inline` `explicit` | Convert to bool (true if Ok) |
+|  | [`Result`](#result-2) |  |
+|  | [`Result`](#result-3) |  |
+| `bool` | [`is_ok`](#is_ok) `const` | Check if result is successful. |
+| `bool` | [`is_err`](#is_err) `const` | Check if result is an error. |
+| `const T &` | [`unwrap`](#unwrap) `const` | Get the value (throws if error) Use [is_ok()](#is_ok) to check first, or use [unwrap_or()](#unwrap_or) |
+| `T &` | [`unwrap`](#unwrap-1) |  |
+| `T` | [`unwrap_or`](#unwrap_or) `const` | Get the value or a default. |
+| `T` | [`unwrap_or_else`](#unwrap_or_else) `const` | Get the value or compute from error. |
+| `const std::string &` | [`error`](#error) `const` | Get error message. |
+| `uint32_t` | [`code`](#code) `const` | Get error code. |
+| `auto` | [`map`](#map) `const` | Map the value if Ok, preserve error if Err. |
+|  | [`operator bool`](#operatorbool) `const` `explicit` | Convert to bool (true if Ok) |
 
 ---
 
@@ -80,7 +80,7 @@ inline Result(Result && other) noexcept
 
 #### is_ok
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool is_ok() const noexcept
@@ -92,7 +92,7 @@ Check if result is successful.
 
 #### is_err
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool is_err() const noexcept
@@ -104,7 +104,7 @@ Check if result is an error.
 
 #### unwrap
 
-`const` `inline`
+`const`
 
 ```cpp
 inline const T & unwrap() const
@@ -126,7 +126,7 @@ inline T & unwrap()
 
 #### unwrap_or
 
-`const` `inline`
+`const`
 
 ```cpp
 inline T unwrap_or(const T & default_value) const
@@ -138,7 +138,7 @@ Get the value or a default.
 
 #### unwrap_or_else
 
-`const` `inline`
+`const`
 
 ```cpp
 template<typename F> inline T unwrap_or_else(F && op) const
@@ -150,7 +150,7 @@ Get the value or compute from error.
 
 #### error
 
-`const` `inline`
+`const`
 
 ```cpp
 inline const std::string & error() const noexcept
@@ -162,7 +162,7 @@ Get error message.
 
 #### code
 
-`const` `inline`
+`const`
 
 ```cpp
 inline uint32_t code() const noexcept
@@ -174,7 +174,7 @@ Get error code.
 
 #### map
 
-`const` `inline`
+`const`
 
 ```cpp
 template<typename F> inline auto map(F && func) const
@@ -186,7 +186,7 @@ Map the value if Ok, preserve error if Err.
 
 #### operator bool
 
-`const` `inline` `explicit`
+`const` `explicit`
 
 ```cpp
 inline explicit operator bool() const noexcept
@@ -198,15 +198,15 @@ Convert to bool (true if Ok)
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `Result` | [`Ok`](#ok) `static` `inline` | Create a successful result. |
-| `Result` | [`Ok`](#ok-1) `static` `inline` |  |
-| `Result` | [`Err`](#err) `static` `inline` | Create an error result. |
+| `Result` | [`Ok`](#ok) `static` | Create a successful result. |
+| `Result` | [`Ok`](#ok-1) `static` |  |
+| `Result` | [`Err`](#err) `static` | Create an error result. |
 
 ---
 
 #### Ok
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline Result Ok(const T & value)
@@ -218,7 +218,7 @@ Create a successful result.
 
 #### Ok
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline Result Ok(T && value)
@@ -228,7 +228,7 @@ static inline Result Ok(T && value)
 
 #### Err
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline Result Err(uint32_t code, std::string_view msg)
@@ -286,8 +286,8 @@ uint32_t error_code_
 
 | Return | Name | Description |
 |--------|------|-------------|
-|  | [`Result`](#result-4) `inline` |  |
-|  | [`Result`](#result-5) `inline` |  |
+|  | [`Result`](#result-4) |  |
+|  | [`Result`](#result-5) |  |
 
 ---
 

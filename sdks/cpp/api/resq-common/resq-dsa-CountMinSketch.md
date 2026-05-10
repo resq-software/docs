@@ -36,10 +36,10 @@ Returned estimate is always >= true count (upper bound)
 
 | Return | Name | Description |
 |--------|------|-------------|
-|  | [`CountMinSketch`](#countminsketch-1) `inline` | Construct a Count-Min sketch. |
-| `void` | [`increment`](#increment) `inline` | Increment count for a key. |
-| `uint64_t` | [`estimate`](#estimate) `const` `inline` | Estimate frequency of a key. |
-| `void` | [`clear`](#clear-1) `inline` | Reset all counters to zero. |
+|  | [`CountMinSketch`](#countminsketch-1) | Construct a Count-Min sketch. |
+| `void` | [`increment`](#increment) | Increment count for a key. |
+| `uint64_t` | [`estimate`](#estimate) `const` | Estimate frequency of a key. |
+| `void` | [`clear`](#clear-1) | Reset all counters to zero. |
 
 ---
 
@@ -101,7 +101,7 @@ Updates all d hash function buckets
 
 #### estimate
 
-`const` `inline`
+`const`
 
 ```cpp
 inline uint64_t estimate(std::string_view key) const
@@ -184,13 +184,13 @@ Number of hash functions (d)
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `std::size_t` | [`hash_fn`](#hash_fn-1) `const` `inline` | Compute hash using double hashing technique. |
+| `std::size_t` | [`hash_fn`](#hash_fn-1) `const` | Compute hash using double hashing technique. |
 
 ---
 
 #### hash_fn
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::size_t hash_fn(std::string_view key, uint32_t seed) const

@@ -38,11 +38,11 @@ Type of no-fly zone.
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `double` | [`haversine_distance_meters`](#haversine_distance_meters) `inline` | Calculate Haversine distance between two geographic points. |
-| `bool` | [`is_point_in_polygon`](#is_point_in_polygon) `inline` | Check if a point is inside a polygon using ray casting. |
-| `bool` | [`segment_intersects_polygon`](#segment_intersects_polygon) `inline` | Check if a line segment intersects a polygon (bounding box check) |
-| `std::optional< std::reference_wrapper< const NoFlyZone > >` | [`path_intersects_nfz`](#path_intersects_nfz) `inline` | Check if a flight path (waypoint to waypoint) intersects any NFZ. |
-| `std::optional< std::reference_wrapper< const NoFlyZone > >` | [`path_intersects_nfz`](#path_intersects_nfz-1) `inline` | Check if any point in a path intersects NFZ. |
+| `double` | [`haversine_distance_meters`](#haversine_distance_meters) | Calculate Haversine distance between two geographic points. |
+| `bool` | [`is_point_in_polygon`](#is_point_in_polygon) | Check if a point is inside a polygon using ray casting. |
+| `bool` | [`segment_intersects_polygon`](#segment_intersects_polygon) | Check if a line segment intersects a polygon (bounding box check) |
+| `std::optional< std::reference_wrapper< const NoFlyZone > >` | [`path_intersects_nfz`](#path_intersects_nfz) | Check if a flight path (waypoint to waypoint) intersects any NFZ. |
+| `std::optional< std::reference_wrapper< const NoFlyZone > >` | [`path_intersects_nfz`](#path_intersects_nfz-1) | Check if any point in a path intersects NFZ. |
 
 ---
 

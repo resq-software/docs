@@ -29,10 +29,10 @@ Uses FNV-1a hash with double hashing for k independent hash functions
 
 | Return | Name | Description |
 |--------|------|-------------|
-|  | [`BloomFilter`](#bloomfilter-1) `inline` | Construct a Bloom filter with specified capacity and false positive rate. |
-| `void` | [`add`](#add) `inline` | Insert an element into the filter. |
-| `bool` | [`has`](#has) `const` `inline` | Check if element may be in the set. |
-| `void` | [`clear`](#clear) `inline` | Reset all bits to zero. |
+|  | [`BloomFilter`](#bloomfilter-1) | Construct a Bloom filter with specified capacity and false positive rate. |
+| `void` | [`add`](#add) | Insert an element into the filter. |
+| `bool` | [`has`](#has) `const` | Check if element may be in the set. |
+| `void` | [`clear`](#clear) | Reset all bits to zero. |
 
 ---
 
@@ -96,7 +96,7 @@ Thread-safe: caller must ensure no concurrent access
 
 #### has
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool has(std::string_view item) const
@@ -190,13 +190,13 @@ Number of bits in filter.
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `std::size_t` | [`hash_fn`](#hash_fn) `const` `inline` | Compute hash at index i using double hashing technique. |
+| `std::size_t` | [`hash_fn`](#hash_fn) `const` | Compute hash at index i using double hashing technique. |
 
 ---
 
 #### hash_fn
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::size_t hash_fn(std::string_view s, uint32_t seed) const

@@ -22,9 +22,9 @@ Example:
 |--------|------|-------------|
 |  | [`FileHandle`](#filehandle-1)  | Defaulted constructor. |
 |  | [`FileHandle`](#filehandle-2)  | Deleted constructor. |
-|  | [`FileHandle`](#filehandle-3) `inline` |  |
-| `bool` | [`is_open`](#is_open) `const` `inline` |  |
-| `std::fstream &` | [`stream`](#stream) `inline` |  |
+|  | [`FileHandle`](#filehandle-3) |  |
+| `bool` | [`is_open`](#is_open) `const` |  |
+| `std::fstream &` | [`stream`](#stream) |  |
 
 ---
 
@@ -60,7 +60,7 @@ inline FileHandle(FileHandle && other) noexcept
 
 #### is_open
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool is_open() const
@@ -80,13 +80,13 @@ inline std::fstream & stream()
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `FileHandle` | [`open`](#open) `static` `inline` |  |
+| `FileHandle` | [`open`](#open) `static` |  |
 
 ---
 
 #### open
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline FileHandle open(const std::string & path, std::ios::openmode mode)
