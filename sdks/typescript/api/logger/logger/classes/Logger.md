@@ -25,7 +25,7 @@ The context name for this logger (e.g., component or service name)
 
 ##### options?
 
-[`LoggerOptions`](../interfaces/LoggerOptions.md) = `{}`
+[`LoggerOptions`](../interfaces/LoggerOptions) = `{}`
 
 Optional logger configuration
 
@@ -53,7 +53,7 @@ The action message
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -81,7 +81,7 @@ The debug message
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -115,7 +115,7 @@ Optional Error object or unknown error
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional additional data
 
@@ -179,7 +179,7 @@ The message to log
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -207,7 +207,7 @@ The success message
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -273,7 +273,7 @@ The trace message
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -301,7 +301,7 @@ The warning message
 
 ##### data?
 
-[`LogData`](../interfaces/LogData.md)
+[`LogData`](../interfaces/LogData)
 
 Optional data to include
 
@@ -330,7 +330,7 @@ The context name
 
 ##### options?
 
-[`LoggerOptions`](../interfaces/LoggerOptions.md)
+[`LoggerOptions`](../interfaces/LoggerOptions)
 
 Optional logger configuration
 
@@ -354,7 +354,7 @@ Set global minimum log level for all logger instances
 
 ##### level
 
-[`LogLevel`](../enumerations/LogLevel.md)
+[`LogLevel`](../enumerations/LogLevel)
 
 The minimum level to log across all loggers
 

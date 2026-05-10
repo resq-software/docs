@@ -30,7 +30,7 @@ Defined in: [index.ts:54](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 ### ga4?
 
-> `optional` **ga4?**: [`GA4ProviderConfig`](./GA4ProviderConfig.md)
+> `optional` **ga4?**: [`GA4ProviderConfig`](./GA4ProviderConfig)
 
 Defined in: [index.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L52)
 
@@ -38,6 +38,6 @@ Defined in: [index.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 ### posthog?
 
-> `optional` **posthog?**: [`PostHogProviderConfig`](./PostHogProviderConfig.md)
+> `optional` **posthog?**: [`PostHogProviderConfig`](./PostHogProviderConfig)
 
 Defined in: [index.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L51)

@@ -4,214 +4,214 @@
 
 ### addValidatedEdge
 
-Re-exports [addValidatedEdge](../graph/functions/addValidatedEdge.md)
+Re-exports [addValidatedEdge](../graph/functions/addValidatedEdge)
 
 ***
 
 ### BloomFilter
 
-Re-exports [BloomFilter](../bloom/classes/BloomFilter.md)
+Re-exports [BloomFilter](../bloom/classes/BloomFilter)
 
 ***
 
 ### BoundedHeap
 
-Re-exports [BoundedHeap](../heap/classes/BoundedHeap.md)
+Re-exports [BoundedHeap](../heap/classes/BoundedHeap)
 
 ***
 
 ### CompareFn
 
-Re-exports [CompareFn](../priority-queue/type-aliases/CompareFn.md)
+Re-exports [CompareFn](../priority-queue/type-aliases/CompareFn)
 
 ***
 
 ### CountMinSketch
 
-Re-exports [CountMinSketch](../count-min/classes/CountMinSketch.md)
+Re-exports [CountMinSketch](../count-min/classes/CountMinSketch)
 
 ***
 
 ### createDeadlineQueue
 
-Re-exports [createDeadlineQueue](../priority-queue/functions/createDeadlineQueue.md)
+Re-exports [createDeadlineQueue](../priority-queue/functions/createDeadlineQueue)
 
 ***
 
 ### createMaxHeap
 
-Re-exports [createMaxHeap](../priority-queue/functions/createMaxHeap.md)
+Re-exports [createMaxHeap](../priority-queue/functions/createMaxHeap)
 
 ***
 
 ### createMinHeap
 
-Re-exports [createMinHeap](../priority-queue/functions/createMinHeap.md)
+Re-exports [createMinHeap](../priority-queue/functions/createMinHeap)
 
 ***
 
 ### createPriorityLevelQueue
 
-Re-exports [createPriorityLevelQueue](../priority-queue/functions/createPriorityLevelQueue.md)
+Re-exports [createPriorityLevelQueue](../priority-queue/functions/createPriorityLevelQueue)
 
 ***
 
 ### Distance
 
-Re-exports [Distance](../distance/classes/Distance.md)
+Re-exports [Distance](../distance/classes/Distance)
 
 ***
 
 ### Distanced
 
-Re-exports [Distanced](../heap/interfaces/Distanced.md)
+Re-exports [Distanced](../heap/interfaces/Distanced)
 
 ***
 
 ### Edge
 
-Re-exports [Edge](../graph/interfaces/Edge.md)
+Re-exports [Edge](../graph/interfaces/Edge)
 
 ***
 
 ### Graph
 
-Re-exports [Graph](../graph/classes/Graph.md)
+Re-exports [Graph](../graph/classes/Graph)
 
 ***
 
 ### GraphOptions
 
-Re-exports [GraphOptions](../graph/interfaces/GraphOptions.md)
+Re-exports [GraphOptions](../graph/interfaces/GraphOptions)
 
 ***
 
 ### isValidVertexId
 
-Re-exports [isValidVertexId](../graph/functions/isValidVertexId.md)
+Re-exports [isValidVertexId](../graph/functions/isValidVertexId)
 
 ***
 
 ### LRUCache
 
-Re-exports [LRUCache](../lru-cache/classes/LRUCache.md)
+Re-exports [LRUCache](../lru-cache/classes/LRUCache)
 
 ***
 
 ### LRUCacheOptions
 
-Re-exports [LRUCacheOptions](../lru-cache/interfaces/LRUCacheOptions.md)
+Re-exports [LRUCacheOptions](../lru-cache/interfaces/LRUCacheOptions)
 
 ***
 
 ### PathResult
 
-Re-exports [PathResult](../graph/interfaces/PathResult.md)
+Re-exports [PathResult](../graph/interfaces/PathResult)
 
 ***
 
 ### PatternMatch
 
-Re-exports [PatternMatch](../dsa/rabin-karp/interfaces/PatternMatch.md)
+Re-exports [PatternMatch](../dsa/rabin-karp/interfaces/PatternMatch)
 
 ***
 
 ### PriorityQueue
 
-Re-exports [PriorityQueue](../priority-queue/classes/PriorityQueue.md)
+Re-exports [PriorityQueue](../priority-queue/classes/PriorityQueue)
 
 ***
 
 ### PriorityQueueOptions
 
-Re-exports [PriorityQueueOptions](../priority-queue/interfaces/PriorityQueueOptions.md)
+Re-exports [PriorityQueueOptions](../priority-queue/interfaces/PriorityQueueOptions)
 
 ***
 
 ### PriorityQueueStats
 
-Re-exports [PriorityQueueStats](../priority-queue/interfaces/PriorityQueueStats.md)
+Re-exports [PriorityQueueStats](../priority-queue/interfaces/PriorityQueueStats)
 
 ***
 
 ### PriorityRequestItem
 
-Re-exports [PriorityRequestItem](../priority-queue/interfaces/PriorityRequestItem.md)
+Re-exports [PriorityRequestItem](../priority-queue/interfaces/PriorityRequestItem)
 
 ***
 
 ### Queue
 
-Re-exports [Queue](../queue/classes/Queue.md)
+Re-exports [Queue](../queue/classes/Queue)
 
 ***
 
 ### QueueNode
 
-Re-exports [QueueNode](../queue/interfaces/QueueNode.md)
+Re-exports [QueueNode](../queue/interfaces/QueueNode)
 
 ***
 
 ### quickSearch
 
-Re-exports [quickSearch](../dsa/rabin-karp/functions/quickSearch.md)
+Re-exports [quickSearch](../dsa/rabin-karp/functions/quickSearch)
 
 ***
 
 ### rabinKarp
 
-Re-exports [rabinKarp](../trie/functions/rabinKarp.md)
+Re-exports [rabinKarp](../trie/functions/rabinKarp)
 
 ***
 
 ### RabinKarp
 
-Re-exports [RabinKarp](../dsa/rabin-karp/classes/RabinKarp.md)
+Re-exports [RabinKarp](../dsa/rabin-karp/classes/RabinKarp)
 
 ***
 
 ### RabinKarpOptions
 
-Re-exports [RabinKarpOptions](../dsa/rabin-karp/interfaces/RabinKarpOptions.md)
+Re-exports [RabinKarpOptions](../dsa/rabin-karp/interfaces/RabinKarpOptions)
 
 ***
 
 ### SearchStats
 
-Re-exports [SearchStats](../dsa/rabin-karp/interfaces/SearchStats.md)
+Re-exports [SearchStats](../dsa/rabin-karp/interfaces/SearchStats)
 
 ***
 
 ### TraversalResult
 
-Re-exports [TraversalResult](../graph/interfaces/TraversalResult.md)
+Re-exports [TraversalResult](../graph/interfaces/TraversalResult)
 
 ***
 
 ### Trie
 
-Re-exports [Trie](../trie/classes/Trie.md)
+Re-exports [Trie](../trie/classes/Trie)
 
 ***
 
 ### TrieOptions
 
-Re-exports [TrieOptions](../schemas/type-aliases/TrieOptions.md)
+Re-exports [TrieOptions](../schemas/type-aliases/TrieOptions)
 
 ***
 
 ### TrieSearchResult
 
-Re-exports [TrieSearchResult](../trie/interfaces/TrieSearchResult.md)
+Re-exports [TrieSearchResult](../trie/interfaces/TrieSearchResult)
 
 ***
 
 ### validatePriorityItem
 
-Re-exports [validatePriorityItem](../priority-queue/functions/validatePriorityItem.md)
+Re-exports [validatePriorityItem](../priority-queue/functions/validatePriorityItem)
 
 ***
 
 ### Vertex
 
-Re-exports [Vertex](../graph/interfaces/Vertex.md)
+Re-exports [Vertex](../graph/interfaces/Vertex)

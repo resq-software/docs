@@ -4,364 +4,364 @@
 
 ### containsCommandInjection
 
-Re-exports [containsCommandInjection](../validators/functions/containsCommandInjection.md)
+Re-exports [containsCommandInjection](../validators/functions/containsCommandInjection)
 
 ***
 
 ### containsHomoglyphs
 
-Re-exports [containsHomoglyphs](../validators/functions/containsHomoglyphs.md)
+Re-exports [containsHomoglyphs](../validators/functions/containsHomoglyphs)
 
 ***
 
 ### containsNoSQLInjection
 
-Re-exports [containsNoSQLInjection](../validators/functions/containsNoSQLInjection.md)
+Re-exports [containsNoSQLInjection](../validators/functions/containsNoSQLInjection)
 
 ***
 
 ### containsPathTraversal
 
-Re-exports [containsPathTraversal](../validators/functions/containsPathTraversal.md)
+Re-exports [containsPathTraversal](../validators/functions/containsPathTraversal)
 
 ***
 
 ### containsSQLInjection
 
-Re-exports [containsSQLInjection](../validators/functions/containsSQLInjection.md)
+Re-exports [containsSQLInjection](../validators/functions/containsSQLInjection)
 
 ***
 
 ### containsXSSPatterns
 
-Re-exports [containsXSSPatterns](../validators/functions/containsXSSPatterns.md)
+Re-exports [containsXSSPatterns](../validators/functions/containsXSSPatterns)
 
 ***
 
 ### CreditCard
 
-Re-exports [CreditCard](../sanitize/type-aliases/CreditCard.md)
+Re-exports [CreditCard](../sanitize/type-aliases/CreditCard)
 
 ***
 
 ### CreditCardSchema
 
-Re-exports [CreditCardSchema](../sanitize/variables/CreditCardSchema.md)
+Re-exports [CreditCardSchema](../sanitize/variables/CreditCardSchema)
 
 ***
 
 ### decryptData
 
-Re-exports [decryptData](../crypto/functions/decryptData.md)
+Re-exports [decryptData](../crypto/functions/decryptData)
 
 ***
 
 ### detectThreatPatterns
 
-Re-exports [detectThreatPatterns](../validators/functions/detectThreatPatterns.md)
+Re-exports [detectThreatPatterns](../validators/functions/detectThreatPatterns)
 
 ***
 
 ### Email
 
-Re-exports [Email](../sanitize/type-aliases/Email.md)
+Re-exports [Email](../sanitize/type-aliases/Email)
 
 ***
 
 ### EmailSchema
 
-Re-exports [EmailSchema](../sanitize/variables/EmailSchema.md)
+Re-exports [EmailSchema](../sanitize/variables/EmailSchema)
 
 ***
 
 ### encryptData
 
-Re-exports [encryptData](../crypto/functions/encryptData.md)
+Re-exports [encryptData](../crypto/functions/encryptData)
 
 ***
 
 ### escapeHtml
 
-Re-exports [escapeHtml](../sanitize/functions/escapeHtml.md)
+Re-exports [escapeHtml](../sanitize/functions/escapeHtml)
 
 ***
 
 ### generateSecureToken
 
-Re-exports [generateSecureToken](../crypto/functions/generateSecureToken.md)
+Re-exports [generateSecureToken](../crypto/functions/generateSecureToken)
 
 ***
 
 ### getThreatErrorMessage
 
-Re-exports [getThreatErrorMessage](../validators/functions/getThreatErrorMessage.md)
+Re-exports [getThreatErrorMessage](../validators/functions/getThreatErrorMessage)
 
 ***
 
 ### hashData
 
-Re-exports [hashData](../crypto/functions/hashData.md)
+Re-exports [hashData](../crypto/functions/hashData)
 
 ***
 
 ### IPv4
 
-Re-exports [IPv4](../sanitize/type-aliases/IPv4.md)
+Re-exports [IPv4](../sanitize/type-aliases/IPv4)
 
 ***
 
 ### IPv4Schema
 
-Re-exports [IPv4Schema](../sanitize/variables/IPv4Schema.md)
+Re-exports [IPv4Schema](../sanitize/variables/IPv4Schema)
 
 ***
 
 ### isSafeInput
 
-Re-exports [isSafeInput](../validators/functions/isSafeInput.md)
+Re-exports [isSafeInput](../validators/functions/isSafeInput)
 
 ***
 
 ### isValidEmail
 
-Re-exports [isValidEmail](../sanitize/functions/isValidEmail.md)
+Re-exports [isValidEmail](../sanitize/functions/isValidEmail)
 
 ***
 
 ### isValidPhone
 
-Re-exports [isValidPhone](../sanitize/functions/isValidPhone.md)
+Re-exports [isValidPhone](../sanitize/functions/isValidPhone)
 
 ***
 
 ### isValidSSN
 
-Re-exports [isValidSSN](../sanitize/functions/isValidSSN.md)
+Re-exports [isValidSSN](../sanitize/functions/isValidSSN)
 
 ***
 
 ### isValidUrl
 
-Re-exports [isValidUrl](../sanitize/functions/isValidUrl.md)
+Re-exports [isValidUrl](../sanitize/functions/isValidUrl)
 
 ***
 
 ### maskEmail
 
-Re-exports [maskEmail](../crypto/functions/maskEmail.md)
+Re-exports [maskEmail](../crypto/functions/maskEmail)
 
 ***
 
 ### maskPII
 
-Re-exports [maskPII](../crypto/functions/maskPII.md)
+Re-exports [maskPII](../crypto/functions/maskPII)
 
 ***
 
 ### normalizeUnicode
 
-Re-exports [normalizeUnicode](../validators/functions/normalizeUnicode.md)
+Re-exports [normalizeUnicode](../validators/functions/normalizeUnicode)
 
 ***
 
 ### parseJsonWithSchema
 
-Re-exports [parseJsonWithSchema](../sanitize/functions/parseJsonWithSchema.md)
+Re-exports [parseJsonWithSchema](../sanitize/functions/parseJsonWithSchema)
 
 ***
 
 ### PhoneNumber
 
-Re-exports [PhoneNumber](../sanitize/type-aliases/PhoneNumber.md)
+Re-exports [PhoneNumber](../sanitize/type-aliases/PhoneNumber)
 
 ***
 
 ### PhoneNumberSchema
 
-Re-exports [PhoneNumberSchema](../sanitize/variables/PhoneNumberSchema.md)
+Re-exports [PhoneNumberSchema](../sanitize/variables/PhoneNumberSchema)
 
 ***
 
 ### PIIRedactionOptions
 
-Re-exports [PIIRedactionOptions](../sanitize/type-aliases/PIIRedactionOptions.md)
+Re-exports [PIIRedactionOptions](../sanitize/type-aliases/PIIRedactionOptions)
 
 ***
 
 ### PIIRedactionOptionsSchema
 
-Re-exports [PIIRedactionOptionsSchema](../sanitize/variables/PIIRedactionOptionsSchema.md)
+Re-exports [PIIRedactionOptionsSchema](../sanitize/variables/PIIRedactionOptionsSchema)
 
 ***
 
 ### redactPII
 
-Re-exports [redactPII](../sanitize/functions/redactPII.md)
+Re-exports [redactPII](../sanitize/functions/redactPII)
 
 ***
 
 ### redactPIIEffect
 
-Re-exports [redactPIIEffect](../sanitize/functions/redactPIIEffect.md)
+Re-exports [redactPIIEffect](../sanitize/functions/redactPIIEffect)
 
 ***
 
 ### safeStringify
 
-Re-exports [safeStringify](../sanitize/functions/safeStringify.md)
+Re-exports [safeStringify](../sanitize/functions/safeStringify)
 
 ***
 
 ### SafeUrl
 
-Re-exports [SafeUrl](../sanitize/type-aliases/SafeUrl.md)
+Re-exports [SafeUrl](../sanitize/type-aliases/SafeUrl)
 
 ***
 
 ### SafeUrlSchema
 
-Re-exports [SafeUrlSchema](../sanitize/variables/SafeUrlSchema.md)
+Re-exports [SafeUrlSchema](../sanitize/variables/SafeUrlSchema)
 
 ***
 
 ### SanitizedString
 
-Re-exports [SanitizedString](../sanitize/type-aliases/SanitizedString.md)
+Re-exports [SanitizedString](../sanitize/type-aliases/SanitizedString)
 
 ***
 
 ### SanitizedStringSchema
 
-Re-exports [SanitizedStringSchema](../sanitize/variables/SanitizedStringSchema.md)
+Re-exports [SanitizedStringSchema](../sanitize/variables/SanitizedStringSchema)
 
 ***
 
 ### sanitizeForDisplay
 
-Re-exports [sanitizeForDisplay](../validators/functions/sanitizeForDisplay.md)
+Re-exports [sanitizeForDisplay](../validators/functions/sanitizeForDisplay)
 
 ***
 
 ### sanitizeForLogging
 
-Re-exports [sanitizeForLogging](../crypto/functions/sanitizeForLogging.md)
+Re-exports [sanitizeForLogging](../crypto/functions/sanitizeForLogging)
 
 ***
 
 ### sanitizeJson
 
-Re-exports [sanitizeJson](../sanitize/functions/sanitizeJson.md)
+Re-exports [sanitizeJson](../sanitize/functions/sanitizeJson)
 
 ***
 
 ### sanitizeUrl
 
-Re-exports [sanitizeUrl](../sanitize/functions/sanitizeUrl.md)
+Re-exports [sanitizeUrl](../sanitize/functions/sanitizeUrl)
 
 ***
 
 ### sanitizeUrlEffect
 
-Re-exports [sanitizeUrlEffect](../sanitize/functions/sanitizeUrlEffect.md)
+Re-exports [sanitizeUrlEffect](../sanitize/functions/sanitizeUrlEffect)
 
 ***
 
 ### SSN
 
-Re-exports [SSN](../sanitize/type-aliases/SSN.md)
+Re-exports [SSN](../sanitize/type-aliases/SSN)
 
 ***
 
 ### SSNSchema
 
-Re-exports [SSNSchema](../sanitize/variables/SSNSchema.md)
+Re-exports [SSNSchema](../sanitize/variables/SSNSchema)
 
 ***
 
 ### stripAnsi
 
-Re-exports [stripAnsi](../sanitize/functions/stripAnsi.md)
+Re-exports [stripAnsi](../sanitize/functions/stripAnsi)
 
 ***
 
 ### THREAT\_DETECTED\_MESSAGE
 
-Re-exports [THREAT_DETECTED_MESSAGE](../validators/variables/THREAT_DETECTED_MESSAGE.md)
+Re-exports [THREAT_DETECTED_MESSAGE](../validators/variables/THREAT_DETECTED_MESSAGE)
 
 ***
 
 ### ThreatDetectionConfig
 
-Re-exports [ThreatDetectionConfig](../validators/interfaces/ThreatDetectionConfig.md)
+Re-exports [ThreatDetectionConfig](../validators/interfaces/ThreatDetectionConfig)
 
 ***
 
 ### ThreatDetectionResult
 
-Re-exports [ThreatDetectionResult](../validators/interfaces/ThreatDetectionResult.md)
+Re-exports [ThreatDetectionResult](../validators/interfaces/ThreatDetectionResult)
 
 ***
 
 ### ThreatFinding
 
-Re-exports [ThreatFinding](../validators/interfaces/ThreatFinding.md)
+Re-exports [ThreatFinding](../validators/interfaces/ThreatFinding)
 
 ***
 
 ### ThreatType
 
-Re-exports [ThreatType](../validators/type-aliases/ThreatType.md)
+Re-exports [ThreatType](../validators/type-aliases/ThreatType)
 
 ***
 
 ### UrlProtocol
 
-Re-exports [UrlProtocol](../sanitize/type-aliases/UrlProtocol.md)
+Re-exports [UrlProtocol](../sanitize/type-aliases/UrlProtocol)
 
 ***
 
 ### UrlProtocolSchema
 
-Re-exports [UrlProtocolSchema](../sanitize/variables/UrlProtocolSchema.md)
+Re-exports [UrlProtocolSchema](../sanitize/variables/UrlProtocolSchema)
 
 ***
 
 ### UserInputOptions
 
-Re-exports [UserInputOptions](../sanitize/type-aliases/UserInputOptions.md)
+Re-exports [UserInputOptions](../sanitize/type-aliases/UserInputOptions)
 
 ***
 
 ### UserInputOptionsSchema
 
-Re-exports [UserInputOptionsSchema](../sanitize/variables/UserInputOptionsSchema.md)
+Re-exports [UserInputOptionsSchema](../sanitize/variables/UserInputOptionsSchema)
 
 ***
 
 ### validateSafeEmail
 
-Re-exports [validateSafeEmail](../validators/functions/validateSafeEmail.md)
+Re-exports [validateSafeEmail](../validators/functions/validateSafeEmail)
 
 ***
 
 ### validateSafeName
 
-Re-exports [validateSafeName](../validators/functions/validateSafeName.md)
+Re-exports [validateSafeName](../validators/functions/validateSafeName)
 
 ***
 
 ### validateSafeText
 
-Re-exports [validateSafeText](../validators/functions/validateSafeText.md)
+Re-exports [validateSafeText](../validators/functions/validateSafeText)
 
 ***
 
 ### validateUserInput
 
-Re-exports [validateUserInput](../sanitize/functions/validateUserInput.md)
+Re-exports [validateUserInput](../sanitize/functions/validateUserInput)
 
 ***
 
 ### validateUserInputEffect
 
-Re-exports [validateUserInputEffect](../sanitize/functions/validateUserInputEffect.md)
+Re-exports [validateUserInputEffect](../sanitize/functions/validateUserInputEffect)

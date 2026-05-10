@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 Defined in: [memoize-async/memoize-async.fn.ts:80](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L80)
 
@@ -26,13 +26,13 @@ The argument types of the original method
 
 #### originalMethod
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The async method to memoize
 
 ### Returns
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The memoized method
 
@@ -75,7 +75,7 @@ const withConfig = memoizeAsyncFn(
 
 ## Call Signature
 
-> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `config`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `config`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 Defined in: [memoize-async/memoize-async.fn.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L83)
 
@@ -99,19 +99,19 @@ The argument types of the original method
 
 #### originalMethod
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The async method to memoize
 
 #### config
 
-[`AsyncMemoizeConfig`](../../memoize-async.types/interfaces/AsyncMemoizeConfig.md)\<`any`, `D`\>
+[`AsyncMemoizeConfig`](../../memoize-async.types/interfaces/AsyncMemoizeConfig)\<`any`, `D`\>
 
 Configuration for memoization
 
 ### Returns
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The memoized method
 
@@ -154,7 +154,7 @@ const withConfig = memoizeAsyncFn(
 
 ## Call Signature
 
-> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+> **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 Defined in: [memoize-async/memoize-async.fn.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L87)
 
@@ -178,7 +178,7 @@ The argument types of the original method
 
 #### originalMethod
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The async method to memoize
 
@@ -190,7 +190,7 @@ Cache expiration time in milliseconds
 
 ### Returns
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The memoized method
 

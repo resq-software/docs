@@ -2,10 +2,10 @@
 
 ## Interfaces
 
-- [AnalyticsProviderProps](./interfaces/AnalyticsProviderProps.md)
-- [UseAnalyticsReturn](./interfaces/UseAnalyticsReturn.md)
+- [AnalyticsProviderProps](./interfaces/AnalyticsProviderProps)
+- [UseAnalyticsReturn](./interfaces/UseAnalyticsReturn)
 
 ## Functions
 
-- [AnalyticsProvider](./functions/AnalyticsProvider.md)
-- [useAnalytics](./functions/useAnalytics.md)
+- [AnalyticsProvider](./functions/AnalyticsProvider)
+- [useAnalytics](./functions/useAnalytics)

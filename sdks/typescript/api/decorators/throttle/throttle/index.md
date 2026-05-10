@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [throttle](./functions/throttle.md)
+- [throttle](./functions/throttle)

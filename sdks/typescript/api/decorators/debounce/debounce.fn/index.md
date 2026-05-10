@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [debounceFn](./functions/debounceFn.md)
+- [debounceFn](./functions/debounceFn)

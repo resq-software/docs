@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [memoizeFn](./functions/memoizeFn.md)
+- [memoizeFn](./functions/memoizeFn)

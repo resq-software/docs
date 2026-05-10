@@ -2,12 +2,12 @@
 
 ## Geometry
 
-- [Distance](./classes/Distance.md)
+- [Distance](./classes/Distance)
 
 ## Types
 
-- [Coordinates2D](./interfaces/Coordinates2D.md)
-- [Coordinates3D](./interfaces/Coordinates3D.md)
-- [DistanceOptions](./interfaces/DistanceOptions.md)
-- [DistanceResult](./interfaces/DistanceResult.md)
-- [DistanceFormula](./type-aliases/DistanceFormula.md)
+- [Coordinates2D](./interfaces/Coordinates2D)
+- [Coordinates3D](./interfaces/Coordinates3D)
+- [DistanceOptions](./interfaces/DistanceOptions)
+- [DistanceResult](./interfaces/DistanceResult)
+- [DistanceFormula](./type-aliases/DistanceFormula)

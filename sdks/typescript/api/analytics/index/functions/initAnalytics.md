@@ -8,7 +8,7 @@ Defined in: [index.ts:222](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 ### config
 
-[`AnalyticsConfig`](../interfaces/AnalyticsConfig.md)
+[`AnalyticsConfig`](../interfaces/AnalyticsConfig)
 
 ## Returns
 

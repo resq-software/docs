@@ -8,7 +8,7 @@ Defined in: [react/index.ts:48](https://github.com/resq-software/npm/blob/f2ab5f
 
 ### \_\_namedParameters
 
-[`AnalyticsProviderProps`](../interfaces/AnalyticsProviderProps.md)
+[`AnalyticsProviderProps`](../interfaces/AnalyticsProviderProps)
 
 ## Returns
 

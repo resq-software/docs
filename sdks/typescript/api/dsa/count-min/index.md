@@ -2,4 +2,4 @@
 
 ## Classes
 
-- [CountMinSketch](./classes/CountMinSketch.md)
+- [CountMinSketch](./classes/CountMinSketch)

@@ -2,9 +2,9 @@
 
 ## Interfaces
 
-- [ExactTimeReportData](./interfaces/ExactTimeReportData.md)
+- [ExactTimeReportData](./interfaces/ExactTimeReportData)
 
 ## Type Aliases
 
-- [ExactTimeReportable](./type-aliases/ExactTimeReportable.md)
-- [ReportFunction](./type-aliases/ReportFunction.md)
+- [ExactTimeReportable](./type-aliases/ExactTimeReportable)
+- [ReportFunction](./type-aliases/ReportFunction)

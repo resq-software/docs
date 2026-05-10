@@ -2,29 +2,29 @@
 
 ## Classes
 
-- [FetcherError](./classes/FetcherError.md)
-- [FetcherValidationError](./classes/FetcherValidationError.md)
+- [FetcherError](./classes/FetcherError)
+- [FetcherValidationError](./classes/FetcherValidationError)
 
 ## Interfaces
 
-- [FetcherOptions](./interfaces/FetcherOptions.md)
+- [FetcherOptions](./interfaces/FetcherOptions)
 
 ## Type Aliases
 
-- [Headers](./type-aliases/Headers.md)
-- [HttpMethod](./type-aliases/HttpMethod.md)
-- [QueryParams](./type-aliases/QueryParams.md)
-- [RequestBody](./type-aliases/RequestBody.md)
+- [Headers](./type-aliases/Headers)
+- [HttpMethod](./type-aliases/HttpMethod)
+- [QueryParams](./type-aliases/QueryParams)
+- [RequestBody](./type-aliases/RequestBody)
 
 ## Functions
 
-- [createApiResponseSchema](./functions/createApiResponseSchema.md)
-- [createPaginatedSchema](./functions/createPaginatedSchema.md)
-- [del](./functions/del.md)
-- [fetcher](./functions/fetcher.md)
-- [get](./functions/get.md)
-- [head](./functions/head.md)
-- [options](./functions/options.md)
-- [patch](./functions/patch.md)
-- [post](./functions/post.md)
-- [put](./functions/put.md)
+- [createApiResponseSchema](./functions/createApiResponseSchema)
+- [createPaginatedSchema](./functions/createPaginatedSchema)
+- [del](./functions/del)
+- [fetcher](./functions/fetcher)
+- [get](./functions/get)
+- [head](./functions/head)
+- [options](./functions/options)
+- [patch](./functions/patch)
+- [post](./functions/post)
+- [put](./functions/put)

@@ -16,7 +16,7 @@ The string to check
 
 ### config?
 
-[`ThreatDetectionConfig`](../interfaces/ThreatDetectionConfig.md)
+[`ThreatDetectionConfig`](../interfaces/ThreatDetectionConfig)
 
 Optional configuration
 

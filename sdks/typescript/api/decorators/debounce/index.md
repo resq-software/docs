@@ -4,4 +4,4 @@
 
 ### debounceFn
 
-Re-exports [debounceFn](./debounce.fn/functions/debounceFn.md)
+Re-exports [debounceFn](./debounce.fn/functions/debounceFn)

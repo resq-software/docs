@@ -10,7 +10,7 @@ Get human-readable error for a threat detection result
 
 ### result
 
-[`ThreatDetectionResult`](../interfaces/ThreatDetectionResult.md)
+[`ThreatDetectionResult`](../interfaces/ThreatDetectionResult)
 
 ## Returns
 

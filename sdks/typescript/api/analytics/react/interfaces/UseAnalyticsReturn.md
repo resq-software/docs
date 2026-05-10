@@ -6,7 +6,7 @@ Defined in: [react/index.ts:73](https://github.com/resq-software/npm/blob/f2ab5f
 
 ### analytics
 
-> **analytics**: [`Analytics`](../../index/classes/Analytics.md)
+> **analytics**: [`Analytics`](../../index/classes/Analytics)
 
 Defined in: [react/index.ts:78](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L78)
 
@@ -84,7 +84,7 @@ Defined in: [react/index.ts:74](https://github.com/resq-software/npm/blob/f2ab5f
 
 ##### properties?
 
-`E` *extends* `string` \| `number` ? [`AnalyticsEvents`](../../index/interfaces/AnalyticsEvents.md)\[`E`\] : `Record`\<`string`, `unknown`\>
+`E` *extends* `string` \| `number` ? [`AnalyticsEvents`](../../index/interfaces/AnalyticsEvents)\[`E`\] : `Record`\<`string`, `unknown`\>
 
 #### Returns
 

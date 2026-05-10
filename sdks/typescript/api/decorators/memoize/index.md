@@ -4,28 +4,28 @@
 
 ### Cache
 
-Re-exports [Cache](./memoize.types/interfaces/Cache.md)
+Re-exports [Cache](./memoize.types/interfaces/Cache)
 
 ***
 
 ### KeyResolver
 
-Re-exports [KeyResolver](./memoize.types/type-aliases/KeyResolver.md)
+Re-exports [KeyResolver](./memoize.types/type-aliases/KeyResolver)
 
 ***
 
 ### Memoizable
 
-Re-exports [Memoizable](./memoize.types/type-aliases/Memoizable.md)
+Re-exports [Memoizable](./memoize.types/type-aliases/Memoizable)
 
 ***
 
 ### memoize
 
-Re-exports [memoize](./memoize/functions/memoize.md)
+Re-exports [memoize](./memoize/functions/memoize)
 
 ***
 
 ### MemoizeConfig
 
-Re-exports [MemoizeConfig](./memoize.types/interfaces/MemoizeConfig.md)
+Re-exports [MemoizeConfig](./memoize.types/interfaces/MemoizeConfig)

@@ -1,6 +1,6 @@
 # Function: throttle()
 
-> **throttle**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **throttle**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [throttle/throttle.ts:48](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle/throttle.ts#L48)
 
@@ -24,7 +24,7 @@ The throttle interval in milliseconds
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

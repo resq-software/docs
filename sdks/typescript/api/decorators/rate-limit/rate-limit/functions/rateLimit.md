@@ -1,6 +1,6 @@
 # Function: rateLimit()
 
-> **rateLimit**\<`T`\>(`config`): (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method.md)\<`unknown`\>\>
+> **rateLimit**\<`T`\>(`config`): (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`unknown`\>\>
 
 Defined in: [rate-limit/rate-limit.ts:71](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.ts#L71)
 
@@ -19,7 +19,7 @@ The type of the class containing the decorated method
 
 ### config
 
-[`RateLimitConfigs`](../../rate-limit.types/interfaces/RateLimitConfigs.md)\<`T`\>
+[`RateLimitConfigs`](../../rate-limit.types/interfaces/RateLimitConfigs)\<`T`\>
 
 Rate limit configuration
 
@@ -27,7 +27,7 @@ Rate limit configuration
 
 The decorator function
 
-(`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method.md)\<`unknown`\>\>
+(`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`unknown`\>\>
 
 ## Throws
 

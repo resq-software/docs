@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+> **memoizeAsync**\<`T`, `D`\>(): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 Defined in: [memoize-async/memoize-async.ts:105](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L105)
 
@@ -26,7 +26,7 @@ The resolved type of the async method
 
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 The decorator function
 
@@ -72,7 +72,7 @@ const [product1, product2] = await Promise.all([
 
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+> **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 Defined in: [memoize-async/memoize-async.ts:106](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L106)
 
@@ -98,13 +98,13 @@ The resolved type of the async method
 
 #### config
 
-[`AsyncMemoizeConfig`](../../memoize-async.types/interfaces/AsyncMemoizeConfig.md)\<`T`, `D`\>
+[`AsyncMemoizeConfig`](../../memoize-async.types/interfaces/AsyncMemoizeConfig)\<`T`, `D`\>
 
 Configuration for memoization
 
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 The decorator function
 
@@ -150,7 +150,7 @@ const [product1, product2] = await Promise.all([
 
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(`expirationTimeMs`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+> **memoizeAsync**\<`T`, `D`\>(`expirationTimeMs`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 Defined in: [memoize-async/memoize-async.ts:109](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L109)
 
@@ -182,7 +182,7 @@ Cache expiration time in milliseconds
 
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable.md)\<`T`, `D`\>
+[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
 The decorator function
 

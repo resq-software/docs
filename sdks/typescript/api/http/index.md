@@ -2,6 +2,6 @@
 
 ## Modules
 
-- [fetcher](./fetcher/index.md)
-- [index](./index/index.md)
-- [security](./security/index.md)
+- [fetcher](./fetcher)
+- [index](./index)
+- [security](./security)

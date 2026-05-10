@@ -6,7 +6,7 @@ Redis-backed rate limit store using @upstash/ratelimit
 
 ## Implements
 
-- [`IRateLimitStore`](../interfaces/IRateLimitStore.md)
+- [`IRateLimitStore`](../interfaces/IRateLimitStore)
 
 ## Constructors
 
@@ -54,7 +54,7 @@ Defined in: [rate-limit.ts:81](https://github.com/resq-software/npm/blob/f2ab5fc
 
 #### Implementation of
 
-[`IRateLimitStore`](../interfaces/IRateLimitStore.md).[`check`](../interfaces/IRateLimitStore.md#check)
+[`IRateLimitStore`](../interfaces/IRateLimitStore).[`check`](../interfaces/IRateLimitStore#check)
 
 ***
 
@@ -76,4 +76,4 @@ Defined in: [rate-limit.ts:93](https://github.com/resq-software/npm/blob/f2ab5fc
 
 #### Implementation of
 
-[`IRateLimitStore`](../interfaces/IRateLimitStore.md).[`reset`](../interfaces/IRateLimitStore.md#reset)
+[`IRateLimitStore`](../interfaces/IRateLimitStore).[`reset`](../interfaces/IRateLimitStore#reset)

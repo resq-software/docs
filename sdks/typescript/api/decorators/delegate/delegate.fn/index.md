@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [delegateFn](./functions/delegateFn.md)
+- [delegateFn](./functions/delegateFn)

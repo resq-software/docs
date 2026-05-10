@@ -2,10 +2,10 @@
 
 ## Interfaces
 
-- [RateLimitAsyncCounter](./interfaces/RateLimitAsyncCounter.md)
-- [RateLimitConfigs](./interfaces/RateLimitConfigs.md)
-- [RateLimitCounter](./interfaces/RateLimitCounter.md)
+- [RateLimitAsyncCounter](./interfaces/RateLimitAsyncCounter)
+- [RateLimitConfigs](./interfaces/RateLimitConfigs)
+- [RateLimitCounter](./interfaces/RateLimitCounter)
 
 ## Type Aliases
 
-- [RateLimitable](./type-aliases/RateLimitable.md)
+- [RateLimitable](./type-aliases/RateLimitable)

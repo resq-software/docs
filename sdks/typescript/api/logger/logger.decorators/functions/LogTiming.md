@@ -11,7 +11,7 @@ Useful for performance monitoring.
 
 ### options?
 
-[`LogTimingOptions`](../../logger.types/interfaces/LogTimingOptions.md) = `{}`
+[`LogTimingOptions`](../../logger.types/interfaces/LogTimingOptions) = `{}`
 
 Configuration options
 

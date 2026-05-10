@@ -1,6 +1,6 @@
 # Type Alias: Memoizable\<T, D\>
 
-> **Memoizable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method.md)\<`D`\>\>
+> **Memoizable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
 Defined in: [memoize/memoize.types.ts:129](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L129)
 
@@ -36,13 +36,13 @@ The name of the method being decorated
 
 ### descriptor
 
-`TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method.md)\<`D`\>\>
+`TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
 The property descriptor
 
 ## Returns
 
-`TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method.md)\<`D`\>\>
+`TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
 The modified descriptor
 

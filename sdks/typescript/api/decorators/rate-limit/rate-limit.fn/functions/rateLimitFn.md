@@ -1,6 +1,6 @@
 # Function: rateLimitFn()
 
-> **rateLimitFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method.md)\<`D` \| `undefined`, `A`\>
+> **rateLimitFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D` \| `undefined`, `A`\>
 
 Defined in: [rate-limit/rate-limit.fn.ts:56](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.fn.ts#L56)
 
@@ -24,19 +24,19 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to rate limit
 
 ### config
 
-[`RateLimitConfigs`](../../rate-limit.types/interfaces/RateLimitConfigs.md)
+[`RateLimitConfigs`](../../rate-limit.types/interfaces/RateLimitConfigs)
 
 The rate limit configuration
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D` \| `undefined`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D` \| `undefined`, `A`\>
 
 A rate-limited method
 

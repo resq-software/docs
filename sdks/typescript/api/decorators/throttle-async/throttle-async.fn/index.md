@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [throttleAsyncFn](./functions/throttleAsyncFn.md)
+- [throttleAsyncFn](./functions/throttleAsyncFn)

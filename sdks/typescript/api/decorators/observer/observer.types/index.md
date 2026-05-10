@@ -2,4 +2,4 @@
 
 ## Type Aliases
 
-- [ObserverCallback](./type-aliases/ObserverCallback.md)
+- [ObserverCallback](./type-aliases/ObserverCallback)

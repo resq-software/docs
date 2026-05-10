@@ -2,4 +2,4 @@
 
 ## Type Aliases
 
-- [Delegatable](./type-aliases/Delegatable.md)
+- [Delegatable](./type-aliases/Delegatable)

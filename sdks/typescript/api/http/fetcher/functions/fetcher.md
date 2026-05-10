@@ -2,7 +2,7 @@
 
 ## Call Signature
 
-> **fetcher**\<`T`\>(`input`, `method?`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **fetcher**\<`T`\>(`input`, `method?`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:366](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L366)
 
@@ -24,17 +24,17 @@ Defined in: [packages/http/src/fetcher.ts:366](https://github.com/resq-software/
 
 #### options?
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`T`\>
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`T`\>
 
 #### params?
 
 ### Returns
 
-`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 ## Call Signature
 
-> **fetcher**\<`S`\>(`input`, `method`, `options`, `params?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **fetcher**\<`S`\>(`input`, `method`, `options`, `params?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:373](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L373)
 
@@ -56,17 +56,17 @@ Defined in: [packages/http/src/fetcher.ts:373](https://github.com/resq-software/
 
 #### options
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`Type`\<`S`\>\> & `object`
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`Type`\<`S`\>\> & `object`
 
 #### params?
 
 ### Returns
 
-`Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 ## Call Signature
 
-> **fetcher**\<`T`\>(`input`, `method`, `options?`, `params?`, `body?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **fetcher**\<`T`\>(`input`, `method`, `options?`, `params?`, `body?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:384](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L384)
 
@@ -88,7 +88,7 @@ Defined in: [packages/http/src/fetcher.ts:384](https://github.com/resq-software/
 
 #### options?
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`T`\>
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`T`\>
 
 #### params?
 
@@ -98,11 +98,11 @@ Defined in: [packages/http/src/fetcher.ts:384](https://github.com/resq-software/
 
 ### Returns
 
-`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 ## Call Signature
 
-> **fetcher**\<`S`\>(`input`, `method`, `options`, `params?`, `body?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **fetcher**\<`S`\>(`input`, `method`, `options`, `params?`, `body?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:392](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L392)
 
@@ -124,7 +124,7 @@ Defined in: [packages/http/src/fetcher.ts:392](https://github.com/resq-software/
 
 #### options
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`Type`\<`S`\>\> & `object`
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`Type`\<`S`\>\> & `object`
 
 #### params?
 
@@ -134,11 +134,11 @@ Defined in: [packages/http/src/fetcher.ts:392](https://github.com/resq-software/
 
 ### Returns
 
-`Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 ## Call Signature
 
-> **fetcher**\<`T`\>(`input`, `method`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+> **fetcher**\<`T`\>(`input`, `method`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
 Defined in: [packages/http/src/fetcher.ts:404](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L404)
 
@@ -160,10 +160,10 @@ Defined in: [packages/http/src/fetcher.ts:404](https://github.com/resq-software/
 
 #### options?
 
-[`FetcherOptions`](../interfaces/FetcherOptions.md)\<`T`\>
+[`FetcherOptions`](../interfaces/FetcherOptions)\<`T`\>
 
 #### params?
 
 ### Returns
 
-`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError.md) \| [`FetcherError`](../classes/FetcherError.md), `HttpClient`\>
+`Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>

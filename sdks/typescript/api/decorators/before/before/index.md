@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [before](./functions/before.md)
+- [before](./functions/before)

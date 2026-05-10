@@ -2,9 +2,9 @@
 
 ## Interfaces
 
-- [AfterConfig](./interfaces/AfterConfig.md)
-- [AfterParams](./interfaces/AfterParams.md)
+- [AfterConfig](./interfaces/AfterConfig)
+- [AfterParams](./interfaces/AfterParams)
 
 ## Type Aliases
 
-- [AfterFunc](./type-aliases/AfterFunc.md)
+- [AfterFunc](./type-aliases/AfterFunc)

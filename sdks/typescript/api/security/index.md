@@ -2,7 +2,7 @@
 
 ## Modules
 
-- [crypto](./crypto/index.md)
-- [index](./index/index.md)
-- [sanitize](./sanitize/index.md)
-- [validators](./validators/index.md)
+- [crypto](./crypto)
+- [index](./index)
+- [sanitize](./sanitize)
+- [validators](./validators)

@@ -10,7 +10,7 @@ Function type for reporting execution time data.
 
 ### data
 
-[`ExactTimeReportData`](../interfaces/ExactTimeReportData.md)
+[`ExactTimeReportData`](../interfaces/ExactTimeReportData)
 
 The execution time report data
 

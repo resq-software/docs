@@ -2,8 +2,8 @@
 
 ## Classes
 
-- [Queue](./classes/Queue.md)
+- [Queue](./classes/Queue)
 
 ## Interfaces
 
-- [QueueNode](./interfaces/QueueNode.md)
+- [QueueNode](./interfaces/QueueNode)

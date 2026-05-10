@@ -2,21 +2,21 @@
 
 ## Enumerations
 
-- [LogLevel](./enumerations/LogLevel.md)
+- [LogLevel](./enumerations/LogLevel)
 
 ## Classes
 
-- [Logger](./classes/Logger.md)
+- [Logger](./classes/Logger)
 
 ## Interfaces
 
-- [LogData](./interfaces/LogData.md)
-- [LoggerOptions](./interfaces/LoggerOptions.md)
+- [LogData](./interfaces/LogData)
+- [LoggerOptions](./interfaces/LoggerOptions)
 
 ## Type Aliases
 
-- [ColorKey](./type-aliases/ColorKey.md)
+- [ColorKey](./type-aliases/ColorKey)
 
 ## Variables
 
-- [logger](./variables/logger.md)
+- [logger](./variables/logger)

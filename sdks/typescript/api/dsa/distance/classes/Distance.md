@@ -32,19 +32,19 @@ Defined in: [distance.ts:419](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### formula
 
-[`DistanceFormula`](../type-aliases/DistanceFormula.md)
+[`DistanceFormula`](../type-aliases/DistanceFormula)
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md) \| [`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D) \| [`Coordinates3D`](../interfaces/Coordinates3D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md) \| [`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D) \| [`Coordinates3D`](../interfaces/Coordinates3D)
 
 ##### options?
 
-[`DistanceOptions`](../interfaces/DistanceOptions.md) = `{}`
+[`DistanceOptions`](../interfaces/DistanceOptions) = `{}`
 
 #### Returns
 
@@ -54,7 +54,7 @@ Defined in: [distance.ts:419](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ### calculateSafe()
 
-> `static` **calculateSafe**(`formula`, `point1`, `point2`, `options?`): [`DistanceResult`](../interfaces/DistanceResult.md)
+> `static` **calculateSafe**(`formula`, `point1`, `point2`, `options?`): [`DistanceResult`](../interfaces/DistanceResult)
 
 Defined in: [distance.ts:455](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L455)
 
@@ -62,23 +62,23 @@ Defined in: [distance.ts:455](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### formula
 
-[`DistanceFormula`](../type-aliases/DistanceFormula.md)
+[`DistanceFormula`](../type-aliases/DistanceFormula)
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md) \| [`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D) \| [`Coordinates3D`](../interfaces/Coordinates3D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md) \| [`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D) \| [`Coordinates3D`](../interfaces/Coordinates3D)
 
 ##### options?
 
-[`DistanceOptions`](../interfaces/DistanceOptions.md) = `{}`
+[`DistanceOptions`](../interfaces/DistanceOptions) = `{}`
 
 #### Returns
 
-[`DistanceResult`](../interfaces/DistanceResult.md)
+[`DistanceResult`](../interfaces/DistanceResult)
 
 ***
 
@@ -92,11 +92,11 @@ Defined in: [distance.ts:327](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -114,11 +114,11 @@ Defined in: [distance.ts:359](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -136,11 +136,11 @@ Defined in: [distance.ts:210](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -158,11 +158,11 @@ Defined in: [distance.ts:377](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -180,11 +180,11 @@ Defined in: [distance.ts:219](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -202,11 +202,11 @@ Defined in: [distance.ts:236](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -224,11 +224,11 @@ Defined in: [distance.ts:389](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -246,11 +246,11 @@ Defined in: [distance.ts:320](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -268,11 +268,11 @@ Defined in: [distance.ts:334](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### p?
 
@@ -286,7 +286,7 @@ Defined in: [distance.ts:334](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ### recommendGeoFormula()
 
-> `static` **recommendGeoFormula**(`maxDistanceKm?`): [`DistanceFormula`](../type-aliases/DistanceFormula.md)
+> `static` **recommendGeoFormula**(`maxDistanceKm?`): [`DistanceFormula`](../type-aliases/DistanceFormula)
 
 Defined in: [distance.ts:478](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L478)
 
@@ -298,7 +298,7 @@ Defined in: [distance.ts:478](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 #### Returns
 
-[`DistanceFormula`](../type-aliases/DistanceFormula.md)
+[`DistanceFormula`](../type-aliases/DistanceFormula)
 
 ***
 
@@ -312,11 +312,11 @@ Defined in: [distance.ts:404](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 
@@ -334,11 +334,11 @@ Defined in: [distance.ts:352](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates3D`](../interfaces/Coordinates3D)
 
 ##### point2
 
-[`Coordinates3D`](../interfaces/Coordinates3D.md)
+[`Coordinates3D`](../interfaces/Coordinates3D)
 
 #### Returns
 
@@ -356,11 +356,11 @@ Defined in: [distance.ts:240](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### point1
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 ##### point2
 
-[`Coordinates2D`](../interfaces/Coordinates2D.md)
+[`Coordinates2D`](../interfaces/Coordinates2D)
 
 #### Returns
 

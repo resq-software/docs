@@ -32,7 +32,7 @@ Defined in: [lru-cache.ts:56](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 ##### options
 
-[`LRUCacheOptions`](../interfaces/LRUCacheOptions.md)
+[`LRUCacheOptions`](../interfaces/LRUCacheOptions)
 
 #### Returns
 

@@ -1,6 +1,6 @@
 # Function: delegateFn()
 
-> **delegateFn**\<`D`, `A`\>(`originalMethod`, `keyResolver?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+> **delegateFn**\<`D`, `A`\>(`originalMethod`, `keyResolver?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 Defined in: [delegate/delegate.fn.ts:77](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/delegate/delegate.fn.ts#L77)
 
@@ -26,7 +26,7 @@ The argument types of the original method
 
 ### originalMethod
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The async method to wrap
 
@@ -38,7 +38,7 @@ Optional function to generate cache keys
 
 ## Returns
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`, `A`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
 The delegated method
 

@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [selfExecute](./functions/selfExecute.md)
+- [selfExecute](./functions/selfExecute)

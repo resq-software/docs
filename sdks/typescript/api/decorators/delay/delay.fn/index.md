@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [delayFn](./functions/delayFn.md)
+- [delayFn](./functions/delayFn)

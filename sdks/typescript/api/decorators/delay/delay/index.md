@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [delay](./functions/delay.md)
+- [delay](./functions/delay)

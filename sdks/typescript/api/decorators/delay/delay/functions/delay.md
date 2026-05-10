@@ -1,6 +1,6 @@
 # Function: delay()
 
-> **delay**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **delay**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [delay/delay.ts:48](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/delay/delay.ts#L48)
 
@@ -24,7 +24,7 @@ The delay time in milliseconds
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

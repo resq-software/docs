@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [throttleFn](./functions/throttleFn.md)
+- [throttleFn](./functions/throttleFn)

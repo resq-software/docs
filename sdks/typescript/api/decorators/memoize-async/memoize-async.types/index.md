@@ -2,9 +2,9 @@
 
 ## Interfaces
 
-- [AsyncCache](./interfaces/AsyncCache.md)
-- [AsyncMemoizeConfig](./interfaces/AsyncMemoizeConfig.md)
+- [AsyncCache](./interfaces/AsyncCache)
+- [AsyncMemoizeConfig](./interfaces/AsyncMemoizeConfig)
 
 ## Type Aliases
 
-- [AsyncMemoizable](./type-aliases/AsyncMemoizable.md)
+- [AsyncMemoizable](./type-aliases/AsyncMemoizable)

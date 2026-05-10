@@ -2,10 +2,10 @@
 
 ## Interfaces
 
-- [Cache](./interfaces/Cache.md)
-- [MemoizeConfig](./interfaces/MemoizeConfig.md)
+- [Cache](./interfaces/Cache)
+- [MemoizeConfig](./interfaces/MemoizeConfig)
 
 ## Type Aliases
 
-- [KeyResolver](./type-aliases/KeyResolver.md)
-- [Memoizable](./type-aliases/Memoizable.md)
+- [KeyResolver](./type-aliases/KeyResolver)
+- [Memoizable](./type-aliases/Memoizable)

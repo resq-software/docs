@@ -2,4 +2,4 @@
 
 ## Type Aliases
 
-- [Readonlyable](./type-aliases/Readonlyable.md)
+- [Readonlyable](./type-aliases/Readonlyable)

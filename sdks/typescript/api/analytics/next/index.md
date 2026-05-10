@@ -2,9 +2,9 @@
 
 ## Interfaces
 
-- [AnalyticsRewriteOptions](./interfaces/AnalyticsRewriteOptions.md)
+- [AnalyticsRewriteOptions](./interfaces/AnalyticsRewriteOptions)
 
 ## Functions
 
-- [ga4Stream](./functions/ga4Stream.md)
-- [withAnalyticsRewrites](./functions/withAnalyticsRewrites.md)
+- [ga4Stream](./functions/ga4Stream)
+- [withAnalyticsRewrites](./functions/withAnalyticsRewrites)

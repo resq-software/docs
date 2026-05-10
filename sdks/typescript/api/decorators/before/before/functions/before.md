@@ -1,6 +1,6 @@
 # Function: before()
 
-> **before**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **before**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [before/before.ts:75](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.ts#L75)
 
@@ -19,13 +19,13 @@ The type of the class containing the decorated method
 
 ### config
 
-[`BeforeConfig`](../../before.types/interfaces/BeforeConfig.md)\<`T`\>
+[`BeforeConfig`](../../before.types/interfaces/BeforeConfig)\<`T`\>
 
 Configuration for the before hook
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

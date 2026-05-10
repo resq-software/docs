@@ -14,7 +14,7 @@ Defined in: [react/index.ts:33](https://github.com/resq-software/npm/blob/f2ab5f
 
 ### config
 
-> **config**: [`AnalyticsConfig`](../../index/interfaces/AnalyticsConfig.md)
+> **config**: [`AnalyticsConfig`](../../index/interfaces/AnalyticsConfig)
 
 Defined in: [react/index.ts:31](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L31)
 

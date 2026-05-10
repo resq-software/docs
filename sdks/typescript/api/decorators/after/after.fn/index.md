@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [afterFn](./functions/afterFn.md)
+- [afterFn](./functions/afterFn)

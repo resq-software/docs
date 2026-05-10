@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [bind](./functions/bind.md)
+- [bind](./functions/bind)

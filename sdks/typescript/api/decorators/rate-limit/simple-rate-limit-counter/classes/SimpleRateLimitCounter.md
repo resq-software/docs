@@ -30,7 +30,7 @@ console.log(counter.getCount('user-1')); // 1
 
 ## Implements
 
-- [`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter.md)
+- [`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter)
 
 ## Constructors
 
@@ -91,7 +91,7 @@ console.log(counter.getCount('key')); // 0 (key removed from map)
 
 #### Implementation of
 
-[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter.md).[`dec`](../../rate-limit.types/interfaces/RateLimitCounter.md#dec)
+[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter).[`dec`](../../rate-limit.types/interfaces/RateLimitCounter#dec)
 
 ***
 
@@ -128,7 +128,7 @@ console.log(counter.getCount('key')); // 1
 
 #### Implementation of
 
-[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter.md).[`getCount`](../../rate-limit.types/interfaces/RateLimitCounter.md#getcount)
+[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter).[`getCount`](../../rate-limit.types/interfaces/RateLimitCounter#getcount)
 
 ***
 
@@ -163,4 +163,4 @@ console.log(counter.getCount('user-123')); // 2
 
 #### Implementation of
 
-[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter.md).[`inc`](../../rate-limit.types/interfaces/RateLimitCounter.md#inc)
+[`RateLimitCounter`](../../rate-limit.types/interfaces/RateLimitCounter).[`inc`](../../rate-limit.types/interfaces/RateLimitCounter#inc)

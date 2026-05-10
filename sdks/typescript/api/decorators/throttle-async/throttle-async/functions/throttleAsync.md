@@ -1,6 +1,6 @@
 # Function: throttleAsync()
 
-> **throttleAsync**\<`T`, `D`\>(`parallelCalls?`): [`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+> **throttleAsync**\<`T`, `D`\>(`parallelCalls?`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 Defined in: [throttle-async/throttle-async.ts:82](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle-async/throttle-async.ts#L82)
 
@@ -31,7 +31,7 @@ Maximum number of concurrent calls allowed
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator.md)\<`T`\>
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
 The decorator function
 

@@ -53,7 +53,7 @@ Creates a new Priority Queue
 
 ##### options?
 
-[`PriorityQueueOptions`](../interfaces/PriorityQueueOptions.md)\<`T`\> = `{}`
+[`PriorityQueueOptions`](../interfaces/PriorityQueueOptions)\<`T`\> = `{}`
 
 Configuration options
 
@@ -225,7 +225,7 @@ This queue for chaining
 
 ### getStats()
 
-> **getStats**(): [`PriorityQueueStats`](../interfaces/PriorityQueueStats.md)
+> **getStats**(): [`PriorityQueueStats`](../interfaces/PriorityQueueStats)
 
 Defined in: [priority-queue.ts:296](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L296)
 
@@ -233,7 +233,7 @@ Gets queue statistics
 
 #### Returns
 
-[`PriorityQueueStats`](../interfaces/PriorityQueueStats.md)
+[`PriorityQueueStats`](../interfaces/PriorityQueueStats)
 
 Queue statistics
 
@@ -378,7 +378,7 @@ Elements to add
 
 ##### options?
 
-[`PriorityQueueOptions`](../interfaces/PriorityQueueOptions.md)\<`T`\> = `{}`
+[`PriorityQueueOptions`](../interfaces/PriorityQueueOptions)\<`T`\> = `{}`
 
 Queue options
 

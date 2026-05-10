@@ -4,4 +4,4 @@
 
 ### throttle
 
-Re-exports [throttle](./throttle/functions/throttle.md)
+Re-exports [throttle](./throttle/functions/throttle)

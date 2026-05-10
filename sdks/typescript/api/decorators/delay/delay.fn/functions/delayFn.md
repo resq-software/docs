@@ -1,6 +1,6 @@
 # Function: delayFn()
 
-> **delayFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+> **delayFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 Defined in: [delay/delay.fn.ts:45](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/delay/delay.fn.ts#L45)
 
@@ -24,7 +24,7 @@ The argument types of the original method
 
 ### originalMethod
 
-[`Method`](../../../types/type-aliases/Method.md)\<`D`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
 The method to delay
 
@@ -36,7 +36,7 @@ The delay time in milliseconds
 
 ## Returns
 
-[`Method`](../../../types/type-aliases/Method.md)\<`void`, `A`\>
+[`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
 The delayed method
 

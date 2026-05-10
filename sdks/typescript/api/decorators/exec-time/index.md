@@ -4,28 +4,28 @@
 
 ### ExactTimeReportable
 
-Re-exports [ExactTimeReportable](./exec-time.types/type-aliases/ExactTimeReportable.md)
+Re-exports [ExactTimeReportable](./exec-time.types/type-aliases/ExactTimeReportable)
 
 ***
 
 ### ExactTimeReportData
 
-Re-exports [ExactTimeReportData](./exec-time.types/interfaces/ExactTimeReportData.md)
+Re-exports [ExactTimeReportData](./exec-time.types/interfaces/ExactTimeReportData)
 
 ***
 
 ### execTime
 
-Re-exports [execTime](./exec-time/functions/execTime.md)
+Re-exports [execTime](./exec-time/functions/execTime)
 
 ***
 
 ### execTimeFn
 
-Re-exports [execTimeFn](./exec-time.fn/functions/execTimeFn.md)
+Re-exports [execTimeFn](./exec-time.fn/functions/execTimeFn)
 
 ***
 
 ### ReportFunction
 
-Re-exports [ReportFunction](./exec-time.types/type-aliases/ReportFunction.md)
+Re-exports [ReportFunction](./exec-time.types/type-aliases/ReportFunction)

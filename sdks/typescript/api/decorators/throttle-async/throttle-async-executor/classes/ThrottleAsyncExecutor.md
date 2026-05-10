@@ -50,7 +50,7 @@ Creates a new ThrottleAsyncExecutor instance.
 
 ##### fun
 
-[`AsyncMethod`](../../../types/type-aliases/AsyncMethod.md)\<`D`\>
+[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>
 
 The async method to throttle
 

@@ -2,48 +2,48 @@
 
 ## Classes
 
-- [Analytics](./classes/Analytics.md)
+- [Analytics](./classes/Analytics)
 
 ## Interfaces
 
-- [AnalyticsConfig](./interfaces/AnalyticsConfig.md)
-- [AnalyticsEvents](./interfaces/AnalyticsEvents.md)
-- [GA4ProviderConfig](./interfaces/GA4ProviderConfig.md)
-- [PostHogProviderConfig](./interfaces/PostHogProviderConfig.md)
+- [AnalyticsConfig](./interfaces/AnalyticsConfig)
+- [AnalyticsEvents](./interfaces/AnalyticsEvents)
+- [GA4ProviderConfig](./interfaces/GA4ProviderConfig)
+- [PostHogProviderConfig](./interfaces/PostHogProviderConfig)
 
 ## Variables
 
-- [analytics](./variables/analytics.md)
-- [track](./variables/track.md)
+- [analytics](./variables/analytics)
+- [track](./variables/track)
 
 ## Functions
 
-- [identify](./functions/identify.md)
-- [inferCookieDomain](./functions/inferCookieDomain.md)
-- [initAnalytics](./functions/initAnalytics.md)
-- [pageview](./functions/pageview.md)
-- [reset](./functions/reset.md)
+- [identify](./functions/identify)
+- [inferCookieDomain](./functions/inferCookieDomain)
+- [initAnalytics](./functions/initAnalytics)
+- [pageview](./functions/pageview)
+- [reset](./functions/reset)
 
 ## References
 
 ### GA4\_ID\_PATTERN
 
-Re-exports [GA4_ID_PATTERN](../resq/variables/GA4_ID_PATTERN.md)
+Re-exports [GA4_ID_PATTERN](../resq/variables/GA4_ID_PATTERN)
 
 ***
 
 ### resolveResqCookieDomain
 
-Re-exports [resolveResqCookieDomain](../resq/functions/resolveResqCookieDomain.md)
+Re-exports [resolveResqCookieDomain](../resq/functions/resolveResqCookieDomain)
 
 ***
 
 ### RESQ\_SUBDOMAIN\_ALLOWLIST
 
-Re-exports [RESQ_SUBDOMAIN_ALLOWLIST](../resq/variables/RESQ_SUBDOMAIN_ALLOWLIST.md)
+Re-exports [RESQ_SUBDOMAIN_ALLOWLIST](../resq/variables/RESQ_SUBDOMAIN_ALLOWLIST)
 
 ***
 
 ### sanitizeGa4Id
 
-Re-exports [sanitizeGa4Id](../resq/functions/sanitizeGa4Id.md)
+Re-exports [sanitizeGa4Id](../resq/functions/sanitizeGa4Id)

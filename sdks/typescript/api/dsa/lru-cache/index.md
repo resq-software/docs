@@ -2,8 +2,8 @@
 
 ## Classes
 
-- [LRUCache](./classes/LRUCache.md)
+- [LRUCache](./classes/LRUCache)
 
 ## Interfaces
 
-- [LRUCacheOptions](./interfaces/LRUCacheOptions.md)
+- [LRUCacheOptions](./interfaces/LRUCacheOptions)

@@ -17,7 +17,7 @@ Supports both legacy (TypeScript) and standard (Stage 3) decorator formats.
 
 ### arg?
 
-`string` \| [`ReportFunction`](../../exec-time.types/type-aliases/ReportFunction.md)
+`string` \| [`ReportFunction`](../../exec-time.types/type-aliases/ReportFunction)
 
 Optional reporter function or label string
 

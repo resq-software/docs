@@ -18,7 +18,7 @@ The return type of the decorated method
 
 ### x?
 
-[`AfterParams`](../interfaces/AfterParams.md)\<`D`\>
+[`AfterParams`](../interfaces/AfterParams)\<`D`\>
 
 Parameters containing args and response
 

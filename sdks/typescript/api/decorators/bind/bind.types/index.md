@@ -2,4 +2,4 @@
 
 ## Interfaces
 
-- [BindConfig](./interfaces/BindConfig.md)
+- [BindConfig](./interfaces/BindConfig)

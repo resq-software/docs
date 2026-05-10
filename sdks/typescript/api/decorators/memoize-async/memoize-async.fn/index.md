@@ -2,4 +2,4 @@
 
 ## Functions
 
-- [memoizeAsyncFn](./functions/memoizeAsyncFn.md)
+- [memoizeAsyncFn](./functions/memoizeAsyncFn)
