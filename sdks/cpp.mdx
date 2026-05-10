@@ -1,0 +1,48 @@
+---
+title: "C++ SDK"
+description: "Install ResQ C++ libraries via vcpkg or build them from source for high-performance integration paths."
+---
+
+The ResQ C++ libraries at
+[`resq-software/vcpkg`](https://github.com/resq-software/vcpkg) ship as
+header-only and static-library packages installable through the
+[vcpkg](https://vcpkg.io) package manager. They are intended for
+performance-sensitive components that integrate with the ResQ platform
+from native code.
+
+| Package | Role |
+|---------|------|
+| `resq-common` | Shared utilities: `Result<T>`, string/file/env helpers, common DSA |
+
+<Note>
+  Each package's headers live under `packages/<pkg>/include/resq/`.
+  Detailed type and function reference is regenerated from the headers'
+  Doxygen comments and lives under Generated Package References → C++.
+</Note>
+
+## Install via vcpkg
+
+```bash
+vcpkg install resq-common
+```
+
+Then in your `CMakeLists.txt`:
+
+```cmake
+find_package(resq-common CONFIG REQUIRED)
+target_link_libraries(your_target PRIVATE resq::common)
+```
+
+## Build from source
+
+```bash
+git clone https://github.com/resq-software/vcpkg
+cd vcpkg
+cmake -S . -B build
+cmake --build build
+```
+
+The build emits static libraries; headers are in
+`packages/<pkg>/include/`. See the
+[README](https://github.com/resq-software/vcpkg#readme) for the
+authoritative integration guide.

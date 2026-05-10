@@ -61,7 +61,8 @@
                   "sdks/typescript",
                   "sdks/python",
                   "sdks/rust",
-                  "sdks/dotnet"
+                  "sdks/dotnet",
+                  "sdks/cpp"
                 ]
               },
               {
