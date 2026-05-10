@@ -78,30 +78,45 @@ jobs:
           out_root = pathlib.Path(os.environ["OUTPUT_DIR"])
           out_root.mkdir(parents=True, exist_ok=True)
 
-          # Workspace version is the fallback when a per-crate
-          # version isn't pinned (Cargo allows version.workspace = true).
-          ws = pathlib.Path("Cargo.toml").read_text(encoding="utf-8")
-          ws_version_m = re.search(
-              r"\[workspace\.package\][^\[]*?version\s*=\s*\"([^\"]+)\"",
-              ws,
-              re.S,
-          )
-          ws_version = ws_version_m.group(1) if ws_version_m else "unknown"
+          # Workspace fallbacks for fields a crate may inherit via
+          # `<field>.workspace = true`. Section-scoped extraction (only
+          # read keys inside [workspace.package]) avoids matching
+          # `version` lines inside other tables further down the file.
+          def section(text: str, header: str) -> str:
+              # Match from the [section] header to the next [...]
+              # header (or end of file). Anchored to start-of-line so
+              # `[dependencies.foo]` doesn't match `[foo]`.
+              m = re.search(
+                  rf"^\[{re.escape(header)}\]\s*\n(.*?)(?=^\[|\Z)",
+                  text,
+                  re.S | re.M,
+              )
+              return m.group(1) if m else ""
+
+          def field_in(section_text: str, name: str) -> str:
+              m = re.search(
+                  rf'^\s*{re.escape(name)}\s*=\s*"([^"]+)"',
+                  section_text,
+                  re.M,
+              )
+              return m.group(1) if m else ""
+
+          ws_text = pathlib.Path("Cargo.toml").read_text(encoding="utf-8")
+          ws_pkg = section(ws_text, "workspace.package")
+          ws_version = field_in(ws_pkg, "version") or "unknown"
+          ws_license = field_in(ws_pkg, "license") or "Apache-2.0"
 
           def parse_crate_meta(cargo_toml: pathlib.Path) -> dict:
               text = cargo_toml.read_text(encoding="utf-8")
-              pkg_m = re.search(r"\[package\](.*?)(?=^\[|\Z)", text, re.S | re.M)
-              pkg = pkg_m.group(1) if pkg_m else ""
-
-              def field(name: str) -> str:
-                  m = re.search(rf'^\s*{name}\s*=\s*"([^"]+)"', pkg, re.M)
-                  return m.group(1) if m else ""
-
+              pkg = section(text, "package")
               return {
-                  "name": field("name"),
-                  "version": field("version") or ws_version,
-                  "description": field("description"),
-                  "license": field("license") or "Apache-2.0",
+                  "name": field_in(pkg, "name"),
+                  "version": field_in(pkg, "version") or ws_version,
+                  "description": field_in(pkg, "description"),
+                  # Cargo allows `license.workspace = true` for
+                  # inheritance — when the crate doesn't pin a string
+                  # license, fall through to the workspace value.
+                  "license": field_in(pkg, "license") or ws_license,
               }
 
           crates_dir = pathlib.Path("crates")
@@ -161,11 +176,20 @@ jobs:
 
       - name: Escape MDX-special characters outside code regions
         # Mintlify parses .md as MDX. Literal `{ ... }` in prose is
-        # interpreted as a JSX expression and trips the broken-links
-        # check; literal `<` followed by `=`, digits, or whitespace
-        # makes the parser look for a tag name and bail. Same walker
-        # as the Python template — see api-docs.python.yml for the
-        # backtick-span-aware logic.
+        # interpreted as a JSX expression; literal `<X>` (e.g.
+        # `Result<T>`, `Option<u8>`) is parsed as a JSX component
+        # reference, which fails when the "component" isn't defined.
+        # Backtick-span detection (same walker as the Python template
+        # — see api-docs.python.yml) keeps code spans verbatim.
+        #
+        # Unlike the Python template, this one is more aggressive
+        # about `<`: it escapes `<` followed by anything except `!`
+        # (HTML comment) or `/` (closing tag). The Python template
+        # passes through `<X` where X is a letter because
+        # pydoc-markdown emits `<a id="...">` HTML anchors that need
+        # to render. We don't generate those here, and Rust prose is
+        # full of bare `Result<T>` references that would otherwise
+        # break the build.
         working-directory: ${{ env.OUTPUT_DIR }}
         run: |
           find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
@@ -209,7 +233,10 @@ jobs:
                     out = out "&#125;"; i++
                   } else if (c == "<") {
                     next_c = (i + 1 <= n) ? substr(s, i + 1, 1) : ""
-                    if (next_c ~ /[A-Za-z!\/]/) {
+                    # Pass through HTML comments (<!--) and closing
+                    # tags (</foo>); escape everything else,
+                    # including `<X>` template syntax.
+                    if (next_c == "!" || next_c == "/") {
                       out = out c; i++
                     } else {
                       out = out "&lt;"; i++

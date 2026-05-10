@@ -135,24 +135,52 @@ jobs:
           fi
 
       - name: Strip moxygen breadcrumbs
-        # moxygen prepends a breadcrumb line on each page that
-        # references files we don't ship to the docs repo, breaking
-        # Mintlify's broken-links check.
+        # moxygen prepends a breadcrumb on the first line of each
+        # page like `[**parent**](parent.md)` linking to .md files
+        # we don't ship. Strip just the leading breadcrumb (line 1
+        # only) rather than every link line in the body, which would
+        # delete legitimate cross-references later in the document.
         working-directory: ${{ env.OUTPUT_DIR }}
         run: |
           find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
-            sed -i -E '/^\[.*\]\(.*\.md\)$/,/^$/d' "$f" || true
+            python3 - "$f" <<'PY'
+          import pathlib, re, sys
+          p = pathlib.Path(sys.argv[1])
+          lines = p.read_text(encoding="utf-8").splitlines(keepends=True)
+          # Strip leading breadcrumb-style lines (single markdown link
+          # to a .md target with optional bold text) plus any blank
+          # lines that follow it. Stop at the first non-breadcrumb,
+          # non-blank line.
+          breadcrumb = re.compile(r"^\[[^\]]+\]\([^)]*\.md\)\s*$")
+          i = 0
+          while i < len(lines):
+              s = lines[i].strip()
+              if not s or breadcrumb.match(s):
+                  i += 1
+                  continue
+              break
+          if i:
+              p.write_text("".join(lines[i:]), encoding="utf-8")
+          PY
           done
 
       - name: Escape MDX-special characters outside code regions
         # Mintlify parses .md as MDX. Literal `{ ... }` in prose is
-        # interpreted as a JSX expression and trips the broken-links
-        # check; literal `<` followed by `=`, digits, or whitespace
-        # makes the parser look for a tag name and bail. Same walker
-        # as the Python template — see api-docs.python.yml for the
-        # backtick-span-aware logic. Especially important here because
-        # C++ template syntax (`Result<T>`, `std::vector<int>`) is
-        # everywhere.
+        # interpreted as a JSX expression; literal `<X>` (e.g.
+        # `Result<T>`, `std::vector<int>`) is parsed as a JSX
+        # component reference, which fails when the "component" isn't
+        # defined. Backtick-span detection (same walker as the Python
+        # template — see api-docs.python.yml) keeps code spans
+        # verbatim.
+        #
+        # Unlike the Python template, this one is more aggressive
+        # about `<`: it escapes `<` followed by anything except `!`
+        # (HTML comment) or `/` (closing tag). The Python template
+        # passes through `<X` where X is a letter because
+        # pydoc-markdown emits `<a id="...">` HTML anchors that need
+        # to render. Doxygen-derived markdown can still legitimately
+        # contain template syntax in prose (e.g. function summaries),
+        # so escape-all is the safer rule here.
         working-directory: ${{ env.OUTPUT_DIR }}
         run: |
           find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
@@ -196,7 +224,10 @@ jobs:
                     out = out "&#125;"; i++
                   } else if (c == "<") {
                     next_c = (i + 1 <= n) ? substr(s, i + 1, 1) : ""
-                    if (next_c ~ /[A-Za-z!\/]/) {
+                    # Pass through HTML comments (<!--) and closing
+                    # tags (</foo>); escape everything else,
+                    # including `<X>` template syntax.
+                    if (next_c == "!" || next_c == "/") {
                       out = out c; i++
                     } else {
                       out = out "&lt;"; i++
