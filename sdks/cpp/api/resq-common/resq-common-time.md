@@ -4,8 +4,8 @@
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `void` | [`to_proto_timestamp`](#to_proto_timestamp) `inline` | Convert std::chrono::system_clock::time_point to google::protobuf::Timestamp. |
-| `std::chrono::system_clock::time_point` | [`from_proto_timestamp`](#from_proto_timestamp) `inline` | Convert google::protobuf::Timestamp to std::chrono::system_clock::time_point. |
+| `void` | [`to_proto_timestamp`](#to_proto_timestamp) | Convert std::chrono::system_clock::time_point to google::protobuf::Timestamp. |
+| `std::chrono::system_clock::time_point` | [`from_proto_timestamp`](#from_proto_timestamp) | Convert google::protobuf::Timestamp to std::chrono::system_clock::time_point. |
 
 ---
 

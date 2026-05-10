@@ -72,15 +72,15 @@ Maximum altitude affected (meters MSL)
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `bool` | [`contains_point`](#contains_point) `const` `inline` | Check if a point is inside the NFZ polygon (horizontal) |
-| `bool` | [`contains_altitude`](#contains_altitude) `const` `inline` | Check if an altitude is within the NFZ vertical bounds. |
-| `bool` | [`contains`](#contains-3) `const` `inline` | Check if a point (including altitude) is in the NFZ. |
+| `bool` | [`contains_point`](#contains_point) `const` | Check if a point is inside the NFZ polygon (horizontal) |
+| `bool` | [`contains_altitude`](#contains_altitude) `const` | Check if an altitude is within the NFZ vertical bounds. |
+| `bool` | [`contains`](#contains-3) `const` | Check if a point (including altitude) is in the NFZ. |
 
 ---
 
 #### contains_point
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool contains_point(const GeoPoint & point) const
@@ -98,7 +98,7 @@ true if point is inside the polygon
 
 #### contains_altitude
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool contains_altitude(double altitude_m) const
@@ -116,7 +116,7 @@ true if altitude is within the NFZ vertical extent
 
 #### contains
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool contains(const GeoPoint & point) const

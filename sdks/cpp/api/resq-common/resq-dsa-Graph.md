@@ -33,10 +33,10 @@ Self-loops and duplicate edges are supported
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `void` | [`add_edge`](#add_edge) `inline` | Add a directed edge to the graph. |
-| `std::vector< Id >` | [`bfs`](#bfs) `const` `inline` | Breadth-first search from a start vertex. |
-| `std::optional< PathResult >` | [`dijkstra`](#dijkstra) `const` `inline` | Dijkstra's algorithm for shortest path. |
-| `std::optional< PathResult >` | [`astar`](#astar) `const` `inline` | A* pathfinding algorithm. |
+| `void` | [`add_edge`](#add_edge) | Add a directed edge to the graph. |
+| `std::vector< Id >` | [`bfs`](#bfs) `const` | Breadth-first search from a start vertex. |
+| `std::optional< PathResult >` | [`dijkstra`](#dijkstra) `const` | Dijkstra's algorithm for shortest path. |
+| `std::optional< PathResult >` | [`astar`](#astar) `const` | A* pathfinding algorithm. |
 
 ---
 
@@ -76,7 +76,7 @@ g.add_edge(2, 3);        // Unweighted edge (weight=1)
 
 #### bfs
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::vector< Id > bfs(const Id & start) const
@@ -103,7 +103,7 @@ Does not consider edge weights (treats all as weight 1)
 
 #### dijkstra
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::optional< PathResult > dijkstra(const Id & start, const Id & end) const
@@ -153,7 +153,7 @@ if (result) {
 
 #### astar
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::optional< PathResult > astar(const Id & start, const Id & end, std::function< double(const Id &, const Id &)> h) const

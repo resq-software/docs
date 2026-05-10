@@ -29,12 +29,12 @@ Memory: O(limit_) elements maximum
 
 | Return | Name | Description |
 |--------|------|-------------|
-|  | [`BoundedHeap`](#boundedheap-1) `inline` | Construct a bounded heap. |
-| `void` | [`insert`](#insert) `inline` | Insert an element into the heap. |
-| `const T *` | [`peek`](#peek) `const` `inline` | Peek at the worst (highest-distance) element in the heap. |
-| `std::vector< T >` | [`to_sorted`](#to_sorted) `const` `inline` | Extract all elements sorted by distance. |
-| `std::size_t` | [`size`](#size) `const` `inline` | Get current number of elements in heap. |
-| `bool` | [`empty`](#empty) `const` `inline` | Check if heap is empty. |
+|  | [`BoundedHeap`](#boundedheap-1) | Construct a bounded heap. |
+| `void` | [`insert`](#insert) | Insert an element into the heap. |
+| `const T *` | [`peek`](#peek) `const` | Peek at the worst (highest-distance) element in the heap. |
+| `std::vector< T >` | [`to_sorted`](#to_sorted) `const` | Extract all elements sorted by distance. |
+| `std::size_t` | [`size`](#size) `const` | Get current number of elements in heap. |
+| `bool` | [`empty`](#empty) `const` | Check if heap is empty. |
 
 ---
 
@@ -85,7 +85,7 @@ Heap property is maintained after insert
 
 #### peek
 
-`const` `inline`
+`const`
 
 ```cpp
 inline const T * peek() const
@@ -105,7 +105,7 @@ The returned pointer is invalid after [insert()](#insert) or destruction
 
 #### to_sorted
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::vector< T > to_sorted() const
@@ -125,7 +125,7 @@ Returns copy of elements; original heap is unchanged
 
 #### size
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::size_t size() const
@@ -140,7 +140,7 @@ Number of elements (0 to limit_)
 
 #### empty
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool empty() const
@@ -208,8 +208,8 @@ Distance evaluation function.
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `void` | [`sift_up`](#sift_up) `inline` | Restore heap property by moving element up. |
-| `void` | [`sift_down`](#sift_down) `inline` | Restore heap property by moving element down. |
+| `void` | [`sift_up`](#sift_up) | Restore heap property by moving element up. |
+| `void` | [`sift_down`](#sift_down) | Restore heap property by moving element down. |
 
 ---
 

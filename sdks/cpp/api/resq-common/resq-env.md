@@ -4,11 +4,11 @@
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `std::string` | [`get_env_or`](#get_env_or) `inline` | Get environment variable with default value. |
-| `double` | [`get_env_double`](#get_env_double) `inline` | Get environment variable as double with default. |
-| `int` | [`get_env_int`](#get_env_int) `inline` | Get environment variable as int with default. |
-| `bool` | [`get_env_bool`](#get_env_bool) `inline` | Get environment variable as bool with default. |
-| `bool` | [`validate_url_env`](#validate_url_env) `inline` | Validate that a URL environment variable has a valid HTTP(S) scheme. |
+| `std::string` | [`get_env_or`](#get_env_or) | Get environment variable with default value. |
+| `double` | [`get_env_double`](#get_env_double) | Get environment variable as double with default. |
+| `int` | [`get_env_int`](#get_env_int) | Get environment variable as int with default. |
+| `bool` | [`get_env_bool`](#get_env_bool) | Get environment variable as bool with default. |
+| `bool` | [`validate_url_env`](#validate_url_env) | Validate that a URL environment variable has a valid HTTP(S) scheme. |
 
 ---
 

@@ -220,7 +220,7 @@ auto suggestions = trie.[starts_with](./resq-dsa-Trie.md#starts_with-1)("drone_"
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `std::vector< std::size_t >` | [`rabin_karp`](#rabin_karp) `inline` | Rabin-Karp string matching algorithm. |
+| `std::vector< std::size_t >` | [`rabin_karp`](#rabin_karp) | Rabin-Karp string matching algorithm. |
 
 ---
 

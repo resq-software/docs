@@ -24,23 +24,23 @@ delete[] free_drones;
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `size_t` | [`and_scalar`](#and_scalar) `static` `inline` | Fast intersection (AND) of two sorted arrays. |
-| `size_t` | [`or_scalar`](#or_scalar) `static` `inline` | Fast union (OR) of two sorted arrays. |
-| `size_t` | [`exclude_scalar`](#exclude_scalar) `static` `inline` | Exclude elements (A - B): elements in A but not in B. |
-| `bool` | [`skip_index_to_id`](#skip_index_to_id) `static` `inline` | Binary search with skip-ahead. |
-| `bool` | [`arrays_equal`](#arrays_equal) `static` `inline` | Check if arrays are equal. |
-| `bool` | [`is_sorted`](#is_sorted) `static` `inline` | Check if array is sorted. |
-| `std::vector< uint32_t >` | [`intersect`](#intersect) `static` `inline` | Intersection of two vectors (returns new vector) |
-| `std::vector< uint32_t >` | [`union_of`](#union_of) `static` `inline` | Union of two vectors (returns new vector) |
-| `std::vector< uint32_t >` | [`exclude`](#exclude) `static` `inline` | Exclude elements (a - b) (returns new vector) |
-| `bool` | [`contains`](#contains) `static` `inline` | Check if element exists in sorted array. |
-| `bool` | [`contains`](#contains-1) `static` `inline` |  |
+| `size_t` | [`and_scalar`](#and_scalar) `static` | Fast intersection (AND) of two sorted arrays. |
+| `size_t` | [`or_scalar`](#or_scalar) `static` | Fast union (OR) of two sorted arrays. |
+| `size_t` | [`exclude_scalar`](#exclude_scalar) `static` | Exclude elements (A - B): elements in A but not in B. |
+| `bool` | [`skip_index_to_id`](#skip_index_to_id) `static` | Binary search with skip-ahead. |
+| `bool` | [`arrays_equal`](#arrays_equal) `static` | Check if arrays are equal. |
+| `bool` | [`is_sorted`](#is_sorted) `static` | Check if array is sorted. |
+| `std::vector< uint32_t >` | [`intersect`](#intersect) `static` | Intersection of two vectors (returns new vector) |
+| `std::vector< uint32_t >` | [`union_of`](#union_of) `static` | Union of two vectors (returns new vector) |
+| `std::vector< uint32_t >` | [`exclude`](#exclude) `static` | Exclude elements (a - b) (returns new vector) |
+| `bool` | [`contains`](#contains) `static` | Check if element exists in sorted array. |
+| `bool` | [`contains`](#contains-1) `static` |  |
 
 ---
 
 #### and_scalar
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline size_t and_scalar(const uint32_t * A, size_t lenA, const uint32_t * B, size_t lenB, uint32_t ** out)
@@ -68,7 +68,7 @@ Time complexity: O(lenA + lenB) Space complexity: O(min(lenA, lenB))
 
 #### or_scalar
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline size_t or_scalar(const uint32_t * A, size_t lenA, const uint32_t * B, size_t lenB, uint32_t ** out)
@@ -85,7 +85,7 @@ Time complexity: O(lenA + lenB) Space complexity: O(lenA + lenB)
 
 #### exclude_scalar
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline size_t exclude_scalar(const uint32_t * src, size_t lenSrc, const uint32_t * filter, size_t lenFilter, uint32_t ** out)
@@ -113,7 +113,7 @@ Time complexity: O(lenSrc + lenFilter)
 
 #### skip_index_to_id
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline bool skip_index_to_id(uint32_t & curr_index, const uint32_t * array, uint32_t array_len, uint32_t id)
@@ -139,7 +139,7 @@ true if id was found, false otherwise
 
 #### arrays_equal
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline bool arrays_equal(const uint32_t * a, size_t len_a, const uint32_t * b, size_t len_b)
@@ -151,7 +151,7 @@ Check if arrays are equal.
 
 #### is_sorted
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline bool is_sorted(const uint32_t * array, size_t len)
@@ -163,7 +163,7 @@ Check if array is sorted.
 
 #### intersect
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline std::vector< uint32_t > intersect(const std::vector< uint32_t > & a, const std::vector< uint32_t > & b)
@@ -175,7 +175,7 @@ Intersection of two vectors (returns new vector)
 
 #### union_of
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline std::vector< uint32_t > union_of(const std::vector< uint32_t > & a, const std::vector< uint32_t > & b)
@@ -187,7 +187,7 @@ Union of two vectors (returns new vector)
 
 #### exclude
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline std::vector< uint32_t > exclude(const std::vector< uint32_t > & src, const std::vector< uint32_t > & filter)
@@ -199,7 +199,7 @@ Exclude elements (a - b) (returns new vector)
 
 #### contains
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline bool contains(const uint32_t * array, size_t len, uint32_t value)
@@ -211,7 +211,7 @@ Check if element exists in sorted array.
 
 #### contains
 
-`static` `inline`
+`static`
 
 ```cpp
 static inline bool contains(const std::vector< uint32_t > & vec, uint32_t value)

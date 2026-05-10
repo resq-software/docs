@@ -35,9 +35,9 @@ t.starts_with("ap");          // {"api", "app", "apple"}
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `void` | [`insert`](#insert-1) `inline` | Insert a word into the trie. |
-| `bool` | [`search`](#search) `const` `inline` | Search for exact word. |
-| `std::vector< std::string >` | [`starts_with`](#starts_with-1) `const` `inline` | Find all words starting with prefix. |
+| `void` | [`insert`](#insert-1) | Insert a word into the trie. |
+| `bool` | [`search`](#search) `const` | Search for exact word. |
+| `std::vector< std::string >` | [`starts_with`](#starts_with-1) `const` | Find all words starting with prefix. |
 
 ---
 
@@ -65,7 +65,7 @@ Duplicate inserts are idempotent
 
 #### search
 
-`const` `inline`
+`const`
 
 ```cpp
 inline bool search(std::string_view w) const
@@ -83,7 +83,7 @@ true if word exists in trie
 
 #### starts_with
 
-`const` `inline`
+`const`
 
 ```cpp
 inline std::vector< std::string > starts_with(std::string_view prefix) const
@@ -119,13 +119,13 @@ Root node.
 
 | Return | Name | Description |
 |--------|------|-------------|
-| `void` | [`collect`](#collect) `const` `inline` | Collect all words with given prefix. |
+| `void` | [`collect`](#collect) `const` | Collect all words with given prefix. |
 
 ---
 
 #### collect
 
-`const` `inline`
+`const`
 
 ```cpp
 inline void collect(const Node & n, std::string & acc, std::vector< std::string > & out) const
