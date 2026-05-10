@@ -1,0 +1,13 @@
+[
+  "resq-ai",
+  "resq-bin",
+  "resq-clean",
+  "resq-cli",
+  "resq-deploy",
+  "resq-dsa",
+  "resq-flame",
+  "resq-health",
+  "resq-logs",
+  "resq-perf",
+  "resq-tui"
+]
