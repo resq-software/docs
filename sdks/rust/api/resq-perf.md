@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ResQ Perf'
+---
+
 # resq-perf
 
 > **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-perf) · **API docs:** [docs.rs](https://docs.rs/resq-perf/0.1.16)

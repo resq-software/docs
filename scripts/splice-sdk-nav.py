@@ -42,6 +42,36 @@ def insert_landing(tree: dict, parts: list[str], full_id: str) -> None:
     cur["_landing"] = full_id
 
 
+_ACRONYMS = {
+    "ai", "cli", "dsa", "tui", "api", "sdk", "ui", "mcp",
+    "ipfs", "grpc", "http", "url", "json", "yaml", "xml",
+    "sql", "css", "html", "io",
+}
+_BRAND = {"resq": "ResQ"}
+
+
+def label_for(name: str) -> str:
+    """Format a dir name like `resq-dsa` into a sidebar label like
+    `ResQ DSA`. Acronyms upper-case, the brand `resq` rendered as
+    `ResQ`, everything else title-case. Hyphens become spaces.
+
+    Dotted names (e.g. `.NET`-style `ResQ.Blockchain`) are passed
+    through verbatim — they already carry their canonical casing
+    and segmenting by hyphen would corrupt them."""
+    if "." in name:
+        return name
+    out: list[str] = []
+    for part in name.split("-"):
+        lower = part.lower()
+        if lower in _BRAND:
+            out.append(_BRAND[lower])
+        elif lower in _ACRONYMS:
+            out.append(part.upper())
+        else:
+            out.append(part.capitalize())
+    return " ".join(out)
+
+
 def to_mintlify(tree: dict, group_name: str | None) -> dict | list:
     """Convert internal tree to Mintlify groups/pages structure."""
     pages: list = []
@@ -53,7 +83,7 @@ def to_mintlify(tree: dict, group_name: str | None) -> dict | list:
         pages.append(to_mintlify(subtree, dname))
     if group_name is None:
         return pages
-    return {"group": group_name, "pages": pages}
+    return {"group": label_for(group_name), "pages": pages}
 
 
 def group_dotnet_namespace(prefix: str, namespace: str, file_ids: list[str]) -> list:

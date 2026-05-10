@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ResQ Clean'
+---
+
 # resq-clean
 
 > **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-clean) · **API docs:** [docs.rs](https://docs.rs/resq-clean/0.1.16)

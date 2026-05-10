@@ -1,3 +1,7 @@
+---
+sidebarTitle: 'ResQ Deploy'
+---
+
 # resq-deploy
 
 > **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-deploy) · **API docs:** [docs.rs](https://docs.rs/resq-deploy/0.1.16)
