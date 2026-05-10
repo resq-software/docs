@@ -72,23 +72,14 @@
                     "group": "TypeScript",
                     "pages": [
                       "sdks/typescript/api/README",
-                      "sdks/typescript/api/analytics",
-                      "sdks/typescript/api/decorators",
-                      "sdks/typescript/api/dsa",
-                      "sdks/typescript/api/http",
-                      "sdks/typescript/api/logger",
-                      "sdks/typescript/api/rate-limiting",
-                      "sdks/typescript/api/security",
                       {
                         "group": "analytics",
                         "pages": [
-                          "sdks/typescript/api/analytics/index",
-                          "sdks/typescript/api/analytics/next",
-                          "sdks/typescript/api/analytics/react",
-                          "sdks/typescript/api/analytics/resq",
+                          "sdks/typescript/api/analytics",
                           {
                             "group": "index",
                             "pages": [
+                              "sdks/typescript/api/analytics/index",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -126,6 +117,7 @@
                           {
                             "group": "next",
                             "pages": [
+                              "sdks/typescript/api/analytics/next",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -144,6 +136,7 @@
                           {
                             "group": "react",
                             "pages": [
+                              "sdks/typescript/api/analytics/react",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -163,6 +156,7 @@
                           {
                             "group": "resq",
                             "pages": [
+                              "sdks/typescript/api/analytics/resq",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -184,33 +178,15 @@
                       {
                         "group": "decorators",
                         "pages": [
-                          "sdks/typescript/api/decorators/after",
-                          "sdks/typescript/api/decorators/before",
-                          "sdks/typescript/api/decorators/bind",
-                          "sdks/typescript/api/decorators/debounce",
-                          "sdks/typescript/api/decorators/delay",
-                          "sdks/typescript/api/decorators/delegate",
-                          "sdks/typescript/api/decorators/exec-time",
-                          "sdks/typescript/api/decorators/execute",
-                          "sdks/typescript/api/decorators/index",
-                          "sdks/typescript/api/decorators/memoize",
-                          "sdks/typescript/api/decorators/memoize-async",
-                          "sdks/typescript/api/decorators/observer",
-                          "sdks/typescript/api/decorators/rate-limit",
-                          "sdks/typescript/api/decorators/readonly",
-                          "sdks/typescript/api/decorators/throttle",
-                          "sdks/typescript/api/decorators/throttle-async",
-                          "sdks/typescript/api/decorators/types",
-                          "sdks/typescript/api/decorators/utils",
+                          "sdks/typescript/api/decorators",
                           {
                             "group": "after",
                             "pages": [
-                              "sdks/typescript/api/decorators/after/after",
-                              "sdks/typescript/api/decorators/after/after.fn",
-                              "sdks/typescript/api/decorators/after/after.types",
+                              "sdks/typescript/api/decorators/after",
                               {
                                 "group": "after",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/after/after",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -222,6 +198,7 @@
                               {
                                 "group": "after.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/after/after.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -233,6 +210,7 @@
                               {
                                 "group": "after.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/after/after.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -253,12 +231,11 @@
                           {
                             "group": "before",
                             "pages": [
-                              "sdks/typescript/api/decorators/before/before",
-                              "sdks/typescript/api/decorators/before/before.fn",
-                              "sdks/typescript/api/decorators/before/before.types",
+                              "sdks/typescript/api/decorators/before",
                               {
                                 "group": "before",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/before/before",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -270,6 +247,7 @@
                               {
                                 "group": "before.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/before/before.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -281,6 +259,7 @@
                               {
                                 "group": "before.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/before/before.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -294,12 +273,11 @@
                           {
                             "group": "bind",
                             "pages": [
-                              "sdks/typescript/api/decorators/bind/bind",
-                              "sdks/typescript/api/decorators/bind/bind.fn",
-                              "sdks/typescript/api/decorators/bind/bind.types",
+                              "sdks/typescript/api/decorators/bind",
                               {
                                 "group": "bind",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/bind/bind",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -311,6 +289,7 @@
                               {
                                 "group": "bind.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/bind/bind.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -322,6 +301,7 @@
                               {
                                 "group": "bind.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/bind/bind.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -335,11 +315,11 @@
                           {
                             "group": "debounce",
                             "pages": [
-                              "sdks/typescript/api/decorators/debounce/debounce",
-                              "sdks/typescript/api/decorators/debounce/debounce.fn",
+                              "sdks/typescript/api/decorators/debounce",
                               {
                                 "group": "debounce",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/debounce/debounce",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -351,6 +331,7 @@
                               {
                                 "group": "debounce.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/debounce/debounce.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -364,11 +345,11 @@
                           {
                             "group": "delay",
                             "pages": [
-                              "sdks/typescript/api/decorators/delay/delay",
-                              "sdks/typescript/api/decorators/delay/delay.fn",
+                              "sdks/typescript/api/decorators/delay",
                               {
                                 "group": "delay",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/delay/delay",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -380,6 +361,7 @@
                               {
                                 "group": "delay.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/delay/delay.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -393,12 +375,11 @@
                           {
                             "group": "delegate",
                             "pages": [
-                              "sdks/typescript/api/decorators/delegate/delegate",
-                              "sdks/typescript/api/decorators/delegate/delegate.fn",
-                              "sdks/typescript/api/decorators/delegate/delegate.types",
+                              "sdks/typescript/api/decorators/delegate",
                               {
                                 "group": "delegate",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/delegate/delegate",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -410,6 +391,7 @@
                               {
                                 "group": "delegate.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/delegate/delegate.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -421,6 +403,7 @@
                               {
                                 "group": "delegate.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/delegate/delegate.types",
                                   {
                                     "group": "type-aliases",
                                     "pages": [
@@ -434,12 +417,11 @@
                           {
                             "group": "exec-time",
                             "pages": [
-                              "sdks/typescript/api/decorators/exec-time/exec-time",
-                              "sdks/typescript/api/decorators/exec-time/exec-time.fn",
-                              "sdks/typescript/api/decorators/exec-time/exec-time.types",
+                              "sdks/typescript/api/decorators/exec-time",
                               {
                                 "group": "exec-time",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/exec-time/exec-time",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -451,6 +433,7 @@
                               {
                                 "group": "exec-time.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/exec-time/exec-time.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -462,6 +445,7 @@
                               {
                                 "group": "exec-time.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/exec-time/exec-time.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -482,10 +466,11 @@
                           {
                             "group": "execute",
                             "pages": [
-                              "sdks/typescript/api/decorators/execute/execute",
+                              "sdks/typescript/api/decorators/execute",
                               {
                                 "group": "execute",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/execute/execute",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -497,14 +482,19 @@
                             ]
                           },
                           {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/decorators/index"
+                            ]
+                          },
+                          {
                             "group": "memoize",
                             "pages": [
-                              "sdks/typescript/api/decorators/memoize/memoize",
-                              "sdks/typescript/api/decorators/memoize/memoize.fn",
-                              "sdks/typescript/api/decorators/memoize/memoize.types",
+                              "sdks/typescript/api/decorators/memoize",
                               {
                                 "group": "memoize",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize/memoize",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -516,6 +506,7 @@
                               {
                                 "group": "memoize.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize/memoize.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -527,6 +518,7 @@
                               {
                                 "group": "memoize.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize/memoize.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -548,12 +540,11 @@
                           {
                             "group": "memoize-async",
                             "pages": [
-                              "sdks/typescript/api/decorators/memoize-async/memoize-async",
-                              "sdks/typescript/api/decorators/memoize-async/memoize-async.fn",
-                              "sdks/typescript/api/decorators/memoize-async/memoize-async.types",
+                              "sdks/typescript/api/decorators/memoize-async",
                               {
                                 "group": "memoize-async",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize-async/memoize-async",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -565,6 +556,7 @@
                               {
                                 "group": "memoize-async.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize-async/memoize-async.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -576,6 +568,7 @@
                               {
                                 "group": "memoize-async.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/memoize-async/memoize-async.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -596,11 +589,11 @@
                           {
                             "group": "observer",
                             "pages": [
-                              "sdks/typescript/api/decorators/observer/observer",
-                              "sdks/typescript/api/decorators/observer/observer.types",
+                              "sdks/typescript/api/decorators/observer",
                               {
                                 "group": "observer",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/observer/observer",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -612,6 +605,7 @@
                               {
                                 "group": "observer.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/observer/observer.types",
                                   {
                                     "group": "type-aliases",
                                     "pages": [
@@ -625,13 +619,11 @@
                           {
                             "group": "rate-limit",
                             "pages": [
-                              "sdks/typescript/api/decorators/rate-limit/rate-limit",
-                              "sdks/typescript/api/decorators/rate-limit/rate-limit.fn",
-                              "sdks/typescript/api/decorators/rate-limit/rate-limit.types",
-                              "sdks/typescript/api/decorators/rate-limit/simple-rate-limit-counter",
+                              "sdks/typescript/api/decorators/rate-limit",
                               {
                                 "group": "rate-limit",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/rate-limit/rate-limit",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -643,6 +635,7 @@
                               {
                                 "group": "rate-limit.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/rate-limit/rate-limit.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -654,6 +647,7 @@
                               {
                                 "group": "rate-limit.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/rate-limit/rate-limit.types",
                                   {
                                     "group": "interfaces",
                                     "pages": [
@@ -673,6 +667,7 @@
                               {
                                 "group": "simple-rate-limit-counter",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/rate-limit/simple-rate-limit-counter",
                                   {
                                     "group": "classes",
                                     "pages": [
@@ -686,11 +681,11 @@
                           {
                             "group": "readonly",
                             "pages": [
-                              "sdks/typescript/api/decorators/readonly/readonly",
-                              "sdks/typescript/api/decorators/readonly/readonly.types",
+                              "sdks/typescript/api/decorators/readonly",
                               {
                                 "group": "readonly",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/readonly/readonly",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -702,6 +697,7 @@
                               {
                                 "group": "readonly.types",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/readonly/readonly.types",
                                   {
                                     "group": "type-aliases",
                                     "pages": [
@@ -715,11 +711,11 @@
                           {
                             "group": "throttle",
                             "pages": [
-                              "sdks/typescript/api/decorators/throttle/throttle",
-                              "sdks/typescript/api/decorators/throttle/throttle.fn",
+                              "sdks/typescript/api/decorators/throttle",
                               {
                                 "group": "throttle",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/throttle/throttle",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -731,6 +727,7 @@
                               {
                                 "group": "throttle.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/throttle/throttle.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -744,12 +741,11 @@
                           {
                             "group": "throttle-async",
                             "pages": [
-                              "sdks/typescript/api/decorators/throttle-async/throttle-async",
-                              "sdks/typescript/api/decorators/throttle-async/throttle-async-executor",
-                              "sdks/typescript/api/decorators/throttle-async/throttle-async.fn",
+                              "sdks/typescript/api/decorators/throttle-async",
                               {
                                 "group": "throttle-async",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/throttle-async/throttle-async",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -761,6 +757,7 @@
                               {
                                 "group": "throttle-async-executor",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/throttle-async/throttle-async-executor",
                                   {
                                     "group": "classes",
                                     "pages": [
@@ -772,6 +769,7 @@
                               {
                                 "group": "throttle-async.fn",
                                 "pages": [
+                                  "sdks/typescript/api/decorators/throttle-async/throttle-async.fn",
                                   {
                                     "group": "functions",
                                     "pages": [
@@ -785,6 +783,7 @@
                           {
                             "group": "types",
                             "pages": [
+                              "sdks/typescript/api/decorators/types",
                               {
                                 "group": "type-aliases",
                                 "pages": [
@@ -799,6 +798,7 @@
                           {
                             "group": "utils",
                             "pages": [
+                              "sdks/typescript/api/decorators/utils",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -828,20 +828,11 @@
                       {
                         "group": "dsa",
                         "pages": [
-                          "sdks/typescript/api/dsa/bloom",
-                          "sdks/typescript/api/dsa/count-min",
-                          "sdks/typescript/api/dsa/distance",
-                          "sdks/typescript/api/dsa/graph",
-                          "sdks/typescript/api/dsa/heap",
-                          "sdks/typescript/api/dsa/index",
-                          "sdks/typescript/api/dsa/lru-cache",
-                          "sdks/typescript/api/dsa/priority-queue",
-                          "sdks/typescript/api/dsa/queue",
-                          "sdks/typescript/api/dsa/schemas",
-                          "sdks/typescript/api/dsa/trie",
+                          "sdks/typescript/api/dsa",
                           {
                             "group": "bloom",
                             "pages": [
+                              "sdks/typescript/api/dsa/bloom",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -853,6 +844,7 @@
                           {
                             "group": "count-min",
                             "pages": [
+                              "sdks/typescript/api/dsa/count-min",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -864,6 +856,7 @@
                           {
                             "group": "distance",
                             "pages": [
+                              "sdks/typescript/api/dsa/distance",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -890,10 +883,10 @@
                           {
                             "group": "dsa",
                             "pages": [
-                              "sdks/typescript/api/dsa/dsa/rabin-karp",
                               {
                                 "group": "rabin-karp",
                                 "pages": [
+                                  "sdks/typescript/api/dsa/dsa/rabin-karp",
                                   {
                                     "group": "classes",
                                     "pages": [
@@ -921,6 +914,7 @@
                           {
                             "group": "graph",
                             "pages": [
+                              "sdks/typescript/api/dsa/graph",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -949,6 +943,7 @@
                           {
                             "group": "heap",
                             "pages": [
+                              "sdks/typescript/api/dsa/heap",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -964,8 +959,15 @@
                             ]
                           },
                           {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/dsa/index"
+                            ]
+                          },
+                          {
                             "group": "lru-cache",
                             "pages": [
+                              "sdks/typescript/api/dsa/lru-cache",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -983,6 +985,7 @@
                           {
                             "group": "priority-queue",
                             "pages": [
+                              "sdks/typescript/api/dsa/priority-queue",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1018,6 +1021,7 @@
                           {
                             "group": "queue",
                             "pages": [
+                              "sdks/typescript/api/dsa/queue",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1035,6 +1039,7 @@
                           {
                             "group": "schemas",
                             "pages": [
+                              "sdks/typescript/api/dsa/schemas",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -1080,6 +1085,7 @@
                           {
                             "group": "trie",
                             "pages": [
+                              "sdks/typescript/api/dsa/trie",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1105,12 +1111,11 @@
                       {
                         "group": "http",
                         "pages": [
-                          "sdks/typescript/api/http/fetcher",
-                          "sdks/typescript/api/http/index",
-                          "sdks/typescript/api/http/security",
+                          "sdks/typescript/api/http",
                           {
                             "group": "fetcher",
                             "pages": [
+                              "sdks/typescript/api/http/fetcher",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1151,8 +1156,15 @@
                             ]
                           },
                           {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/http/index"
+                            ]
+                          },
+                          {
                             "group": "security",
                             "pages": [
+                              "sdks/typescript/api/http/security",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -1167,13 +1179,17 @@
                       {
                         "group": "logger",
                         "pages": [
-                          "sdks/typescript/api/logger/index",
-                          "sdks/typescript/api/logger/logger",
-                          "sdks/typescript/api/logger/logger.decorators",
-                          "sdks/typescript/api/logger/logger.types",
+                          "sdks/typescript/api/logger",
+                          {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/logger/index"
+                            ]
+                          },
                           {
                             "group": "logger",
                             "pages": [
+                              "sdks/typescript/api/logger/logger",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1210,6 +1226,7 @@
                           {
                             "group": "logger.decorators",
                             "pages": [
+                              "sdks/typescript/api/logger/logger.decorators",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -1224,6 +1241,7 @@
                           {
                             "group": "logger.types",
                             "pages": [
+                              "sdks/typescript/api/logger/logger.types",
                               {
                                 "group": "interfaces",
                                 "pages": [
@@ -1251,12 +1269,17 @@
                       {
                         "group": "rate-limiting",
                         "pages": [
-                          "sdks/typescript/api/rate-limiting/index",
-                          "sdks/typescript/api/rate-limiting/rate-limit",
-                          "sdks/typescript/api/rate-limiting/throttle",
+                          "sdks/typescript/api/rate-limiting",
+                          {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/rate-limiting/index"
+                            ]
+                          },
                           {
                             "group": "rate-limit",
                             "pages": [
+                              "sdks/typescript/api/rate-limiting/rate-limit",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1290,6 +1313,7 @@
                           {
                             "group": "throttle",
                             "pages": [
+                              "sdks/typescript/api/rate-limiting/throttle",
                               {
                                 "group": "classes",
                                 "pages": [
@@ -1332,13 +1356,11 @@
                       {
                         "group": "security",
                         "pages": [
-                          "sdks/typescript/api/security/crypto",
-                          "sdks/typescript/api/security/index",
-                          "sdks/typescript/api/security/sanitize",
-                          "sdks/typescript/api/security/validators",
+                          "sdks/typescript/api/security",
                           {
                             "group": "crypto",
                             "pages": [
+                              "sdks/typescript/api/security/crypto",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -1354,8 +1376,15 @@
                             ]
                           },
                           {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/security/index"
+                            ]
+                          },
+                          {
                             "group": "sanitize",
                             "pages": [
+                              "sdks/typescript/api/security/sanitize",
                               {
                                 "group": "functions",
                                 "pages": [
@@ -1411,6 +1440,7 @@
                           {
                             "group": "validators",
                             "pages": [
+                              "sdks/typescript/api/security/validators",
                               {
                                 "group": "functions",
                                 "pages": [
