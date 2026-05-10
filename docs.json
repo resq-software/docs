@@ -4636,270 +4636,140 @@
                         "group": "ResQ.Blockchain",
                         "pages": [
                           "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain",
-                          {
-                            "group": "BlockchainEvent",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.BlockchainEvent(string,string,string,string,System.DateTimeOffset)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.EventId",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.EventType",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.IpfsCid",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.Payload",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.Timestamp"
-                            ]
-                          },
-                          {
-                            "group": "EvidenceRecord",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.ContentType",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.EvidenceRecord(string,string,string,long,string)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.Hash",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.IncidentId",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.IpfsCid",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.SizeBytes"
-                            ]
-                          },
-                          {
-                            "group": "INeoClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.GetBlockHeightAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordEvidenceAsync(ResQ.Blockchain.EvidenceRecord,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.VerifyLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "LocationAttestation",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Altitude",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.DroneId",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Latitude",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.LocationAttestation(string,double,double,double,System.DateTimeOffset,string)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Longitude",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Signature",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Timestamp"
-                            ]
-                          },
-                          {
-                            "group": "MockNeoClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.ExtractIncidentId(string)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GenerateTxHash()",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GetBlockHeightAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.MockNeoClient(Microsoft.Extensions.Logging.ILogger_ResQ.Blockchain.MockNeoClient_)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordEvidenceAsync(ResQ.Blockchain.EvidenceRecord,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.VerifyLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "NeoClientOptions",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.ConfirmationTimeoutSeconds",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.ContractHash",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.MaxRetryAttempts",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.MockMode",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.NetworkMagic",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.RpcUrl",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.WalletPath"
-                            ]
-                          },
-                          {
-                            "group": "TransactionResult",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.BlockHeight",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.IsConfirmed",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.Timestamp",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.TransactionHash",
-                              "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.TransactionResult(string,bool,ulong,System.DateTimeOffset)"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.BlockchainEvent(string,string,string,string,System.DateTimeOffset)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.EventId",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.EventType",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.IpfsCid",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.Payload",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.BlockchainEvent.Timestamp",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.ContentType",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.EvidenceRecord(string,string,string,long,string)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.Hash",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.IncidentId",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.IpfsCid",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.EvidenceRecord.SizeBytes",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.GetBlockHeightAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordEvidenceAsync(ResQ.Blockchain.EvidenceRecord,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.INeoClient.VerifyLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Altitude",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.DroneId",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Latitude",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.LocationAttestation(string,double,double,double,System.DateTimeOffset,string)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Longitude",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Signature",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.LocationAttestation.Timestamp",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.ExtractIncidentId(string)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GenerateTxHash()",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GetBlockHeightAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.GetEventsByIncidentAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.MockNeoClient(Microsoft.Extensions.Logging.ILogger_ResQ.Blockchain.MockNeoClient_)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordEventAsync(ResQ.Blockchain.BlockchainEvent,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordEvidenceAsync(ResQ.Blockchain.EvidenceRecord,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.RecordLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.MockNeoClient.VerifyLocationAttestationAsync(ResQ.Blockchain.LocationAttestation,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.ConfirmationTimeoutSeconds",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.ContractHash",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.MaxRetryAttempts",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.MockMode",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.NetworkMagic",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.RpcUrl",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.NeoClientOptions.WalletPath",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.BlockHeight",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.IsConfirmed",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.Timestamp",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.TransactionHash",
+                          "sdks/dotnet/api/ResQ.Blockchain/ResQ.Blockchain.TransactionResult.TransactionResult(string,bool,ulong,System.DateTimeOffset)"
                         ]
                       },
                       {
                         "group": "ResQ.Clients",
                         "pages": [
                           "sdks/dotnet/api/ResQ.Clients/ResQ.Clients",
-                          {
-                            "group": "AuthResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.AuthResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.AuthResponse.AuthResponse(string)"
-                            ]
-                          },
-                          {
-                            "group": "BaseServiceClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.AuthorizationHeader",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.BuildResiliencePipeline(bool)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.Dispose()",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.ExecuteWithResilienceAsync(System.Net.Http.HttpMethod,System.Func_System.Threading.CancellationToken,System.Threading.Tasks.Task_System.Net.Http.HttpResponseMessage__,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.SendAsync(System.Net.Http.HttpMethod,string,System.Net.Http.HttpContent,System.Threading.CancellationToken,bool)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.ServiceName"
-                            ]
-                          },
-                          {
-                            "group": "BlockchainEventRequest",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventRequest",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventRequest.BlockchainEventRequest(string,string,string,string,string,long)"
-                            ]
-                          },
-                          {
-                            "group": "BlockchainEventResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventResponse.BlockchainEventResponse(string,string,long,string)"
-                            ]
-                          },
-                          {
-                            "group": "CoordinationHceClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.AuthenticateAsync(string,string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.GetFleetStatusAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.GetHealthAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.ReportIncidentAsync(ResQ.Clients.ReportIncidentRequest,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.SendTelemetryBatchAsync(ResQ.Clients.TelemetryBatchRequest,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "CreateIncidentRequest",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CreateIncidentRequest",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CreateIncidentRequest.CreateIncidentRequest(string,string,ResQ.Clients.LocationDto,string)"
-                            ]
-                          },
-                          {
-                            "group": "Detection",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Confidence",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Detection(string,double,ResQ.Clients.LocationDto,long)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Location",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Timestamp",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Type"
-                            ]
-                          },
-                          {
-                            "group": "FleetStatus",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.ActiveDrones",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.FleetId",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.FleetStatus(string,int,int)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.TotalMissions"
-                            ]
-                          },
-                          {
-                            "group": "HceHealthResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse.HceHealthResponse(string)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse.Status"
-                            ]
-                          },
-                          {
-                            "group": "HealthResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HealthResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HealthResponse.HealthResponse(string,bool,bool,bool)"
-                            ]
-                          },
-                          {
-                            "group": "IncidentAck",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.IncidentAck(string,string)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.IncidentId",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.Status"
-                            ]
-                          },
-                          {
-                            "group": "IncidentResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentResponse.IncidentResponse(string,string,string,string,string)"
-                            ]
-                          },
-                          {
-                            "group": "InfraAuthResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfraAuthResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfraAuthResponse.InfraAuthResponse(string)"
-                            ]
-                          },
-                          {
-                            "group": "InfrastructureApiClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.AuthenticateAsync(string,string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.CreateIncidentAsync(ResQ.Clients.CreateIncidentRequest,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.GetHealthAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.RecordEventAsync(ResQ.Clients.BlockchainEventRequest,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.UploadImageAsync(byte[],string,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "LocationDto",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.LocationDto",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.LocationDto.LocationDto(double,double,double)"
-                            ]
-                          },
-                          {
-                            "group": "ReportIncidentRequest",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Description",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.IncidentType",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Location",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.ReportIncidentRequest(string,string,ResQ.Clients.LocationDto,string)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Severity"
-                            ]
-                          },
-                          {
-                            "group": "TelemetryBatchRequest",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.Detections",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.DroneId",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.Packets",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.TelemetryBatchRequest(string,System.Collections.Generic.List_ResQ.Clients.TelemetryPacket_,System.Collections.Generic.List_ResQ.Clients.Detection_)"
-                            ]
-                          },
-                          {
-                            "group": "TelemetryPacket",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Altitude",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Battery",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.DroneId",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.FlightMode",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Latitude",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Longitude",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.TelemetryPacket(string,double,double,double,double,string,long)",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Timestamp"
-                            ]
-                          },
-                          {
-                            "group": "UploadResponse",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.UploadResponse",
-                              "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.UploadResponse.UploadResponse(string,long,string)"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.AuthResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.AuthResponse.AuthResponse(string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.AuthorizationHeader",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.BuildResiliencePipeline(bool)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.Dispose()",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.ExecuteWithResilienceAsync(System.Net.Http.HttpMethod,System.Func_System.Threading.CancellationToken,System.Threading.Tasks.Task_System.Net.Http.HttpResponseMessage__,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.SendAsync(System.Net.Http.HttpMethod,string,System.Net.Http.HttpContent,System.Threading.CancellationToken,bool)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BaseServiceClient.ServiceName",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventRequest",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventRequest.BlockchainEventRequest(string,string,string,string,string,long)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.BlockchainEventResponse.BlockchainEventResponse(string,string,long,string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.AuthenticateAsync(string,string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.GetFleetStatusAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.GetHealthAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.ReportIncidentAsync(ResQ.Clients.ReportIncidentRequest,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CoordinationHceClient.SendTelemetryBatchAsync(ResQ.Clients.TelemetryBatchRequest,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CreateIncidentRequest",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.CreateIncidentRequest.CreateIncidentRequest(string,string,ResQ.Clients.LocationDto,string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Confidence",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Detection(string,double,ResQ.Clients.LocationDto,long)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Location",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Timestamp",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.Detection.Type",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.ActiveDrones",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.FleetId",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.FleetStatus(string,int,int)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.FleetStatus.TotalMissions",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse.HceHealthResponse(string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HceHealthResponse.Status",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HealthResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.HealthResponse.HealthResponse(string,bool,bool,bool)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.IncidentAck(string,string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.IncidentId",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentAck.Status",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.IncidentResponse.IncidentResponse(string,string,string,string,string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfraAuthResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfraAuthResponse.InfraAuthResponse(string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.AuthenticateAsync(string,string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.CreateIncidentAsync(ResQ.Clients.CreateIncidentRequest,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.GetHealthAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.RecordEventAsync(ResQ.Clients.BlockchainEventRequest,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.InfrastructureApiClient.UploadImageAsync(byte[],string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.LocationDto",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.LocationDto.LocationDto(double,double,double)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Description",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.IncidentType",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Location",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.ReportIncidentRequest(string,string,ResQ.Clients.LocationDto,string)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.ReportIncidentRequest.Severity",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.Detections",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.DroneId",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.Packets",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryBatchRequest.TelemetryBatchRequest(string,System.Collections.Generic.List_ResQ.Clients.TelemetryPacket_,System.Collections.Generic.List_ResQ.Clients.Detection_)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Altitude",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Battery",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.DroneId",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.FlightMode",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Latitude",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Longitude",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.TelemetryPacket(string,double,double,double,double,string,long)",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.TelemetryPacket.Timestamp",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.UploadResponse",
+                          "sdks/dotnet/api/ResQ.Clients/ResQ.Clients.UploadResponse.UploadResponse(string,long,string)"
                         ]
                       },
                       {
@@ -4907,183 +4777,108 @@
                         "pages": [
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.AlertSeverity",
-                          {
-                            "group": "BlockchainEvent",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.DroneId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EventId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EventType",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EvidenceCid",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Location",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Metadata",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Timestamp"
-                            ]
-                          },
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.DroneId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EventId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EventType",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.EvidenceCid",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Location",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Metadata",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEvent.Timestamp",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.BlockchainEventType",
-                          {
-                            "group": "DeploymentRecommendation",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.DroneId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.MissionType",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.Priority",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.Rationale",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.TargetPosition"
-                            ]
-                          },
-                          {
-                            "group": "Detection",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Confidence",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.DetectedAt",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.DetectionId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.EvidenceCid",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.EvidenceUploaded",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Location",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Type"
-                            ]
-                          },
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.DroneId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.MissionType",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.Priority",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.Rationale",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DeploymentRecommendation.TargetPosition",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Confidence",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.DetectedAt",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.DetectionId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.EvidenceCid",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.EvidenceUploaded",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Location",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Detection.Type",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.DetectionType",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.DisasterType",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.DroneStatus",
-                          {
-                            "group": "DtsopClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient.DtsopClient(string)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient.RequestStrategyAsync(string,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "HceClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.HceClient(string)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.ReportDetectionAsync(ResQ.Core.Detection,string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.SendTelemetryAsync(ResQ.Core.TelemetryPacket,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "Location",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Altitude",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.DistanceTo(ResQ.Core.Location)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Latitude",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Location(double,double,System.Nullable_double_)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Longitude"
-                            ]
-                          },
-                          {
-                            "group": "NeoClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.GetTransactionStatusAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.NeoClient(ResQ.Core.NeoConfig)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.RecordEventAsync(ResQ.Core.BlockchainEvent,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.RecordEvidenceAsync(string,string,string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.VerifyLocationAttestationAsync(string,ResQ.Core.Location,System.DateTimeOffset,System.Threading.CancellationToken)"
-                            ]
-                          },
-                          {
-                            "group": "NeoConfig",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.ContractHash",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.MockMode",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.NetworkMagic",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.RpcUrl",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.TimeoutSeconds"
-                            ]
-                          },
-                          {
-                            "group": "OptimizationStrategy",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.ConfidenceScore",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.Deployments",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.EstimatedCoveragePercent",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.EstimatedResponseTimeMinutes",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.GeneratedAt",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.ScenarioId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.StrategyId"
-                            ]
-                          },
-                          {
-                            "group": "PdieClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient.GetPreAlertsAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient.PdieClient(string)"
-                            ]
-                          },
-                          {
-                            "group": "PreAlert",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.AlertId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.CreatedAt",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.ForecastHorizonHours",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.PredictedDisasterType",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.Probability",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.SectorId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.Severity"
-                            ]
-                          },
-                          {
-                            "group": "ResQExtensions",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions.IsCritical(thisResQ.Core.Detection)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions.ToSeverity(thisdouble)"
-                            ]
-                          },
-                          {
-                            "group": "TelemetryPacket",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.BatteryPercent",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.BatteryVoltage",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.CameraOk",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.CurrentMissionId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Detections",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.DroneId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.GpsOk",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.ImuOk",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.MissionProgressPercent",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Position",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.SequenceNumber",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Status",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.SwarmId",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.ThermalOk",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Timestamp",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Velocity"
-                            ]
-                          },
-                          {
-                            "group": "TransactionResult",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.BlockHeight",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.ErrorMessage",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.GasConsumed",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.Status",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.TxHash"
-                            ]
-                          },
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient.DtsopClient(string)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.DtsopClient.RequestStrategyAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.HceClient(string)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.ReportDetectionAsync(ResQ.Core.Detection,string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.HceClient.SendTelemetryAsync(ResQ.Core.TelemetryPacket,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Altitude",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.DistanceTo(ResQ.Core.Location)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Latitude",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Location(double,double,System.Nullable_double_)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Location.Longitude",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.GetTransactionStatusAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.NeoClient(ResQ.Core.NeoConfig)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.RecordEventAsync(ResQ.Core.BlockchainEvent,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.RecordEvidenceAsync(string,string,string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoClient.VerifyLocationAttestationAsync(string,ResQ.Core.Location,System.DateTimeOffset,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.ContractHash",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.MockMode",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.NetworkMagic",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.RpcUrl",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.NeoConfig.TimeoutSeconds",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.ConfidenceScore",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.Deployments",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.EstimatedCoveragePercent",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.EstimatedResponseTimeMinutes",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.GeneratedAt",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.ScenarioId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.OptimizationStrategy.StrategyId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient.GetPreAlertsAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PdieClient.PdieClient(string)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.AlertId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.CreatedAt",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.ForecastHorizonHours",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.PredictedDisasterType",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.Probability",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.SectorId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.PreAlert.Severity",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions.IsCritical(thisResQ.Core.Detection)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.ResQExtensions.ToSeverity(thisdouble)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.BatteryPercent",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.BatteryVoltage",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.CameraOk",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.CurrentMissionId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Detections",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.DroneId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.GpsOk",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.ImuOk",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.MissionProgressPercent",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Position",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.SequenceNumber",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Status",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.SwarmId",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.ThermalOk",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Timestamp",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TelemetryPacket.Velocity",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.BlockHeight",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.ErrorMessage",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.GasConsumed",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.Status",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionResult.TxHash",
                           "sdks/dotnet/api/ResQ.Core/ResQ.Core.TransactionStatus",
-                          {
-                            "group": "Velocity",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Velocity(double,double,double)",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vx",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vy",
-                              "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vz"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Velocity(double,double,double)",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vx",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vy",
+                          "sdks/dotnet/api/ResQ.Core/ResQ.Core.Velocity.Vz"
                         ]
                       },
                       {
@@ -5093,117 +4888,77 @@
                           "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.AlertSeverity",
                           "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.DetectionType",
                           "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.MissionType",
-                          {
-                            "group": "ProtocolExtensions",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions",
-                              "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.FromUnixMs(thislong)",
-                              "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.NowUnixMs()",
-                              "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.ToUnixMs(thisSystem.DateTimeOffset)"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions",
+                          "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.FromUnixMs(thislong)",
+                          "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.NowUnixMs()",
+                          "sdks/dotnet/api/ResQ.Protocols/ResQ.Protocols.ProtocolExtensions.ToUnixMs(thisSystem.DateTimeOffset)"
                         ]
                       },
                       {
                         "group": "ResQ.Simulation",
                         "pages": [
                           "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation",
-                          {
-                            "group": "ScenarioRunner",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.CheckServicesAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunIncidentFloodAsync(int)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunSingleDroneSurveyAsync()",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunStressTestAsync(int,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunSwarmSurveyAsync(int,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ValidateDroneCount(int,string)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ValidateLocation(ResQ.Core.Location,string)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ctor"
-                            ]
-                          },
-                          {
-                            "group": "VirtualDrone",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.StartAsync(System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.Stop()",
-                              "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.VirtualDrone(string,ResQ.Core.Location,ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient)"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.CheckServicesAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunIncidentFloodAsync(int)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunSingleDroneSurveyAsync()",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunStressTestAsync(int,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.RunSwarmSurveyAsync(int,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ValidateDroneCount(int,string)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ValidateLocation(ResQ.Core.Location,string)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.ScenarioRunner.ctor",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.StartAsync(System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.Stop()",
+                          "sdks/dotnet/api/ResQ.Simulation/ResQ.Simulation.VirtualDrone.VirtualDrone(string,ResQ.Core.Location,ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient)"
                         ]
                       },
                       {
                         "group": "ResQ.Storage",
                         "pages": [
                           "sdks/dotnet/api/ResQ.Storage/ResQ.Storage",
-                          {
-                            "group": "IStorageClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.GetAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.GetGatewayUrl(string)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.IsPinnedAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.ListPinsAsync(string,int,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.UnpinAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.UploadAsync"
-                            ]
-                          },
-                          {
-                            "group": "PinMetadata",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.Cid",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.KeyValues",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.Name",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.PinMetadata(string,string,long,System.DateTimeOffset,System.Collections.Generic.Dictionary_string,string_)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.PinnedAt",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.SizeBytes"
-                            ]
-                          },
-                          {
-                            "group": "PinataClient",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.BuildResiliencePipeline()",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.ConfigureHttpClient()",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.GetAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.GetGatewayUrl(string)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.IsPinnedAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.ListPinsAsync(string,int,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.MockUploadAsync(System.IO.Stream,string,string,System.Collections.Generic.Dictionary_string,string_)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.PinataClient(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions_ResQ.Storage.PinataOptions_,Microsoft.Extensions.Logging.ILogger_ResQ.Storage.PinataClient_)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.UnpinAsync(string,System.Threading.CancellationToken)",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.UploadAsync"
-                            ]
-                          },
-                          {
-                            "group": "PinataOptions",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiKey",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiSecret",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiUrl",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.GatewayUrl",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.JwtToken",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.MaxFileSizeBytes",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.MockMode",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.TimeoutSeconds"
-                            ]
-                          },
-                          {
-                            "group": "UploadResult",
-                            "pages": [
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.Cid",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.ContentType",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.FileName",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.IsPinned",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.SizeBytes",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.Timestamp",
-                              "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.UploadResult(string,string,long,string,bool,System.DateTimeOffset)"
-                            ]
-                          }
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.GetAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.GetGatewayUrl(string)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.IsPinnedAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.ListPinsAsync(string,int,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.UnpinAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.IStorageClient.UploadAsync",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.Cid",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.KeyValues",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.Name",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.PinMetadata(string,string,long,System.DateTimeOffset,System.Collections.Generic.Dictionary_string,string_)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.PinnedAt",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinMetadata.SizeBytes",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.BuildResiliencePipeline()",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.ConfigureHttpClient()",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.GetAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.GetGatewayUrl(string)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.IsPinnedAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.ListPinsAsync(string,int,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.MockUploadAsync(System.IO.Stream,string,string,System.Collections.Generic.Dictionary_string,string_)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.PinataClient(System.Net.Http.HttpClient,Microsoft.Extensions.Options.IOptions_ResQ.Storage.PinataOptions_,Microsoft.Extensions.Logging.ILogger_ResQ.Storage.PinataClient_)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.UnpinAsync(string,System.Threading.CancellationToken)",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataClient.UploadAsync",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiKey",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiSecret",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.ApiUrl",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.GatewayUrl",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.JwtToken",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.MaxFileSizeBytes",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.MockMode",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.PinataOptions.TimeoutSeconds",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.Cid",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.ContentType",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.FileName",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.IsPinned",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.SizeBytes",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.Timestamp",
+                          "sdks/dotnet/api/ResQ.Storage/ResQ.Storage.UploadResult.UploadResult(string,string,long,string,bool,System.DateTimeOffset)"
                         ]
                       }
                     ]
