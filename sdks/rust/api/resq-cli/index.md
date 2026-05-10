@@ -211,7 +211,7 @@ resq audit --skip-osv --skip-npm --react-min-score 90 --react-diff main
 
 ### `cost` -- Dependency Size Analysis
 
-Fetches package sizes from registries (npm, crates.io, PyPI) and categorizes dependencies by download footprint into high (>10 MB), medium (1-10 MB), and low (<1 MB) buckets. Results are saved as JSON files.
+Fetches package sizes from registries (npm, crates.io, PyPI) and categorizes dependencies by download footprint into high (>10 MB), medium (1-10 MB), and low (&lt;1 MB) buckets. Results are saved as JSON files.
 
 #### Arguments
 
