@@ -181,6 +181,38 @@ jobs:
           PY
           fi
 
+      - name: Rename subdirectory READMEs to index.md
+        # TypeDoc writes `<dir>/README.md` for each module's landing
+        # page. Mintlify's nav resolver expects `<dir>.{md,mdx}` or
+        # `<dir>/index.{md,mdx}` for a registered page id like
+        # `<dir>`; `<dir>/README.md` is a Hugo convention that
+        # Mintlify doesn't natively pick up. Without this rename,
+        # registering `<dir>` in the splice produces a "file does
+        # not exist" warning on every dev start and the URL
+        # `/<dir>` 307-redirects to the first leaf instead of
+        # rendering the README content.
+        #
+        # Rename only the subdirectory READMEs; the top-level
+        # README is already converted to README.mdx in the previous
+        # step (it's nav-registered explicitly). Also rewrite any
+        # in-content `README.md` references to `index.md` so
+        # cross-links keep working.
+        working-directory: ${{ env.PKG_DIR }}/generated-docs
+        run: |
+          # Rename each non-top-level README.md to index.md.
+          find . -mindepth 2 -type f -name 'README.md' -print0 \
+            | while IFS= read -r -d '' f; do
+              mv "$f" "$(dirname "$f")/index.md"
+            done
+          # Rewrite link targets so cross-page references keep
+          # resolving. Match `(...README.md)` and `(...README.md#frag)`
+          # in markdown link syntax only.
+          find . -type f -name '*.md' -print0 | while IFS= read -r -d '' f; do
+            sed -E -i \
+              's|\]\(([^)]*)README\.md(#[^)]*)?\)|](\1index.md\2)|g' \
+              "$f"
+          done
+
       - name: Prefix bare-filename intra-page links with ./
         # TypeDoc emits same-directory cross-references as bare
         # filenames, e.g. `[PaginationLink](PaginationLink.md)`.
@@ -327,15 +359,21 @@ jobs:
               insert(node.setdefault("_dirs", {}).setdefault(head, {}), rest, full_id)
 
           for p in raw:
-              if p == "README":
+              if p in ("README", "index"):
                   continue
-              # Mintlify auto-redirects `/path/README` to `/path`, so
-              # register the directory form (page id without trailing
-              # /README). Files that don't end in /README keep their
-              # path verbatim.
-              if p.endswith("/README"):
-                  full_id = f"{PREFIX}/{p[: -len('/README')]}"
-                  parts = full_id[len(PREFIX) + 1:].split("/")
+              # Each subdir's landing page is `<dir>/index.md` (after
+              # the rename step above) which Mintlify natively
+              # resolves from page id `<dir>`. Strip the `/index`
+              # suffix when building the registered path so the URL
+              # stays clean (`/<dir>` not `/<dir>/index`). Same
+              # principle applied to legacy `/README` entries in
+              # case any downstream tool still emits them. Files
+              # that don't end in either suffix keep their path
+              # verbatim.
+              if p.endswith("/index") or p.endswith("/README"):
+                  bare = p.rsplit("/", 1)[0]
+                  full_id = f"{PREFIX}/{bare}"
+                  parts = bare.split("/")
               else:
                   full_id = f"{PREFIX}/{p}"
                   parts = p.split("/")
