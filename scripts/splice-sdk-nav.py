@@ -150,6 +150,8 @@ def main() -> int:
         ("TypeScript", "typescript", "sdks/typescript/api"),
         (".NET",       "dotnet",     "sdks/dotnet/api"),
         ("Python",     "python",     "sdks/python/api"),
+        ("Rust",       "rust",       "sdks/rust/api"),
+        ("C++",        "cpp",        "sdks/cpp/api"),
     ]
 
     new_subgroups = []

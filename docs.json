@@ -5299,6 +5299,40 @@
                       "sdks/rust/api/resq-perf",
                       "sdks/rust/api/resq-tui"
                     ]
+                  },
+                  {
+                    "group": "C++",
+                    "pages": [
+                      "sdks/cpp/api/README",
+                      {
+                        "group": "resq-common",
+                        "pages": [
+                          "sdks/cpp/api/resq-common/resq",
+                          "sdks/cpp/api/resq-common/resq-ArrayUtils",
+                          "sdks/cpp/api/resq-common/resq-FileHandle",
+                          "sdks/cpp/api/resq-common/resq-FileUtils",
+                          "sdks/cpp/api/resq-common/resq-Result",
+                          "sdks/cpp/api/resq-common/resq-Result( void )",
+                          "sdks/cpp/api/resq-common/resq-StringUtils",
+                          "sdks/cpp/api/resq-common/resq-common",
+                          "sdks/cpp/api/resq-common/resq-common-geo",
+                          "sdks/cpp/api/resq-common/resq-common-geo-GeoPoint",
+                          "sdks/cpp/api/resq-common/resq-common-geo-GeoSegment",
+                          "sdks/cpp/api/resq-common/resq-common-geo-NoFlyZone",
+                          "sdks/cpp/api/resq-common/resq-common-time",
+                          "sdks/cpp/api/resq-common/resq-dsa",
+                          "sdks/cpp/api/resq-common/resq-dsa-BloomFilter",
+                          "sdks/cpp/api/resq-common/resq-dsa-BoundedHeap",
+                          "sdks/cpp/api/resq-common/resq-dsa-CountMinSketch",
+                          "sdks/cpp/api/resq-common/resq-dsa-Graph",
+                          "sdks/cpp/api/resq-common/resq-dsa-Graph-PathResult",
+                          "sdks/cpp/api/resq-common/resq-dsa-Trie",
+                          "sdks/cpp/api/resq-common/resq-dsa-Trie-Node",
+                          "sdks/cpp/api/resq-common/resq-env",
+                          "sdks/cpp/api/resq-common/std"
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
