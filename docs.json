@@ -2223,7 +2223,7 @@
                     "pages": [
                       "sdks/cpp/api/README",
                       {
-                        "group": "ResQ Common",
+                        "group": "resq-common",
                         "pages": [
                           "sdks/cpp/api/resq-common/resq",
                           "sdks/cpp/api/resq-common/resq-ArrayUtils",
