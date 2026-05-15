@@ -2071,7 +2071,7 @@
                     "pages": [
                       "sdks/python/api/README",
                       {
-                        "group": "ResQ DSA",
+                        "group": "resq-dsa",
                         "pages": [
                           "sdks/python/api/resq-dsa/bloom",
                           "sdks/python/api/resq-dsa/count_min",
@@ -2082,7 +2082,7 @@
                         ]
                       },
                       {
-                        "group": "ResQ MCP",
+                        "group": "resq-mcp",
                         "pages": [
                           "sdks/python/api/resq-mcp/core",
                           "sdks/python/api/resq-mcp/drone",
@@ -2097,7 +2097,7 @@
                           "sdks/python/api/resq-mcp/telemetry",
                           "sdks/python/api/resq-mcp/tools",
                           {
-                            "group": "Core",
+                            "group": "core",
                             "pages": [
                               "sdks/python/api/resq-mcp/core/config",
                               "sdks/python/api/resq-mcp/core/errors",
@@ -2108,14 +2108,14 @@
                             ]
                           },
                           {
-                            "group": "Drone",
+                            "group": "drone",
                             "pages": [
                               "sdks/python/api/resq-mcp/drone/models",
                               "sdks/python/api/resq-mcp/drone/service"
                             ]
                           },
                           {
-                            "group": "Dtsop",
+                            "group": "dtsop",
                             "pages": [
                               "sdks/python/api/resq-mcp/dtsop/models",
                               "sdks/python/api/resq-mcp/dtsop/service",
@@ -2123,7 +2123,7 @@
                             ]
                           },
                           {
-                            "group": "Hce",
+                            "group": "hce",
                             "pages": [
                               "sdks/python/api/resq-mcp/hce/models",
                               "sdks/python/api/resq-mcp/hce/service",
@@ -2131,7 +2131,7 @@
                             ]
                           },
                           {
-                            "group": "Pdie",
+                            "group": "pdie",
                             "pages": [
                               "sdks/python/api/resq-mcp/pdie/models",
                               "sdks/python/api/resq-mcp/pdie/service"
