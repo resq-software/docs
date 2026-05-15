@@ -376,5 +376,4 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](http://www.apache.
 Click through to each module for the full rustdoc-rendered API surface (types, traits, functions, methods).
 
 - [`analysis`](./analysis)
-- [`bin_explorer`](./bin_explorer)
 
