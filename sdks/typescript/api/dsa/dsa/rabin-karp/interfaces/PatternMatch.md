@@ -1,6 +1,6 @@
 # Interface: PatternMatch
 
-Defined in: [rabin-karp.ts:38](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L38)
+Defined in: [rabin-karp.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/rabin-karp.ts#L38)
 
 Result of a pattern match
 
@@ -10,7 +10,7 @@ Result of a pattern match
 
 > `optional` **column?**: `number`
 
-Defined in: [rabin-karp.ts:46](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L46)
+Defined in: [rabin-karp.ts:46](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/rabin-karp.ts#L46)
 
 Column number within the line
 
@@ -20,7 +20,7 @@ Column number within the line
 
 > **index**: `number`
 
-Defined in: [rabin-karp.ts:40](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L40)
+Defined in: [rabin-karp.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/rabin-karp.ts#L40)
 
 Starting index of the match in the text
 
@@ -30,7 +30,7 @@ Starting index of the match in the text
 
 > `optional` **line?**: `number`
 
-Defined in: [rabin-karp.ts:44](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L44)
+Defined in: [rabin-karp.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/rabin-karp.ts#L44)
 
 Line number (if text contains newlines)
 
@@ -40,6 +40,6 @@ Line number (if text contains newlines)
 
 > **match**: `string`
 
-Defined in: [rabin-karp.ts:42](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/rabin-karp.ts#L42)
+Defined in: [rabin-karp.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/rabin-karp.ts#L42)
 
 The matched substring

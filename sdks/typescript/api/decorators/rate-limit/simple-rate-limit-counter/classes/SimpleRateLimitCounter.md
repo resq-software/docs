@@ -1,6 +1,6 @@
 # Class: SimpleRateLimitCounter
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:44](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L44)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L44)
 
 Simple in-memory implementation of RateLimitCounter.
 Uses a Map to store counts for each key.
@@ -38,7 +38,7 @@ console.log(counter.getCount('user-1')); // 1
 
 > **new SimpleRateLimitCounter**(`counterMap?`): `SimpleRateLimitCounter`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:50](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L50)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:50](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L50)
 
 Creates a new SimpleRateLimitCounter instance.
 
@@ -60,7 +60,7 @@ Optional existing Map to use for storage
 
 > **dec**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:110](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L110)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:110](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L110)
 
 Decrements the count for a key.
 Removes the key from the map if count reaches 0.
@@ -99,7 +99,7 @@ console.log(counter.getCount('key')); // 0 (key removed from map)
 
 > **getCount**(`key`): `number`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:66](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L66)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:66](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L66)
 
 Gets the current count for a key.
 
@@ -136,7 +136,7 @@ console.log(counter.getCount('key')); // 1
 
 > **inc**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:84](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L84)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:84](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L84)
 
 Increments the count for a key.
 

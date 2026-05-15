@@ -2,4 +2,15 @@
 
 > `const` **RateLimitConfigSchema**: `Struct`\<\&#123; `headers`: `optional`\<`Boolean`\>; `maxRequests`: `Number`; `windowMs`: `Number`; \&#125;\>
 
-Defined in: [rate-limit.ts:30](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/rate-limit.ts#L30)
+Defined in: [rate-limit.ts:41](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/rate-limit.ts#L41)
+
+Effect Schema for runtime-validating a rate-limit configuration —
+useful at framework boundaries where the config arrives as untyped
+JSON (env-var parsing, admin endpoints, feature-flag payloads).
+
+## Example
+
+```ts
+import { Schema } from "effect";
+const config = Schema.decodeUnknownSync(RateLimitConfigSchema)(input);
+```

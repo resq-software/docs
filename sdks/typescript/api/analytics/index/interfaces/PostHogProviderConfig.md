@@ -1,6 +1,6 @@
 # Interface: PostHogProviderConfig
 
-Defined in: [index.ts:38](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L38)
+Defined in: [index.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L38)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [index.ts:38](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **host?**: `string`
 
-Defined in: [index.ts:40](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L40)
+Defined in: [index.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L40)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [index.ts:40](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > **key**: `string`
 
-Defined in: [index.ts:39](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L39)
+Defined in: [index.ts:39](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L39)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [index.ts:39](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **options?**: `Partial`\<`PostHogConfig`\>
 
-Defined in: [index.ts:42](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L42)
+Defined in: [index.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L42)
 
 ***
 
@@ -32,4 +32,4 @@ Defined in: [index.ts:42](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **uiHost?**: `string`
 
-Defined in: [index.ts:41](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L41)
+Defined in: [index.ts:41](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L41)

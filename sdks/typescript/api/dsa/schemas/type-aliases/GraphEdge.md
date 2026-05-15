@@ -2,4 +2,6 @@
 
 > **GraphEdge** = `S.Schema.Type`\<*typeof* [`GraphEdgeSchema`](../variables/GraphEdgeSchema)\>
 
-Defined in: [schemas.ts:103](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/schemas.ts#L103)
+Defined in: [schemas.ts:138](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L138)
+
+Inferred TS type for [GraphEdgeSchema](../variables/GraphEdgeSchema).

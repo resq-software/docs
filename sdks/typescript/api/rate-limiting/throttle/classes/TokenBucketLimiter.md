@@ -1,18 +1,26 @@
 # Class: TokenBucketLimiter
 
-Defined in: [throttle.ts:413](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L413)
+Defined in: [throttle.ts:478](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L478)
 
-Rate limiter using token bucket algorithm
+Token-bucket rate limiter.
+
+The bucket holds at most `capacity` tokens. Tokens refill **continuously**
+over `windowMs` (one full bucket per window — i.e. `capacity / windowMs`
+tokens per ms). Each accepted call deducts one token; when no tokens are
+available, callers either wait via [acquire](#acquire) or get rejected via
+[tryAcquire](#tryacquire).
+
+Token-bucket limiters allow short bursts up to `capacity` while pinning
+the long-run average to `capacity / windowMs`. Use this when bursty
+traffic is acceptable; pick [LeakyBucketLimiter](./LeakyBucketLimiter) when you need
+smoother request spacing.
 
 ## Example
 
 ```ts
-const limiter = new TokenBucketLimiter(5, 60000); // 5 requests per minute
-
-async function fetchData() {
-  await limiter.acquire();
-  return fetch('/api/data');
-}
+const limiter = new TokenBucketLimiter(5, 60_000); // 5 req/min
+await limiter.acquire();
+fetch("/api/data");
 ```
 
 ## Constructors
@@ -21,7 +29,7 @@ async function fetchData() {
 
 > **new TokenBucketLimiter**(`capacity`, `windowMs`): `TokenBucketLimiter`
 
-Defined in: [throttle.ts:425](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L425)
+Defined in: [throttle.ts:492](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L492)
 
 #### Parameters
 
@@ -29,13 +37,15 @@ Defined in: [throttle.ts:425](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 `number`
 
-Maximum number of tokens (requests)
+Maximum bucket size (also the burst limit).
 
 ##### windowMs
 
 `number`
 
-Time window in milliseconds
+Time window over which one full bucket of
+  tokens accumulates. The steady-state rate is
+  `capacity / windowMs` tokens per millisecond.
 
 #### Returns
 
@@ -47,9 +57,13 @@ Time window in milliseconds
 
 > **acquire**(): `Promise`\<`void`\>
 
-Defined in: [throttle.ts:450](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L450)
+Defined in: [throttle.ts:524](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L524)
 
-Acquire a token (wait if none available)
+Take one token, awaiting future refills if the bucket is empty.
+
+Calls are released in FIFO order. Resolved promises consume one
+token each — the resolver `await`s and proceeds with the protected
+work without further bookkeeping.
 
 #### Returns
 
@@ -61,13 +75,17 @@ Acquire a token (wait if none available)
 
 > **getStats**(): `object`
 
-Defined in: [throttle.ts:501](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L501)
+Defined in: [throttle.ts:587](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L587)
 
-Get rate limiter stats
+Snapshot of bucket state.
 
 #### Returns
 
 `object`
+
+`{ availableTokens, queueSize, capacity }` —
+  `availableTokens` is rounded down so it never claims more
+  tokens than a caller could actually withdraw.
 
 ##### availableTokens
 
@@ -87,9 +105,14 @@ Get rate limiter stats
 
 > **reset**(): `void`
 
-Defined in: [throttle.ts:513](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L513)
+Defined in: [throttle.ts:604](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L604)
 
-Reset the rate limiter
+Refill the bucket to capacity and abandon any queued waiters.
+
+Note: queued promises returned by [acquire](#acquire) that were
+waiting at the time of `reset()` will **never resolve**. Use
+with care in long-running services; prefer plumbing an
+`AbortSignal` through call sites instead of resetting.
 
 #### Returns
 
@@ -101,10 +124,14 @@ Reset the rate limiter
 
 > **tryAcquire**(): `boolean`
 
-Defined in: [throttle.ts:468](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L468)
+Defined in: [throttle.ts:546](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L546)
 
-Try to acquire a token without waiting
+Non-blocking variant of [acquire](#acquire).
 
 #### Returns
 
 `boolean`
+
+`true` if a token was consumed, `false` if the bucket
+  was empty (the caller should drop the request, return 429, or
+  apply its own back-pressure).

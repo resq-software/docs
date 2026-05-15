@@ -1,9 +1,21 @@
 # Class: KeyedThrottle\<T\>
 
-Defined in: [throttle.ts:256](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L256)
+Defined in: [throttle.ts:269](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L269)
 
-Per-key throttle manager for throttling by specific keys
-Useful for throttling per-endpoint or per-user
+Per-key throttle manager — wraps [throttle](../functions/throttle) with a `Map` keyed
+by user-supplied identifiers so different keys throttle independently.
+
+Use cases: per-endpoint throttles, per-user click handlers,
+per-document save buffers. Memory grows with the number of distinct
+keys; call [cancel](#cancel) or [cancelAll](#cancelall) to free resources.
+
+## Example
+
+```ts
+const saveDoc = new KeyedThrottle(saveToServer, 1000);
+saveDoc.execute("doc:42", payload);
+saveDoc.execute("doc:43", payload);   // independent timer
+```
 
 ## Type Parameters
 
@@ -11,13 +23,15 @@ Useful for throttling per-endpoint or per-user
 
 `T` *extends* `AnyFunction`
 
+Function being throttled.
+
 ## Constructors
 
 ### Constructor
 
 > **new KeyedThrottle**\<`T`\>(`func`, `wait`, `options?`): `KeyedThrottle`\<`T`\>
 
-Defined in: [throttle.ts:265](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L265)
+Defined in: [throttle.ts:285](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L285)
 
 #### Parameters
 
@@ -25,11 +39,19 @@ Defined in: [throttle.ts:265](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 `T`
 
+Function to throttle. The same instance is used for
+  every key.
+
 ##### wait
 
 `number`
 
+Throttle window in milliseconds.
+
 ##### options?
+
+Forwarded to [throttle](../functions/throttle) for each key's
+  internal throttled wrapper.
 
 ###### leading?
 
@@ -49,9 +71,10 @@ Defined in: [throttle.ts:265](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > **cancel**(`key`): `void`
 
-Defined in: [throttle.ts:288](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L288)
+Defined in: [throttle.ts:314](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L314)
 
-Cancel throttle for specific key
+Cancel any pending trailing-edge call for `key` and drop the
+bucket from the map. The next `execute(key, …)` will start fresh.
 
 #### Parameters
 
@@ -69,9 +92,9 @@ Cancel throttle for specific key
 
 > **cancelAll**(): `void`
 
-Defined in: [throttle.ts:299](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L299)
+Defined in: [throttle.ts:323](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L323)
 
-Cancel all throttles
+Cancel and drop every bucket.
 
 #### Returns
 
@@ -83,9 +106,10 @@ Cancel all throttles
 
 > **execute**(`key`, ...`args`): `ReturnType`\<`T`\> \| `undefined`
 
-Defined in: [throttle.ts:274](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L274)
+Defined in: [throttle.ts:299](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L299)
 
-Execute function with throttling per key
+Invoke `func` under the throttle bucket associated with `key`,
+lazily creating that bucket on first call.
 
 #### Parameters
 
@@ -101,19 +125,26 @@ Execute function with throttling per key
 
 `ReturnType`\<`T`\> \| `undefined`
 
+Whatever the throttled call returns this tick — either
+  the freshly-computed result, the cached previous result, or
+  `undefined` if neither has fired yet.
+
 ***
 
 ### getStats()
 
 > **getStats**(): `object`
 
-Defined in: [throttle.ts:309](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/throttle.ts#L309)
+Defined in: [throttle.ts:336](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L336)
 
-Get stats
+Snapshot of currently-tracked keys.
 
 #### Returns
 
 `object`
+
+`{ activeKeys, keys }`. The `keys` array is a one-shot
+  copy and not kept in sync with future mutations.
 
 ##### activeKeys
 

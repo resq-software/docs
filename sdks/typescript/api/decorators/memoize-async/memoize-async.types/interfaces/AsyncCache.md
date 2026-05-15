@@ -1,6 +1,6 @@
 # Interface: AsyncCache\<D\>
 
-Defined in: [memoize-async/memoize-async.types.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L51)
+Defined in: [memoize-async/memoize-async.types.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L51)
 
 Interface for async cache implementations used by the memoizeAsync decorator.
 
@@ -34,7 +34,7 @@ The type of values stored in the cache
 
 > **delete**: (`key`) => `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:57](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L57)
+Defined in: [memoize-async/memoize-async.types.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L57)
 
 Remove a value from the cache asynchronously
 
@@ -54,7 +54,7 @@ Remove a value from the cache asynchronously
 
 > **get**: (`key`) => `Promise`\<`D`\> \| `Promise`\<`null`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:55](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L55)
+Defined in: [memoize-async/memoize-async.types.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L55)
 
 Retrieve a value from the cache asynchronously
 
@@ -74,7 +74,7 @@ Retrieve a value from the cache asynchronously
 
 > **has**: (`key`) => `Promise`\<`boolean`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:59](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L59)
+Defined in: [memoize-async/memoize-async.types.ts:59](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L59)
 
 Check if a key exists in the cache asynchronously
 
@@ -94,7 +94,7 @@ Check if a key exists in the cache asynchronously
 
 > **set**: (`key`, `value`) => `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:53](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L53)
+Defined in: [memoize-async/memoize-async.types.ts:53](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L53)
 
 Store a value in the cache asynchronously
 

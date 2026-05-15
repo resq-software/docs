@@ -2,9 +2,12 @@
 
 > **containsNoSQLInjection**(`input`): [`ThreatFinding`](../interfaces/ThreatFinding)[]
 
-Defined in: [validators.ts:227](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L227)
+Defined in: [validators.ts:280](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L280)
 
-Detects NoSQL injection patterns in input
+Detect NoSQL-injection patterns — Mongo-style operator injection
+(`$where`, `$ne`, `$regex`), JavaScript-in-query payloads, and
+structural manipulators that can bypass auth filters in document
+stores.
 
 ## Parameters
 
@@ -12,6 +15,10 @@ Detects NoSQL injection patterns in input
 
 `string`
 
+String to scan.
+
 ## Returns
 
 [`ThreatFinding`](../interfaces/ThreatFinding)[]
+
+Empty array, or one finding of type `"nosql_injection"`.

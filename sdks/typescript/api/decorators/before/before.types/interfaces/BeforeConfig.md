@@ -1,6 +1,6 @@
 # Interface: BeforeConfig\<T\>
 
-Defined in: [before/before.types.ts:40](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.types.ts#L40)
+Defined in: [before/before.types.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.types.ts#L40)
 
 Configuration options for the
 
@@ -40,7 +40,7 @@ The type of the class containing the decorated method
 
 > **func**: ((...`args`) => `unknown`) \| keyof `T`
 
-Defined in: [before/before.types.ts:42](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.types.ts#L42)
+Defined in: [before/before.types.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.types.ts#L42)
 
 The before function to execute, or a method name on the class
 
@@ -50,6 +50,6 @@ The before function to execute, or a method name on the class
 
 > `optional` **wait?**: `boolean`
 
-Defined in: [before/before.types.ts:44](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.types.ts#L44)
+Defined in: [before/before.types.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.types.ts#L44)
 
 Whether to wait for the before function to complete before executing the method

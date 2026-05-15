@@ -2,7 +2,7 @@
 
 > **throttleAsync**\<`T`, `D`\>(`parallelCalls?`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [throttle-async/throttle-async.ts:82](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle-async/throttle-async.ts#L82)
+Defined in: [throttle-async/throttle-async.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async.ts#L82)
 
 Decorator that limits concurrent async method calls.
 Excess calls are queued and executed when slots become available.

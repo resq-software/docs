@@ -1,6 +1,6 @@
 # Interface: Edge\<T\>
 
-Defined in: [graph.ts:33](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L33)
+Defined in: [graph.ts:33](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L33)
 
 Edge in the graph
 
@@ -16,7 +16,7 @@ Edge in the graph
 
 > `optional` **metadata?**: `Record`\<`string`, `unknown`\>
 
-Defined in: [graph.ts:39](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L39)
+Defined in: [graph.ts:39](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L39)
 
 Optional metadata
 
@@ -26,7 +26,7 @@ Optional metadata
 
 > **target**: `T`
 
-Defined in: [graph.ts:35](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L35)
+Defined in: [graph.ts:35](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L35)
 
 Target vertex
 
@@ -36,6 +36,6 @@ Target vertex
 
 > **weight**: `number`
 
-Defined in: [graph.ts:37](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/graph.ts#L37)
+Defined in: [graph.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L37)
 
 Edge weight (default: 1)

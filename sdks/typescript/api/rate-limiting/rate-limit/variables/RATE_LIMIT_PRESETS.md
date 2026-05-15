@@ -2,7 +2,22 @@
 
 > `const` **RATE\_LIMIT\_PRESETS**: `object`
 
-Defined in: [rate-limit.ts:139](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/rate-limit.ts#L139)
+Defined in: [rate-limit.ts:256](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/rate-limit.ts#L256)
+
+Pre-tuned `(windowMs, maxRequests)` pairs for common traffic shapes.
+
+The presets are deliberately conservative — tighten them per-route
+once you have real traffic data:
+
+- `auth` — 5 requests / 15 min. Login, password reset, MFA enrol.
+  Tight enough to thwart credential stuffing; loose enough to avoid
+  locking out a legitimate user on a flaky network.
+- `api`  — 100 requests / minute. General-purpose authenticated API.
+- `read` — 200 requests / minute. Idempotent read endpoints (search,
+  listing) where caching upstream is feasible.
+- `upload` — 20 requests / hour. File ingestion endpoints. Per-hour
+  window discourages bulk-uploading abuse without blocking iterative
+  user workflows.
 
 ## Type Declaration
 
@@ -53,3 +68,13 @@ Defined in: [rate-limit.ts:139](https://github.com/resq-software/npm/blob/f2ab5f
 #### upload.windowMs
 
 > `readonly` **windowMs**: `number`
+
+## Example
+
+```ts
+const decision = await store.check(
+  `user:${userId}`,
+  RATE_LIMIT_PRESETS.api.windowMs,
+  RATE_LIMIT_PRESETS.api.maxRequests,
+);
+```

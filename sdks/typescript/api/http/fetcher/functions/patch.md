@@ -1,10 +1,13 @@
 # Function: patch()
 
+Issue an HTTP PATCH (partial update). Convenience wrapper around
+[fetcher](./fetcher).
+
 ## Call Signature
 
 > **patch**\<`T`\>(`url`, `body?`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:584](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L584)
+Defined in: [packages/http/src/fetcher.ts:674](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L674)
 
 ### Type Parameters
 
@@ -36,7 +39,7 @@ Defined in: [packages/http/src/fetcher.ts:584](https://github.com/resq-software/
 
 > **patch**\<`S`\>(`url`, `body`, `options`, `params?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:591](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L591)
+Defined in: [packages/http/src/fetcher.ts:681](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L681)
 
 ### Type Parameters
 

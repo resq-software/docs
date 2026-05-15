@@ -4,7 +4,7 @@
 
 > **memoizeAsync**\<`T`, `D`\>(): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
-Defined in: [memoize-async/memoize-async.ts:105](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L105)
+Defined in: [memoize-async/memoize-async.ts:105](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L105)
 
 Decorator that caches async method results based on their arguments.
 Prevents duplicate concurrent requests by returning the same promise
@@ -74,7 +74,7 @@ const [product1, product2] = await Promise.all([
 
 > **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
-Defined in: [memoize-async/memoize-async.ts:106](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L106)
+Defined in: [memoize-async/memoize-async.ts:106](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L106)
 
 Decorator that caches async method results based on their arguments.
 Prevents duplicate concurrent requests by returning the same promise
@@ -152,7 +152,7 @@ const [product1, product2] = await Promise.all([
 
 > **memoizeAsync**\<`T`, `D`\>(`expirationTimeMs`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
 
-Defined in: [memoize-async/memoize-async.ts:109](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.ts#L109)
+Defined in: [memoize-async/memoize-async.ts:109](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L109)
 
 Decorator that caches async method results based on their arguments.
 Prevents duplicate concurrent requests by returning the same promise

@@ -2,9 +2,17 @@
 
 > **detectThreatPatterns**(`input`, `config?`): [`ThreatDetectionResult`](../interfaces/ThreatDetectionResult)
 
-Defined in: [validators.ts:352](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L352)
+Defined in: [validators.ts:456](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L456)
 
-Runs all configured threat detectors on input
+Run every enabled detector against `input` and aggregate findings.
+
+Returns early-but-not-immediately: each individual detector still
+runs to completion, but each detector returns at most one finding,
+so the aggregate threats array is small (≤ 6 entries).
+
+Non-string inputs (`null`, `undefined`, numbers, …) are treated as
+safe — wrap caller-side validation around this if you want to
+reject non-strings.
 
 ## Parameters
 
@@ -12,16 +20,24 @@ Runs all configured threat detectors on input
 
 `string`
 
-The string to check
+The candidate string.
 
 ### config?
 
 [`ThreatDetectionConfig`](../interfaces/ThreatDetectionConfig) = `DEFAULT_CONFIG`
 
-Optional configuration for which checks to run
+Detector toggles. Defaults turn on everything
+  except command-injection.
 
 ## Returns
 
 [`ThreatDetectionResult`](../interfaces/ThreatDetectionResult)
 
-Detection result with any findings
+`{ isSafe, threats }`.
+
+## Example
+
+```ts
+const result = detectThreatPatterns(req.body.query);
+if (!result.isSafe) return new Response(getThreatErrorMessage(result), { status: 400 });
+```

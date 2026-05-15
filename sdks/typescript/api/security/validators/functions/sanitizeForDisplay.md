@@ -2,10 +2,17 @@
 
 > **sanitizeForDisplay**(`input`): `string`
 
-Defined in: [validators.ts:406](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L406)
+Defined in: [validators.ts:522](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L522)
 
-Sanitizes input for safe display by escaping HTML entities
-Use this when you need to display potentially unsafe content
+HTML-entity escape `&`, `<`, `>`, `"`, `'`, and `/` for safe
+insertion into HTML text and attribute contexts.
+
+**Limited scope.** This is appropriate for plain text destined for
+`textContent` or attribute values, not for unfiltered HTML
+rendering. For rich-text use a vetted sanitizer (DOMPurify on the
+client, sanitize-html or similar on the server).
+
+Returns `""` for non-string or empty input.
 
 ## Parameters
 
@@ -13,6 +20,10 @@ Use this when you need to display potentially unsafe content
 
 `string`
 
+Untrusted string.
+
 ## Returns
 
 `string`
+
+Entity-escaped output safe to interpolate into HTML.

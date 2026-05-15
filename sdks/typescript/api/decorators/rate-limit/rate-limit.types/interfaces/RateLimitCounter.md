@@ -1,6 +1,6 @@
 # Interface: RateLimitCounter
 
-Defined in: [rate-limit/rate-limit.types.ts:114](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L114)
+Defined in: [rate-limit/rate-limit.types.ts:114](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L114)
 
 Interface for rate limit counter implementations.
 Used to track call counts within time windows.
@@ -38,7 +38,7 @@ class InMemoryCounter implements RateLimitCounter {
 
 > **dec**: (`key`) => `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:118](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L118)
+Defined in: [rate-limit/rate-limit.types.ts:118](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L118)
 
 Decrement the count for a key
 
@@ -58,7 +58,7 @@ Decrement the count for a key
 
 > **getCount**: (`key`) => `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:120](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L120)
+Defined in: [rate-limit/rate-limit.types.ts:120](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L120)
 
 Get the current count for a key
 
@@ -78,7 +78,7 @@ Get the current count for a key
 
 > **inc**: (`key`) => `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:116](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L116)
+Defined in: [rate-limit/rate-limit.types.ts:116](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L116)
 
 Increment the count for a key
 

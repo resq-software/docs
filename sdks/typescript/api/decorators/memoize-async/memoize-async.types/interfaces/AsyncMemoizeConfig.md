@@ -1,6 +1,6 @@
 # Interface: AsyncMemoizeConfig\<T, D\>
 
-Defined in: [memoize-async/memoize-async.types.ts:81](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L81)
+Defined in: [memoize-async/memoize-async.types.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L81)
 
 Configuration options for the
 
@@ -40,7 +40,7 @@ The resolved type of the async method
 
 > `optional` **cache?**: [`Cache`](../../../memoize/memoize.types/interfaces/Cache)\<`D`\> \| [`AsyncCache`](./AsyncCache)\<`D`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L83)
+Defined in: [memoize-async/memoize-async.types.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L83)
 
 Custom cache implementation (sync or async)
 
@@ -50,7 +50,7 @@ Custom cache implementation (sync or async)
 
 > `optional` **expirationTimeMs?**: `number`
 
-Defined in: [memoize-async/memoize-async.types.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L87)
+Defined in: [memoize-async/memoize-async.types.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L87)
 
 Time in milliseconds after which cached values expire
 
@@ -60,6 +60,6 @@ Time in milliseconds after which cached values expire
 
 > `optional` **keyResolver?**: [`KeyResolver`](../../../memoize/memoize.types/type-aliases/KeyResolver) \| keyof `T`
 
-Defined in: [memoize-async/memoize-async.types.ts:85](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.types.ts#L85)
+Defined in: [memoize-async/memoize-async.types.ts:85](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L85)
 
 Function or method name for generating cache keys

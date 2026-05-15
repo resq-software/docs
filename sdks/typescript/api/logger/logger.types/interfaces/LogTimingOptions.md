@@ -1,6 +1,6 @@
 # Interface: LogTimingOptions
 
-Defined in: [logger.types.ts:125](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L125)
+Defined in: [logger.types.ts:125](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L125)
 
 Options for the
 
@@ -14,7 +14,7 @@ decorator
 
 > `optional` **label?**: `string`
 
-Defined in: [logger.types.ts:127](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L127)
+Defined in: [logger.types.ts:127](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L127)
 
 Custom label for timing logs
 
@@ -24,7 +24,7 @@ Custom label for timing logs
 
 > `optional` **level?**: [`LogLevelString`](../type-aliases/LogLevelString)
 
-Defined in: [logger.types.ts:131](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L131)
+Defined in: [logger.types.ts:131](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L131)
 
 Log level to use (default: 'info')
 
@@ -34,6 +34,6 @@ Log level to use (default: 'info')
 
 > `optional` **threshold?**: `number`
 
-Defined in: [logger.types.ts:129](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L129)
+Defined in: [logger.types.ts:129](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L129)
 
 Threshold in ms - only log if execution exceeds this (default: 0)

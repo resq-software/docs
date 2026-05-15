@@ -1,6 +1,6 @@
 # Class: Queue\<T\>
 
-Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/_utils.ts#L51)
+Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L51)
 
 ## Type Parameters
 
@@ -24,7 +24,7 @@ Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f
 
 > **dequeue**(): `T` \| `null`
 
-Defined in: [\_utils.ts:78](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/_utils.ts#L78)
+Defined in: [\_utils.ts:78](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L78)
 
 #### Returns
 
@@ -36,7 +36,7 @@ Defined in: [\_utils.ts:78](https://github.com/resq-software/npm/blob/f2ab5fc82f
 
 > **enqueue**(`item`): `void`
 
-Defined in: [\_utils.ts:64](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/_utils.ts#L64)
+Defined in: [\_utils.ts:64](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L64)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Defined in: [\_utils.ts:64](https://github.com/resq-software/npm/blob/f2ab5fc82f
 
 > **getSize**(): `number`
 
-Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/_utils.ts#L56)
+Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L56)
 
 #### Returns
 
@@ -66,7 +66,7 @@ Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/f2ab5fc82f
 
 > **isEmpty**(): `boolean`
 
-Defined in: [\_utils.ts:60](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/_utils.ts#L60)
+Defined in: [\_utils.ts:60](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L60)
 
 #### Returns
 

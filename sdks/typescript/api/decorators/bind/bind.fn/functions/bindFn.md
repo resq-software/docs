@@ -2,7 +2,7 @@
 
 > **bindFn**\<`D`, `A`\>(`originalMethod`, `context`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [bind/bind.fn.ts:43](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/bind/bind.fn.ts#L43)
+Defined in: [bind/bind.fn.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/bind/bind.fn.ts#L43)
 
 Creates a bound version of a method.
 

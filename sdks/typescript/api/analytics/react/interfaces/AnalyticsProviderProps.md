@@ -1,6 +1,8 @@
 # Interface: AnalyticsProviderProps
 
-Defined in: [react/index.ts:30](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L30)
+Defined in: [react/index.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L45)
+
+Props for [AnalyticsProvider](../functions/AnalyticsProvider).
 
 ## Properties
 
@@ -8,7 +10,9 @@ Defined in: [react/index.ts:30](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **children?**: `ReactNode`
 
-Defined in: [react/index.ts:33](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L33)
+Defined in: [react/index.ts:60](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L60)
+
+Wrapped tree.
 
 ***
 
@@ -16,7 +20,12 @@ Defined in: [react/index.ts:33](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **config**: [`AnalyticsConfig`](../../index/interfaces/AnalyticsConfig)
 
-Defined in: [react/index.ts:31](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L31)
+Defined in: [react/index.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L52)
+
+Provider configuration — PostHog/GA4 credentials,
+cross-subdomain cookie domain, debug flag, etc. Read once on
+mount; later prop changes do **not** re-initialise the
+singleton (use [reset](../../index/functions/reset) + a remount if you need that).
 
 ***
 
@@ -24,4 +33,8 @@ Defined in: [react/index.ts:31](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **deferUntilIdle?**: `boolean`
 
-Defined in: [react/index.ts:32](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L32)
+Defined in: [react/index.ts:58](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L58)
+
+Wait for `requestIdleCallback` before booting analytics so it
+never sits on the LCP critical path. Defaults to `true`. Set
+to `false` only when you need first-paint events captured.

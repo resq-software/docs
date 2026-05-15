@@ -1,6 +1,12 @@
 # Interface: AnalyticsRewriteOptions
 
-Defined in: [next/index.ts:21](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/next/index.ts#L21)
+Defined in: [next/index.ts:39](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/next/index.ts#L39)
+
+Options for [withAnalyticsRewrites](../functions/withAnalyticsRewrites).
+
+Defaults are tuned for PostHog's US ingestion endpoints; override
+`upstream` / `assetsUpstream` for EU regions or self-hosted
+deployments.
 
 ## Properties
 
@@ -8,7 +14,9 @@ Defined in: [next/index.ts:21](https://github.com/resq-software/npm/blob/f2ab5fc
 
 > `optional` **assetsUpstream?**: `string`
 
-Defined in: [next/index.ts:24](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/next/index.ts#L24)
+Defined in: [next/index.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/next/index.ts#L45)
+
+PostHog static-assets endpoint. Default `"https://us-assets.i.posthog.com"`.
 
 ***
 
@@ -16,7 +24,9 @@ Defined in: [next/index.ts:24](https://github.com/resq-software/npm/blob/f2ab5fc
 
 > `optional` **prefix?**: `string`
 
-Defined in: [next/index.ts:22](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/next/index.ts#L22)
+Defined in: [next/index.ts:41](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/next/index.ts#L41)
+
+Local path prefix that proxies to PostHog. Default `"/ingest"`.
 
 ***
 
@@ -24,4 +34,6 @@ Defined in: [next/index.ts:22](https://github.com/resq-software/npm/blob/f2ab5fc
 
 > `optional` **upstream?**: `string`
 
-Defined in: [next/index.ts:23](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/next/index.ts#L23)
+Defined in: [next/index.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/next/index.ts#L43)
+
+PostHog ingestion endpoint. Default `"https://us.i.posthog.com"`.

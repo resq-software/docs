@@ -2,7 +2,7 @@
 
 > **delegateFn**\<`D`, `A`\>(`originalMethod`, `keyResolver?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [delegate/delegate.fn.ts:77](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/delegate/delegate.fn.ts#L77)
+Defined in: [delegate/delegate.fn.ts:77](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delegate/delegate.fn.ts#L77)
 
 Wraps an async method to deduplicate concurrent calls.
 Multiple calls with the same key will share the same promise

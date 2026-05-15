@@ -1,8 +1,8 @@
 # Interface: LRUCacheOptions
 
-Defined in: [lru-cache.ts:32](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/lru-cache.ts#L32)
+Defined in: [lru-cache.ts:32](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/lru-cache.ts#L32)
 
-LRU Cache configuration
+Configuration for [LRUCache](../classes/LRUCache).
 
 ## Properties
 
@@ -10,9 +10,11 @@ LRU Cache configuration
 
 > `optional` **defaultTTL?**: `number`
 
-Defined in: [lru-cache.ts:36](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/lru-cache.ts#L36)
+Defined in: [lru-cache.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/lru-cache.ts#L43)
 
-Default TTL in milliseconds (optional)
+Default time-to-live in milliseconds for entries inserted without a
+per-call TTL. Omit for entries that never expire by time. Expired
+entries are evicted **lazily** on the next `get`/`has` access.
 
 ***
 
@@ -20,9 +22,10 @@ Default TTL in milliseconds (optional)
 
 > **maxSize**: `number`
 
-Defined in: [lru-cache.ts:34](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/lru-cache.ts#L34)
+Defined in: [lru-cache.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/lru-cache.ts#L37)
 
-Maximum number of items in cache
+Maximum number of entries the cache will hold. Once exceeded, the
+least-recently-used entry is evicted.
 
 ***
 
@@ -30,9 +33,13 @@ Maximum number of items in cache
 
 > `optional` **onEvict?**: \<`K`, `V`\>(`key`, `value`) => `void`
 
-Defined in: [lru-cache.ts:38](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/lru-cache.ts#L38)
+Defined in: [lru-cache.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/lru-cache.ts#L51)
 
-Callback when item is evicted
+Optional callback invoked whenever an entry is evicted to make room
+for a new one. Receives the key and value of the evicted entry.
+
+Not called on explicit `delete()` or `clear()`, and not called when
+an entry is removed because it expired.
 
 #### Type Parameters
 

@@ -2,7 +2,12 @@
 
 > **AnalyticsProvider**(`__namedParameters`): `ReactNode`
 
-Defined in: [react/index.ts:48](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L48)
+Defined in: [react/index.ts:102](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L102)
+
+Boot the analytics singleton once on mount and render `children`.
+
+Idempotent — repeat mounts (e.g. fast-refresh, tree-rebuild) are
+detected via a ref guard and do not re-initialise PostHog / GA4.
 
 ## Parameters
 
@@ -13,3 +18,17 @@ Defined in: [react/index.ts:48](https://github.com/resq-software/npm/blob/f2ab5f
 ## Returns
 
 `ReactNode`
+
+## Examples
+
+```tsx
+<AnalyticsProvider config={config}>
+  <App />
+</AnalyticsProvider>
+```
+
+```tsx
+<AnalyticsProvider config={config} deferUntilIdle={false}>
+  <App />
+</AnalyticsProvider>
+```

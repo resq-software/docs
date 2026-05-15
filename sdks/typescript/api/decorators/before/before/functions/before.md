@@ -2,7 +2,7 @@
 
 > **before**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [before/before.ts:75](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/before/before.ts#L75)
+Defined in: [before/before.ts:75](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.ts#L75)
 
 Decorator that executes a function before the decorated method.
 The before function is called before the method body executes.

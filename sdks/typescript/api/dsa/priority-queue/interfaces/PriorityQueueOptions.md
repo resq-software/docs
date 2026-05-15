@@ -1,6 +1,6 @@
 # Interface: PriorityQueueOptions\<T\>
 
-Defined in: [priority-queue.ts:43](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L43)
+Defined in: [priority-queue.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L43)
 
 Options for priority queue configuration
 
@@ -16,7 +16,7 @@ Options for priority queue configuration
 
 > `optional` **compareFn?**: [`CompareFn`](../type-aliases/CompareFn)\<`T`\>
 
-Defined in: [priority-queue.ts:45](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L45)
+Defined in: [priority-queue.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L45)
 
 Custom comparison function (default: min-heap with numeric comparison)
 
@@ -26,6 +26,6 @@ Custom comparison function (default: min-heap with numeric comparison)
 
 > `optional` **initialCapacity?**: `number`
 
-Defined in: [priority-queue.ts:47](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L47)
+Defined in: [priority-queue.ts:47](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L47)
 
 Initial capacity for the underlying array

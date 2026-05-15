@@ -1,6 +1,6 @@
 # Class: Trie\<T\>
 
-Defined in: [trie.ts:91](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L91)
+Defined in: [trie.ts:91](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L91)
 
 Trie (Prefix Tree) for efficient prefix-based autocomplete
 
@@ -34,7 +34,7 @@ Type of data stored with each word
 
 > **new Trie**\<`T`\>(`options?`): `Trie`\<`T`\>
 
-Defined in: [trie.ts:102](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L102)
+Defined in: [trie.ts:102](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L102)
 
 Creates a new Trie instance
 
@@ -68,7 +68,7 @@ Error if options validation fails
 
 > **get** **length**(): `number`
 
-Defined in: [trie.ts:228](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L228)
+Defined in: [trie.ts:228](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L228)
 
 Returns the number of words in the Trie
 
@@ -82,7 +82,7 @@ Returns the number of words in the Trie
 
 > **clear**(): `void`
 
-Defined in: [trie.ts:235](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L235)
+Defined in: [trie.ts:235](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L235)
 
 Clears all words from the Trie
 
@@ -96,7 +96,7 @@ Clears all words from the Trie
 
 > **delete**(`word`): `boolean`
 
-Defined in: [trie.ts:219](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L219)
+Defined in: [trie.ts:219](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L219)
 
 Deletes a word from the Trie
 
@@ -118,7 +118,7 @@ True if the word was deleted
 
 > **getAllWords**(): `object`[]
 
-Defined in: [trie.ts:243](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L243)
+Defined in: [trie.ts:243](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L243)
 
 Gets all words in the Trie
 
@@ -132,7 +132,7 @@ Gets all words in the Trie
 
 > **has**(`word`): `boolean`
 
-Defined in: [trie.ts:175](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L175)
+Defined in: [trie.ts:175](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L175)
 
 Checks if a word exists in the Trie
 
@@ -152,7 +152,7 @@ Checks if a word exists in the Trie
 
 > **insert**(`word`, `data`): `this`
 
-Defined in: [trie.ts:127](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L127)
+Defined in: [trie.ts:127](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L127)
 
 Inserts a word with associated data into the Trie
 
@@ -178,7 +178,7 @@ This Trie instance for chaining
 
 > **insertMany**(`entries`): `this`
 
-Defined in: [trie.ts:156](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L156)
+Defined in: [trie.ts:156](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L156)
 
 Bulk insert multiple words with data
 
@@ -200,7 +200,7 @@ This Trie instance for chaining
 
 > **search**(`word`): `T` \| `null`
 
-Defined in: [trie.ts:167](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L167)
+Defined in: [trie.ts:167](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L167)
 
 Searches for an exact word match
 
@@ -222,7 +222,7 @@ The associated data or null if not found
 
 > **searchByPrefix**(`prefix`, `limit?`): [`TrieSearchResult`](../interfaces/TrieSearchResult)\<`T`\>[]
 
-Defined in: [trie.ts:194](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L194)
+Defined in: [trie.ts:194](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L194)
 
 Finds all words starting with the given prefix
 
@@ -252,7 +252,7 @@ Array of search results sorted by relevance
 
 > **startsWith**(`prefix`): `boolean`
 
-Defined in: [trie.ts:183](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/trie.ts#L183)
+Defined in: [trie.ts:183](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L183)
 
 Checks if any word starts with the given prefix
 

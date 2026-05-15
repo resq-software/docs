@@ -1,8 +1,13 @@
 # Interface: ThreatDetectionConfig
 
-Defined in: [validators.ts:328](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L328)
+Defined in: [validators.ts:410](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L410)
 
-Configuration for threat detection
+Per-detector toggles for [detectThreatPatterns](../functions/detectThreatPatterns).
+
+Defaults: XSS, SQL, NoSQL, path-traversal, and homoglyph detectors
+are **on**; command injection is **off** (false-positive prone).
+Pass `false` to disable a detector or `true` to force-enable
+`checkCommandInjection`.
 
 ## Properties
 
@@ -10,7 +15,9 @@ Configuration for threat detection
 
 > `optional` **checkCommandInjection?**: `boolean`
 
-Defined in: [validators.ts:332](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L332)
+Defined in: [validators.ts:418](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L418)
+
+Default `false` — opt in only when input reaches a shell.
 
 ***
 
@@ -18,7 +25,9 @@ Defined in: [validators.ts:332](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **checkHomoglyphs?**: `boolean`
 
-Defined in: [validators.ts:334](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L334)
+Defined in: [validators.ts:422](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L422)
+
+Default `true`.
 
 ***
 
@@ -26,7 +35,9 @@ Defined in: [validators.ts:334](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **checkNoSQLInjection?**: `boolean`
 
-Defined in: [validators.ts:331](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L331)
+Defined in: [validators.ts:416](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L416)
+
+Default `true`.
 
 ***
 
@@ -34,7 +45,9 @@ Defined in: [validators.ts:331](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **checkPathTraversal?**: `boolean`
 
-Defined in: [validators.ts:333](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L333)
+Defined in: [validators.ts:420](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L420)
+
+Default `true`.
 
 ***
 
@@ -42,7 +55,9 @@ Defined in: [validators.ts:333](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **checkSQLInjection?**: `boolean`
 
-Defined in: [validators.ts:330](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L330)
+Defined in: [validators.ts:414](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L414)
+
+Default `true`.
 
 ***
 
@@ -50,4 +65,6 @@ Defined in: [validators.ts:330](https://github.com/resq-software/npm/blob/f2ab5f
 
 > `optional` **checkXSS?**: `boolean`
 
-Defined in: [validators.ts:329](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L329)
+Defined in: [validators.ts:412](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L412)
+
+Default `true`.

@@ -4,7 +4,7 @@
 
 > **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:80](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L80)
+Defined in: [memoize/memoize.fn.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L80)
 
 Wraps a method to cache its results based on arguments.
 
@@ -77,7 +77,7 @@ const withConfig = memoizeFn(
 
 > **memoizeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L83)
+Defined in: [memoize/memoize.fn.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L83)
 
 Wraps a method to cache its results based on arguments.
 
@@ -156,7 +156,7 @@ const withConfig = memoizeFn(
 
 > **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.fn.ts#L87)
+Defined in: [memoize/memoize.fn.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L87)
 
 Wraps a method to cache its results based on arguments.
 

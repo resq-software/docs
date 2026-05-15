@@ -2,10 +2,14 @@
 
 > **validateSafeName**(`input`): `boolean`
 
-Defined in: [validators.ts:459](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L459)
+Defined in: [validators.ts:600](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L600)
 
-Validates that a name field is safe
-More permissive than general text - allows international characters
+Refinement for human name fields. More permissive than
+[validateSafeText](./validateSafeText) — allows international letters,
+combining marks, hyphens, apostrophes, and spaces — but still
+rejects HTML/SQL/NoSQL injection patterns and homoglyph forgeries.
+
+Suitable for first/last/full-name inputs in registration forms.
 
 ## Parameters
 
@@ -16,3 +20,6 @@ More permissive than general text - allows international characters
 ## Returns
 
 `boolean`
+
+`true` when the name passes both the threat detectors and
+  the name-shape regex.

@@ -2,7 +2,7 @@
 
 > **rateLimit**\<`T`\>(`config`): (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`unknown`\>\>
 
-Defined in: [rate-limit/rate-limit.ts:71](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.ts#L71)
+Defined in: [rate-limit/rate-limit.ts:71](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.ts#L71)
 
 Decorator that rate limits method calls.
 Only allows a specified number of calls within a time window.

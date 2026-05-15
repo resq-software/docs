@@ -1,8 +1,12 @@
 # Class: FetcherValidationError
 
-Defined in: [packages/http/src/fetcher.ts:124](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L124)
+Defined in: [packages/http/src/fetcher.ts:135](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L135)
 
-Custom error class for validation-specific errors.
+Thrown when a response payload fails Effect Schema validation.
+
+Contains both the schema's reported `problems` description and the
+raw `responseData` that was rejected, so callers can log a
+structured diagnostic without a second decode pass.
 
 ## Extends
 
@@ -14,7 +18,7 @@ Custom error class for validation-specific errors.
 
 > **new FetcherValidationError**(`message`, `url`, `problems`, `responseData`, `attempt?`): `FetcherValidationError`
 
-Defined in: [packages/http/src/fetcher.ts:125](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L125)
+Defined in: [packages/http/src/fetcher.ts:136](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L136)
 
 #### Parameters
 
@@ -52,7 +56,7 @@ Defined in: [packages/http/src/fetcher.ts:125](https://github.com/resq-software/
 
 > **\[toStringTag\]**: `string` = `"FetcherValidationError"`
 
-Defined in: [packages/http/src/fetcher.ts:137](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L137)
+Defined in: [packages/http/src/fetcher.ts:148](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L148)
 
 ***
 
@@ -120,7 +124,11 @@ Defined in: node\_modules/effect/dist/Runtime.d.ts:157
 
 > `readonly` `optional` **attempt?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:130](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L130)
+Defined in: [packages/http/src/fetcher.ts:141](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L141)
+
+Retry attempt number (1-indexed) at which the
+  failure occurred. Useful for distinguishing transient parse
+  failures from persistent ones.
 
 ***
 
@@ -164,7 +172,9 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1074
 
 > `readonly` **problems**: `string`
 
-Defined in: [packages/http/src/fetcher.ts:128](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L128)
+Defined in: [packages/http/src/fetcher.ts:139](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L139)
+
+The schema parse error messages.
 
 ***
 
@@ -172,7 +182,9 @@ Defined in: [packages/http/src/fetcher.ts:128](https://github.com/resq-software/
 
 > `readonly` **responseData**: `unknown`
 
-Defined in: [packages/http/src/fetcher.ts:129](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L129)
+Defined in: [packages/http/src/fetcher.ts:140](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L140)
+
+The raw value that failed validation.
 
 ***
 
@@ -192,7 +204,9 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 > `readonly` **url**: `string`
 
-Defined in: [packages/http/src/fetcher.ts:127](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L127)
+Defined in: [packages/http/src/fetcher.ts:138](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L138)
+
+The request URL.
 
 ***
 
@@ -222,7 +236,7 @@ not capture any frames.
 
 > **getProblemsString**(): `string`
 
-Defined in: [packages/http/src/fetcher.ts:144](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L144)
+Defined in: [packages/http/src/fetcher.ts:155](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L155)
 
 #### Returns
 
@@ -234,7 +248,7 @@ Defined in: [packages/http/src/fetcher.ts:144](https://github.com/resq-software/
 
 > **toString**(): `string`
 
-Defined in: [packages/http/src/fetcher.ts:139](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L139)
+Defined in: [packages/http/src/fetcher.ts:150](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L150)
 
 Returns a string representation of an object.
 

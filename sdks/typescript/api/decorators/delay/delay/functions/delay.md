@@ -2,7 +2,7 @@
 
 > **delay**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [delay/delay.ts:48](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/delay/delay.ts#L48)
+Defined in: [delay/delay.ts:48](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delay/delay.ts#L48)
 
 Decorator that delays the execution of a method by the specified time.
 
