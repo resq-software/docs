@@ -12,7 +12,7 @@ Acknowledgment response from incident report\.
 public record IncidentAck : System.IEquatable<ResQ.Clients.IncidentAck>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; IncidentAck
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → IncidentAck
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[IncidentAck](./ResQ.Clients.IncidentAck.md 'ResQ\.Clients\.IncidentAck')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

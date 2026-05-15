@@ -12,7 +12,7 @@ Mock implementation of [INeoClient](./ResQ.Blockchain.INeoClient.md 'ResQ\.Block
 public class MockNeoClient : ResQ.Blockchain.INeoClient
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; MockNeoClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → MockNeoClient
 
 Implements [INeoClient](./ResQ.Blockchain.INeoClient.md 'ResQ\.Blockchain\.INeoClient')
 

@@ -13,7 +13,7 @@ public interface INeoClient
 ```
 
 Derived  
-&#8627; [MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
+↳ [MockNeoClient](./ResQ.Blockchain.MockNeoClient.md 'ResQ\.Blockchain\.MockNeoClient')
 
 ### Example
 

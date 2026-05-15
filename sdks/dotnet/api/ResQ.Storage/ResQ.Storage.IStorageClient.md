@@ -13,7 +13,7 @@ public interface IStorageClient
 ```
 
 Derived  
-&#8627; [PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
+↳ [PinataClient](./ResQ.Storage.PinataClient.md 'ResQ\.Storage\.PinataClient')
 
 ### Example
 

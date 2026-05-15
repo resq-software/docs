@@ -12,7 +12,7 @@ Provides extension methods for working with protobuf\-generated types and timest
 public static class ProtocolExtensions
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; ProtocolExtensions
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → ProtocolExtensions
 
 ### Example
 

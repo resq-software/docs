@@ -12,7 +12,7 @@ Health check response from infrastructure\-api\.
 public record HealthResponse : System.IEquatable<ResQ.Clients.HealthResponse>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; HealthResponse
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → HealthResponse
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[HealthResponse](./ResQ.Clients.HealthResponse.md 'ResQ\.Clients\.HealthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

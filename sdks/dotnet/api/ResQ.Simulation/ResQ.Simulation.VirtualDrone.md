@@ -12,7 +12,7 @@ Simulates a virtual drone that sends telemetry to HCE and reports detections\.
 public class VirtualDrone
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; VirtualDrone
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → VirtualDrone
 
 | Constructors | |
 | :--- | :--- |
