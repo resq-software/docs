@@ -1,6 +1,6 @@
 # Class: ThrottleAsyncExecutor\<D\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:47](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle-async/throttle-async-executor.ts#L47)
+Defined in: [throttle-async/throttle-async-executor.ts:47](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L47)
 
 Manages the queue and execution of throttled async method calls.
 Ensures that only a specified number of calls run concurrently,
@@ -42,7 +42,7 @@ The resolved type of the async method
 
 > **new ThrottleAsyncExecutor**\<`D`\>(`fun`, `parallelCalls`): `ThrottleAsyncExecutor`\<`D`\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:68](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle-async/throttle-async-executor.ts#L68)
+Defined in: [throttle-async/throttle-async-executor.ts:68](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L68)
 
 Creates a new ThrottleAsyncExecutor instance.
 
@@ -70,7 +70,7 @@ Maximum number of concurrent calls allowed
 
 > **exec**(`context`, `args`): `Promise`\<`D`\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:88](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/throttle-async/throttle-async-executor.ts#L88)
+Defined in: [throttle-async/throttle-async-executor.ts:88](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L88)
 
 Queues a method call for execution.
 

@@ -1,6 +1,6 @@
 # Interface: FetcherOptions\<T\>
 
-Defined in: [packages/http/src/fetcher.ts:34](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L34)
+Defined in: [packages/http/src/fetcher.ts:34](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L34)
 
 Configuration options for the fetcher utility.
 
@@ -16,7 +16,7 @@ Configuration options for the fetcher utility.
 
 > `optional` **bodyType?**: `"json"` \| `"text"` \| `"form"`
 
-Defined in: [packages/http/src/fetcher.ts:50](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L50)
+Defined in: [packages/http/src/fetcher.ts:50](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L50)
 
 Body type - defaults to 'json', use 'text' for raw data, 'form' for FormData
 
@@ -26,7 +26,7 @@ Body type - defaults to 'json', use 'text' for raw data, 'form' for FormData
 
 > `optional` **headers?**: `Record`\<`string`, `string`\>
 
-Defined in: [packages/http/src/fetcher.ts:44](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L44)
+Defined in: [packages/http/src/fetcher.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L44)
 
 Additional headers to include in the request
 
@@ -36,7 +36,7 @@ Additional headers to include in the request
 
 > `optional` **onError?**: (`error`) => `void`
 
-Defined in: [packages/http/src/fetcher.ts:40](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L40)
+Defined in: [packages/http/src/fetcher.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L40)
 
 Optional callback invoked on error
 
@@ -56,7 +56,7 @@ Optional callback invoked on error
 
 > `optional` **retries?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:36](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L36)
+Defined in: [packages/http/src/fetcher.ts:36](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L36)
 
 Number of times to retry the request on failure
 
@@ -66,7 +66,7 @@ Number of times to retry the request on failure
 
 > `optional` **retryDelay?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:38](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L38)
+Defined in: [packages/http/src/fetcher.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L38)
 
 Delay in milliseconds between retries
 
@@ -76,7 +76,7 @@ Delay in milliseconds between retries
 
 > `optional` **schema?**: `SyncSchema`\<`T`\>
 
-Defined in: [packages/http/src/fetcher.ts:46](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L46)
+Defined in: [packages/http/src/fetcher.ts:46](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L46)
 
 Effect/Schema for runtime validation of the response
 
@@ -86,7 +86,7 @@ Effect/Schema for runtime validation of the response
 
 > `optional` **signal?**: `AbortSignal`
 
-Defined in: [packages/http/src/fetcher.ts:48](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L48)
+Defined in: [packages/http/src/fetcher.ts:48](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L48)
 
 Abortsignal
 
@@ -96,6 +96,6 @@ Abortsignal
 
 > `optional` **timeout?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:42](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L42)
+Defined in: [packages/http/src/fetcher.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L42)
 
 Timeout in milliseconds for the request

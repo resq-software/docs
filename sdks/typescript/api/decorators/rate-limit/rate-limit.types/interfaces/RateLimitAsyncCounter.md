@@ -1,6 +1,6 @@
 # Interface: RateLimitAsyncCounter
 
-Defined in: [rate-limit/rate-limit.types.ts:150](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L150)
+Defined in: [rate-limit/rate-limit.types.ts:150](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L150)
 
 Interface for async rate limit counter implementations.
 Use this when the counter needs to perform async operations (e.g., Redis, database).
@@ -32,7 +32,7 @@ class RedisCounter implements RateLimitAsyncCounter {
 
 > **dec**: (`key`) => `Promise`\<`void`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:154](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L154)
+Defined in: [rate-limit/rate-limit.types.ts:154](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L154)
 
 Decrement the count for a key asynchronously
 
@@ -52,7 +52,7 @@ Decrement the count for a key asynchronously
 
 > **getCount**: (`key`) => `Promise`\<`number`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:156](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L156)
+Defined in: [rate-limit/rate-limit.types.ts:156](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L156)
 
 Get the current count for a key asynchronously
 
@@ -72,7 +72,7 @@ Get the current count for a key asynchronously
 
 > **inc**: (`key`) => `Promise`\<`void`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:152](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L152)
+Defined in: [rate-limit/rate-limit.types.ts:152](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L152)
 
 Increment the count for a key asynchronously
 

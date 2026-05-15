@@ -1,6 +1,6 @@
 # Interface: MemoizeConfig\<T, D\>
 
-Defined in: [memoize/memoize.types.ts:109](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L109)
+Defined in: [memoize/memoize.types.ts:109](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L109)
 
 Configuration options for the
 
@@ -40,7 +40,7 @@ The return type of the decorated method
 
 > `optional` **cache?**: [`Cache`](./Cache)\<`D`\>
 
-Defined in: [memoize/memoize.types.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L111)
+Defined in: [memoize/memoize.types.ts:111](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L111)
 
 Custom cache implementation (defaults to Map)
 
@@ -50,7 +50,7 @@ Custom cache implementation (defaults to Map)
 
 > `optional` **expirationTimeMs?**: `number`
 
-Defined in: [memoize/memoize.types.ts:115](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L115)
+Defined in: [memoize/memoize.types.ts:115](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L115)
 
 Time in milliseconds after which cached values expire
 
@@ -60,6 +60,6 @@ Time in milliseconds after which cached values expire
 
 > `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver) \| keyof `T`
 
-Defined in: [memoize/memoize.types.ts:113](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L113)
+Defined in: [memoize/memoize.types.ts:113](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L113)
 
 Function or method name for generating cache keys

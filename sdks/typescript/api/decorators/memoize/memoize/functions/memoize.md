@@ -4,7 +4,7 @@
 
 > **memoize**\<`T`, `D`\>(): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
-Defined in: [memoize/memoize.ts:121](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L121)
+Defined in: [memoize/memoize.ts:121](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.ts#L121)
 
 Decorator that caches method results based on their arguments.
 Subsequent calls with the same arguments return the cached result.
@@ -73,7 +73,7 @@ const user2 = service.getUser('123'); // Instant, no database query
 
 > **memoize**\<`T`, `D`\>(`config`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
-Defined in: [memoize/memoize.ts:122](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L122)
+Defined in: [memoize/memoize.ts:122](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.ts#L122)
 
 Decorator that caches method results based on their arguments.
 Subsequent calls with the same arguments return the cached result.
@@ -150,7 +150,7 @@ const user2 = service.getUser('123'); // Instant, no database query
 
 > **memoize**\<`T`, `D`\>(`expirationTimeMs`): [`Memoizable`](../../memoize.types/type-aliases/Memoizable)\<`T`, `D`\>
 
-Defined in: [memoize/memoize.ts:123](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.ts#L123)
+Defined in: [memoize/memoize.ts:123](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.ts#L123)
 
 Decorator that caches method results based on their arguments.
 Subsequent calls with the same arguments return the cached result.

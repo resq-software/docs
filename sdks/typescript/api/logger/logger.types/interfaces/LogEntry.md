@@ -1,6 +1,6 @@
 # Interface: LogEntry
 
-Defined in: [logger.types.ts:80](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L80)
+Defined in: [logger.types.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L80)
 
 Structured log entry for transport/storage
 
@@ -10,7 +10,7 @@ Structured log entry for transport/storage
 
 > **context**: `string`
 
-Defined in: [logger.types.ts:86](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L86)
+Defined in: [logger.types.ts:86](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L86)
 
 Logger context/category
 
@@ -20,7 +20,7 @@ Logger context/category
 
 > `optional` **data?**: [`LogData`](./LogData)
 
-Defined in: [logger.types.ts:90](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L90)
+Defined in: [logger.types.ts:90](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L90)
 
 Optional structured data
 
@@ -30,7 +30,7 @@ Optional structured data
 
 > **environment**: `"client"` \| `"server"`
 
-Defined in: [logger.types.ts:92](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L92)
+Defined in: [logger.types.ts:92](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L92)
 
 Environment (client/server)
 
@@ -40,7 +40,7 @@ Environment (client/server)
 
 > **level**: [`LogLevelString`](../type-aliases/LogLevelString)
 
-Defined in: [logger.types.ts:84](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L84)
+Defined in: [logger.types.ts:84](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L84)
 
 Log level
 
@@ -50,7 +50,7 @@ Log level
 
 > **message**: `string`
 
-Defined in: [logger.types.ts:88](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L88)
+Defined in: [logger.types.ts:88](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L88)
 
 Log message
 
@@ -60,6 +60,6 @@ Log message
 
 > **timestamp**: `string`
 
-Defined in: [logger.types.ts:82](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L82)
+Defined in: [logger.types.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L82)
 
 ISO timestamp of the log

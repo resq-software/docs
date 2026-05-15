@@ -1,6 +1,12 @@
 # Interface: UseAnalyticsReturn
 
-Defined in: [react/index.ts:73](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L73)
+Defined in: [react/index.ts:134](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L134)
+
+Return type of [useAnalytics](../functions/useAnalytics).
+
+Bundles the public method surface of the singleton plus a direct
+reference to it for advanced callers (e.g. component-level
+`groupIdentify`, `featureFlags`).
 
 ## Properties
 
@@ -8,7 +14,9 @@ Defined in: [react/index.ts:73](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **analytics**: [`Analytics`](../../index/classes/Analytics)
 
-Defined in: [react/index.ts:78](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L78)
+Defined in: [react/index.ts:144](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L144)
+
+Direct singleton reference for advanced PostHog/GA4 features not on this surface.
 
 ***
 
@@ -16,7 +24,9 @@ Defined in: [react/index.ts:78](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **identify**: (`userId`, `traits?`) => `void`
 
-Defined in: [react/index.ts:75](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L75)
+Defined in: [react/index.ts:138](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L138)
+
+Bind an identity to the current session. Use on sign-in.
 
 #### Parameters
 
@@ -38,7 +48,9 @@ Defined in: [react/index.ts:75](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **pageview**: (`url?`) => `void`
 
-Defined in: [react/index.ts:77](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L77)
+Defined in: [react/index.ts:142](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L142)
+
+Manually emit a pageview (rarely needed — auto-capture is on by default).
 
 #### Parameters
 
@@ -56,7 +68,9 @@ Defined in: [react/index.ts:77](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **reset**: () => `void`
 
-Defined in: [react/index.ts:76](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L76)
+Defined in: [react/index.ts:140](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L140)
+
+Clear identity + provider state. Use on sign-out.
 
 #### Returns
 
@@ -68,7 +82,9 @@ Defined in: [react/index.ts:76](https://github.com/resq-software/npm/blob/f2ab5f
 
 > **track**: \<`E`\>(`event`, `properties?`) => `void`
 
-Defined in: [react/index.ts:74](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/react/index.ts#L74)
+Defined in: [react/index.ts:136](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/react/index.ts#L136)
+
+Type-safe `track(event, props)` — extend `AnalyticsEvents` for typed events.
 
 #### Type Parameters
 

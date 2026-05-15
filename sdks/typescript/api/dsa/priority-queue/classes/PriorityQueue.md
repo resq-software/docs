@@ -1,6 +1,6 @@
 # Class: PriorityQueue\<T\>
 
-Defined in: [priority-queue.ts:97](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L97)
+Defined in: [priority-queue.ts:97](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L97)
 
 Priority Queue implemented as a Binary Heap
 
@@ -45,7 +45,7 @@ Type of elements in the queue
 
 > **new PriorityQueue**\<`T`\>(`options?`): `PriorityQueue`\<`T`\>
 
-Defined in: [priority-queue.ts:106](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L106)
+Defined in: [priority-queue.ts:106](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L106)
 
 Creates a new Priority Queue
 
@@ -73,7 +73,7 @@ Error if options validation fails
 
 > **get** **isEmpty**(): `boolean`
 
-Defined in: [priority-queue.ts:142](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L142)
+Defined in: [priority-queue.ts:142](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L142)
 
 Checks if the queue is empty
 
@@ -89,7 +89,7 @@ Checks if the queue is empty
 
 > **get** **size**(): `number`
 
-Defined in: [priority-queue.ts:135](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L135)
+Defined in: [priority-queue.ts:135](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L135)
 
 Returns the number of elements in the queue
 
@@ -103,7 +103,7 @@ Returns the number of elements in the queue
 
 > **clear**(): `void`
 
-Defined in: [priority-queue.ts:287](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L287)
+Defined in: [priority-queue.ts:287](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L287)
 
 Clears all elements from the queue
 
@@ -117,7 +117,7 @@ Clears all elements from the queue
 
 > **contains**(`element`, `equalsFn?`): `boolean`
 
-Defined in: [priority-queue.ts:243](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L243)
+Defined in: [priority-queue.ts:243](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L243)
 
 Checks if an element exists in the queue
 
@@ -147,7 +147,7 @@ True if the element exists
 
 > **dequeue**(): `T` \| `undefined`
 
-Defined in: [priority-queue.ts:176](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L176)
+Defined in: [priority-queue.ts:176](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L176)
 
 Removes and returns the highest priority element
 
@@ -163,7 +163,7 @@ The highest priority element or undefined if empty
 
 > **drain**(): `T`[]
 
-Defined in: [priority-queue.ts:253](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L253)
+Defined in: [priority-queue.ts:253](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L253)
 
 Returns all elements in priority order (drains the queue)
 
@@ -179,7 +179,7 @@ Array of elements in priority order
 
 > **enqueue**(`element`): `this`
 
-Defined in: [priority-queue.ts:152](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L152)
+Defined in: [priority-queue.ts:152](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L152)
 
 Adds an element to the queue
 
@@ -203,7 +203,7 @@ This queue for chaining
 
 > **enqueueAll**(`elements`): `this`
 
-Defined in: [priority-queue.ts:164](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L164)
+Defined in: [priority-queue.ts:164](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L164)
 
 Adds multiple elements to the queue
 
@@ -227,7 +227,7 @@ This queue for chaining
 
 > **getStats**(): [`PriorityQueueStats`](../interfaces/PriorityQueueStats)
 
-Defined in: [priority-queue.ts:296](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L296)
+Defined in: [priority-queue.ts:296](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L296)
 
 Gets queue statistics
 
@@ -243,7 +243,7 @@ Queue statistics
 
 > **peek**(): `T` \| `undefined`
 
-Defined in: [priority-queue.ts:197](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L197)
+Defined in: [priority-queue.ts:197](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L197)
 
 Returns the highest priority element without removing it
 
@@ -259,7 +259,7 @@ The highest priority element or undefined if empty
 
 > **remove**(`element`, `equalsFn?`): `boolean`
 
-Defined in: [priority-queue.ts:208](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L208)
+Defined in: [priority-queue.ts:208](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L208)
 
 Removes a specific element from the queue
 
@@ -289,7 +289,7 @@ True if the element was found and removed
 
 > **toArray**(): `T`[]
 
-Defined in: [priority-queue.ts:270](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L270)
+Defined in: [priority-queue.ts:270](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L270)
 
 Returns all elements as an array (does not drain)
 Note: Order is not guaranteed to be in priority order
@@ -306,7 +306,7 @@ Copy of internal array
 
 > **toSortedArray**(): `T`[]
 
-Defined in: [priority-queue.ts:279](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L279)
+Defined in: [priority-queue.ts:279](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L279)
 
 Returns elements in priority order without modifying the queue
 
@@ -322,7 +322,7 @@ Array of elements in priority order
 
 > **updatePriority**(`oldElement`, `newElement`, `equalsFn?`): `boolean`
 
-Defined in: [priority-queue.ts:228](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L228)
+Defined in: [priority-queue.ts:228](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L228)
 
 Updates an element's priority by removing and re-adding it
 
@@ -358,7 +358,7 @@ True if the element was found and updated
 
 > `static` **from**\<`T`\>(`elements`, `options?`): `PriorityQueue`\<`T`\>
 
-Defined in: [priority-queue.ts:311](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L311)
+Defined in: [priority-queue.ts:311](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L311)
 
 Creates a new priority queue from an array
 

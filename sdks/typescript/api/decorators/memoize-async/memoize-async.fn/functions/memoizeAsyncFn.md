@@ -4,7 +4,7 @@
 
 > **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:80](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L80)
+Defined in: [memoize-async/memoize-async.fn.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.fn.ts#L80)
 
 Wraps an async method to cache its results and deduplicate concurrent calls.
 
@@ -77,7 +77,7 @@ const withConfig = memoizeAsyncFn(
 
 > **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `config`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L83)
+Defined in: [memoize-async/memoize-async.fn.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.fn.ts#L83)
 
 Wraps an async method to cache its results and deduplicate concurrent calls.
 
@@ -156,7 +156,7 @@ const withConfig = memoizeAsyncFn(
 
 > **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize-async/memoize-async.fn.ts#L87)
+Defined in: [memoize-async/memoize-async.fn.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.fn.ts#L87)
 
 Wraps an async method to cache its results and deduplicate concurrent calls.
 

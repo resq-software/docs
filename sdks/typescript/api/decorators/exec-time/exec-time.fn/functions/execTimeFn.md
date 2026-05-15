@@ -2,7 +2,7 @@
 
 > **execTimeFn**\<`D`, `A`\>(`originalMethod`, `arg?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`void`, `A`\>
 
-Defined in: [exec-time/exec-time.fn.ts:73](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/exec-time/exec-time.fn.ts#L73)
+Defined in: [exec-time/exec-time.fn.ts:73](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.fn.ts#L73)
 
 Wraps a method to measure and report its execution time.
 Handles both synchronous and asynchronous methods.

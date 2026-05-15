@@ -2,4 +2,6 @@
 
 > **RateLimitConfig** = *typeof* `RateLimitConfigSchema.Type`
 
-Defined in: [rate-limit.ts:36](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/rate-limiting/src/rate-limit.ts#L36)
+Defined in: [rate-limit.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/rate-limit.ts#L51)
+
+TypeScript type inferred from [RateLimitConfigSchema](../variables/RateLimitConfigSchema).

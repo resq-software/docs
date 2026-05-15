@@ -1,6 +1,6 @@
 # Interface: AnalyticsConfig
 
-Defined in: [index.ts:50](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L50)
+Defined in: [index.ts:50](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L50)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [index.ts:50](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **cookieDomain?**: `string`
 
-Defined in: [index.ts:53](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L53)
+Defined in: [index.ts:53](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L53)
 
 ***
 
@@ -16,7 +16,7 @@ Defined in: [index.ts:53](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **debug?**: `boolean`
 
-Defined in: [index.ts:55](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L55)
+Defined in: [index.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L55)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [index.ts:55](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **disabled?**: `boolean`
 
-Defined in: [index.ts:54](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L54)
+Defined in: [index.ts:54](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L54)
 
 ***
 
@@ -32,7 +32,7 @@ Defined in: [index.ts:54](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **ga4?**: [`GA4ProviderConfig`](./GA4ProviderConfig)
 
-Defined in: [index.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L52)
+Defined in: [index.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L52)
 
 ***
 
@@ -40,4 +40,4 @@ Defined in: [index.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f
 
 > `optional` **posthog?**: [`PostHogProviderConfig`](./PostHogProviderConfig)
 
-Defined in: [index.ts:51](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L51)
+Defined in: [index.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L51)

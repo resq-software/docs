@@ -1,6 +1,6 @@
 # Interface: LogErrorOptions
 
-Defined in: [logger.types.ts:138](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L138)
+Defined in: [logger.types.ts:138](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L138)
 
 Options for the
 
@@ -14,7 +14,7 @@ decorator
 
 > `optional` **includeStack?**: `boolean`
 
-Defined in: [logger.types.ts:144](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L144)
+Defined in: [logger.types.ts:144](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L144)
 
 Whether to log the stack trace (default: true)
 
@@ -24,7 +24,7 @@ Whether to log the stack trace (default: true)
 
 > `optional` **message?**: `string`
 
-Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L142)
+Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L142)
 
 Custom error message prefix
 
@@ -34,6 +34,6 @@ Custom error message prefix
 
 > `optional` **rethrow?**: `boolean`
 
-Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.types.ts#L140)
+Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L140)
 
 Whether to rethrow the error after logging (default: true)

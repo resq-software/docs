@@ -1,6 +1,6 @@
 # Class: Distance
 
-Defined in: [distance.ts:209](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L209)
+Defined in: [distance.ts:209](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L209)
 
 Distance calculation utility class.
 
@@ -26,7 +26,7 @@ Provides multiple distance formulas for different use cases:
 
 > `static` **calculate**(`formula`, `point1`, `point2`, `options?`): `number`
 
-Defined in: [distance.ts:419](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L419)
+Defined in: [distance.ts:419](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L419)
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Defined in: [distance.ts:419](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **calculateSafe**(`formula`, `point1`, `point2`, `options?`): [`DistanceResult`](../interfaces/DistanceResult)
 
-Defined in: [distance.ts:455](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L455)
+Defined in: [distance.ts:455](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L455)
 
 #### Parameters
 
@@ -86,7 +86,7 @@ Defined in: [distance.ts:455](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **chebyshev**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:327](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L327)
+Defined in: [distance.ts:327](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L327)
 
 #### Parameters
 
@@ -108,7 +108,7 @@ Defined in: [distance.ts:327](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **cosine**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:359](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L359)
+Defined in: [distance.ts:359](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L359)
 
 #### Parameters
 
@@ -130,7 +130,7 @@ Defined in: [distance.ts:359](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **euclidean**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:210](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L210)
+Defined in: [distance.ts:210](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L210)
 
 #### Parameters
 
@@ -152,7 +152,7 @@ Defined in: [distance.ts:210](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **hamming**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:377](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L377)
+Defined in: [distance.ts:377](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L377)
 
 #### Parameters
 
@@ -174,7 +174,7 @@ Defined in: [distance.ts:377](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **haversine**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:219](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L219)
+Defined in: [distance.ts:219](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L219)
 
 #### Parameters
 
@@ -196,7 +196,7 @@ Defined in: [distance.ts:219](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **haversineMeters**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:236](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L236)
+Defined in: [distance.ts:236](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L236)
 
 #### Parameters
 
@@ -218,7 +218,7 @@ Defined in: [distance.ts:236](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **jaccard**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:389](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L389)
+Defined in: [distance.ts:389](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L389)
 
 #### Parameters
 
@@ -240,7 +240,7 @@ Defined in: [distance.ts:389](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **manhattan**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:320](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L320)
+Defined in: [distance.ts:320](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L320)
 
 #### Parameters
 
@@ -262,7 +262,7 @@ Defined in: [distance.ts:320](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **minkowski**(`point1`, `point2`, `p?`): `number`
 
-Defined in: [distance.ts:334](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L334)
+Defined in: [distance.ts:334](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L334)
 
 #### Parameters
 
@@ -288,7 +288,7 @@ Defined in: [distance.ts:334](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **recommendGeoFormula**(`maxDistanceKm?`): [`DistanceFormula`](../type-aliases/DistanceFormula)
 
-Defined in: [distance.ts:478](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L478)
+Defined in: [distance.ts:478](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L478)
 
 #### Parameters
 
@@ -306,7 +306,7 @@ Defined in: [distance.ts:478](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **sorensenDice**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:404](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L404)
+Defined in: [distance.ts:404](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L404)
 
 #### Parameters
 
@@ -328,7 +328,7 @@ Defined in: [distance.ts:404](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **threed**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:352](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L352)
+Defined in: [distance.ts:352](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L352)
 
 #### Parameters
 
@@ -350,7 +350,7 @@ Defined in: [distance.ts:352](https://github.com/resq-software/npm/blob/f2ab5fc8
 
 > `static` **vincenty**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:240](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/distance.ts#L240)
+Defined in: [distance.ts:240](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L240)
 
 #### Parameters
 

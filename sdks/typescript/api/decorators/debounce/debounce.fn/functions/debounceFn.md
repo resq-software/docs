@@ -2,7 +2,7 @@
 
 > **debounceFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
-Defined in: [debounce/debounce.fn.ts:52](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/debounce/debounce.fn.ts#L52)
+Defined in: [debounce/debounce.fn.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/debounce/debounce.fn.ts#L52)
 
 Wraps a method to debounce its execution.
 The method will only execute after the specified delay has passed

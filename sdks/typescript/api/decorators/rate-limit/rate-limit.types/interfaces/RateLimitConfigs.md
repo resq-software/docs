@@ -1,6 +1,6 @@
 # Interface: RateLimitConfigs\<T\>
 
-Defined in: [rate-limit/rate-limit.types.ts:66](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L66)
+Defined in: [rate-limit/rate-limit.types.ts:66](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L66)
 
 Configuration options for rate limiting.
 
@@ -31,7 +31,7 @@ The type of the class containing the decorated method
 
 > **allowedCalls**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:70](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L70)
+Defined in: [rate-limit/rate-limit.types.ts:70](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L70)
 
 Maximum number of calls allowed in the time window
 
@@ -41,7 +41,7 @@ Maximum number of calls allowed in the time window
 
 > `optional` **exceedHandler?**: () => `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:78](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L78)
+Defined in: [rate-limit/rate-limit.types.ts:78](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L78)
 
 Handler called when rate limit is exceeded
 
@@ -55,7 +55,7 @@ Handler called when rate limit is exceeded
 
 > `optional` **keyResolver?**: ((...`args`) => `string`) \| keyof `T`
 
-Defined in: [rate-limit/rate-limit.types.ts:72](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L72)
+Defined in: [rate-limit/rate-limit.types.ts:72](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L72)
 
 Function to generate rate limit keys (for per-user/entity limiting)
 
@@ -65,7 +65,7 @@ Function to generate rate limit keys (for per-user/entity limiting)
 
 > `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:76](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L76)
+Defined in: [rate-limit/rate-limit.types.ts:76](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L76)
 
 Async counter implementation
 
@@ -75,7 +75,7 @@ Async counter implementation
 
 > `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:74](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L74)
+Defined in: [rate-limit/rate-limit.types.ts:74](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L74)
 
 Custom counter implementation
 
@@ -85,6 +85,6 @@ Custom counter implementation
 
 > **timeSpanMs**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:68](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.types.ts#L68)
+Defined in: [rate-limit/rate-limit.types.ts:68](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L68)
 
 The time window in milliseconds

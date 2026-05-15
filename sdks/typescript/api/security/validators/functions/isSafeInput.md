@@ -2,9 +2,10 @@
 
 > **isSafeInput**(`input`, `config?`): `boolean`
 
-Defined in: [validators.ts:398](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L398)
+Defined in: [validators.ts:504](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L504)
 
-Quick check if input is safe
+Boolean shortcut over [detectThreatPatterns](./detectThreatPatterns) — discards the
+findings list when you only need a yes/no decision.
 
 ## Parameters
 
@@ -12,16 +13,16 @@ Quick check if input is safe
 
 `string`
 
-The string to check
+String to test.
 
 ### config?
 
 [`ThreatDetectionConfig`](../interfaces/ThreatDetectionConfig)
 
-Optional configuration
+Optional detector toggles.
 
 ## Returns
 
 `boolean`
 
-true if no threats detected
+`true` when no detector fires.

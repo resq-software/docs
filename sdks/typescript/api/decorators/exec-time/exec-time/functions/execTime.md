@@ -2,7 +2,7 @@
 
 > **execTime**\<`T`\>(`arg?`): `any`
 
-Defined in: [exec-time/exec-time.ts:81](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/exec-time/exec-time.ts#L81)
+Defined in: [exec-time/exec-time.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.ts#L81)
 
 Decorator that measures and reports the execution time of methods.
 Supports both legacy (TypeScript) and standard (Stage 3) decorator formats.

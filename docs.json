@@ -73,21 +73,21 @@
                     "pages": [
                       "sdks/typescript/api/README",
                       {
-                        "group": "Analytics",
+                        "group": "analytics",
                         "pages": [
                           "sdks/typescript/api/analytics",
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/analytics/index",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/analytics/index/classes/Analytics"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/analytics/index/functions/identify",
                                   "sdks/typescript/api/analytics/index/functions/inferCookieDomain",
@@ -97,7 +97,7 @@
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/analytics/index/interfaces/AnalyticsConfig",
                                   "sdks/typescript/api/analytics/index/interfaces/AnalyticsEvents",
@@ -106,7 +106,7 @@
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/analytics/index/variables/analytics",
                                   "sdks/typescript/api/analytics/index/variables/track"
@@ -115,18 +115,18 @@
                             ]
                           },
                           {
-                            "group": "Next",
+                            "group": "next",
                             "pages": [
                               "sdks/typescript/api/analytics/next",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/analytics/next/functions/ga4Stream",
                                   "sdks/typescript/api/analytics/next/functions/withAnalyticsRewrites"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/analytics/next/interfaces/AnalyticsRewriteOptions"
                                 ]
@@ -134,18 +134,18 @@
                             ]
                           },
                           {
-                            "group": "React",
+                            "group": "react",
                             "pages": [
                               "sdks/typescript/api/analytics/react",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/analytics/react/functions/AnalyticsProvider",
                                   "sdks/typescript/api/analytics/react/functions/useAnalytics"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/analytics/react/interfaces/AnalyticsProviderProps",
                                   "sdks/typescript/api/analytics/react/interfaces/UseAnalyticsReturn"
@@ -154,18 +154,18 @@
                             ]
                           },
                           {
-                            "group": "ResQ",
+                            "group": "resq",
                             "pages": [
                               "sdks/typescript/api/analytics/resq",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/analytics/resq/functions/resolveResqCookieDomain",
                                   "sdks/typescript/api/analytics/resq/functions/sanitizeGa4Id"
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/analytics/resq/variables/GA4_ID_PATTERN",
                                   "sdks/typescript/api/analytics/resq/variables/RESQ_SUBDOMAIN_ALLOWLIST"
@@ -176,19 +176,19 @@
                         ]
                       },
                       {
-                        "group": "Decorators",
+                        "group": "decorators",
                         "pages": [
                           "sdks/typescript/api/decorators",
                           {
-                            "group": "After",
+                            "group": "after",
                             "pages": [
                               "sdks/typescript/api/decorators/after",
                               {
-                                "group": "After",
+                                "group": "after",
                                 "pages": [
                                   "sdks/typescript/api/decorators/after/after",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/after/after/functions/after"
                                     ]
@@ -200,7 +200,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/after/after.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/after/after.fn/functions/afterFn"
                                     ]
@@ -212,14 +212,14 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/after/after.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/after/after.types/interfaces/AfterConfig",
                                       "sdks/typescript/api/decorators/after/after.types/interfaces/AfterParams"
                                     ]
                                   },
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/after/after.types/type-aliases/AfterFunc"
                                     ]
@@ -229,15 +229,15 @@
                             ]
                           },
                           {
-                            "group": "Before",
+                            "group": "before",
                             "pages": [
                               "sdks/typescript/api/decorators/before",
                               {
-                                "group": "Before",
+                                "group": "before",
                                 "pages": [
                                   "sdks/typescript/api/decorators/before/before",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/before/before/functions/before"
                                     ]
@@ -249,7 +249,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/before/before.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/before/before.fn/functions/beforeFn"
                                     ]
@@ -261,7 +261,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/before/before.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/before/before.types/interfaces/BeforeConfig"
                                     ]
@@ -271,15 +271,15 @@
                             ]
                           },
                           {
-                            "group": "Bind",
+                            "group": "bind",
                             "pages": [
                               "sdks/typescript/api/decorators/bind",
                               {
-                                "group": "Bind",
+                                "group": "bind",
                                 "pages": [
                                   "sdks/typescript/api/decorators/bind/bind",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/bind/bind/functions/bind"
                                     ]
@@ -291,7 +291,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/bind/bind.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/bind/bind.fn/functions/bindFn"
                                     ]
@@ -303,7 +303,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/bind/bind.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/bind/bind.types/interfaces/BindConfig"
                                     ]
@@ -313,15 +313,15 @@
                             ]
                           },
                           {
-                            "group": "Debounce",
+                            "group": "debounce",
                             "pages": [
                               "sdks/typescript/api/decorators/debounce",
                               {
-                                "group": "Debounce",
+                                "group": "debounce",
                                 "pages": [
                                   "sdks/typescript/api/decorators/debounce/debounce",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/debounce/debounce/functions/debounce"
                                     ]
@@ -333,7 +333,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/debounce/debounce.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/debounce/debounce.fn/functions/debounceFn"
                                     ]
@@ -343,15 +343,15 @@
                             ]
                           },
                           {
-                            "group": "Delay",
+                            "group": "delay",
                             "pages": [
                               "sdks/typescript/api/decorators/delay",
                               {
-                                "group": "Delay",
+                                "group": "delay",
                                 "pages": [
                                   "sdks/typescript/api/decorators/delay/delay",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/delay/delay/functions/delay"
                                     ]
@@ -363,7 +363,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/delay/delay.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/delay/delay.fn/functions/delayFn"
                                     ]
@@ -373,15 +373,15 @@
                             ]
                           },
                           {
-                            "group": "Delegate",
+                            "group": "delegate",
                             "pages": [
                               "sdks/typescript/api/decorators/delegate",
                               {
-                                "group": "Delegate",
+                                "group": "delegate",
                                 "pages": [
                                   "sdks/typescript/api/decorators/delegate/delegate",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/delegate/delegate/functions/delegate"
                                     ]
@@ -393,7 +393,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/delegate/delegate.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/delegate/delegate.fn/functions/delegateFn"
                                     ]
@@ -405,7 +405,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/delegate/delegate.types",
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/delegate/delegate.types/type-aliases/Delegatable"
                                     ]
@@ -415,15 +415,15 @@
                             ]
                           },
                           {
-                            "group": "Exec Time",
+                            "group": "exec-time",
                             "pages": [
                               "sdks/typescript/api/decorators/exec-time",
                               {
-                                "group": "Exec Time",
+                                "group": "exec-time",
                                 "pages": [
                                   "sdks/typescript/api/decorators/exec-time/exec-time",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/exec-time/exec-time/functions/execTime"
                                     ]
@@ -435,7 +435,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/exec-time/exec-time.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/exec-time/exec-time.fn/functions/execTimeFn"
                                     ]
@@ -447,13 +447,13 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/exec-time/exec-time.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/exec-time/exec-time.types/interfaces/ExactTimeReportData"
                                     ]
                                   },
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/exec-time/exec-time.types/type-aliases/ExactTimeReportable",
                                       "sdks/typescript/api/decorators/exec-time/exec-time.types/type-aliases/ReportFunction"
@@ -464,15 +464,15 @@
                             ]
                           },
                           {
-                            "group": "Execute",
+                            "group": "execute",
                             "pages": [
                               "sdks/typescript/api/decorators/execute",
                               {
-                                "group": "Execute",
+                                "group": "execute",
                                 "pages": [
                                   "sdks/typescript/api/decorators/execute/execute",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/execute/execute/functions/selfExecute"
                                     ]
@@ -482,21 +482,21 @@
                             ]
                           },
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/decorators/index"
                             ]
                           },
                           {
-                            "group": "Memoize",
+                            "group": "memoize",
                             "pages": [
                               "sdks/typescript/api/decorators/memoize",
                               {
-                                "group": "Memoize",
+                                "group": "memoize",
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize/memoize",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize/memoize/functions/memoize"
                                     ]
@@ -508,7 +508,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize/memoize.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize/memoize.fn/functions/memoizeFn"
                                     ]
@@ -520,14 +520,14 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize/memoize.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize/memoize.types/interfaces/Cache",
                                       "sdks/typescript/api/decorators/memoize/memoize.types/interfaces/MemoizeConfig"
                                     ]
                                   },
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize/memoize.types/type-aliases/KeyResolver",
                                       "sdks/typescript/api/decorators/memoize/memoize.types/type-aliases/Memoizable"
@@ -538,15 +538,15 @@
                             ]
                           },
                           {
-                            "group": "Memoize Async",
+                            "group": "memoize-async",
                             "pages": [
                               "sdks/typescript/api/decorators/memoize-async",
                               {
-                                "group": "Memoize Async",
+                                "group": "memoize-async",
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize-async/memoize-async",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize-async/memoize-async/functions/memoizeAsync"
                                     ]
@@ -558,7 +558,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize-async/memoize-async.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize-async/memoize-async.fn/functions/memoizeAsyncFn"
                                     ]
@@ -570,14 +570,14 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/memoize-async/memoize-async.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize-async/memoize-async.types/interfaces/AsyncCache",
                                       "sdks/typescript/api/decorators/memoize-async/memoize-async.types/interfaces/AsyncMemoizeConfig"
                                     ]
                                   },
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/memoize-async/memoize-async.types/type-aliases/AsyncMemoizable"
                                     ]
@@ -587,15 +587,15 @@
                             ]
                           },
                           {
-                            "group": "Observer",
+                            "group": "observer",
                             "pages": [
                               "sdks/typescript/api/decorators/observer",
                               {
-                                "group": "Observer",
+                                "group": "observer",
                                 "pages": [
                                   "sdks/typescript/api/decorators/observer/observer",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/observer/observer/functions/observe"
                                     ]
@@ -607,7 +607,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/observer/observer.types",
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/observer/observer.types/type-aliases/ObserverCallback"
                                     ]
@@ -617,15 +617,15 @@
                             ]
                           },
                           {
-                            "group": "Rate Limit",
+                            "group": "rate-limit",
                             "pages": [
                               "sdks/typescript/api/decorators/rate-limit",
                               {
-                                "group": "Rate Limit",
+                                "group": "rate-limit",
                                 "pages": [
                                   "sdks/typescript/api/decorators/rate-limit/rate-limit",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/rate-limit/rate-limit/functions/rateLimit"
                                     ]
@@ -637,7 +637,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/rate-limit/rate-limit.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/rate-limit/rate-limit.fn/functions/rateLimitFn"
                                     ]
@@ -649,7 +649,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/rate-limit/rate-limit.types",
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/decorators/rate-limit/rate-limit.types/interfaces/RateLimitAsyncCounter",
                                       "sdks/typescript/api/decorators/rate-limit/rate-limit.types/interfaces/RateLimitConfigs",
@@ -657,7 +657,7 @@
                                     ]
                                   },
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/rate-limit/rate-limit.types/type-aliases/RateLimitable"
                                     ]
@@ -665,11 +665,11 @@
                                 ]
                               },
                               {
-                                "group": "Simple Rate Limit Counter",
+                                "group": "simple-rate-limit-counter",
                                 "pages": [
                                   "sdks/typescript/api/decorators/rate-limit/simple-rate-limit-counter",
                                   {
-                                    "group": "Classes",
+                                    "group": "classes",
                                     "pages": [
                                       "sdks/typescript/api/decorators/rate-limit/simple-rate-limit-counter/classes/SimpleRateLimitCounter"
                                     ]
@@ -679,15 +679,15 @@
                             ]
                           },
                           {
-                            "group": "Readonly",
+                            "group": "readonly",
                             "pages": [
                               "sdks/typescript/api/decorators/readonly",
                               {
-                                "group": "Readonly",
+                                "group": "readonly",
                                 "pages": [
                                   "sdks/typescript/api/decorators/readonly/readonly",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/readonly/readonly/functions/readonly"
                                     ]
@@ -699,7 +699,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/readonly/readonly.types",
                                   {
-                                    "group": "Type Aliases",
+                                    "group": "type-aliases",
                                     "pages": [
                                       "sdks/typescript/api/decorators/readonly/readonly.types/type-aliases/Readonlyable"
                                     ]
@@ -709,15 +709,15 @@
                             ]
                           },
                           {
-                            "group": "Throttle",
+                            "group": "throttle",
                             "pages": [
                               "sdks/typescript/api/decorators/throttle",
                               {
-                                "group": "Throttle",
+                                "group": "throttle",
                                 "pages": [
                                   "sdks/typescript/api/decorators/throttle/throttle",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/throttle/throttle/functions/throttle"
                                     ]
@@ -729,7 +729,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/throttle/throttle.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/throttle/throttle.fn/functions/throttleFn"
                                     ]
@@ -739,15 +739,15 @@
                             ]
                           },
                           {
-                            "group": "Throttle Async",
+                            "group": "throttle-async",
                             "pages": [
                               "sdks/typescript/api/decorators/throttle-async",
                               {
-                                "group": "Throttle Async",
+                                "group": "throttle-async",
                                 "pages": [
                                   "sdks/typescript/api/decorators/throttle-async/throttle-async",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/throttle-async/throttle-async/functions/throttleAsync"
                                     ]
@@ -755,11 +755,11 @@
                                 ]
                               },
                               {
-                                "group": "Throttle Async Executor",
+                                "group": "throttle-async-executor",
                                 "pages": [
                                   "sdks/typescript/api/decorators/throttle-async/throttle-async-executor",
                                   {
-                                    "group": "Classes",
+                                    "group": "classes",
                                     "pages": [
                                       "sdks/typescript/api/decorators/throttle-async/throttle-async-executor/classes/ThrottleAsyncExecutor"
                                     ]
@@ -771,7 +771,7 @@
                                 "pages": [
                                   "sdks/typescript/api/decorators/throttle-async/throttle-async.fn",
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/decorators/throttle-async/throttle-async.fn/functions/throttleAsyncFn"
                                     ]
@@ -781,11 +781,11 @@
                             ]
                           },
                           {
-                            "group": "Types",
+                            "group": "types",
                             "pages": [
                               "sdks/typescript/api/decorators/types",
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/decorators/types/type-aliases/AsyncDecorator",
                                   "sdks/typescript/api/decorators/types/type-aliases/AsyncMethod",
@@ -796,18 +796,18 @@
                             ]
                           },
                           {
-                            "group": "Utils",
+                            "group": "utils",
                             "pages": [
                               "sdks/typescript/api/decorators/utils",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/decorators/utils/classes/Queue",
                                   "sdks/typescript/api/decorators/utils/classes/TaskExec"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/decorators/utils/functions/isFunction",
                                   "sdks/typescript/api/decorators/utils/functions/isNumber",
@@ -816,7 +816,7 @@
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/decorators/utils/variables/logger"
                                 ]
@@ -826,15 +826,15 @@
                         ]
                       },
                       {
-                        "group": "DSA",
+                        "group": "dsa",
                         "pages": [
                           "sdks/typescript/api/dsa",
                           {
-                            "group": "Bloom",
+                            "group": "bloom",
                             "pages": [
                               "sdks/typescript/api/dsa/bloom",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/bloom/classes/BloomFilter"
                                 ]
@@ -842,11 +842,11 @@
                             ]
                           },
                           {
-                            "group": "Count Min",
+                            "group": "count-min",
                             "pages": [
                               "sdks/typescript/api/dsa/count-min",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/count-min/classes/CountMinSketch"
                                 ]
@@ -854,17 +854,17 @@
                             ]
                           },
                           {
-                            "group": "Distance",
+                            "group": "distance",
                             "pages": [
                               "sdks/typescript/api/dsa/distance",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/distance/classes/Distance"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/distance/interfaces/Coordinates2D",
                                   "sdks/typescript/api/dsa/distance/interfaces/Coordinates3D",
@@ -873,7 +873,7 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/dsa/distance/type-aliases/DistanceFormula"
                                 ]
@@ -881,26 +881,26 @@
                             ]
                           },
                           {
-                            "group": "DSA",
+                            "group": "dsa",
                             "pages": [
                               {
-                                "group": "Rabin Karp",
+                                "group": "rabin-karp",
                                 "pages": [
                                   "sdks/typescript/api/dsa/dsa/rabin-karp",
                                   {
-                                    "group": "Classes",
+                                    "group": "classes",
                                     "pages": [
                                       "sdks/typescript/api/dsa/dsa/rabin-karp/classes/RabinKarp"
                                     ]
                                   },
                                   {
-                                    "group": "Functions",
+                                    "group": "functions",
                                     "pages": [
                                       "sdks/typescript/api/dsa/dsa/rabin-karp/functions/quickSearch"
                                     ]
                                   },
                                   {
-                                    "group": "Interfaces",
+                                    "group": "interfaces",
                                     "pages": [
                                       "sdks/typescript/api/dsa/dsa/rabin-karp/interfaces/PatternMatch",
                                       "sdks/typescript/api/dsa/dsa/rabin-karp/interfaces/RabinKarpOptions",
@@ -912,24 +912,24 @@
                             ]
                           },
                           {
-                            "group": "Graph",
+                            "group": "graph",
                             "pages": [
                               "sdks/typescript/api/dsa/graph",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/graph/classes/Graph"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/dsa/graph/functions/addValidatedEdge",
                                   "sdks/typescript/api/dsa/graph/functions/isValidVertexId"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/graph/interfaces/Edge",
                                   "sdks/typescript/api/dsa/graph/interfaces/GraphOptions",
@@ -941,17 +941,17 @@
                             ]
                           },
                           {
-                            "group": "Heap",
+                            "group": "heap",
                             "pages": [
                               "sdks/typescript/api/dsa/heap",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/heap/classes/BoundedHeap"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/heap/interfaces/Distanced"
                                 ]
@@ -959,23 +959,23 @@
                             ]
                           },
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/dsa/index"
                             ]
                           },
                           {
-                            "group": "Lru Cache",
+                            "group": "lru-cache",
                             "pages": [
                               "sdks/typescript/api/dsa/lru-cache",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/lru-cache/classes/LRUCache"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/lru-cache/interfaces/LRUCacheOptions"
                                 ]
@@ -983,17 +983,17 @@
                             ]
                           },
                           {
-                            "group": "Priority Queue",
+                            "group": "priority-queue",
                             "pages": [
                               "sdks/typescript/api/dsa/priority-queue",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/priority-queue/classes/PriorityQueue"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/dsa/priority-queue/functions/createDeadlineQueue",
                                   "sdks/typescript/api/dsa/priority-queue/functions/createMaxHeap",
@@ -1003,7 +1003,7 @@
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/priority-queue/interfaces/PriorityQueueOptions",
                                   "sdks/typescript/api/dsa/priority-queue/interfaces/PriorityQueueStats",
@@ -1011,7 +1011,7 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/dsa/priority-queue/type-aliases/CompareFn"
                                 ]
@@ -1019,17 +1019,17 @@
                             ]
                           },
                           {
-                            "group": "Queue",
+                            "group": "queue",
                             "pages": [
                               "sdks/typescript/api/dsa/queue",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/queue/classes/Queue"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/queue/interfaces/QueueNode"
                                 ]
@@ -1037,11 +1037,11 @@
                             ]
                           },
                           {
-                            "group": "Schemas",
+                            "group": "schemas",
                             "pages": [
                               "sdks/typescript/api/dsa/schemas",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/functions/createValidator",
                                   "sdks/typescript/api/dsa/schemas/functions/validate",
@@ -1049,7 +1049,7 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/type-aliases/GraphEdge",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/GraphOptions",
@@ -1065,7 +1065,7 @@
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/variables/GraphEdgeSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/GraphOptionsSchema",
@@ -1083,23 +1083,23 @@
                             ]
                           },
                           {
-                            "group": "Trie",
+                            "group": "trie",
                             "pages": [
                               "sdks/typescript/api/dsa/trie",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/dsa/trie/classes/Trie"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/dsa/trie/functions/rabinKarp"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/dsa/trie/interfaces/TrieSearchResult"
                                 ]
@@ -1109,22 +1109,22 @@
                         ]
                       },
                       {
-                        "group": "HTTP",
+                        "group": "http",
                         "pages": [
                           "sdks/typescript/api/http",
                           {
-                            "group": "Fetcher",
+                            "group": "fetcher",
                             "pages": [
                               "sdks/typescript/api/http/fetcher",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/http/fetcher/classes/FetcherError",
                                   "sdks/typescript/api/http/fetcher/classes/FetcherValidationError"
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/http/fetcher/functions/createApiResponseSchema",
                                   "sdks/typescript/api/http/fetcher/functions/createPaginatedSchema",
@@ -1139,13 +1139,13 @@
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/http/fetcher/interfaces/FetcherOptions"
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/http/fetcher/type-aliases/Headers",
                                   "sdks/typescript/api/http/fetcher/type-aliases/HttpMethod",
@@ -1156,17 +1156,17 @@
                             ]
                           },
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/http/index"
                             ]
                           },
                           {
-                            "group": "Security",
+                            "group": "security",
                             "pages": [
                               "sdks/typescript/api/http/security",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/http/security/functions/getRequestId",
                                   "sdks/typescript/api/http/security/functions/shouldRedirectToHttps"
@@ -1177,46 +1177,46 @@
                         ]
                       },
                       {
-                        "group": "Logger",
+                        "group": "logger",
                         "pages": [
                           "sdks/typescript/api/logger",
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/logger/index"
                             ]
                           },
                           {
-                            "group": "Logger",
+                            "group": "logger",
                             "pages": [
                               "sdks/typescript/api/logger/logger",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/classes/Logger"
                                 ]
                               },
                               {
-                                "group": "Enumerations",
+                                "group": "enumerations",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/enumerations/LogLevel"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/interfaces/LogData",
                                   "sdks/typescript/api/logger/logger/interfaces/LoggerOptions"
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/type-aliases/ColorKey"
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/variables/logger"
                                 ]
@@ -1228,7 +1228,7 @@
                             "pages": [
                               "sdks/typescript/api/logger/logger.decorators",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger.decorators/functions/Log",
                                   "sdks/typescript/api/logger/logger.decorators/functions/LogClass",
@@ -1243,7 +1243,7 @@
                             "pages": [
                               "sdks/typescript/api/logger/logger.types",
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger.types/interfaces/LogClassOptions",
                                   "sdks/typescript/api/logger/logger.types/interfaces/LogData",
@@ -1256,7 +1256,7 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger.types/type-aliases/ColorKey",
                                   "sdks/typescript/api/logger/logger.types/type-aliases/LogLevelString"
@@ -1267,41 +1267,41 @@
                         ]
                       },
                       {
-                        "group": "Rate Limiting",
+                        "group": "rate-limiting",
                         "pages": [
                           "sdks/typescript/api/rate-limiting",
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/rate-limiting/index"
                             ]
                           },
                           {
-                            "group": "Rate Limit",
+                            "group": "rate-limit",
                             "pages": [
                               "sdks/typescript/api/rate-limiting/rate-limit",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/rate-limit/classes/MemoryRateLimitStore",
                                   "sdks/typescript/api/rate-limiting/rate-limit/classes/RedisRateLimitStore"
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/rate-limit/interfaces/IRateLimitStore"
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/rate-limit/type-aliases/RateLimitCheckResult",
                                   "sdks/typescript/api/rate-limiting/rate-limit/type-aliases/RateLimitConfig"
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/rate-limit/variables/RATE_LIMIT_PRESETS",
                                   "sdks/typescript/api/rate-limiting/rate-limit/variables/RateLimitCheckResultSchema",
@@ -1311,11 +1311,11 @@
                             ]
                           },
                           {
-                            "group": "Throttle",
+                            "group": "throttle",
                             "pages": [
                               "sdks/typescript/api/rate-limiting/throttle",
                               {
-                                "group": "Classes",
+                                "group": "classes",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/throttle/classes/KeyedDebounce",
                                   "sdks/typescript/api/rate-limiting/throttle/classes/KeyedThrottle",
@@ -1325,14 +1325,14 @@
                                 ]
                               },
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/throttle/functions/debounce",
                                   "sdks/typescript/api/rate-limiting/throttle/functions/throttle"
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/throttle/type-aliases/DebounceOptions",
                                   "sdks/typescript/api/rate-limiting/throttle/type-aliases/KeyedStats",
@@ -1341,7 +1341,7 @@
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/rate-limiting/throttle/variables/DebounceOptionsSchema",
                                   "sdks/typescript/api/rate-limiting/throttle/variables/KeyedStatsSchema",
@@ -1354,15 +1354,15 @@
                         ]
                       },
                       {
-                        "group": "Security",
+                        "group": "security",
                         "pages": [
                           "sdks/typescript/api/security",
                           {
-                            "group": "Crypto",
+                            "group": "crypto",
                             "pages": [
                               "sdks/typescript/api/security/crypto",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/security/crypto/functions/decryptData",
                                   "sdks/typescript/api/security/crypto/functions/encryptData",
@@ -1376,17 +1376,17 @@
                             ]
                           },
                           {
-                            "group": "Index",
+                            "group": "index",
                             "pages": [
                               "sdks/typescript/api/security/index"
                             ]
                           },
                           {
-                            "group": "Sanitize",
+                            "group": "sanitize",
                             "pages": [
                               "sdks/typescript/api/security/sanitize",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/security/sanitize/functions/escapeHtml",
                                   "sdks/typescript/api/security/sanitize/functions/isValidEmail",
@@ -1406,7 +1406,7 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/security/sanitize/type-aliases/CreditCard",
                                   "sdks/typescript/api/security/sanitize/type-aliases/Email",
@@ -1421,7 +1421,7 @@
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/security/sanitize/variables/CreditCardSchema",
                                   "sdks/typescript/api/security/sanitize/variables/EmailSchema",
@@ -1438,11 +1438,11 @@
                             ]
                           },
                           {
-                            "group": "Validators",
+                            "group": "validators",
                             "pages": [
                               "sdks/typescript/api/security/validators",
                               {
-                                "group": "Functions",
+                                "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/security/validators/functions/containsCommandInjection",
                                   "sdks/typescript/api/security/validators/functions/containsHomoglyphs",
@@ -1461,7 +1461,7 @@
                                 ]
                               },
                               {
-                                "group": "Interfaces",
+                                "group": "interfaces",
                                 "pages": [
                                   "sdks/typescript/api/security/validators/interfaces/ThreatDetectionConfig",
                                   "sdks/typescript/api/security/validators/interfaces/ThreatDetectionResult",
@@ -1469,13 +1469,13 @@
                                 ]
                               },
                               {
-                                "group": "Type Aliases",
+                                "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/security/validators/type-aliases/ThreatType"
                                 ]
                               },
                               {
-                                "group": "Variables",
+                                "group": "variables",
                                 "pages": [
                                   "sdks/typescript/api/security/validators/variables/THREAT_DETECTED_MESSAGE"
                                 ]

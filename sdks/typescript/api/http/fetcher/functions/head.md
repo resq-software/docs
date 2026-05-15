@@ -1,10 +1,16 @@
 # Function: head()
 
+Issue an HTTP HEAD (response headers only, no body). Convenience
+wrapper around [fetcher](./fetcher).
+
+Useful for cache validation, content-length probing, or existence
+checks without the body transfer cost.
+
 ## Call Signature
 
 > **head**\<`T`\>(`url`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:655](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L655)
+Defined in: [packages/http/src/fetcher.ts:758](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L758)
 
 ### Type Parameters
 
@@ -32,7 +38,7 @@ Defined in: [packages/http/src/fetcher.ts:655](https://github.com/resq-software/
 
 > **head**\<`S`\>(`url`, `options`, `params?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:661](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L661)
+Defined in: [packages/http/src/fetcher.ts:764](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L764)
 
 ### Type Parameters
 

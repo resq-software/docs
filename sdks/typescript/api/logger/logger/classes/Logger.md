@@ -1,6 +1,6 @@
 # Class: Logger
 
-Defined in: [logger.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L111)
+Defined in: [logger.ts:111](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L111)
 
 A versatile logging utility that works in both browser and Node.js environments.
 Supports multiple log levels, colorized output, and structured data logging.
@@ -11,7 +11,7 @@ Supports multiple log levels, colorized output, and structured data logging.
 
 > **new Logger**(`context`, `options?`): `Logger`
 
-Defined in: [logger.ts:152](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L152)
+Defined in: [logger.ts:152](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L152)
 
 Create a new Logger instance or return an existing one for the given context
 
@@ -39,7 +39,7 @@ Optional logger configuration
 
 > **action**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:308](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L308)
+Defined in: [logger.ts:308](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L308)
 
 Log an action message (for server actions or important user interactions)
 
@@ -67,7 +67,7 @@ Optional data to include
 
 > **debug**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:286](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L286)
+Defined in: [logger.ts:286](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L286)
 
 Log a debug message
 
@@ -95,7 +95,7 @@ Optional data to include
 
 > **error**(`message`, `error?`, `data?`): `void`
 
-Defined in: [logger.ts:255](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L255)
+Defined in: [logger.ts:255](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L255)
 
 Log an error message
 
@@ -129,7 +129,7 @@ Optional additional data
 
 > **group**(`label`): `void`
 
-Defined in: [logger.ts:329](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L329)
+Defined in: [logger.ts:329](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L329)
 
 Group related log messages (console.group wrapper)
 
@@ -151,7 +151,7 @@ The group label
 
 > **groupEnd**(): `void`
 
-Defined in: [logger.ts:337](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L337)
+Defined in: [logger.ts:337](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L337)
 
 End a log group (console.groupEnd wrapper)
 
@@ -165,7 +165,7 @@ End a log group (console.groupEnd wrapper)
 
 > **info**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:243](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L243)
+Defined in: [logger.ts:243](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L243)
 
 Log an informational message
 
@@ -193,7 +193,7 @@ Optional data to include
 
 > **success**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:319](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L319)
+Defined in: [logger.ts:319](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L319)
 
 Log a success message
 
@@ -221,7 +221,7 @@ Optional data to include
 
 > **time**\<`T`\>(`label`, `fn`): `Promise`\<`T`\>
 
-Defined in: [logger.ts:350](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L350)
+Defined in: [logger.ts:350](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L350)
 
 Log execution time of a function
 
@@ -259,7 +259,7 @@ The result of the function execution
 
 > **trace**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:297](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L297)
+Defined in: [logger.ts:297](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L297)
 
 Log a trace message (most verbose level)
 
@@ -287,7 +287,7 @@ Optional data to include
 
 > **warn**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:275](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L275)
+Defined in: [logger.ts:275](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L275)
 
 Log a warning message
 
@@ -315,7 +315,7 @@ Optional data to include
 
 > `static` **getLogger**(`context`, `options?`): `Logger`
 
-Defined in: [logger.ts:173](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L173)
+Defined in: [logger.ts:173](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L173)
 
 Get a logger instance for the given context.
 If a logger with this context already exists, returns the existing instance.
@@ -346,7 +346,7 @@ A logger instance for the specified context
 
 > `static` **setGlobalLogLevel**(`level`): `void`
 
-Defined in: [logger.ts:189](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/logger/src/logger.ts#L189)
+Defined in: [logger.ts:189](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L189)
 
 Set global minimum log level for all logger instances
 

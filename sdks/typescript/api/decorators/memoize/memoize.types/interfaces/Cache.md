@@ -1,6 +1,6 @@
 # Interface: Cache\<D\>
 
-Defined in: [memoize/memoize.types.ts:79](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L79)
+Defined in: [memoize/memoize.types.ts:79](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L79)
 
 Interface for cache implementations used by the memoize decorator.
 
@@ -31,7 +31,7 @@ The type of values stored in the cache
 
 > **delete**: (`key`) => `void`
 
-Defined in: [memoize/memoize.types.ts:85](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L85)
+Defined in: [memoize/memoize.types.ts:85](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L85)
 
 Remove a value from the cache
 
@@ -51,7 +51,7 @@ Remove a value from the cache
 
 > **get**: (`key`) => `D` \| `null` \| `undefined`
 
-Defined in: [memoize/memoize.types.ts:83](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L83)
+Defined in: [memoize/memoize.types.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L83)
 
 Retrieve a value from the cache
 
@@ -71,7 +71,7 @@ Retrieve a value from the cache
 
 > **has**: (`key`) => `boolean`
 
-Defined in: [memoize/memoize.types.ts:87](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L87)
+Defined in: [memoize/memoize.types.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L87)
 
 Check if a key exists in the cache
 
@@ -91,7 +91,7 @@ Check if a key exists in the cache
 
 > **set**: (`key`, `value`) => `void`
 
-Defined in: [memoize/memoize.types.ts:81](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/memoize/memoize.types.ts#L81)
+Defined in: [memoize/memoize.types.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L81)
 
 Store a value in the cache
 

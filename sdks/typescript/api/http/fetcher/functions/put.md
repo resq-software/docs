@@ -1,10 +1,13 @@
 # Function: put()
 
+Issue an HTTP PUT (full-resource replace). Convenience wrapper
+around [fetcher](./fetcher).
+
 ## Call Signature
 
 > **put**\<`T`\>(`url`, `body?`, `options?`, `params?`): `Effect`\<`T`, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:557](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L557)
+Defined in: [packages/http/src/fetcher.ts:643](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L643)
 
 ### Type Parameters
 
@@ -36,7 +39,7 @@ Defined in: [packages/http/src/fetcher.ts:557](https://github.com/resq-software/
 
 > **put**\<`S`\>(`url`, `body`, `options`, `params?`): `Effect`\<`Type`\<`S`\>, [`FetcherValidationError`](../classes/FetcherValidationError) \| [`FetcherError`](../classes/FetcherError), `HttpClient`\>
 
-Defined in: [packages/http/src/fetcher.ts:564](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L564)
+Defined in: [packages/http/src/fetcher.ts:650](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L650)
 
 ### Type Parameters
 

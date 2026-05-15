@@ -2,13 +2,24 @@
 
 > **createApiResponseSchema**\<`T`\>(`dataSchema`): `Struct`\<\&#123; `data`: `Schema`\<`T`\>; `errors`: `optional`\<`$Array`\<`String`\>\>; `message`: `optional`\<`String`\>; `success`: `Boolean`; \&#125;\>
 
-Defined in: [packages/http/src/fetcher.ts:687](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L687)
+Defined in: [packages/http/src/fetcher.ts:827](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L827)
+
+Build an envelope schema:
+
+```
+{ success: boolean, data: T, message?: string, errors?: string[] }
+```
+
+Use as the response schema for endpoints that wrap their payload
+in a uniform success/error envelope.
 
 ## Type Parameters
 
 ### T
 
 `T`
+
+Inner data shape on success.
 
 ## Parameters
 

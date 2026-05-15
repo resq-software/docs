@@ -1,6 +1,6 @@
 # Class: Analytics
 
-Defined in: [index.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L111)
+Defined in: [index.ts:111](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L111)
 
 ## Constructors
 
@@ -20,7 +20,7 @@ Defined in: [index.ts:111](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **get** **config**(): `Readonly`\<[`AnalyticsConfig`](../interfaces/AnalyticsConfig)\> \| `null`
 
-Defined in: [index.ts:116](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L116)
+Defined in: [index.ts:116](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L116)
 
 ##### Returns
 
@@ -34,7 +34,7 @@ Defined in: [index.ts:116](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **get** **posthog**(): `PostHog` \| `null`
 
-Defined in: [index.ts:120](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L120)
+Defined in: [index.ts:120](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L120)
 
 ##### Returns
 
@@ -46,7 +46,7 @@ Defined in: [index.ts:120](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **identify**(`userId`, `traits?`): `void`
 
-Defined in: [index.ts:181](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L181)
+Defined in: [index.ts:181](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L181)
 
 #### Parameters
 
@@ -68,7 +68,7 @@ Defined in: [index.ts:181](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **init**(`config`): `Promise`\<`void`\>
 
-Defined in: [index.ts:124](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L124)
+Defined in: [index.ts:124](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L124)
 
 #### Parameters
 
@@ -86,7 +86,7 @@ Defined in: [index.ts:124](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **pageview**(`url?`): `void`
 
-Defined in: [index.ts:211](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L211)
+Defined in: [index.ts:211](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L211)
 
 Manually emit a pageview. Most consumers do **not** need to call this:
 PostHog's `capture_pageview: "history_change"` (set in init) auto-captures
@@ -110,7 +110,7 @@ for first-paint pageviews before init has resolved.
 
 > **reset**(): `void`
 
-Defined in: [index.ts:194](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L194)
+Defined in: [index.ts:194](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L194)
 
 #### Returns
 
@@ -122,7 +122,7 @@ Defined in: [index.ts:194](https://github.com/resq-software/npm/blob/f2ab5fc82f4
 
 > **track**\<`E`\>(`event`, `properties?`): `void`
 
-Defined in: [index.ts:166](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/analytics/src/index.ts#L166)
+Defined in: [index.ts:166](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/analytics/src/index.ts#L166)
 
 #### Type Parameters
 

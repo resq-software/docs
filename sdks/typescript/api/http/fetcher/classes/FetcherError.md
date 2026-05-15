@@ -1,8 +1,13 @@
 # Class: FetcherError
 
-Defined in: [packages/http/src/fetcher.ts:152](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L152)
+Defined in: [packages/http/src/fetcher.ts:176](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L176)
 
-Custom error class for fetcher-specific errors.
+Thrown for transport-level fetcher failures: timeouts, network
+errors, non-2xx responses, JSON-parse failures, and request-body
+serialisation errors.
+
+Distinct from [FetcherValidationError](./FetcherValidationError), which is reserved
+for schema decode failures on otherwise-valid responses.
 
 ## Extends
 
@@ -14,7 +19,7 @@ Custom error class for fetcher-specific errors.
 
 > **new FetcherError**(`message`, `url`, `status?`, `responseData?`, `attempt?`): `FetcherError`
 
-Defined in: [packages/http/src/fetcher.ts:153](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L153)
+Defined in: [packages/http/src/fetcher.ts:177](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L177)
 
 #### Parameters
 
@@ -52,7 +57,7 @@ Defined in: [packages/http/src/fetcher.ts:153](https://github.com/resq-software/
 
 > **\[toStringTag\]**: `string` = `"FetcherError"`
 
-Defined in: [packages/http/src/fetcher.ts:165](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L165)
+Defined in: [packages/http/src/fetcher.ts:189](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L189)
 
 ***
 
@@ -120,7 +125,10 @@ Defined in: node\_modules/effect/dist/Runtime.d.ts:157
 
 > `readonly` `optional` **attempt?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:158](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L158)
+Defined in: [packages/http/src/fetcher.ts:182](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L182)
+
+Retry attempt number (1-indexed) at which the
+  failure occurred.
 
 ***
 
@@ -164,7 +172,10 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1074
 
 > `readonly` `optional` **responseData?**: `unknown`
 
-Defined in: [packages/http/src/fetcher.ts:157](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L157)
+Defined in: [packages/http/src/fetcher.ts:181](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L181)
+
+Best-effort capture of the response body
+  (parsed when possible, otherwise the raw text).
 
 ***
 
@@ -184,7 +195,10 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 > `readonly` `optional` **status?**: `number`
 
-Defined in: [packages/http/src/fetcher.ts:156](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L156)
+Defined in: [packages/http/src/fetcher.ts:180](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L180)
+
+HTTP status code, when one was received.
+  Absent for timeouts and pre-flight errors.
 
 ***
 
@@ -192,7 +206,9 @@ Defined in: [packages/http/src/fetcher.ts:156](https://github.com/resq-software/
 
 > `readonly` **url**: `string`
 
-Defined in: [packages/http/src/fetcher.ts:155](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L155)
+Defined in: [packages/http/src/fetcher.ts:179](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L179)
+
+The request URL.
 
 ***
 
@@ -222,7 +238,7 @@ not capture any frames.
 
 > **toString**(): `string`
 
-Defined in: [packages/http/src/fetcher.ts:167](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/http/src/fetcher.ts#L167)
+Defined in: [packages/http/src/fetcher.ts:191](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/http/src/fetcher.ts#L191)
 
 Returns a string representation of an object.
 

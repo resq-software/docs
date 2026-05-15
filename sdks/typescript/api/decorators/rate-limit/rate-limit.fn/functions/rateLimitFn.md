@@ -2,7 +2,7 @@
 
 > **rateLimitFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D` \| `undefined`, `A`\>
 
-Defined in: [rate-limit/rate-limit.fn.ts:56](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/decorators/src/rate-limit/rate-limit.fn.ts#L56)
+Defined in: [rate-limit/rate-limit.fn.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.fn.ts#L56)
 
 Creates a rate-limited version of a method.
 

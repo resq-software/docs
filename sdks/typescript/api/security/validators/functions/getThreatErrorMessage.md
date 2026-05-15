@@ -2,9 +2,17 @@
 
 > **getThreatErrorMessage**(`result`): `string`
 
-Defined in: [validators.ts:503](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L503)
+Defined in: [validators.ts:660](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L660)
 
-Get human-readable error for a threat detection result
+Map a [ThreatDetectionResult](../interfaces/ThreatDetectionResult) into a user-facing error
+message string suitable for an HTTP 400 response or form
+validation error. Returns `""` when the result is safe (so
+`error || undefined` works).
+
+Uses only the **first** finding for the message — exposing every
+threat type to the user can leak information about the detection
+rules. For full diagnostics, log `result.threats` server-side
+rather than returning them.
 
 ## Parameters
 

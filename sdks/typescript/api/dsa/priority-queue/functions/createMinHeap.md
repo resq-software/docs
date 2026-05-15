@@ -2,7 +2,7 @@
 
 > **createMinHeap**\<`T`\>(): [`PriorityQueue`](../classes/PriorityQueue)\<`T`\>
 
-Defined in: [priority-queue.ts:482](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/dsa/src/priority-queue.ts#L482)
+Defined in: [priority-queue.ts:482](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L482)
 
 Creates a min-heap priority queue (lowest value = highest priority)
 

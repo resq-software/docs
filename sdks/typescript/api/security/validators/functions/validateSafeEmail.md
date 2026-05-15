@@ -2,9 +2,15 @@
 
 > **validateSafeEmail**(`input`): `boolean`
 
-Defined in: [validators.ts:477](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L477)
+Defined in: [validators.ts:626](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L626)
 
-Validates email addresses with additional security checks
+Refinement for email fields. Combines:
+
+1. RFC-style format check (length-bounded to ≤ 254 chars to
+   prevent ReDoS).
+2. XSS / SQL / NoSQL / homoglyph detectors — emails are extremely
+   constrained and should never legitimately contain HTML or query
+   operators.
 
 ## Parameters
 
@@ -15,3 +21,5 @@ Validates email addresses with additional security checks
 ## Returns
 
 `boolean`
+
+`true` when both checks pass.

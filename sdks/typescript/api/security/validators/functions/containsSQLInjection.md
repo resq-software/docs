@@ -2,9 +2,15 @@
 
 > **containsSQLInjection**(`input`): [`ThreatFinding`](../interfaces/ThreatFinding)[]
 
-Defined in: [validators.ts:205](https://github.com/resq-software/npm/blob/f2ab5fc82f4f501236bfdc25d86881be8e1fb643/packages/security/src/validators.ts#L205)
+Defined in: [validators.ts:252](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/security/src/validators.ts#L252)
 
-Detects SQL injection patterns in input
+Detect SQL-injection patterns (UNION SELECT, DROP TABLE,
+comment-based bypasses, always-true tautologies, stacked queries)
+in input.
+
+**Not a replacement for parameterised queries.** Use this as a
+defense-in-depth signal in addition to a properly bound prepared
+statement, never as the only barrier.
 
 ## Parameters
 
@@ -12,6 +18,10 @@ Detects SQL injection patterns in input
 
 `string`
 
+String to scan. Truncated at 100 000 characters.
+
 ## Returns
 
 [`ThreatFinding`](../interfaces/ThreatFinding)[]
+
+Empty array, or one finding of type `"sql_injection"`.
