@@ -12,7 +12,7 @@ Request to create a new incident\.
 public record CreateIncidentRequest : System.IEquatable<ResQ.Clients.CreateIncidentRequest>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; CreateIncidentRequest
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → CreateIncidentRequest
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[CreateIncidentRequest](./ResQ.Clients.CreateIncidentRequest.md 'ResQ\.Clients\.CreateIncidentRequest')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

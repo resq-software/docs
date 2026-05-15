@@ -12,7 +12,7 @@ Client for interacting with the Neo N3 blockchain\.
 public sealed class NeoClient : System.IDisposable
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; NeoClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → NeoClient
 
 Implements [System\.IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable 'System\.IDisposable')
 

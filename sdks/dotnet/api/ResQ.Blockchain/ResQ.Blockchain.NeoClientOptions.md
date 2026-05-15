@@ -12,7 +12,7 @@ Configuration options for the Neo N3 blockchain client\.
 public class NeoClientOptions
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; NeoClientOptions
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → NeoClientOptions
 
 ### Example
 

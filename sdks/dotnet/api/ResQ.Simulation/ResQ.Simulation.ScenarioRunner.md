@@ -12,7 +12,7 @@ Orchestrates simulation scenarios to stress\-test ResQ services\.
 public class ScenarioRunner
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; ScenarioRunner
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → ScenarioRunner
 
 | Constructors | |
 | :--- | :--- |

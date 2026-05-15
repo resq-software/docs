@@ -12,7 +12,7 @@ Represents a single drone deployment recommendation\.
 public record DeploymentRecommendation : System.IEquatable<ResQ.Core.DeploymentRecommendation>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; DeploymentRecommendation
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → DeploymentRecommendation
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[DeploymentRecommendation](./ResQ.Core.DeploymentRecommendation.md 'ResQ\.Core\.DeploymentRecommendation')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

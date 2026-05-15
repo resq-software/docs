@@ -12,7 +12,7 @@ Status response for a fleet of drones\.
 public record FleetStatus : System.IEquatable<ResQ.Clients.FleetStatus>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; FleetStatus
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → FleetStatus
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[FleetStatus](./ResQ.Clients.FleetStatus.md 'ResQ\.Clients\.FleetStatus')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

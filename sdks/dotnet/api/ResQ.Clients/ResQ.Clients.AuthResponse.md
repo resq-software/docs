@@ -12,7 +12,7 @@ Response from the HCE authentication endpoint\.
 public record AuthResponse : System.IEquatable<ResQ.Clients.AuthResponse>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; AuthResponse
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → AuthResponse
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[AuthResponse](./ResQ.Clients.AuthResponse.md 'ResQ\.Clients\.AuthResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

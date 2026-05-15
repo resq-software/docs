@@ -14,7 +14,7 @@ Inherits resilience patterns from [BaseServiceClient](./ResQ.Clients.BaseService
 public class InfrastructureApiClient : ResQ.Clients.BaseServiceClient
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; [BaseServiceClient](./ResQ.Clients.BaseServiceClient.md 'ResQ\.Clients\.BaseServiceClient') &#129106; InfrastructureApiClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → [BaseServiceClient](./ResQ.Clients.BaseServiceClient.md 'ResQ\.Clients\.BaseServiceClient') → InfrastructureApiClient
 
 | Methods | |
 | :--- | :--- |

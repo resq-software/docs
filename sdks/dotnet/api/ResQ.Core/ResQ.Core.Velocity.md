@@ -12,7 +12,7 @@ Represents a velocity vector in NED \(North\-East\-Down\) coordinate frame\.
 public record Velocity : System.IEquatable<ResQ.Core.Velocity>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; Velocity
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → Velocity
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[Velocity](./ResQ.Core.Velocity.md 'ResQ\.Core\.Velocity')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

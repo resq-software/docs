@@ -12,7 +12,7 @@ Configuration for Neo N3 blockchain connection\.
 public record NeoConfig : System.IEquatable<ResQ.Core.NeoConfig>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; NeoConfig
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → NeoConfig
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[NeoConfig](./ResQ.Core.NeoConfig.md 'ResQ\.Core\.NeoConfig')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

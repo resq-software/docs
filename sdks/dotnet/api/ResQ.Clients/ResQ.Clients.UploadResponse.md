@@ -12,7 +12,7 @@ Response from an IPFS upload operation\.
 public record UploadResponse : System.IEquatable<ResQ.Clients.UploadResponse>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; UploadResponse
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → UploadResponse
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[UploadResponse](./ResQ.Clients.UploadResponse.md 'ResQ\.Clients\.UploadResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

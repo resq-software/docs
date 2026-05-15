@@ -12,7 +12,7 @@ Pinata IPFS client implementation of [IStorageClient](./ResQ.Storage.IStorageCli
 public class PinataClient : ResQ.Storage.IStorageClient
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; PinataClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → PinataClient
 
 Implements [IStorageClient](./ResQ.Storage.IStorageClient.md 'ResQ\.Storage\.IStorageClient')
 

@@ -12,7 +12,7 @@ Response from creating or retrieving an incident\.
 public record IncidentResponse : System.IEquatable<ResQ.Clients.IncidentResponse>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; IncidentResponse
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → IncidentResponse
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[IncidentResponse](./ResQ.Clients.IncidentResponse.md 'ResQ\.Clients\.IncidentResponse')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

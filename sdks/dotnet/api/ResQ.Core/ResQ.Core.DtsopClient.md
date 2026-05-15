@@ -12,7 +12,7 @@ Client for the DTSOP \(Drone Tactical Strategy Optimization\) service\.
 public sealed class DtsopClient : System.IDisposable
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; DtsopClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → DtsopClient
 
 Implements [System\.IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable 'System\.IDisposable')
 

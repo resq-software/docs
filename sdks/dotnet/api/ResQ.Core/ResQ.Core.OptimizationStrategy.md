@@ -12,7 +12,7 @@ Represents an optimization strategy from DTSOP \(Drone Tactical Strategy Optimiz
 public record OptimizationStrategy : System.IEquatable<ResQ.Core.OptimizationStrategy>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; OptimizationStrategy
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → OptimizationStrategy
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[OptimizationStrategy](./ResQ.Core.OptimizationStrategy.md 'ResQ\.Core\.OptimizationStrategy')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

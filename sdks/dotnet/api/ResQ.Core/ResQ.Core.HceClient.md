@@ -12,7 +12,7 @@ Client for the HCE \(Human\-Centric Emergency\) coordination layer\.
 public sealed class HceClient : System.IDisposable
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; HceClient
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → HceClient
 
 Implements [System\.IDisposable](https://learn.microsoft.com/en-us/dotnet/api/system.idisposable 'System\.IDisposable')
 

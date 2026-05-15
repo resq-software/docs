@@ -12,7 +12,7 @@ Request containing a batch of telemetry packets from a drone\.
 public record TelemetryBatchRequest : System.IEquatable<ResQ.Clients.TelemetryBatchRequest>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; TelemetryBatchRequest
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → TelemetryBatchRequest
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[TelemetryBatchRequest](./ResQ.Clients.TelemetryBatchRequest.md 'ResQ\.Clients\.TelemetryBatchRequest')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

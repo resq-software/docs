@@ -12,7 +12,7 @@ Represents the result of a file upload operation to IPFS\.
 public record UploadResult : System.IEquatable<ResQ.Storage.UploadResult>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; UploadResult
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → UploadResult
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[UploadResult](./ResQ.Storage.UploadResult.md 'ResQ\.Storage\.UploadResult')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 

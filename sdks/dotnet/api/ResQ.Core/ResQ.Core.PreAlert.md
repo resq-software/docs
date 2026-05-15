@@ -12,7 +12,7 @@ Represents a pre\-alert from the PDIE \(Predictive Disaster Intelligence Engine\
 public record PreAlert : System.IEquatable<ResQ.Core.PreAlert>
 ```
 
-Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') &#129106; PreAlert
+Inheritance [System\.Object](https://learn.microsoft.com/en-us/dotnet/api/system.object 'System\.Object') → PreAlert
 
 Implements [System\.IEquatable&lt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')[PreAlert](./ResQ.Core.PreAlert.md 'ResQ\.Core\.PreAlert')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/system.iequatable-1 'System\.IEquatable\`1')
 
