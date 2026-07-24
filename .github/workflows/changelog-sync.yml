@@ -31,7 +31,9 @@ jobs:
     name: regenerate and open PR
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      # Pinned to a commit SHA (matching the api-docs templates) so upstream
+      # tag movement cannot alter workflow code without review.
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
       # No setup-python: the generator is pure stdlib and GitHub-hosted runners
       # ship Python 3, matching i18n-parity.yml.

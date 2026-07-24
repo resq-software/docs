@@ -70,22 +70,37 @@ CHANGELOG = "changelog.mdx"
 NOTES = "automation/changelog-notes.md"
 
 
+# Package names and versions come from git tags and land directly in MDX table
+# cells and JSX. Only these characters are allowed through; anything with a
+# backtick, pipe, brace, or angle bracket that could corrupt the table or inject
+# MDX is rejected. Every real ResQ tag matches, so this is a guard, not a filter.
+SAFE = re.compile(r"^[@\w./+-]+$")
+
+
 def parse_tag(
     repo: str, tag: str, default_pkg: str | None
 ) -> tuple[str | None, str] | None:
-    """Return (package_or_None, version), or None if the tag is unparseable."""
+    """Return (package_or_None, version), or None if unparseable or unsafe."""
     kind = REPOS[repo][1]
     if kind == "scoped":
         m = re.match(r"(@[\w-]+/[\w-]+)@v?(.+)", tag)
-        return (m.group(1), m.group(2)) if m else None
-    if kind == "suffixed":
+    elif kind == "suffixed":
         m = re.match(r"(.+)-v(\d.*)", tag)
-        return (m.group(1), m.group(2)) if m else None
-    if kind == "at":
+    elif kind == "at":
         m = re.match(r"(.+)@v(\d.*)", tag)
-        return (m.group(1), m.group(2)) if m else None
-    m = re.match(r"v?(\d.*)", tag)  # single
-    return (default_pkg, m.group(1)) if m else None
+    else:  # single package, tag is just the version
+        m = re.match(r"v?(\d.*)", tag)
+        if m and SAFE.match(m.group(1)):
+            return (default_pkg, m.group(1))
+        return None
+
+    if not m:
+        return None
+    pkg, ver = m.group(1), m.group(2)
+    if not SAFE.match(pkg) or not SAFE.match(ver):
+        print(f"skipping tag with unsafe characters: {tag!r}", file=sys.stderr)
+        return None
+    return (pkg, ver)
 
 
 def version_key(v: str) -> tuple:

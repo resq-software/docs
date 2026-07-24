@@ -202,10 +202,11 @@ merely untranslated *yet* should stay in the gap list so it keeps showing up.
 
 ## SDK changelog
 
-[`changelog.mdx`](changelog.mdx) is generated. The version tables between the
-`CHANGELOG:AUTOGEN` markers come from `scripts/build_changelog.py`, which reads
-published GitHub releases across the five SDK repos. Do not hand-edit that
-region — it is overwritten on the next run.
+[`changelog.mdx`](changelog.mdx) is partly generated. Only the region between
+the `CHANGELOG:AUTOGEN` markers is overwritten; the intro above the first
+marker is hand-maintained and preserved. The version tables in that region come
+from `scripts/build_changelog.py`, which reads published GitHub releases across
+the five SDK repos. Do not hand-edit inside the markers.
 
 Editorial prose lives in [`automation/changelog-notes.md`](automation/changelog-notes.md),
 keyed by `## YYYY-MM`. Add a section only when a release deserves narrative; the
