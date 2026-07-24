@@ -30,16 +30,20 @@ EXCLUDED_DIRS = (".github", "node_modules", "snippets", "sdks")
 # styling choices a translator may reasonably vary.
 COMPONENTS = ("Card", "CardGroup", "Step", "Steps", "CodeGroup", "Accordion", "Tabs")
 
-FENCE_RE = re.compile(r"^```", re.MULTILINE)
+FENCE_RE = re.compile(r"^[ \t]*```", re.MULTILINE)
 HEADING_RE = re.compile(r"^(#{2,4})\s+\S", re.MULTILINE)
 FRONTMATTER_RE = re.compile(r"\A---\n.*?\n---\n", re.DOTALL)
+SNIPPET_RE = re.compile(r'^import\s+\w+\s+from\s+"/snippets/', re.MULTILINE)
 
 
 def shape(text: str) -> dict[str, int]:
     """Count structural elements that should survive translation."""
     body = FRONTMATTER_RE.sub("", text)
     counts = {
-        "code blocks": len(FENCE_RE.findall(body)) // 2,
+        # A shared snippet holds real examples, so it counts alongside inline
+        # fences. Without this, moving examples into /snippets would blind the
+        # check to a locale that dropped one.
+        "code blocks": len(FENCE_RE.findall(body)) // 2 + len(SNIPPET_RE.findall(text)),
         "headings": len(HEADING_RE.findall(body)),
     }
     for name in COMPONENTS:
