@@ -3,6 +3,10 @@ title: "快速开始"
 description: "在五分钟内对 ResQ Tactical OS API 完成第一次认证调用。"
 ---
 
+import CallEvidenceBasic from "/snippets/api/call-evidence-basic.mdx";
+import HealthCheck from "/snippets/api/health-check.mdx";
+import StreamEvents from "/snippets/api/stream-events.mdx";
+
 ResQ 暴露两个 HTTPS API:
 
 | API | 基础 URL | 技术栈 |
@@ -21,21 +25,7 @@ ResQ 暴露两个 HTTPS API:
   <Step title="确认服务可用">
     访问 Infrastructure API 的 `/health`。无需认证。
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/health
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/health");
-      console.log(await res.json());
-      ```
-
-      ```python Python
-      import httpx
-      print(httpx.get("https://api.resq.software/health").json())
-      ```
-    </CodeGroup>
+    <HealthCheck />
 
     健康响应类似:
 
@@ -84,27 +74,14 @@ ResQ 暴露两个 HTTPS API:
   <Step title="调用受保护的端点">
     将 token 作为 `Bearer` 请求头发送。
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-    </CodeGroup>
+    <CallEvidenceBasic />
   </Step>
 
   <Step title="从 Coordination API 接收遥测">
     Coordination API 暴露 Prometheus 指标和 Server-Sent Events,用于实时
     机队状态。
 
-    ```bash
-    curl -N https://coordination.resq.software/events
-    ```
+    <StreamEvents />
 
     每行是一个 JSON 事件:遥测帧、任务状态变化和 HITL 审批。
   </Step>

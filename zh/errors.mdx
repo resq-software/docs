@@ -3,6 +3,8 @@ title: "错误"
 description: "ResQ API 的错误信封、状态码和重试指南。"
 ---
 
+import RetryBackoff from "/snippets/api/retry-backoff.mdx";
+
 两个 ResQ API 都使用标准 HTTP 状态码,失败时返回简短的 JSON 信封。将状态
 码视为权威;响应体是给日志和操作员界面的诊断信息,不要用于流程控制。
 
@@ -60,24 +62,7 @@ Coordination API 返回相同形式,或在报告多个失败的端点上返回�
 
 ## 退避草稿
 
-```ts
-async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
-  let attempt = 0;
-  while (true) {
-    try {
-      return await fn();
-    } catch (err: any) {
-      const status = err?.status ?? 0;
-      const retryable = status === 429 || status >= 500;
-      if (!retryable || attempt >= max) throw err;
-      const base = 250 * 2 ** attempt;
-      const jitter = Math.random() * base;
-      await new Promise((r) => setTimeout(r, base + jitter));
-      attempt++;
-    }
-  }
-}
-```
+<RetryBackoff />
 
 ## 常见错误
 

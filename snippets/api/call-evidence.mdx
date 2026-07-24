@@ -1,0 +1,20 @@
+<CodeGroup>
+  ```bash curl
+  curl https://api.resq.software/evidence \
+    -H "Authorization: Bearer $RESQ_TOKEN"
+  ```
+
+  ```ts TypeScript
+  const res = await fetch("https://api.resq.software/evidence", {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  ```
+
+  ```python Python
+  import httpx
+  httpx.get(
+      "https://api.resq.software/evidence",
+      headers={"Authorization": f"Bearer {token}"},
+  )
+  ```
+</CodeGroup>

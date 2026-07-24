@@ -3,6 +3,8 @@ title: "Errors"
 description: "Error envelope, status codes, and retry guidance for the ResQ APIs."
 ---
 
+import RetryBackoff from "/snippets/api/retry-backoff.mdx";
+
 Both ResQ APIs use standard HTTP status codes and return a small JSON envelope
 on failure. Treat the status code as authoritative; treat the body as
 diagnostic detail meant for logs and operator surfaces — not for control flow.
@@ -63,24 +65,7 @@ endpoints that report multiple failures:
 
 ## Backoff sketch
 
-```ts
-async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
-  let attempt = 0;
-  while (true) {
-    try {
-      return await fn();
-    } catch (err: any) {
-      const status = err?.status ?? 0;
-      const retryable = status === 429 || status >= 500;
-      if (!retryable || attempt >= max) throw err;
-      const base = 250 * 2 ** attempt;
-      const jitter = Math.random() * base;
-      await new Promise((r) => setTimeout(r, base + jitter));
-      attempt++;
-    }
-  }
-}
-```
+<RetryBackoff />
 
 ## Common errors
 

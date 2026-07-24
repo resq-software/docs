@@ -3,6 +3,10 @@ title: "त्वरित प्रारंभ"
 description: "ResQ Tactical OS API पर अपना पहला प्रमाणित कॉल पाँच मिनट में करें।"
 ---
 
+import CallEvidenceBasic from "/snippets/api/call-evidence-basic.mdx";
+import HealthCheck from "/snippets/api/health-check.mdx";
+import StreamEvents from "/snippets/api/stream-events.mdx";
+
 ResQ दो HTTPS APIs उजागर करता है:
 
 | API | बेस URL | स्टैक |
@@ -22,21 +26,7 @@ ResQ दो HTTPS APIs उजागर करता है:
     Infrastructure API के `/health` पर कॉल करें। प्रमाणीकरण की आवश्यकता
     नहीं।
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/health
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/health");
-      console.log(await res.json());
-      ```
-
-      ```python Python
-      import httpx
-      print(httpx.get("https://api.resq.software/health").json())
-      ```
-    </CodeGroup>
+    <HealthCheck />
 
     एक स्वस्थ प्रतिक्रिया इस तरह दिखती है:
 
@@ -87,27 +77,14 @@ ResQ दो HTTPS APIs उजागर करता है:
   <Step title="प्रमाणित एंडपॉइंट कॉल करें">
     टोकन को `Bearer` हेडर के रूप में भेजें।
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-    </CodeGroup>
+    <CallEvidenceBasic />
   </Step>
 
   <Step title="Coordination API से टेलीमेट्री स्ट्रीम करें">
     Coordination API रीयल-टाइम फ़्लीट स्टेट के लिए Prometheus मेट्रिक्स और
     Server-Sent Events उजागर करता है।
 
-    ```bash
-    curl -N https://coordination.resq.software/events
-    ```
+    <StreamEvents />
 
     प्रत्येक पंक्ति एक JSON इवेंट है: टेलीमेट्री फ़्रेम, मिशन स्टेट
     परिवर्तन, और HITL अनुमोदन।

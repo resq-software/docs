@@ -3,6 +3,10 @@ title: "Quickstart"
 description: "Make your first authenticated call to the ResQ Tactical OS APIs in five minutes."
 ---
 
+import CallEvidenceBasic from "/snippets/api/call-evidence-basic.mdx";
+import HealthCheck from "/snippets/api/health-check.mdx";
+import StreamEvents from "/snippets/api/stream-events.mdx";
+
 ResQ exposes two HTTPS APIs:
 
 | API | Base URL | Stack |
@@ -21,21 +25,7 @@ ResQ exposes two HTTPS APIs:
   <Step title="Confirm the service is up">
     Hit `/health` on the Infrastructure API. No auth required.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/health
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/health");
-      console.log(await res.json());
-      ```
-
-      ```python Python
-      import httpx
-      print(httpx.get("https://api.resq.software/health").json())
-      ```
-    </CodeGroup>
+    <HealthCheck />
 
     A healthy response looks like:
 
@@ -86,27 +76,14 @@ ResQ exposes two HTTPS APIs:
   <Step title="Call an authenticated endpoint">
     Send the token as a `Bearer` header.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-    </CodeGroup>
+    <CallEvidenceBasic />
   </Step>
 
   <Step title="Stream telemetry from the Coordination API">
     The Coordination API exposes Prometheus metrics and Server-Sent Events for
     real-time fleet state.
 
-    ```bash
-    curl -N https://coordination.resq.software/events
-    ```
+    <StreamEvents />
 
     Each line is a JSON event: telemetry frames, mission state changes, and
     HITL approvals.

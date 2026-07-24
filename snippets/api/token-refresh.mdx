@@ -1,0 +1,5 @@
+```ts
+function isExpired(expiresAt: number, skewSeconds = 60) {
+  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
+}
+```
