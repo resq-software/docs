@@ -176,7 +176,15 @@ The auto-doc post-processors handle these for generated content; you only need t
 
 ## Internationalization
 
-Translated mirrors live in `es/`, `zh/`, `ar/`, `hi/`. Each carries the same path structure as English. The `locale parity` CI check ensures every English page has a counterpart in every locale (or a documented exemption).
+Translated mirrors live in `es/`, `zh/`, `ar/`, `hi/`. Each carries the same path structure as English. The `locale parity` CI check reports every English page that has no counterpart in a locale, and every counterpart that is *structurally short* — fewer code blocks, headings, or components than the English page. A file that exists but dropped its examples is a gap too, and the check names it.
+
+Run it locally before opening a PR:
+
+```bash
+python3 scripts/i18n_parity.py --root .
+```
+
+Prose length is not compared; translations legitimately vary in length. Code examples do not.
 
 When you add an English page, either:
 - Translate it into all four other locales **before** merging, or
