@@ -1,23 +1,41 @@
 ---
 title: "TypeScript SDK"
-description: "Install @resq-sw packages and call the ResQ APIs from Node.js, the browser, or Bun."
+description: "Install @resq-systems packages and call the ResQ APIs from Node.js, the browser, or Bun."
 ---
 
 The ResQ TypeScript SDK lives in the
 [`resq-software/npm`](https://github.com/resq-software/npm) workspace. It
 publishes a UI component library plus seven standalone utility packages
-under the `@resq-sw/*` scope. The packages are Effect-based, with zero or
+under the `@resq-systems/*` scope. The packages are Effect-based, with zero or
 peer dependencies where it matters.
 
 | Package | Purpose |
 |---------|---------|
-| `@resq-sw/http` | HTTP client utilities |
-| `@resq-sw/security` | Auth and crypto helpers |
-| `@resq-sw/dsa` | Zero-dependency data structures |
-| `@resq-sw/logger` | Structured logging |
-| `@resq-sw/rate-limiting` | Rate-limiting primitives |
-| `@resq-sw/decorators` | Method decorators |
-| `@resq-sw/helpers` | Cross-cutting utilities |
+| `@resq-systems/http` | HTTP client utilities |
+| `@resq-systems/security` | Auth and crypto helpers |
+| `@resq-systems/dsa` | Zero-dependency data structures |
+| `@resq-systems/logger` | Structured logging |
+| `@resq-systems/rate-limiting` | Rate-limiting primitives |
+| `@resq-systems/decorators` | Method decorators |
+| `@resq-systems/helpers` | Cross-cutting utilities |
+
+<Warning>
+  **Moving from `@resq-sw/*`?** These packages were previously published under
+  the `@resq-sw` scope. That scope stopped receiving updates on 2026-07-09 and
+  is not deprecated on npm, so installs still resolve — silently, to a stale
+  version. `@resq-sw/http` is pinned at `0.2.0` while `@resq-systems/http` is
+  at `2.0.1`.
+
+  Replace the scope in your `package.json` and reinstall:
+
+  ```bash
+  npm uninstall @resq-sw/http @resq-sw/security
+  npm install @resq-systems/http @resq-systems/security
+  ```
+
+  Version numbers restart under the new scope, so pin against
+  `@resq-systems` versions rather than carrying the old ranges over.
+</Warning>
 
 <Note>
   Install only what you need — every package is independently versioned and
@@ -30,19 +48,19 @@ peer dependencies where it matters.
 
 <CodeGroup>
   ```bash npm
-  npm install @resq-sw/http @resq-sw/security
+  npm install @resq-systems/http @resq-systems/security
   ```
 
   ```bash pnpm
-  pnpm add @resq-sw/http @resq-sw/security
+  pnpm add @resq-systems/http @resq-systems/security
   ```
 
   ```bash yarn
-  yarn add @resq-sw/http @resq-sw/security
+  yarn add @resq-systems/http @resq-systems/security
   ```
 
   ```bash bun
-  bun add @resq-sw/http @resq-sw/security
+  bun add @resq-systems/http @resq-systems/security
   ```
 </CodeGroup>
 
@@ -93,8 +111,8 @@ const evidence = await res.json();
 ## Errors
 
 The API rejects with HTTP status codes; bodies follow the envelope at
-[Errors](/errors). For retry/backoff, the `@resq-sw/rate-limiting` and
-`@resq-sw/http` packages provide ready-made primitives — refer to the
+[Errors](/errors). For retry/backoff, the `@resq-systems/rate-limiting` and
+`@resq-systems/http` packages provide ready-made primitives — refer to the
 [`resq-software/npm`](https://github.com/resq-software/npm) README for
 their current shape.
 

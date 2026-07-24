@@ -99,7 +99,7 @@ mint broken-links      # flags any nav-registered page or in-content link that 4
 
 The five SDK source repos each carry a copy of the workflow at `automation/source-repo-templates/api-docs.<lang>.yml`. That workflow:
 
-1. Triggers on tag push (e.g. `@resq-sw/ui@v0.35.6`, `v1.3.3`, `@resq-sw/*@v*`) **or** manual `workflow_dispatch`.
+1. Triggers on tag push (e.g. `@resq-systems/ui@v0.35.6`, `v1.3.3`, `@resq-systems/*@v*`) **or** manual `workflow_dispatch`.
 2. Generates language-native markdown:
 
    | Repo | Lang | Tooling |

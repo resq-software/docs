@@ -103,8 +103,8 @@ and reports up-to-date when the workflow already matches.
 ## Tag triggers
 
 `resq-software/npm` is a bun monorepo released via Changesets, with
-per-package tags like `@resq-sw/ui@v0.35.6`. The TypeScript template
-triggers only on `@resq-sw/ui@v*` so non-UI package releases do not
+per-package tags like `@resq-systems/ui@v0.35.6`. The TypeScript template
+triggers only on `@resq-systems/ui@v*` so non-UI package releases do not
 spam the docs PR queue. When other packages get a docs surface, add
 their tag pattern (or convert to a matrix).
 
