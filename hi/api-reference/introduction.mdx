@@ -26,9 +26,85 @@ ResQ आपदा प्रतिक्रिया समन्वय के �
   </Card>
 </CardGroup>
 
+## बेस URL
+
+| API | बेस URL |
+|-----|---------|
+| Infrastructure | `https://api.resq.software` |
+| Coordination | `https://coordination.resq.software` |
+
+स्वयं-होस्ट किए गए परिनियोजन अपने स्वयं के hostname प्रतिस्थापित करते हैं;
+अनुरोध और प्रतिक्रिया की संरचना समान रहती है।
+
+## प्रमाणीकरण
+
+दोनों APIs bearer JWT का उपयोग करते हैं।
+
+```bash
+# 1. क्रेडेंशियल्स के बदले टोकन प्राप्त करें
+curl -X POST https://api.resq.software/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"ऑपरेटर","password":"REDACTED"}'
+
+# 2. हर सुरक्षित अनुरोध पर टोकन भेजें
+curl https://api.resq.software/evidence \
+  -H "Authorization: Bearer $RESQ_TOKEN"
+```
+
+टोकन जीवनचक्र, scope प्रबंधन और रोटेशन के लिए
+[प्रमाणीकरण](/hi/authentication) देखें।
+
+## परंपराएँ
+
+### कंटेंट टाइप
+
+जब तक कोई endpoint स्पष्ट रूप से किसी अन्य media type का उल्लेख न करे
+(उदाहरण के लिए `POST /storage` पर multipart अपलोड), सभी अनुरोध और
+प्रतिक्रियाएँ `application/json` का उपयोग करती हैं।
+
+### समय
+
+रिसोर्स payload में टाइमस्टैम्प ISO-8601 UTC स्ट्रिंग्स
+(`2026-05-04T06:01:27Z`) होते हैं। `/login` पर टोकन की समाप्ति अपवाद है —
+गणना की सुविधा के लिए यह सेकंड में Unix टाइमस्टैम्प है।
+
+### पहचानकर्ता
+
+रिसोर्स ID अपारदर्शी स्ट्रिंग्स हैं। इन्हें parse न करें; इन्हें केवल
+पहचानकर्ता मानें। IPFS साक्ष्य को उसके CID (कंटेंट आइडेंटिफ़ायर) से
+संदर्भित किया जाता है, जो कंटेंट-एड्रेस्ड और स्थिर होता है।
+
+### पेजिनेशन
+
+सूची endpoints `limit` (डिफ़ॉल्ट 50, अधिकतम 200) और `cursor` query
+पैरामीटर स्वीकार करते हैं। जब और पेज उपलब्ध हों, तो प्रतिक्रिया में
+`next_cursor` फ़ील्ड होता है।
+
+```http
+GET /evidence?limit=50&cursor=eyJpZCI6Ii4uLiJ9
+```
+
+### इडेम्पोटेंसी
+
+परिवर्तनकारी endpoints `Idempotency-Key` हेडर स्वीकार करते हैं। ResQ
+प्रतिक्रिया को 24 घंटे तक कैश करता है, इसलिए पुनः प्रयास मूल परिणाम
+लौटाते हैं और दुष्प्रभाव दोहराते नहीं।
+
+### रिक्वेस्ट ID
+
+हर प्रतिक्रिया में `X-Request-Id` हेडर होता है। लॉग सहसंबंधित करने के लिए
+इसे किसी भी सहायता या घटना रिपोर्ट में शामिल करें।
+
+### त्रुटियाँ
+
+विफलताएँ मानक HTTP स्टेटस कोड और एक छोटे JSON envelope का उपयोग करती हैं।
+पूर्ण स्टेटस-कोड तालिका, पुनः प्रयास मार्गदर्शन और backoff रूपरेखा के लिए
+[त्रुटियाँ](/hi/errors) देखें।
+
 ## Infrastructure API
 
 Rust/Axum से निर्मित। स्थायी डेटा, ब्लॉकचेन इंटरैक्शन और AI-संचालित विश्लेषण को संभालता है।
+बेस URL: `https://api.resq.software`।
 
 | Tag | विवरण |
 |-----|-------|
@@ -50,3 +126,22 @@ TypeScript/Elysia से निर्मित। रियल-टाइम फ�
 | **Simulation** | परीक्षण के लिए फ़ॉल्ट इंजेक्शन |
 | **Admin** | सेवा स्वास्थ्य, प्रोफाइलिंग, मिशन अनुमोदन (EU AI Act Art. 14 HITL) |
 | **Observability** | Prometheus मेट्रिक्स और SSE इवेंट स्ट्रीम्स |
+
+## SDKs
+
+क्लाइंट स्वयं लिखने से बचें — आधिकारिक SDKs में से कोई एक इंस्टॉल करें।
+
+<CardGroup cols={2}>
+  <Card title="TypeScript" icon="js" href="/sdks/typescript">
+    `@resq-sw/http`, `@resq-sw/security`, और UI कंपोनेंट्स।
+  </Card>
+  <Card title="Python" icon="python" href="/sdks/python">
+    `resq-mcp` (FastMCP सर्वर) और `resq-dsa`।
+  </Card>
+  <Card title="Rust" icon="rust" href="/sdks/rust">
+    एकीकृत `resq` CLI और सात TUI टूल्स।
+  </Card>
+  <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+    टाइप्ड क्लाइंट्स, Protobuf कॉन्ट्रैक्ट्स, सिम्युलेशन हार्नेस।
+  </Card>
+</CardGroup>
