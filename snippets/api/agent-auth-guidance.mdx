@@ -12,8 +12,10 @@
   >   variables. Never inline them in source, and never commit them.
   > - Treat `expires_at` from `POST /login` as authoritative. It is a Unix
   >   timestamp in seconds. Do not decode the JWT body to derive expiry.
-  > - Refresh when fewer than 60 seconds remain, and re-authenticate from
-  >   credentials on `401`.
+  > - Refresh when fewer than 60 seconds remain. On `401`, re-authenticate
+  >   once and retry the request at most once; if it still returns `401`,
+  >   stop and surface the error. Credentials that are invalid or revoked
+  >   must not drive a login/request loop.
   > - On `403`, stop. The token is valid but lacks the required scope, so
   >   retrying cannot succeed — it needs an administrator to grant the scope.
   > - Cache the token in memory only.
