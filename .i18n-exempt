@@ -1,0 +1,12 @@
+# Pages exempt from the locale parity check.
+#
+# One repo-relative path per line. Blank lines and `#` comments are ignored.
+# Everything after `#` on a line is treated as a comment, so record the reason
+# inline. The `locale parity` check reports exempt pages separately rather than
+# counting them as gaps.
+#
+# Exempt a page only when translating it is genuinely impractical. A page that
+# is merely untranslated *yet* should stay in the gap list so it keeps showing
+# up in the report.
+
+changelog.mdx  # append-only release log; every entry would need 4 translations forever

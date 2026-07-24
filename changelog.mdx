@@ -1,0 +1,157 @@
+---
+title: "SDK changelog"
+description: "Released versions of the ResQ TypeScript, Python, Rust, .NET, and C++ SDKs, newest first."
+---
+
+Released versions of the official SDKs. Filter by language using the tags in
+the sidebar.
+
+This page tracks **published package releases**. For the APIs themselves, see
+the [API reference](/api-reference/introduction); for the conventions both
+APIs share, see [Concepts](/concepts).
+
+<Update label="July 2026" tags={["TypeScript", "Rust"]}>
+  ## TypeScript — npm scope moved to `@resq-systems`
+
+  The TypeScript packages moved from the `@resq-sw` scope to
+  `@resq-systems` on 12 July 2026, restarting at `1.0.0`. **`@resq-sw` is not
+  deprecated on npm, so installs still resolve — silently, to stale
+  versions.** See the [TypeScript SDK](/sdks/typescript) page for migration
+  steps.
+
+  | Package | Version |
+  |---------|---------|
+  | `@resq-systems/http` | 2.0.1 |
+  | `@resq-systems/analytics` | 2.0.1 |
+  | `@resq-systems/dsa` | 2.1.0 |
+  | `@resq-systems/security` | 1.0.5 |
+  | `@resq-systems/ui` | 0.37.2 |
+  | `@resq-systems/email-templates` | 0.6.2 |
+  | `@resq-systems/constants` | 0.5.0 |
+  | `@resq-systems/rate-limiting` | 0.4.2 |
+  | `@resq-systems/decorators` | 0.4.0 |
+  | `@resq-systems/helpers` | 0.4.0 |
+  | `@resq-systems/logger` | 0.3.0 |
+  | `@resq-systems/math` | 0.2.1 |
+  | `@resq-systems/types` | 0.1.0 |
+
+  `@resq-systems/math` and `@resq-systems/types` are new packages with no
+  `@resq-sw` predecessor.
+
+  Notable changes in this cycle:
+
+  - `Result.all` is now generic (`Result<T, E>` rather than `any`) and
+    short-circuits on the first error. The unused `control.ts` `Result` is
+    deprecated.
+  - `TokenBucketLimiter` and `LeakyBucketLimiter` use the
+    `@resq-systems/dsa` queue for their FIFO waiter queues instead of
+    hand-rolled array operations.
+  - `getHashForObject` takes `unknown` rather than `any`.
+
+  ## Rust
+
+  | Crate | Version |
+  |-------|---------|
+  | `resq-bin`, `resq-clean`, `resq-deploy`, `resq-flame`, `resq-health`, `resq-logs`, `resq-perf` | 0.1.18 |
+  | `resq-tui` | 0.1.10 |
+</Update>
+
+<Update label="June 2026" tags={["Rust"]}>
+  ## Rust
+
+  | Crate | Version |
+  |-------|---------|
+  | `resq-bin`, `resq-clean`, `resq-deploy`, `resq-flame`, `resq-health`, `resq-logs`, `resq-perf` | 0.1.17 |
+  | `resq-tui` | 0.1.9 |
+</Update>
+
+<Update label="May 2026" tags={["TypeScript", "Rust"]}>
+  ## TypeScript
+
+  | Package | Version |
+  |---------|---------|
+  | `@resq-sw/ui` | 0.35.6 |
+  | `@resq-sw/analytics` | 0.4.0 |
+
+  `analytics` was introduced this cycle as a unified PostHog and GA4 client
+  for the ResQ platform.
+
+  ## Rust
+
+  | Crate | Version |
+  |-------|---------|
+  | `resq-bin`, `resq-clean`, `resq-deploy`, `resq-flame`, `resq-health`, `resq-logs`, `resq-perf` | 0.1.16 |
+  | `resq-tui` | 0.1.8 |
+  | `resq-dsa` | 0.1.3 |
+</Update>
+
+<Update label="April 2026" tags={["Rust", "Python", ".NET", "TypeScript"]}>
+  ## Rust — CLI tools renamed
+
+  The seven CLI tools were renamed on 3 April 2026. The old crate names
+  stopped at `0.1.9` and are no longer published; the new names continue the
+  version series.
+
+  | Was | Now |
+  |-----|-----|
+  | `resq-bin-explorer` | `resq-bin` |
+  | `resq-cleanup` | `resq-clean` |
+  | `resq-deploy-cli` | `resq-deploy` |
+  | `resq-flamegraph` | `resq-flame` |
+  | `resq-health-checker` | `resq-health` |
+  | `resq-log-viewer` | `resq-logs` |
+  | `resq-perf-monitor` | `resq-perf` |
+
+  | Crate | Version |
+  |-------|---------|
+  | The seven tools above | 0.1.15 |
+  | `resq-cli` | 0.2.6 |
+  | `resq-tui` | 0.1.7 |
+  | `resq-dsa` | 0.1.2 |
+  | `resq-ai` | 0.1.0 (first release) |
+
+  ## Python
+
+  `resq-mcp` reached **1.3.4**. The workspace was restructured into a
+  `packages/` layout during this cycle.
+
+  ## .NET
+
+  **0.6.0**, adding a `SimDemo` example: a standalone simulation, mesh, and
+  dialect demo.
+
+  ## TypeScript
+
+  `logger` and `rate-limiting` had their initial releases at `0.1.1`, built
+  with `tsdown` and shipped with per-package READMEs.
+</Update>
+
+<Update label="March 2026" tags={["Rust", "Python", ".NET", "C++"]}>
+  First public releases across the SDK ecosystems.
+
+  ## C++
+
+  `resq-common` **0.1.0**, published through
+  [vcpkg](https://github.com/resq-software/vcpkg). This is still the current
+  release.
+
+  ## .NET
+
+  **0.5.1**. This cycle scaffolded `ResQ.Mavlink.Gateway` with
+  `MavStateMapper` and `MessageTranslator`, and implemented the
+  `ResQ.Mavlink.Sitl` SITL bridge.
+
+  ## Python
+
+  `resq-mcp` **1.2.2**. `resq-dsa` gained its own CI and tag-based PyPI
+  publishing.
+
+  ## Rust
+
+  | Crate | Version |
+  |-------|---------|
+  | The seven CLI tools (pre-rename names) | 0.1.8 |
+  | `resq-cli` | 0.2.3 |
+  | `resq-tui` | 0.1.4 |
+  | `resq-dsa` | 0.1.1 |
+</Update>
