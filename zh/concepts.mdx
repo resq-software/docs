@@ -3,6 +3,10 @@ title: "概念"
 description: "ResQ Tactical OS 各部分如何协同工作:网状网络、证据链、任务流程,以及操作员权限范围。"
 ---
 
+import MeshTopology from "/snippets/diagrams/mesh-topology.mdx";
+import EvidenceChain from "/snippets/diagrams/evidence-chain.mdx";
+import MissionApproval from "/snippets/diagrams/mission-approval.mdx";
+
 这是概念地图。在阅读 API 参考之前先看一遍,文档其余部分就能很快串起来。
 
 ## 网状网络
@@ -20,6 +24,8 @@ ResQ 以**去中心化网状网络**运行,而非中心-辐射式云架构。无
 在 API 中,部分路由在局部停机期间会以 `503 Service Unavailable` 出现 ——
 重试指南见[错误](/zh/errors)。
 
+<MeshTopology />
+
 ## 证据与链
 
 任务中每个有后果的动作都会产生**证据**:
@@ -32,6 +38,8 @@ ResQ 以**去中心化网状网络**运行,而非中心-辐射式云架构。无
 
 这使事后审查和监管链审计无需信任任何单一方 —— 任何持有 CID 和链引用的人
 都能验证字节内容。
+
+<EvidenceChain />
 
 ## 人在回路任务
 
@@ -47,6 +55,8 @@ ResQ 的自主流程都受 **HITL 控制**。平台实现
 
 审批需要操作员的 `missions.approve` 权限范围。缺少此权限的调用返回
 `403` —— 详见[错误](/zh/errors)。
+
+<MissionApproval />
 
 ## 空域与许可
 

@@ -3,6 +3,10 @@ title: "المفاهيم"
 description: "كيف تتلاءم قطع ResQ Tactical OS معًا: الشبكة المتراصة، سلسلة الأدلة، تدفق المهام، ونطاقات صلاحيات المشغّل."
 ---
 
+import MeshTopology from "/snippets/diagrams/mesh-topology.mdx";
+import EvidenceChain from "/snippets/diagrams/evidence-chain.mdx";
+import MissionApproval from "/snippets/diagrams/mission-approval.mdx";
+
 هذه هي الخريطة المفاهيمية. اقرأها مرة واحدة قبل مرجع API وستتجمّع بقية
 الوثائق بسرعة.
 
@@ -23,6 +27,8 @@ description: "كيف تتلاءم قطع ResQ Tactical OS معًا: الشبكة
 أثناء الانقطاعات الجزئية — راجع [الأخطاء](/ar/errors) لإرشادات إعادة
 المحاولة.
 
+<MeshTopology />
+
 ## الأدلة والسلسلة
 
 كل إجراء ذي عواقب في المهمة ينتج **دليلاً**:
@@ -37,6 +43,8 @@ description: "كيف تتلاءم قطع ResQ Tactical OS معًا: الشبكة
 
 هذا يُمكّن المراجعة بعد الحدث ومراجعة سلسلة العهدة دون الثقة بأي طرف
 وحيد — يمكن لأي شخص لديه CID والمرجع على السلسلة التحقق من البايتات.
+
+<EvidenceChain />
 
 ## مهام مع إنسان في الحلقة
 
@@ -54,6 +62,8 @@ description: "كيف تتلاءم قطع ResQ Tactical OS معًا: الشبكة
 
 تتطلب الموافقة نطاق صلاحية المشغّل `missions.approve`. الاستدعاءات
 التي لا تحوزه ترجع `403` — راجع [الأخطاء](/ar/errors).
+
+<MissionApproval />
 
 ## المجال الجوي والتصاريح
 
