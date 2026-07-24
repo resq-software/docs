@@ -200,6 +200,27 @@ changelog.mdx  # append-only release log; every entry would need 4 translations 
 Exempt a page only when translating it is genuinely impractical. A page that is
 merely untranslated *yet* should stay in the gap list so it keeps showing up.
 
+## SDK changelog
+
+[`changelog.mdx`](changelog.mdx) is generated. The version tables between the
+`CHANGELOG:AUTOGEN` markers come from `scripts/build_changelog.py`, which reads
+published GitHub releases across the five SDK repos. Do not hand-edit that
+region — it is overwritten on the next run.
+
+Editorial prose lives in [`automation/changelog-notes.md`](automation/changelog-notes.md),
+keyed by `## YYYY-MM`. Add a section only when a release deserves narrative; the
+generator splices it above that month's tables. Note bodies must not use `##`
+headings (they would collide with the per-ecosystem table headings).
+
+```bash
+python3 scripts/build_changelog.py            # rewrite the autogen region
+python3 scripts/build_changelog.py --check     # exit 1 if out of date
+```
+
+The `changelog sync` workflow runs the generator weekly and on demand, opening
+a PR whenever a new release changes the tables. Because the generator is
+deterministic, a run with no new releases produces no diff and no PR.
+
 ## Validation
 
 | Check | Command | When |
