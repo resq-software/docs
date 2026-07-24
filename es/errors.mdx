@@ -3,6 +3,8 @@ title: "Errores"
 description: "Envolvente de error, códigos de estado y orientación de reintento para las APIs de ResQ."
 ---
 
+import RetryBackoff from "/snippets/api/retry-backoff.mdx";
+
 Ambas APIs de ResQ usan códigos de estado HTTP estándar y devuelven una
 pequeña envolvente JSON al fallar. Trata el código de estado como
 autoritativo; el cuerpo es información de diagnóstico para logs y
@@ -64,24 +66,7 @@ en endpoints que reportan múltiples fallos:
 
 ## Esbozo de backoff
 
-```ts
-async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
-  let attempt = 0;
-  while (true) {
-    try {
-      return await fn();
-    } catch (err: any) {
-      const status = err?.status ?? 0;
-      const retryable = status === 429 || status >= 500;
-      if (!retryable || attempt >= max) throw err;
-      const base = 250 * 2 ** attempt;
-      const jitter = Math.random() * base;
-      await new Promise((r) => setTimeout(r, base + jitter));
-      attempt++;
-    }
-  }
-}
-```
+<RetryBackoff />
 
 ## Errores comunes
 

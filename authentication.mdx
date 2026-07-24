@@ -3,6 +3,10 @@ title: "Authentication"
 description: "How to obtain, send, and rotate JWT credentials for the ResQ Infrastructure and Coordination APIs."
 ---
 
+import CallEvidence from "/snippets/api/call-evidence.mdx";
+import EnvCredentials from "/snippets/api/env-credentials.mdx";
+import TokenRefresh from "/snippets/api/token-refresh.mdx";
+
 The ResQ Infrastructure API authenticates requests with a **bearer JWT**.
 You exchange a username and password for a token at `POST /login`, then send
 the token as an `Authorization: Bearer <token>` header on every protected
@@ -47,26 +51,7 @@ request.
   <Step title="Send the token">
     Attach the token to every request that targets a protected endpoint.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-
-      ```python Python
-      import httpx
-      httpx.get(
-          "https://api.resq.software/evidence",
-          headers={"Authorization": f"Bearer {token}"},
-      )
-      ```
-    </CodeGroup>
+    <CallEvidence />
   </Step>
 </Steps>
 
@@ -81,11 +66,7 @@ A robust client should:
 2. Refresh proactively when fewer than 60 seconds remain.
 3. Re-authenticate from credentials on `401 Unauthorized`.
 
-```ts
-function isExpired(expiresAt: number, skewSeconds = 60) {
-  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
-}
-```
+<TokenRefresh />
 
 ## Storing credentials safely
 
@@ -94,14 +75,7 @@ function isExpired(expiresAt: number, skewSeconds = 60) {
   Use environment variables or your platform's secret manager.
 </Warning>
 
-```bash
-export RESQ_USERNAME="..."
-export RESQ_PASSWORD="..."
-export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
-  -H 'Content-Type: application/json' \
-  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
-  | jq -r .token)"
-```
+<EnvCredentials />
 
 ## Rotation
 

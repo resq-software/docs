@@ -3,6 +3,8 @@ title: "त्रुटियाँ"
 description: "ResQ APIs के लिए एरर एनवेलप, स्टेटस कोड, और रिट्राई गाइडेंस।"
 ---
 
+import RetryBackoff from "/snippets/api/retry-backoff.mdx";
+
 दोनों ResQ APIs मानक HTTP स्टेटस कोड का उपयोग करते हैं और विफलता पर एक छोटा
 JSON एनवेलप लौटाते हैं। स्टेटस कोड को प्रामाणिक मानें; बॉडी लॉग और ऑपरेटर
 सतहों के लिए डायग्नोस्टिक विवरण है — फ्लो कंट्रोल के लिए नहीं।
@@ -63,24 +65,7 @@ Coordination API समान आकार लौटाता है, या ए
 
 ## बैकऑफ स्केच
 
-```ts
-async function withRetry<T>(fn: () => Promise<T>, max = 4): Promise<T> {
-  let attempt = 0;
-  while (true) {
-    try {
-      return await fn();
-    } catch (err: any) {
-      const status = err?.status ?? 0;
-      const retryable = status === 429 || status >= 500;
-      if (!retryable || attempt >= max) throw err;
-      const base = 250 * 2 ** attempt;
-      const jitter = Math.random() * base;
-      await new Promise((r) => setTimeout(r, base + jitter));
-      attempt++;
-    }
-  }
-}
-```
+<RetryBackoff />
 
 ## सामान्य त्रुटियाँ
 

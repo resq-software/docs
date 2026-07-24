@@ -3,6 +3,10 @@ title: "प्रमाणीकरण"
 description: "ResQ Infrastructure और Coordination APIs के लिए JWT क्रेडेंशियल कैसे प्राप्त करें, भेजें, और रोटेट करें।"
 ---
 
+import CallEvidence from "/snippets/api/call-evidence.mdx";
+import EnvCredentials from "/snippets/api/env-credentials.mdx";
+import TokenRefresh from "/snippets/api/token-refresh.mdx";
+
 ResQ Infrastructure API अनुरोधों को **bearer JWT** से प्रमाणित करता है।
 आप `POST /login` पर उपयोगकर्ता नाम और पासवर्ड को टोकन से बदलते हैं, फिर
 हर सुरक्षित अनुरोध पर टोकन को `Authorization: Bearer <token>` हेडर के रूप
@@ -48,26 +52,7 @@ ResQ Infrastructure API अनुरोधों को **bearer JWT** से �
   <Step title="टोकन भेजें">
     सुरक्षित एंडपॉइंट को लक्षित करने वाले हर अनुरोध में टोकन जोड़ें।
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-
-      ```python Python
-      import httpx
-      httpx.get(
-          "https://api.resq.software/evidence",
-          headers={"Authorization": f"Bearer {token}"},
-      )
-      ```
-    </CodeGroup>
+    <CallEvidence />
   </Step>
 </Steps>
 
@@ -82,11 +67,7 @@ ResQ Infrastructure API अनुरोधों को **bearer JWT** से �
 2. 60 सेकंड से कम बचने पर सक्रिय रूप से रिफ़्रेश करें।
 3. `401 Unauthorized` मिलने पर क्रेडेंशियल से पुनः प्रमाणित करें।
 
-```ts
-function isExpired(expiresAt: number, skewSeconds = 60) {
-  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
-}
-```
+<TokenRefresh />
 
 ## क्रेडेंशियल सुरक्षित रूप से संग्रहीत करना
 
@@ -96,14 +77,7 @@ function isExpired(expiresAt: number, skewSeconds = 60) {
   करें।
 </Warning>
 
-```bash
-export RESQ_USERNAME="..."
-export RESQ_PASSWORD="..."
-export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
-  -H 'Content-Type: application/json' \
-  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
-  | jq -r .token)"
-```
+<EnvCredentials />
 
 ## रोटेशन
 

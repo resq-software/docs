@@ -3,6 +3,10 @@ title: "认证"
 description: "如何获取、发送和轮换 ResQ Infrastructure 与 Coordination API 的 JWT 凭据。"
 ---
 
+import CallEvidence from "/snippets/api/call-evidence.mdx";
+import EnvCredentials from "/snippets/api/env-credentials.mdx";
+import TokenRefresh from "/snippets/api/token-refresh.mdx";
+
 ResQ Infrastructure API 使用 **bearer JWT** 进行请求认证。在 `POST /login`
 用用户名和密码交换 token,然后在每个受保护请求的
 `Authorization: Bearer <token>` 请求头中发送。
@@ -45,26 +49,7 @@ ResQ Infrastructure API 使用 **bearer JWT** 进行请求认证。在 `POST /lo
   <Step title="发送 token">
     将 token 附加到每个针对受保护端点的请求。
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-
-      ```python Python
-      import httpx
-      httpx.get(
-          "https://api.resq.software/evidence",
-          headers={"Authorization": f"Bearer {token}"},
-      )
-      ```
-    </CodeGroup>
+    <CallEvidence />
   </Step>
 </Steps>
 
@@ -78,11 +63,7 @@ ResQ Infrastructure API 使用 **bearer JWT** 进行请求认证。在 `POST /lo
 2. 当剩余时间不足 60 秒时主动刷新。
 3. 任何 `401 Unauthorized` 时使用凭据重新认证。
 
-```ts
-function isExpired(expiresAt: number, skewSeconds = 60) {
-  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
-}
-```
+<TokenRefresh />
 
 ## 安全存储凭据
 
@@ -91,14 +72,7 @@ function isExpired(expiresAt: number, skewSeconds = 60) {
   密钥管理器。
 </Warning>
 
-```bash
-export RESQ_USERNAME="..."
-export RESQ_PASSWORD="..."
-export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
-  -H 'Content-Type: application/json' \
-  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
-  | jq -r .token)"
-```
+<EnvCredentials />
 
 ## 轮换
 

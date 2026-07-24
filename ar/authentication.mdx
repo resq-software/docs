@@ -3,6 +3,10 @@ title: "المصادقة"
 description: "كيفية الحصول على وإرسال وتدوير اعتمادات JWT لواجهات Infrastructure و Coordination في ResQ."
 ---
 
+import CallEvidence from "/snippets/api/call-evidence.mdx";
+import EnvCredentials from "/snippets/api/env-credentials.mdx";
+import TokenRefresh from "/snippets/api/token-refresh.mdx";
+
 تصادق Infrastructure API في ResQ الطلبات باستخدام **JWT من نوع bearer**.
 تستبدل اسم المستخدم وكلمة المرور بتوكن على `POST /login`، ثم ترسل التوكن
 كرأس `Authorization: Bearer <token>` على كل طلب محمي.
@@ -48,26 +52,7 @@ description: "كيفية الحصول على وإرسال وتدوير اعتم�
   <Step title="أرسل التوكن">
     أرفق التوكن بكل طلب يستهدف نقطة نهاية محمية.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-
-      ```python Python
-      import httpx
-      httpx.get(
-          "https://api.resq.software/evidence",
-          headers={"Authorization": f"Bearer {token}"},
-      )
-      ```
-    </CodeGroup>
+    <CallEvidence />
   </Step>
 </Steps>
 
@@ -82,11 +67,7 @@ description: "كيفية الحصول على وإرسال وتدوير اعتم�
 2. التحديث استباقيًا عندما يتبقى أقل من 60 ثانية.
 3. إعادة المصادقة من الاعتمادات عند `401 Unauthorized`.
 
-```ts
-function isExpired(expiresAt: number, skewSeconds = 60) {
-  return Math.floor(Date.now() / 1000) >= expiresAt - skewSeconds;
-}
-```
+<TokenRefresh />
 
 ## تخزين الاعتمادات بأمان
 
@@ -95,14 +76,7 @@ function isExpired(expiresAt: number, skewSeconds = 60) {
   استخدم متغيرات البيئة أو مدير الأسرار في منصّتك.
 </Warning>
 
-```bash
-export RESQ_USERNAME="..."
-export RESQ_PASSWORD="..."
-export RESQ_TOKEN="$(curl -sS -X POST https://api.resq.software/login \
-  -H 'Content-Type: application/json' \
-  -d "{\"username\":\"$RESQ_USERNAME\",\"password\":\"$RESQ_PASSWORD\"}" \
-  | jq -r .token)"
-```
+<EnvCredentials />
 
 ## التدوير
 

@@ -3,6 +3,10 @@ title: "بدء سريع"
 description: "أجرِ أول استدعاء مُصادَق على واجهات برمجة ResQ Tactical OS في خمس دقائق."
 ---
 
+import CallEvidenceBasic from "/snippets/api/call-evidence-basic.mdx";
+import HealthCheck from "/snippets/api/health-check.mdx";
+import StreamEvents from "/snippets/api/stream-events.mdx";
+
 يكشف ResQ واجهتي API عبر HTTPS:
 
 | API | عنوان URL الأساسي | البِنية التقنية |
@@ -21,21 +25,7 @@ description: "أجرِ أول استدعاء مُصادَق على واجهات 
   <Step title="تأكَّد من أن الخدمة قيد التشغيل">
     استدعِ `/health` على Infrastructure API. لا يتطلب مصادقة.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/health
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/health");
-      console.log(await res.json());
-      ```
-
-      ```python Python
-      import httpx
-      print(httpx.get("https://api.resq.software/health").json())
-      ```
-    </CodeGroup>
+    <HealthCheck />
 
     تبدو الاستجابة السليمة هكذا:
 
@@ -86,27 +76,14 @@ description: "أجرِ أول استدعاء مُصادَق على واجهات 
   <Step title="استدعِ نقطة نهاية مُصادَقة">
     أرسل التوكن كرأس `Bearer`.
 
-    <CodeGroup>
-      ```bash curl
-      curl https://api.resq.software/evidence \
-        -H "Authorization: Bearer $RESQ_TOKEN"
-      ```
-
-      ```ts TypeScript
-      const res = await fetch("https://api.resq.software/evidence", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      ```
-    </CodeGroup>
+    <CallEvidenceBasic />
   </Step>
 
   <Step title="استقبل القياس عن بُعد من Coordination API">
     يكشف Coordination API مقاييس Prometheus وأحداث Server-Sent Events
     لحالة الأسطول في الوقت الفعلي.
 
-    ```bash
-    curl -N https://coordination.resq.software/events
-    ```
+    <StreamEvents />
 
     كل سطر هو حدث JSON: إطارات قياس عن بُعد، تغيّرات حالة المهمة، وموافقات
     HITL.
