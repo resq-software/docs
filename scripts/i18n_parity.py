@@ -23,6 +23,8 @@ import sys
 
 LOCALES = ("ar", "es", "hi", "zh")
 
+EXEMPT_FILE = ".i18n-exempt"
+
 EXCLUDED_NAMES = {"README.md", "AGENTS.md", "CONTRIBUTING.md"}
 EXCLUDED_DIRS = (".github", "node_modules", "snippets", "sdks")
 
@@ -86,15 +88,37 @@ def compare(root: pathlib.Path, rel: pathlib.Path, locale: str) -> list[str]:
     ]
 
 
+def read_exemptions(root: pathlib.Path) -> set[str]:
+    """Paths excused from parity, one per line in .i18n-exempt, `#` comments."""
+    path = root / EXEMPT_FILE
+    if not path.is_file():
+        return set()
+    out = set()
+    for line in path.read_text(encoding="utf-8").splitlines():
+        entry = line.split("#", 1)[0].strip()
+        if entry:
+            out.add(entry)
+    return out
+
+
 def build_report(root: pathlib.Path) -> tuple[str, int]:
     """Render the markdown parity report and count total gaps."""
-    pages = base_pages(root)
+    exempt = read_exemptions(root)
+    all_pages = base_pages(root)
+    pages = [p for p in all_pages if str(p) not in exempt]
+    skipped = sorted(str(p) for p in all_pages if str(p) in exempt)
+
     lines = [
         "## i18n parity report",
         "",
         f"Base tree: {len(pages)} translatable page(s)",
-        "",
     ]
+    if skipped:
+        lines += [
+            "",
+            f"Exempt via `{EXEMPT_FILE}`: " + ", ".join(f"`{p}`" for p in skipped),
+        ]
+    lines.append("")
     total_gaps = 0
 
     for locale in LOCALES:

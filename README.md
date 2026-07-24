@@ -188,7 +188,17 @@ Prose length is not compared; translations legitimately vary in length. Code exa
 
 When you add an English page, either:
 - Translate it into all four other locales **before** merging, or
-- Add the path to the parity exemption list with a follow-up issue link.
+- Add the path to `.i18n-exempt` with the reason as an inline comment.
+
+`.i18n-exempt` takes one repo-relative path per line; `#` starts a comment.
+Exempt pages are listed separately in the report instead of counting as gaps:
+
+```text
+changelog.mdx  # append-only release log; every entry would need 4 translations forever
+```
+
+Exempt a page only when translating it is genuinely impractical. A page that is
+merely untranslated *yet* should stay in the gap list so it keeps showing up.
 
 ## Validation
 

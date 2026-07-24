@@ -44,6 +44,12 @@
                   "authentication",
                   "errors"
                 ]
+              },
+              {
+                "group": "Releases",
+                "pages": [
+                  "changelog"
+                ]
               }
             ]
           },
