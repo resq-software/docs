@@ -25,9 +25,77 @@ ResQ 为灾害响应协调提供两套核心 API:
   </Card>
 </CardGroup>
 
+## 基础 URL
+
+| API | 基础 URL |
+|-----|----------|
+| Infrastructure | `https://api.resq.software` |
+| Coordination | `https://coordination.resq.software` |
+
+自托管部署可替换为自己的主机名;请求与响应的结构完全相同。
+
+## 认证
+
+两套 API 均使用 bearer JWT。
+
+```bash
+# 1. 用凭据换取令牌
+curl -X POST https://api.resq.software/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"操作员","password":"REDACTED"}'
+
+# 2. 在每个受保护的请求上发送该令牌
+curl https://api.resq.software/evidence \
+  -H "Authorization: Bearer $RESQ_TOKEN"
+```
+
+参见[认证](/zh/authentication)了解令牌生命周期、作用域处理与轮换指南。
+
+## 约定
+
+### 内容类型
+
+除非端点明确声明使用其他媒体类型(例如 `POST /storage` 的 multipart 上传),
+所有请求与响应均使用 `application/json`。
+
+### 时间
+
+资源载荷中的时间戳为 ISO-8601 UTC 字符串(`2026-05-04T06:01:27Z`)。
+`/login` 的令牌过期时间是例外——它是以秒为单位的 Unix 时间戳,便于计算。
+
+### 标识符
+
+资源 ID 是不透明字符串。请勿解析它们,仅将其视为标识符。IPFS 证据通过其
+CID(内容标识符)引用,该标识符按内容寻址且保持稳定。
+
+### 分页
+
+列表端点接受 `limit`(默认 50,最大 200)和 `cursor` 查询参数。
+当还有更多页面时,响应会包含 `next_cursor` 字段。
+
+```http
+GET /evidence?limit=50&cursor=eyJpZCI6Ii4uLiJ9
+```
+
+### 幂等性
+
+变更类端点接受 `Idempotency-Key` 请求头。ResQ 会将响应缓存 24 小时,
+因此重试将返回原始结果,而不会重复产生副作用。
+
+### 请求 ID
+
+每个响应都带有 `X-Request-Id` 响应头。请在任何支持或事故报告中附上它,
+以便我们关联日志。
+
+### 错误
+
+失败使用标准 HTTP 状态码并附带一个简短的 JSON 信封。参见[错误](/zh/errors)
+了解完整的状态码表、重试指南和退避策略示例。
+
 ## Infrastructure API
 
 由 Rust/Axum 构建。处理持久化数据、区块链交互和 AI 驱动的分析。
+基础 URL:`https://api.resq.software`。
 
 | Tag | 描述 |
 |-----|------|
@@ -49,3 +117,22 @@ ResQ 为灾害响应协调提供两套核心 API:
 | **Simulation** | 用于测试的故障注入 |
 | **Admin** | 服务健康、性能分析、任务审批(欧盟人工智能法案第 14 条 HITL) |
 | **Observability** | Prometheus 指标与 SSE 事件流 |
+
+## SDK
+
+无需自行编写客户端——直接安装官方 SDK。
+
+<CardGroup cols={2}>
+  <Card title="TypeScript" icon="js" href="/sdks/typescript">
+    `@resq-sw/http`、`@resq-sw/security`,以及 UI 组件。
+  </Card>
+  <Card title="Python" icon="python" href="/sdks/python">
+    `resq-mcp`(FastMCP 服务器)与 `resq-dsa`。
+  </Card>
+  <Card title="Rust" icon="rust" href="/sdks/rust">
+    统一的 `resq` CLI 及七个 TUI 工具。
+  </Card>
+  <Card title=".NET" icon="hashtag" href="/sdks/dotnet">
+    类型化客户端、Protobuf 契约、仿真测试框架。
+  </Card>
+</CardGroup>
