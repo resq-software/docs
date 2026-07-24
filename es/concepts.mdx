@@ -3,6 +3,10 @@ title: "Conceptos"
 description: "Cómo encajan las piezas de ResQ Tactical OS: la malla, la cadena de evidencia, el flujo de misión y los scopes de operador."
 ---
 
+import MeshTopology from "/snippets/diagrams/mesh-topology.mdx";
+import EvidenceChain from "/snippets/diagrams/evidence-chain.mdx";
+import MissionApproval from "/snippets/diagrams/mission-approval.mdx";
+
 Esta página es el mapa conceptual. Léela una vez antes de la referencia
 de API y el resto de la documentación encajará rápidamente.
 
@@ -25,6 +29,8 @@ Verás esto en la API como `503 Service Unavailable` para algunas rutas
 durante caídas parciales — consulta [Errores](/es/errors) para la
 orientación de reintento.
 
+<MeshTopology />
+
 ## Evidencia y la cadena
 
 Cada acción consecuencial en una misión produce **evidencia**:
@@ -40,6 +46,8 @@ Cada acción consecuencial en una misión produce **evidencia**:
 Esto hace posible la revisión post-acción y la cadena de custodia sin
 confiar en una sola parte — cualquiera con el CID y la referencia en
 cadena puede verificar los bytes.
+
+<EvidenceChain />
 
 ## Misiones con humano en el bucle
 
@@ -57,6 +65,8 @@ La aprobación de misión se expone vía la API de coordinación:
 
 La aprobación requiere el scope de operador `missions.approve`. Las
 llamadas sin él devuelven `403` — consulta [Errores](/es/errors).
+
+<MissionApproval />
 
 ## Espacio aéreo y permisos
 

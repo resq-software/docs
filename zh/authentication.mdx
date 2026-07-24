@@ -4,6 +4,7 @@ description: "如何获取、发送和轮换 ResQ Infrastructure 与 Coordinatio
 ---
 
 import CallEvidence from "/snippets/api/call-evidence.mdx";
+import AgentAuthGuidance from "/snippets/api/agent-auth-guidance.mdx";
 import EnvCredentials from "/snippets/api/env-credentials.mdx";
 import TokenRefresh from "/snippets/api/token-refresh.mdx";
 
@@ -15,6 +16,8 @@ ResQ Infrastructure API 使用 **bearer JWT** 进行请求认证。在 `POST /lo
   操作员凭据由你的 ResQ 管理员通过带外方式发放。没有公开注册流程 ——
   每个操作员都绑定到一个组织和一组任务权限范围。
 </Note>
+
+<AgentAuthGuidance />
 
 ## 流程
 

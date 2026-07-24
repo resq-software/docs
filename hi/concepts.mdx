@@ -3,6 +3,10 @@ title: "अवधारणाएं"
 description: "ResQ Tactical OS के टुकड़े कैसे जुड़ते हैं: मेश, साक्ष्य श्रृंखला, मिशन प्रवाह, और ऑपरेटर स्कोप।"
 ---
 
+import MeshTopology from "/snippets/diagrams/mesh-topology.mdx";
+import EvidenceChain from "/snippets/diagrams/evidence-chain.mdx";
+import MissionApproval from "/snippets/diagrams/mission-approval.mdx";
+
 यह वैचारिक मानचित्र है। API संदर्भ से पहले इसे एक बार पढ़ लें — बाकी
 दस्तावेज़ जल्दी समझ में आ जाएगा।
 
@@ -23,6 +27,8 @@ ResQ एक **विकेंद्रीकृत मेश** के रूप 
 API में, आंशिक आउटेज के दौरान कुछ रूट `503 Service Unavailable` के रूप
 में दिखेंगे — रिट्राई गाइडेंस के लिए [त्रुटियाँ](/hi/errors) देखें।
 
+<MeshTopology />
+
 ## साक्ष्य और श्रृंखला
 
 मिशन में हर परिणामी क्रिया **साक्ष्य** उत्पन्न करती है:
@@ -39,6 +45,8 @@ API में, आंशिक आउटेज के दौरान कुछ 
 पर भरोसा किए संभव होती है — CID और चेन संदर्भ रखने वाला कोई भी बाइट्स
 सत्यापित कर सकता है।
 
+<EvidenceChain />
+
 ## मानव-इन-द-लूप मिशन
 
 ResQ के स्वायत्त प्रवाह **HITL-गेटेड** हैं। प्लेटफ़ॉर्म
@@ -54,6 +62,8 @@ ResQ के स्वायत्त प्रवाह **HITL-गेटेड**
 
 अनुमोदन के लिए `missions.approve` ऑपरेटर स्कोप चाहिए। इसके बिना कॉल
 `403` लौटाते हैं — [त्रुटियाँ](/hi/errors) देखें।
+
+<MissionApproval />
 
 ## एयरस्पेस और परमिट
 

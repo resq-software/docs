@@ -3,6 +3,10 @@ title: "Concepts"
 description: "How the ResQ Tactical OS pieces fit together: the mesh, evidence chain, mission flow, and operator scopes."
 ---
 
+import MeshTopology from "/snippets/diagrams/mesh-topology.mdx";
+import EvidenceChain from "/snippets/diagrams/evidence-chain.mdx";
+import MissionApproval from "/snippets/diagrams/mission-approval.mdx";
+
 This page is the conceptual map. Read it once before the API reference and
 the rest of the docs will fit together quickly.
 
@@ -22,6 +26,8 @@ operating when upstream infrastructure is down or unreachable.
 You'll see this surface in the API as `503 Service Unavailable` for some
 routes during partial outages — see [Errors](/errors) for retry guidance.
 
+<MeshTopology />
+
 ## Evidence and the chain
 
 Every consequential action in a mission produces **evidence**:
@@ -36,6 +42,8 @@ Every consequential action in a mission produces **evidence**:
 This makes after-action review and chain-of-custody review possible
 without trusting any single party — anyone with the CID and chain
 reference can verify the bytes.
+
+<EvidenceChain />
 
 ## Human-in-the-loop missions
 
@@ -52,6 +60,8 @@ Mission approval is exposed via the Coordination API:
 
 Approval requires the `missions.approve` operator scope. Calls without it
 return `403` — see [Errors](/errors).
+
+<MissionApproval />
 
 ## Airspace and permits
 
