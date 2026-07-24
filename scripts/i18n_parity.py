@@ -26,7 +26,7 @@ LOCALES = ("ar", "es", "hi", "zh")
 EXEMPT_FILE = ".i18n-exempt"
 
 EXCLUDED_NAMES = {"README.md", "AGENTS.md", "CONTRIBUTING.md"}
-EXCLUDED_DIRS = (".github", "node_modules", "snippets", "sdks")
+EXCLUDED_DIRS = (".github", "node_modules", "snippets", "sdks", "automation")
 
 # Components whose absence changes what a reader can actually do, as opposed to
 # styling choices a translator may reasonably vary.

@@ -15,10 +15,12 @@ name: api-docs
 
 on:
   push:
-    # Tag convention in resq-software/npm is "@resq-sw/<pkg>@v*"
-    # (driven by changesets). Trigger on any package release so the
-    # docs sync stays current across the monorepo.
+    # Tag convention in resq-software/npm is "@<scope>/<pkg>@v*"
+    # (driven by changesets). The packages moved from the @resq-sw scope
+    # to @resq-systems in July 2026; match both so the docs sync keeps
+    # firing across the rename and for any package release in the monorepo.
     tags:
+      - '@resq-systems/*@v*'
       - '@resq-sw/*@v*'
   workflow_dispatch:
     inputs:
