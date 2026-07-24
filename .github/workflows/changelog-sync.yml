@@ -19,8 +19,14 @@ on:
     - cron: '0 6 * * 1'
   workflow_dispatch:
 
+# The built-in GITHUB_TOKEN opens the PR, so it needs write scope. This also
+# requires "Allow GitHub Actions to create and approve pull requests" to be
+# enabled for the repo (Settings → Actions → General). If a DOCS_REPO_PR_TOKEN
+# secret is present it is used instead — a PAT lets the PR trigger the normal
+# CI checks, which a GITHUB_TOKEN-authored PR does not.
 permissions:
-  contents: read
+  contents: write
+  pull-requests: write
 
 concurrency:
   group: ${{ github.workflow }}
@@ -45,7 +51,9 @@ jobs:
       - name: Open PR if the changelog changed
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
-          token: ${{ secrets.DOCS_REPO_PR_TOKEN }}
+          # Prefer the bot PAT if present (its PRs trigger CI); otherwise fall
+          # back to the built-in token, which the permissions block covers.
+          token: ${{ secrets.DOCS_REPO_PR_TOKEN || github.token }}
           # Attribute to the org bot account, matching the api-docs sync.
           author: 'resq-sw <engineer@resq.software>'
           committer: 'resq-sw <engineer@resq.software>'
