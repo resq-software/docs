@@ -36,6 +36,7 @@
             "groups": [
               {
                 "group": "Start here",
+                "boost": 4,
                 "pages": [
                   "index",
                   "concepts",
@@ -51,12 +52,14 @@
             "groups": [
               {
                 "group": "Overview",
+                "boost": 2,
                 "pages": [
                   "sdks/index"
                 ]
               },
               {
                 "group": "Languages",
+                "boost": 2,
                 "pages": [
                   "sdks/typescript",
                   "sdks/python",
@@ -67,6 +70,7 @@
               },
               {
                 "group": "Generated Package References",
+                "boost": 0.3,
                 "pages": [
                   {
                     "group": "TypeScript",
@@ -2261,6 +2265,7 @@
             "groups": [
               {
                 "group": "Overview",
+                "boost": 2,
                 "pages": [
                   "api-reference/introduction"
                 ]
@@ -2285,6 +2290,7 @@
             "groups": [
               {
                 "group": "Empieza aquí",
+                "boost": 4,
                 "pages": [
                   "es/index",
                   "es/concepts",
@@ -2324,6 +2330,7 @@
             "groups": [
               {
                 "group": "ابدأ من هنا",
+                "boost": 4,
                 "pages": [
                   "ar/index",
                   "ar/concepts",
@@ -2363,6 +2370,7 @@
             "groups": [
               {
                 "group": "यहाँ शुरू करें",
+                "boost": 4,
                 "pages": [
                   "hi/index",
                   "hi/concepts",
@@ -2402,6 +2410,7 @@
             "groups": [
               {
                 "group": "从这里开始",
+                "boost": 4,
                 "pages": [
                   "zh/index",
                   "zh/concepts",
@@ -2466,6 +2475,7 @@
   },
   "seo": {
     "indexing": "all",
+    "trailingSlash": true,
     "metatags": {
       "og:title": "ResQ Docs — Tactical OS for Autonomous Disaster Response",
       "og:description": "Official documentation for ResQ Tactical OS — the decentralized kinetic operating system for autonomous disaster response. Mesh-networked coordination when infrastructure fails.",
@@ -2540,6 +2550,7 @@
     "options": [
       "copy",
       "view",
+      "download-spec",
       "chatgpt",
       "claude",
       "mcp",
