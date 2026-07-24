@@ -39,7 +39,12 @@ jobs:
     steps:
       # Pinned to a commit SHA (matching the api-docs templates) so upstream
       # tag movement cannot alter workflow code without review.
+      # persist-credentials: false is required by create-pull-request — without
+      # it, checkout's stored token and the action's own token produce two
+      # Authorization headers and git fails with "Duplicate header" / HTTP 400.
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
 
       # No setup-python: the generator is pure stdlib and GitHub-hosted runners
       # ship Python 3, matching i18n-parity.yml.
