@@ -2,7 +2,7 @@
 
 &gt; **Push**\<`T`, `E`\> = \[`...T`, `E`\]
 
-Defined in: [collection.ts:50](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/types/src/collection.ts#L50)
+Defined in: [collection.ts:50](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/types/src/collection.ts#L50)
 
 Append `E` to the end of tuple `T`.
 

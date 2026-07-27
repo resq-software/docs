@@ -2,7 +2,7 @@
 
 &gt; **PointFor**\<`F`\> = `F` *extends* `"threed"` ? [`Coordinates3D`](../interfaces/Coordinates3D) : [`Coordinates2D`](../interfaces/Coordinates2D)
 
-Defined in: [distance.ts:104](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L104)
+Defined in: [distance.ts:104](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L104)
 
 The point shape a given formula requires. Every formula operates on 2D
 coordinates except `"threed"`, which needs an altitude component. Used to

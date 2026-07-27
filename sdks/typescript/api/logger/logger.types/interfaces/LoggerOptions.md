@@ -1,6 +1,6 @@
 # Interface: LoggerOptions
 
-Defined in: [logger.types.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L51)
+Defined in: [logger.types.ts:51](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L51)
 
 Configuration options for a [Logger](../../logger/classes/Logger) instance.
 
@@ -15,7 +15,7 @@ is passed. Treat the formatting/file fields as reserved surface.
 
 &gt; `optional` **colorize?**: `boolean`
 
-Defined in: [logger.types.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L61)
+Defined in: [logger.types.ts:61](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L61)
 
 Reserved: console output is not currently colorized.
 
@@ -25,7 +25,7 @@ Reserved: console output is not currently colorized.
 
 &gt; `optional` **filePath?**: `string`
 
-Defined in: [logger.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L65)
+Defined in: [logger.types.ts:65](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L65)
 
 Reserved: only meaningful alongside [LoggerOptions.logToFile](#logtofile).
 
@@ -35,7 +35,7 @@ Reserved: only meaningful alongside [LoggerOptions.logToFile](#logtofile).
 
 &gt; `optional` **includeTimestamp?**: `boolean`
 
-Defined in: [logger.types.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L59)
+Defined in: [logger.types.ts:59](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L59)
 
 Reserved: timestamps are currently emitted unconditionally.
 
@@ -45,7 +45,7 @@ Reserved: timestamps are currently emitted unconditionally.
 
 &gt; `optional` **logToFile?**: `boolean`
 
-Defined in: [logger.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L63)
+Defined in: [logger.types.ts:63](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L63)
 
 Reserved: file output is not currently implemented (server-side intent).
 
@@ -55,7 +55,7 @@ Reserved: file output is not currently implemented (server-side intent).
 
 &gt; `optional` **minLevel?**: [`LogLevel`](../../logger/enumerations/LogLevel)
 
-Defined in: [logger.types.ts:57](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L57)
+Defined in: [logger.types.ts:57](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L57)
 
 Minimum level a message must meet to be emitted. When omitted, the
 constructor falls back to the `LOG_LEVEL`/`BUN_LOG_LEVEL` env var, then to a

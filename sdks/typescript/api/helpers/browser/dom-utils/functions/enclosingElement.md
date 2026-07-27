@@ -1,0 +1,17 @@
+# Function: enclosingElement()
+
+&gt; **enclosingElement**(`node`): `Element` \| `undefined`
+
+Defined in: [packages/helpers/src/browser/dom-utils.ts:68](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/helpers/src/browser/dom-utils.ts#L68)
+
+The nearest enclosing `Element` for any node (itself if already an element).
+
+## Parameters
+
+### node
+
+`Node`
+
+## Returns
+
+`Element` \| `undefined`

@@ -1,6 +1,6 @@
 # Class: TelemetrySocket
 
-Defined in: [socket.ts:79](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L79)
+Defined in: [socket.ts:79](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L79)
 
 A reconnecting WebSocket shared by many consumers.
 
@@ -20,7 +20,7 @@ socket.send("subscribe:ops");
 
 &gt; **new TelemetrySocket**(`options`): `TelemetrySocket`
 
-Defined in: [socket.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L88)
+Defined in: [socket.ts:88](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L88)
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Defined in: [socket.ts:88](https://github.com/resq-software/npm/blob/43e4668edb3
 
 &gt; **get** **connected**(): `boolean`
 
-Defined in: [socket.ts:100](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L100)
+Defined in: [socket.ts:100](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L100)
 
 Whether the socket is currently open.
 
@@ -56,7 +56,7 @@ Whether the socket is currently open.
 
 &gt; **get** **state**(): [`ConnectionState`](../../types/type-aliases/ConnectionState)
 
-Defined in: [socket.ts:95](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L95)
+Defined in: [socket.ts:95](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L95)
 
 Current connection state.
 
@@ -70,7 +70,7 @@ Current connection state.
 
 &gt; **close**(): `void`
 
-Defined in: [socket.ts:114](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L114)
+Defined in: [socket.ts:114](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L114)
 
 Close intentionally and stop reconnecting.
 
@@ -84,7 +84,7 @@ Close intentionally and stop reconnecting.
 
 &gt; **connect**(): `this`
 
-Defined in: [socket.ts:105](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L105)
+Defined in: [socket.ts:105](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L105)
 
 Open the connection (idempotent while already connecting/open).
 
@@ -98,7 +98,7 @@ Open the connection (idempotent while already connecting/open).
 
 &gt; **send**(`message`): `boolean`
 
-Defined in: [socket.ts:126](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L126)
+Defined in: [socket.ts:126](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L126)
 
 Send a frame; returns `false` (no-op) when not open.
 
@@ -118,7 +118,7 @@ Send a frame; returns `false` (no-op) when not open.
 
 &gt; **subscribe**(`subscription`): () =&gt; `void`
 
-Defined in: [socket.ts:136](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/socket.ts#L136)
+Defined in: [socket.ts:136](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/socket.ts#L136)
 
 Attach a consumer. Returns an unsubscribe function.
 

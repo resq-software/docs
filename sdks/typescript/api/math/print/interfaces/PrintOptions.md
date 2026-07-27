@@ -1,6 +1,6 @@
 # Interface: PrintOptions
 
-Defined in: [packages/math/src/print.ts:35](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/print.ts#L35)
+Defined in: [packages/math/src/print.ts:35](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/print.ts#L35)
 
 Configuration for the expression pretty-printer.
 
@@ -10,6 +10,6 @@ Configuration for the expression pretty-printer.
 
 &gt; `readonly` `optional` **ascii?**: `boolean`
 
-Defined in: [packages/math/src/print.ts:37](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/print.ts#L37)
+Defined in: [packages/math/src/print.ts:37](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/print.ts#L37)
 
 Use ASCII-only symbols instead of Unicode. Default: false.

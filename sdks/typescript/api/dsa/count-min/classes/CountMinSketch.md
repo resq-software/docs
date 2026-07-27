@@ -1,6 +1,6 @@
 # Class: CountMinSketch
 
-Defined in: [count-min.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L46)
+Defined in: [count-min.ts:46](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/count-min.ts#L46)
 
 Sub-linear-memory frequency estimator.
 
@@ -27,7 +27,7 @@ sketch.estimate("203.0.113.7"); // approximate count
 
 &gt; **new CountMinSketch**(`epsilon`, `delta`): `CountMinSketch`
 
-Defined in: [count-min.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L61)
+Defined in: [count-min.ts:61](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/count-min.ts#L61)
 
 #### Parameters
 
@@ -61,7 +61,7 @@ If either parameter is outside `(0, 1)`.
 
 &gt; **estimate**(`key`): `number`
 
-Defined in: [count-min.ts:105](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L105)
+Defined in: [count-min.ts:105](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/count-min.ts#L105)
 
 #### Parameters
 
@@ -82,7 +82,7 @@ An over-estimate of the number of times `key` has been
 
 &gt; **increment**(`key`, `count?`): `void`
 
-Defined in: [count-min.ts:93](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L93)
+Defined in: [count-min.ts:93](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/count-min.ts#L93)
 
 Add `count` to the running tally for `key`. Mutates the sketch in place.
 

@@ -2,7 +2,7 @@
 
 &gt; **throttleAsyncFn**\<`D`, `A`\>(`originalMethod`, `parallelCalls?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [throttle-async/throttle-async.fn.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle-async/throttle-async.fn.ts#L65)
+Defined in: [throttle-async/throttle-async.fn.ts:65](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/throttle-async/throttle-async.fn.ts#L65)
 
 Wrap an async method to limit concurrent executions (function form of
 throttleAsync). Calls beyond the limit queue and run in FIFO order.

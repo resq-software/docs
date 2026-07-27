@@ -1,6 +1,6 @@
 # Class: LRUCache\<K, V\>
 
-Defined in: [lru-cache.ts:106](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L106)
+Defined in: [lru-cache.ts:106](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L106)
 
 Least-recently-used cache with constant-time `get`, `set`, `has`, and
 `delete`.
@@ -62,7 +62,7 @@ Value type. The cache stores references — it does not
 
 &gt; **new LRUCache**\<`K`, `V`\>(`options`): `LRUCache`\<`K`, `V`\>
 
-Defined in: [lru-cache.ts:117](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L117)
+Defined in: [lru-cache.ts:117](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L117)
 
 #### Parameters
 
@@ -84,7 +84,7 @@ See [LRUCacheOptions](../interfaces/LRUCacheOptions). `maxSize` is required.
 
 &gt; **get** **size**(): `number`
 
-Defined in: [lru-cache.ts:244](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L244)
+Defined in: [lru-cache.ts:244](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L244)
 
 Current number of entries (including not-yet-evicted expired entries).
 
@@ -98,7 +98,7 @@ Current number of entries (including not-yet-evicted expired entries).
 
 &gt; **\[iterator\]**(): `Generator`\<\[`K`, `V`\]\>
 
-Defined in: [lru-cache.ts:397](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L397)
+Defined in: [lru-cache.ts:397](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L397)
 
 Default iterator returning entries.
 
@@ -112,7 +112,7 @@ Default iterator returning entries.
 
 &gt; **clear**(): `void`
 
-Defined in: [lru-cache.ts:237](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L237)
+Defined in: [lru-cache.ts:237](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L237)
 
 Drop every entry. `onEvict` is **not** called for any entry.
 
@@ -126,7 +126,7 @@ Drop every entry. `onEvict` is **not** called for any entry.
 
 &gt; **delete**(`key`): `boolean`
 
-Defined in: [lru-cache.ts:225](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L225)
+Defined in: [lru-cache.ts:225](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L225)
 
 Remove an entry by key.
 
@@ -154,7 +154,7 @@ Time complexity: `O(1)`.
 
 &gt; **entries**(): `Generator`\<\[`K`, `V`\]\>
 
-Defined in: [lru-cache.ts:383](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L383)
+Defined in: [lru-cache.ts:383](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L383)
 
 Iterate `[key, value]` pairs from most-recently-used to
 least-recently-used. Skips (but does not evict) expired entries and leaves
@@ -170,7 +170,7 @@ LRU order untouched.
 
 &gt; **get**(`key`): `V` \| `undefined`
 
-Defined in: [lru-cache.ts:133](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L133)
+Defined in: [lru-cache.ts:133](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L133)
 
 Look up a value and mark its entry as most-recently-used.
 
@@ -197,7 +197,7 @@ Time complexity: `O(1)`.
 
 &gt; **getOrCompute**(`key`, `compute`, `ttl?`): `Promise`\<`V`\>
 
-Defined in: [lru-cache.ts:271](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L271)
+Defined in: [lru-cache.ts:271](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L271)
 
 Read-through helper: return the cached value, or call `compute` to
 load it on miss and cache the result.
@@ -237,7 +237,7 @@ Optional TTL applied to the freshly computed value.
 
 &gt; **getOrComputeSync**(`key`, `compute`, `ttl?`): `V`
 
-Defined in: [lru-cache.ts:287](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L287)
+Defined in: [lru-cache.ts:287](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L287)
 
 Synchronous variant of [getOrCompute](#getorcompute).
 
@@ -271,7 +271,7 @@ Optional TTL applied to the freshly computed value.
 
 &gt; **getStats**(): `object`
 
-Defined in: [lru-cache.ts:254](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L254)
+Defined in: [lru-cache.ts:254](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L254)
 
 Snapshot of cache statistics.
 
@@ -300,7 +300,7 @@ Snapshot of cache statistics.
 
 &gt; **has**(`key`): `boolean`
 
-Defined in: [lru-cache.ts:202](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L202)
+Defined in: [lru-cache.ts:202](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L202)
 
 Membership test. Does **not** affect LRU order.
 
@@ -325,7 +325,7 @@ Time complexity: `O(1)`.
 
 &gt; **keys**(): `Generator`\<`K`\>
 
-Defined in: [lru-cache.ts:352](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L352)
+Defined in: [lru-cache.ts:352](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L352)
 
 Iterate the keys from most-recently-used to least-recently-used.
 
@@ -343,7 +343,7 @@ removes them. Iterating does not change LRU order.
 
 &gt; **set**(`key`, `value`, `ttl?`): `void`
 
-Defined in: [lru-cache.ts:160](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L160)
+Defined in: [lru-cache.ts:160](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L160)
 
 Insert or replace an entry. Becomes the most-recently-used entry.
 
@@ -384,7 +384,7 @@ Time complexity: `O(1)`.
 
 &gt; **values**(): `Generator`\<`V`\>
 
-Defined in: [lru-cache.ts:367](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/lru-cache.ts#L367)
+Defined in: [lru-cache.ts:367](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/lru-cache.ts#L367)
 
 Iterate the values from most-recently-used to least-recently-used.
 Skips (but does not evict) expired entries and leaves LRU order untouched.

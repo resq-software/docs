@@ -1,6 +1,6 @@
 # Class: MathError
 
-Defined in: [packages/math/src/error.ts:36](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L36)
+Defined in: [packages/math/src/error.ts:36](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L36)
 
 Base class for all math engine errors.
 
@@ -31,7 +31,7 @@ releases and safe to switch on, whereas `message` is human-facing and may change
 
 &gt; **new MathError**(`code`, `message`): `MathError`
 
-Defined in: [packages/math/src/error.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L44)
+Defined in: [packages/math/src/error.ts:44](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L44)
 
 #### Parameters
 
@@ -73,7 +73,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 

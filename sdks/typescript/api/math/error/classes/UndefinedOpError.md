@@ -1,6 +1,6 @@
 # Class: UndefinedOpError
 
-Defined in: [packages/math/src/error.ts:105](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L105)
+Defined in: [packages/math/src/error.ts:105](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L105)
 
 Thrown when no type-class instance exists for an operator+sort combination.
 
@@ -21,7 +21,7 @@ evaluate(compile(add(B(true), B(false)))); // throws UndefinedOpError("+", ["boo
 
 &gt; **new UndefinedOpError**(`operator`, `sorts`): `UndefinedOpError`
 
-Defined in: [packages/math/src/error.ts:115](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L115)
+Defined in: [packages/math/src/error.ts:115](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L115)
 
 #### Parameters
 
@@ -63,7 +63,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
@@ -101,7 +101,7 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1074
 
 &gt; `readonly` **operator**: `string`
 
-Defined in: [packages/math/src/error.ts:107](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L107)
+Defined in: [packages/math/src/error.ts:107](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L107)
 
 The operator symbol with no matching instance.
 
@@ -111,7 +111,7 @@ The operator symbol with no matching instance.
 
 &gt; `readonly` **sorts**: readonly `string`[]
 
-Defined in: [packages/math/src/error.ts:109](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L109)
+Defined in: [packages/math/src/error.ts:109](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L109)
 
 The operand sorts that had no registered instance.
 

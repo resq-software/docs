@@ -2,7 +2,7 @@
 
 &gt; **assertNever**(`value`): `never`
 
-Defined in: [\_assert.ts:33](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/_assert.ts#L33)
+Defined in: [\_assert.ts:33](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/_assert.ts#L33)
 
 Asserts that a code path is unreachable. Placing this in a `switch` default
 arm makes the compiler reject the switch if any union member is left

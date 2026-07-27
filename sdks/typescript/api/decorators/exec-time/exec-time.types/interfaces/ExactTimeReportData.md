@@ -1,6 +1,6 @@
 # Interface: ExactTimeReportData
 
-Defined in: [exec-time/exec-time.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L63)
+Defined in: [exec-time/exec-time.types.ts:63](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/exec-time/exec-time.types.ts#L63)
 
 Data structure containing execution time information.
 
@@ -24,7 +24,7 @@ const reportData: ExactTimeReportData = {
 
 &gt; **args**: `unknown`[]
 
-Defined in: [exec-time/exec-time.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L65)
+Defined in: [exec-time/exec-time.types.ts:65](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/exec-time/exec-time.types.ts#L65)
 
 The exact positional arguments the timed method was called with.
 
@@ -34,7 +34,7 @@ The exact positional arguments the timed method was called with.
 
 &gt; **execTime**: `number`
 
-Defined in: [exec-time/exec-time.types.ts:72](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L72)
+Defined in: [exec-time/exec-time.types.ts:72](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/exec-time/exec-time.types.ts#L72)
 
 Elapsed wall-clock time in **milliseconds** (`Date.now` deltas, integer ms
 resolution), measured from just before the call to just after it settles.
@@ -45,6 +45,6 @@ resolution), measured from just before the call to just after it settles.
 
 &gt; **result**: `unknown`
 
-Defined in: [exec-time/exec-time.types.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L67)
+Defined in: [exec-time/exec-time.types.ts:67](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/exec-time/exec-time.types.ts#L67)
 
 The method's return value — the resolved value for an async method.

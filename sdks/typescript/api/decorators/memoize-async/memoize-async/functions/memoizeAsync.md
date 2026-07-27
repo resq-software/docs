@@ -4,7 +4,7 @@
 
 &gt; **memoizeAsync**\<`T`\>(): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L88)
+Defined in: [memoize-async/memoize-async.ts:88](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.ts#L88)
 
 Cache a promise-returning method's results by their arguments and deduplicate
 concurrent calls: identical calls share one promise until the first resolves.
@@ -84,7 +84,7 @@ const [product1, product2] = await Promise.all([
 
 &gt; **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:89](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L89)
+Defined in: [memoize-async/memoize-async.ts:89](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.ts#L89)
 
 Cache a promise-returning method's results by their arguments and deduplicate
 concurrent calls: identical calls share one promise until the first resolves.
@@ -176,7 +176,7 @@ const [product1, product2] = await Promise.all([
 
 &gt; **memoizeAsync**\<`T`\>(`expirationTimeMs`): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L92)
+Defined in: [memoize-async/memoize-async.ts:92](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.ts#L92)
 
 Cache a promise-returning method's results by their arguments and deduplicate
 concurrent calls: identical calls share one promise until the first resolves.

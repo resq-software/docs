@@ -4,7 +4,7 @@
 
 &gt; **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L85)
+Defined in: [memoize/memoize.fn.ts:85](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.fn.ts#L85)
 
 Wrap a method so its results are cached by argument key (function form of
 [memoize](../..)).
@@ -90,7 +90,7 @@ const withConfig = memoizeFn(ops.calculatePrimes.bind(ops), {
 
 &gt; **memoizeFn**\<`T`, `D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L88)
+Defined in: [memoize/memoize.fn.ts:88](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.fn.ts#L88)
 
 Wrap a method so its results are cached by argument key (function form of
 [memoize](../..)).
@@ -186,7 +186,7 @@ const withConfig = memoizeFn(ops.calculatePrimes.bind(ops), {
 
 &gt; **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L92)
+Defined in: [memoize/memoize.fn.ts:92](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.fn.ts#L92)
 
 Wrap a method so its results are cached by argument key (function form of
 [memoize](../..)).

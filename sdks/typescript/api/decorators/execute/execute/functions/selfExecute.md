@@ -2,7 +2,7 @@
 
 &gt; **selfExecute**\<`T`\>(`constructor`): `T`
 
-Defined in: [execute/execute.ts:83](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/execute/execute.ts#L83)
+Defined in: [execute/execute.ts:83](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/execute/execute.ts#L83)
 
 Class decorator that automatically instantiates the class when decorated.
 Creates an instance immediately and returns the constructor.

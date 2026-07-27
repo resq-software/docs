@@ -1,6 +1,6 @@
 # Interface: BeforeConfig\<T\>
 
-Defined in: [before/before.types.ts:50](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/before/before.types.ts#L50)
+Defined in: [before/before.types.ts:50](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/before/before.types.ts#L50)
 
 Configuration options for the `@before` decorator.
 
@@ -41,7 +41,7 @@ The class owning the decorated method; constrains the `keyof T`
 
 &gt; **func**: ((...`args`) =&gt; `unknown`) \| keyof `T`
 
-Defined in: [before/before.types.ts:52](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/before/before.types.ts#L52)
+Defined in: [before/before.types.ts:52](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/before/before.types.ts#L52)
 
 The before function to execute, or the name of a method on the instance.
 
@@ -51,7 +51,7 @@ The before function to execute, or the name of a method on the instance.
 
 &gt; `optional` **wait?**: `boolean`
 
-Defined in: [before/before.types.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/before/before.types.ts#L59)
+Defined in: [before/before.types.ts:59](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/before/before.types.ts#L59)
 
 When `true`, the wrapper awaits the hook before running the method, so a
 hook that throws or rejects prevents the method from running (a guard).

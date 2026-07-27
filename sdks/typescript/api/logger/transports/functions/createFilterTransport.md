@@ -2,7 +2,7 @@
 
 &gt; **createFilterTransport**(`inner`, `predicate`): [`LogTransport`](../../logger.types/interfaces/LogTransport)
 
-Defined in: [transports.ts:146](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L146)
+Defined in: [transports.ts:146](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L146)
 
 Wrap a transport so it only receives entries for which `predicate` is true —
 a composable filter (Decorator over Observer). Compose with [byLevel](./byLevel)

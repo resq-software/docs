@@ -2,7 +2,7 @@
 
 &gt; **ObserverCallback**\<`T`\> = (`value`) =&gt; `unknown`
 
-Defined in: [observer/observer.types.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.types.ts#L44)
+Defined in: [observer/observer.types.ts:44](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/observer/observer.types.ts#L44)
 
 Callback invoked whenever an observed property is assigned a new value. Any
 return value is ignored.

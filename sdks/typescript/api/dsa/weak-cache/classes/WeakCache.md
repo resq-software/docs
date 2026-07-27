@@ -1,6 +1,6 @@
 # Class: WeakCache\<K, V\>
 
-Defined in: [weak-cache.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/weak-cache.ts#L46)
+Defined in: [weak-cache.ts:46](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/weak-cache.ts#L46)
 
 A lazy, memoizing micro-cache keyed by objects and backed by a `WeakMap`.
 
@@ -51,7 +51,7 @@ The cached value type.
 
 &gt; `readonly` **items**: `WeakMap`\<`K`, `V`\>
 
-Defined in: [weak-cache.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/weak-cache.ts#L51)
+Defined in: [weak-cache.ts:51](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/weak-cache.ts#L51)
 
 The backing `WeakMap`. Exposed for direct inspection; prefer [get](#get)
 for the memoizing read path.
@@ -62,7 +62,7 @@ for the memoizing read path.
 
 &gt; **get**\<`P`\>(`item`, `cb`): `V`
 
-Defined in: [weak-cache.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/weak-cache.ts#L67)
+Defined in: [weak-cache.ts:67](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/weak-cache.ts#L67)
 
 Return the cached value for `item`, computing and storing it on first miss.
 

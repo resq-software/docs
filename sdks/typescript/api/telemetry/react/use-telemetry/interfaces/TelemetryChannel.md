@@ -1,6 +1,6 @@
 # Interface: TelemetryChannel
 
-Defined in: [react/use-telemetry.ts:41](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/react/use-telemetry.ts#L41)
+Defined in: [react/use-telemetry.ts:41](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/react/use-telemetry.ts#L41)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [react/use-telemetry.ts:41](https://github.com/resq-software/npm/blo
 
 &gt; **connected**: `boolean`
 
-Defined in: [react/use-telemetry.ts:43](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/react/use-telemetry.ts#L43)
+Defined in: [react/use-telemetry.ts:43](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/react/use-telemetry.ts#L43)
 
 Whether the shared socket is currently open.
 
@@ -18,7 +18,7 @@ Whether the shared socket is currently open.
 
 &gt; **send**(`message`): `boolean`
 
-Defined in: [react/use-telemetry.ts:45](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/telemetry/src/react/use-telemetry.ts#L45)
+Defined in: [react/use-telemetry.ts:45](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/telemetry/src/react/use-telemetry.ts#L45)
 
 Send a frame on the shared socket; `false` when not open.
 

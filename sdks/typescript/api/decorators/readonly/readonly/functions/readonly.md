@@ -2,7 +2,7 @@
 
 &gt; **readonly**\<`T`\>(): [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
 
-Defined in: [readonly/readonly.ts:62](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/readonly/readonly.ts#L62)
+Defined in: [readonly/readonly.ts:62](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/readonly/readonly.ts#L62)
 
 Mark a method read-only by setting its property descriptor's `writable` flag to
 `false`, so it cannot be reassigned after the class is instantiated.

@@ -1,6 +1,6 @@
 # Interface: PathResult\<T\>
 
-Defined in: [graph.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L75)
+Defined in: [graph.ts:75](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L75)
 
 Result of a shortest-path search.
 
@@ -21,7 +21,7 @@ summed edge weight (`0` for a source-equals-target path).
 
 &gt; **distance**: `number`
 
-Defined in: [graph.ts:79](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L79)
+Defined in: [graph.ts:79](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L79)
 
 Total summed edge weight; `Infinity` when `found` is `false`.
 
@@ -31,7 +31,7 @@ Total summed edge weight; `Infinity` when `found` is `false`.
 
 &gt; **found**: `boolean`
 
-Defined in: [graph.ts:81](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L81)
+Defined in: [graph.ts:81](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L81)
 
 Whether a path from source to target was found.
 
@@ -41,6 +41,6 @@ Whether a path from source to target was found.
 
 &gt; **path**: `T`[]
 
-Defined in: [graph.ts:77](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L77)
+Defined in: [graph.ts:77](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L77)
 
 Vertices from source to target inclusive; empty when `found` is `false`.

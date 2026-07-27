@@ -1,6 +1,6 @@
 # Class: SortError
 
-Defined in: [packages/math/src/error.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L59)
+Defined in: [packages/math/src/error.ts:59](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L59)
 
 Thrown when a value's sort does not match what an operator expects.
 
@@ -20,7 +20,7 @@ asNum(bool(true)); // throws SortError("num", "bool")
 
 &gt; **new SortError**(`expected`, `actual`, `context?`): `SortError`
 
-Defined in: [packages/math/src/error.ts:70](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L70)
+Defined in: [packages/math/src/error.ts:70](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L70)
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Optional location hint (e.g. operator name) for the message.
 
 &gt; `readonly` **actualSort**: `string`
 
-Defined in: [packages/math/src/error.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L63)
+Defined in: [packages/math/src/error.ts:63](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L63)
 
 The sort actually supplied.
 
@@ -78,7 +78,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
@@ -92,7 +92,7 @@ Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
 &gt; `readonly` **expectedSort**: `string`
 
-Defined in: [packages/math/src/error.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L61)
+Defined in: [packages/math/src/error.ts:61](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L61)
 
 The sort the operator required.
 

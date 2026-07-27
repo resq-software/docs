@@ -1,6 +1,6 @@
 # Class: Queue\<T\>
 
-Defined in: [\_utils.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L85)
+Defined in: [\_utils.ts:85](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L85)
 
 A minimal linked-list FIFO queue with O(1) enqueue and dequeue.
 
@@ -26,7 +26,7 @@ A minimal linked-list FIFO queue with O(1) enqueue and dequeue.
 
 &gt; **dequeue**(): `T` \| `null`
 
-Defined in: [\_utils.ts:132](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L132)
+Defined in: [\_utils.ts:132](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L132)
 
 Remove and return the item at the head of the queue.
 
@@ -47,7 +47,7 @@ The dequeued item, or `null` when the queue is empty.
 
 &gt; **enqueue**(`item`): `void`
 
-Defined in: [\_utils.ts:108](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L108)
+Defined in: [\_utils.ts:108](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L108)
 
 Append an item to the tail of the queue.
 
@@ -72,7 +72,7 @@ The value to enqueue.
 
 &gt; **getSize**(): `number`
 
-Defined in: [\_utils.ts:91](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L91)
+Defined in: [\_utils.ts:91](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L91)
 
 Return the number of queued items.
 
@@ -86,7 +86,7 @@ Return the number of queued items.
 
 &gt; **isEmpty**(): `boolean`
 
-Defined in: [\_utils.ts:96](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L96)
+Defined in: [\_utils.ts:96](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L96)
 
 Return `true` when the queue holds no items.
 

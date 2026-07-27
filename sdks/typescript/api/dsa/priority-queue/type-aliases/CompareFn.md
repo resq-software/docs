@@ -2,7 +2,7 @@
 
 &gt; **CompareFn**\<`T`\> = (`a`, `b`) =&gt; `number`
 
-Defined in: [priority-queue.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L38)
+Defined in: [priority-queue.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/priority-queue.ts#L38)
 
 Comparison function for priority-queue ordering. Returns a negative number
 when `a` outranks `b`, a positive number when `b` outranks `a`, and `0` when

@@ -1,6 +1,6 @@
 # Interface: AfterConfig\<T, D\>
 
-Defined in: [after/after.types.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/after/after.types.ts#L73)
+Defined in: [after/after.types.ts:73](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/after/after.types.ts#L73)
 
 Configuration options for the `@after` decorator.
 
@@ -48,7 +48,7 @@ The decorated method's resolved return type, forwarded to the
 
 &gt; **func**: [`AfterFunc`](../type-aliases/AfterFunc)\<`D`\> \| keyof `T`
 
-Defined in: [after/after.types.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/after/after.types.ts#L75)
+Defined in: [after/after.types.ts:75](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/after/after.types.ts#L75)
 
 The after function to execute, or the name of a method on the instance.
 
@@ -58,7 +58,7 @@ The after function to execute, or the name of a method on the instance.
 
 &gt; `optional` **wait?**: `boolean`
 
-Defined in: [after/after.types.ts:81](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/after/after.types.ts#L81)
+Defined in: [after/after.types.ts:81](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/after/after.types.ts#L81)
 
 When `true`, the wrapper awaits the hook (and any promise it returns) before
 resolving to the method's value; when `false` or absent (the default), the
