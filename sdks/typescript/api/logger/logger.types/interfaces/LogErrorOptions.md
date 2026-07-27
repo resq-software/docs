@@ -1,39 +1,35 @@
 # Interface: LogErrorOptions
 
-Defined in: [logger.types.ts:138](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L138)
+Defined in: [logger.types.ts:180](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L180)
 
-Options for the
-
-## Log Error
-
-decorator
+Options for the `@LogError` decorator.
 
 ## Properties
 
 ### includeStack?
 
-> `optional` **includeStack?**: `boolean`
+&gt; `optional` **includeStack?**: `boolean`
 
-Defined in: [logger.types.ts:144](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L144)
+Defined in: [logger.types.ts:186](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L186)
 
-Whether to log the stack trace (default: true)
+Whether to log the stack trace (default: `true`).
 
 ***
 
 ### message?
 
-> `optional` **message?**: `string`
+&gt; `optional` **message?**: `string`
 
-Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L142)
+Defined in: [logger.types.ts:184](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L184)
 
-Custom error message prefix
+Custom error message prefix.
 
 ***
 
 ### rethrow?
 
-> `optional` **rethrow?**: `boolean`
+&gt; `optional` **rethrow?**: `boolean`
 
-Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L140)
+Defined in: [logger.types.ts:182](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L182)
 
-Whether to rethrow the error after logging (default: true)
+Whether to rethrow the error after logging (default: `true`).

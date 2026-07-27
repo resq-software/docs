@@ -83,102 +83,47 @@
                     "pages": [
                       "sdks/typescript/api/README",
                       {
-                        "group": "analytics",
+                        "group": "constants",
                         "pages": [
-                          "sdks/typescript/api/analytics",
+                          "sdks/typescript/api/constants",
+                          {
+                            "group": "brand",
+                            "pages": [
+                              "sdks/typescript/api/constants/brand",
+                              {
+                                "group": "variables",
+                                "pages": [
+                                  "sdks/typescript/api/constants/brand/variables/brand"
+                                ]
+                              }
+                            ]
+                          },
                           {
                             "group": "index",
                             "pages": [
-                              "sdks/typescript/api/analytics/index",
+                              "sdks/typescript/api/constants/index"
+                            ]
+                          },
+                          {
+                            "group": "tokens",
+                            "pages": [
+                              "sdks/typescript/api/constants/tokens",
                               {
-                                "group": "classes",
+                                "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/analytics/index/classes/Analytics"
-                                ]
-                              },
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/index/functions/identify",
-                                  "sdks/typescript/api/analytics/index/functions/inferCookieDomain",
-                                  "sdks/typescript/api/analytics/index/functions/initAnalytics",
-                                  "sdks/typescript/api/analytics/index/functions/pageview",
-                                  "sdks/typescript/api/analytics/index/functions/reset"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/index/interfaces/AnalyticsConfig",
-                                  "sdks/typescript/api/analytics/index/interfaces/AnalyticsEvents",
-                                  "sdks/typescript/api/analytics/index/interfaces/GA4ProviderConfig",
-                                  "sdks/typescript/api/analytics/index/interfaces/PostHogProviderConfig"
+                                  "sdks/typescript/api/constants/tokens/type-aliases/ColorRole",
+                                  "sdks/typescript/api/constants/tokens/type-aliases/ColorTokenName",
+                                  "sdks/typescript/api/constants/tokens/type-aliases/OklchColorRole",
+                                  "sdks/typescript/api/constants/tokens/type-aliases/StatusRole"
                                 ]
                               },
                               {
                                 "group": "variables",
                                 "pages": [
-                                  "sdks/typescript/api/analytics/index/variables/analytics",
-                                  "sdks/typescript/api/analytics/index/variables/track"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "next",
-                            "pages": [
-                              "sdks/typescript/api/analytics/next",
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/next/functions/ga4Stream",
-                                  "sdks/typescript/api/analytics/next/functions/withAnalyticsRewrites"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/next/interfaces/AnalyticsRewriteOptions"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "react",
-                            "pages": [
-                              "sdks/typescript/api/analytics/react",
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/react/functions/AnalyticsProvider",
-                                  "sdks/typescript/api/analytics/react/functions/useAnalytics"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/react/interfaces/AnalyticsProviderProps",
-                                  "sdks/typescript/api/analytics/react/interfaces/UseAnalyticsReturn"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "resq",
-                            "pages": [
-                              "sdks/typescript/api/analytics/resq",
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/resq/functions/resolveResqCookieDomain",
-                                  "sdks/typescript/api/analytics/resq/functions/sanitizeGa4Id"
-                                ]
-                              },
-                              {
-                                "group": "variables",
-                                "pages": [
-                                  "sdks/typescript/api/analytics/resq/variables/GA4_ID_PATTERN",
-                                  "sdks/typescript/api/analytics/resq/variables/RESQ_SUBDOMAIN_ALLOWLIST"
+                                  "sdks/typescript/api/constants/tokens/variables/colors",
+                                  "sdks/typescript/api/constants/tokens/variables/fonts",
+                                  "sdks/typescript/api/constants/tokens/variables/radii",
+                                  "sdks/typescript/api/constants/tokens/variables/themeColor"
                                 ]
                               }
                             ]
@@ -189,6 +134,33 @@
                         "group": "decorators",
                         "pages": [
                           "sdks/typescript/api/decorators",
+                          {
+                            "group": "@resq-systems",
+                            "pages": [
+                              {
+                                "group": "decorators",
+                                "pages": [
+                                  {
+                                    "group": "bind",
+                                    "pages": [
+                                      {
+                                        "group": "bind",
+                                        "pages": [
+                                          "sdks/typescript/api/decorators/@resq-systems/decorators/bind/bind",
+                                          {
+                                            "group": "functions",
+                                            "pages": [
+                                              "sdks/typescript/api/decorators/@resq-systems/decorators/bind/bind/functions/bind"
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
                           {
                             "group": "after",
                             "pages": [
@@ -239,6 +211,18 @@
                             ]
                           },
                           {
+                            "group": "assert",
+                            "pages": [
+                              "sdks/typescript/api/decorators/assert",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/decorators/assert/functions/assertNever"
+                                ]
+                              }
+                            ]
+                          },
+                          {
                             "group": "before",
                             "pages": [
                               "sdks/typescript/api/decorators/before",
@@ -284,18 +268,6 @@
                             "group": "bind",
                             "pages": [
                               "sdks/typescript/api/decorators/bind",
-                              {
-                                "group": "bind",
-                                "pages": [
-                                  "sdks/typescript/api/decorators/bind/bind",
-                                  {
-                                    "group": "functions",
-                                    "pages": [
-                                      "sdks/typescript/api/decorators/bind/bind/functions/bind"
-                                    ]
-                                  }
-                                ]
-                              },
                               {
                                 "group": "bind.fn",
                                 "pages": [
@@ -840,6 +812,18 @@
                         "pages": [
                           "sdks/typescript/api/dsa",
                           {
+                            "group": "assert",
+                            "pages": [
+                              "sdks/typescript/api/dsa/assert",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/assert/functions/assertNever"
+                                ]
+                              }
+                            ]
+                          },
+                          {
                             "group": "bloom",
                             "pages": [
                               "sdks/typescript/api/dsa/bloom",
@@ -885,38 +869,22 @@
                               {
                                 "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/dsa/distance/type-aliases/DistanceFormula"
+                                  "sdks/typescript/api/dsa/distance/type-aliases/DistanceFormula",
+                                  "sdks/typescript/api/dsa/distance/type-aliases/PointFor"
                                 ]
                               }
                             ]
                           },
                           {
-                            "group": "dsa",
+                            "group": "fractional-indexing",
                             "pages": [
+                              "sdks/typescript/api/dsa/fractional-indexing",
                               {
-                                "group": "rabin-karp",
+                                "group": "functions",
                                 "pages": [
-                                  "sdks/typescript/api/dsa/dsa/rabin-karp",
-                                  {
-                                    "group": "classes",
-                                    "pages": [
-                                      "sdks/typescript/api/dsa/dsa/rabin-karp/classes/RabinKarp"
-                                    ]
-                                  },
-                                  {
-                                    "group": "functions",
-                                    "pages": [
-                                      "sdks/typescript/api/dsa/dsa/rabin-karp/functions/quickSearch"
-                                    ]
-                                  },
-                                  {
-                                    "group": "interfaces",
-                                    "pages": [
-                                      "sdks/typescript/api/dsa/dsa/rabin-karp/interfaces/PatternMatch",
-                                      "sdks/typescript/api/dsa/dsa/rabin-karp/interfaces/RabinKarpOptions",
-                                      "sdks/typescript/api/dsa/dsa/rabin-karp/interfaces/SearchStats"
-                                    ]
-                                  }
+                                  "sdks/typescript/api/dsa/fractional-indexing/functions/generateNJitteredKeysBetween",
+                                  "sdks/typescript/api/dsa/fractional-indexing/functions/generateNKeysBetween",
+                                  "sdks/typescript/api/dsa/fractional-indexing/functions/validateOrderKey"
                                 ]
                               }
                             ]
@@ -993,6 +961,18 @@
                             ]
                           },
                           {
+                            "group": "multi-map",
+                            "pages": [
+                              "sdks/typescript/api/dsa/multi-map",
+                              {
+                                "group": "classes",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/multi-map/classes/MultiMap"
+                                ]
+                              }
+                            ]
+                          },
+                          {
                             "group": "priority-queue",
                             "pages": [
                               "sdks/typescript/api/dsa/priority-queue",
@@ -1023,7 +1003,9 @@
                               {
                                 "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/dsa/priority-queue/type-aliases/CompareFn"
+                                  "sdks/typescript/api/dsa/priority-queue/type-aliases/CompareFn",
+                                  "sdks/typescript/api/dsa/priority-queue/type-aliases/PQArgs",
+                                  "sdks/typescript/api/dsa/priority-queue/type-aliases/PQOptions"
                                 ]
                               }
                             ]
@@ -1047,6 +1029,65 @@
                             ]
                           },
                           {
+                            "group": "rabin-karp",
+                            "pages": [
+                              "sdks/typescript/api/dsa/rabin-karp",
+                              {
+                                "group": "classes",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/rabin-karp/classes/RabinKarp"
+                                ]
+                              },
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/rabin-karp/functions/quickSearch"
+                                ]
+                              },
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/rabin-karp/interfaces/PatternMatch",
+                                  "sdks/typescript/api/dsa/rabin-karp/interfaces/RabinKarpOptions",
+                                  "sdks/typescript/api/dsa/rabin-karp/interfaces/SearchStats"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "reordering",
+                            "pages": [
+                              "sdks/typescript/api/dsa/reordering",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndexAbove",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndexBelow",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndexBetween",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndices",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndicesAbove",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndicesBelow",
+                                  "sdks/typescript/api/dsa/reordering/functions/getIndicesBetween",
+                                  "sdks/typescript/api/dsa/reordering/functions/sortByIndex",
+                                  "sdks/typescript/api/dsa/reordering/functions/sortByMaybeIndex",
+                                  "sdks/typescript/api/dsa/reordering/functions/validateIndexKey"
+                                ]
+                              },
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/reordering/type-aliases/IndexKey"
+                                ]
+                              },
+                              {
+                                "group": "variables",
+                                "pages": [
+                                  "sdks/typescript/api/dsa/reordering/variables/ZERO_INDEX_KEY"
+                                ]
+                              }
+                            ]
+                          },
+                          {
                             "group": "schemas",
                             "pages": [
                               "sdks/typescript/api/dsa/schemas",
@@ -1054,6 +1095,12 @@
                                 "group": "functions",
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/functions/createValidator",
+                                  "sdks/typescript/api/dsa/schemas/functions/isLatitude",
+                                  "sdks/typescript/api/dsa/schemas/functions/isLongitude",
+                                  "sdks/typescript/api/dsa/schemas/functions/isProbability",
+                                  "sdks/typescript/api/dsa/schemas/functions/toLatitude",
+                                  "sdks/typescript/api/dsa/schemas/functions/toLongitude",
+                                  "sdks/typescript/api/dsa/schemas/functions/toProbability",
                                   "sdks/typescript/api/dsa/schemas/functions/validate",
                                   "sdks/typescript/api/dsa/schemas/functions/validateSafe"
                                 ]
@@ -1063,8 +1110,11 @@
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/type-aliases/GraphEdge",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/GraphOptions",
+                                  "sdks/typescript/api/dsa/schemas/type-aliases/Latitude",
+                                  "sdks/typescript/api/dsa/schemas/type-aliases/Longitude",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/PriorityItemInput",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/PriorityQueueOptions",
+                                  "sdks/typescript/api/dsa/schemas/type-aliases/Probability",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/RabinKarpMultiSearch",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/RabinKarpOptions",
                                   "sdks/typescript/api/dsa/schemas/type-aliases/RabinKarpSearch",
@@ -1079,8 +1129,11 @@
                                 "pages": [
                                   "sdks/typescript/api/dsa/schemas/variables/GraphEdgeSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/GraphOptionsSchema",
+                                  "sdks/typescript/api/dsa/schemas/variables/LatitudeSchema",
+                                  "sdks/typescript/api/dsa/schemas/variables/LongitudeSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/PriorityItemSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/PriorityQueueOptionsSchema",
+                                  "sdks/typescript/api/dsa/schemas/variables/ProbabilitySchema",
                                   "sdks/typescript/api/dsa/schemas/variables/RabinKarpMultiSearchSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/RabinKarpOptionsSchema",
                                   "sdks/typescript/api/dsa/schemas/variables/RabinKarpSearchSchema",
@@ -1115,71 +1168,15 @@
                                 ]
                               }
                             ]
-                          }
-                        ]
-                      },
-                      {
-                        "group": "http",
-                        "pages": [
-                          "sdks/typescript/api/http",
+                          },
                           {
-                            "group": "fetcher",
+                            "group": "weak-cache",
                             "pages": [
-                              "sdks/typescript/api/http/fetcher",
+                              "sdks/typescript/api/dsa/weak-cache",
                               {
                                 "group": "classes",
                                 "pages": [
-                                  "sdks/typescript/api/http/fetcher/classes/FetcherError",
-                                  "sdks/typescript/api/http/fetcher/classes/FetcherValidationError"
-                                ]
-                              },
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/http/fetcher/functions/createApiResponseSchema",
-                                  "sdks/typescript/api/http/fetcher/functions/createPaginatedSchema",
-                                  "sdks/typescript/api/http/fetcher/functions/del",
-                                  "sdks/typescript/api/http/fetcher/functions/fetcher",
-                                  "sdks/typescript/api/http/fetcher/functions/get",
-                                  "sdks/typescript/api/http/fetcher/functions/head",
-                                  "sdks/typescript/api/http/fetcher/functions/options",
-                                  "sdks/typescript/api/http/fetcher/functions/patch",
-                                  "sdks/typescript/api/http/fetcher/functions/post",
-                                  "sdks/typescript/api/http/fetcher/functions/put"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/http/fetcher/interfaces/FetcherOptions"
-                                ]
-                              },
-                              {
-                                "group": "type-aliases",
-                                "pages": [
-                                  "sdks/typescript/api/http/fetcher/type-aliases/Headers",
-                                  "sdks/typescript/api/http/fetcher/type-aliases/HttpMethod",
-                                  "sdks/typescript/api/http/fetcher/type-aliases/QueryParams",
-                                  "sdks/typescript/api/http/fetcher/type-aliases/RequestBody"
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "group": "index",
-                            "pages": [
-                              "sdks/typescript/api/http/index"
-                            ]
-                          },
-                          {
-                            "group": "security",
-                            "pages": [
-                              "sdks/typescript/api/http/security",
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/http/security/functions/getRequestId",
-                                  "sdks/typescript/api/http/security/functions/shouldRedirectToHttps"
+                                  "sdks/typescript/api/dsa/weak-cache/classes/WeakCache"
                                 ]
                               }
                             ]
@@ -1190,6 +1187,18 @@
                         "group": "logger",
                         "pages": [
                           "sdks/typescript/api/logger",
+                          {
+                            "group": "assert",
+                            "pages": [
+                              "sdks/typescript/api/logger/assert",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/logger/assert/functions/assertNever"
+                                ]
+                              }
+                            ]
+                          },
                           {
                             "group": "index",
                             "pages": [
@@ -1210,19 +1219,6 @@
                                 "group": "enumerations",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger/enumerations/LogLevel"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/logger/logger/interfaces/LogData",
-                                  "sdks/typescript/api/logger/logger/interfaces/LoggerOptions"
-                                ]
-                              },
-                              {
-                                "group": "type-aliases",
-                                "pages": [
-                                  "sdks/typescript/api/logger/logger/type-aliases/ColorKey"
                                 ]
                               },
                               {
@@ -1269,7 +1265,28 @@
                                 "group": "type-aliases",
                                 "pages": [
                                   "sdks/typescript/api/logger/logger.types/type-aliases/ColorKey",
-                                  "sdks/typescript/api/logger/logger.types/type-aliases/LogLevelString"
+                                  "sdks/typescript/api/logger/logger.types/type-aliases/LogLevelString",
+                                  "sdks/typescript/api/logger/logger.types/type-aliases/SimpleLogLevel"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "transports",
+                            "pages": [
+                              "sdks/typescript/api/logger/transports",
+                              {
+                                "group": "classes",
+                                "pages": [
+                                  "sdks/typescript/api/logger/transports/classes/JsonTransport",
+                                  "sdks/typescript/api/logger/transports/classes/MemoryTransport"
+                                ]
+                              },
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/logger/transports/functions/byLevel",
+                                  "sdks/typescript/api/logger/transports/functions/createFilterTransport"
                                 ]
                               }
                             ]
@@ -1277,86 +1294,300 @@
                         ]
                       },
                       {
-                        "group": "rate-limiting",
+                        "group": "math",
                         "pages": [
-                          "sdks/typescript/api/rate-limiting",
+                          "sdks/typescript/api/math",
                           {
-                            "group": "index",
+                            "group": "assert",
                             "pages": [
-                              "sdks/typescript/api/rate-limiting/index"
-                            ]
-                          },
-                          {
-                            "group": "rate-limit",
-                            "pages": [
-                              "sdks/typescript/api/rate-limiting/rate-limit",
+                              "sdks/typescript/api/math/assert",
                               {
-                                "group": "classes",
+                                "group": "functions",
                                 "pages": [
-                                  "sdks/typescript/api/rate-limiting/rate-limit/classes/MemoryRateLimitStore",
-                                  "sdks/typescript/api/rate-limiting/rate-limit/classes/RedisRateLimitStore"
-                                ]
-                              },
-                              {
-                                "group": "interfaces",
-                                "pages": [
-                                  "sdks/typescript/api/rate-limiting/rate-limit/interfaces/IRateLimitStore"
-                                ]
-                              },
-                              {
-                                "group": "type-aliases",
-                                "pages": [
-                                  "sdks/typescript/api/rate-limiting/rate-limit/type-aliases/RateLimitCheckResult",
-                                  "sdks/typescript/api/rate-limiting/rate-limit/type-aliases/RateLimitConfig"
-                                ]
-                              },
-                              {
-                                "group": "variables",
-                                "pages": [
-                                  "sdks/typescript/api/rate-limiting/rate-limit/variables/RATE_LIMIT_PRESETS",
-                                  "sdks/typescript/api/rate-limiting/rate-limit/variables/RateLimitCheckResultSchema",
-                                  "sdks/typescript/api/rate-limiting/rate-limit/variables/RateLimitConfigSchema"
+                                  "sdks/typescript/api/math/assert/functions/assertNever"
                                 ]
                               }
                             ]
                           },
                           {
-                            "group": "throttle",
+                            "group": "ast",
                             "pages": [
-                              "sdks/typescript/api/rate-limiting/throttle",
+                              "sdks/typescript/api/math/ast",
                               {
-                                "group": "classes",
+                                "group": "interfaces",
                                 "pages": [
-                                  "sdks/typescript/api/rate-limiting/throttle/classes/KeyedDebounce",
-                                  "sdks/typescript/api/rate-limiting/throttle/classes/KeyedThrottle",
-                                  "sdks/typescript/api/rate-limiting/throttle/classes/LeakyBucketLimiter",
-                                  "sdks/typescript/api/rate-limiting/throttle/classes/SlidingWindowCounter",
-                                  "sdks/typescript/api/rate-limiting/throttle/classes/TokenBucketLimiter"
-                                ]
-                              },
-                              {
-                                "group": "functions",
-                                "pages": [
-                                  "sdks/typescript/api/rate-limiting/throttle/functions/debounce",
-                                  "sdks/typescript/api/rate-limiting/throttle/functions/throttle"
+                                  "sdks/typescript/api/math/ast/interfaces/BinaryExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/BinderExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CBinaryExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CBinderExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CBoundVarExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CCallExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CCondExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CFreeVarExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CLambdaExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CLitExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CLogicExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CMemberExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CRelExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CUnaryExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CallExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/CondExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/LambdaExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/LitExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/LogicExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/MemberExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/RelExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/UnaryExpr",
+                                  "sdks/typescript/api/math/ast/interfaces/VarExpr"
                                 ]
                               },
                               {
                                 "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/rate-limiting/throttle/type-aliases/DebounceOptions",
-                                  "sdks/typescript/api/rate-limiting/throttle/type-aliases/KeyedStats",
-                                  "sdks/typescript/api/rate-limiting/throttle/type-aliases/RateLimiterStats",
-                                  "sdks/typescript/api/rate-limiting/throttle/type-aliases/ThrottleOptions"
+                                  "sdks/typescript/api/math/ast/type-aliases/BinaryOp",
+                                  "sdks/typescript/api/math/ast/type-aliases/BinderOp",
+                                  "sdks/typescript/api/math/ast/type-aliases/CompiledExpr",
+                                  "sdks/typescript/api/math/ast/type-aliases/Expr",
+                                  "sdks/typescript/api/math/ast/type-aliases/LogicOp",
+                                  "sdks/typescript/api/math/ast/type-aliases/RelOp",
+                                  "sdks/typescript/api/math/ast/type-aliases/UnaryOp"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "builder",
+                            "pages": [
+                              "sdks/typescript/api/math/builder",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/builder/functions/B",
+                                  "sdks/typescript/api/math/builder/functions/N",
+                                  "sdks/typescript/api/math/builder/functions/S",
+                                  "sdks/typescript/api/math/builder/functions/abs",
+                                  "sdks/typescript/api/math/builder/functions/add",
+                                  "sdks/typescript/api/math/builder/functions/and",
+                                  "sdks/typescript/api/math/builder/functions/call",
+                                  "sdks/typescript/api/math/builder/functions/card",
+                                  "sdks/typescript/api/math/builder/functions/ceil",
+                                  "sdks/typescript/api/math/builder/functions/cond",
+                                  "sdks/typescript/api/math/builder/functions/diff",
+                                  "sdks/typescript/api/math/builder/functions/div",
+                                  "sdks/typescript/api/math/builder/functions/elem",
+                                  "sdks/typescript/api/math/builder/functions/eq",
+                                  "sdks/typescript/api/math/builder/functions/exists",
+                                  "sdks/typescript/api/math/builder/functions/factorial",
+                                  "sdks/typescript/api/math/builder/functions/floor",
+                                  "sdks/typescript/api/math/builder/functions/forall",
+                                  "sdks/typescript/api/math/builder/functions/gt",
+                                  "sdks/typescript/api/math/builder/functions/gte",
+                                  "sdks/typescript/api/math/builder/functions/iff",
+                                  "sdks/typescript/api/math/builder/functions/implies",
+                                  "sdks/typescript/api/math/builder/functions/intersect",
+                                  "sdks/typescript/api/math/builder/functions/lambda",
+                                  "sdks/typescript/api/math/builder/functions/lit",
+                                  "sdks/typescript/api/math/builder/functions/lt",
+                                  "sdks/typescript/api/math/builder/functions/lte",
+                                  "sdks/typescript/api/math/builder/functions/member",
+                                  "sdks/typescript/api/math/builder/functions/mod",
+                                  "sdks/typescript/api/math/builder/functions/mul",
+                                  "sdks/typescript/api/math/builder/functions/neg",
+                                  "sdks/typescript/api/math/builder/functions/neq",
+                                  "sdks/typescript/api/math/builder/functions/not",
+                                  "sdks/typescript/api/math/builder/functions/notElem",
+                                  "sdks/typescript/api/math/builder/functions/or",
+                                  "sdks/typescript/api/math/builder/functions/pow",
+                                  "sdks/typescript/api/math/builder/functions/prod",
+                                  "sdks/typescript/api/math/builder/functions/properSubset",
+                                  "sdks/typescript/api/math/builder/functions/sqrt",
+                                  "sdks/typescript/api/math/builder/functions/sub",
+                                  "sdks/typescript/api/math/builder/functions/subset",
+                                  "sdks/typescript/api/math/builder/functions/sum",
+                                  "sdks/typescript/api/math/builder/functions/symDiff",
+                                  "sdks/typescript/api/math/builder/functions/union",
+                                  "sdks/typescript/api/math/builder/functions/v",
+                                  "sdks/typescript/api/math/builder/functions/xor"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "check",
+                            "pages": [
+                              "sdks/typescript/api/math/check",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/check/functions/checkExpr"
                                 ]
                               },
                               {
-                                "group": "variables",
+                                "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/rate-limiting/throttle/variables/DebounceOptionsSchema",
-                                  "sdks/typescript/api/rate-limiting/throttle/variables/KeyedStatsSchema",
-                                  "sdks/typescript/api/rate-limiting/throttle/variables/RateLimiterStatsSchema",
-                                  "sdks/typescript/api/rate-limiting/throttle/variables/ThrottleOptionsSchema"
+                                  "sdks/typescript/api/math/check/type-aliases/CheckResult",
+                                  "sdks/typescript/api/math/check/type-aliases/SortContext"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "compile",
+                            "pages": [
+                              "sdks/typescript/api/math/compile",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/compile/functions/compile"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "error",
+                            "pages": [
+                              "sdks/typescript/api/math/error",
+                              {
+                                "group": "classes",
+                                "pages": [
+                                  "sdks/typescript/api/math/error/classes/DomainError",
+                                  "sdks/typescript/api/math/error/classes/ExecutionLimitError",
+                                  "sdks/typescript/api/math/error/classes/MathError",
+                                  "sdks/typescript/api/math/error/classes/ParseError",
+                                  "sdks/typescript/api/math/error/classes/RecursionLimitError",
+                                  "sdks/typescript/api/math/error/classes/SortError",
+                                  "sdks/typescript/api/math/error/classes/StackError",
+                                  "sdks/typescript/api/math/error/classes/UnboundVariableError",
+                                  "sdks/typescript/api/math/error/classes/UndefinedOpError"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "evaluate",
+                            "pages": [
+                              "sdks/typescript/api/math/evaluate",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/evaluate/functions/evaluate"
+                                ]
+                              },
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/math/evaluate/interfaces/EvaluateOptions"
+                                ]
+                              },
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/math/evaluate/type-aliases/Env"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/math/index"
+                            ]
+                          },
+                          {
+                            "group": "instance",
+                            "pages": [
+                              "sdks/typescript/api/math/instance",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/instance/functions/encodeBinary",
+                                  "sdks/typescript/api/math/instance/functions/encodeLogic",
+                                  "sdks/typescript/api/math/instance/functions/encodeRel",
+                                  "sdks/typescript/api/math/instance/functions/encodeUnary",
+                                  "sdks/typescript/api/math/instance/functions/lookupBinary",
+                                  "sdks/typescript/api/math/instance/functions/lookupLogic",
+                                  "sdks/typescript/api/math/instance/functions/lookupRel",
+                                  "sdks/typescript/api/math/instance/functions/lookupUnary",
+                                  "sdks/typescript/api/math/instance/functions/registerBinary",
+                                  "sdks/typescript/api/math/instance/functions/registerLogic",
+                                  "sdks/typescript/api/math/instance/functions/registerRelation",
+                                  "sdks/typescript/api/math/instance/functions/registerUnary"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "parse",
+                            "pages": [
+                              "sdks/typescript/api/math/parse",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/parse/functions/parse"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "print",
+                            "pages": [
+                              "sdks/typescript/api/math/print",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/print/functions/print"
+                                ]
+                              },
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/math/print/interfaces/PrintOptions"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "utils",
+                            "pages": [
+                              "sdks/typescript/api/math/utils",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/utils/functions/invLerp",
+                                  "sdks/typescript/api/math/utils/functions/lerp",
+                                  "sdks/typescript/api/math/utils/functions/modulate",
+                                  "sdks/typescript/api/math/utils/functions/rng"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "value",
+                            "pages": [
+                              "sdks/typescript/api/math/value",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/math/value/functions/asBool",
+                                  "sdks/typescript/api/math/value/functions/asFunc",
+                                  "sdks/typescript/api/math/value/functions/asNum",
+                                  "sdks/typescript/api/math/value/functions/asRecord",
+                                  "sdks/typescript/api/math/value/functions/asSet",
+                                  "sdks/typescript/api/math/value/functions/bool",
+                                  "sdks/typescript/api/math/value/functions/func",
+                                  "sdks/typescript/api/math/value/functions/mkSet",
+                                  "sdks/typescript/api/math/value/functions/num",
+                                  "sdks/typescript/api/math/value/functions/record",
+                                  "sdks/typescript/api/math/value/functions/setEq",
+                                  "sdks/typescript/api/math/value/functions/showValue"
+                                ]
+                              },
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/math/value/type-aliases/Sort",
+                                  "sdks/typescript/api/math/value/type-aliases/Value",
+                                  "sdks/typescript/api/math/value/type-aliases/ValueCategory"
                                 ]
                               }
                             ]
@@ -1364,23 +1595,26 @@
                         ]
                       },
                       {
-                        "group": "security",
+                        "group": "telemetry",
                         "pages": [
-                          "sdks/typescript/api/security",
+                          "sdks/typescript/api/telemetry",
                           {
-                            "group": "crypto",
+                            "group": "backoff",
                             "pages": [
-                              "sdks/typescript/api/security/crypto",
+                              "sdks/typescript/api/telemetry/backoff",
                               {
                                 "group": "functions",
                                 "pages": [
-                                  "sdks/typescript/api/security/crypto/functions/decryptData",
-                                  "sdks/typescript/api/security/crypto/functions/encryptData",
-                                  "sdks/typescript/api/security/crypto/functions/generateSecureToken",
-                                  "sdks/typescript/api/security/crypto/functions/hashData",
-                                  "sdks/typescript/api/security/crypto/functions/maskEmail",
-                                  "sdks/typescript/api/security/crypto/functions/maskPII",
-                                  "sdks/typescript/api/security/crypto/functions/sanitizeForLogging"
+                                  "sdks/typescript/api/telemetry/backoff/functions/createBackoff",
+                                  "sdks/typescript/api/telemetry/backoff/functions/createReconnectTimer"
+                                ]
+                              },
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/telemetry/backoff/interfaces/Backoff",
+                                  "sdks/typescript/api/telemetry/backoff/interfaces/BackoffOptions",
+                                  "sdks/typescript/api/telemetry/backoff/interfaces/ReconnectTimer"
                                 ]
                               }
                             ]
@@ -1388,108 +1622,332 @@
                           {
                             "group": "index",
                             "pages": [
-                              "sdks/typescript/api/security/index"
+                              "sdks/typescript/api/telemetry/index"
                             ]
                           },
                           {
-                            "group": "sanitize",
+                            "group": "react",
                             "pages": [
-                              "sdks/typescript/api/security/sanitize",
+                              "sdks/typescript/api/telemetry/react",
                               {
-                                "group": "functions",
+                                "group": "telemetry-provider",
                                 "pages": [
-                                  "sdks/typescript/api/security/sanitize/functions/escapeHtml",
-                                  "sdks/typescript/api/security/sanitize/functions/isValidEmail",
-                                  "sdks/typescript/api/security/sanitize/functions/isValidPhone",
-                                  "sdks/typescript/api/security/sanitize/functions/isValidSSN",
-                                  "sdks/typescript/api/security/sanitize/functions/isValidUrl",
-                                  "sdks/typescript/api/security/sanitize/functions/parseJsonWithSchema",
-                                  "sdks/typescript/api/security/sanitize/functions/redactPII",
-                                  "sdks/typescript/api/security/sanitize/functions/redactPIIEffect",
-                                  "sdks/typescript/api/security/sanitize/functions/safeStringify",
-                                  "sdks/typescript/api/security/sanitize/functions/sanitizeJson",
-                                  "sdks/typescript/api/security/sanitize/functions/sanitizeUrl",
-                                  "sdks/typescript/api/security/sanitize/functions/sanitizeUrlEffect",
-                                  "sdks/typescript/api/security/sanitize/functions/stripAnsi",
-                                  "sdks/typescript/api/security/sanitize/functions/validateUserInput",
-                                  "sdks/typescript/api/security/sanitize/functions/validateUserInputEffect"
+                                  "sdks/typescript/api/telemetry/react/telemetry-provider",
+                                  {
+                                    "group": "functions",
+                                    "pages": [
+                                      "sdks/typescript/api/telemetry/react/telemetry-provider/functions/TelemetryProvider"
+                                    ]
+                                  },
+                                  {
+                                    "group": "interfaces",
+                                    "pages": [
+                                      "sdks/typescript/api/telemetry/react/telemetry-provider/interfaces/TelemetryContextValue",
+                                      "sdks/typescript/api/telemetry/react/telemetry-provider/interfaces/TelemetryProviderProps"
+                                    ]
+                                  },
+                                  {
+                                    "group": "variables",
+                                    "pages": [
+                                      "sdks/typescript/api/telemetry/react/telemetry-provider/variables/TelemetryContext"
+                                    ]
+                                  }
                                 ]
                               },
                               {
-                                "group": "type-aliases",
+                                "group": "use-telemetry",
                                 "pages": [
-                                  "sdks/typescript/api/security/sanitize/type-aliases/CreditCard",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/Email",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/IPv4",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/PIIRedactionOptions",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/PhoneNumber",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/SSN",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/SafeUrl",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/SanitizedString",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/UrlProtocol",
-                                  "sdks/typescript/api/security/sanitize/type-aliases/UserInputOptions"
-                                ]
-                              },
-                              {
-                                "group": "variables",
-                                "pages": [
-                                  "sdks/typescript/api/security/sanitize/variables/CreditCardSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/EmailSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/IPv4Schema",
-                                  "sdks/typescript/api/security/sanitize/variables/PIIRedactionOptionsSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/PhoneNumberSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/SSNSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/SafeUrlSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/SanitizedStringSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/UrlProtocolSchema",
-                                  "sdks/typescript/api/security/sanitize/variables/UserInputOptionsSchema"
+                                  "sdks/typescript/api/telemetry/react/use-telemetry",
+                                  {
+                                    "group": "functions",
+                                    "pages": [
+                                      "sdks/typescript/api/telemetry/react/use-telemetry/functions/useTelemetry",
+                                      "sdks/typescript/api/telemetry/react/use-telemetry/functions/useTelemetryChannel"
+                                    ]
+                                  },
+                                  {
+                                    "group": "interfaces",
+                                    "pages": [
+                                      "sdks/typescript/api/telemetry/react/use-telemetry/interfaces/TelemetryChannel"
+                                    ]
+                                  }
                                 ]
                               }
                             ]
                           },
                           {
-                            "group": "validators",
+                            "group": "socket",
                             "pages": [
-                              "sdks/typescript/api/security/validators",
+                              "sdks/typescript/api/telemetry/socket",
                               {
-                                "group": "functions",
+                                "group": "classes",
                                 "pages": [
-                                  "sdks/typescript/api/security/validators/functions/containsCommandInjection",
-                                  "sdks/typescript/api/security/validators/functions/containsHomoglyphs",
-                                  "sdks/typescript/api/security/validators/functions/containsNoSQLInjection",
-                                  "sdks/typescript/api/security/validators/functions/containsPathTraversal",
-                                  "sdks/typescript/api/security/validators/functions/containsSQLInjection",
-                                  "sdks/typescript/api/security/validators/functions/containsXSSPatterns",
-                                  "sdks/typescript/api/security/validators/functions/detectThreatPatterns",
-                                  "sdks/typescript/api/security/validators/functions/getThreatErrorMessage",
-                                  "sdks/typescript/api/security/validators/functions/isSafeInput",
-                                  "sdks/typescript/api/security/validators/functions/normalizeUnicode",
-                                  "sdks/typescript/api/security/validators/functions/sanitizeForDisplay",
-                                  "sdks/typescript/api/security/validators/functions/validateSafeEmail",
-                                  "sdks/typescript/api/security/validators/functions/validateSafeName",
-                                  "sdks/typescript/api/security/validators/functions/validateSafeText"
+                                  "sdks/typescript/api/telemetry/socket/classes/TelemetrySocket"
                                 ]
                               },
                               {
                                 "group": "interfaces",
                                 "pages": [
-                                  "sdks/typescript/api/security/validators/interfaces/ThreatDetectionConfig",
-                                  "sdks/typescript/api/security/validators/interfaces/ThreatDetectionResult",
-                                  "sdks/typescript/api/security/validators/interfaces/ThreatFinding"
+                                  "sdks/typescript/api/telemetry/socket/interfaces/TelemetrySocketOptions"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "types",
+                            "pages": [
+                              "sdks/typescript/api/telemetry/types",
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/telemetry/types/interfaces/TelemetrySubscription",
+                                  "sdks/typescript/api/telemetry/types/interfaces/WebSocketLike"
                                 ]
                               },
                               {
                                 "group": "type-aliases",
                                 "pages": [
-                                  "sdks/typescript/api/security/validators/type-aliases/ThreatType"
+                                  "sdks/typescript/api/telemetry/types/type-aliases/ConnectionState",
+                                  "sdks/typescript/api/telemetry/types/type-aliases/WebSocketFactory"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "group": "types",
+                        "pages": [
+                          "sdks/typescript/api/types",
+                          {
+                            "group": "assert",
+                            "pages": [
+                              "sdks/typescript/api/types/assert",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/types/assert/functions/assertNever"
                                 ]
                               },
                               {
                                 "group": "variables",
                                 "pages": [
-                                  "sdks/typescript/api/security/validators/variables/THREAT_DETECTED_MESSAGE"
+                                  "sdks/typescript/api/types/assert/variables/assertUnreachable"
                                 ]
                               }
+                            ]
+                          },
+                          {
+                            "group": "brand",
+                            "pages": [
+                              "sdks/typescript/api/types/brand",
+                              {
+                                "group": "functions",
+                                "pages": [
+                                  "sdks/typescript/api/types/brand/functions/brandRefiner",
+                                  "sdks/typescript/api/types/brand/functions/unsafeBrand"
+                                ]
+                              },
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/types/brand/interfaces/BrandRefiner",
+                                  "sdks/typescript/api/types/brand/interfaces/Tag"
+                                ]
+                              },
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/brand/type-aliases/Brand",
+                                  "sdks/typescript/api/types/brand/type-aliases/Opaque"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "collection",
+                            "pages": [
+                              "sdks/typescript/api/types/collection",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/collection/type-aliases/Concat",
+                                  "sdks/typescript/api/types/collection/type-aliases/Enumerate",
+                                  "sdks/typescript/api/types/collection/type-aliases/Flatten",
+                                  "sdks/typescript/api/types/collection/type-aliases/Head",
+                                  "sdks/typescript/api/types/collection/type-aliases/Includes",
+                                  "sdks/typescript/api/types/collection/type-aliases/IsEmpty",
+                                  "sdks/typescript/api/types/collection/type-aliases/IsUnion",
+                                  "sdks/typescript/api/types/collection/type-aliases/Last",
+                                  "sdks/typescript/api/types/collection/type-aliases/LastInUnion",
+                                  "sdks/typescript/api/types/collection/type-aliases/Length",
+                                  "sdks/typescript/api/types/collection/type-aliases/NonEmptyArray",
+                                  "sdks/typescript/api/types/collection/type-aliases/NumberRange",
+                                  "sdks/typescript/api/types/collection/type-aliases/Push",
+                                  "sdks/typescript/api/types/collection/type-aliases/ReadonlyNonEmptyArray",
+                                  "sdks/typescript/api/types/collection/type-aliases/Reverse",
+                                  "sdks/typescript/api/types/collection/type-aliases/Tail",
+                                  "sdks/typescript/api/types/collection/type-aliases/TupleToUnion",
+                                  "sdks/typescript/api/types/collection/type-aliases/UnionToIntersection",
+                                  "sdks/typescript/api/types/collection/type-aliases/UnionToTuple",
+                                  "sdks/typescript/api/types/collection/type-aliases/Unshift",
+                                  "sdks/typescript/api/types/collection/type-aliases/Zip"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "compat",
+                            "pages": [
+                              "sdks/typescript/api/types/compat",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/compat/type-aliases/Awaitable",
+                                  "sdks/typescript/api/types/compat/type-aliases/Expand",
+                                  "sdks/typescript/api/types/compat/type-aliases/MakeUndefinedOptional",
+                                  "sdks/typescript/api/types/compat/type-aliases/RecursivePartial",
+                                  "sdks/typescript/api/types/compat/type-aliases/Required"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "index",
+                            "pages": [
+                              "sdks/typescript/api/types/index"
+                            ]
+                          },
+                          {
+                            "group": "json",
+                            "pages": [
+                              "sdks/typescript/api/types/json",
+                              {
+                                "group": "interfaces",
+                                "pages": [
+                                  "sdks/typescript/api/types/json/interfaces/JsonObject"
+                                ]
+                              },
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/json/type-aliases/JsonArray",
+                                  "sdks/typescript/api/types/json/type-aliases/JsonPrimitive",
+                                  "sdks/typescript/api/types/json/type-aliases/JsonValue"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "numeric",
+                            "pages": [
+                              "sdks/typescript/api/types/numeric",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/numeric/type-aliases/NonNegativeInt",
+                                  "sdks/typescript/api/types/numeric/type-aliases/PositiveInt",
+                                  "sdks/typescript/api/types/numeric/type-aliases/PositiveMillis",
+                                  "sdks/typescript/api/types/numeric/type-aliases/PositiveNumber",
+                                  "sdks/typescript/api/types/numeric/type-aliases/UnitInterval"
+                                ]
+                              },
+                              {
+                                "group": "variables",
+                                "pages": [
+                                  "sdks/typescript/api/types/numeric/variables/coerceNonNegativeInt",
+                                  "sdks/typescript/api/types/numeric/variables/coercePositiveInt",
+                                  "sdks/typescript/api/types/numeric/variables/coercePositiveMillis",
+                                  "sdks/typescript/api/types/numeric/variables/coercePositiveNumber",
+                                  "sdks/typescript/api/types/numeric/variables/coerceUnitInterval",
+                                  "sdks/typescript/api/types/numeric/variables/isNonNegativeInt",
+                                  "sdks/typescript/api/types/numeric/variables/isPositiveInt",
+                                  "sdks/typescript/api/types/numeric/variables/isPositiveMillis",
+                                  "sdks/typescript/api/types/numeric/variables/isPositiveNumber",
+                                  "sdks/typescript/api/types/numeric/variables/isUnitInterval",
+                                  "sdks/typescript/api/types/numeric/variables/toNonNegativeInt",
+                                  "sdks/typescript/api/types/numeric/variables/toPositiveInt",
+                                  "sdks/typescript/api/types/numeric/variables/toPositiveMillis",
+                                  "sdks/typescript/api/types/numeric/variables/toPositiveNumber",
+                                  "sdks/typescript/api/types/numeric/variables/toUnitInterval"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "object",
+                            "pages": [
+                              "sdks/typescript/api/types/object",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/object/type-aliases/DeepMutable",
+                                  "sdks/typescript/api/types/object/type-aliases/DeepNonNullable",
+                                  "sdks/typescript/api/types/object/type-aliases/DeepPartial",
+                                  "sdks/typescript/api/types/object/type-aliases/DeepReadonly",
+                                  "sdks/typescript/api/types/object/type-aliases/DeepRequired",
+                                  "sdks/typescript/api/types/object/type-aliases/Entries",
+                                  "sdks/typescript/api/types/object/type-aliases/Merge",
+                                  "sdks/typescript/api/types/object/type-aliases/Mutable",
+                                  "sdks/typescript/api/types/object/type-aliases/OmitByType",
+                                  "sdks/typescript/api/types/object/type-aliases/PickByType",
+                                  "sdks/typescript/api/types/object/type-aliases/RemoveIndexSignature",
+                                  "sdks/typescript/api/types/object/type-aliases/RequireAtLeastOne",
+                                  "sdks/typescript/api/types/object/type-aliases/RequireExactlyOne",
+                                  "sdks/typescript/api/types/object/type-aliases/Simplify",
+                                  "sdks/typescript/api/types/object/type-aliases/ValueOf",
+                                  "sdks/typescript/api/types/object/type-aliases/Without",
+                                  "sdks/typescript/api/types/object/type-aliases/XOR"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "string",
+                            "pages": [
+                              "sdks/typescript/api/types/string",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/string/type-aliases/EndsWith",
+                                  "sdks/typescript/api/types/string/type-aliases/Join",
+                                  "sdks/typescript/api/types/string/type-aliases/LiteralUnion",
+                                  "sdks/typescript/api/types/string/type-aliases/ParseInt",
+                                  "sdks/typescript/api/types/string/type-aliases/Replace",
+                                  "sdks/typescript/api/types/string/type-aliases/ReplaceAll",
+                                  "sdks/typescript/api/types/string/type-aliases/Split",
+                                  "sdks/typescript/api/types/string/type-aliases/StartsWith",
+                                  "sdks/typescript/api/types/string/type-aliases/Trim",
+                                  "sdks/typescript/api/types/string/type-aliases/TrimLeft",
+                                  "sdks/typescript/api/types/string/type-aliases/TrimRight"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "testing",
+                            "pages": [
+                              "sdks/typescript/api/types/testing",
+                              {
+                                "group": "type-aliases",
+                                "pages": [
+                                  "sdks/typescript/api/types/testing/type-aliases/Equal",
+                                  "sdks/typescript/api/types/testing/type-aliases/Expect",
+                                  "sdks/typescript/api/types/testing/type-aliases/ExpectFalse",
+                                  "sdks/typescript/api/types/testing/type-aliases/ExpectTrue",
+                                  "sdks/typescript/api/types/testing/type-aliases/IsAny",
+                                  "sdks/typescript/api/types/testing/type-aliases/IsNever",
+                                  "sdks/typescript/api/types/testing/type-aliases/IsUnknown",
+                                  "sdks/typescript/api/types/testing/type-aliases/NotEqual",
+                                  "sdks/typescript/api/types/testing/type-aliases/Verify"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "group": "types.test-d",
+                            "pages": [
+                              "sdks/typescript/api/types/types.test-d"
                             ]
                           }
                         ]

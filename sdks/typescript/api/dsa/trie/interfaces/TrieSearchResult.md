@@ -1,6 +1,6 @@
 # Interface: TrieSearchResult\<T\>
 
-Defined in: [trie.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L55)
+Defined in: [trie.ts:54](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/trie.ts#L54)
 
 Search result with relevance score
 
@@ -16,9 +16,9 @@ Type of stored data
 
 ### data
 
-> **data**: `T`
+&gt; **data**: `T`
 
-Defined in: [trie.ts:59](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L59)
+Defined in: [trie.ts:58](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/trie.ts#L58)
 
 Associated data
 
@@ -26,9 +26,9 @@ Associated data
 
 ### score
 
-> **score**: `number`
+&gt; **score**: `number`
 
-Defined in: [trie.ts:61](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L61)
+Defined in: [trie.ts:60](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/trie.ts#L60)
 
 Relevance score based on frequency
 
@@ -36,8 +36,8 @@ Relevance score based on frequency
 
 ### word
 
-> **word**: `string`
+&gt; **word**: `string`
 
-Defined in: [trie.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L57)
+Defined in: [trie.ts:56](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/trie.ts#L56)
 
 The matched word

@@ -1,10 +1,17 @@
 # Function: delayFn()
 
-> **delayFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
+&gt; **delayFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
-Defined in: [delay/delay.fn.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delay/delay.fn.ts#L45)
+Defined in: [delay/delay.fn.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delay/delay.fn.ts#L59)
 
 Wraps a method to delay its execution by the specified time.
+
+Effectful: each call schedules an **independent** `setTimeout` — unlike
+debounceFn there is no dedup or timer reset, so N calls produce N
+deferred executions. The wrapper returns `undefined` immediately; the original
+method's return value is **discarded**, so it cannot wrap a method whose
+result the caller needs. A throw from the method surfaces inside the timer
+callback, not to the caller. No `AbortSignal` / cancellation.
 
 ## Type Parameters
 
@@ -12,13 +19,13 @@ Wraps a method to delay its execution by the specified time.
 
 `D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 ### A
 
 `A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument types of the original method.
 
 ## Parameters
 
@@ -26,19 +33,20 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to delay
+The method to delay.
 
 ### delayMs
 
 `number`
 
-The delay time in milliseconds
+The delay time in milliseconds.
 
 ## Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
-The delayed method
+The delayed wrapper; it always returns `undefined` (`void`), never
+  the wrapped method's value.
 
 ## Example
 

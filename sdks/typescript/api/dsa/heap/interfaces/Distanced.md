@@ -1,6 +1,6 @@
 # Interface: Distanced
 
-Defined in: [heap.ts:21](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L21)
+Defined in: [heap.ts:28](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L28)
 
 Anything with a numeric `distance` field — the only constraint
 [BoundedHeap](../classes/BoundedHeap) places on its elements.
@@ -9,6 +9,6 @@ Anything with a numeric `distance` field — the only constraint
 
 ### distance
 
-> **distance**: `number`
+&gt; **distance**: `number`
 
-Defined in: [heap.ts:22](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L22)
+Defined in: [heap.ts:29](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L29)

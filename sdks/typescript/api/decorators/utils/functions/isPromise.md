@@ -1,8 +1,10 @@
 # Function: isPromise()
 
-> **isPromise**(`value`): `value is Promise<unknown>`
+&gt; **isPromise**(`value`): `value is Promise<unknown>`
 
-Defined in: [\_utils.ts:24](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L24)
+Defined in: [\_utils.ts:33](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L33)
+
+Narrow `value` to a thenable (native `Promise` or a duck-typed then-able).
 
 ## Parameters
 
@@ -10,11 +12,10 @@ Defined in: [\_utils.ts:24](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 `unknown`
 
+The value to test.
+
 ## Returns
 
 `value is Promise<unknown>`
 
-## Fileoverview
-
-Inlined utilities for the decorators package.
-These are minimal copies of utilities from the monorepo to keep this package zero-dependency.
+`true` when `value` exposes a callable `then`.

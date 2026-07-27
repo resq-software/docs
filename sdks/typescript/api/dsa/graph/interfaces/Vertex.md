@@ -1,8 +1,8 @@
-# Interface: Vertex\<T\>
+# Interface: Vertex\<T, M\>
 
-Defined in: [graph.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L45)
+Defined in: [graph.ts:58](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L58)
 
-Vertex with adjacency list
+Vertex with adjacency list.
 
 ## Type Parameters
 
@@ -10,13 +10,21 @@ Vertex with adjacency list
 
 `T`
 
+Type of vertex identifiers.
+
+### M
+
+`M` = `Record`\<`string`, `unknown`\>
+
+Shape of the optional structured metadata (see [Edge](./Edge)).
+
 ## Properties
 
 ### edges
 
-> **edges**: [`Edge`](./Edge)\<`T`\>[]
+&gt; **edges**: [`Edge`](./Edge)\<`T`, `M`\>[]
 
-Defined in: [graph.ts:49](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L49)
+Defined in: [graph.ts:62](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L62)
 
 Outgoing edges
 
@@ -24,18 +32,18 @@ Outgoing edges
 
 ### metadata?
 
-> `optional` **metadata?**: `Record`\<`string`, `unknown`\>
+&gt; `optional` **metadata?**: `M`
 
-Defined in: [graph.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L51)
+Defined in: [graph.ts:64](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L64)
 
-Optional vertex metadata
+Optional vertex metadata, typed as `M`.
 
 ***
 
 ### value
 
-> **value**: `T`
+&gt; **value**: `T`
 
-Defined in: [graph.ts:47](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L47)
+Defined in: [graph.ts:60](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L60)
 
 Vertex value/id

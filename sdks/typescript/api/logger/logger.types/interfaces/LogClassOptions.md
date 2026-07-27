@@ -1,39 +1,35 @@
 # Interface: LogClassOptions
 
-Defined in: [logger.types.ts:151](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L151)
+Defined in: [logger.types.ts:192](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L192)
 
-Options for the
-
-## Log Class
-
-decorator
+Options for the `@LogClass` decorator.
 
 ## Properties
 
 ### exclude?
 
-> `optional` **exclude?**: `string`[]
+&gt; `optional` **exclude?**: `string`[]
 
-Defined in: [logger.types.ts:153](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L153)
+Defined in: [logger.types.ts:194](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L194)
 
-Methods to exclude from logging
+Methods to exclude from logging.
 
 ***
 
 ### logCalls?
 
-> `optional` **logCalls?**: `boolean`
+&gt; `optional` **logCalls?**: `boolean`
 
-Defined in: [logger.types.ts:155](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L155)
+Defined in: [logger.types.ts:196](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L196)
 
-Whether to log all method calls (default: true)
+Whether to log all method calls (default: `true`).
 
 ***
 
 ### timing?
 
-> `optional` **timing?**: `boolean`
+&gt; `optional` **timing?**: `boolean`
 
-Defined in: [logger.types.ts:157](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L157)
+Defined in: [logger.types.ts:198](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L198)
 
-Whether to time all method calls (default: false)
+Whether to time all method calls (default: `false`).

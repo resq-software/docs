@@ -1,11 +1,16 @@
 # Function: debounce()
 
-> **debounce**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+&gt; **debounce**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [debounce/debounce.ts:47](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/debounce/debounce.ts#L47)
+Defined in: [debounce/debounce.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/debounce/debounce.ts#L59)
 
 Decorator that debounces method calls, ensuring the method only executes
 after the specified delay has passed since the last call.
+
+Debounce state is kept **per instance** via a `WeakMap` keyed on `this`, so
+two instances of the same class debounce independently and the state is
+garbage-collected with the instance. The decorated method returns `undefined`
+(the original return value is discarded — see [debounceFn](../../debounce.fn/functions/debounceFn)).
 
 ## Type Parameters
 
@@ -13,7 +18,7 @@ after the specified delay has passed since the last call.
 
 `T` = `unknown`
 
-The type of the class containing the decorated method
+The type of the class containing the decorated method.
 
 ## Parameters
 
@@ -21,17 +26,18 @@ The type of the class containing the decorated method
 
 `number`
 
-The debounce delay in milliseconds
+The debounce delay in milliseconds.
 
 ## Returns
 
 [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-The decorator function
+The decorator function.
 
 ## Throws
 
-When applied to a non-method property
+At decoration time, when applied to anything without a method
+  value, with message `"@debounce is applicable only on a methods."`.
 
 ## Example
 

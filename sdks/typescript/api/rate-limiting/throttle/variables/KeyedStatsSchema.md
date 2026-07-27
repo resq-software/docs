@@ -1,7 +1,0 @@
-# Variable: KeyedStatsSchema
-
-> `const` **KeyedStatsSchema**: `Struct`\<\&#123; `activeKeys`: `Number`; `keys`: `$Array`\<`String`\>; \&#125;\>
-
-Defined in: [throttle.ts:71](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/rate-limiting/src/throttle.ts#L71)
-
-Keyed Stats Schema

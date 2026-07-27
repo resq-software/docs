@@ -1,31 +1,27 @@
 # Class: SimpleRateLimitCounter
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L44)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:48](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L48)
 
-Simple in-memory implementation of RateLimitCounter.
-Uses a Map to store counts for each key.
-
- SimpleRateLimitCounter
-
-## Implements
+In-memory [RateLimitCounter](../../rate-limit.types/interfaces/RateLimitCounter) backed by a `Map` of per-key counts. This is
+the default counter when a RateLimitConfigs supplies none.
 
 ## Example
 
-```typescript
+```ts
 const counter = new SimpleRateLimitCounter();
 
-// Track API calls per user
-counter.inc('user-1');
-counter.inc('user-1');
-counter.inc('user-2');
+// Track API calls per user.
+counter.inc("user-1");
+counter.inc("user-1");
+counter.inc("user-2");
 
-console.log(counter.getCount('user-1')); // 2
-console.log(counter.getCount('user-2')); // 1
-console.log(counter.getCount('user-3')); // 0
+counter.getCount("user-1"); // → 2
+counter.getCount("user-2"); // → 1
+counter.getCount("user-3"); // → 0
 
-// After some time, decrement
-counter.dec('user-1');
-console.log(counter.getCount('user-1')); // 1
+// After some time, decrement.
+counter.dec("user-1");
+counter.getCount("user-1"); // → 1
 ```
 
 ## Implements
@@ -36,11 +32,14 @@ console.log(counter.getCount('user-1')); // 1
 
 ### Constructor
 
-> **new SimpleRateLimitCounter**(`counterMap?`): `SimpleRateLimitCounter`
+&gt; **new SimpleRateLimitCounter**(`counterMap?`): `SimpleRateLimitCounter`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:50](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L50)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:57](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L57)
 
-Creates a new SimpleRateLimitCounter instance.
+Create a new counter, optionally seeded with an existing map of counts.
+
+The map is retained by reference and mutated in place by `inc`/`dec`, so a
+shared map lets several counters observe and update the same counts.
 
 #### Parameters
 
@@ -48,7 +47,7 @@ Creates a new SimpleRateLimitCounter instance.
 
 `Map`\<`string`, `number`\> = `...`
 
-Optional existing Map to use for storage
+Backing store for per-key counts; defaults to a new `Map`.
 
 #### Returns
 
@@ -58,12 +57,11 @@ Optional existing Map to use for storage
 
 ### dec()
 
-> **dec**(`key`): `void`
+&gt; **dec**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:110](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L110)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:111](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L111)
 
-Decrements the count for a key.
-Removes the key from the map if count reaches 0.
+Decrement the count for a key, removing the key entirely when it reaches `0`.
 
 #### Parameters
 
@@ -71,7 +69,7 @@ Removes the key from the map if count reaches 0.
 
 `string`
 
-The key to decrement
+The key to decrement.
 
 #### Returns
 
@@ -79,14 +77,14 @@ The key to decrement
 
 #### Example
 
-```typescript
+```ts
 const counter = new SimpleRateLimitCounter();
-counter.inc('key');
-counter.inc('key');
-counter.dec('key');
-console.log(counter.getCount('key')); // 1
-counter.dec('key');
-console.log(counter.getCount('key')); // 0 (key removed from map)
+counter.inc("key");
+counter.inc("key");
+counter.dec("key");
+counter.getCount("key"); // → 1
+counter.dec("key");
+counter.getCount("key"); // → 0 (key removed from the map)
 ```
 
 #### Implementation of
@@ -97,11 +95,11 @@ console.log(counter.getCount('key')); // 0 (key removed from map)
 
 ### getCount()
 
-> **getCount**(`key`): `number`
+&gt; **getCount**(`key`): `number`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:66](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L66)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:72](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L72)
 
-Gets the current count for a key.
+Get the current count for a key.
 
 #### Parameters
 
@@ -109,21 +107,21 @@ Gets the current count for a key.
 
 `string`
 
-The key to get count for
+The key to read.
 
 #### Returns
 
 `number`
 
-The current count (0 if key doesn't exist)
+The current count, or `0` when the key is absent.
 
 #### Example
 
-```typescript
+```ts
 const counter = new SimpleRateLimitCounter();
-console.log(counter.getCount('key')); // 0
-counter.inc('key');
-console.log(counter.getCount('key')); // 1
+counter.getCount("key"); // → 0
+counter.inc("key");
+counter.getCount("key"); // → 1
 ```
 
 #### Implementation of
@@ -134,11 +132,11 @@ console.log(counter.getCount('key')); // 1
 
 ### inc()
 
-> **inc**(`key`): `void`
+&gt; **inc**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:84](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L84)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L88)
 
-Increments the count for a key.
+Increment the count for a key.
 
 #### Parameters
 
@@ -146,7 +144,7 @@ Increments the count for a key.
 
 `string`
 
-The key to increment
+The key to increment.
 
 #### Returns
 
@@ -154,11 +152,11 @@ The key to increment
 
 #### Example
 
-```typescript
+```ts
 const counter = new SimpleRateLimitCounter();
-counter.inc('user-123');
-counter.inc('user-123');
-console.log(counter.getCount('user-123')); // 2
+counter.inc("user-123");
+counter.inc("user-123");
+counter.getCount("user-123"); // → 2
 ```
 
 #### Implementation of

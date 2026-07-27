@@ -1,5 +1,8 @@
 # Variable: logger
 
-> `const` **logger**: [`Logger`](../classes/Logger)
+&gt; `const` **logger**: [`Logger`](../classes/Logger)
 
-Defined in: [logger.ts:369](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L369)
+Defined in: [logger.ts:479](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L479)
+
+The default shared logger, bound to the `[LOGGER]` context — the convenient
+entry point for ad-hoc logging without managing a per-context instance.

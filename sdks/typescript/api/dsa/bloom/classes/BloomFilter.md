@@ -1,6 +1,6 @@
 # Class: BloomFilter
 
-Defined in: [bloom.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/bloom.ts#L42)
+Defined in: [bloom.ts:54](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L54)
 
 Space-efficient probabilistic set membership test.
 
@@ -31,9 +31,9 @@ seen.has("drone-99"); // → false (with high probability)
 
 ### Constructor
 
-> **new BloomFilter**(`capacity`, `errorRate?`): `BloomFilter`
+&gt; **new BloomFilter**(`capacity`, `errorRate?`): `BloomFilter`
 
-Defined in: [bloom.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/bloom.ts#L55)
+Defined in: [bloom.ts:70](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L70)
 
 #### Parameters
 
@@ -46,10 +46,13 @@ Expected number of distinct items to insert. Memory
 
 ##### errorRate?
 
-`number` = `0.01`
+`number` & `Brand`\<`"Probability"`\>
 
-Target false-positive rate, in `(0, 1)`. Default
-  `0.01` (1%). Smaller values increase memory and hash count.
+Target false-positive rate as a branded
+  [Probability](../../schemas/type-aliases/Probability) in `(0, 1)`. Omit to use the default `0.01` (1%).
+  Construct one with `toProbability(...)` so an out-of-range value is
+  rejected at the type level; the runtime check below still guards
+  untrusted callers that reach this boundary via a cast.
 
 #### Returns
 
@@ -57,15 +60,15 @@ Target false-positive rate, in `(0, 1)`. Default
 
 #### Throws
 
-RangeError if `capacity <= 0` or `errorRate` is outside `(0, 1)`.
+If `capacity <= 0` or `errorRate` is outside `(0, 1)`.
 
 ## Methods
 
 ### add()
 
-> **add**(`item`): `void`
+&gt; **add**(`item`): `void`
 
-Defined in: [bloom.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/bloom.ts#L82)
+Defined in: [bloom.ts:98](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L98)
 
 Mark `item` as present. Subsequent `has(item)` calls always return
 `true`. Adding an item already present is a no-op.
@@ -84,9 +87,9 @@ Mark `item` as present. Subsequent `has(item)` calls always return
 
 ### has()
 
-> **has**(`item`): `boolean`
+&gt; **has**(`item`): `boolean`
 
-Defined in: [bloom.ts:96](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/bloom.ts#L96)
+Defined in: [bloom.ts:112](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L112)
 
 Probabilistic membership test.
 

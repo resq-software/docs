@@ -1,7 +1,7 @@
 # Type Alias: PriorityQueueOptions
 
-> **PriorityQueueOptions** = `S.Schema.Type`\<*typeof* [`PriorityQueueOptionsSchema`](../variables/PriorityQueueOptionsSchema)\>
+&gt; **PriorityQueueOptions** = `S.Schema.Type`\<*typeof* [`PriorityQueueOptionsSchema`](../variables/PriorityQueueOptionsSchema)\>
 
-Defined in: [schemas.ts:68](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L68)
+Defined in: [schemas.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L67)
 
 Inferred TS type for [PriorityQueueOptionsSchema](../variables/PriorityQueueOptionsSchema).

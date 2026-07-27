@@ -1,8 +1,13 @@
 # Interface: PathResult\<T\>
 
-Defined in: [graph.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L57)
+Defined in: [graph.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L75)
 
-Path result from shortest path algorithms
+Result of a shortest-path search.
+
+The fields move together: when [found](#found) is `false` (no route exists),
+`path` is empty and `distance` is `Number.POSITIVE_INFINITY`. When `found`
+is `true`, `path` runs from source to target inclusive and `distance` is its
+summed edge weight (`0` for a source-equals-target path).
 
 ## Type Parameters
 
@@ -14,28 +19,28 @@ Path result from shortest path algorithms
 
 ### distance
 
-> **distance**: `number`
+&gt; **distance**: `number`
 
-Defined in: [graph.ts:61](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L61)
+Defined in: [graph.ts:79](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L79)
 
-Total distance/weight of the path
+Total summed edge weight; `Infinity` when `found` is `false`.
 
 ***
 
 ### found
 
-> **found**: `boolean`
+&gt; **found**: `boolean`
 
-Defined in: [graph.ts:63](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L63)
+Defined in: [graph.ts:81](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L81)
 
-Whether a path was found
+Whether a path from source to target was found.
 
 ***
 
 ### path
 
-> **path**: `T`[]
+&gt; **path**: `T`[]
 
-Defined in: [graph.ts:59](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L59)
+Defined in: [graph.ts:77](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L77)
 
-Ordered list of vertices in the path
+Vertices from source to target inclusive; empty when `found` is `false`.

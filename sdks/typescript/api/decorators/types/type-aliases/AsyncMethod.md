@@ -1,24 +1,29 @@
 # Type Alias: AsyncMethod\<D, A\>
 
-> **AsyncMethod**\<`D`, `A`\> = (...`args`) => `Promise`\<`D`\>
+&gt; **AsyncMethod**\<`D`, `A`\> = (...`args`) =&gt; `Promise`\<`D`\>
 
-Defined in: [types.ts:67](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/types.ts#L67)
+Defined in: [types.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/types.ts#L92)
 
 A generic async method type.
+
+The counterpart to [Method](./Method) for promise-returning members: `D` here is
+the **resolved** value, so the method's actual return type is `Promise<D>`.
 
 ## Type Parameters
 
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The resolved type of the Promise
+The value the returned `Promise` resolves to (not the promise
+  itself).
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the method (as an array)
+The positional argument tuple; `extends unknown[]` keeps it a
+  tuple while allowing any shape.
 
 ## Parameters
 

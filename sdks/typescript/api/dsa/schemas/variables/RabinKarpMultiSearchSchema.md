@@ -1,7 +1,7 @@
 # Variable: RabinKarpMultiSearchSchema
 
-> `const` **RabinKarpMultiSearchSchema**: `Struct`\<\&#123; `patterns`: `NonEmptyArray`\<`String`\>; `text`: `String`; \&#125;\>
+&gt; `const` **RabinKarpMultiSearchSchema**: `Struct`\<\{ `patterns`: `NonEmptyArray`\<`String`\>; `text`: `String`; \}\>
 
-Defined in: [schemas.ts:110](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L110)
+Defined in: [schemas.ts:109](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L109)
 
 Validates input to a multi-pattern Rabin-Karp search (≥1 pattern).

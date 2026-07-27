@@ -1,10 +1,15 @@
 # Type Alias: KeyResolver
 
-> **KeyResolver** = (...`args`) => `string`
+&gt; **KeyResolver** = (...`args`) =&gt; `string`
 
-Defined in: [memoize/memoize.types.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L57)
+Defined in: [memoize/memoize.types.ts:43](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L43)
 
-Function type for resolving cache keys from method arguments.
+Resolves a cache key from a method's arguments.
+
+The returned string is the cache identity: it must be deterministic and
+collision-free for the inputs that should share (or not share) a cached value.
+Two argument sets that map to the same string are treated as the same call, so
+an over-broad resolver silently returns stale results.
 
 ## Parameters
 
@@ -12,18 +17,17 @@ Function type for resolving cache keys from method arguments.
 
 ...`unknown`[]
 
-The method arguments
+The method arguments.
 
 ## Returns
 
 `string`
 
-The cache key string
+The cache key; equal keys are treated as the same cached call.
 
 ## Example
 
-```typescript
-const keyResolver: KeyResolver = (userId, includeDetails) => {
-  return `${userId}-${includeDetails}`;
-};
+```ts
+const keyResolver: KeyResolver = (userId, includeDetails) =>
+  `${userId}-${includeDetails}`;
 ```

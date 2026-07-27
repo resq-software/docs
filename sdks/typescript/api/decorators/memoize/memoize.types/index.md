@@ -8,4 +8,4 @@
 ## Type Aliases
 
 - [KeyResolver](./type-aliases/KeyResolver)
-- [Memoizable](./type-aliases/Memoizable)
+- [~~Memoizable~~](./type-aliases/Memoizable)

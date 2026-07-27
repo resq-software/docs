@@ -1,11 +1,12 @@
 # Type Alias: CompareFn\<T\>
 
-> **CompareFn**\<`T`\> = (`a`, `b`) => `number`
+&gt; **CompareFn**\<`T`\> = (`a`, `b`) =&gt; `number`
 
-Defined in: [priority-queue.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L38)
+Defined in: [priority-queue.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L38)
 
-Comparison function for priority queue ordering
-Returns negative if a has higher priority, positive if b has higher priority, 0 if equal
+Comparison function for priority-queue ordering. Returns a negative number
+when `a` outranks `b`, a positive number when `b` outranks `a`, and `0` when
+they are equal.
 
 ## Type Parameters
 

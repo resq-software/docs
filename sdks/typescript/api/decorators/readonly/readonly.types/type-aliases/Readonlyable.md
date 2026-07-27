@@ -1,18 +1,28 @@
 # Type Alias: Readonlyable\<T\>
 
-> **Readonlyable**\<`T`\> = (`target`, `propertyName`, `descriptor`) => `PropertyDescriptor`
+&gt; **Readonlyable**\<`T`\> = \<`F`\>(`target`, `propertyName`, `descriptor`) =&gt; `TypedPropertyDescriptor`\<`F`\>
 
-Defined in: [readonly/readonly.types.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/readonly/readonly.types.ts#L37)
+Defined in: [readonly/readonly.types.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/readonly/readonly.types.ts#L46)
 
-Type for decorators that make methods read-only.
+Signature for decorators that make a method read-only.
+
+Generic over the decorated method `F`, so the descriptor's type is preserved
+end-to-end rather than erased to `Method<any>` — the shape of the built-in
+(itself generic) `MethodDecorator`.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
+
+## Type Parameters
+
+### F
+
+`F` *extends* (...`args`) =&gt; `unknown`
 
 ## Parameters
 
@@ -20,33 +30,33 @@ The type of the class containing the decorated method
 
 `T`
 
-The class prototype
+The class prototype.
 
 ### propertyName
 
-keyof `T`
+`PropertyKey`
 
-The name of the method being decorated
+The name of the method being decorated.
 
 ### descriptor
 
-`PropertyDescriptor`
+`TypedPropertyDescriptor`\<`F`\>
 
-The property descriptor
+The property descriptor.
 
 ## Returns
 
-`PropertyDescriptor`
+`TypedPropertyDescriptor`\<`F`\>
 
-The modified descriptor with writable set to false
+The modified descriptor with `writable` set to `false`.
 
 ## Example
 
-```typescript
+```ts
 type ReadonlyMethod = Readonlyable<MyClass>;
 
-const decorator: ReadonlyMethod = (target, key, descriptor) => {
-  descriptor.writable = false;
-  return descriptor;
-};
+const decorator: ReadonlyMethod = (_target, _key, descriptor) => ({
+  ...descriptor,
+  writable: false,
+});
 ```

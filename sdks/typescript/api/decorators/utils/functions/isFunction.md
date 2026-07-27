@@ -1,8 +1,10 @@
 # Function: isFunction()
 
-> **isFunction**(`value`): `value is Function`
+&gt; **isFunction**(`value`): `value is (args: unknown[]) => unknown`
 
-Defined in: [\_utils.ts:28](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L28)
+Defined in: [\_utils.ts:41](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L41)
+
+Narrow `value` to any callable.
 
 ## Parameters
 
@@ -12,4 +14,4 @@ Defined in: [\_utils.ts:28](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 ## Returns
 
-`value is Function`
+`value is (args: unknown[]) => unknown`

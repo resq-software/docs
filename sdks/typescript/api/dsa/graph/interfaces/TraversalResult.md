@@ -1,8 +1,11 @@
 # Interface: TraversalResult\<T\>
 
-Defined in: [graph.ts:69](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L69)
+Defined in: [graph.ts:90](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L90)
 
-Graph traversal result
+Result of a graph traversal (BFS or DFS).
+
+All three collections cover exactly the vertices reachable from the start,
+and are empty when the start vertex is not in the graph.
 
 ## Type Parameters
 
@@ -14,28 +17,30 @@ Graph traversal result
 
 ### distances
 
-> **distances**: `Map`\<`T`, `number`\>
+&gt; **distances**: `Map`\<`T`, `number`\>
 
-Defined in: [graph.ts:75](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L75)
+Defined in: [graph.ts:102](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L102)
 
-Distance from source (for BFS)
+Maps each visited vertex to its distance from the start: hop count for
+[Graph.bfs](../classes/Graph#bfs), recursion depth for [Graph.dfs](../classes/Graph#dfs).
 
 ***
 
 ### parents
 
-> **parents**: `Map`\<`T`, `T` \| `null`\>
+&gt; **parents**: `Map`\<`T`, `T` \| `null`\>
 
-Defined in: [graph.ts:73](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L73)
+Defined in: [graph.ts:97](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L97)
 
-Parent map for path reconstruction
+Maps each visited vertex to the vertex it was reached from; the start
+vertex maps to `null`. Follow it back to reconstruct a path.
 
 ***
 
 ### vertices
 
-> **vertices**: `T`[]
+&gt; **vertices**: `T`[]
 
-Defined in: [graph.ts:71](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L71)
+Defined in: [graph.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L92)
 
-Vertices in traversal order
+Reachable vertices in the order they were visited.

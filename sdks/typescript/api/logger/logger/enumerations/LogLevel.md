@@ -1,17 +1,18 @@
 # Enumeration: LogLevel
 
-Defined in: [logger.ts:32](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L32)
+Defined in: [logger.ts:42](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L42)
 
-Enum representing different logging levels with their priority values.
-Higher values indicate more verbose logging.
+Logging levels with their priority values; higher values enable more verbose
+logging. A message is emitted only when its level is at or below the logger's
+configured minimum.
 
 ## Enumeration Members
 
 ### ALL
 
-> **ALL**: `6`
+&gt; **ALL**: `6`
 
-Defined in: [logger.ts:46](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L46)
+Defined in: [logger.ts:56](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L56)
 
 All possible log messages
 
@@ -19,9 +20,9 @@ All possible log messages
 
 ### DEBUG
 
-> **DEBUG**: `4`
+&gt; **DEBUG**: `4`
 
-Defined in: [logger.ts:42](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L42)
+Defined in: [logger.ts:52](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L52)
 
 Errors, warnings, info, and debug messages
 
@@ -29,9 +30,9 @@ Errors, warnings, info, and debug messages
 
 ### ERROR
 
-> **ERROR**: `1`
+&gt; **ERROR**: `1`
 
-Defined in: [logger.ts:36](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L36)
+Defined in: [logger.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L46)
 
 Only error messages
 
@@ -39,9 +40,9 @@ Only error messages
 
 ### INFO
 
-> **INFO**: `3`
+&gt; **INFO**: `3`
 
-Defined in: [logger.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L40)
+Defined in: [logger.ts:50](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L50)
 
 Errors, warnings, and informational messages
 
@@ -49,9 +50,9 @@ Errors, warnings, and informational messages
 
 ### NONE
 
-> **NONE**: `0`
+&gt; **NONE**: `0`
 
-Defined in: [logger.ts:34](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L34)
+Defined in: [logger.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L44)
 
 No logging
 
@@ -59,9 +60,9 @@ No logging
 
 ### TRACE
 
-> **TRACE**: `5`
+&gt; **TRACE**: `5`
 
-Defined in: [logger.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L44)
+Defined in: [logger.ts:54](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L54)
 
 Errors, warnings, info, debug, and trace messages
 
@@ -69,8 +70,8 @@ Errors, warnings, info, debug, and trace messages
 
 ### WARN
 
-> **WARN**: `2`
+&gt; **WARN**: `2`
 
-Defined in: [logger.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.ts#L38)
+Defined in: [logger.ts:48](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L48)
 
 Errors and warnings

@@ -1,7 +1,7 @@
 # Type Alias: RabinKarpMultiSearch
 
-> **RabinKarpMultiSearch** = `S.Schema.Type`\<*typeof* [`RabinKarpMultiSearchSchema`](../variables/RabinKarpMultiSearchSchema)\>
+&gt; **RabinKarpMultiSearch** = `S.Schema.Type`\<*typeof* [`RabinKarpMultiSearchSchema`](../variables/RabinKarpMultiSearchSchema)\>
 
-Defined in: [schemas.ts:115](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L115)
+Defined in: [schemas.ts:114](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L114)
 
 Inferred TS type for [RabinKarpMultiSearchSchema](../variables/RabinKarpMultiSearchSchema).

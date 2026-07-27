@@ -4,8 +4,11 @@
 
 - [GraphEdge](./type-aliases/GraphEdge)
 - [GraphOptions](./type-aliases/GraphOptions)
+- [Latitude](./type-aliases/Latitude)
+- [Longitude](./type-aliases/Longitude)
 - [PriorityItemInput](./type-aliases/PriorityItemInput)
 - [PriorityQueueOptions](./type-aliases/PriorityQueueOptions)
+- [Probability](./type-aliases/Probability)
 - [RabinKarpMultiSearch](./type-aliases/RabinKarpMultiSearch)
 - [RabinKarpOptions](./type-aliases/RabinKarpOptions)
 - [RabinKarpSearch](./type-aliases/RabinKarpSearch)
@@ -18,8 +21,11 @@
 
 - [GraphEdgeSchema](./variables/GraphEdgeSchema)
 - [GraphOptionsSchema](./variables/GraphOptionsSchema)
+- [LatitudeSchema](./variables/LatitudeSchema)
+- [LongitudeSchema](./variables/LongitudeSchema)
 - [PriorityItemSchema](./variables/PriorityItemSchema)
 - [PriorityQueueOptionsSchema](./variables/PriorityQueueOptionsSchema)
+- [ProbabilitySchema](./variables/ProbabilitySchema)
 - [RabinKarpMultiSearchSchema](./variables/RabinKarpMultiSearchSchema)
 - [RabinKarpOptionsSchema](./variables/RabinKarpOptionsSchema)
 - [RabinKarpSearchSchema](./variables/RabinKarpSearchSchema)
@@ -31,5 +37,11 @@
 ## Functions
 
 - [createValidator](./functions/createValidator)
+- [isLatitude](./functions/isLatitude)
+- [isLongitude](./functions/isLongitude)
+- [isProbability](./functions/isProbability)
+- [toLatitude](./functions/toLatitude)
+- [toLongitude](./functions/toLongitude)
+- [toProbability](./functions/toProbability)
 - [validate](./functions/validate)
 - [validateSafe](./functions/validateSafe)

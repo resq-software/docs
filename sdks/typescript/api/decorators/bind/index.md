@@ -4,7 +4,7 @@
 
 ### bind
 
-Re-exports [bind](./bind/functions/bind)
+Re-exports [bind](../@resq-systems/decorators/bind/bind/functions/bind)
 
 ***
 

@@ -1,7 +1,7 @@
 # Variable: RabinKarpOptionsSchema
 
-> `const` **RabinKarpOptionsSchema**: `Struct`\<\&#123; `caseInsensitive`: `optional`\<`Boolean`\>; `includeLineInfo`: `optional`\<`Boolean`\>; `maxMatches`: `optional`\<`Int`\>; \&#125;\>
+&gt; `const` **RabinKarpOptionsSchema**: `Struct`\<\{ `caseInsensitive`: `optional`\<`Boolean`\>; `includeLineInfo`: `optional`\<`Boolean`\>; `maxMatches`: `optional`\<`Int`\>; \}\>
 
-Defined in: [schemas.ts:93](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L93)
+Defined in: [schemas.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L92)
 
 Construction options for RabinKarp.

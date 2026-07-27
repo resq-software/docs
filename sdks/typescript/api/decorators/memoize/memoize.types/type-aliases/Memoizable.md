@@ -1,10 +1,10 @@
-# Type Alias: Memoizable\<T, D\>
+# ~~Type Alias: Memoizable\<T, D\>~~
 
-> **Memoizable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
+&gt; **Memoizable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) =&gt; `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
-Defined in: [memoize/memoize.types.ts:129](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L129)
+Defined in: [memoize/memoize.types.ts:127](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L127)
 
-Type for the
+Type for the `@memoize` decorator function.
 
 ## Type Parameters
 
@@ -12,13 +12,13 @@ Type for the
 
 `T`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 ### D
 
 `D`
 
-The return type of the decorated method
+The return type of the decorated method.
 
 ## Parameters
 
@@ -26,26 +26,32 @@ The return type of the decorated method
 
 `T`
 
-The class prototype
+The class prototype.
 
 ### propertyName
 
 keyof `T`
 
-The name of the method being decorated
+The name of the method being decorated.
 
 ### descriptor
 
 `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
-The property descriptor
+The property descriptor.
 
 ## Returns
 
 `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`D`\>\>
 
-The modified descriptor
+The modified descriptor.
 
-## Memoize
+## Deprecated
 
-decorator function.
+Use Decorator from `../types.js` instead — removed in
+v1.0.0. This shape erases the decorated method's signature to `Method<D>`,
+which is not assignable to a concrete method's descriptor under strict
+`strictFunctionTypes` (TS1241 / TS1270 at the decoration site). `memoize` now
+returns Decorator, which preserves the signature end-to-end. Migration:
+replace `Memoizable<T, D>` annotations with `Decorator<T>` (drop the `D`
+parameter); no runtime change.

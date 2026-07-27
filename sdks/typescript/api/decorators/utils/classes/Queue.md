@@ -1,6 +1,8 @@
 # Class: Queue\<T\>
 
-Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L51)
+Defined in: [\_utils.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L85)
+
+A minimal linked-list FIFO queue with O(1) enqueue and dequeue.
 
 ## Type Parameters
 
@@ -12,7 +14,7 @@ Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 ### Constructor
 
-> **new Queue**\<`T`\>(): `Queue`\<`T`\>
+&gt; **new Queue**\<`T`\>(): `Queue`\<`T`\>
 
 #### Returns
 
@@ -22,27 +24,43 @@ Defined in: [\_utils.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 ### dequeue()
 
-> **dequeue**(): `T` \| `null`
+&gt; **dequeue**(): `T` \| `null`
 
-Defined in: [\_utils.ts:78](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L78)
+Defined in: [\_utils.ts:132](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L132)
+
+Remove and return the item at the head of the queue.
+
+Mutates the queue in place: unlinks the head node and decrements the size.
+Signals emptiness by returning the sentinel `null` rather than throwing, so
+a stored `null` value is indistinguishable from "empty" — do not enqueue
+`null` if you rely on the return to detect drain.
 
 #### Returns
 
 `T` \| `null`
 
+The dequeued item, or `null` when the queue is empty.
+
 ***
 
 ### enqueue()
 
-> **enqueue**(`item`): `void`
+&gt; **enqueue**(`item`): `void`
 
-Defined in: [\_utils.ts:64](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L64)
+Defined in: [\_utils.ts:108](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L108)
+
+Append an item to the tail of the queue.
+
+Mutates the queue in place: links a new node at the tail and increments the
+size. Not idempotent — each call adds a distinct entry, duplicates included.
 
 #### Parameters
 
 ##### item
 
 `T`
+
+The value to enqueue.
 
 #### Returns
 
@@ -52,9 +70,11 @@ Defined in: [\_utils.ts:64](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 ### getSize()
 
-> **getSize**(): `number`
+&gt; **getSize**(): `number`
 
-Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L56)
+Defined in: [\_utils.ts:91](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L91)
+
+Return the number of queued items.
 
 #### Returns
 
@@ -64,9 +84,11 @@ Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 ### isEmpty()
 
-> **isEmpty**(): `boolean`
+&gt; **isEmpty**(): `boolean`
 
-Defined in: [\_utils.ts:60](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L60)
+Defined in: [\_utils.ts:96](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L96)
+
+Return `true` when the queue holds no items.
 
 #### Returns
 

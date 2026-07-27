@@ -1,7 +1,7 @@
 # Type Alias: LogLevelString
 
-> **LogLevelString** = `"error"` \| `"warn"` \| `"info"` \| `"debug"` \| `"trace"` \| `"action"` \| `"success"`
+&gt; **LogLevelString** = `"error"` \| `"warn"` \| `"info"` \| `"debug"` \| `"trace"` \| `"action"` \| `"success"`
 
-Defined in: [logger.types.ts:74](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L74)
+Defined in: [logger.types.ts:86](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L86)
 
-Log level strings for type safety
+Log level strings used across the transport and decorator surfaces.

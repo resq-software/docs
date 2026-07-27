@@ -2,9 +2,27 @@
 
 ## References
 
+### byLevel
+
+Re-exports [byLevel](../transports/functions/byLevel)
+
+***
+
 ### ColorKey
 
-Re-exports [ColorKey](../logger/type-aliases/ColorKey)
+Re-exports [ColorKey](../logger.types/type-aliases/ColorKey)
+
+***
+
+### createFilterTransport
+
+Re-exports [createFilterTransport](../transports/functions/createFilterTransport)
+
+***
+
+### JsonTransport
+
+Re-exports [JsonTransport](../transports/classes/JsonTransport)
 
 ***
 
@@ -28,7 +46,7 @@ Re-exports [LogClassOptions](../logger.types/interfaces/LogClassOptions)
 
 ### LogData
 
-Re-exports [LogData](../logger/interfaces/LogData)
+Re-exports [LogData](../logger.types/interfaces/LogData)
 
 ***
 
@@ -64,7 +82,7 @@ Re-exports [Logger](../logger/classes/Logger)
 
 ### LoggerOptions
 
-Re-exports [LoggerOptions](../logger/interfaces/LoggerOptions)
+Re-exports [LoggerOptions](../logger.types/interfaces/LoggerOptions)
 
 ***
 
@@ -101,3 +119,15 @@ Re-exports [LogTimingOptions](../logger.types/interfaces/LogTimingOptions)
 ### LogTransport
 
 Re-exports [LogTransport](../logger.types/interfaces/LogTransport)
+
+***
+
+### MemoryTransport
+
+Re-exports [MemoryTransport](../transports/classes/MemoryTransport)
+
+***
+
+### SimpleLogLevel
+
+Re-exports [SimpleLogLevel](../logger.types/type-aliases/SimpleLogLevel)

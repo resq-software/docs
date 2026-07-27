@@ -2,59 +2,65 @@
 
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+&gt; **memoizeAsync**\<`T`\>(): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:105](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L105)
+Defined in: [memoize-async/memoize-async.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L88)
 
-Decorator that caches async method results based on their arguments.
-Prevents duplicate concurrent requests by returning the same promise
-for identical calls until the first one resolves.
+Cache a promise-returning method's results by their arguments and deduplicate
+concurrent calls: identical calls share one promise until the first resolves.
+
+Call with no argument to cache forever, a number for a TTL in milliseconds, or
+an [AsyncMemoizeConfig](../../memoize-async.types/interfaces/AsyncMemoizeConfig) for a custom cache, key resolver, and/or expiry.
+
+The cache and in-flight promise map are built once, at decoration time, so both
+the cached values and the concurrent-call deduplication are shared across every
+instance of the class. Failure surfaces as a rejected promise — a rejection is
+shared by all callers deduped onto the same in-flight promise, and the entry is
+then cleared so a later call retries rather than replaying the error. Only
+resolved values are cached; rejections are not. Cancellation is not supported
+(no `AbortSignal`). Mutates the supplied property descriptor in place.
 
 ### Type Parameters
 
 #### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
-
-#### D
-
-`D` = `any`
-
-The resolved type of the async method
+The class type that owns the decorated method.
 
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+[`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-The decorator function
+The async method decorator.
 
 ### Throws
 
-When applied to a non-method property
+If applied to a member without a `value` descriptor (an
+accessor or plain property rather than a method).
 
 ### Example
 
-```typescript
+```ts
 class DataService {
-  // Basic usage - caches indefinitely
+  // Basic usage — caches indefinitely.
   @memoizeAsync()
   async fetchConfig(): Promise<Config> {
-    return fetch('/api/config').then(r => r.json());
+    return fetch("/api/config").then((r) => r.json());
   }
 
-  // With TTL
-  @memoizeAsync(60000) // Cache for 60 seconds
+  // With a TTL of 60 seconds.
+  @memoizeAsync(60000)
   async getExchangeRates(): Promise<Rates> {
-    return fetch('/api/rates').then(r => r.json());
+    return fetch("/api/rates").then((r) => r.json());
   }
 
-  // With custom cache and key resolver
+  // With a custom cache and key resolver.
   @memoizeAsync({
     cache: new RedisCache<string, Product>(),
-    keyResolver: (productId, includeDetails) => `product-${productId}-${includeDetails}`,
-    expirationTimeMs: 300000
+    keyResolver: (productId, includeDetails) =>
+      `product-${productId}-${includeDetails}`,
+    expirationTimeMs: 300000,
   })
   async getProduct(productId: string, includeDetails: boolean): Promise<Product> {
     return this.fetchProduct(productId, includeDetails);
@@ -63,36 +69,50 @@ class DataService {
 
 const service = new DataService();
 
-// Concurrent calls with same args share the same promise
+// Concurrent calls with the same args share one promise.
 const [product1, product2] = await Promise.all([
-  service.getProduct('123', true),
-  service.getProduct('123', true) // Same promise as above
+  service.getProduct("123", true),
+  service.getProduct("123", true),
 ]);
 ```
 
+### See
+
+[memoize](../../../memoize) for synchronous methods.
+
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+&gt; **memoizeAsync**\<`T`, `D`\>(`config`): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:106](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L106)
+Defined in: [memoize-async/memoize-async.ts:89](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L89)
 
-Decorator that caches async method results based on their arguments.
-Prevents duplicate concurrent requests by returning the same promise
-for identical calls until the first one resolves.
+Cache a promise-returning method's results by their arguments and deduplicate
+concurrent calls: identical calls share one promise until the first resolves.
+
+Call with no argument to cache forever, a number for a TTL in milliseconds, or
+an [AsyncMemoizeConfig](../../memoize-async.types/interfaces/AsyncMemoizeConfig) for a custom cache, key resolver, and/or expiry.
+
+The cache and in-flight promise map are built once, at decoration time, so both
+the cached values and the concurrent-call deduplication are shared across every
+instance of the class. Failure surfaces as a rejected promise — a rejection is
+shared by all callers deduped onto the same in-flight promise, and the entry is
+then cleared so a later call retries rather than replaying the error. Only
+resolved values are cached; rejections are not. Cancellation is not supported
+(no `AbortSignal`). Mutates the supplied property descriptor in place.
 
 ### Type Parameters
 
 #### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 #### D
 
-`D` = `any`
+`D` = `unknown`
 
-The resolved type of the async method
+The resolved type of the async method.
 
 ### Parameters
 
@@ -100,39 +120,39 @@ The resolved type of the async method
 
 [`AsyncMemoizeConfig`](../../memoize-async.types/interfaces/AsyncMemoizeConfig)\<`T`, `D`\>
 
-Configuration for memoization
-
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+[`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-The decorator function
+The async method decorator.
 
 ### Throws
 
-When applied to a non-method property
+If applied to a member without a `value` descriptor (an
+accessor or plain property rather than a method).
 
 ### Example
 
-```typescript
+```ts
 class DataService {
-  // Basic usage - caches indefinitely
+  // Basic usage — caches indefinitely.
   @memoizeAsync()
   async fetchConfig(): Promise<Config> {
-    return fetch('/api/config').then(r => r.json());
+    return fetch("/api/config").then((r) => r.json());
   }
 
-  // With TTL
-  @memoizeAsync(60000) // Cache for 60 seconds
+  // With a TTL of 60 seconds.
+  @memoizeAsync(60000)
   async getExchangeRates(): Promise<Rates> {
-    return fetch('/api/rates').then(r => r.json());
+    return fetch("/api/rates").then((r) => r.json());
   }
 
-  // With custom cache and key resolver
+  // With a custom cache and key resolver.
   @memoizeAsync({
     cache: new RedisCache<string, Product>(),
-    keyResolver: (productId, includeDetails) => `product-${productId}-${includeDetails}`,
-    expirationTimeMs: 300000
+    keyResolver: (productId, includeDetails) =>
+      `product-${productId}-${includeDetails}`,
+    expirationTimeMs: 300000,
   })
   async getProduct(productId: string, includeDetails: boolean): Promise<Product> {
     return this.fetchProduct(productId, includeDetails);
@@ -141,36 +161,44 @@ class DataService {
 
 const service = new DataService();
 
-// Concurrent calls with same args share the same promise
+// Concurrent calls with the same args share one promise.
 const [product1, product2] = await Promise.all([
-  service.getProduct('123', true),
-  service.getProduct('123', true) // Same promise as above
+  service.getProduct("123", true),
+  service.getProduct("123", true),
 ]);
 ```
 
+### See
+
+[memoize](../../../memoize) for synchronous methods.
+
 ## Call Signature
 
-> **memoizeAsync**\<`T`, `D`\>(`expirationTimeMs`): [`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+&gt; **memoizeAsync**\<`T`\>(`expirationTimeMs`): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [memoize-async/memoize-async.ts:109](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.ts#L109)
+Defined in: [memoize-async/memoize-async.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.ts#L92)
 
-Decorator that caches async method results based on their arguments.
-Prevents duplicate concurrent requests by returning the same promise
-for identical calls until the first one resolves.
+Cache a promise-returning method's results by their arguments and deduplicate
+concurrent calls: identical calls share one promise until the first resolves.
+
+Call with no argument to cache forever, a number for a TTL in milliseconds, or
+an [AsyncMemoizeConfig](../../memoize-async.types/interfaces/AsyncMemoizeConfig) for a custom cache, key resolver, and/or expiry.
+
+The cache and in-flight promise map are built once, at decoration time, so both
+the cached values and the concurrent-call deduplication are shared across every
+instance of the class. Failure surfaces as a rejected promise — a rejection is
+shared by all callers deduped onto the same in-flight promise, and the entry is
+then cleared so a later call retries rather than replaying the error. Only
+resolved values are cached; rejections are not. Cancellation is not supported
+(no `AbortSignal`). Mutates the supplied property descriptor in place.
 
 ### Type Parameters
 
 #### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
-
-#### D
-
-`D` = `any`
-
-The resolved type of the async method
+The class type that owns the decorated method.
 
 ### Parameters
 
@@ -178,39 +206,39 @@ The resolved type of the async method
 
 `number`
 
-Cache expiration time in milliseconds
-
 ### Returns
 
-[`AsyncMemoizable`](../../memoize-async.types/type-aliases/AsyncMemoizable)\<`T`, `D`\>
+[`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-The decorator function
+The async method decorator.
 
 ### Throws
 
-When applied to a non-method property
+If applied to a member without a `value` descriptor (an
+accessor or plain property rather than a method).
 
 ### Example
 
-```typescript
+```ts
 class DataService {
-  // Basic usage - caches indefinitely
+  // Basic usage — caches indefinitely.
   @memoizeAsync()
   async fetchConfig(): Promise<Config> {
-    return fetch('/api/config').then(r => r.json());
+    return fetch("/api/config").then((r) => r.json());
   }
 
-  // With TTL
-  @memoizeAsync(60000) // Cache for 60 seconds
+  // With a TTL of 60 seconds.
+  @memoizeAsync(60000)
   async getExchangeRates(): Promise<Rates> {
-    return fetch('/api/rates').then(r => r.json());
+    return fetch("/api/rates").then((r) => r.json());
   }
 
-  // With custom cache and key resolver
+  // With a custom cache and key resolver.
   @memoizeAsync({
     cache: new RedisCache<string, Product>(),
-    keyResolver: (productId, includeDetails) => `product-${productId}-${includeDetails}`,
-    expirationTimeMs: 300000
+    keyResolver: (productId, includeDetails) =>
+      `product-${productId}-${includeDetails}`,
+    expirationTimeMs: 300000,
   })
   async getProduct(productId: string, includeDetails: boolean): Promise<Product> {
     return this.fetchProduct(productId, includeDetails);
@@ -219,9 +247,13 @@ class DataService {
 
 const service = new DataService();
 
-// Concurrent calls with same args share the same promise
+// Concurrent calls with the same args share one promise.
 const [product1, product2] = await Promise.all([
-  service.getProduct('123', true),
-  service.getProduct('123', true) // Same promise as above
+  service.getProduct("123", true),
+  service.getProduct("123", true),
 ]);
 ```
+
+### See
+
+[memoize](../../../memoize) for synchronous methods.

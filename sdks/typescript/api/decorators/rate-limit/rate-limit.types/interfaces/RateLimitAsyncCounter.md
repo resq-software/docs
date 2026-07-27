@@ -1,15 +1,18 @@
 # Interface: RateLimitAsyncCounter
 
-Defined in: [rate-limit/rate-limit.types.ts:150](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L150)
+Defined in: [rate-limit/rate-limit.types.ts:136](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L136)
 
-Interface for async rate limit counter implementations.
-Use this when the counter needs to perform async operations (e.g., Redis, database).
+Asynchronous counter contract for distributed rate limiting; use it when the
+counter performs async operations (e.g. Redis or a database).
 
- RateLimitAsyncCounter
+`getCount` resolves `0` for an unseen or fully-decremented key. Because
+`rateLimitFn` reads then increments in two separate awaits, this contract alone
+cannot guarantee a hard cap under concurrency; back it with an atomic
+increment-and-read for a strict limit (see rateLimitFn).
 
 ## Example
 
-```typescript
+```ts
 class RedisCounter implements RateLimitAsyncCounter {
   async inc(key: string): Promise<void> {
     await redis.incr(`ratelimit:${key}`);
@@ -30,11 +33,11 @@ class RedisCounter implements RateLimitAsyncCounter {
 
 ### dec
 
-> **dec**: (`key`) => `Promise`\<`void`\>
+&gt; **dec**: (`key`) =&gt; `Promise`\<`void`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:154](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L154)
+Defined in: [rate-limit/rate-limit.types.ts:140](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L140)
 
-Decrement the count for a key asynchronously
+Decrement the count for a key asynchronously.
 
 #### Parameters
 
@@ -50,11 +53,11 @@ Decrement the count for a key asynchronously
 
 ### getCount
 
-> **getCount**: (`key`) => `Promise`\<`number`\>
+&gt; **getCount**: (`key`) =&gt; `Promise`\<`number`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:156](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L156)
+Defined in: [rate-limit/rate-limit.types.ts:142](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L142)
 
-Get the current count for a key asynchronously
+Get the current count for a key asynchronously.
 
 #### Parameters
 
@@ -70,11 +73,11 @@ Get the current count for a key asynchronously
 
 ### inc
 
-> **inc**: (`key`) => `Promise`\<`void`\>
+&gt; **inc**: (`key`) =&gt; `Promise`\<`void`\>
 
-Defined in: [rate-limit/rate-limit.types.ts:152](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L152)
+Defined in: [rate-limit/rate-limit.types.ts:138](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L138)
 
-Increment the count for a key asynchronously
+Increment the count for a key asynchronously.
 
 #### Parameters
 

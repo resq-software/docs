@@ -1,44 +1,51 @@
 # Function: delegate()
 
-> **delegate**\<`T`, `D`\>(`keyResolver?`): [`Delegatable`](../../delegate.types/type-aliases/Delegatable)\<`T`, `D`\>
+&gt; **delegate**\<`T`, `D`\>(`keyResolver?`): [`Delegatable`](../../delegate.types/type-aliases/Delegatable)\<`T`, `D`\>
 
-Defined in: [delegate/delegate.ts:90](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delegate/delegate.ts#L90)
+Defined in: [delegate/delegate.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delegate/delegate.ts#L92)
 
 Decorator that deduplicates concurrent async method calls.
 Multiple calls with the same arguments will share the same promise
 until the first one resolves or rejects.
 
+Dedup state (the in-flight-promise map) lives in the wrapper installed on the
+descriptor, shared across all instances of the class. The default key is
+`JSON.stringify(args)`; supply `keyResolver` for arguments that do not
+serialize cleanly. See [delegateFn](../../delegate.fn/functions/delegateFn) for the settle-then-evict lifecycle
+and the synchronous key-generation failure mode.
+
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The type of the class containing the decorated method.
 
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the decorated method (wrapped in Promise)
+The return type of the decorated method (wrapped in a promise).
 
 ## Parameters
 
 ### keyResolver?
 
-(...`args`) => `string`
+(...`args`) =&gt; `string`
 
-Optional function to generate cache keys from arguments
+Optional function to generate cache keys from arguments.
 
 ## Returns
 
 [`Delegatable`](../../delegate.types/type-aliases/Delegatable)\<`T`, `D`\>
 
-The decorator function
+The decorator function.
 
 ## Throws
 
-When applied to a non-method property
+At decoration time, when applied to anything without a method
+  value, with message `"@delegate is applicable only on a methods."`.
 
 ## Example
 

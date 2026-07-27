@@ -1,11 +1,11 @@
 # Type Alias: ObserverCallback\<T\>
 
-> **ObserverCallback**\<`T`\> = (`value`) => `unknown`
+&gt; **ObserverCallback**\<`T`\> = (`value`) =&gt; `unknown`
 
-Defined in: [observer/observer.types.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/observer/observer.types.ts#L38)
+Defined in: [observer/observer.types.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.types.ts#L44)
 
-Callback function type for property observers.
-Called whenever the observed property value changes.
+Callback invoked whenever an observed property is assigned a new value. Any
+return value is ignored.
 
 ## Type Parameters
 
@@ -13,7 +13,7 @@ Called whenever the observed property value changes.
 
 `T`
 
-The type of the property value
+The type of the property value.
 
 ## Parameters
 
@@ -21,24 +21,24 @@ The type of the property value
 
 `T`
 
-The new value of the property
+The newly assigned value.
 
 ## Returns
 
 `unknown`
 
-Can return any value (typically void)
+Any value; the return is ignored.
 
 ## Example
 
-```typescript
+```ts
 const onCountChange: ObserverCallback<number> = (newValue) => {
   console.log(`Count is now: ${newValue}`);
 };
 
 const onNameChange: ObserverCallback<string> = (newValue) => {
   if (newValue.length < 3) {
-    console.warn('Name is too short!');
+    console.warn("Name is too short!");
   }
 };
 ```

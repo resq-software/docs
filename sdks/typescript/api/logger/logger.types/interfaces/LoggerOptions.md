@@ -1,55 +1,62 @@
 # Interface: LoggerOptions
 
-Defined in: [logger.types.ts:32](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L32)
+Defined in: [logger.types.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L51)
 
-Configuration options for the Logger
+Configuration options for a [Logger](../../logger/classes/Logger) instance.
+
+Only [LoggerOptions.minLevel](#minlevel) currently influences behavior; the
+remaining fields are accepted but not yet applied by the console formatter —
+timestamps are always emitted and output is never colorized regardless of what
+is passed. Treat the formatting/file fields as reserved surface.
 
 ## Properties
 
 ### colorize?
 
-> `optional` **colorize?**: `boolean`
+&gt; `optional` **colorize?**: `boolean`
 
-Defined in: [logger.types.ts:44](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L44)
+Defined in: [logger.types.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L61)
 
-Whether to colorize log output
+Reserved: console output is not currently colorized.
 
 ***
 
 ### filePath?
 
-> `optional` **filePath?**: `string`
+&gt; `optional` **filePath?**: `string`
 
-Defined in: [logger.types.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L52)
+Defined in: [logger.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L65)
 
-Path to the log file if logToFile is enabled
+Reserved: only meaningful alongside [LoggerOptions.logToFile](#logtofile).
 
 ***
 
 ### includeTimestamp?
 
-> `optional` **includeTimestamp?**: `boolean`
+&gt; `optional` **includeTimestamp?**: `boolean`
 
-Defined in: [logger.types.ts:40](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L40)
+Defined in: [logger.types.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L59)
 
-Whether to include timestamps in log messages
+Reserved: timestamps are currently emitted unconditionally.
 
 ***
 
 ### logToFile?
 
-> `optional` **logToFile?**: `boolean`
+&gt; `optional` **logToFile?**: `boolean`
 
-Defined in: [logger.types.ts:48](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L48)
+Defined in: [logger.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L63)
 
-Whether to write logs to a file (server-side only)
+Reserved: file output is not currently implemented (server-side intent).
 
 ***
 
 ### minLevel?
 
-> `optional` **minLevel?**: [`LogLevel`](../../logger/enumerations/LogLevel)
+&gt; `optional` **minLevel?**: [`LogLevel`](../../logger/enumerations/LogLevel)
 
-Defined in: [logger.types.ts:36](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L36)
+Defined in: [logger.types.ts:57](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L57)
 
-The minimum level of messages to log
+Minimum level a message must meet to be emitted. When omitted, the
+constructor falls back to the `LOG_LEVEL`/`BUN_LOG_LEVEL` env var, then to a
+`NODE_ENV`-based default (`ERROR` in production, `ALL` otherwise).

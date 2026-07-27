@@ -1,25 +1,27 @@
 # Function: throttleAsync()
 
-> **throttleAsync**\<`T`, `D`\>(`parallelCalls?`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+&gt; **throttleAsync**\<`T`\>(`parallelCalls?`): [`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-Defined in: [throttle-async/throttle-async.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async.ts#L82)
+Defined in: [throttle-async/throttle-async.ts:64](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle-async/throttle-async.ts#L64)
 
-Decorator that limits concurrent async method calls.
-Excess calls are queued and executed when slots become available.
+Limit an async method to `parallelCalls` concurrent executions; excess calls
+queue and run in FIFO order as slots free up.
+
+The queue/executor is created once, at decoration time, so the concurrency limit
+spans every instance of the class, not each instance separately. A call's promise
+settles with its own method result — a rejection rejects only that promise and
+frees its slot so the queue keeps draining. The queue is unbounded and there is
+no cancellation (`AbortSignal` is not honoured). `parallelCalls` must be at least
+`1`; a value below `1` never dispatches and calls queue forever. Mutates the
+supplied property descriptor in place.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
-
-### D
-
-`D` = `any`
-
-The resolved type of the async method
+The class type that owns the decorated method.
 
 ## Parameters
 
@@ -27,23 +29,25 @@ The resolved type of the async method
 
 `number`
 
-Maximum number of concurrent calls allowed
+Maximum number of concurrent calls; defaults to `1`. Must
+be `>= 1`.
 
 ## Returns
 
-[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+[`AsyncDecorator`](../../../types/type-aliases/AsyncDecorator)\<`T`\>
 
-The decorator function
+The async method decorator.
 
 ## Throws
 
-When applied to a non-method property
+If applied to a member without a `value` descriptor (an accessor
+or plain property rather than a method).
 
 ## Example
 
-```typescript
+```ts
 class BatchProcessor {
-  // Process up to 5 items concurrently
+  // Process up to five items concurrently.
   @throttleAsync(5)
   async processItem(item: Item): Promise<Result> {
     return await this.performHeavyProcessing(item);
@@ -53,8 +57,10 @@ class BatchProcessor {
 const processor = new BatchProcessor();
 const items = Array.from({ length: 100 }, (_, i) => ({ id: i }));
 
-// Process 100 items, 5 at a time
-const results = await Promise.all(
-  items.map(item => processor.processItem(item))
-);
+// Process 100 items, five at a time.
+const results = await Promise.all(items.map((item) => processor.processItem(item)));
 ```
+
+## See
+
+[throttleAsyncFn](../../throttle-async.fn/functions/throttleAsyncFn) for the function form.

@@ -1,11 +1,9 @@
 # Class: Queue\<T\>
 
-Defined in: [queue.ts:32](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L32)
+Defined in: [queue.ts:41](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L41)
 
 A generic FIFO (First In, First Out) queue data structure.
 Implements queue operations using a linked list for efficient O(1) enqueue and dequeue.
-
- Queue
 
 ## Type Parameters
 
@@ -13,13 +11,13 @@ Implements queue operations using a linked list for efficient O(1) enqueue and d
 
 `T`
 
-The type of elements stored in the queue
+The type of elements stored in the queue.
 
 ## Constructors
 
 ### Constructor
 
-> **new Queue**\<`T`\>(): `Queue`\<`T`\>
+&gt; **new Queue**\<`T`\>(): `Queue`\<`T`\>
 
 #### Returns
 
@@ -29,9 +27,9 @@ The type of elements stored in the queue
 
 ### dequeue()
 
-> **dequeue**(): `T` \| `null`
+&gt; **dequeue**(): `T` \| `null`
 
-Defined in: [queue.ts:73](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L73)
+Defined in: [queue.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L82)
 
 Remove and return the item at the front of the queue. O(1).
 
@@ -45,9 +43,9 @@ The dequeued value, or `null` if the queue is empty.
 
 ### enqueue()
 
-> **enqueue**(`item`): `void`
+&gt; **enqueue**(`item`): `void`
 
-Defined in: [queue.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L52)
+Defined in: [queue.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L61)
 
 Append an item to the back of the queue. O(1).
 
@@ -67,9 +65,9 @@ Value to store. The queue does not copy or freeze it.
 
 ### getSize()
 
-> **getSize**(): `number`
+&gt; **getSize**(): `number`
 
-Defined in: [queue.ts:38](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L38)
+Defined in: [queue.ts:47](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L47)
 
 #### Returns
 
@@ -81,9 +79,9 @@ The number of items currently in the queue.
 
 ### isEmpty()
 
-> **isEmpty**(): `boolean`
+&gt; **isEmpty**(): `boolean`
 
-Defined in: [queue.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L43)
+Defined in: [queue.ts:52](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L52)
 
 #### Returns
 

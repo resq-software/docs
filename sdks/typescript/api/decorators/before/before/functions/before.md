@@ -1,19 +1,24 @@
 # Function: before()
 
-> **before**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+&gt; **before**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [before/before.ts:75](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.ts#L75)
+Defined in: [before/before.ts:78](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/before/before.ts#L78)
 
 Decorator that executes a function before the decorated method.
 The before function is called before the method body executes.
+
+Applying the decorator rewrites the property descriptor's `value` with the
+wrapped method, which becomes **async** (returns a `Promise`) even if the
+original was synchronous. With `config.wait`, a throwing hook aborts the call;
+see [beforeFn](../../before.fn/functions/beforeFn) for the full per-call contract.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The type of the class containing the decorated method.
 
 ## Parameters
 
@@ -21,27 +26,29 @@ The type of the class containing the decorated method
 
 [`BeforeConfig`](../../before.types/interfaces/BeforeConfig)\<`T`\>
 
-Configuration for the before hook
+Configuration for the before hook.
 
 ## Returns
 
 [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-The decorator function
+The decorator function.
 
 ## Throws
 
-When applied to a non-method property
+At decoration time, when applied to anything without a method
+  value (an accessor or field), with message
+  `"@before is applicable only on a methods."`.
 
 ## Example
 
 ```typescript
 class DataProcessor {
   @before({
-    func: function() {
-      console.log('About to process...');
+    func: function () {
+      console.log("About to process...");
     },
-    wait: false
+    wait: false,
   })
   processItems(items: string[]): number {
     return items.length;

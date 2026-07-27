@@ -7,4 +7,4 @@
 
 ## Type Aliases
 
-- [AsyncMemoizable](./type-aliases/AsyncMemoizable)
+- [~~AsyncMemoizable~~](./type-aliases/AsyncMemoizable)

@@ -1,18 +1,25 @@
 # Function: throttle()
 
-> **throttle**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+&gt; **throttle**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [throttle/throttle.ts:48](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle/throttle.ts#L48)
+Defined in: [throttle/throttle.ts:62](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle/throttle.ts#L62)
 
-Decorator that throttles method calls to once per specified time period.
+Throttle a method to at most one call per `delayMs`; calls made during the
+cooldown are dropped.
+
+Leading-edge only: the first call runs immediately and there is no trailing call
+for anything dropped during the cooldown. The throttled method returns `void` —
+the original's return value is discarded. The cooldown flag is created once, at
+decoration time, so it is shared across every instance of the class. Mutates the
+supplied property descriptor in place.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 ## Parameters
 
@@ -20,21 +27,22 @@ The type of the class containing the decorated method
 
 `number`
 
-The throttle interval in milliseconds
+The minimum interval between executions, in milliseconds.
 
 ## Returns
 
 [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-The decorator function
+The method decorator.
 
 ## Throws
 
-When applied to a non-method property
+If applied to a member without a `value` descriptor (an accessor
+or plain property rather than a method).
 
 ## Example
 
-```typescript
+```ts
 class ResizeHandler {
   private width = window.innerWidth;
   private height = window.innerHeight;
@@ -48,6 +56,10 @@ class ResizeHandler {
 }
 
 const handler = new ResizeHandler();
-window.addEventListener('resize', () => handler.handleResize());
-// handleResize executes at most once every 200ms during resize
+window.addEventListener("resize", () => handler.handleResize());
+// handleResize executes at most once every 200ms during a resize.
 ```
+
+## See
+
+[throttleFn](../../throttle.fn/functions/throttleFn) for the function form.

@@ -1,17 +1,25 @@
 # Function: execTime()
 
-> **execTime**\<`T`\>(`arg?`): `any`
+&gt; **execTime**\<`T`\>(`arg?`): [`ExactTimeReportable`](../../exec-time.types/type-aliases/ExactTimeReportable)\<`T`\>
 
-Defined in: [exec-time/exec-time.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.ts#L81)
+Defined in: [exec-time/exec-time.ts:86](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.ts#L86)
 
 Decorator that measures and reports the execution time of methods.
 Supports both legacy (TypeScript) and standard (Stage 3) decorator formats.
+
+Detects the protocol at decoration time: given a descriptor it rewrites
+`descriptor.value` (legacy form); otherwise it treats the arguments as the
+Stage-3 `(value, context)` pair and returns the wrapped method for a `method`
+kind. See [execTimeFn](../../exec-time.fn/functions/execTimeFn) for the timing, async, and reporter-resolution
+contract (including that rejected async methods are not reported).
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
+
+The type of the class containing the decorated method.
 
 ## Parameters
 
@@ -19,17 +27,19 @@ Supports both legacy (TypeScript) and standard (Stage 3) decorator formats.
 
 `string` \| [`ReportFunction`](../../exec-time.types/type-aliases/ReportFunction)
 
-Optional reporter function or label string
+Optional reporter function or label string.
 
 ## Returns
 
-`any`
+[`ExactTimeReportable`](../../exec-time.types/type-aliases/ExactTimeReportable)\<`T`\>
 
-The decorator function
+The decorator function.
 
 ## Throws
 
-When applied to a non-method property
+At decoration time, with message
+  `"@execTime is applicable only on methods."`, when the legacy descriptor has
+  no method value or the Stage-3 context's `kind` is not `"method"`.
 
 ## Example
 

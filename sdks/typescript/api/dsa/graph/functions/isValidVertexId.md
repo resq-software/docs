@@ -1,10 +1,11 @@
 # Function: isValidVertexId()
 
-> **isValidVertexId**(`id`): `id is string`
+&gt; **isValidVertexId**(`id`): `id is string & Brand<"VertexId">`
 
-Defined in: [graph.ts:693](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L693)
+Defined in: [graph.ts:759](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L759)
 
-Validates a vertex ID using Effect Schema
+Type guard that validates a vertex id with Effect Schema and narrows it to
+the branded [VertexId](../../schemas/type-aliases/VertexId) type.
 
 ## Parameters
 
@@ -12,8 +13,10 @@ Validates a vertex ID using Effect Schema
 
 `unknown`
 
+The value to check.
+
 ## Returns
 
-`id is string`
+`id is string & Brand<"VertexId">`
 
-True if valid
+`true` if `id` is a valid vertex id.

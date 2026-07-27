@@ -1,7 +1,7 @@
 # Variable: RabinKarpSearchSchema
 
-> `const` **RabinKarpSearchSchema**: `Struct`\<\&#123; `pattern`: `String`; `text`: `String`; \&#125;\>
+&gt; `const` **RabinKarpSearchSchema**: `Struct`\<\{ `pattern`: `String`; `text`: `String`; \}\>
 
-Defined in: [schemas.ts:102](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L102)
+Defined in: [schemas.ts:101](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L101)
 
 Validates input to a single-pattern Rabin-Karp search.

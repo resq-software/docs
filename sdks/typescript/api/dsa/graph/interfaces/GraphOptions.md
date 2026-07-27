@@ -1,15 +1,15 @@
 # Interface: GraphOptions
 
-Defined in: [graph.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L81)
+Defined in: [graph.ts:108](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L108)
 
-Options for graph creation
+Options for graph creation.
 
 ## Properties
 
 ### directed?
 
-> `optional` **directed?**: `boolean`
+&gt; `optional` **directed?**: `boolean`
 
-Defined in: [graph.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L83)
+Defined in: [graph.ts:110](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L110)
 
 Whether the graph is directed (default: true)
