@@ -4,7 +4,7 @@ sidebarTitle: 'ResQ Perf'
 
 # resq-perf
 
-> **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-perf) · **API docs:** [docs.rs](https://docs.rs/resq-perf/0.1.16)
+> **Version:** `v0.1.18` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-perf) · **API docs:** [docs.rs](https://docs.rs/resq-perf/0.1.18)
 
 Real-time CPU and memory performance TUI for ResQ platform
 
@@ -220,9 +220,7 @@ Response time in the header is color-coded:
 
 ## Related Tools
 
-- [`resq-logs`](https://github.com/resq-software/crates/blob/master/crates/resq-logs/README.md) -- Log aggregator and stream viewer
 - [`resq-flame`](https://github.com/resq-software/crates/blob/master/crates/resq-flame/README.md) -- CPU flame graph profiler
-- [`resq-health`](https://github.com/resq-software/crates/blob/master/crates/resq-health/README.md) -- Service health checker
 
 For comprehensive profiling workflows see [`docs/PROFILING_FLAMEGRAPH_GUIDE.md`](https://github.com/resq-software/crates/blob/master/docs/PROFILING_FLAMEGRAPH_GUIDE.md).
 

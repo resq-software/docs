@@ -35,6 +35,15 @@ CLI commands for the ResQ tool.
 ## Module: gitignore
 
 Gitignore pattern utilities.
+Gitignore matching for the file-mutating commands (`copyright`, `secrets`).
+
+Backed by the `ignore` crate's [`Gitignore`] matcher, which implements real
+gitignore semantics — wildcards (`*.rs`), negations (`!keep`), anchoring
+(`/build` vs `build`) and directory rules. The previous hand-rolled parser
+dropped every wildcard and negation and matched bare names by substring, so
+`copyright` would rewrite gitignored `generated/*.rs`, over-skip any path
+merely *containing* an excluded name (e.g. `rebuild.rs` for `build`), and
+ignore `!keep` re-includes entirely.
 
 
 

@@ -1,6 +1,6 @@
 # resq-tui
 
-> **Version:** `v0.1.8` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-tui) · **API docs:** [docs.rs](https://docs.rs/resq-tui/0.1.8)
+> **Version:** `v0.1.10` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-tui) · **API docs:** [docs.rs](https://docs.rs/resq-tui/0.1.10)
 
 [![Crates.io](https://img.shields.io/crates/v/resq-tui.svg)](https://crates.io/crates/resq-tui)
 [![License](https://img.shields.io/crates/l/resq-tui.svg)](LICENSE)
@@ -9,7 +9,7 @@ Shared TUI component library for all **ResQ** developer tools. Provides a unifie
 
 ## Overview
 
-`resq-tui` ensures every ResQ tool (`resq-logs`, `resq-perf`, `resq-flame`, `resq-health`, etc.) shares a consistent visual identity and interaction model. It provides two tiers of output:
+`resq-tui` ensures every ResQ tool (`resq-perf`, `resq-flame`, `resq-bin`, `resq-clean`, etc.) shares a consistent visual identity and interaction model. It provides two tiers of output:
 
 - **Full-screen TUI** -- Ratatui-based widgets (header, footer, tabs, popups) with a standardized theme for interactive terminal applications.
 - **Non-TUI CLI** -- Styled console formatters, tables, progress bars, and spinners for traditional command-line output that gracefully degrade when piped or redirected.
@@ -42,18 +42,14 @@ graph TD
     LIB --> THEME
 
     subgraph Consumers
-        LOGS["resq-logs"]
         PERF["resq-perf"]
         FLAME["resq-flame"]
-        HEALTH["resq-health"]
         BIN["resq-bin"]
         CLEAN["resq-clean"]
     end
 
-    LOGS --> LIB
     PERF --> LIB
     FLAME --> LIB
-    HEALTH --> LIB
     BIN --> LIB
     CLEAN --> LIB
 ```
@@ -685,5 +681,11 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com
 
 Click through to each module for the full rustdoc-rendered API surface (types, traits, functions, methods).
 
+- [`console`](./console)
+- [`detect`](./detect)
+- [`progress`](./progress)
+- [`spinner`](./spinner)
+- [`table`](./table)
 - [`terminal`](./terminal)
+- [`theme`](./theme)
 

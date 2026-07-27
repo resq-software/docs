@@ -4,7 +4,7 @@ sidebarTitle: 'ResQ Flame'
 
 # resq-flame
 
-> **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-flame) · **API docs:** [docs.rs](https://docs.rs/resq-flame/0.1.16)
+> **Version:** `v0.1.18` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-flame) · **API docs:** [docs.rs](https://docs.rs/resq-flame/0.1.18)
 
 SVG CPU flame graph profiler for ResQ services
 

@@ -6,11 +6,13 @@
 
 **Modules**
 
+- [`console`](#console) - TTY-gated console message formatters for non-TUI CLI output.
+- [`detect`](#detect) - Terminal environment detection.
+- [`progress`](#progress) - Non-TUI progress bar for CLI output.
+- [`spinner`](#spinner) - Spinner frames and non-TUI spinner for CLI output.
+- [`table`](#table) - Styled table renderer for non-TUI CLI output.
 - [`terminal`](#terminal) - Terminal lifecycle helpers — init, restore, and event-loop runner.
-
-**Structs**
-
-- [`Theme`](#theme) - Standard `ResQ` TUI Theme.
+- [`theme`](#theme) - Centralized theme and adaptive colors for `ResQ` TUI and CLI output.
 
 **Functions**
 
@@ -22,44 +24,7 @@
 - [`format_bytes`](#format_bytes) - Formats bytes into human-readable units.
 - [`format_duration`](#format_duration) - Formats seconds into human-readable duration.
 
-**Constants**
-
-- [`SPINNER_FRAMES`](#spinner_frames) - Spinner animation frames for loading indicators.
-
 ---
-
-## resq_tui::SPINNER_FRAMES
-
-*Constant*: `&[&str]`
-
-Spinner animation frames for loading indicators.
-
-
-
-## resq_tui::Theme
-
-*Struct*
-
-Standard `ResQ` TUI Theme.
-
-**Fields:**
-- `primary: ratatui::style::Color` - Primary brand color (Cyan)
-- `secondary: ratatui::style::Color` - Secondary supporting color (Blue)
-- `accent: ratatui::style::Color` - Accent color for PID/Metadata (Magenta)
-- `success: ratatui::style::Color` - Success state (Green)
-- `warning: ratatui::style::Color` - Warning/Pending state (Yellow)
-- `error: ratatui::style::Color` - Error/Critical state (Red)
-- `bg: ratatui::style::Color` - Background color
-- `fg: ratatui::style::Color` - Foreground text color
-- `highlight: ratatui::style::Color` - Highlight/Selection color
-- `inactive: ratatui::style::Color` - Inactive/Muted color (`DarkGray`)
-
-**Trait Implementations:**
-
-- **Default**
-  - `fn default() -> Self`
-
-
 
 ## resq_tui::centered_rect
 
@@ -70,6 +35,34 @@ Helper to create a centered rectangle for popups.
 ```rust
 fn centered_rect(percent_x: u16, percent_y: u16, r: ratatui::layout::Rect) -> ratatui::layout::Rect
 ```
+
+
+
+## Module: console
+
+TTY-gated console message formatters for non-TUI CLI output.
+
+Mirrors the gh-aw `pkg/console/console.go` pattern:
+- 14+ named message formatters (success, error, warning, info, …)
+- All styling gated through [`crate::detect::should_style`]
+- Output routing: diagnostics → stderr, structured data → stdout
+- In non-TTY / accessible mode, emoji prefixes still appear but ANSI
+  color codes are stripped.
+
+
+
+## Module: detect
+
+Terminal environment detection.
+
+Mirrors the gh-aw pattern of gating all styling through environment checks:
+- TTY detection via `crossterm::tty::IsTty`
+- `NO_COLOR` standard (&lt;https://no-color.org/>)
+- `TERM=dumb` detection
+- `ACCESSIBLE` env var for screen-reader mode
+
+All console output formatting in [`crate::console`] is gated through
+[`should_style`] so no ANSI codes bleed into pipes or redirects.
 
 
 
@@ -145,9 +138,55 @@ fn format_duration(seconds: u64) -> String
 
 
 
+## Module: progress
+
+Non-TUI progress bar for CLI output.
+
+Renders a styled progress bar to stderr using adaptive colors.
+Falls back to a plain ASCII bar in accessible/non-TTY mode.
+
+Mirrors gh-aw's `pkg/console/progress.go` pattern with adaptive colors
+instead of hardcoded hex strings.
+
+
+
+## Module: spinner
+
+Spinner frames and non-TUI spinner for CLI output.
+
+Provides:
+- [`SPINNER_FRAMES`] — Braille animation frames for TUI usage.
+- [`Spinner`] — A thread-safe stderr spinner that respects
+  [`crate::detect::should_style`] and falls back to plain dots in
+  accessible mode.
+
+
+
+## Module: table
+
+Styled table renderer for non-TUI CLI output.
+
+Mirrors gh-aw's `RenderTable` with zebra-striped rows and
+adaptive colors. Falls back to plain aligned text when styling
+is disabled.
+
+
+
 ## Module: terminal
 
 Terminal lifecycle helpers — init, restore, and event-loop runner.
+
+
+
+## Module: theme
+
+Centralized theme and adaptive colors for `ResQ` TUI and CLI output.
+
+Mirrors the gh-aw `pkg/styles/theme.go` pattern:
+- All colors defined as [`AdaptiveColor`] with explicit light and dark
+  variants (Dracula-inspired dark palette).
+- No direct color usage outside this module and [`crate::console`].
+- Resolution is gated through [`crate::detect::detect_color_mode`].
 
 
 
