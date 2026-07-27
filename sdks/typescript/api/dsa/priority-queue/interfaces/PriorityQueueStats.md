@@ -1,16 +1,16 @@
 # Interface: PriorityQueueStats
 
-Defined in: [priority-queue.ts:53](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L53)
+Defined in: [priority-queue.ts:81](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L81)
 
-Priority queue statistics
+Priority-queue statistics snapshot.
 
 ## Properties
 
 ### capacity
 
-> **capacity**: `number`
+&gt; **capacity**: `number`
 
-Defined in: [priority-queue.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L57)
+Defined in: [priority-queue.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L85)
 
 Current capacity of underlying array
 
@@ -18,9 +18,9 @@ Current capacity of underlying array
 
 ### isEmpty
 
-> **isEmpty**: `boolean`
+&gt; **isEmpty**: `boolean`
 
-Defined in: [priority-queue.ts:59](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L59)
+Defined in: [priority-queue.ts:87](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L87)
 
 Whether the queue is empty
 
@@ -28,8 +28,8 @@ Whether the queue is empty
 
 ### size
 
-> **size**: `number`
+&gt; **size**: `number`
 
-Defined in: [priority-queue.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L55)
+Defined in: [priority-queue.ts:83](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L83)
 
 Current number of elements

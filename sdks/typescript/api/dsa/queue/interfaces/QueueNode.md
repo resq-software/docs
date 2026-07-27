@@ -1,8 +1,9 @@
 # Interface: QueueNode\<T\>
 
-Defined in: [queue.ts:20](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L20)
+Defined in: [queue.ts:28](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L28)
 
-Represents a node in the queue's linked list structure.
+A cell in the queue's singly-linked chain. Exposed because [Queue](../classes/Queue)
+fields reference it, but callers rarely construct one directly.
 
 ## Type Parameters
 
@@ -14,14 +15,18 @@ Represents a node in the queue's linked list structure.
 
 ### next
 
-> **next**: `QueueNode`\<`T`\> \| `null`
+&gt; **next**: `QueueNode`\<`T`\> \| `null`
 
-Defined in: [queue.ts:21](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L21)
+Defined in: [queue.ts:30](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L30)
+
+The next node toward the back of the queue, or `null` at the tail.
 
 ***
 
 ### value
 
-> **value**: `T`
+&gt; **value**: `T`
 
-Defined in: [queue.ts:22](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/queue.ts#L22)
+Defined in: [queue.ts:32](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L32)
+
+The stored element, held by reference.

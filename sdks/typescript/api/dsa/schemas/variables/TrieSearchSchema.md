@@ -1,7 +1,7 @@
 # Variable: TrieSearchSchema
 
-> `const` **TrieSearchSchema**: `Struct`\<\&#123; `limit`: `optional`\<`Int`\>; `prefix`: `String`; \&#125;\>
+&gt; `const` **TrieSearchSchema**: `Struct`\<\{ `limit`: `optional`\<`Int`\>; `prefix`: `String`; \}\>
 
-Defined in: [schemas.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L52)
+Defined in: [schemas.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L51)
 
 Validates a Trie prefix-search query with optional result cap.

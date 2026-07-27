@@ -1,10 +1,11 @@
 # Function: rabinKarp()
 
-> **rabinKarp**(`text`, `pattern`): `number`[]
+&gt; **rabinKarp**(`text`, `pattern`): `number`[]
 
-Defined in: [trie.ts:321](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/trie.ts#L321)
+Defined in: [trie.ts:328](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/trie.ts#L328)
 
-Finds all occurrences of a pattern in text using the Rabin-Karp rolling hash algorithm.
+Finds all occurrences of a pattern in text using the Rabin-Karp rolling hash
+algorithm. Matching is exact and case-sensitive.
 
 ## Parameters
 
@@ -12,16 +13,18 @@ Finds all occurrences of a pattern in text using the Rabin-Karp rolling hash alg
 
 `string`
 
-The text to search in
+The text to search in.
 
 ### pattern
 
 `string`
 
-The pattern to search for
+The pattern to search for.
 
 ## Returns
 
 `number`[]
 
-Array of starting indices where the pattern is found
+The zero-based starting indices of every occurrence, in ascending
+  order. Returns an empty array when `pattern` is empty or longer than
+  `text` — the sentinel for "no matches".

@@ -1,8 +1,8 @@
-# Interface: Edge\<T\>
+# Interface: Edge\<T, M\>
 
-Defined in: [graph.ts:33](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L33)
+Defined in: [graph.ts:43](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L43)
 
-Edge in the graph
+Edge in the graph.
 
 ## Type Parameters
 
@@ -10,23 +10,33 @@ Edge in the graph
 
 `T`
 
+Type of vertex identifiers.
+
+### M
+
+`M` = `Record`\<`string`, `unknown`\>
+
+Shape of the optional structured metadata. Defaults to
+  `Record<string, unknown>` so unparameterised `Edge<T>` keeps the previous
+  loosely-typed metadata; supply a concrete `M` for typed reads.
+
 ## Properties
 
 ### metadata?
 
-> `optional` **metadata?**: `Record`\<`string`, `unknown`\>
+&gt; `optional` **metadata?**: `M`
 
-Defined in: [graph.ts:39](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L39)
+Defined in: [graph.ts:49](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L49)
 
-Optional metadata
+Optional metadata, typed as `M`.
 
 ***
 
 ### target
 
-> **target**: `T`
+&gt; **target**: `T`
 
-Defined in: [graph.ts:35](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L35)
+Defined in: [graph.ts:45](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L45)
 
 Target vertex
 
@@ -34,8 +44,8 @@ Target vertex
 
 ### weight
 
-> **weight**: `number`
+&gt; **weight**: `number`
 
-Defined in: [graph.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/graph.ts#L37)
+Defined in: [graph.ts:47](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L47)
 
 Edge weight (default: 1)

@@ -1,10 +1,10 @@
 # Function: validatePriorityItem()
 
-> **validatePriorityItem**(`input`): \&#123; `dueDate`: `string`; `id`: `string`; `priority?`: `number`; \&#125; \| `null`
+&gt; **validatePriorityItem**(`input`): \{ `dueDate`: `string`; `id`: `string`; `priority?`: `number`; \} \| `null`
 
-Defined in: [priority-queue.ts:490](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L490)
+Defined in: [priority-queue.ts:547](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L547)
 
-Validates a priority item input object
+Validates and decodes a priority-item input object against its schema.
 
 ## Parameters
 
@@ -12,8 +12,11 @@ Validates a priority item input object
 
 `unknown`
 
+Untrusted input to validate.
+
 ## Returns
 
-\&#123; `dueDate`: `string`; `id`: `string`; `priority?`: `number`; \&#125; \| `null`
+\{ `dueDate`: `string`; `id`: `string`; `priority?`: `number`; \} \| `null`
 
-Validated item with defaults applied, or null if invalid
+The validated item with schema defaults applied, or `null` if the
+  input is invalid.

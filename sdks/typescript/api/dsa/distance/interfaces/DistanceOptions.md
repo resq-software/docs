@@ -1,6 +1,6 @@
 # Interface: DistanceOptions
 
-Defined in: [distance.ts:101](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L101)
+Defined in: [distance.ts:112](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L112)
 
 Options for distance calculations.
 
@@ -8,15 +8,12 @@ Options for distance calculations.
 
 ### p?
 
-> `optional` **p?**: `number`
+&gt; `optional` **p?**: `number`
 
-Defined in: [distance.ts:109](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L109)
+Defined in: [distance.ts:120](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L120)
 
-Minkowski parameter (default: 2)
+Minkowski norm order. Must be strictly positive (`> 0`); `Infinity` is
+accepted and yields Chebyshev distance. Defaults to `2` when omitted.
 - p=1: Manhattan distance
 - p=2: Euclidean distance
 - p=Infinity: Chebyshev distance
-
-#### Minimum
-
-0

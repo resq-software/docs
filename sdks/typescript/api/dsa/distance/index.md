@@ -11,3 +11,4 @@
 - [DistanceOptions](./interfaces/DistanceOptions)
 - [DistanceResult](./interfaces/DistanceResult)
 - [DistanceFormula](./type-aliases/DistanceFormula)
+- [PointFor](./type-aliases/PointFor)

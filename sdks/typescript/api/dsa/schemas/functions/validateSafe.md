@@ -1,12 +1,12 @@
 # Function: validateSafe()
 
-> **validateSafe**\<`T`\>(`schema`, `input`): `ValidationResult`\<`Type`\<`T`\>\>
+&gt; **validateSafe**\<`T`\>(`schema`, `input`): `ValidationResult`\<`T`\[`"Type"`\]\>
 
-Defined in: [schemas.ts:187](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/schemas.ts#L187)
+Defined in: [schemas.ts:199](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/schemas.ts#L199)
 
 Decode `input` against `schema` and return a discriminated result
 instead of throwing. Mirrors the `Result<T, E>` shape used
-elsewhere in `@resq-sw/helpers`.
+elsewhere in `@resq-systems/helpers`.
 
 ## Type Parameters
 
@@ -26,7 +26,7 @@ elsewhere in `@resq-sw/helpers`.
 
 ## Returns
 
-`ValidationResult`\<`Type`\<`T`\>\>
+`ValidationResult`\<`T`\[`"Type"`\]\>
 
 `{ success: true, data }` on success; `{ success: false,
   error &#125;` (with the parse-error message) on failure.

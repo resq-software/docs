@@ -1,11 +1,17 @@
 # Function: rateLimit()
 
-> **rateLimit**\<`T`\>(`config`): (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`unknown`\>\>
+&gt; **rateLimit**\<`T`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [rate-limit/rate-limit.ts:71](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.ts#L71)
+Defined in: [rate-limit/rate-limit.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.ts#L82)
 
-Decorator that rate limits method calls.
-Only allows a specified number of calls within a time window.
+Rate limit a method to at most `allowedCalls` invocations per `timeSpanMs`
+window; calls beyond the allowance are dropped and routed to `exceedHandler`.
+
+The counter is built once, at decoration time, so the limit spans every instance
+of the class (unless a `keyResolver` partitions it). A dropped call returns
+`undefined` in place of the method's value — see [rateLimitFn](../../rate-limit.fn/functions/rateLimitFn) for the
+sync-vs-async return shape and the best-effort caveat under concurrency. Mutates
+the supplied property descriptor in place.
 
 ## Type Parameters
 
@@ -13,7 +19,7 @@ Only allows a specified number of calls within a time window.
 
 `T` = `unknown`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 ## Parameters
 
@@ -21,51 +27,57 @@ The type of the class containing the decorated method
 
 [`RateLimitConfigs`](../../rate-limit.types/interfaces/RateLimitConfigs)\<`T`\>
 
-Rate limit configuration
+Rate-limit configuration: window size, allowance, and optional
+key resolver, counter, and exceed handler.
 
 ## Returns
 
-The decorator function
+[`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-(`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method)\<`unknown`\>\>
+The method decorator, generic over the decorated method so its
+signature is preserved end-to-end.
 
 ## Throws
 
-When applied to a non-method property
+If applied to anything other than a method.
 
 ## Example
 
-```typescript
+```ts
 class Api {
   @rateLimit({
-    timeSpanMs: 1000,  // 1 second
-    allowedCalls: 5,   // Max 5 calls
-    exceedHandler: () => console.warn('Rate limit exceeded!')
+    timeSpanMs: 1000, // One second.
+    allowedCalls: 5, // At most five calls.
+    exceedHandler: () => console.warn("Rate limit exceeded!"),
   })
   fetchData() {
-    // Only 5 calls allowed per second
+    // Only five calls are allowed per second.
   }
 
-  // With custom key resolver for per-user limiting
+  // With a custom key resolver for per-user limiting.
   @rateLimit({
-    timeSpanMs: 60000,  // 1 minute
-    allowedCalls: 100,  // Max 100 calls per user per minute
-    keyResolver: (userId) => userId  // Limit per user
+    timeSpanMs: 60000, // One minute.
+    allowedCalls: 100, // At most 100 calls per user per minute.
+    keyResolver: (userId) => userId, // Limit per user.
   })
   getUserData(userId: string) {
     return database.getUser(userId);
   }
 }
 
-// With custom counter implementation
+// With a custom counter implementation.
 class DistributedApi {
   @rateLimit({
     timeSpanMs: 1000,
     allowedCalls: 10,
-    rateLimitCounter: new RedisRateLimitCounter()  // Distributed counter
+    rateLimitCounter: new RedisRateLimitCounter(), // Distributed counter.
   })
   async heavyOperation(): Promise<void> {
-    // Rate limited across all instances
+    // Rate limited across all instances.
   }
 }
 ```
+
+## See
+
+[rateLimitFn](../../rate-limit.fn/functions/rateLimitFn) for the function form.

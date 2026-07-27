@@ -1,10 +1,12 @@
 # Interface: ExactTimeReportData
 
-Defined in: [exec-time/exec-time.types.ts:50](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.types.ts#L50)
+Defined in: [exec-time/exec-time.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L63)
 
 Data structure containing execution time information.
 
- ExactTimeReportData
+A snapshot handed to a [ReportFunction](../type-aliases/ReportFunction) after one invocation. For an
+async method the report is taken after the promise resolves, so [result](#result)
+is the fulfilled value and [execTime](#exectime) spans until resolution.
 
 ## Example
 
@@ -20,28 +22,29 @@ const reportData: ExactTimeReportData = {
 
 ### args
 
-> **args**: `unknown`[]
+&gt; **args**: `unknown`[]
 
-Defined in: [exec-time/exec-time.types.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.types.ts#L52)
+Defined in: [exec-time/exec-time.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L65)
 
-The arguments passed to the method
+The exact positional arguments the timed method was called with.
 
 ***
 
 ### execTime
 
-> **execTime**: `number`
+&gt; **execTime**: `number`
 
-Defined in: [exec-time/exec-time.types.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.types.ts#L56)
+Defined in: [exec-time/exec-time.types.ts:72](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L72)
 
-The execution time in milliseconds
+Elapsed wall-clock time in **milliseconds** (`Date.now` deltas, integer ms
+resolution), measured from just before the call to just after it settles.
 
 ***
 
 ### result
 
-> **result**: `unknown`
+&gt; **result**: `unknown`
 
-Defined in: [exec-time/exec-time.types.ts:54](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.types.ts#L54)
+Defined in: [exec-time/exec-time.types.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L67)
 
-The return value of the method
+The method's return value — the resolved value for an async method.

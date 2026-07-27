@@ -1,19 +1,25 @@
 # Interface: RateLimitConfigs\<T\>
 
-Defined in: [rate-limit/rate-limit.types.ts:66](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L66)
+Defined in: [rate-limit/rate-limit.types.ts:49](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L49)
 
-Configuration options for rate limiting.
+Configuration for the `@rateLimit` decorator and rateLimitFn.
 
- RateLimitConfigs
+`timeSpanMs` and `allowedCalls` are required; supply at most one counter — when
+both `rateLimitCounter` and `rateLimitAsyncCounter` are set, the async one wins
+and the call becomes promise-returning. With no counter, an in-memory
+[RateLimitCounter](./RateLimitCounter) is used. With no `keyResolver`, all calls share a single
+`"default"` bucket.
 
 ## Example
 
-```typescript
+```ts
 const config: RateLimitConfigs<ApiService> = {
-  timeSpanMs: 60000,     // 1 minute
-  allowedCalls: 100,     // 100 calls per minute
+  timeSpanMs: 60000, // One minute.
+  allowedCalls: 100, // 100 calls per minute.
   keyResolver: (userId) => `user-${userId}`,
-  exceedHandler: () => { throw new Error('Rate limit exceeded'); }
+  exceedHandler: () => {
+    throw new Error("Rate limit exceeded");
+  },
 };
 ```
 
@@ -21,29 +27,29 @@ const config: RateLimitConfigs<ApiService> = {
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The class type a `keyof T` key resolver resolves against.
 
 ## Properties
 
 ### allowedCalls
 
-> **allowedCalls**: `number`
+&gt; **allowedCalls**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:70](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L70)
+Defined in: [rate-limit/rate-limit.types.ts:53](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L53)
 
-Maximum number of calls allowed in the time window
+Maximum admitted calls per key within the window.
 
 ***
 
 ### exceedHandler?
 
-> `optional` **exceedHandler?**: () => `void`
+&gt; `optional` **exceedHandler?**: () =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:78](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L78)
+Defined in: [rate-limit/rate-limit.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L65)
 
-Handler called when rate limit is exceeded
+Invoked (for its side effects) when a call is dropped; a throw here propagates to the caller.
 
 #### Returns
 
@@ -53,38 +59,40 @@ Handler called when rate limit is exceeded
 
 ### keyResolver?
 
-> `optional` **keyResolver?**: ((...`args`) => `string`) \| keyof `T`
+&gt; `optional` **keyResolver?**: ((...`args`) =&gt; `string`) \| keyof `T`
 
-Defined in: [rate-limit/rate-limit.types.ts:72](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L72)
+Defined in: [rate-limit/rate-limit.types.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L59)
 
-Function to generate rate limit keys (for per-user/entity limiting)
+How the rate-limit bucket key is derived. A function is called with the
+arguments; a `keyof T` names an instance method invoked with the arguments.
+When omitted, all calls share the `"default"` bucket.
 
 ***
 
 ### rateLimitAsyncCounter?
 
-> `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter)
+&gt; `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:76](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L76)
+Defined in: [rate-limit/rate-limit.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L63)
 
-Async counter implementation
+Async counter for distributed limiting; takes precedence over `rateLimitCounter`.
 
 ***
 
 ### rateLimitCounter?
 
-> `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter)
+&gt; `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:74](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L74)
+Defined in: [rate-limit/rate-limit.types.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L61)
 
-Custom counter implementation
+Custom synchronous counter; ignored when `rateLimitAsyncCounter` is set.
 
 ***
 
 ### timeSpanMs
 
-> **timeSpanMs**: `number`
+&gt; **timeSpanMs**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:68](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L68)
+Defined in: [rate-limit/rate-limit.types.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L51)
 
-The time window in milliseconds
+Rolling window length in milliseconds; each admitted call is charged for this long.

@@ -1,14 +1,22 @@
 # Variable: logger
 
-> `const` **logger**: `object`
+&gt; `const` **logger**: `object`
 
-Defined in: [\_utils.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/_utils.ts#L37)
+Defined in: [\_utils.ts:56](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L56)
+
+Minimal console-backed logger so decorators can report without a dependency.
 
 ## Type Declaration
 
 ### info()
 
-> **info**(`message`, `data?`): `void`
+&gt; **info**(`message`, `data?`): `void`
+
+Log an informational message, appending JSON-encoded `data` when present.
+
+Writes one line to `console.info` (stdout) — an I/O side effect, not a pure
+call. `data` is serialized with `JSON.stringify`, so a circular reference or
+a `BigInt` value in it makes the call throw.
 
 #### Parameters
 
@@ -16,10 +24,19 @@ Defined in: [\_utils.ts:37](https://github.com/resq-software/npm/blob/fe2e20ae9d
 
 `string`
 
+The human-readable message.
+
 ##### data?
 
 `Record`\<`string`, `unknown`\>
 
+Optional structured context to serialize alongside `message`.
+
 #### Returns
 
 `void`
+
+#### Throws
+
+If `data` cannot be JSON-serialized (circular reference
+  or `BigInt` value).

@@ -13,6 +13,8 @@
 ## Type Aliases
 
 - [CompareFn](./type-aliases/CompareFn)
+- [PQArgs](./type-aliases/PQArgs)
+- [PQOptions](./type-aliases/PQOptions)
 
 ## Functions
 

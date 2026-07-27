@@ -8,4 +8,4 @@
 
 ## Type Aliases
 
-- [RateLimitable](./type-aliases/RateLimitable)
+- [~~RateLimitable~~](./type-aliases/RateLimitable)

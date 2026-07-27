@@ -2,25 +2,38 @@
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
+&gt; **memoizeFn**\<`D`, `A`\>(`originalMethod`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L80)
+Defined in: [memoize/memoize.fn.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L85)
 
-Wraps a method to cache its results based on arguments.
+Wrap a method so its results are cached by argument key (function form of
+[memoize](../..)).
+
+The second argument selects the caching policy: omit it to cache forever, pass
+a number for a TTL in milliseconds, or pass a [MemoizeConfig](../../memoize.types/interfaces/MemoizeConfig) for a
+custom cache, key resolver, and/or expiry.
+
+Each call to `memoizeFn` owns its own cache (closed over by the returned
+function), so binding the method per instance yields independent caches. A
+stored `null`/`undefined` is a genuine hit — presence is checked with the
+cache's `has`, not by inspecting the value — so falsy results are cached
+correctly. When `expirationTimeMs` is set, each written entry schedules a timer
+that deletes it after the delay (a clock/timer effect); the entry is not
+refreshed on read, so the TTL runs from insertion.
 
 ### Type Parameters
 
 #### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 #### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument tuple of the original method.
 
 ### Parameters
 
@@ -28,17 +41,23 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to memoize
+The method whose results are cached.
 
 ### Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The memoized method
+The memoized method, sharing one cache across all its invocations.
+
+### Throws
+
+When no `keyResolver` is configured and the arguments
+contain a circular reference — the default key is `JSON.stringify(args)`, which
+throws on circular input.
 
 ### Example
 
-```typescript
+```ts
 class ExpensiveOperations {
   calculatePrimes(max: number): number[] {
     const primes = [];
@@ -51,49 +70,62 @@ class ExpensiveOperations {
 
 const ops = new ExpensiveOperations();
 
-// Basic memoization
+// Basic memoization.
 const memoized = memoizeFn(ops.calculatePrimes.bind(ops));
-const primes1 = memoized(1000); // Computes
-const primes2 = memoized(1000); // Returns cached result
+const primes1 = memoized(1000); // Computes.
+const primes2 = memoized(1000); // Returns the cached result.
 
-// With TTL
-const withTTL = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  60000 // Cache for 60 seconds
-);
+// With a TTL of 60 seconds.
+const withTTL = memoizeFn(ops.calculatePrimes.bind(ops), 60000);
 
-// With custom config
-const withConfig = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  {
-    cache: new Map(),
-    keyResolver: (max) => `primes-${max}`,
-    expirationTimeMs: 300000
-  }
-);
+// With a custom config.
+const withConfig = memoizeFn(ops.calculatePrimes.bind(ops), {
+  cache: new Map(),
+  keyResolver: (max) => `primes-${max}`,
+  expirationTimeMs: 300000,
+});
 ```
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
+&gt; **memoizeFn**\<`T`, `D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L83)
+Defined in: [memoize/memoize.fn.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L88)
 
-Wraps a method to cache its results based on arguments.
+Wrap a method so its results are cached by argument key (function form of
+[memoize](../..)).
+
+The second argument selects the caching policy: omit it to cache forever, pass
+a number for a TTL in milliseconds, or pass a [MemoizeConfig](../../memoize.types/interfaces/MemoizeConfig) for a
+custom cache, key resolver, and/or expiry.
+
+Each call to `memoizeFn` owns its own cache (closed over by the returned
+function), so binding the method per instance yields independent caches. A
+stored `null`/`undefined` is a genuine hit — presence is checked with the
+cache's `has`, not by inspecting the value — so falsy results are cached
+correctly. When `expirationTimeMs` is set, each written entry schedules a timer
+that deletes it after the delay (a clock/timer effect); the entry is not
+refreshed on read, so the TTL runs from insertion.
 
 ### Type Parameters
 
+#### T
+
+`T` = `unknown`
+
+The class type a `keyof T` key resolver resolves against.
+
 #### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 #### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument tuple of the original method.
 
 ### Parameters
 
@@ -101,23 +133,27 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to memoize
+The method whose results are cached.
 
 #### config
 
-[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig)\<`any`, `D`\>
-
-Configuration for memoization
+[`MemoizeConfig`](../../memoize.types/interfaces/MemoizeConfig)\<`T`, `D`\>
 
 ### Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The memoized method
+The memoized method, sharing one cache across all its invocations.
+
+### Throws
+
+When no `keyResolver` is configured and the arguments
+contain a circular reference — the default key is `JSON.stringify(args)`, which
+throws on circular input.
 
 ### Example
 
-```typescript
+```ts
 class ExpensiveOperations {
   calculatePrimes(max: number): number[] {
     const primes = [];
@@ -130,49 +166,56 @@ class ExpensiveOperations {
 
 const ops = new ExpensiveOperations();
 
-// Basic memoization
+// Basic memoization.
 const memoized = memoizeFn(ops.calculatePrimes.bind(ops));
-const primes1 = memoized(1000); // Computes
-const primes2 = memoized(1000); // Returns cached result
+const primes1 = memoized(1000); // Computes.
+const primes2 = memoized(1000); // Returns the cached result.
 
-// With TTL
-const withTTL = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  60000 // Cache for 60 seconds
-);
+// With a TTL of 60 seconds.
+const withTTL = memoizeFn(ops.calculatePrimes.bind(ops), 60000);
 
-// With custom config
-const withConfig = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  {
-    cache: new Map(),
-    keyResolver: (max) => `primes-${max}`,
-    expirationTimeMs: 300000
-  }
-);
+// With a custom config.
+const withConfig = memoizeFn(ops.calculatePrimes.bind(ops), {
+  cache: new Map(),
+  keyResolver: (max) => `primes-${max}`,
+  expirationTimeMs: 300000,
+});
 ```
 
 ## Call Signature
 
-> **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
+&gt; **memoizeFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [memoize/memoize.fn.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.fn.ts#L87)
+Defined in: [memoize/memoize.fn.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.fn.ts#L92)
 
-Wraps a method to cache its results based on arguments.
+Wrap a method so its results are cached by argument key (function form of
+[memoize](../..)).
+
+The second argument selects the caching policy: omit it to cache forever, pass
+a number for a TTL in milliseconds, or pass a [MemoizeConfig](../../memoize.types/interfaces/MemoizeConfig) for a
+custom cache, key resolver, and/or expiry.
+
+Each call to `memoizeFn` owns its own cache (closed over by the returned
+function), so binding the method per instance yields independent caches. A
+stored `null`/`undefined` is a genuine hit — presence is checked with the
+cache's `has`, not by inspecting the value — so falsy results are cached
+correctly. When `expirationTimeMs` is set, each written entry schedules a timer
+that deletes it after the delay (a clock/timer effect); the entry is not
+refreshed on read, so the TTL runs from insertion.
 
 ### Type Parameters
 
 #### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 #### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument tuple of the original method.
 
 ### Parameters
 
@@ -180,23 +223,27 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to memoize
+The method whose results are cached.
 
 #### expirationTimeMs
 
 `number`
 
-Cache expiration time in milliseconds
-
 ### Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The memoized method
+The memoized method, sharing one cache across all its invocations.
+
+### Throws
+
+When no `keyResolver` is configured and the arguments
+contain a circular reference — the default key is `JSON.stringify(args)`, which
+throws on circular input.
 
 ### Example
 
-```typescript
+```ts
 class ExpensiveOperations {
   calculatePrimes(max: number): number[] {
     const primes = [];
@@ -209,24 +256,18 @@ class ExpensiveOperations {
 
 const ops = new ExpensiveOperations();
 
-// Basic memoization
+// Basic memoization.
 const memoized = memoizeFn(ops.calculatePrimes.bind(ops));
-const primes1 = memoized(1000); // Computes
-const primes2 = memoized(1000); // Returns cached result
+const primes1 = memoized(1000); // Computes.
+const primes2 = memoized(1000); // Returns the cached result.
 
-// With TTL
-const withTTL = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  60000 // Cache for 60 seconds
-);
+// With a TTL of 60 seconds.
+const withTTL = memoizeFn(ops.calculatePrimes.bind(ops), 60000);
 
-// With custom config
-const withConfig = memoizeFn(
-  ops.calculatePrimes.bind(ops),
-  {
-    cache: new Map(),
-    keyResolver: (max) => `primes-${max}`,
-    expirationTimeMs: 300000
-  }
-);
+// With a custom config.
+const withConfig = memoizeFn(ops.calculatePrimes.bind(ops), {
+  cache: new Map(),
+  keyResolver: (max) => `primes-${max}`,
+  expirationTimeMs: 300000,
+});
 ```

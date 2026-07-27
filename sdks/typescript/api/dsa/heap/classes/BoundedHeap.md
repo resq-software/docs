@@ -1,6 +1,6 @@
 # Class: BoundedHeap\<T\>
 
-Defined in: [heap.ts:45](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L45)
+Defined in: [heap.ts:52](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L52)
 
 Fixed-capacity max-heap that keeps the **N smallest** items by `distance`.
 
@@ -13,6 +13,8 @@ kept N sits at the root. New entries are accepted only when they are
 strictly closer than the current worst.
 
 ## Example
+
+**Keep the 5 nearest survey points**
 
 ```ts
 const top5 = new BoundedHeap<{ id: string; distance: number }>(5);
@@ -32,9 +34,9 @@ Element type; must expose a numeric `distance` field.
 
 ### Constructor
 
-> **new BoundedHeap**\<`T`\>(`limit`): `BoundedHeap`\<`T`\>
+&gt; **new BoundedHeap**\<`T`\>(`limit`): `BoundedHeap`\<`T`\>
 
-Defined in: [heap.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L56)
+Defined in: [heap.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L65)
 
 #### Parameters
 
@@ -44,7 +46,9 @@ Defined in: [heap.ts:56](https://github.com/resq-software/npm/blob/fe2e20ae9db83
 
 Maximum number of items to retain. Once full, new
   inserts are accepted only when their `distance` is strictly less
-  than the current worst-kept element's distance.
+  than the current worst-kept element's distance. A non-positive
+  `limit` yields a heap that retains nothing — every [insert](#insert) is a
+  no-op.
 
 #### Returns
 
@@ -54,9 +58,9 @@ Maximum number of items to retain. Once full, new
 
 ### limit
 
-> `readonly` **limit**: `number`
+&gt; `readonly` **limit**: `number`
 
-Defined in: [heap.ts:49](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L49)
+Defined in: [heap.ts:56](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L56)
 
 Maximum number of elements the heap will retain.
 
@@ -66,9 +70,9 @@ Maximum number of elements the heap will retain.
 
 #### Get Signature
 
-> **get** **size**(): `number`
+&gt; **get** **size**(): `number`
 
-Defined in: [heap.ts:95](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L95)
+Defined in: [heap.ts:104](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L104)
 
 Current number of retained elements (≤ `limit`).
 
@@ -80,9 +84,9 @@ Current number of retained elements (≤ `limit`).
 
 ### insert()
 
-> **insert**(`entry`): `void`
+&gt; **insert**(`entry`): `void`
 
-Defined in: [heap.ts:67](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L67)
+Defined in: [heap.ts:76](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L76)
 
 Insert a candidate. If the heap is below capacity, the entry is added
 unconditionally. Otherwise the entry replaces the current worst-kept
@@ -104,9 +108,9 @@ Time complexity: `O(log limit)`.
 
 ### peek()
 
-> **peek**(): `T` \| `undefined`
+&gt; **peek**(): `T` \| `undefined`
 
-Defined in: [heap.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L82)
+Defined in: [heap.ts:91](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L91)
 
 #### Returns
 
@@ -120,9 +124,9 @@ The element with the **largest** retained distance, or
 
 ### toSorted()
 
-> **toSorted**(): `T`[]
+&gt; **toSorted**(): `T`[]
 
-Defined in: [heap.ts:90](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/heap.ts#L90)
+Defined in: [heap.ts:99](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/heap.ts#L99)
 
 #### Returns
 

@@ -1,24 +1,37 @@
 # Function: afterFn()
 
-> **afterFn**\<`D`, `A`\>(`originalMethod`, `config`): (...`args`) => `Promise`\<`D`\>
+&gt; **afterFn**\<`T`, `D`, `A`\>(`originalMethod`, `config`): (...`args`) =&gt; `Promise`\<`Awaited`\<`D`\>\>
 
-Defined in: [after/after.fn.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/after/after.fn.ts#L51)
+Defined in: [after/after.fn.ts:69](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/after/after.fn.ts#L69)
 
-Wraps a method to execute an after hook function after the method completes.
+Wraps a method to execute an after-hook function once the method completes.
+
+The wrapper is **always async**: it returns a `Promise` even when
+`originalMethod` is synchronous, because it awaits the result so the hook
+receives the resolved value. The hook runs only on success — if
+`originalMethod` throws or rejects, the returned promise rejects with that
+error and the hook is skipped. Each call is independent (no shared state), so
+concurrent invocations are safe; there is no `AbortSignal` support.
 
 ## Type Parameters
 
+### T
+
+`T` = `unknown`
+
+The type owning the named hook when `config.func` is a method name.
+
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument types of the original method.
 
 ## Parameters
 
@@ -26,19 +39,24 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to wrap
+The method to wrap.
 
 ### config
 
-[`AfterConfig`](../../after.types/interfaces/AfterConfig)\<`any`, `D`\>
+[`AfterConfig`](../../after.types/interfaces/AfterConfig)\<`T`, `Awaited`\<`D`\>\>
 
-Configuration for the after hook
+Configuration for the after hook.
 
 ## Returns
 
-The wrapped method
+The wrapped method, which resolves to the original method's value.
 
-(...`args`) => `Promise`\<`D`\>
+(...`args`) =&gt; `Promise`\<`Awaited`\<`D`\>\>
+
+## Throws
+
+As a rejected promise, when `config.func` is a method name
+  that does not resolve to a callable on the invocation's `this`.
 
 ## Example
 

@@ -1,16 +1,17 @@
 # Interface: PriorityRequestItem
 
-Defined in: [priority-queue.ts:423](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L423)
+Defined in: [priority-queue.ts:460](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L460)
 
-Priority request item
+A schedulable request with a deadline and priority level, used by the
+queue factory helpers below.
 
 ## Properties
 
 ### deadline
 
-> **deadline**: `Date`
+&gt; **deadline**: `Date`
 
-Defined in: [priority-queue.ts:427](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L427)
+Defined in: [priority-queue.ts:464](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L464)
 
 Response deadline
 
@@ -18,9 +19,9 @@ Response deadline
 
 ### id
 
-> **id**: `string`
+&gt; **id**: `string`
 
-Defined in: [priority-queue.ts:425](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L425)
+Defined in: [priority-queue.ts:462](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L462)
 
 Request ID
 
@@ -28,9 +29,9 @@ Request ID
 
 ### metadata?
 
-> `optional` **metadata?**: `Record`\<`string`, `unknown`\>
+&gt; `optional` **metadata?**: `Record`\<`string`, `unknown`\>
 
-Defined in: [priority-queue.ts:433](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L433)
+Defined in: [priority-queue.ts:470](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L470)
 
 Additional metadata
 
@@ -38,9 +39,9 @@ Additional metadata
 
 ### priority
 
-> **priority**: `number`
+&gt; **priority**: `number`
 
-Defined in: [priority-queue.ts:429](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L429)
+Defined in: [priority-queue.ts:466](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L466)
 
 Priority level (1 = highest)
 
@@ -48,8 +49,8 @@ Priority level (1 = highest)
 
 ### status
 
-> **status**: `string`
+&gt; **status**: `string`
 
-Defined in: [priority-queue.ts:431](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/priority-queue.ts#L431)
+Defined in: [priority-queue.ts:468](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/priority-queue.ts#L468)
 
 Request status

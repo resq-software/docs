@@ -15,3 +15,4 @@
 
 - [ColorKey](./type-aliases/ColorKey)
 - [LogLevelString](./type-aliases/LogLevelString)
+- [SimpleLogLevel](./type-aliases/SimpleLogLevel)

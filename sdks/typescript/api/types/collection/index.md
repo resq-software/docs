@@ -1,0 +1,25 @@
+# collection
+
+## Type Aliases
+
+- [Concat](./type-aliases/Concat)
+- [Enumerate](./type-aliases/Enumerate)
+- [Flatten](./type-aliases/Flatten)
+- [Head](./type-aliases/Head)
+- [Includes](./type-aliases/Includes)
+- [IsEmpty](./type-aliases/IsEmpty)
+- [IsUnion](./type-aliases/IsUnion)
+- [Last](./type-aliases/Last)
+- [LastInUnion](./type-aliases/LastInUnion)
+- [Length](./type-aliases/Length)
+- [NonEmptyArray](./type-aliases/NonEmptyArray)
+- [NumberRange](./type-aliases/NumberRange)
+- [Push](./type-aliases/Push)
+- [ReadonlyNonEmptyArray](./type-aliases/ReadonlyNonEmptyArray)
+- [Reverse](./type-aliases/Reverse)
+- [Tail](./type-aliases/Tail)
+- [TupleToUnion](./type-aliases/TupleToUnion)
+- [UnionToIntersection](./type-aliases/UnionToIntersection)
+- [UnionToTuple](./type-aliases/UnionToTuple)
+- [Unshift](./type-aliases/Unshift)
+- [Zip](./type-aliases/Zip)

@@ -1,22 +1,16 @@
 # Interface: MemoizeConfig\<T, D\>
 
-Defined in: [memoize/memoize.types.ts:109](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L109)
+Defined in: [memoize/memoize.types.ts:94](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L94)
 
-Configuration options for the
-
-## Memoize
-
-decorator.
-
- MemoizeConfig
+Configuration for the `@memoize` decorator and memoizeFn.
 
 ## Example
 
-```typescript
+```ts
 const config: MemoizeConfig<MyService, User> = {
   cache: new LRUCache<string, User>(100),
   keyResolver: (id) => `user-${id}`,
-  expirationTimeMs: 300000 // 5 minutes
+  expirationTimeMs: 300000, // Five minutes.
 };
 ```
 
@@ -26,40 +20,43 @@ const config: MemoizeConfig<MyService, User> = {
 
 `T`
 
-The type of the class containing the decorated method
+The class type a `keyof T` key resolver resolves against.
 
 ### D
 
 `D`
 
-The return type of the decorated method
+The return type of the decorated method.
 
 ## Properties
 
 ### cache?
 
-> `optional` **cache?**: [`Cache`](./Cache)\<`D`\>
+&gt; `optional` **cache?**: [`Cache`](./Cache)\<`D`\>
 
-Defined in: [memoize/memoize.types.ts:111](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L111)
+Defined in: [memoize/memoize.types.ts:96](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L96)
 
-Custom cache implementation (defaults to Map)
+Custom cache; when omitted, a fresh `Map` is used.
 
 ***
 
 ### expirationTimeMs?
 
-> `optional` **expirationTimeMs?**: `number`
+&gt; `optional` **expirationTimeMs?**: `number`
 
-Defined in: [memoize/memoize.types.ts:115](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L115)
+Defined in: [memoize/memoize.types.ts:107](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L107)
 
-Time in milliseconds after which cached values expire
+Per-entry time-to-live in milliseconds, measured from insertion (not refreshed
+on read). When omitted, entries never expire.
 
 ***
 
 ### keyResolver?
 
-> `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver) \| keyof `T`
+&gt; `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver) \| keyof `T`
 
-Defined in: [memoize/memoize.types.ts:113](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L113)
+Defined in: [memoize/memoize.types.ts:102](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L102)
 
-Function or method name for generating cache keys
+How cache keys are derived. A [KeyResolver](../type-aliases/KeyResolver) is called with the
+arguments; a `keyof T` names an instance method resolved and bound to `this`
+at call time. When omitted, the key is `JSON.stringify` of the arguments.

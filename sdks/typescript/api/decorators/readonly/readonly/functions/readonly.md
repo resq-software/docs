@@ -1,29 +1,34 @@
 # Function: readonly()
 
-> **readonly**\<`T`\>(): [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
+&gt; **readonly**\<`T`\>(): [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
 
-Defined in: [readonly/readonly.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/readonly/readonly.ts#L52)
+Defined in: [readonly/readonly.ts:62](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/readonly/readonly.ts#L62)
 
-Decorator that makes a method read-only (non-writable).
-Prevents the method from being reassigned after class instantiation.
+Mark a method read-only by setting its property descriptor's `writable` flag to
+`false`, so it cannot be reassigned after the class is instantiated.
+
+Returns a new descriptor object rather than mutating the one passed in. Intended
+for method (value) descriptors — `writable` has no effect on accessor
+descriptors. A blocked reassignment throws a `TypeError` in strict-mode code
+(including class bodies and ES modules) and fails silently otherwise.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 ## Returns
 
 [`Readonlyable`](../../readonly.types/type-aliases/Readonlyable)\<`T`\>
 
-The decorator function
+The method decorator.
 
 ## Example
 
-```typescript
+```ts
 class SecureApi {
   @readonly()
   authenticate(): Promise<AuthToken> {

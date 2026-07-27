@@ -1,24 +1,30 @@
 # Type Alias: Method\<D, A\>
 
-> **Method**\<`D`, `A`\> = (...`args`) => `D`
+&gt; **Method**\<`D`, `A`\> = (...`args`) =&gt; `D`
 
-Defined in: [types.ts:31](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/types.ts#L31)
+Defined in: [types.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/types.ts#L44)
 
 A generic method type used throughout decorators.
+
+Models any callable member the package wraps. `A` is a positional-argument
+**tuple** (not a loose array), so wrapping preserves arity and per-position
+types rather than collapsing them to `unknown[]`.
 
 ## Type Parameters
 
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the method
+The value the method returns (for async methods this is the
+  `Promise`, not its resolved type — see [AsyncMethod](./AsyncMethod)).
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the method (as an array)
+The positional argument tuple; `extends unknown[]` keeps it a
+  tuple while allowing any shape.
 
 ## Parameters
 

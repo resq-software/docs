@@ -1,19 +1,24 @@
 # Interface: Cache\<D\>
 
-Defined in: [memoize/memoize.types.ts:79](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L79)
+Defined in: [memoize/memoize.types.ts:66](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L66)
 
-Interface for cache implementations used by the memoize decorator.
+Cache contract used by the `@memoize` decorator. Any store with these four
+synchronous operations (a plain `Map`, an LRU, etc.) can back the cache.
 
- Cache
+`has` is the authority on presence, not `get`: a stored value may legitimately
+be `null`/`undefined`, so `memoize` calls `has` first and only then `get`. An
+implementation must therefore keep the two consistent for the same key. All
+four operations share one keyspace and run synchronously (use
+AsyncCache for a promise-based store).
 
 ## Example
 
-```typescript
+```ts
 const cache: Cache<User> = {
   set: (key, value) => storage.set(key, value),
   get: (key) => storage.get(key),
   delete: (key) => storage.delete(key),
-  has: (key) => storage.has(key)
+  has: (key) => storage.has(key),
 };
 ```
 
@@ -23,17 +28,17 @@ const cache: Cache<User> = {
 
 `D`
 
-The type of values stored in the cache
+The type of values stored in the cache.
 
 ## Properties
 
 ### delete
 
-> **delete**: (`key`) => `void`
+&gt; **delete**: (`key`) =&gt; `void`
 
-Defined in: [memoize/memoize.types.ts:85](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L85)
+Defined in: [memoize/memoize.types.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L75)
 
-Remove a value from the cache
+Remove the entry for `key`; a no-op when the key is absent.
 
 #### Parameters
 
@@ -49,11 +54,12 @@ Remove a value from the cache
 
 ### get
 
-> **get**: (`key`) => `D` \| `null` \| `undefined`
+&gt; **get**: (`key`) =&gt; `D` \| `null` \| `undefined`
 
-Defined in: [memoize/memoize.types.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L83)
+Defined in: [memoize/memoize.types.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L73)
 
-Retrieve a value from the cache
+Retrieve a value for `key`. A `null`/`undefined` result is ambiguous — it may
+be an absent key or a stored nullish value — so callers must gate on `has`.
 
 #### Parameters
 
@@ -69,11 +75,11 @@ Retrieve a value from the cache
 
 ### has
 
-> **has**: (`key`) => `boolean`
+&gt; **has**: (`key`) =&gt; `boolean`
 
-Defined in: [memoize/memoize.types.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L87)
+Defined in: [memoize/memoize.types.ts:77](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L77)
 
-Check if a key exists in the cache
+Whether an entry exists for `key`; the authoritative presence check.
 
 #### Parameters
 
@@ -89,11 +95,11 @@ Check if a key exists in the cache
 
 ### set
 
-> **set**: (`key`, `value`) => `void`
+&gt; **set**: (`key`, `value`) =&gt; `void`
 
-Defined in: [memoize/memoize.types.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize/memoize.types.ts#L81)
+Defined in: [memoize/memoize.types.ts:68](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L68)
 
-Store a value in the cache
+Store a value in the cache, overwriting any existing entry for `key`.
 
 #### Parameters
 

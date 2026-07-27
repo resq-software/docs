@@ -1,10 +1,14 @@
 # Function: delay()
 
-> **delay**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
+&gt; **delay**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [delay/delay.ts:48](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delay/delay.ts#L48)
+Defined in: [delay/delay.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delay/delay.ts#L59)
 
 Decorator that delays the execution of a method by the specified time.
+
+Rewrites the descriptor so calls return `undefined` immediately and the body
+runs `delayMs` later; the original return value is discarded (see
+[delayFn](../../delay.fn/functions/delayFn)). Every call schedules its own timer — there is no dedup.
 
 ## Type Parameters
 
@@ -12,7 +16,7 @@ Decorator that delays the execution of a method by the specified time.
 
 `T` = `unknown`
 
-The type of the class containing the decorated method
+The type of the class containing the decorated method.
 
 ## Parameters
 
@@ -20,17 +24,18 @@ The type of the class containing the decorated method
 
 `number`
 
-The delay time in milliseconds
+The delay time in milliseconds.
 
 ## Returns
 
 [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-The decorator function
+The decorator function.
 
 ## Throws
 
-When applied to a non-method property
+At decoration time, when applied to anything without a method
+  value, with message `"@delay is applicable only on a methods."`.
 
 ## Example
 

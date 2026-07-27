@@ -1,45 +1,49 @@
 # Interface: DistanceResult
 
-Defined in: [distance.ts:116](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L116)
+Defined in: [distance.ts:131](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L131)
 
-Result of a safe distance calculation.
+Outcome of a non-throwing distance calculation ([Distance.calculateSafe](../classes/Distance#calculatesafe)).
+
+The [valid](#valid) flag governs the other fields: when `valid` is `true`,
+`distance` holds a finite result and `error` is absent; when `valid` is
+`false`, `distance` is `NaN` and `error` carries the failure message.
 
 ## Properties
 
 ### distance
 
-> **distance**: `number`
+&gt; **distance**: `number`
 
-Defined in: [distance.ts:118](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L118)
+Defined in: [distance.ts:133](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L133)
 
-Calculated distance (NaN if invalid)
+The computed distance, or `NaN` when `valid` is `false`.
 
 ***
 
 ### error?
 
-> `optional` **error?**: `string`
+&gt; `optional` **error?**: `string`
 
-Defined in: [distance.ts:124](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L124)
+Defined in: [distance.ts:139](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L139)
 
-Error message if calculation failed
+Present only when `valid` is `false`: the validation failure message.
 
 ***
 
 ### formula
 
-> **formula**: [`DistanceFormula`](../type-aliases/DistanceFormula)
+&gt; **formula**: [`DistanceFormula`](../type-aliases/DistanceFormula)
 
-Defined in: [distance.ts:120](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L120)
+Defined in: [distance.ts:135](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L135)
 
-Formula used for calculation
+The formula that was requested (echoed back regardless of outcome).
 
 ***
 
 ### valid
 
-> **valid**: `boolean`
+&gt; **valid**: `boolean`
 
-Defined in: [distance.ts:122](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L122)
+Defined in: [distance.ts:137](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L137)
 
-Whether the calculation succeeded
+`true` if the calculation succeeded; see the field constraints above.

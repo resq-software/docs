@@ -1,28 +1,37 @@
 # Interface: LogTransport
 
-Defined in: [logger.types.ts:99](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L99)
+Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L140)
 
-Interface for custom log transports
+Contract for a custom log transport that receives structured [LogEntry](./LogEntry)
+values (see [Logger.addTransport](../../logger/classes/Logger#addtransport)).
+
+A transport's [LogTransport.write](#write) runs inside the emitting log call.
+Errors are isolated by [Logger](../../logger/classes/Logger): a synchronous throw is caught and a
+rejected promise is swallowed, so a failing transport never breaks the log
+call or sibling transports — but it also means write failures are silent, so a
+transport that needs delivery guarantees must handle its own errors.
 
 ## Properties
 
 ### name
 
-> **name**: `string`
+&gt; **name**: `string`
 
-Defined in: [logger.types.ts:101](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L101)
+Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L142)
 
-Transport name for identification
+Transport name, used for identification and removal by name.
 
 ## Methods
 
 ### write()
 
-> **write**(`entry`): `void` \| `Promise`\<`void`\>
+&gt; **write**(`entry`): `void` \| `Promise`\<`void`\>
 
-Defined in: [logger.types.ts:103](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L103)
+Defined in: [logger.types.ts:148](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L148)
 
-Method to write a log entry
+Write a single entry. May run synchronously or return a promise; the
+returned promise is not awaited by the logger, only guarded against
+rejection, so ordering across async transports is not guaranteed.
 
 #### Parameters
 

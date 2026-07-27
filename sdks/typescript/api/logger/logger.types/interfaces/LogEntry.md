@@ -1,65 +1,71 @@
 # Interface: LogEntry
 
-Defined in: [logger.types.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L80)
+Defined in: [logger.types.ts:109](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L109)
 
-Structured log entry for transport/storage
+A structured log entry as delivered to every registered [LogTransport](./LogTransport).
+
+Assembled fresh per emitted log after level filtering; the same object
+instance is handed to every transport, so a transport must treat it as
+read-only rather than mutate the shared entry.
 
 ## Properties
 
 ### context
 
-> **context**: `string`
+&gt; **context**: `string`
 
-Defined in: [logger.types.ts:86](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L86)
+Defined in: [logger.types.ts:115](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L115)
 
-Logger context/category
+Logger context/category that emitted the entry.
 
 ***
 
 ### data?
 
-> `optional` **data?**: [`LogData`](./LogData)
+&gt; `optional` **data?**: [`LogData`](./LogData)
 
-Defined in: [logger.types.ts:90](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L90)
+Defined in: [logger.types.ts:122](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L122)
 
-Optional structured data
+Structured payload. Absent when no data was passed *or* the passed object
+was empty — an empty bag is dropped rather than emitted as `{}`.
 
 ***
 
 ### environment
 
-> **environment**: `"client"` \| `"server"`
+&gt; **environment**: `"client"` \| `"server"`
 
-Defined in: [logger.types.ts:92](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L92)
+Defined in: [logger.types.ts:127](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L127)
 
-Environment (client/server)
+Where the entry originated, derived from `typeof window`: `"server"` when
+`window` is undefined, otherwise `"client"`.
 
 ***
 
 ### level
 
-> **level**: [`LogLevelString`](../type-aliases/LogLevelString)
+&gt; **level**: [`LogLevelString`](../type-aliases/LogLevelString)
 
-Defined in: [logger.types.ts:84](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L84)
+Defined in: [logger.types.ts:113](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L113)
 
-Log level
+Severity level of the entry.
 
 ***
 
 ### message
 
-> **message**: `string`
+&gt; **message**: `string`
 
-Defined in: [logger.types.ts:88](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L88)
+Defined in: [logger.types.ts:117](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L117)
 
-Log message
+Human-readable log message.
 
 ***
 
 ### timestamp
 
-> **timestamp**: `string`
+&gt; **timestamp**: `string`
 
-Defined in: [logger.types.ts:82](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/logger/src/logger.types.ts#L82)
+Defined in: [logger.types.ts:111](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L111)
 
-ISO timestamp of the log
+UTC timestamp in ISO-8601 (`Date#toISOString`), captured at dispatch time.

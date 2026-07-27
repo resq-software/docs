@@ -1,18 +1,31 @@
 # Type Alias: AsyncDecorator\<T\>
 
-> **AsyncDecorator**\<`T`\> = (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`AsyncMethod`](./AsyncMethod)\<`any`\>\>
+&gt; **AsyncDecorator**\<`T`\> = \<`F`\>(`target`, `propertyName`, `descriptor`) =&gt; `TypedPropertyDescriptor`\<`F`\>
 
-Defined in: [types.ts:89](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/types.ts#L89)
+Defined in: [types.ts:120](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/types.ts#L120)
 
 A decorator type specifically for async methods.
+
+Generic over the decorated async method `F`, so the descriptor's method type
+is **preserved** end-to-end rather than erased to `AsyncMethod<any>`. The
+`F extends (...args: never[]) => Promise<unknown>` bound restricts application
+to promise-returning methods, and the same `F` is returned so the resolved
+type survives.
 
 ## Type Parameters
 
 ### T
 
-`T` = `any`
+`T` = `unknown`
 
-The class type containing the method
+The class (or prototype) that owns the decorated async method;
+  received as `target` but not required to be used.
+
+## Type Parameters
+
+### F
+
+`F` *extends* (...`args`) =&gt; `Promise`\<`unknown`\>
 
 ## Parameters
 
@@ -22,15 +35,15 @@ The class type containing the method
 
 ### propertyName
 
-keyof `T`
+`PropertyKey`
 
 ### descriptor
 
-`TypedPropertyDescriptor`\<[`AsyncMethod`](./AsyncMethod)\<`any`\>\>
+`TypedPropertyDescriptor`\<`F`\>
 
 ## Returns
 
-`TypedPropertyDescriptor`\<[`AsyncMethod`](./AsyncMethod)\<`any`\>\>
+`TypedPropertyDescriptor`\<`F`\>
 
 ## Example
 

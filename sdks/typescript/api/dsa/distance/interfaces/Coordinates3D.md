@@ -1,6 +1,6 @@
 # Interface: Coordinates3D
 
-Defined in: [distance.ts:92](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L92)
+Defined in: [distance.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L92)
 
 3D coordinates with latitude, longitude, and altitude.
 
@@ -12,9 +12,9 @@ Defined in: [distance.ts:92](https://github.com/resq-software/npm/blob/fe2e20ae9
 
 ### alt
 
-> **alt**: `number`
+&gt; **alt**: `number`
 
-Defined in: [distance.ts:94](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L94)
+Defined in: [distance.ts:94](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L94)
 
 Altitude in meters
 
@@ -22,11 +22,11 @@ Altitude in meters
 
 ### lat
 
-> **lat**: `number`
+&gt; **lat**: `number` & `Brand`\<`"Latitude"`\>
 
-Defined in: [distance.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L83)
+Defined in: [distance.ts:83](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L83)
 
-Latitude in degrees (-90 to 90)
+Latitude in degrees, branded to `[-90, 90]` — see [Latitude](../../schemas/type-aliases/Latitude).
 
 #### Inherited from
 
@@ -36,11 +36,11 @@ Latitude in degrees (-90 to 90)
 
 ### lng
 
-> **lng**: `number`
+&gt; **lng**: `number` & `Brand`\<`"Longitude"`\>
 
-Defined in: [distance.ts:85](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/distance.ts#L85)
+Defined in: [distance.ts:85](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L85)
 
-Longitude in degrees (-180 to 180)
+Longitude in degrees, branded to `[-180, 180]` — see [Longitude](../../schemas/type-aliases/Longitude).
 
 #### Inherited from
 

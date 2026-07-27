@@ -1,24 +1,37 @@
 # Function: beforeFn()
 
-> **beforeFn**\<`D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`Promise`\<`D`\>, `A`\>
+&gt; **beforeFn**\<`T`, `D`, `A`\>(`originalMethod`, `config`): [`Method`](../../../types/type-aliases/Method)\<`Promise`\<`D`\>, `A`\>
 
-Defined in: [before/before.fn.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/before/before.fn.ts#L51)
+Defined in: [before/before.fn.ts:69](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/before/before.fn.ts#L69)
 
-Wraps a method to execute a before hook function before the method runs.
+Wraps a method to execute a before-hook function before the method runs.
+
+The wrapper is **always async** (returns a `Promise<D>` even for a synchronous
+`originalMethod`). With `config.wait`, the hook is awaited first: if it throws
+or rejects, the returned promise rejects and `originalMethod` is never called
+(guard semantics). Without `wait`, the hook is invoked but not awaited — its
+return is ignored and the method runs regardless. Each call is independent
+(no shared state); there is no `AbortSignal` support.
 
 ## Type Parameters
 
+### T
+
+`T` = `unknown`
+
+The type owning the named hook when `config.func` is a method name.
+
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument types of the original method.
 
 ## Parameters
 
@@ -26,19 +39,24 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to wrap
+The method to wrap.
 
 ### config
 
-[`BeforeConfig`](../../before.types/interfaces/BeforeConfig)\<`any`\>
+[`BeforeConfig`](../../before.types/interfaces/BeforeConfig)\<`T`\>
 
-Configuration for the before hook
+Configuration for the before hook.
 
 ## Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`Promise`\<`D`\>, `A`\>
 
-The wrapped method
+The wrapped method.
+
+## Throws
+
+As a rejected promise, when `config.func` is a method name
+  that does not resolve to a callable on the invocation's `this`.
 
 ## Example
 

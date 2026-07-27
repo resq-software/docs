@@ -1,28 +1,30 @@
 # Class: ThrottleAsyncExecutor\<D\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:47](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L47)
+Defined in: [throttle-async/throttle-async-executor.ts:56](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle-async/throttle-async-executor.ts#L56)
 
-Manages the queue and execution of throttled async method calls.
-Ensures that only a specified number of calls run concurrently,
-queueing additional calls until slots become available.
+Manages the queue and execution of throttled async calls, ensuring at most a
+fixed number run concurrently and queuing the rest until a slot frees up.
 
- ThrottleAsyncExecutor
+Queued calls dispatch in FIFO order; each slot is released once its call settles
+(resolve or reject), which drives the next dispatch. `parallelCalls` must be
+`>= 1` — the constructor does not validate it, and a value below `1` leaves
+`tryCall` unable to ever dispatch, so every queued call hangs.
 
 ## Example
 
-```typescript
+```ts
 const executor = new ThrottleAsyncExecutor(
   async (data) => await fetchData(data),
-  3 // Max 3 concurrent calls
+  3, // At most three concurrent calls.
 );
 
-// Execute multiple calls
+// Execute multiple calls.
 const promises = [
-  executor.exec(this, ['arg1']),
-  executor.exec(this, ['arg2']),
-  executor.exec(this, ['arg3']),
-  executor.exec(this, ['arg4']), // Queued
-  executor.exec(this, ['arg5']), // Queued
+  executor.exec(this, ["arg1"]),
+  executor.exec(this, ["arg2"]),
+  executor.exec(this, ["arg3"]),
+  executor.exec(this, ["arg4"]), // Queued.
+  executor.exec(this, ["arg5"]), // Queued.
 ];
 
 const results = await Promise.all(promises);
@@ -34,17 +36,17 @@ const results = await Promise.all(promises);
 
 `D`
 
-The resolved type of the async method
+The resolved type of the async method.
 
 ## Constructors
 
 ### Constructor
 
-> **new ThrottleAsyncExecutor**\<`D`\>(`fun`, `parallelCalls`): `ThrottleAsyncExecutor`\<`D`\>
+&gt; **new ThrottleAsyncExecutor**\<`D`\>(`fun`, `parallelCalls`): `ThrottleAsyncExecutor`\<`D`\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:68](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L68)
+Defined in: [throttle-async/throttle-async-executor.ts:69](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle-async/throttle-async-executor.ts#L69)
 
-Creates a new ThrottleAsyncExecutor instance.
+Create a new executor.
 
 #### Parameters
 
@@ -52,13 +54,13 @@ Creates a new ThrottleAsyncExecutor instance.
 
 [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>
 
-The async method to throttle
+The async method to throttle.
 
 ##### parallelCalls
 
 `number`
 
-Maximum number of concurrent calls allowed
+Maximum number of concurrent calls allowed.
 
 #### Returns
 
@@ -68,11 +70,16 @@ Maximum number of concurrent calls allowed
 
 ### exec()
 
-> **exec**(`context`, `args`): `Promise`\<`D`\>
+&gt; **exec**(`context`, `args`): `Promise`\<`D`\>
 
-Defined in: [throttle-async/throttle-async-executor.ts:88](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle-async/throttle-async-executor.ts#L88)
+Defined in: [throttle-async/throttle-async-executor.ts:93](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle-async/throttle-async-executor.ts#L93)
 
-Queues a method call for execution.
+Queue a method call, executing it immediately if a slot is free or deferring
+it until one opens.
+
+Appends to the internal queue and may synchronously start the call; queued
+calls preserve FIFO order. The returned promise mirrors the method outcome —
+a thrown/rejected method rejects it with the same reason.
 
 #### Parameters
 
@@ -80,25 +87,25 @@ Queues a method call for execution.
 
 `unknown`
 
-The `this` context for the method call
+The `this` context for the method call.
 
 ##### args
 
 `unknown`[]
 
-The arguments to pass to the method
+The arguments to pass to the method.
 
 #### Returns
 
 `Promise`\<`D`\>
 
-A promise that resolves with the method result
+A promise that resolves (or rejects) with the method's result.
 
 #### Example
 
-```typescript
+```ts
 const executor = new ThrottleAsyncExecutor(myAsyncMethod, 2);
 
-// Queue a call
-const result = await executor.exec(this, ['arg1', 'arg2']);
+// Queue a call.
+const result = await executor.exec(this, ["arg1", "arg2"]);
 ```

@@ -1,8 +1,8 @@
 # Type Alias: Delegatable\<T, D\>
 
-> **Delegatable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) => `TypedPropertyDescriptor`\<[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>\>
+&gt; **Delegatable**\<`T`, `D`\> = (`target`, `propertyName`, `descriptor`) =&gt; `TypedPropertyDescriptor`\<[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>\>
 
-Defined in: [delegate/delegate.types.ts:64](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delegate/delegate.types.ts#L64)
+Defined in: [delegate/delegate.types.ts:52](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delegate/delegate.types.ts#L52)
 
 Type for the
 
@@ -12,13 +12,14 @@ Type for the
 
 `T`
 
-The type of the class containing the decorated method
+The class owning the decorated method; `propertyName` is a
+  `keyof T`.
 
 ### D
 
 `D`
 
-The return type of the decorated async method
+The value the decorated async method resolves to.
 
 ## Parameters
 
@@ -26,30 +27,36 @@ The return type of the decorated async method
 
 `T`
 
-The class prototype
+The class prototype.
 
 ### propertyName
 
 keyof `T`
 
-The name of the method being decorated
+The name of the method being decorated.
 
 ### descriptor
 
 `TypedPropertyDescriptor`\<[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>\>
 
-The property descriptor
+The property descriptor.
 
 ## Returns
 
 `TypedPropertyDescriptor`\<[`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`\>\>
 
-The modified descriptor
+The modified descriptor.
 
 ## Delegate
 
 decorator function.
 Transforms an async method into one that deduplicates concurrent calls.
+
+The legacy (`experimentalDecorators`) method-decorator shape: it accepts and
+returns a descriptor over the *same* [AsyncMethod](../../../types/type-aliases/AsyncMethod) type, so the
+decorated method keeps its resolved-value signature. It applies only to
+promise-returning members, since dedup is defined in terms of an in-flight
+promise.
 
 ## Example
 

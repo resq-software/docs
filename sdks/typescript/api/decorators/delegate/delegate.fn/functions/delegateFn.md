@@ -1,26 +1,40 @@
 # Function: delegateFn()
 
-> **delegateFn**\<`D`, `A`\>(`originalMethod`, `keyResolver?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
+&gt; **delegateFn**\<`D`, `A`\>(`originalMethod`, `keyResolver?`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [delegate/delegate.fn.ts:77](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/delegate/delegate.fn.ts#L77)
+Defined in: [delegate/delegate.fn.ts:74](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delegate/delegate.fn.ts#L74)
 
 Wraps an async method to deduplicate concurrent calls.
 Multiple calls with the same key will share the same promise
 until the first one completes.
 
+Keeps a per-wrapper `Map` of in-flight promises keyed by `keyResolver` (or, by
+default, `JSON.stringify(args)`). The entry is removed via `.finally` once the
+promise **settles** — resolve *or* reject — so dedup only spans overlapping
+in-flight calls; a call after settlement re-invokes the method. Concurrent
+callers sharing a key share its fate: one rejection rejects them all. Distinct
+keys never dedup. There is no `AbortSignal` support and no ordering guarantee
+across keys.
+
+The key is computed **synchronously** before the method is called, so a
+throwing key generator (the default `JSON.stringify` on a circular or `BigInt`
+argument, or a custom `keyResolver` that throws) propagates as a synchronous
+exception, not a rejected promise. Failures from `originalMethod` itself are
+rejected promises.
+
 ## Type Parameters
 
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The resolved type of the promise
+The resolved type of the promise.
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument types of the original method.
 
 ## Parameters
 
@@ -28,19 +42,24 @@ The argument types of the original method
 
 [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-The async method to wrap
+The async method to wrap.
 
 ### keyResolver?
 
-(...`args`) => `string`
+(...`args`) =&gt; `string`
 
-Optional function to generate cache keys
+Optional function to generate cache keys from arguments.
 
 ## Returns
 
 [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-The delegated method
+The delegated method that shares in-flight promises by key.
+
+## Throws
+
+Synchronously, when the default key generator cannot
+  `JSON.stringify` the arguments (circular reference or `BigInt`).
 
 ## Example
 

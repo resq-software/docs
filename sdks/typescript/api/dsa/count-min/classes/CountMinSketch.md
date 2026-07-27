@@ -1,6 +1,6 @@
 # Class: CountMinSketch
 
-Defined in: [count-min.ts:39](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/count-min.ts#L39)
+Defined in: [count-min.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L46)
 
 Sub-linear-memory frequency estimator.
 
@@ -12,9 +12,6 @@ Estimates satisfy `estimate(x) ≥ trueCount(x)` and, with probability
 Parameters:
 - `width = ⌈ e / epsilon ⌉` (columns per row)
 - `depth = ⌈ ln(1 / delta) ⌉`  (independent hash rows)
-
-Use cases: heavy-hitter detection, request-rate estimation, log-rollup
-counts where exact counts are not affordable.
 
 ## Example
 
@@ -28,25 +25,27 @@ sketch.estimate("203.0.113.7"); // approximate count
 
 ### Constructor
 
-> **new CountMinSketch**(`epsilon`, `delta`): `CountMinSketch`
+&gt; **new CountMinSketch**(`epsilon`, `delta`): `CountMinSketch`
 
-Defined in: [count-min.ts:52](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/count-min.ts#L52)
+Defined in: [count-min.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L61)
 
 #### Parameters
 
 ##### epsilon
 
-`number`
+`number` & `Brand`\<`"Probability"`\>
 
-Additive error bound, in `(0, 1)`. Smaller ⇒ more
-  memory, tighter estimates.
+Additive error bound as a branded [Probability](../../schemas/type-aliases/Probability)
+  in `(0, 1)`. Smaller ⇒ more memory, tighter estimates. Construct with
+  `toProbability(...)` so an out-of-range value is rejected at the type
+  level; the runtime check below still guards untrusted callers.
 
 ##### delta
 
-`number`
+`number` & `Brand`\<`"Probability"`\>
 
-Probability that the error bound is exceeded, in
-  `(0, 1)`. Smaller ⇒ more rows.
+Probability that the error bound is exceeded, as a branded
+  [Probability](../../schemas/type-aliases/Probability) in `(0, 1)`. Smaller ⇒ more rows.
 
 #### Returns
 
@@ -54,15 +53,15 @@ Probability that the error bound is exceeded, in
 
 #### Throws
 
-RangeError if either parameter is outside `(0, 1)`.
+If either parameter is outside `(0, 1)`.
 
 ## Methods
 
 ### estimate()
 
-> **estimate**(`key`): `number`
+&gt; **estimate**(`key`): `number`
 
-Defined in: [count-min.ts:92](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/count-min.ts#L92)
+Defined in: [count-min.ts:105](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L105)
 
 #### Parameters
 
@@ -81,11 +80,14 @@ An over-estimate of the number of times `key` has been
 
 ### increment()
 
-> **increment**(`key`, `count?`): `void`
+&gt; **increment**(`key`, `count?`): `void`
 
-Defined in: [count-min.ts:80](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/dsa/src/count-min.ts#L80)
+Defined in: [count-min.ts:93](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/count-min.ts#L93)
 
-Add `count` to the running tally for `key`.
+Add `count` to the running tally for `key`. Mutates the sketch in place.
+
+Counters live in unsigned 32-bit lanes, so a tally that passes
+`2³² − 1` wraps around rather than saturating.
 
 #### Parameters
 
@@ -100,7 +102,8 @@ The item being counted.
 `number` = `1`
 
 Increment amount; defaults to `1`. Negative counts are
-  permitted but break the upper-bound guarantee.
+  permitted but break the upper-bound guarantee (and can wrap a lane to a
+  large value).
 
 #### Returns
 

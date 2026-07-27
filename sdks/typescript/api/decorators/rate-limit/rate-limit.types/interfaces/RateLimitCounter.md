@@ -1,15 +1,17 @@
 # Interface: RateLimitCounter
 
-Defined in: [rate-limit/rate-limit.types.ts:114](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L114)
+Defined in: [rate-limit/rate-limit.types.ts:100](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L100)
 
-Interface for rate limit counter implementations.
-Used to track call counts within time windows.
+Synchronous counter contract used to track call counts within time windows.
 
- RateLimitCounter
+`getCount` must return `0` (never negative or `undefined`) for a key that was
+never incremented or has been fully decremented. `rateLimitFn` increments on an
+admitted call and schedules a matching `dec` after the window, so `inc` and
+`dec` must be balanced for the count to reflect the live in-window total.
 
 ## Example
 
-```typescript
+```ts
 class InMemoryCounter implements RateLimitCounter {
   private counts = new Map<string, number>();
 
@@ -36,11 +38,11 @@ class InMemoryCounter implements RateLimitCounter {
 
 ### dec
 
-> **dec**: (`key`) => `void`
+&gt; **dec**: (`key`) =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:118](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L118)
+Defined in: [rate-limit/rate-limit.types.ts:104](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L104)
 
-Decrement the count for a key
+Decrement the count for a key.
 
 #### Parameters
 
@@ -56,11 +58,11 @@ Decrement the count for a key
 
 ### getCount
 
-> **getCount**: (`key`) => `number`
+&gt; **getCount**: (`key`) =&gt; `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:120](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L120)
+Defined in: [rate-limit/rate-limit.types.ts:106](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L106)
 
-Get the current count for a key
+Get the current count for a key.
 
 #### Parameters
 
@@ -76,11 +78,11 @@ Get the current count for a key
 
 ### inc
 
-> **inc**: (`key`) => `void`
+&gt; **inc**: (`key`) =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:116](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/rate-limit/rate-limit.types.ts#L116)
+Defined in: [rate-limit/rate-limit.types.ts:102](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L102)
 
-Increment the count for a key
+Increment the count for a key.
 
 #### Parameters
 

@@ -1,10 +1,14 @@
 # Function: bindFn()
 
-> **bindFn**\<`D`, `A`\>(`originalMethod`, `context`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
+&gt; **bindFn**\<`D`, `A`\>(`originalMethod`, `context`): [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-Defined in: [bind/bind.fn.ts:43](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/bind/bind.fn.ts#L43)
+Defined in: [bind/bind.fn.ts:60](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/bind/bind.fn.ts#L60)
 
 Creates a bound version of a method.
+
+Pure with respect to its inputs: returns a **new** function from
+`Function.prototype.bind` and neither mutates `originalMethod` nor `context`.
+The binding is permanent — a later `.call`/`.apply` cannot re-point `this`.
 
 ## Type Parameters
 
@@ -12,13 +16,13 @@ Creates a bound version of a method.
 
 `D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 ### A
 
 `A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument types of the original method.
 
 ## Parameters
 
@@ -26,19 +30,19 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to bind
+The method to bind.
 
 ### context
 
 `unknown`
 
-The context (`this`) to bind to
+The context (`this`) to bind to.
 
 ## Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The bound method
+The bound method.
 
 ## Example
 

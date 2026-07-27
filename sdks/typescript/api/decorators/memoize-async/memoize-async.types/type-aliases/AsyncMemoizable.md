@@ -1,10 +1,11 @@
-# Type Alias: AsyncMemoizable\<T, D\>
+# ~~Type Alias: AsyncMemoizable\<T, D\>~~
 
-> **AsyncMemoizable**\<`T`, `D`\> = [`Memoizable`](../../../memoize/memoize.types/type-aliases/Memoizable)\<`T`, `Promise`\<`D`\>\>
+&gt; **AsyncMemoizable**\<`T`, `D`\> = [`Memoizable`](../../../memoize/memoize.types/type-aliases/Memoizable)\<`T`, `Promise`\<`D`\>\>
 
-Defined in: [memoize-async/memoize-async.types.ts:26](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L26)
+Defined in: [memoize-async/memoize-async.types.ts:41](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L41)
 
-Type for the
+Legacy signature type for the `@memoizeAsync` decorator (async counterpart of
+`Memoizable`).
 
 ## Type Parameters
 
@@ -12,15 +13,20 @@ Type for the
 
 `T`
 
-The type of the class containing the decorated method
+The class type that owns the decorated method.
 
 ### D
 
 `D`
 
-The resolved type of the async method
+The resolved type of the async method.
 
-## Memoize Async
+## Deprecated
 
-decorator function.
-Similar to Memoizable but for async methods.
+Use AsyncDecorator from `../types.js` instead — removed in
+v1.0.0. This shape erases the decorated method's signature, which is not
+assignable to a concrete async method's descriptor under strict
+`strictFunctionTypes` (TS1241 / TS1270 at the decoration site). `memoizeAsync`
+now returns AsyncDecorator, which preserves the signature. Migration:
+replace `AsyncMemoizable<T, D>` annotations with `AsyncDecorator<T>` (drop the
+`D` parameter); no runtime change.

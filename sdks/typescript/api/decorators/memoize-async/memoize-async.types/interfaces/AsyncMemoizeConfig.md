@@ -1,22 +1,17 @@
 # Interface: AsyncMemoizeConfig\<T, D\>
 
-Defined in: [memoize-async/memoize-async.types.ts:81](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L81)
+Defined in: [memoize-async/memoize-async.types.ts:93](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L93)
 
-Configuration options for the
-
-## Memoize Async
-
-decorator.
-
- AsyncMemoizeConfig
+Configuration for the `@memoizeAsync` decorator and memoizeAsyncFn. The
+cache may be synchronous or asynchronous.
 
 ## Example
 
-```typescript
+```ts
 const config: AsyncMemoizeConfig<ApiService, User> = {
   cache: redisCache,
   keyResolver: (userId) => `user:${userId}`,
-  expirationTimeMs: 300000
+  expirationTimeMs: 300000,
 };
 ```
 
@@ -26,40 +21,44 @@ const config: AsyncMemoizeConfig<ApiService, User> = {
 
 `T`
 
-The type of the class containing the decorated method
+The class type a `keyof T` key resolver resolves against.
 
 ### D
 
 `D`
 
-The resolved type of the async method
+The resolved type of the async method.
 
 ## Properties
 
 ### cache?
 
-> `optional` **cache?**: [`Cache`](../../../memoize/memoize.types/interfaces/Cache)\<`D`\> \| [`AsyncCache`](./AsyncCache)\<`D`\>
+&gt; `optional` **cache?**: [`Cache`](../../../memoize/memoize.types/interfaces/Cache)\<`D`\> \| [`AsyncCache`](./AsyncCache)\<`D`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:83](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L83)
+Defined in: [memoize-async/memoize-async.types.ts:98](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L98)
 
-Custom cache implementation (sync or async)
+Custom cache, synchronous ([Cache](../../../memoize/memoize.types/interfaces/Cache)) or asynchronous ([AsyncCache](./AsyncCache));
+when omitted, a fresh `Map` is used.
 
 ***
 
 ### expirationTimeMs?
 
-> `optional` **expirationTimeMs?**: `number`
+&gt; `optional` **expirationTimeMs?**: `number`
 
-Defined in: [memoize-async/memoize-async.types.ts:87](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L87)
+Defined in: [memoize-async/memoize-async.types.ts:109](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L109)
 
-Time in milliseconds after which cached values expire
+Per-entry time-to-live in milliseconds, measured from insertion. When omitted,
+entries never expire.
 
 ***
 
 ### keyResolver?
 
-> `optional` **keyResolver?**: [`KeyResolver`](../../../memoize/memoize.types/type-aliases/KeyResolver) \| keyof `T`
+&gt; `optional` **keyResolver?**: [`KeyResolver`](../../../memoize/memoize.types/type-aliases/KeyResolver) \| keyof `T`
 
-Defined in: [memoize-async/memoize-async.types.ts:85](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L85)
+Defined in: [memoize-async/memoize-async.types.ts:104](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L104)
 
-Function or method name for generating cache keys
+How cache keys are derived. A [KeyResolver](../../../memoize/memoize.types/type-aliases/KeyResolver) is called with the
+arguments; a `keyof T` names an instance method resolved and bound to `this`
+at call time. When omitted, the key is `JSON.stringify` of the arguments.

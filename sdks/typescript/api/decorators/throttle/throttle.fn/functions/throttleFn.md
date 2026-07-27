@@ -1,24 +1,30 @@
 # Function: throttleFn()
 
-> **throttleFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
+&gt; **throttleFn**\<`D`, `A`\>(`originalMethod`, `delayMs`): [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
-Defined in: [throttle/throttle.fn.ts:54](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/throttle/throttle.fn.ts#L54)
+Defined in: [throttle/throttle.fn.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/throttle/throttle.fn.ts#L67)
 
-Wraps a method to throttle its execution to once per time period.
+Wrap a method so it executes at most once per `delayMs` (function form of
+[throttle](../..)). Calls made during the cooldown are dropped.
+
+Leading-edge only — the first call runs synchronously and dropped calls are not
+replayed on the trailing edge. Each admitted call schedules a `setTimeout` that
+reopens the gate after `delayMs` (a clock/timer effect); the cooldown cannot be
+cancelled. Every call to `throttleFn` owns its own cooldown state.
 
 ## Type Parameters
 
 ### D
 
-`D` = `any`
+`D` = `unknown`
 
-The return type of the original method
+The return type of the original method.
 
 ### A
 
-`A` *extends* `any`[] = `any`[]
+`A` *extends* `unknown`[] = `unknown`[]
 
-The argument types of the original method
+The argument tuple of the original method.
 
 ## Parameters
 
@@ -26,23 +32,24 @@ The argument types of the original method
 
 [`Method`](../../../types/type-aliases/Method)\<`D`, `A`\>
 
-The method to throttle
+The method to throttle.
 
 ### delayMs
 
 `number`
 
-The throttle interval in milliseconds
+The minimum interval between executions, in milliseconds.
 
 ## Returns
 
 [`Method`](../../../types/type-aliases/Method)\<`void`, `A`\>
 
-The throttled method
+The throttled method. It always returns `void`; the wrapped method's
+return value is discarded.
 
 ## Example
 
-```typescript
+```ts
 class ScrollTracker {
   scrollY = 0;
 

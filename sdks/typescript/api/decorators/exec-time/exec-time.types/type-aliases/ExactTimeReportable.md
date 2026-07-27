@@ -1,10 +1,16 @@
 # Type Alias: ExactTimeReportable\<T\>
 
-> **ExactTimeReportable**\<`T`\> = (`target`, `propertyName`, `descriptor`) => `any`
+&gt; **ExactTimeReportable**\<`T`\> = (`target`, `propertyName`, `descriptor`) =&gt; `any`
 
-Defined in: [exec-time/exec-time.types.ts:69](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/exec-time/exec-time.types.ts#L69)
+Defined in: [exec-time/exec-time.types.ts:91](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/exec-time/exec-time.types.ts#L91)
 
 Type for methods that can have their execution time reported.
+
+The **dual-protocol** shape of `@execTime`: the same callable must satisfy both
+the legacy (`experimentalDecorators`) three-argument method decorator and the
+Stage-3 `(value, context)` decorator. The two protocols disagree on the return
+type, which is why it is deliberately `any` (see the inline `biome-ignore`) —
+any concrete union would break one caller.
 
 ## Type Parameters
 
@@ -12,7 +18,8 @@ Type for methods that can have their execution time reported.
 
 `T`
 
-The type of the class containing the method
+The class owning the method; `propertyName` is a `keyof T` in the
+  legacy form.
 
 ## Parameters
 
@@ -20,22 +27,22 @@ The type of the class containing the method
 
 `T`
 
-The class prototype
+The class prototype.
 
 ### propertyName
 
 keyof `T`
 
-The name of the method
+The name of the method.
 
 ### descriptor
 
-`TypedPropertyDescriptor`\<`any`\>
+`TypedPropertyDescriptor`\<[`Method`](../../../types/type-aliases/Method) \| [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\>
 
-The property descriptor
+The property descriptor.
 
 ## Returns
 
 `any`
 
-The modified descriptor
+The modified descriptor.

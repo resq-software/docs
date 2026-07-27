@@ -1,27 +1,43 @@
 # Function: observe()
 
-Overloaded function for observing property changes.
-Can be used with or without a custom callback.
+Implementation for the observe overloads: usable directly as a
+decorator or as a decorator factory that takes a custom callback.
+
+## Template
+
+**T**
+
+The type of the property value.
 
 ## Param
 
-Either the class prototype or a callback function
+**targetOrCb**
+
+Either the class prototype (direct decorator use) or a
+callback function (factory use).
 
 ## Param
 
-The property key (when used without callback)
+**propertyKey**
+
+The property key, present only for direct decorator use.
 
 ## Throws
 
-When used with incorrect parameters
+If called with an unsupported argument combination.
 
 ## Call Signature
 
-> **observe**(`target`, `propertyKey`): `void`
+&gt; **observe**(`target`, `propertyKey`): `void`
 
-Defined in: [observer/observer.ts:93](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/observer/observer.ts#L93)
+Defined in: [observer/observer.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.ts#L82)
 
-Observe all changes of a property. All assignments will be logged to the console.
+Observe every assignment to a property, logging each new value to the console.
+
+Redefines the property on `target` (the prototype) with a getter/setter pair via
+`Object.defineProperty`, and writes to `console.log` on every assignment. The
+backing value is held in a single closure shared by the prototype, so all
+instances read and write the same slot rather than getting per-instance storage.
 
 ### Parameters
 
@@ -29,13 +45,13 @@ Observe all changes of a property. All assignments will be logged to the console
 
 `object`
 
-The class prototype
+The class prototype.
 
 #### propertyKey
 
 `string` \| `symbol`
 
-The property key
+The property key.
 
 ### Returns
 
@@ -43,24 +59,29 @@ The property key
 
 ### Example
 
-```typescript
+```ts
 class Counter {
   @observe
   value: number = 0;
 }
 
 const counter = new Counter();
-counter.value = 5; // Logs: "setting property Counter#value = 5"
-counter.value = 10; // Logs: "setting property Counter#value = 10"
+counter.value = 5; // Logs: "setting property Counter#value = 5".
+counter.value = 10; // Logs: "setting property Counter#value = 10".
 ```
 
 ## Call Signature
 
-> **observe**\<`T`\>(`cb`): `PropertyDecorator`
+&gt; **observe**\<`T`\>(`cb`): `PropertyDecorator`
 
-Defined in: [observer/observer.ts:122](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/observer/observer.ts#L122)
+Defined in: [observer/observer.ts:115](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.ts#L115)
 
-Observe all changes of a property and invoke a provided callback on each assignment.
+Observe every assignment to a property and invoke `cb` with each new value.
+
+The returned decorator redefines the property on the prototype via
+`Object.defineProperty`; `cb` runs synchronously inside the setter, so a throw
+from `cb` propagates to the assigning code. As with the default form, the
+backing value lives in one closure shared across all instances of the class.
 
 ### Type Parameters
 
@@ -68,7 +89,7 @@ Observe all changes of a property and invoke a provided callback on each assignm
 
 `T`
 
-The type of the property value
+The type of the property value.
 
 ### Parameters
 
@@ -76,31 +97,31 @@ The type of the property value
 
 [`ObserverCallback`](../../observer.types/type-aliases/ObserverCallback)\<`T`\>
 
-Callback to execute on assignment of observed variable
+Callback to run on each assignment of the observed property.
 
 ### Returns
 
 `PropertyDecorator`
 
-The property decorator
+The property decorator.
 
 ### Example
 
-```typescript
+```ts
 class User {
   @observe((value) => {
-    console.log('Email changed:', value);
+    console.log("Email changed:", value);
     validateEmail(value);
   })
-  email: string = '';
+  email: string = "";
 
   @observe((value) => {
-    metrics.gauge('user.age', value);
+    metrics.gauge("user.age", value);
   })
   age: number = 0;
 }
 
 const user = new User();
-user.email = 'test@example.com'; // Logs and validates
-user.age = 25; // Records metric
+user.email = "test@example.com"; // Logs and validates.
+user.age = 25; // Records a metric.
 ```

@@ -1,8 +1,10 @@
-# @resq-sw/decorators
+# @resq-systems/decorators
 
 ## Modules
 
+- [\_assert](./assert)
 - [\_utils](./utils)
+- [@resq-systems/decorators/bind/bind](./@resq-systems/decorators/bind/bind)
 - [after](./after)
 - [after/after](./after/after)
 - [after/after.fn](./after/after.fn)
@@ -12,7 +14,6 @@
 - [before/before.fn](./before/before.fn)
 - [before/before.types](./before/before.types)
 - [bind](./bind)
-- [bind/bind](./bind/bind)
 - [bind/bind.fn](./bind/bind.fn)
 - [bind/bind.types](./bind/bind.types)
 - [debounce](./debounce)

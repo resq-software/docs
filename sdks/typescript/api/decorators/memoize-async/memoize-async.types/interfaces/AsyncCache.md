@@ -1,14 +1,19 @@
 # Interface: AsyncCache\<D\>
 
-Defined in: [memoize-async/memoize-async.types.ts:51](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L51)
+Defined in: [memoize-async/memoize-async.types.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L67)
 
-Interface for async cache implementations used by the memoizeAsync decorator.
+Async cache contract used by the `@memoizeAsync` decorator. Any store exposing
+these four promise-returning operations (e.g. a Redis-backed cache) qualifies.
 
- AsyncCache
+`get` must resolve `null` for an absent key: `memoizeAsync` distinguishes hit
+from miss with a single `get` (never a separate `has` + `get`) to stay race-free
+against TTL eviction, so a nullish resolution is read as "not cached". A value
+that is itself `null`/`undefined` therefore cannot be cached and is recomputed
+each call. All operations share one keyspace.
 
 ## Example
 
-```typescript
+```ts
 const redisCache: AsyncCache<User> = {
   set: async (key, value) => await redis.set(key, JSON.stringify(value)),
   get: async (key) => {
@@ -16,7 +21,7 @@ const redisCache: AsyncCache<User> = {
     return data ? JSON.parse(data) : null;
   },
   delete: async (key) => await redis.del(key),
-  has: async (key) => await redis.exists(key) > 0
+  has: async (key) => (await redis.exists(key)) > 0,
 };
 ```
 
@@ -26,17 +31,17 @@ const redisCache: AsyncCache<User> = {
 
 `D`
 
-The type of values stored in the cache
+The type of values stored in the cache.
 
 ## Properties
 
 ### delete
 
-> **delete**: (`key`) => `Promise`\<`void`\>
+&gt; **delete**: (`key`) =&gt; `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:57](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L57)
+Defined in: [memoize-async/memoize-async.types.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L73)
 
-Remove a value from the cache asynchronously
+Remove the entry for `key`; resolves regardless of prior presence.
 
 #### Parameters
 
@@ -52,11 +57,11 @@ Remove a value from the cache asynchronously
 
 ### get
 
-> **get**: (`key`) => `Promise`\<`D`\> \| `Promise`\<`null`\>
+&gt; **get**: (`key`) =&gt; `Promise`\<`D` \| `null`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:55](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L55)
+Defined in: [memoize-async/memoize-async.types.ts:71](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L71)
 
-Retrieve a value from the cache asynchronously
+Retrieve the value for `key`, resolving `null` when the key is absent.
 
 #### Parameters
 
@@ -66,17 +71,17 @@ Retrieve a value from the cache asynchronously
 
 #### Returns
 
-`Promise`\<`D`\> \| `Promise`\<`null`\>
+`Promise`\<`D` \| `null`\>
 
 ***
 
 ### has
 
-> **has**: (`key`) => `Promise`\<`boolean`\>
+&gt; **has**: (`key`) =&gt; `Promise`\<`boolean`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:59](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L59)
+Defined in: [memoize-async/memoize-async.types.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L75)
 
-Check if a key exists in the cache asynchronously
+Whether an entry exists for `key`. Not used on the `memoizeAsync` hot path.
 
 #### Parameters
 
@@ -92,11 +97,11 @@ Check if a key exists in the cache asynchronously
 
 ### set
 
-> **set**: (`key`, `value`) => `Promise`\<`void`\>
+&gt; **set**: (`key`, `value`) =&gt; `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:53](https://github.com/resq-software/npm/blob/fe2e20ae9db8398a0db1e3218edaabb3cf7004d6/packages/decorators/src/memoize-async/memoize-async.types.ts#L53)
+Defined in: [memoize-async/memoize-async.types.ts:69](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L69)
 
-Store a value in the cache asynchronously
+Store a value for `key`, overwriting any existing entry.
 
 #### Parameters
 
