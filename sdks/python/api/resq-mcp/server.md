@@ -214,3 +214,8 @@ def main() -> None
 ```
 
 Console script entry point for the ResQ MCP server.
+
+Selects the transport from ``RESQ_TRANSPORT`` (default ``stdio``). For the
+network transports (``http``/``sse``/``streamable-http``) the server binds to
+``RESQ_HOST``:``RESQ_PORT``; ``stdio`` does not accept host/port and is left
+to FastMCP's default client-spawned behaviour.
