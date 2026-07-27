@@ -24,6 +24,14 @@ MCP tool wrappers for HCE domain.
 
 ## FastMCPError
 
+<a id="resq_mcp.hce.tools.audit_log"></a>
+
+## audit\_log
+
+<a id="resq_mcp.hce.tools.preflight"></a>
+
+## preflight
+
 <a id="resq_mcp.hce.tools.IncidentValidation"></a>
 
 ## IncidentValidation
