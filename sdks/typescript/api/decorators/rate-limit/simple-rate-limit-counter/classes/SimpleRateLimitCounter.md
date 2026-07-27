@@ -1,6 +1,6 @@
 # Class: SimpleRateLimitCounter
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:48](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L48)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:48](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L48)
 
 In-memory [RateLimitCounter](../../rate-limit.types/interfaces/RateLimitCounter) backed by a `Map` of per-key counts. This is
 the default counter when a RateLimitConfigs supplies none.
@@ -34,7 +34,7 @@ counter.getCount("user-1"); // → 1
 
 &gt; **new SimpleRateLimitCounter**(`counterMap?`): `SimpleRateLimitCounter`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:57](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L57)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:57](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L57)
 
 Create a new counter, optionally seeded with an existing map of counts.
 
@@ -59,7 +59,7 @@ Backing store for per-key counts; defaults to a new `Map`.
 
 &gt; **dec**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:111](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L111)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:111](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L111)
 
 Decrement the count for a key, removing the key entirely when it reaches `0`.
 
@@ -97,7 +97,7 @@ counter.getCount("key"); // → 0 (key removed from the map)
 
 &gt; **getCount**(`key`): `number`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:72](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L72)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:72](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L72)
 
 Get the current count for a key.
 
@@ -134,7 +134,7 @@ counter.getCount("key"); // → 1
 
 &gt; **inc**(`key`): `void`
 
-Defined in: [rate-limit/simple-rate-limit-counter.ts:88](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L88)
+Defined in: [rate-limit/simple-rate-limit-counter.ts:88](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/simple-rate-limit-counter.ts#L88)
 
 Increment the count for a key.
 

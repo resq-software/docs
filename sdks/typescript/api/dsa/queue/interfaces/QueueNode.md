@@ -1,6 +1,6 @@
 # Interface: QueueNode\<T\>
 
-Defined in: [queue.ts:28](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L28)
+Defined in: [queue.ts:28](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/queue.ts#L28)
 
 A cell in the queue's singly-linked chain. Exposed because [Queue](../classes/Queue)
 fields reference it, but callers rarely construct one directly.
@@ -17,7 +17,7 @@ fields reference it, but callers rarely construct one directly.
 
 &gt; **next**: `QueueNode`\<`T`\> \| `null`
 
-Defined in: [queue.ts:30](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L30)
+Defined in: [queue.ts:30](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/queue.ts#L30)
 
 The next node toward the back of the queue, or `null` at the tail.
 
@@ -27,6 +27,6 @@ The next node toward the back of the queue, or `null` at the tail.
 
 &gt; **value**: `T`
 
-Defined in: [queue.ts:32](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/queue.ts#L32)
+Defined in: [queue.ts:32](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/queue.ts#L32)
 
 The stored element, held by reference.

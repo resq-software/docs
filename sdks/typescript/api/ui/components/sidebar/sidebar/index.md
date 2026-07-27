@@ -1,0 +1,28 @@
+# components/sidebar/sidebar
+
+## Functions
+
+- [Sidebar](./functions/Sidebar)
+- [SidebarContent](./functions/SidebarContent)
+- [SidebarFooter](./functions/SidebarFooter)
+- [SidebarGroup](./functions/SidebarGroup)
+- [SidebarGroupAction](./functions/SidebarGroupAction)
+- [SidebarGroupContent](./functions/SidebarGroupContent)
+- [SidebarGroupLabel](./functions/SidebarGroupLabel)
+- [SidebarHeader](./functions/SidebarHeader)
+- [SidebarInput](./functions/SidebarInput)
+- [SidebarInset](./functions/SidebarInset)
+- [SidebarMenu](./functions/SidebarMenu)
+- [SidebarMenuAction](./functions/SidebarMenuAction)
+- [SidebarMenuBadge](./functions/SidebarMenuBadge)
+- [SidebarMenuButton](./functions/SidebarMenuButton)
+- [SidebarMenuItem](./functions/SidebarMenuItem)
+- [SidebarMenuSkeleton](./functions/SidebarMenuSkeleton)
+- [SidebarMenuSub](./functions/SidebarMenuSub)
+- [SidebarMenuSubButton](./functions/SidebarMenuSubButton)
+- [SidebarMenuSubItem](./functions/SidebarMenuSubItem)
+- [SidebarProvider](./functions/SidebarProvider)
+- [SidebarRail](./functions/SidebarRail)
+- [SidebarSeparator](./functions/SidebarSeparator)
+- [SidebarTrigger](./functions/SidebarTrigger)
+- [useSidebar](./functions/useSidebar)

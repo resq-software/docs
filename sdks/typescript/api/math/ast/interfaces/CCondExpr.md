@@ -1,6 +1,6 @@
 # Interface: CCondExpr
 
-Defined in: [packages/math/src/ast.ts:231](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L231)
+Defined in: [packages/math/src/ast.ts:231](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L231)
 
 Compiled conditional.
 
@@ -10,7 +10,7 @@ Compiled conditional.
 
 &gt; `readonly` **else**: [`CompiledExpr`](../type-aliases/CompiledExpr)
 
-Defined in: [packages/math/src/ast.ts:235](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L235)
+Defined in: [packages/math/src/ast.ts:235](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L235)
 
 ***
 
@@ -18,7 +18,7 @@ Defined in: [packages/math/src/ast.ts:235](https://github.com/resq-software/npm/
 
 &gt; `readonly` **kind**: `"cond"`
 
-Defined in: [packages/math/src/ast.ts:232](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L232)
+Defined in: [packages/math/src/ast.ts:232](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L232)
 
 ***
 
@@ -26,7 +26,7 @@ Defined in: [packages/math/src/ast.ts:232](https://github.com/resq-software/npm/
 
 &gt; `readonly` **test**: [`CompiledExpr`](../type-aliases/CompiledExpr)
 
-Defined in: [packages/math/src/ast.ts:233](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L233)
+Defined in: [packages/math/src/ast.ts:233](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L233)
 
 ***
 
@@ -34,4 +34,4 @@ Defined in: [packages/math/src/ast.ts:233](https://github.com/resq-software/npm/
 
 &gt; `readonly` **then**: [`CompiledExpr`](../type-aliases/CompiledExpr)
 
-Defined in: [packages/math/src/ast.ts:234](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L234)
+Defined in: [packages/math/src/ast.ts:234](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L234)

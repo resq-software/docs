@@ -4,7 +4,7 @@
 
 &gt; **memoize**\<`T`\>(): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [memoize/memoize.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.ts#L82)
+Defined in: [memoize/memoize.ts:82](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.ts#L82)
 
 Cache a synchronous method's results by their arguments; a repeat call with
 the same arguments returns the cached value instead of re-running the method.
@@ -78,7 +78,7 @@ memoizeAsync for promise-returning methods.
 
 &gt; **memoize**\<`T`, `D`\>(`config`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [memoize/memoize.ts:83](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.ts#L83)
+Defined in: [memoize/memoize.ts:83](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.ts#L83)
 
 Cache a synchronous method's results by their arguments; a repeat call with
 the same arguments returns the cached value instead of re-running the method.
@@ -164,7 +164,7 @@ memoizeAsync for promise-returning methods.
 
 &gt; **memoize**\<`T`\>(`expirationTimeMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [memoize/memoize.ts:84](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.ts#L84)
+Defined in: [memoize/memoize.ts:84](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.ts#L84)
 
 Cache a synchronous method's results by their arguments; a repeat call with
 the same arguments returns the cached value instead of re-running the method.

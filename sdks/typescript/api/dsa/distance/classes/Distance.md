@@ -1,6 +1,6 @@
 # Class: Distance
 
-Defined in: [distance.ts:234](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L234)
+Defined in: [distance.ts:234](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L234)
 
 Distance calculation utility class.
 
@@ -26,7 +26,7 @@ Provides multiple distance formulas for different use cases:
 
 &gt; `static` **calculate**\<`F`\>(`formula`, `point1`, `point2`, `options?`): `number`
 
-Defined in: [distance.ts:571](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L571)
+Defined in: [distance.ts:571](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L571)
 
 Dispatch to the named distance formula. [PointFor](../type-aliases/PointFor) constrains the
 point shape at the type level, so `"threed"` requires 3D points and every
@@ -86,7 +86,7 @@ If the points are invalid for the formula.
 
 &gt; `static` **calculateSafe**\<`F`\>(`formula`, `point1`, `point2`, `options?`): [`DistanceResult`](../interfaces/DistanceResult)
 
-Defined in: [distance.ts:622](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L622)
+Defined in: [distance.ts:622](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L622)
 
 Non-throwing wrapper around [Distance.calculate](#calculate): catches validation
 failures and reports them in the returned [DistanceResult](../interfaces/DistanceResult) instead
@@ -139,7 +139,7 @@ A result with the distance (or `NaN`), the formula, a `valid`
 
 &gt; `static` **chebyshev**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:407](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L407)
+Defined in: [distance.ts:407](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L407)
 
 Chessboard (L∞) distance: the largest single-axis coordinate difference.
 
@@ -173,7 +173,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **cosine**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:470](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L470)
+Defined in: [distance.ts:470](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L470)
 
 Cosine distance (`1 - cosine similarity`) between the two coordinates read
 as 2D vectors from the origin. Ranges from `0` (identical direction) to
@@ -209,7 +209,7 @@ If a point is non-finite or is the zero vector.
 
 &gt; `static` **euclidean**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:244](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L244)
+Defined in: [distance.ts:244](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L244)
 
 Straight-line (L2) distance between two points, treating `lat`/`lng` as
 plain planar coordinates rather than geographic ones.
@@ -244,7 +244,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **hamming**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:497](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L497)
+Defined in: [distance.ts:497](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L497)
 
 Hamming distance: the count of coordinate positions whose values differ.
 Intended for discrete/binary vectors encoded as `lat`/`lng`.
@@ -279,7 +279,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **haversine**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:263](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L263)
+Defined in: [distance.ts:263](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L263)
 
 Great-circle distance between two geographic points on a spherical Earth.
 Fast and accurate to ~0.5% — prefer [Distance.vincenty](#vincenty) when
@@ -315,7 +315,7 @@ If either point is outside valid lat/lng ranges.
 
 &gt; `static` **haversineMeters**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:289](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L289)
+Defined in: [distance.ts:289](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L289)
 
 Convenience wrapper around [Distance.haversine](#haversine) returning metres
 instead of kilometres.
@@ -350,7 +350,7 @@ If either point is outside valid lat/lng ranges.
 
 &gt; `static` **jaccard**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:518](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L518)
+Defined in: [distance.ts:518](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L518)
 
 Jaccard distance (`1 - |A ∩ B| / |A ∪ B|`) between the two coordinates
 read as sets of their `lat`/`lng` values.
@@ -385,7 +385,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **manhattan**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:392](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L392)
+Defined in: [distance.ts:392](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L392)
 
 Taxicab (L1) distance: the sum of the absolute coordinate differences.
 
@@ -419,7 +419,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **minkowski**(`point1`, `point2`, `p?`): `number`
 
-Defined in: [distance.ts:425](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L425)
+Defined in: [distance.ts:425](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L425)
 
 Generalised Lp distance. Reduces to Manhattan at `p = 1`, Euclidean at
 `p = 2`, and Chebyshev at `p = Infinity`.
@@ -461,7 +461,7 @@ If a point is non-finite or `p <= 0`.
 
 &gt; `static` **recommendGeoFormula**(`maxDistanceKm?`): [`DistanceFormula`](../type-aliases/DistanceFormula)
 
-Defined in: [distance.ts:654](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L654)
+Defined in: [distance.ts:654](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L654)
 
 Recommend a geographic formula for an expected distance range, trading
 speed for accuracy: `"haversine"` for short hops, `"vincenty"` once
@@ -488,7 +488,7 @@ Expected upper bound of the distances to compute,
 
 &gt; `static` **sorensenDice**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:542](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L542)
+Defined in: [distance.ts:542](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L542)
 
 Sørensen–Dice distance (`1 - 2|A ∩ B| / (|A| + |B|)`) between the two
 coordinates read as sets of their `lat`/`lng` values.
@@ -523,7 +523,7 @@ If either point has non-finite coordinates.
 
 &gt; `static` **threed**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:453](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L453)
+Defined in: [distance.ts:453](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L453)
 
 Euclidean distance in 3D, treating `alt` as the third axis alongside
 `lat`/`lng`.
@@ -559,7 +559,7 @@ If either point lacks a finite `alt` or has
 
 &gt; `static` **vincenty**(`point1`, `point2`): `number`
 
-Defined in: [distance.ts:304](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/distance.ts#L304)
+Defined in: [distance.ts:304](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/distance.ts#L304)
 
 Ellipsoidal geodesic distance on the WGS-84 spheroid via Vincenty's
 inverse formula. More accurate than [Distance.haversine](#haversine) but

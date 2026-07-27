@@ -1,6 +1,6 @@
 # Class: MemoryTransport
 
-Defined in: [transports.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L46)
+Defined in: [transports.ts:46](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L46)
 
 Buffers log entries in memory for inspection or testing.
 
@@ -27,7 +27,7 @@ off();
 
 &gt; **new MemoryTransport**(`options?`): `MemoryTransport`
 
-Defined in: [transports.ts:55](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L55)
+Defined in: [transports.ts:55](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L55)
 
 #### Parameters
 
@@ -54,7 +54,7 @@ Optional transport `name` and buffer `capacity`; a
 
 &gt; `readonly` **name**: `string`
 
-Defined in: [transports.ts:47](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L47)
+Defined in: [transports.ts:47](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L47)
 
 Transport name, used for identification and removal by name.
 
@@ -70,7 +70,7 @@ Transport name, used for identification and removal by name.
 
 &gt; **get** **entries**(): readonly [`LogEntry`](../../logger.types/interfaces/LogEntry)[]
 
-Defined in: [transports.ts:76](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L76)
+Defined in: [transports.ts:76](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L76)
 
 A snapshot of the buffered entries, oldest first.
 
@@ -84,7 +84,7 @@ readonly [`LogEntry`](../../logger.types/interfaces/LogEntry)[]
 
 &gt; **clear**(): `void`
 
-Defined in: [transports.ts:81](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L81)
+Defined in: [transports.ts:81](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L81)
 
 Discard all buffered entries.
 
@@ -98,7 +98,7 @@ Discard all buffered entries.
 
 &gt; **write**(`entry`): `void`
 
-Defined in: [transports.ts:68](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/transports.ts#L68)
+Defined in: [transports.ts:68](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/transports.ts#L68)
 
 Append an entry, evicting the oldest entries once `capacity` is exceeded.
 

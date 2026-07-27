@@ -1,6 +1,6 @@
 # Interface: CLitExpr
 
-Defined in: [packages/math/src/ast.ts:168](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L168)
+Defined in: [packages/math/src/ast.ts:168](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L168)
 
 Compiled literal node — unchanged from its [LitExpr](./LitExpr) source.
 
@@ -10,7 +10,7 @@ Compiled literal node — unchanged from its [LitExpr](./LitExpr) source.
 
 &gt; `readonly` **kind**: `"lit"`
 
-Defined in: [packages/math/src/ast.ts:169](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L169)
+Defined in: [packages/math/src/ast.ts:169](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L169)
 
 ***
 
@@ -18,4 +18,4 @@ Defined in: [packages/math/src/ast.ts:169](https://github.com/resq-software/npm/
 
 &gt; `readonly` **value**: [`Value`](../../value/type-aliases/Value)
 
-Defined in: [packages/math/src/ast.ts:170](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/ast.ts#L170)
+Defined in: [packages/math/src/ast.ts:170](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/ast.ts#L170)

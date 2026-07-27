@@ -1,6 +1,6 @@
 # Interface: AsyncCache\<D\>
 
-Defined in: [memoize-async/memoize-async.types.ts:67](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L67)
+Defined in: [memoize-async/memoize-async.types.ts:67](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.types.ts#L67)
 
 Async cache contract used by the `@memoizeAsync` decorator. Any store exposing
 these four promise-returning operations (e.g. a Redis-backed cache) qualifies.
@@ -39,7 +39,7 @@ The type of values stored in the cache.
 
 &gt; **delete**: (`key`) =&gt; `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L73)
+Defined in: [memoize-async/memoize-async.types.ts:73](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.types.ts#L73)
 
 Remove the entry for `key`; resolves regardless of prior presence.
 
@@ -59,7 +59,7 @@ Remove the entry for `key`; resolves regardless of prior presence.
 
 &gt; **get**: (`key`) =&gt; `Promise`\<`D` \| `null`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:71](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L71)
+Defined in: [memoize-async/memoize-async.types.ts:71](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.types.ts#L71)
 
 Retrieve the value for `key`, resolving `null` when the key is absent.
 
@@ -79,7 +79,7 @@ Retrieve the value for `key`, resolving `null` when the key is absent.
 
 &gt; **has**: (`key`) =&gt; `Promise`\<`boolean`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L75)
+Defined in: [memoize-async/memoize-async.types.ts:75](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.types.ts#L75)
 
 Whether an entry exists for `key`. Not used on the `memoizeAsync` hot path.
 
@@ -99,7 +99,7 @@ Whether an entry exists for `key`. Not used on the `memoizeAsync` hot path.
 
 &gt; **set**: (`key`, `value`) =&gt; `Promise`\<`void`\>
 
-Defined in: [memoize-async/memoize-async.types.ts:69](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.types.ts#L69)
+Defined in: [memoize-async/memoize-async.types.ts:69](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.types.ts#L69)
 
 Store a value for `key`, overwriting any existing entry.
 

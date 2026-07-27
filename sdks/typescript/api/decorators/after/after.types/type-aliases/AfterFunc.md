@@ -2,7 +2,7 @@
 
 &gt; **AfterFunc**\<`D`\> = (`x?`) =&gt; `void`
 
-Defined in: [after/after.types.ts:43](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/after/after.types.ts#L43)
+Defined in: [after/after.types.ts:43](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/after/after.types.ts#L43)
 
 Function signature for after hooks.
 

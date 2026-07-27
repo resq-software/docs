@@ -1,6 +1,6 @@
 # Interface: PatternMatch
 
-Defined in: [rabin-karp.ts:40](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L40)
+Defined in: [rabin-karp.ts:40](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L40)
 
 A single pattern occurrence within the searched text.
 
@@ -13,7 +13,7 @@ A single pattern occurrence within the searched text.
 
 &gt; `optional` **column?**: `number`
 
-Defined in: [rabin-karp.ts:48](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L48)
+Defined in: [rabin-karp.ts:48](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L48)
 
 One-based column within [line](#line); absent when line info is disabled.
 
@@ -23,7 +23,7 @@ One-based column within [line](#line); absent when line info is disabled.
 
 &gt; **index**: `number`
 
-Defined in: [rabin-karp.ts:42](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L42)
+Defined in: [rabin-karp.ts:42](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L42)
 
 Zero-based character offset of the match's first character in the text.
 
@@ -33,7 +33,7 @@ Zero-based character offset of the match's first character in the text.
 
 &gt; `optional` **line?**: `number`
 
-Defined in: [rabin-karp.ts:46](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L46)
+Defined in: [rabin-karp.ts:46](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L46)
 
 One-based line number of the match; absent when line info is disabled.
 
@@ -43,6 +43,6 @@ One-based line number of the match; absent when line info is disabled.
 
 &gt; **match**: `string`
 
-Defined in: [rabin-karp.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L44)
+Defined in: [rabin-karp.ts:44](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L44)
 
 The matched substring, sliced from the original (case-preserved) text.

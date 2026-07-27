@@ -30,7 +30,7 @@ If called with an unsupported argument combination.
 
 &gt; **observe**(`target`, `propertyKey`): `void`
 
-Defined in: [observer/observer.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.ts#L82)
+Defined in: [observer/observer.ts:82](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/observer/observer.ts#L82)
 
 Observe every assignment to a property, logging each new value to the console.
 
@@ -74,7 +74,7 @@ counter.value = 10; // Logs: "setting property Counter#value = 10".
 
 &gt; **observe**\<`T`\>(`cb`): `PropertyDecorator`
 
-Defined in: [observer/observer.ts:115](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/observer/observer.ts#L115)
+Defined in: [observer/observer.ts:115](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/observer/observer.ts#L115)
 
 Observe every assignment to a property and invoke `cb` with each new value.
 

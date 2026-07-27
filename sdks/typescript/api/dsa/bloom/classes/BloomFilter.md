@@ -1,6 +1,6 @@
 # Class: BloomFilter
 
-Defined in: [bloom.ts:54](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L54)
+Defined in: [bloom.ts:54](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/bloom.ts#L54)
 
 Space-efficient probabilistic set membership test.
 
@@ -33,7 +33,7 @@ seen.has("drone-99"); // → false (with high probability)
 
 &gt; **new BloomFilter**(`capacity`, `errorRate?`): `BloomFilter`
 
-Defined in: [bloom.ts:70](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L70)
+Defined in: [bloom.ts:70](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/bloom.ts#L70)
 
 #### Parameters
 
@@ -68,7 +68,7 @@ If `capacity <= 0` or `errorRate` is outside `(0, 1)`.
 
 &gt; **add**(`item`): `void`
 
-Defined in: [bloom.ts:98](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L98)
+Defined in: [bloom.ts:98](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/bloom.ts#L98)
 
 Mark `item` as present. Subsequent `has(item)` calls always return
 `true`. Adding an item already present is a no-op.
@@ -89,7 +89,7 @@ Mark `item` as present. Subsequent `has(item)` calls always return
 
 &gt; **has**(`item`): `boolean`
 
-Defined in: [bloom.ts:112](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/bloom.ts#L112)
+Defined in: [bloom.ts:112](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/bloom.ts#L112)
 
 Probabilistic membership test.
 

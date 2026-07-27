@@ -1,6 +1,6 @@
 # Interface: RateLimitConfigs\<T\>
 
-Defined in: [rate-limit/rate-limit.types.ts:49](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L49)
+Defined in: [rate-limit/rate-limit.types.ts:49](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L49)
 
 Configuration for the `@rateLimit` decorator and rateLimitFn.
 
@@ -37,7 +37,7 @@ The class type a `keyof T` key resolver resolves against.
 
 &gt; **allowedCalls**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:53](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L53)
+Defined in: [rate-limit/rate-limit.types.ts:53](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L53)
 
 Maximum admitted calls per key within the window.
 
@@ -47,7 +47,7 @@ Maximum admitted calls per key within the window.
 
 &gt; `optional` **exceedHandler?**: () =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:65](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L65)
+Defined in: [rate-limit/rate-limit.types.ts:65](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L65)
 
 Invoked (for its side effects) when a call is dropped; a throw here propagates to the caller.
 
@@ -61,7 +61,7 @@ Invoked (for its side effects) when a call is dropped; a throw here propagates t
 
 &gt; `optional` **keyResolver?**: ((...`args`) =&gt; `string`) \| keyof `T`
 
-Defined in: [rate-limit/rate-limit.types.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L59)
+Defined in: [rate-limit/rate-limit.types.ts:59](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L59)
 
 How the rate-limit bucket key is derived. A function is called with the
 arguments; a `keyof T` names an instance method invoked with the arguments.
@@ -73,7 +73,7 @@ When omitted, all calls share the `"default"` bucket.
 
 &gt; `optional` **rateLimitAsyncCounter?**: [`RateLimitAsyncCounter`](./RateLimitAsyncCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:63](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L63)
+Defined in: [rate-limit/rate-limit.types.ts:63](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L63)
 
 Async counter for distributed limiting; takes precedence over `rateLimitCounter`.
 
@@ -83,7 +83,7 @@ Async counter for distributed limiting; takes precedence over `rateLimitCounter`
 
 &gt; `optional` **rateLimitCounter?**: [`RateLimitCounter`](./RateLimitCounter)
 
-Defined in: [rate-limit/rate-limit.types.ts:61](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L61)
+Defined in: [rate-limit/rate-limit.types.ts:61](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L61)
 
 Custom synchronous counter; ignored when `rateLimitAsyncCounter` is set.
 
@@ -93,6 +93,6 @@ Custom synchronous counter; ignored when `rateLimitAsyncCounter` is set.
 
 &gt; **timeSpanMs**: `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:51](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L51)
+Defined in: [rate-limit/rate-limit.types.ts:51](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L51)
 
 Rolling window length in milliseconds; each admitted call is charged for this long.

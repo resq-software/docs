@@ -1,6 +1,6 @@
 # Interface: Edge\<T, M\>
 
-Defined in: [graph.ts:43](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L43)
+Defined in: [graph.ts:43](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L43)
 
 Edge in the graph.
 
@@ -26,7 +26,7 @@ Shape of the optional structured metadata. Defaults to
 
 &gt; `optional` **metadata?**: `M`
 
-Defined in: [graph.ts:49](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L49)
+Defined in: [graph.ts:49](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L49)
 
 Optional metadata, typed as `M`.
 
@@ -36,7 +36,7 @@ Optional metadata, typed as `M`.
 
 &gt; **target**: `T`
 
-Defined in: [graph.ts:45](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L45)
+Defined in: [graph.ts:45](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L45)
 
 Target vertex
 
@@ -46,6 +46,6 @@ Target vertex
 
 &gt; **weight**: `number`
 
-Defined in: [graph.ts:47](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L47)
+Defined in: [graph.ts:47](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L47)
 
 Edge weight (default: 1)

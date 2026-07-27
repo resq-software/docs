@@ -4,7 +4,7 @@
 
 &gt; **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:90](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.fn.ts#L90)
+Defined in: [memoize-async/memoize-async.fn.ts:90](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.fn.ts#L90)
 
 Wrap a promise-returning method so results are cached and concurrent calls are
 deduplicated (function form of memoizeAsync).
@@ -91,7 +91,7 @@ const withConfig = memoizeAsyncFn(client.fetchData.bind(client), {
 
 &gt; **memoizeAsyncFn**\<`T`, `D`, `A`\>(`originalMethod`, `config`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:93](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.fn.ts#L93)
+Defined in: [memoize-async/memoize-async.fn.ts:93](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.fn.ts#L93)
 
 Wrap a promise-returning method so results are cached and concurrent calls are
 deduplicated (function form of memoizeAsync).
@@ -188,7 +188,7 @@ const withConfig = memoizeAsyncFn(client.fetchData.bind(client), {
 
 &gt; **memoizeAsyncFn**\<`D`, `A`\>(`originalMethod`, `expirationTimeMs`): [`AsyncMethod`](../../../types/type-aliases/AsyncMethod)\<`D`, `A`\>
 
-Defined in: [memoize-async/memoize-async.fn.ts:97](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize-async/memoize-async.fn.ts#L97)
+Defined in: [memoize-async/memoize-async.fn.ts:97](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize-async/memoize-async.fn.ts#L97)
 
 Wrap a promise-returning method so results are cached and concurrent calls are
 deduplicated (function form of memoizeAsync).

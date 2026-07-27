@@ -2,7 +2,7 @@
 
 &gt; **asBool**(`v`, `context?`): `boolean`
 
-Defined in: [packages/math/src/value.ts:151](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/value.ts#L151)
+Defined in: [packages/math/src/value.ts:151](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/value.ts#L151)
 
 Extract the `boolean` from a `bool` value, or throw [SortError](../../error/classes/SortError).
 

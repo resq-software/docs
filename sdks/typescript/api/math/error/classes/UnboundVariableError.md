@@ -1,6 +1,6 @@
 # Class: UnboundVariableError
 
-Defined in: [packages/math/src/error.ts:82](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L82)
+Defined in: [packages/math/src/error.ts:82](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L82)
 
 Thrown when a variable is referenced but not present in the environment.
 
@@ -14,7 +14,7 @@ Thrown when a variable is referenced but not present in the environment.
 
 &gt; **new UnboundVariableError**(`name`): `UnboundVariableError`
 
-Defined in: [packages/math/src/error.ts:89](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L89)
+Defined in: [packages/math/src/error.ts:89](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L89)
 
 #### Parameters
 
@@ -50,7 +50,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
@@ -100,6 +100,6 @@ Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
 
 &gt; `readonly` **variableName**: `string`
 
-Defined in: [packages/math/src/error.ts:84](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L84)
+Defined in: [packages/math/src/error.ts:84](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L84)
 
 Name of the variable that was not found in the environment.

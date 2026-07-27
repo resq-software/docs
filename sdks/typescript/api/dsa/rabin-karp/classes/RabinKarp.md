@@ -1,6 +1,6 @@
 # Class: RabinKarp
 
-Defined in: [rabin-karp.ts:124](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L124)
+Defined in: [rabin-karp.ts:124](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L124)
 
 Rabin-Karp string matching algorithm implementation
 
@@ -35,7 +35,7 @@ const multiMatches = matcher.searchMultiple(
 
 &gt; **new RabinKarp**(`options?`): `RabinKarp`
 
-Defined in: [rabin-karp.ts:135](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L135)
+Defined in: [rabin-karp.ts:135](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L135)
 
 Creates a new Rabin-Karp matcher.
 
@@ -61,7 +61,7 @@ If options validation fails.
 
 &gt; **findRepeatedPatterns**(`text`, `patternLength`, `minOccurrences?`): `Map`\<`string`, `number`\>
 
-Defined in: [rabin-karp.ts:357](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L357)
+Defined in: [rabin-karp.ts:357](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L357)
 
 Finds every fixed-length substring that repeats, useful for detecting
 duplicate phrases in a document.
@@ -98,7 +98,7 @@ A map from each repeated substring to its occurrence count.
 
 &gt; **search**(`text`, `pattern`): [`PatternMatch`](../interfaces/PatternMatch)[]
 
-Defined in: [rabin-karp.ts:155](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L155)
+Defined in: [rabin-karp.ts:155](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L155)
 
 Searches for a single pattern in text using the Rabin-Karp algorithm.
 
@@ -128,7 +128,7 @@ The matches found, capped at the `maxMatches` option.
 
 &gt; **searchMultiple**(`text`, `patterns`): `Map`\<`string`, [`PatternMatch`](../interfaces/PatternMatch)[]\>
 
-Defined in: [rabin-karp.ts:229](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L229)
+Defined in: [rabin-karp.ts:229](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L229)
 
 Searches for multiple patterns in a single pass, grouping them by length
 so each length shares one rolling hash.
@@ -159,7 +159,7 @@ A map from each pattern to its matches.
 
 &gt; **searchWithStats**(`text`, `pattern`): `object`
 
-Defined in: [rabin-karp.ts:270](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/rabin-karp.ts#L270)
+Defined in: [rabin-karp.ts:270](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/rabin-karp.ts#L270)
 
 Searches for a pattern while recording performance statistics such as
 hash collisions and elapsed time.

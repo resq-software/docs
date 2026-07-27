@@ -1,6 +1,6 @@
 # Interface: BindConfig
 
-Defined in: [bind/bind.types.ts:39](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/bind/bind.types.ts#L39)
+Defined in: [bind/bind.types.ts:39](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/bind/bind.types.ts#L39)
 
 Configuration options describing a bind strategy.
 
@@ -23,7 +23,7 @@ const eagerConfig: BindConfig = { lazy: false };
 
 &gt; `optional` **lazy?**: `boolean`
 
-Defined in: [bind/bind.types.ts:44](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/bind/bind.types.ts#L44)
+Defined in: [bind/bind.types.ts:44](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/bind/bind.types.ts#L44)
 
 If true, the method is bound lazily on first access.
 If false (default), the method is bound at decoration time.

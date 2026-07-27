@@ -2,7 +2,7 @@
 
 &gt; **checkExpr**(`expr`, `ctx?`, `depth?`): [`CheckResult`](../type-aliases/CheckResult)
 
-Defined in: [packages/math/src/check.ts:127](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/check.ts#L127)
+Defined in: [packages/math/src/check.ts:127](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/check.ts#L127)
 
 Infer the sort of `expr` under the given variable context, collecting
 **all** sort errors encountered during the recursive walk.

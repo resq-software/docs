@@ -2,7 +2,7 @@
 
 &gt; **Required**\<`T`, `K`\> = [`Simplify`](../../object/type-aliases/Simplify)\<`Omit`\<`T`, `K`\> & `{ [P in K]-?: T[P] }`\>
 
-Defined in: [compat.ts:77](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/types/src/compat.ts#L77)
+Defined in: [compat.ts:77](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/types/src/compat.ts#L77)
 
 Make the keys `K` of `T` required while leaving the rest untouched — the
 partial-application counterpart of the global `Required`, which has no

@@ -2,7 +2,7 @@
 
 &gt; **UnionToTuple**\<`U`\> = [`LastInUnion`](./LastInUnion)\<`U`\> *extends* infer L ? \[`U`\] *extends* \[`never`\] ? \[\] : \[`...UnionToTuple<Exclude<U, L>>`, `L`\] : `never`
 
-Defined in: [collection.ts:123](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/types/src/collection.ts#L123)
+Defined in: [collection.ts:123](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/types/src/collection.ts#L123)
 
 Convert a union into a tuple of its members. Order follows the compiler's
 internal union ordering, so treat the *set* of elements as meaningful and the

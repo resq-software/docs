@@ -2,7 +2,7 @@
 
 &gt; **brandRefiner**\<`T`, `B`\>(`predicate`, `label?`): [`BrandRefiner`](../interfaces/BrandRefiner)\<`T`, `B`\>
 
-Defined in: [brand.ts:181](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/types/src/brand.ts#L181)
+Defined in: [brand.ts:181](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/types/src/brand.ts#L181)
 
 Build a [BrandRefiner](../interfaces/BrandRefiner) — a `{ is, from, coerce, unsafe }` bundle — from
 a single predicate. This is the ergonomic way to mint a validated nominal

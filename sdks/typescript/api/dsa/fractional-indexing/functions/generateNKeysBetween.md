@@ -2,7 +2,7 @@
 
 &gt; **generateNKeysBetween**(`a`, `b`, `n`): `string`[]
 
-Defined in: [fractional-indexing.ts:261](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/fractional-indexing.ts#L261)
+Defined in: [fractional-indexing.ts:261](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/fractional-indexing.ts#L261)
 
 Generate `n` keys evenly spaced between `a` and `b`, without jitter.
 

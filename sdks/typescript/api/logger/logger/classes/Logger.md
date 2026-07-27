@@ -1,6 +1,6 @@
 # Class: Logger
 
-Defined in: [logger.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L73)
+Defined in: [logger.ts:73](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L73)
 
 A versatile logging utility that works in both browser and Node.js environments.
 Supports multiple log levels, colorized output, and structured data logging.
@@ -11,7 +11,7 @@ Supports multiple log levels, colorized output, and structured data logging.
 
 &gt; **new Logger**(`context`, `options?`): `Logger`
 
-Defined in: [logger.ts:135](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L135)
+Defined in: [logger.ts:135](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L135)
 
 Create a new logger for the given context. Prefer [Logger.getLogger](#getlogger)
 to reuse a shared instance per context.
@@ -40,7 +40,7 @@ Optional logger configuration.
 
 &gt; **action**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:407](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L407)
+Defined in: [logger.ts:407](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L407)
 
 Log an action message (for server actions or important user interactions).
 
@@ -68,7 +68,7 @@ Optional structured data to include.
 
 &gt; **debug**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:385](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L385)
+Defined in: [logger.ts:385](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L385)
 
 Log a debug message.
 
@@ -96,7 +96,7 @@ Optional structured data to include.
 
 &gt; **error**(`message`, `error?`, `data?`): `void`
 
-Defined in: [logger.ts:354](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L354)
+Defined in: [logger.ts:354](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L354)
 
 Log an error message. An `Error` value is flattened to `{ name, message,
 stack &#125;` (falling back to `error.cause.message` when the top-level message
@@ -132,7 +132,7 @@ Optional additional structured data.
 
 &gt; **group**(`label`): `void`
 
-Defined in: [logger.ts:428](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L428)
+Defined in: [logger.ts:428](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L428)
 
 Open a console group for related log messages (a `console.group` wrapper).
 
@@ -154,7 +154,7 @@ The group label.
 
 &gt; **groupEnd**(): `void`
 
-Defined in: [logger.ts:436](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L436)
+Defined in: [logger.ts:436](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L436)
 
 Close the current console group (a `console.groupEnd` wrapper).
 
@@ -168,7 +168,7 @@ Close the current console group (a `console.groupEnd` wrapper).
 
 &gt; **info**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:340](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L340)
+Defined in: [logger.ts:340](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L340)
 
 Log an informational message.
 
@@ -196,7 +196,7 @@ Optional structured data to include.
 
 &gt; **success**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:418](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L418)
+Defined in: [logger.ts:418](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L418)
 
 Log a success message.
 
@@ -224,7 +224,7 @@ Optional structured data to include.
 
 &gt; **time**\<`T`\>(`label`, `fn`): `Promise`\<`T`\>
 
-Defined in: [logger.ts:456](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L456)
+Defined in: [logger.ts:456](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L456)
 
 Run a function and log how long it took. Below `DEBUG` level the timing is
 skipped and the function is still invoked. On failure the elapsed time is
@@ -272,7 +272,7 @@ The exact error `fn` threw or rejected with, re-thrown after logging.
 
 &gt; **trace**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:396](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L396)
+Defined in: [logger.ts:396](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L396)
 
 Log a trace message (the most verbose level).
 
@@ -300,7 +300,7 @@ Optional structured data to include.
 
 &gt; **warn**(`message`, `data?`): `void`
 
-Defined in: [logger.ts:374](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L374)
+Defined in: [logger.ts:374](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L374)
 
 Log a warning message.
 
@@ -328,7 +328,7 @@ Optional structured data to include.
 
 &gt; `static` **addTransport**(`transport`): () =&gt; `void`
 
-Defined in: [logger.ts:214](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L214)
+Defined in: [logger.ts:214](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L214)
 
 Register a [LogTransport](../../logger.types/interfaces/LogTransport) to receive a structured [LogEntry](../../logger.types/interfaces/LogEntry) for
 every log emitted by any logger instance (after level filtering).
@@ -367,7 +367,7 @@ off();
 
 &gt; `static` **clearTransports**(): `void`
 
-Defined in: [logger.ts:242](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L242)
+Defined in: [logger.ts:242](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L242)
 
 Remove every registered transport.
 
@@ -381,7 +381,7 @@ Remove every registered transport.
 
 &gt; `static` **getLogger**(`context`, `options?`): `Logger`
 
-Defined in: [logger.ts:161](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L161)
+Defined in: [logger.ts:161](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L161)
 
 Get the shared logger instance for the given context, creating it on first
 use. Subsequent calls with the same context return the same instance, so
@@ -416,7 +416,7 @@ The logger instance for the specified context.
 
 &gt; `static` **getTransports**(): readonly [`LogTransport`](../../logger.types/interfaces/LogTransport)[]
 
-Defined in: [logger.ts:247](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L247)
+Defined in: [logger.ts:247](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L247)
 
 A read-only snapshot of the currently-registered transports.
 
@@ -430,7 +430,7 @@ readonly [`LogTransport`](../../logger.types/interfaces/LogTransport)[]
 
 &gt; `static` **removeTransport**(`transport`): `void`
 
-Defined in: [logger.ts:232](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L232)
+Defined in: [logger.ts:232](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L232)
 
 Remove a previously-registered transport, matched by identity or by its
 `name`. No-op if it is not registered.
@@ -456,7 +456,7 @@ The transport instance to remove, or the `name` to match.
 
 &gt; `static` **setGlobalLogLevel**(`level`): `void`
 
-Defined in: [logger.ts:181](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.ts#L181)
+Defined in: [logger.ts:181](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.ts#L181)
 
 Set the global minimum log level across every existing logger instance.
 

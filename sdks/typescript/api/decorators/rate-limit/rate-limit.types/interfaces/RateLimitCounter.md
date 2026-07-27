@@ -1,6 +1,6 @@
 # Interface: RateLimitCounter
 
-Defined in: [rate-limit/rate-limit.types.ts:100](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L100)
+Defined in: [rate-limit/rate-limit.types.ts:100](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L100)
 
 Synchronous counter contract used to track call counts within time windows.
 
@@ -40,7 +40,7 @@ class InMemoryCounter implements RateLimitCounter {
 
 &gt; **dec**: (`key`) =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:104](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L104)
+Defined in: [rate-limit/rate-limit.types.ts:104](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L104)
 
 Decrement the count for a key.
 
@@ -60,7 +60,7 @@ Decrement the count for a key.
 
 &gt; **getCount**: (`key`) =&gt; `number`
 
-Defined in: [rate-limit/rate-limit.types.ts:106](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L106)
+Defined in: [rate-limit/rate-limit.types.ts:106](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L106)
 
 Get the current count for a key.
 
@@ -80,7 +80,7 @@ Get the current count for a key.
 
 &gt; **inc**: (`key`) =&gt; `void`
 
-Defined in: [rate-limit/rate-limit.types.ts:102](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/rate-limit/rate-limit.types.ts#L102)
+Defined in: [rate-limit/rate-limit.types.ts:102](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/rate-limit/rate-limit.types.ts#L102)
 
 Increment the count for a key.
 

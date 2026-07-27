@@ -2,7 +2,7 @@
 
 &gt; **delegate**\<`T`, `D`\>(`keyResolver?`): [`Delegatable`](../../delegate.types/type-aliases/Delegatable)\<`T`, `D`\>
 
-Defined in: [delegate/delegate.ts:92](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/delegate/delegate.ts#L92)
+Defined in: [delegate/delegate.ts:92](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/delegate/delegate.ts#L92)
 
 Decorator that deduplicates concurrent async method calls.
 Multiple calls with the same arguments will share the same promise

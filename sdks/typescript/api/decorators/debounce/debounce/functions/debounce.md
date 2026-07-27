@@ -2,7 +2,7 @@
 
 &gt; **debounce**\<`T`\>(`delayMs`): [`Decorator`](../../../types/type-aliases/Decorator)\<`T`\>
 
-Defined in: [debounce/debounce.ts:59](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/debounce/debounce.ts#L59)
+Defined in: [debounce/debounce.ts:59](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/debounce/debounce.ts#L59)
 
 Decorator that debounces method calls, ensuring the method only executes
 after the specified delay has passed since the last call.

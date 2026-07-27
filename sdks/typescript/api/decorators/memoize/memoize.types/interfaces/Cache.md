@@ -1,6 +1,6 @@
 # Interface: Cache\<D\>
 
-Defined in: [memoize/memoize.types.ts:66](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L66)
+Defined in: [memoize/memoize.types.ts:66](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L66)
 
 Cache contract used by the `@memoize` decorator. Any store with these four
 synchronous operations (a plain `Map`, an LRU, etc.) can back the cache.
@@ -36,7 +36,7 @@ The type of values stored in the cache.
 
 &gt; **delete**: (`key`) =&gt; `void`
 
-Defined in: [memoize/memoize.types.ts:75](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L75)
+Defined in: [memoize/memoize.types.ts:75](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L75)
 
 Remove the entry for `key`; a no-op when the key is absent.
 
@@ -56,7 +56,7 @@ Remove the entry for `key`; a no-op when the key is absent.
 
 &gt; **get**: (`key`) =&gt; `D` \| `null` \| `undefined`
 
-Defined in: [memoize/memoize.types.ts:73](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L73)
+Defined in: [memoize/memoize.types.ts:73](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L73)
 
 Retrieve a value for `key`. A `null`/`undefined` result is ambiguous — it may
 be an absent key or a stored nullish value — so callers must gate on `has`.
@@ -77,7 +77,7 @@ be an absent key or a stored nullish value — so callers must gate on `has`.
 
 &gt; **has**: (`key`) =&gt; `boolean`
 
-Defined in: [memoize/memoize.types.ts:77](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L77)
+Defined in: [memoize/memoize.types.ts:77](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L77)
 
 Whether an entry exists for `key`; the authoritative presence check.
 
@@ -97,7 +97,7 @@ Whether an entry exists for `key`; the authoritative presence check.
 
 &gt; **set**: (`key`, `value`) =&gt; `void`
 
-Defined in: [memoize/memoize.types.ts:68](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L68)
+Defined in: [memoize/memoize.types.ts:68](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L68)
 
 Store a value in the cache, overwriting any existing entry for `key`.
 

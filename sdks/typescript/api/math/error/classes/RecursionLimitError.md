@@ -1,6 +1,6 @@
 # Class: RecursionLimitError
 
-Defined in: [packages/math/src/error.ts:202](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L202)
+Defined in: [packages/math/src/error.ts:202](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L202)
 
 Thrown when recursion depth exceeds the configured limit during parsing or evaluation.
 
@@ -14,7 +14,7 @@ Thrown when recursion depth exceeds the configured limit during parsing or evalu
 
 &gt; **new RecursionLimitError**(`limit`): `RecursionLimitError`
 
-Defined in: [packages/math/src/error.ts:209](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L209)
+Defined in: [packages/math/src/error.ts:209](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L209)
 
 #### Parameters
 
@@ -50,7 +50,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
@@ -64,7 +64,7 @@ Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
 &gt; `readonly` **limit**: `number`
 
-Defined in: [packages/math/src/error.ts:204](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L204)
+Defined in: [packages/math/src/error.ts:204](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L204)
 
 The configured maximum recursion depth.
 

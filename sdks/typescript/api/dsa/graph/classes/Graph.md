@@ -1,6 +1,6 @@
 # Class: Graph\<T, M\>
 
-Defined in: [graph.ts:150](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L150)
+Defined in: [graph.ts:150](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L150)
 
 Weighted Graph with Adjacency List representation
 
@@ -52,7 +52,7 @@ Shape of the optional structured metadata attached to
 
 &gt; **new Graph**\<`T`, `M`\>(`options?`): `Graph`\<`T`, `M`\>
 
-Defined in: [graph.ts:160](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L160)
+Defined in: [graph.ts:160](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L160)
 
 Creates a new graph.
 
@@ -80,7 +80,7 @@ If options validation fails.
 
 &gt; **get** **edgeCount**(): `number`
 
-Defined in: [graph.ts:180](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L180)
+Defined in: [graph.ts:180](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L180)
 
 Returns the total number of edges in the graph.
 
@@ -96,7 +96,7 @@ Returns the total number of edges in the graph.
 
 &gt; **get** **vertexCount**(): `number`
 
-Defined in: [graph.ts:173](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L173)
+Defined in: [graph.ts:173](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L173)
 
 Returns the number of vertices in the graph.
 
@@ -110,7 +110,7 @@ Returns the number of vertices in the graph.
 
 &gt; **addEdge**(`source`, `target`, `weight?`, `metadata?`): `this`
 
-Defined in: [graph.ts:235](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L235)
+Defined in: [graph.ts:235](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L235)
 
 Adds (or updates) a weighted edge between two vertices, creating either
 endpoint if it is missing. For an undirected graph the reverse edge is
@@ -146,7 +146,7 @@ This graph, for chaining.
 
 &gt; **addVertex**(`vertex`, `metadata?`): `this`
 
-Defined in: [graph.ts:209](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L209)
+Defined in: [graph.ts:209](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L209)
 
 Adds a vertex to the graph. A no-op if the vertex already exists.
 
@@ -172,7 +172,7 @@ This graph, for chaining.
 
 &gt; **addVertices**(`vertices`): `this`
 
-Defined in: [graph.ts:221](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L221)
+Defined in: [graph.ts:221](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L221)
 
 Adds multiple vertices at once.
 
@@ -194,7 +194,7 @@ This graph, for chaining.
 
 &gt; **astar**(`start`, `end`, `h`): \{ `cost`: `number`; `path`: `T`[]; \} \| `null`
 
-Defined in: [graph.ts:481](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L481)
+Defined in: [graph.ts:481](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L481)
 
 Finds the shortest path using A* search guided by a heuristic. Returns an
 optimal path when `h` is admissible (never overestimates the true cost).
@@ -231,7 +231,7 @@ The path and its cost, or `null` if no path exists.
 
 &gt; **bfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
-Defined in: [graph.ts:330](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L330)
+Defined in: [graph.ts:330](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L330)
 
 Breadth-first traversal from `start`, visiting nearer vertices first.
 
@@ -256,7 +256,7 @@ Traversal result with vertices, parents, and hop distances. All
 
 &gt; **clear**(): `void`
 
-Defined in: [graph.ts:681](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L681)
+Defined in: [graph.ts:681](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L681)
 
 Clears all vertices and edges.
 
@@ -270,7 +270,7 @@ Clears all vertices and edges.
 
 &gt; **dfs**(`start`): [`TraversalResult`](../interfaces/TraversalResult)\<`T`\>
 
-Defined in: [graph.ts:373](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L373)
+Defined in: [graph.ts:373](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L373)
 
 Depth-first traversal from `start`, following each branch to its end
 before backtracking.
@@ -296,7 +296,7 @@ Traversal result with vertices, parents, and depth per vertex.
 
 &gt; **findAllPaths**(`start`, `end`, `maxDepth?`): `T`[][]
 
-Defined in: [graph.ts:528](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L528)
+Defined in: [graph.ts:528](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L528)
 
 Finds every simple path between two vertices, bounded by `maxDepth` to
 keep the search finite on large or cyclic graphs.
@@ -333,7 +333,7 @@ All paths found, each an ordered list of vertices.
 
 &gt; **findShortestPath**(`start`, `end`): [`PathResult`](../interfaces/PathResult)\<`T`\>
 
-Defined in: [graph.ts:411](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L411)
+Defined in: [graph.ts:411](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L411)
 
 Finds the shortest path between two vertices with Dijkstra's algorithm.
 Assumes non-negative edge weights.
@@ -365,7 +365,7 @@ A path result; `found` is `false` with an empty path and
 
 &gt; **getConnectedComponents**(): `T`[][]
 
-Defined in: [graph.ts:650](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L650)
+Defined in: [graph.ts:650](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L650)
 
 Groups vertices into connected components. Intended for undirected
 graphs; on a directed graph it treats edges as bidirectional and so
@@ -383,7 +383,7 @@ One array of vertices per component.
 
 &gt; **getNeighbors**(`vertex`): [`Edge`](../interfaces/Edge)\<`T`, `M`\>[]
 
-Defined in: [graph.ts:305](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L305)
+Defined in: [graph.ts:305](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L305)
 
 Gets the outgoing edges of a vertex, or an empty array if it is unknown.
 
@@ -403,7 +403,7 @@ Gets the outgoing edges of a vertex, or an empty array if it is unknown.
 
 &gt; **getVertexMetadata**(`vertex`): `M` \| `undefined`
 
-Defined in: [graph.ts:319](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L319)
+Defined in: [graph.ts:319](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L319)
 
 Gets vertex metadata, typed as `M`.
 
@@ -423,7 +423,7 @@ Gets vertex metadata, typed as `M`.
 
 &gt; **getVertices**(): `T`[]
 
-Defined in: [graph.ts:312](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L312)
+Defined in: [graph.ts:312](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L312)
 
 Gets all vertices in the graph.
 
@@ -437,7 +437,7 @@ Gets all vertices in the graph.
 
 &gt; **hasCycle**(): `boolean`
 
-Defined in: [graph.ts:613](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L613)
+Defined in: [graph.ts:613](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L613)
 
 Detects whether the graph contains a cycle. Uses topological sorting for
 directed graphs and a parent-aware DFS for undirected ones.
@@ -452,7 +452,7 @@ directed graphs and a parent-aware DFS for undirected ones.
 
 &gt; **hasEdge**(`source`, `target`): `boolean`
 
-Defined in: [graph.ts:198](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L198)
+Defined in: [graph.ts:198](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L198)
 
 Checks whether an edge exists from `source` to `target`.
 
@@ -476,7 +476,7 @@ Checks whether an edge exists from `source` to `target`.
 
 &gt; **hasVertex**(`vertex`): `boolean`
 
-Defined in: [graph.ts:191](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L191)
+Defined in: [graph.ts:191](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L191)
 
 Checks whether the graph contains a vertex.
 
@@ -496,7 +496,7 @@ Checks whether the graph contains a vertex.
 
 &gt; **removeEdge**(`source`, `target`): `boolean`
 
-Defined in: [graph.ts:285](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L285)
+Defined in: [graph.ts:285](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L285)
 
 Removes the edge from `source` to `target` (and its reverse in an
 undirected graph).
@@ -523,7 +523,7 @@ undirected graph).
 
 &gt; **removeVertex**(`vertex`): `boolean`
 
-Defined in: [graph.ts:268](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L268)
+Defined in: [graph.ts:268](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L268)
 
 Removes a vertex and every edge that touches it.
 
@@ -545,7 +545,7 @@ Removes a vertex and every edge that touches it.
 
 &gt; **toAdjacencyMatrix**(): `object`
 
-Defined in: [graph.ts:691](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L691)
+Defined in: [graph.ts:691](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L691)
 
 Converts the graph to a dense adjacency-matrix representation. Absent
 edges are `Infinity` and the diagonal is `0`.
@@ -570,7 +570,7 @@ The vertex order and the corresponding weight matrix.
 
 &gt; **topologicalSort**(): `T`[] \| `null`
 
-Defined in: [graph.ts:568](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/dsa/src/graph.ts#L568)
+Defined in: [graph.ts:568](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/dsa/src/graph.ts#L568)
 
 Performs a topological sort (Kahn's algorithm) of a directed acyclic
 graph.

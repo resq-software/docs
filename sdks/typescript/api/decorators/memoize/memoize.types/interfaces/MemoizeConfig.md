@@ -1,6 +1,6 @@
 # Interface: MemoizeConfig\<T, D\>
 
-Defined in: [memoize/memoize.types.ts:94](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L94)
+Defined in: [memoize/memoize.types.ts:94](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L94)
 
 Configuration for the `@memoize` decorator and memoizeFn.
 
@@ -34,7 +34,7 @@ The return type of the decorated method.
 
 &gt; `optional` **cache?**: [`Cache`](./Cache)\<`D`\>
 
-Defined in: [memoize/memoize.types.ts:96](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L96)
+Defined in: [memoize/memoize.types.ts:96](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L96)
 
 Custom cache; when omitted, a fresh `Map` is used.
 
@@ -44,7 +44,7 @@ Custom cache; when omitted, a fresh `Map` is used.
 
 &gt; `optional` **expirationTimeMs?**: `number`
 
-Defined in: [memoize/memoize.types.ts:107](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L107)
+Defined in: [memoize/memoize.types.ts:107](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L107)
 
 Per-entry time-to-live in milliseconds, measured from insertion (not refreshed
 on read). When omitted, entries never expire.
@@ -55,7 +55,7 @@ on read). When omitted, entries never expire.
 
 &gt; `optional` **keyResolver?**: [`KeyResolver`](../type-aliases/KeyResolver) \| keyof `T`
 
-Defined in: [memoize/memoize.types.ts:102](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/memoize/memoize.types.ts#L102)
+Defined in: [memoize/memoize.types.ts:102](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/memoize/memoize.types.ts#L102)
 
 How cache keys are derived. A [KeyResolver](../type-aliases/KeyResolver) is called with the
 arguments; a `keyof T` names an instance method resolved and bound to `this`

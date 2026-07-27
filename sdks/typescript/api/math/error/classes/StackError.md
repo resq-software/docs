@@ -1,6 +1,6 @@
 # Class: StackError
 
-Defined in: [packages/math/src/error.ts:168](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L168)
+Defined in: [packages/math/src/error.ts:168](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L168)
 
 Thrown when a lexical stack lookup is out of bounds.
 
@@ -14,7 +14,7 @@ Thrown when a lexical stack lookup is out of bounds.
 
 &gt; **new StackError**(`index`, `depth`): `StackError`
 
-Defined in: [packages/math/src/error.ts:178](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L178)
+Defined in: [packages/math/src/error.ts:178](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L178)
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Defined in: node\_modules/typescript/lib/lib.es2022.error.d.ts:24
 
 &gt; `readonly` **code**: `string`
 
-Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L38)
+Defined in: [packages/math/src/error.ts:38](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L38)
 
 Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
@@ -70,7 +70,7 @@ Stable machine-readable error code (e.g. `"SORT_ERROR"`); constant per subclass.
 
 &gt; `readonly` **depth**: `number`
 
-Defined in: [packages/math/src/error.ts:172](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L172)
+Defined in: [packages/math/src/error.ts:172](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L172)
 
 The stack depth available at the time of access.
 
@@ -80,7 +80,7 @@ The stack depth available at the time of access.
 
 &gt; `readonly` **index**: `number`
 
-Defined in: [packages/math/src/error.ts:170](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/math/src/error.ts#L170)
+Defined in: [packages/math/src/error.ts:170](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/math/src/error.ts#L170)
 
 The De Bruijn index that was requested.
 

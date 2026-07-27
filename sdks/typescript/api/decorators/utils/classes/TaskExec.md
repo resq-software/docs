@@ -1,6 +1,6 @@
 # Class: TaskExec
 
-Defined in: [\_utils.ts:156](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L156)
+Defined in: [\_utils.ts:156](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L156)
 
 A minimal timer-backed scheduler that fires queued tasks in due-time order,
 keeping a single active `setTimeout` for the nearest pending task.
@@ -21,7 +21,7 @@ keeping a single active `setTimeout` for the nearest pending task.
 
 &gt; **exec**(`func`, `ttl`): `void`
 
-Defined in: [\_utils.ts:172](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/decorators/src/_utils.ts#L172)
+Defined in: [\_utils.ts:172](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/decorators/src/_utils.ts#L172)
 
 Schedule `func` to run after `ttl` milliseconds.
 

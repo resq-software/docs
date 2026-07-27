@@ -1,6 +1,6 @@
 # Interface: LogTransport
 
-Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L140)
+Defined in: [logger.types.ts:140](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L140)
 
 Contract for a custom log transport that receives structured [LogEntry](./LogEntry)
 values (see [Logger.addTransport](../../logger/classes/Logger#addtransport)).
@@ -17,7 +17,7 @@ transport that needs delivery guarantees must handle its own errors.
 
 &gt; **name**: `string`
 
-Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L142)
+Defined in: [logger.types.ts:142](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L142)
 
 Transport name, used for identification and removal by name.
 
@@ -27,7 +27,7 @@ Transport name, used for identification and removal by name.
 
 &gt; **write**(`entry`): `void` \| `Promise`\<`void`\>
 
-Defined in: [logger.types.ts:148](https://github.com/resq-software/npm/blob/43e4668edb35f1d8b82814020f177750172b932c/packages/logger/src/logger.types.ts#L148)
+Defined in: [logger.types.ts:148](https://github.com/resq-software/npm/blob/a23b0e86db5c4539fd4e521f64c284c116e1324a/packages/logger/src/logger.types.ts#L148)
 
 Write a single entry. May run synchronously or return a promise; the
 returned promise is not awaited by the logger, only guarded against
