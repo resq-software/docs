@@ -1,6 +1,6 @@
 # resq-bin
 
-> **Version:** `v0.1.16` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-bin) · **API docs:** [docs.rs](https://docs.rs/resq-bin/0.1.16)
+> **Version:** `v0.1.18` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-bin) · **API docs:** [docs.rs](https://docs.rs/resq-bin/0.1.18)
 
 [![Crates.io](https://img.shields.io/crates/v/resq-bin.svg)](https://crates.io/crates/resq-bin)
 [![License](https://img.shields.io/crates/l/resq-bin.svg)](LICENSE)

@@ -4,43 +4,40 @@
 
 ## Contents
 
+**Structs**
+
+- [`Matcher`](#matcher) - A compiled gitignore matcher rooted at a project directory.
+
 **Functions**
 
-- [`parse_gitignore`](#parse_gitignore) - Parse `.gitignore` from `root` and return a list of simple directory/file
-- [`should_skip_path`](#should_skip_path) - Check whether `path` should be skipped based on its directory components
+- [`load`](#load) - Build a [`Matcher`] for `root`.
 
 ---
 
-## resq_cli::gitignore::parse_gitignore
+## resq_cli::gitignore::Matcher
+
+*Struct*
+
+A compiled gitignore matcher rooted at a project directory.
+
+**Methods:**
+
+- `fn is_ignored(self: &Self, path: &Path, is_dir: bool) -> bool` - Returns `true` if `path` is ignored, checking the path itself and every
+
+
+
+## resq_cli::gitignore::load
 
 *Function*
 
-Parse `.gitignore` from `root` and return a list of simple directory/file
-names to exclude during traversal.
+Build a [`Matcher`] for `root`.
 
-Strategy (matches the TS `parseGitignore` in `sync-turbo-env.ts`):
-- Read `.gitignore`, split into lines
-- Strip comments (`#`) and blank lines
-- Normalize: remove leading `/` and trailing `/`
-- Drop negations (`!`) and wildcard patterns (`*`) — too complex for
-  simple component-based matching; these are already handled by git itself
-- Always include `.git` and `node_modules` as safety nets
+Loads `root/.gitignore` when present; otherwise seeds the matcher with
+[`FALLBACK_EXCLUDES`]. `.git/` and `node_modules/` are always added as
+safety nets so they are skipped even if a `.gitignore` omits them.
 
 ```rust
-fn parse_gitignore(root: &std::path::Path) -> Vec<String>
-```
-
-
-
-## resq_cli::gitignore::should_skip_path
-
-*Function*
-
-Check whether `path` should be skipped based on its directory components
-matching any entry in `excludes`.
-
-```rust
-fn should_skip_path(path: &std::path::Path, excludes: &[String]) -> bool
+fn load(root: &std::path::Path) -> Matcher
 ```
 
 

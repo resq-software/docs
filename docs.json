@@ -2156,10 +2156,7 @@
                     "pages": [
                       "sdks/rust/api/README",
                       "sdks/rust/api/resq-clean",
-                      "sdks/rust/api/resq-deploy",
                       "sdks/rust/api/resq-flame",
-                      "sdks/rust/api/resq-health",
-                      "sdks/rust/api/resq-logs",
                       "sdks/rust/api/resq-perf",
                       {
                         "group": "ResQ AI",
@@ -2215,15 +2212,40 @@
                           "sdks/rust/api/resq-dsa/graph",
                           "sdks/rust/api/resq-dsa/heap",
                           "sdks/rust/api/resq-dsa/resq_dsa",
-                          "sdks/rust/api/resq-dsa/trie"
+                          "sdks/rust/api/resq-dsa/trie",
+                          {
+                            "group": "Bloom",
+                            "pages": [
+                              "sdks/rust/api/resq-dsa/bloom/BloomFilter"
+                            ]
+                          },
+                          {
+                            "group": "Count_min",
+                            "pages": [
+                              "sdks/rust/api/resq-dsa/count_min/CountMinSketch"
+                            ]
+                          }
                         ]
                       },
                       {
                         "group": "ResQ TUI",
                         "pages": [
                           "sdks/rust/api/resq-tui",
+                          "sdks/rust/api/resq-tui/console",
+                          "sdks/rust/api/resq-tui/detect",
+                          "sdks/rust/api/resq-tui/progress",
                           "sdks/rust/api/resq-tui/resq_tui",
-                          "sdks/rust/api/resq-tui/terminal"
+                          "sdks/rust/api/resq-tui/spinner",
+                          "sdks/rust/api/resq-tui/table",
+                          "sdks/rust/api/resq-tui/terminal",
+                          "sdks/rust/api/resq-tui/theme",
+                          {
+                            "group": "Theme",
+                            "pages": [
+                              "sdks/rust/api/resq-tui/theme/AdaptiveColor",
+                              "sdks/rust/api/resq-tui/theme/Theme"
+                            ]
+                          }
                         ]
                       }
                     ]
