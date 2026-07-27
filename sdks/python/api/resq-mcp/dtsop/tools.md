@@ -24,6 +24,14 @@ MCP tool wrappers for DTSOP domain.
 
 ## FastMCPError
 
+<a id="resq_mcp.dtsop.tools.audit_log"></a>
+
+## audit\_log
+
+<a id="resq_mcp.dtsop.tools.preflight"></a>
+
+## preflight
+
 <a id="resq_mcp.dtsop.tools.OptimizationStrategy"></a>
 
 ## OptimizationStrategy

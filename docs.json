@@ -9148,12 +9148,16 @@
                           {
                             "group": "core",
                             "pages": [
+                              "sdks/python/api/resq-mcp/core/audit",
                               "sdks/python/api/resq-mcp/core/config",
                               "sdks/python/api/resq-mcp/core/errors",
+                              "sdks/python/api/resq-mcp/core/guards",
                               "sdks/python/api/resq-mcp/core/models",
+                              "sdks/python/api/resq-mcp/core/ratelimit",
                               "sdks/python/api/resq-mcp/core/security",
                               "sdks/python/api/resq-mcp/core/telemetry",
-                              "sdks/python/api/resq-mcp/core/timeout"
+                              "sdks/python/api/resq-mcp/core/timeout",
+                              "sdks/python/api/resq-mcp/core/validation"
                             ]
                           },
                           {
