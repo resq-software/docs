@@ -80,9 +80,56 @@ jobs:
           fi
           echo "manifest valid: ${#srcs[@]} icons resolved"
 
+  content-guard:
+    name: content guard (deletion floor)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Full history so the PR base is reachable for the diff.
+          fetch-depth: 0
+      - name: Guard against silent mass deletion of generated docs
+        # The SDK auto-doc pipeline rm -rf's its target dir before
+        # copying freshly generated output, so a failed or partial
+        # generation surfaces here as a spike in deleted pages under
+        # sdks/**. A clean version bump deletes ~0. Broken-links stays
+        # green in that case (the dropped pages leave nav too), so this
+        # is the backstop that catches the regression. Intentional bulk
+        # restructures carry the `docs:bulk-change` label to opt out.
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+          PR_LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          MAX_DELETIONS: '20'
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "not a pull_request event ($EVENT); deletion floor n/a"
+            exit 0
+          fi
+          if printf '%s' "$PR_LABELS" | jq -e 'index("docs:bulk-change")' >/dev/null; then
+            echo "docs:bulk-change label present; skipping deletion floor"
+            exit 0
+          fi
+          mapfile -t deleted < <(
+            git diff --diff-filter=D --name-only \
+              "origin/${BASE_REF}...HEAD" -- 'sdks/**' \
+              | grep -E '\.(md|mdx)$' || true
+          )
+          n=${#deleted[@]}
+          echo "deleted SDK doc pages vs origin/${BASE_REF}: $n (threshold $MAX_DELETIONS)"
+          if (( n > MAX_DELETIONS )); then
+            printf '%s\n' "${deleted[@]}" | sed 's/^/  - /'
+            echo "::error::$n SDK doc pages deleted (> $MAX_DELETIONS)."
+            echo "::error::A failed/partial generation can silently drop a package's docs."
+            echo "::error::If this deletion is intentional, add the 'docs:bulk-change' label."
+            exit 1
+          fi
+          echo "deletion floor OK"
+
   required:
     name: required
-    needs: [mintlify, spectral, pwa-manifest]
+    needs: [mintlify, spectral, pwa-manifest, content-guard]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -91,10 +138,12 @@ jobs:
           mintlify="${{ needs.mintlify.result }}"
           spectral="${{ needs.spectral.result }}"
           pwa="${{ needs.pwa-manifest.result }}"
-          echo "mintlify:     $mintlify"
-          echo "spectral:     $spectral"
-          echo "pwa-manifest: $pwa"
-          if [[ "$mintlify" != "success" || "$spectral" != "success" || "$pwa" != "success" ]]; then
+          guard="${{ needs.content-guard.result }}"
+          echo "mintlify:      $mintlify"
+          echo "spectral:      $spectral"
+          echo "pwa-manifest:  $pwa"
+          echo "content-guard: $guard"
+          if [[ "$mintlify" != "success" || "$spectral" != "success" || "$pwa" != "success" || "$guard" != "success" ]]; then
             echo "::error::One or more required gates failed"
             exit 1
           fi
