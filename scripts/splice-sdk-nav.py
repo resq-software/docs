@@ -77,7 +77,7 @@ def to_mintlify(tree: dict, group_name: str | None) -> dict | list:
     pages: list = []
     if "_landing" in tree:
         pages.append(tree["_landing"])
-    for fname, full_id in sorted(tree.get("_files", [])):
+    for _, full_id in sorted(tree.get("_files", [])):
         pages.append(full_id)
     for dname, subtree in sorted(tree.get("_dirs", {}).items()):
         pages.append(to_mintlify(subtree, dname))
@@ -193,7 +193,7 @@ def _collapse_dotnet_classes(pages: list, prefix: str) -> list:
 
 def main() -> int:
     docs_json_path = pathlib.Path("docs.json")
-    docs = json.loads(docs_json_path.read_text())
+    docs = json.loads(docs_json_path.read_text(encoding="utf-8"))
 
     lang_specs = [
         ("TypeScript", "typescript", "sdks/typescript/api"),
@@ -204,7 +204,7 @@ def main() -> int:
     ]
 
     new_subgroups = []
-    for label, lang, prefix in lang_specs:
+    for label, _, prefix in lang_specs:
         pages_path = pathlib.Path(prefix) / "_pages.json"
         if not pages_path.exists():
             print(f"SKIP {label}: {pages_path} not found", file=sys.stderr)
@@ -213,7 +213,7 @@ def main() -> int:
         new_subgroups.append(build_lang_group(label, prefix, pages_path, readme_id))
 
     # Find Generated Package References under en > SDKs > groups
-    en = next(l for l in docs["navigation"]["languages"] if l["language"] == "en")
+    en = next(k for k in docs["navigation"]["languages"] if k["language"] == "en")
     sdks_tab = next(t for t in en["tabs"] if t["tab"] == "SDKs")
     gen_group = next(
         g for g in sdks_tab["groups"]
@@ -221,7 +221,7 @@ def main() -> int:
     )
     gen_group["pages"] = new_subgroups
 
-    docs_json_path.write_text(json.dumps(docs, indent=2, ensure_ascii=False) + "\n")
+    docs_json_path.write_text(json.dumps(docs, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Updated docs.json with {sum(1 for _ in new_subgroups)} language groups")
     return 0
 
