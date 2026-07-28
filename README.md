@@ -15,20 +15,21 @@ This repository is **two things at once**:
 ```mermaid
 flowchart LR
     subgraph SDK Repos
-      NPM["resq-software/npm<br/>9 TS packages"]
+      NPM["resq-software/npm<br/>15 TS packages"]
       PYPI["resq-software/pypi<br/>2 Python packages"]
       DOTNET["resq-software/dotnet-sdk<br/>6 .NET projects"]
-      CRATES["resq-software/crates<br/>11 Rust crates"]
+      CRATES["resq-software/crates<br/>Rust workspace"]
       VCPKG["resq-software/vcpkg<br/>1 C++ package"]
     end
 
     subgraph "This repo · resq-software/docs"
       direction TB
       TPL["automation/<br/>source-repo-templates/"]
-      SYNC["automation/<br/>sync-templates.sh"]
       SPLICE["scripts/<br/>splice-sdk-nav.py"]
+      CLGEN["scripts/build_changelog.py<br/>+ automation/changelog-notes.md"]
       MDX["index.mdx · sdks/*.mdx<br/>quickstart · auth · errors"]
       OPENAPI["specs/*.json"]
+      CHANGELOG["changelog.mdx"]
       DOCSJSON["docs.json (nav)"]
     end
 
@@ -46,9 +47,13 @@ flowchart LR
     CRATES -. tag push .-> AUTOPR
     VCPKG -. tag push .-> AUTOPR
 
+    NPM & PYPI & DOTNET & CRATES & VCPKG -. releases .-> CLGEN
+    CLGEN -- "changelog sync<br/>(weekly)" --> CHANGELOG
+
     AUTOPR -- merge --> DOCSJSON
     MDX --> PROD
     OPENAPI --> PROD
+    CHANGELOG --> PROD
     DOCSJSON --> PROD
 ```
 
@@ -64,6 +69,11 @@ flowchart LR
 | `automation/source-repo-templates/` | Canonical workflow YAML for each SDK pipeline |
 | `automation/sync-templates.sh` | Pushes the canonical templates into every SDK repo |
 | `scripts/splice-sdk-nav.py` | Local helper to rebuild `docs.json`'s SDK nav from `_pages.json` artifacts |
+| `scripts/build_changelog.py` | Regenerates `changelog.mdx` version tables from published SDK releases |
+| `scripts/i18n_parity.py` | Locale parity check (missing + structurally short translations) |
+| `changelog.mdx` | SDK release changelog — the version tables are **generated** |
+| `automation/changelog-notes.md` | Hand-written editorial notes spliced into the changelog, keyed by month |
+| `.i18n-exempt` | Pages excused from the locale parity check (one path per line) |
 | `docs.json` | Mintlify navigation, theming, redirects, locale config |
 | `assets/`, `og-banner.png`, `og-backdrop.png` | Branding |
 | `pwa/`, `manifest.webmanifest`, `custom.css` | PWA + theme overrides |
@@ -99,7 +109,7 @@ mint broken-links      # flags any nav-registered page or in-content link that 4
 
 The five SDK source repos each carry a copy of the workflow at `automation/source-repo-templates/api-docs.<lang>.yml`. That workflow:
 
-1. Triggers on tag push (e.g. `@resq-systems/ui@v0.35.6`, `v1.3.3`, `@resq-systems/*@v*`) **or** manual `workflow_dispatch`.
+1. Triggers on tag push (e.g. `@resq-systems/ui@v0.38.0`, `v1.3.4`, `@resq-systems/*@v*`) **or** manual `workflow_dispatch`. The npm packages publish under the `@resq-systems` scope (renamed from the retired `@resq-sw` scope in July 2026).
 2. Generates language-native markdown:
 
    | Repo | Lang | Tooling |
@@ -170,6 +180,7 @@ Drop new specs in `specs/` and reference them the same way.
 | `{` or `}` | MDX parses as JSX expression | Wrap in backticks: `` `{` `` |
 | `<X>` (X starts with letter) | Parses as JSX component reference | Wrap in backticks: `` `<X>` `` |
 | `<` followed by digit / `=` / space | Acorn errors before name | Same — backtick or `&lt;` |
+| `<` / `>` in prose (e.g. `Foo<Bar>`) | Reads as a JSX tag | Backtick, or `&lt;` / `&gt;` |
 | `[label](file.md)` | Mintlify routes `.md` literally → 404 | Drop extension: `[label](file)` |
 
 The auto-doc post-processors handle these for generated content; you only need to remember them for hand-written prose.
