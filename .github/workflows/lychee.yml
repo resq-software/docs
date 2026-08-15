@@ -43,6 +43,9 @@ jobs:
             --cache
             --max-cache-age 1d
             --no-progress
+            --root-dir ${{ github.workspace }}
+            --scheme http
+            --scheme https
             --accept 200,204,206,429
             --max-retries 2
             --retry-wait-time 5
