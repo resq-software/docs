@@ -18,4 +18,4 @@ private Polly.ResiliencePipeline<System.Net.Http.HttpResponseMessage> BuildResil
 `enableRetries` [System\.Boolean](https://learn.microsoft.com/en-us/dotnet/api/system.boolean 'System\.Boolean')
 
 #### Returns
-[Polly\.ResiliencePipeline&lt;](https://learn.microsoft.com/en-us/dotnet/api/polly.resiliencepipeline-1 'Polly\.ResiliencePipeline\`1')[System\.Net\.Http\.HttpResponseMessage](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpresponsemessage 'System\.Net\.Http\.HttpResponseMessage')[&gt;](https://learn.microsoft.com/en-us/dotnet/api/polly.resiliencepipeline-1 'Polly\.ResiliencePipeline\`1')
+[Polly\.ResiliencePipeline&lt;](https://www.pollydocs.org/api/Polly.ResiliencePipeline-1.html 'Polly\.ResiliencePipeline\`1')[System\.Net\.Http\.HttpResponseMessage](https://learn.microsoft.com/en-us/dotnet/api/system.net.http.httpresponsemessage 'System\.Net\.Http\.HttpResponseMessage')[&gt;](https://www.pollydocs.org/api/Polly.ResiliencePipeline-1.html 'Polly\.ResiliencePipeline\`1')

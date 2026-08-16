@@ -53,7 +53,7 @@ If required fields are missing or invalid.
 ## See
 
  - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#security_and_privacy
- - https://github.com/resq-software/resQ
+ - https://github.com/resq-software/npm
 
 ## Example
 

@@ -27,7 +27,7 @@ Initial geographic position of the drone\.
 
 <a name='ResQ.Simulation.VirtualDrone.VirtualDrone(string,ResQ.Core.Location,ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).hce'></a>
 
-`hce` [ResQ\.Clients\.CoordinationHceClient](https://learn.microsoft.com/en-us/dotnet/api/resq.clients.coordinationhceclient 'ResQ\.Clients\.CoordinationHceClient')
+`hce` [ResQ\.Clients\.CoordinationHceClient](../ResQ.Clients/ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 Client for the coordination\-hce service\.
 
