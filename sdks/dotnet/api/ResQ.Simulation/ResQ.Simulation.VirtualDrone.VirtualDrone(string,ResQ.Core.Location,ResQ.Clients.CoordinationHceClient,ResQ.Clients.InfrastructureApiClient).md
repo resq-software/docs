@@ -21,7 +21,7 @@ Unique identifier for this drone\.
 
 <a name='ResQ.Simulation.VirtualDrone.VirtualDrone(string,ResQ.Core.Location,ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).startLocation'></a>
 
-`startLocation` [ResQ\.Core\.Location](https://learn.microsoft.com/en-us/dotnet/api/resq.core.location 'ResQ\.Core\.Location')
+`startLocation` [ResQ\.Core\.Location](../ResQ.Core/ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 Initial geographic position of the drone\.
 
@@ -33,7 +33,7 @@ Client for the coordination\-hce service\.
 
 <a name='ResQ.Simulation.VirtualDrone.VirtualDrone(string,ResQ.Core.Location,ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).infra'></a>
 
-`infra` [ResQ\.Clients\.InfrastructureApiClient](https://learn.microsoft.com/en-us/dotnet/api/resq.clients.infrastructureapiclient 'ResQ\.Clients\.InfrastructureApiClient')
+`infra` [ResQ\.Clients\.InfrastructureApiClient](../ResQ.Clients/ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 Client for the infrastructure\-api service\.
 

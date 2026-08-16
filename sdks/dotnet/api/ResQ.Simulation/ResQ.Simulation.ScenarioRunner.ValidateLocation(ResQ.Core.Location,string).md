@@ -15,7 +15,7 @@ private static void ValidateLocation(ResQ.Core.Location location, string paramNa
 
 <a name='ResQ.Simulation.ScenarioRunner.ValidateLocation(ResQ.Core.Location,string).location'></a>
 
-`location` [ResQ\.Core\.Location](https://learn.microsoft.com/en-us/dotnet/api/resq.core.location 'ResQ\.Core\.Location')
+`location` [ResQ\.Core\.Location](../ResQ.Core/ResQ.Core.Location.md 'ResQ\.Core\.Location')
 
 The location to validate\.
 

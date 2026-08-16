@@ -30,7 +30,7 @@ Client for the coordination\-hce service\.
 
 <a name='ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).infra'></a>
 
-`infra` [ResQ\.Clients\.InfrastructureApiClient](https://learn.microsoft.com/en-us/dotnet/api/resq.clients.infrastructureapiclient 'ResQ\.Clients\.InfrastructureApiClient')
+`infra` [ResQ\.Clients\.InfrastructureApiClient](../ResQ.Clients/ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 Client for the infrastructure\-api service\.
 
