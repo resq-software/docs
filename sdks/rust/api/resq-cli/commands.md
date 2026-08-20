@@ -104,7 +104,7 @@ Canonical git-hook templates embedded via `include_str!`.
 
 Both `resq dev install-hooks` (scaffolding) and `resq hooks doctor`
 (drift detection) read from this single source. The templates are kept
-in sync with &lt;https://github.com/resq-software/dev/tree/main/scripts/git-hooks>
+in sync with &lt;https://github.com/resq-software/crates/tree/master/crates/resq-cli/templates/git-hooks>
 and the repo-local `.git-hooks/` — CI workflows in both repos enforce
 byte equality.
 

@@ -675,7 +675,7 @@ fn main() {
 
 ## License
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/resq-software/crates/blob/master/crates/LICENSE) for details.
+Licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/resq-software/crates/blob/master/LICENSE) for details.
 
 ## Modules
 

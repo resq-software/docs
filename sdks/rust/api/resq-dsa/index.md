@@ -4,7 +4,7 @@
 
 [![Crates.io](https://img.shields.io/crates/v/resq-dsa.svg)](https://crates.io/crates/resq-dsa)
 [![docs.rs](https://img.shields.io/docsrs/resq-dsa)](https://docs.rs/resq-dsa)
-[![License](https://img.shields.io/crates/l/resq-dsa.svg)](https://github.com/wombocombo/wrk/blob/master/LICENSE)
+[![License](https://img.shields.io/crates/l/resq-dsa.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Production-grade data structures and algorithms with **zero external dependencies**. Designed for `no_std` environments and embedded systems while remaining ergonomic in standard Rust applications. The crate provides space-efficient probabilistic data structures (Bloom filter, Count-Min sketch), graph algorithms (BFS, Dijkstra, A\*), a bounded heap for K-nearest-neighbor tracking, a trie for prefix-based search, and Rabin-Karp rolling-hash string matching.
 
@@ -441,7 +441,7 @@ assert_eq!(unicode, vec![0, 6]);
 
 ## License
 
-Licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/resq-software/crates/blob/master/crates/LICENSE) for details.
+Licensed under the Apache License, Version 2.0. See [LICENSE](https://github.com/resq-software/crates/blob/master/LICENSE) for details.
 
 ## Modules
 

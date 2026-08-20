@@ -14,7 +14,7 @@ public string GatewayUrl { get; set; }
 
 #### Property Value
 [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The gateway base URL\. Default is "https://gateway\.pinata\.cloud/ipfs"\.
+The gateway base URL\. Default is `https://gateway.pinata.cloud/ipfs`.
 
 ### Example
 

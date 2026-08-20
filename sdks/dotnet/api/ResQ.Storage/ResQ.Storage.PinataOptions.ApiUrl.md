@@ -14,7 +14,7 @@ public string ApiUrl { get; set; }
 
 #### Property Value
 [System\.String](https://learn.microsoft.com/en-us/dotnet/api/system.string 'System\.String')  
-The API base URL\. Default is "https://api\.pinata\.cloud"\.
+The API base URL\. Default is `https://api.pinata.cloud`.
 
 ### Example
 

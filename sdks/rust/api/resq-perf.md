@@ -222,7 +222,7 @@ Response time in the header is color-coded:
 
 - [`resq-flame`](https://github.com/resq-software/crates/blob/master/crates/resq-flame/README.md) -- CPU flame graph profiler
 
-For comprehensive profiling workflows see [`docs/PROFILING_FLAMEGRAPH_GUIDE.md`](https://github.com/resq-software/crates/blob/master/docs/PROFILING_FLAMEGRAPH_GUIDE.md).
+For comprehensive profiling workflows see the [`resq-flame` README](https://github.com/resq-software/crates/blob/master/crates/resq-flame/README.md).
 
 ## License
 

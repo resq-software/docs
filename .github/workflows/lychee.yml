@@ -25,10 +25,12 @@ jobs:
     name: lychee (external links)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
 
       - name: Restore lychee cache
-        uses: actions/cache@v6
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
@@ -41,7 +43,9 @@ jobs:
             --cache
             --max-cache-age 1d
             --no-progress
-            --exclude-mail
+            --root-dir ${{ github.workspace }}
+            --scheme http
+            --scheme https
             --accept 200,204,206,429
             --max-retries 2
             --retry-wait-time 5

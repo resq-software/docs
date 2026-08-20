@@ -24,13 +24,13 @@ public ScenarioRunner(ResQ.Clients.CoordinationHceClient hce, ResQ.Clients.Infra
 
 <a name='ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).hce'></a>
 
-`hce` [ResQ\.Clients\.CoordinationHceClient](https://learn.microsoft.com/en-us/dotnet/api/resq.clients.coordinationhceclient 'ResQ\.Clients\.CoordinationHceClient')
+`hce` [ResQ\.Clients\.CoordinationHceClient](../ResQ.Clients/ResQ.Clients.CoordinationHceClient.md 'ResQ\.Clients\.CoordinationHceClient')
 
 Client for the coordination\-hce service\.
 
 <a name='ResQ.Simulation.ScenarioRunner.ScenarioRunner(ResQ.Clients.CoordinationHceClient,ResQ.Clients.InfrastructureApiClient).infra'></a>
 
-`infra` [ResQ\.Clients\.InfrastructureApiClient](https://learn.microsoft.com/en-us/dotnet/api/resq.clients.infrastructureapiclient 'ResQ\.Clients\.InfrastructureApiClient')
+`infra` [ResQ\.Clients\.InfrastructureApiClient](../ResQ.Clients/ResQ.Clients.InfrastructureApiClient.md 'ResQ\.Clients\.InfrastructureApiClient')
 
 Client for the infrastructure\-api service\.
 
