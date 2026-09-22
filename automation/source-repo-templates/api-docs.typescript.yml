@@ -76,7 +76,7 @@ jobs:
         # workflow_dispatch can pass an alternate ref via inputs.ref;
         # fall back to github.ref_name (already stripped of refs/...).
         # DOCS_REF_SLUG is branch-safe for use in PR/branch names
-        # (`@resq-sw/ui@v0.35.6` → `resq-sw-ui-v0.35.6`).
+        # (`@resq-systems/ui@v0.35.6` → `resq-systems-ui-v0.35.6`).
         #
         # The ref is routed through env: instead of being inlined via
         # ${{ }}. Inlining at template-expansion time would interpolate
