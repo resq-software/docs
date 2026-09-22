@@ -7,7 +7,7 @@
 # Copy this file to resq-software/npm at:
 #   .github/workflows/api-docs.yml
 #
-# Renders TypeDoc API reference for every public @resq-sw/* package
+# Renders TypeDoc API reference for every public @resq-systems/* package
 # in the bun monorepo and opens a single PR in resq-software/docs
 # with generated MDX under sdks/typescript/api/<pkg>/.
 
@@ -54,13 +54,20 @@ jobs:
       # this list when the monorepo gains new public packages.
       PUBLIC_PACKAGES: >-
         analytics
+        constants
         decorators
         dsa
+        email-templates
         helpers
         http
         logger
+        map
+        math
+        nav
         rate-limiting
         security
+        telemetry
+        types
         ui
 
     steps:
@@ -445,16 +452,24 @@ jobs:
           repo = os.environ.get("GH_REPO", "")
           out = pathlib.Path(os.environ["OUTPUT_DIR"])
 
-          def read_version(pkg: str) -> str:
+          def read_manifest(pkg: str) -> tuple[str, str]:
+              # Read BOTH the published name and the version out of the
+              # manifest. The name is deliberately not rebuilt from a
+              # scope literal: the org already renamed this scope once
+              # (@resq-sw/* -> @resq-systems/*) and the hardcoded copy
+              # outlived the rename here for two months, publishing
+              # install names that no longer resolve. Reading .name
+              # means the next rename needs no template change.
+              # Directory name is the fallback so a missing or
+              # unparseable manifest still yields a readable entry.
               pkg_json = pathlib.Path("packages") / pkg / "package.json"
               if not pkg_json.exists():
-                  return "unknown"
+                  return pkg, "unknown"
               try:
-                  return json.loads(
-                      pkg_json.read_text(encoding="utf-8")
-                  ).get("version", "unknown")
+                  data = json.loads(pkg_json.read_text(encoding="utf-8"))
               except json.JSONDecodeError:
-                  return "unknown"
+                  return pkg, "unknown"
+              return data.get("name", pkg), data.get("version", "unknown")
 
           print("# ResQ TypeScript SDK")
           print()
@@ -469,8 +484,8 @@ jobs:
           for pkg_dir in sorted(out.iterdir()):
               if not pkg_dir.is_dir():
                   continue
-              version = read_version(pkg_dir.name)
-              print(f"- `@resq-sw/{pkg_dir.name}` — `v{version}`")
+              name, version = read_manifest(pkg_dir.name)
+              print(f"- `{name}` — `v{version}`")
           PY
 
       - name: Build pages index
@@ -621,7 +636,7 @@ jobs:
             (run: ${{ github.run_id }}).
 
             Regenerated files under `sdks/typescript/api/`. One
-            sub-directory per `@resq-sw/*` package. Review the diff
+            sub-directory per `@resq-systems/*` package. Review the diff
             for unintended exports and merge to publish.
           branch: auto/typescript-api-${{ env.DOCS_REF_SLUG }}
           base: main
