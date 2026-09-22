@@ -107,6 +107,13 @@ jobs:
         uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
         with:
           bun-version: latest
+          # This job runs on release tags and opens a cross-repo PR using
+          # DOCS_REPO_PR_TOKEN, so it is a privileged context. Disable
+          # setup-bun's default dependency cache: a cache populated by a
+          # less-trusted run must not be restorable here (zizmor
+          # cache-poisoning, error severity). The install step below is
+          # --frozen-lockfile, so a cold install is functionally identical.
+          no-cache: true
 
       - name: Install workspace deps
         run: bun install --frozen-lockfile
