@@ -85,18 +85,28 @@ jobs:
           echo "DOCS_REF_SLUG=$slug" >> "$GITHUB_ENV"
 
       - name: Checkout source repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.ref || github.ref }}
           persist-credentials: false
 
       - name: Setup Python
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install uv
-        uses: astral-sh/setup-uv@c7f87aa956e4c323abf06d5dec078e358f6b4d04 # v6.0.0
+        # This job opens a cross-repo PR with DOCS_REPO_PR_TOKEN, so it
+        # runs privileged and must not restore a cache that a
+        # less-trusted run could have populated (zizmor
+        # cache-poisoning). setup-uv's `auto` default already skips the
+        # cache on tag pushes, but not on workflow_dispatch -- which is
+        # the trigger these runs actually use -- so the opt-out is set
+        # explicitly rather than inherited. Docs are generated once per
+        # release; a cold uv install costs little.
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          enable-cache: false
 
       - name: Install packages + lazydocs into a venv
         # lazydocs imports the packages it documents, so they must
@@ -513,7 +523,7 @@ jobs:
           rm _pages.txt
 
       - name: Checkout docs repo
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: resq-software/docs
           path: docs-checkout
@@ -602,7 +612,7 @@ jobs:
           PYINNER
 
       - name: Open PR in docs repo
-        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           path: docs-checkout
           token: ${{ secrets.DOCS_REPO_PR_TOKEN }}
