@@ -37,7 +37,32 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Run lychee
+        # `args` is a folded block scalar: everything inside it is literal,
+        # so '#' does NOT start a comment there and would be passed to
+        # lychee as an argument. Keep explanatory notes out here.
+        #
+        # --exclude '^https://x\.com/' : x.com serves 403 to every non-browser
+        # client, so the footer social link fails the check while working
+        # fine for readers. Excluded by host rather than accepting 403
+        # globally, which would hide genuinely forbidden links elsewhere.
+        # The single quotes are load-bearing: lychee-action's entrypoint runs
+        # `eval lychee ... ${ARGS}`, so an unquoted \. is eaten by the shell
+        # and lychee would receive ^https://x.com/ with . as a wildcard.
+        #
+        # --max-concurrency / --max-retries: 2118 of the ~2984 external
+        # links point at github.com, and lychee's default concurrency (128)
+        # provokes 504s from it. Those are throttling, not broken links --
+        # the same URLs return 200 when fetched directly. Going slower and
+        # retrying longer fixes the cause; adding 504 to --accept would
+        # instead hide real gateway failures everywhere.
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        env:
+          # 2118 of the ~2984 external links are github.com. Unauthenticated,
+          # lychee scrapes them as HTML and gets rate-limited into 503/504s.
+          # With a token it uses the GitHub API instead, which both raises the
+          # limit and avoids the HTML fetch entirely. Read-only, and every
+          # linked repo here is public.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           args: >-
             --cache
@@ -46,9 +71,11 @@ jobs:
             --root-dir ${{ github.workspace }}
             --scheme http
             --scheme https
+            --exclude '^https://x\.com/'
             --accept 200,204,206,429
-            --max-retries 2
-            --retry-wait-time 5
+            --max-concurrency 24
+            --max-retries 4
+            --retry-wait-time 10
             './**/*.md'
             './**/*.mdx'
             './docs.json'
