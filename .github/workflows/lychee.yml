@@ -37,6 +37,14 @@ jobs:
           restore-keys: cache-lychee-
 
       - name: Run lychee
+        # `args` is a folded block scalar: everything inside it is literal,
+        # so '#' does NOT start a comment there and would be passed to
+        # lychee as an argument. Keep explanatory notes out here.
+        #
+        # --exclude ^https://x\.com/ : x.com serves 403 to every non-browser
+        # client, so the footer social link fails the check while working
+        # fine for readers. Excluded by host rather than accepting 403
+        # globally, which would hide genuinely forbidden links elsewhere.
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
           args: >-
@@ -46,6 +54,7 @@ jobs:
             --root-dir ${{ github.workspace }}
             --scheme http
             --scheme https
+            --exclude ^https://x\.com/
             --accept 200,204,206,429
             --max-retries 2
             --retry-wait-time 5
