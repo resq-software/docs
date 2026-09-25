@@ -25,6 +25,9 @@ import pathlib
 import re
 import subprocess
 import sys
+import urllib.error
+import urllib.parse
+import urllib.request
 
 # repo -> (sidebar label/tag, how tags encode the package name, single-pkg name)
 #   "scoped"   -> @scope/name@version   (npm)
@@ -39,6 +42,24 @@ REPOS = {
     "vcpkg": ("C++", "at", None),
 }
 ECOSYSTEM_ORDER = ["npm", "pypi", "crates", "dotnet-sdk", "vcpkg"]
+
+# repo -> (registry, package to query for "single"-mode repos)
+#
+# Tags are not proof of publication. A repo-level tag like v0.1.0 in a
+# "single"-mode repo parses as a package release even when no such package
+# version was ever pushed, which is how resq-mcp 0.1.0 and .NET 0.2.0 reached
+# the changelog: neither exists (PyPI starts at 0.3.1, NuGet at 0.3.0). Every
+# derived version is checked against the registry before it is rendered.
+#
+# vcpkg is a port collection with no version registry to query, so it is
+# exempt rather than silently dropped.
+REGISTRY = {
+    "npm": ("npm", None),
+    "pypi": ("pypi", "resq-mcp"),
+    "crates": ("crates", None),
+    "dotnet-sdk": ("nuget", "ResQ.Core"),
+    "vcpkg": (None, None),
+}
 
 # Scope renames: a package under the old scope is dropped from a month's table
 # only when its counterpart under the new scope shipped that same month. This
@@ -139,7 +160,78 @@ def load_releases(releases_file: str | None) -> list[dict]:
     return out
 
 
-def latest_by_month(releases: list[dict]) -> dict[str, dict[str, dict[str, str]]]:
+_PUBLISHED: dict[tuple[str, str], set[str] | None] = {}
+
+
+def _fetch(url: str) -> dict | None:
+    """Return parsed JSON, {} for 404 (absent), or None if the lookup failed."""
+    req = urllib.request.Request(url, headers={"User-Agent": "resq-docs-changelog"})
+    try:
+        with urllib.request.urlopen(req, timeout=20) as r:
+            return json.loads(r.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return {}
+        print(f"registry lookup failed ({e.code}): {url}", file=sys.stderr)
+        return None
+    except Exception as e:  # network/DNS/timeout
+        print(f"registry lookup failed ({e}): {url}", file=sys.stderr)
+        return None
+
+
+def published_versions(registry: str, pkg: str) -> set[str] | None:
+    """Versions actually published for pkg, or None if the registry was unreachable."""
+    key = (registry, pkg)
+    if key in _PUBLISHED:
+        return _PUBLISHED[key]
+    if registry == "npm":
+        d = _fetch(f"https://registry.npmjs.org/{urllib.parse.quote(pkg, safe='@')}")
+        out = set((d or {}).get("versions", {})) if d is not None else None
+    elif registry == "pypi":
+        d = _fetch(f"https://pypi.org/pypi/{urllib.parse.quote(pkg)}/json")
+        out = set((d or {}).get("releases", {})) if d is not None else None
+    elif registry == "crates":
+        d = _fetch(f"https://crates.io/api/v1/crates/{urllib.parse.quote(pkg)}")
+        out = {v["num"] for v in (d or {}).get("versions", [])} if d is not None else None
+    elif registry == "nuget":
+        d = _fetch(
+            f"https://api.nuget.org/v3-flatcontainer/{urllib.parse.quote(pkg.lower())}/index.json"
+        )
+        out = set((d or {}).get("versions", [])) if d is not None else None
+    else:
+        out = None
+    _PUBLISHED[key] = out
+    return out
+
+
+def is_published(repo: str, pkg: str | None, ver: str) -> bool:
+    """True unless the registry positively says this version was never published.
+
+    Unreachable registries and registry-less ecosystems fail open: a transient
+    network error must not silently erase real releases from the changelog.
+    """
+    registry, probe = REGISTRY.get(repo, (None, None))
+    if registry is None:
+        return True
+    target = pkg or probe
+    if not target:
+        return True
+    known = published_versions(registry, target)
+    if known is None:
+        return True
+    if ver in known:
+        return True
+    print(
+        f"dropping unpublished {repo} release: {target} {ver} "
+        f"(not in {registry})",
+        file=sys.stderr,
+    )
+    return False
+
+
+def latest_by_month(
+    releases: list[dict], verify: bool = True
+) -> dict[str, dict[str, dict[str, str]]]:
     """month 'YYYY-MM' -> repo -> package -> highest version released that month."""
     tree: dict[str, dict[str, dict[str, str]]] = {}
     for rel in releases:
@@ -150,6 +242,8 @@ def latest_by_month(releases: list[dict]) -> dict[str, dict[str, dict[str, str]]
         if not parsed:
             continue
         pkg, ver = parsed
+        if verify and not is_published(repo, pkg, ver):
+            continue
         month = rel["published_at"][:7]
         by_pkg = tree.setdefault(month, {}).setdefault(repo, {})
         if pkg not in by_pkg or version_key(ver) > version_key(by_pkg[pkg]):
@@ -254,11 +348,18 @@ def main() -> int:
     parser.add_argument(
         "--check", action="store_true", help="exit 1 if changelog.mdx is not up to date"
     )
+    parser.add_argument(
+        "--no-verify-registry",
+        action="store_true",
+        help="skip checking each version against its package registry "
+        "(implied by --releases-file, which is for offline runs)",
+    )
     args = parser.parse_args()
 
     root = args.root.resolve()
     releases = load_releases(args.releases_file)
-    tree = latest_by_month(releases)
+    verify = not (args.no_verify_registry or args.releases_file)
+    tree = latest_by_month(releases, verify=verify)
     notes = load_notes(root)
     region = render(tree, notes)
 
