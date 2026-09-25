@@ -41,10 +41,13 @@ jobs:
         # so '#' does NOT start a comment there and would be passed to
         # lychee as an argument. Keep explanatory notes out here.
         #
-        # --exclude ^https://x\.com/ : x.com serves 403 to every non-browser
+        # --exclude '^https://x\.com/' : x.com serves 403 to every non-browser
         # client, so the footer social link fails the check while working
         # fine for readers. Excluded by host rather than accepting 403
         # globally, which would hide genuinely forbidden links elsewhere.
+        # The single quotes are load-bearing: lychee-action's entrypoint runs
+        # `eval lychee ... ${ARGS}`, so an unquoted \. is eaten by the shell
+        # and lychee would receive ^https://x.com/ with . as a wildcard.
         #
         # --max-concurrency / --max-retries: 2118 of the ~2984 external
         # links point at github.com, and lychee's default concurrency (128)
@@ -68,7 +71,7 @@ jobs:
             --root-dir ${{ github.workspace }}
             --scheme http
             --scheme https
-            --exclude ^https://x\.com/
+            --exclude '^https://x\.com/'
             --accept 200,204,206,429
             --max-concurrency 24
             --max-retries 4
