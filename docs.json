@@ -9634,6 +9634,17 @@
       "github": "https://github.com/resq-software",
       "linkedin": "https://linkedin.com/company/resq-systems-inc",
       "website": "https://resq.software"
-    }
+    },
+    "links": [
+      {
+        "header": "Policies",
+        "items": [
+          {
+            "label": "Accessibility",
+            "href": "https://github.com/resq-software/docs/blob/main/ACCESSIBILITY.md"
+          }
+        ]
+      }
+    ]
   }
 }
