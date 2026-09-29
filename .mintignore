@@ -5,3 +5,8 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Repository documents, not site pages
+/SECURITY.md
+/ACCESSIBILITY.md
+/THIRD_PARTY_NOTICES.md

@@ -36,7 +36,7 @@ http://www.apache.org/licenses/LICENSE-2.0
 
 No-Fly Zone (NFZ) and geofencing utilities
 
-Provides geofencing functionality for FAA Part 107 compliance:
+Provides geofencing primitives for checking positions and flight paths against no-fly zones:
 
 * No-fly zone polygon definitions
 

@@ -272,3 +272,5 @@ See [`AGENTS.md`](AGENTS.md) for project-specific instructions when collaboratin
 ## License
 
 Copyright 2026 ResQ. Licensed under the [Apache License, Version 2.0](LICENSE).
+
+The site was created from the Mintlify starter template, whose MIT license is kept in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
