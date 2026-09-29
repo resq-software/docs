@@ -22,7 +22,7 @@ concurrency:
 jobs:
   label:
     name: label
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - uses: actions/labeler@v7
         with:
