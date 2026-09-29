@@ -204,6 +204,42 @@ def published_versions(registry: str, pkg: str) -> set[str] | None:
     return out
 
 
+def _normalize_nuget_version(v: str) -> str:
+    """NuGet normalizes versions: lowercased, leading zeros stripped, and a zero-valued
+    fourth (revision) segment dropped. Comparing in this form keeps a tag like `0.6.0.0`
+    matching the index's `0.6.0`, so a purely cosmetic difference never looks 'unpublished'.
+    """
+    v = v.strip().lower()
+    core, _, pre = v.partition("-")
+    parts = core.split(".")
+    while len(parts) > 3 and parts[-1] in ("0", ""):
+        parts.pop()
+    parts = [str(int(p)) if p.isdigit() else p for p in parts]
+    core = ".".join(parts)
+    return f"{core}-{pre}" if pre else core
+
+
+def _nuget_version_exists(pkg: str, ver: str) -> bool | None:
+    """Confirm one NuGet version directly. The flat-container index can lag behind a
+    just-published version during propagation (NuGet/NuGetGallery#3455), so an index-only
+    miss is not proof of absence. Returns True (present), False (a 404 confirms absent), or
+    None (inconclusive -> the caller should fail open).
+    """
+    p = urllib.parse.quote(pkg.lower())
+    v = urllib.parse.quote(_normalize_nuget_version(ver))
+    url = f"https://api.nuget.org/v3-flatcontainer/{p}/{v}/{p}.{v}.nupkg"
+    req = urllib.request.Request(
+        url, method="HEAD", headers={"User-Agent": "resq-docs-changelog"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=20):
+            return True
+    except urllib.error.HTTPError as e:
+        return False if e.code == 404 else None
+    except Exception:  # network/DNS/timeout
+        return None
+
+
 def is_published(repo: str, pkg: str | None, ver: str) -> bool:
     """True unless the registry positively says this version was never published.
 
@@ -221,6 +257,17 @@ def is_published(repo: str, pkg: str | None, ver: str) -> bool:
         return True
     if ver in known:
         return True
+    if registry == "nuget":
+        # NuGet normalizes versions, and its flat-container index can lag behind a
+        # just-published version during propagation, so neither a formatting
+        # difference nor an index-only miss proves the release never shipped. Match
+        # on the normalized form, then, if still absent, confirm the exact version
+        # directly before dropping it.
+        norm = _normalize_nuget_version(ver)
+        if any(_normalize_nuget_version(k) == norm for k in known):
+            return True
+        if _nuget_version_exists(target, ver) is not False:
+            return True
     print(
         f"dropping unpublished {repo} release: {target} {ver} "
         f"(not in {registry})",
