@@ -24,7 +24,7 @@ concurrency:
 jobs:
   mintlify:
     name: mintlify (broken links)
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
@@ -37,7 +37,7 @@ jobs:
 
   spectral:
     name: spectral (OpenAPI lint)
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
       - name: Lint OpenAPI specs
@@ -47,7 +47,7 @@ jobs:
 
   pwa-manifest:
     name: pwa manifest
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
       - name: Validate manifest.webmanifest
@@ -82,7 +82,7 @@ jobs:
 
   content-guard:
     name: content guard (deletion floor)
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -131,7 +131,7 @@ jobs:
     name: required
     needs: [mintlify, spectral, pwa-manifest, content-guard]
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.USE_SELF_HOSTED == 'true' && fromJSON('["self-hosted","linux","x64","zima"]') || 'ubuntu-latest' }}
     steps:
       - name: Verify all gates passed
         run: |
