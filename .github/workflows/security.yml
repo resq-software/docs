@@ -48,3 +48,28 @@ jobs:
     # exposure (zizmor: secrets-inherit).
     secrets:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+
+  # The `scan` job above skips Dependabot. The guard must not.
+  #
+  # A lockfile is the likeliest carrier of a non-public reference there is --
+  # both hits found org-wide on 2026-11-07 were a `.lock` file and a generated
+  # changelog -- and Dependabot pull requests are precisely the ones that
+  # rewrite lockfiles. Leaving the guard inside the skipped job means it reports
+  # nothing on exactly those changes, which is the false assurance it exists to
+  # refuse: a green run that never looked.
+  #
+  # This runs the guard ALONE on Dependabot pull requests. It deliberately does
+  # not remove the skip on `scan`: that would also switch CodeQL, semgrep,
+  # osv-scanner and the rest on for every bump, which is a cost and
+  # failure-surface decision separate from this disclosure gap.
+  #
+  # Dependabot reads the DEPENDABOT secret store, not the Actions store, so this
+  # needs a Dependabot-scoped PRIVATE_NAME_GUARD_TOKEN. One is provisioned for
+  # this repository. Without it the guard hard-fails with a message naming the
+  # right settings page rather than reporting clean.
+  private-name-guard-dependabot:
+    name: private-name-guard (dependabot)
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    uses: resq-software/.github/.github/workflows/private-name-guard.yml@9b8f49927aa789aef1a99e5afc4c1e2278b2dfc0 # main
+    secrets:
+      PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
