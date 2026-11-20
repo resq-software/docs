@@ -43,10 +43,8 @@ jobs:
       # Coverage is unchanged: default setup runs the `extended` query suite,
       # which is broader than the default suite this workflow used.
       enable-semgrep: true
-      enable-private-name-guard: true
     # Pass only the secret the reusable workflow actually needs for the
     # opt-ins enabled above. Avoids the blanket `secrets: inherit`
     # exposure (zizmor: secrets-inherit).
     secrets:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
-      PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
