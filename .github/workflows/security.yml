@@ -69,18 +69,19 @@ jobs:
   # right settings page rather than reporting clean.
   private-name-guard-dependabot:
     name: private-name-guard (dependabot)
-    # Both halves, not just github.actor. github.actor names whoever last
-    # triggered the run rather than who opened the pull request, and it moves
-    # on a re-run (zizmor bot-conditions). user.login on the pull_request
-    # payload is fixed at trigger time from the original author.
+    # Keyed on the pull request's author, not github.actor. github.actor names
+    # whoever last triggered the run and moves on a re-run, so it can read
+    # `dependabot[bot]` on a pull request Dependabot did not open -- zizmor's
+    # bot-conditions audit, and the same reason auto-merge.yml reads user.login
+    # in sibling repositories. user.login on the pull_request payload is fixed
+    # at trigger time from the original author and cannot move that way.
     #
-    # Taken together they also leave no gap: a pull request where only one of
-    # the two reads `dependabot[bot]` matches neither this job nor the `scan`
-    # job's `github.actor != 'dependabot[bot]'`, so no guard runs and the
-    # aggregate treats the missing result as a failure.
-    if: >-
-      ${{ github.actor == 'dependabot[bot]'
-          && github.event.pull_request.user.login == 'dependabot[bot]' }}
+    # It also leaves no gap against `scan` above, which still skips on
+    # github.actor. The one combination the two do not both cover -- a
+    # human-authored pull request whose last trigger was Dependabot, so the
+    # context is restricted -- matches neither job, no guard runs, and the
+    # aggregate treats a missing guard result as a failure rather than a pass.
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     uses: resq-software/.github/.github/workflows/private-name-guard.yml@9b8f49927aa789aef1a99e5afc4c1e2278b2dfc0 # main
     secrets:
       PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
