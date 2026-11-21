@@ -11,7 +11,7 @@ Real-time CPU and memory performance TUI for ResQ platform
 ## Overview
 
 [![Crates.io](https://img.shields.io/crates/v/resq-perf.svg)](https://crates.io/crates/resq-perf)
-[![License](https://img.shields.io/crates/l/resq-perf.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-perf.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Real-time performance monitoring dashboard for ResQ services. Polls a service's `/status` endpoint and displays live memory usage, response latency, and heap object breakdowns in a three-column Ratatui TUI with sparkline history charts.
 

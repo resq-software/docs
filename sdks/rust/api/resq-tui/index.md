@@ -3,7 +3,7 @@
 > **Version:** `v0.1.10` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-tui) · **API docs:** [docs.rs](https://docs.rs/resq-tui/0.1.10)
 
 [![Crates.io](https://img.shields.io/crates/v/resq-tui.svg)](https://crates.io/crates/resq-tui)
-[![License](https://img.shields.io/crates/l/resq-tui.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-tui.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Shared TUI component library for all **ResQ** developer tools. Provides a unified theme system, console formatters, table rendering, progress bars, spinners, and terminal lifecycle management built on [Ratatui](https://ratatui.rs) and [Crossterm](https://docs.rs/crossterm).
 
