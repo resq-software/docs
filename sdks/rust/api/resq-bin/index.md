@@ -3,7 +3,7 @@
 > **Version:** `v0.1.18` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-bin) · **API docs:** [docs.rs](https://docs.rs/resq-bin/0.1.18)
 
 [![Crates.io](https://img.shields.io/crates/v/resq-bin.svg)](https://crates.io/crates/resq-bin)
-[![License](https://img.shields.io/crates/l/resq-bin.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-bin.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Binary and machine-code analyzer for the ResQ platform. Provides deep inspection of ELF, Mach-O, and PE object files with interactive TUI exploration, Capstone-powered disassembly with objdump fallback, symbol and section analysis, and a persistent CRC32-based cache for fast repeated analysis of large binaries.
 

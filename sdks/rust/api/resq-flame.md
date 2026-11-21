@@ -11,7 +11,7 @@ SVG CPU flame graph profiler for ResQ services
 ## Overview
 
 [![Crates.io](https://img.shields.io/crates/v/resq-flame.svg)](https://crates.io/crates/resq-flame)
-[![License](https://img.shields.io/crates/l/resq-flame.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-flame.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Interactive CPU profiler and SVG flame graph generator for ResQ services. Provides a TUI for selecting profiling targets and a subcommand interface for scripted profiling, piping output through `inferno-flamegraph`.
 

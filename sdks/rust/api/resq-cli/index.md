@@ -3,7 +3,7 @@
 > **Version:** `v0.3.2` · **License:** `Apache-2.0` · **Crate:** [crates.io](https://crates.io/crates/resq-cli) · **API docs:** [docs.rs](https://docs.rs/resq-cli/0.3.2)
 
 [![Crates.io](https://img.shields.io/crates/v/resq-cli.svg)](https://crates.io/crates/resq-cli)
-[![License](https://img.shields.io/crates/l/resq-cli.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-cli.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Unified developer CLI for the ResQ platform. Provides commands for license header management, security auditing, secret scanning, dependency cost analysis, image placeholder generation, documentation export, monorepo versioning, and launching a suite of interactive TUI tools.
 

@@ -11,7 +11,7 @@ sidebarTitle: 'ResQ Clean'
 ## Overview
 
 [![Crates.io](https://img.shields.io/crates/v/resq-clean.svg)](https://crates.io/crates/resq-clean)
-[![License](https://img.shields.io/crates/l/resq-clean.svg)](LICENSE)
+[![License](https://img.shields.io/crates/l/resq-clean.svg)](https://github.com/resq-software/crates/blob/master/LICENSE)
 
 Interactive, `.gitignore`-aware workspace cleaner for ResQ development. Provides a TUI that scans for build artifacts and gitignored files, lets you select what to remove, and reclaims disk space safely.
 
