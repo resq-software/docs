@@ -150,7 +150,7 @@ jobs:
     if: >-
       ${{ github.actor != 'dependabot[bot]'
           || github.event.pull_request.user.login != 'dependabot[bot]' }}
-    uses: resq-software/.github/.github/workflows/private-name-guard.yml@03bd2fc8788be394d96edebcaceb3b3735bb2cbc # main
+    uses: resq-software/.github/.github/workflows/private-name-guard.yml@69c26d88e15e46d12b4f4e53bd1dcf1580b90051 # main
     secrets:
       PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
 
