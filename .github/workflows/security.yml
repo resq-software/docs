@@ -48,3 +48,40 @@ jobs:
     # exposure (zizmor: secrets-inherit).
     secrets:
       SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+
+  # The `scan` job above skips Dependabot. The guard must not.
+  #
+  # A lockfile is the likeliest carrier of a non-public reference there is --
+  # both hits found org-wide on 2026-11-07 were a `.lock` file and a generated
+  # changelog -- and Dependabot pull requests are precisely the ones that
+  # rewrite lockfiles. Leaving the guard inside the skipped job means it reports
+  # nothing on exactly those changes, which is the false assurance it exists to
+  # refuse: a green run that never looked.
+  #
+  # This runs the guard ALONE on Dependabot pull requests. It deliberately does
+  # not remove the skip on `scan`: that would also switch CodeQL, semgrep,
+  # osv-scanner and the rest on for every bump, which is a cost and
+  # failure-surface decision separate from this disclosure gap.
+  #
+  # Dependabot reads the DEPENDABOT secret store, not the Actions store, so this
+  # needs a Dependabot-scoped PRIVATE_NAME_GUARD_TOKEN. One is provisioned for
+  # this repository. Without it the guard hard-fails with a message naming the
+  # right settings page rather than reporting clean.
+  private-name-guard-dependabot:
+    name: private-name-guard (dependabot)
+    # Keyed on the pull request's author, not github.actor. github.actor names
+    # whoever last triggered the run and moves on a re-run, so it can read
+    # `dependabot[bot]` on a pull request Dependabot did not open -- zizmor's
+    # bot-conditions audit, and the same reason auto-merge.yml reads user.login
+    # in sibling repositories. user.login on the pull_request payload is fixed
+    # at trigger time from the original author and cannot move that way.
+    #
+    # It also leaves no gap against `scan` above, which still skips on
+    # github.actor. The one combination the two do not both cover -- a
+    # human-authored pull request whose last trigger was Dependabot, so the
+    # context is restricted -- matches neither job, no guard runs, and the
+    # aggregate treats a missing guard result as a failure rather than a pass.
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    uses: resq-software/.github/.github/workflows/private-name-guard.yml@9b8f49927aa789aef1a99e5afc4c1e2278b2dfc0 # main
+    secrets:
+      PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
