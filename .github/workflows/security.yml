@@ -69,7 +69,18 @@ jobs:
   # right settings page rather than reporting clean.
   private-name-guard-dependabot:
     name: private-name-guard (dependabot)
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    # Both halves, not just github.actor. github.actor names whoever last
+    # triggered the run rather than who opened the pull request, and it moves
+    # on a re-run (zizmor bot-conditions). user.login on the pull_request
+    # payload is fixed at trigger time from the original author.
+    #
+    # Taken together they also leave no gap: a pull request where only one of
+    # the two reads `dependabot[bot]` matches neither this job nor the `scan`
+    # job's `github.actor != 'dependabot[bot]'`, so no guard runs and the
+    # aggregate treats the missing result as a failure.
+    if: >-
+      ${{ github.actor == 'dependabot[bot]'
+          && github.event.pull_request.user.login == 'dependabot[bot]' }}
     uses: resq-software/.github/.github/workflows/private-name-guard.yml@9b8f49927aa789aef1a99e5afc4c1e2278b2dfc0 # main
     secrets:
       PRIVATE_NAME_GUARD_TOKEN: ${{ secrets.PRIVATE_NAME_GUARD_TOKEN }}
